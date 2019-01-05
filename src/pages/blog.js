@@ -15,7 +15,7 @@ background: ${colors.greys[1]};
 display: block;
 margin: .2rem;
 max-width: 500px;
-width: 100%
+width: 100%;
 position: relative;
 margin: 2rem 0;
 padding: 1rem;
