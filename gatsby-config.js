@@ -43,7 +43,7 @@ module.exports = {
         short_name: 'ww',
         start_url: '/',
         background_color: '#B73CF6',
-        theme_color: '#B73CF6',
+        theme_color: '#330026',
         display: 'minimal-ui',
         icon: 'src/images/W.png', // This path is relative to the root of the site.
       },
