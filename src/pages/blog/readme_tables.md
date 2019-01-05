@@ -7,7 +7,7 @@ category: Blog
 tags: Data, Pandas, Python
 description: none
 cover: "./nordwood-themes-162462-unsplash_croped32.jpg"
---
+---
 
 ## Generating Readme Tables From Pandas
 
