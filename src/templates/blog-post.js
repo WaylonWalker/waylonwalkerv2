@@ -20,7 +20,8 @@ background: rgba(51, 0, 38, .04);
 /* background: #330026; */
 display: block;
 margin: .2rem;
-width: 800px;
+max-width: 800px;
+width: 100%;
 position: relative;
 margin: 2rem 0;
 padding: 1rem;

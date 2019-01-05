@@ -14,7 +14,8 @@ background: ${colors.greys[1]};
 /* background: #330026; */
 display: block;
 margin: .2rem;
-width: 500px;
+max-width: 500px;
+width: 100%
 position: relative;
 margin: 2rem 0;
 padding: 1rem;
