@@ -6,21 +6,30 @@ import Layout from '../components/layout'
 import Img from 'gatsby-image'
 // import BlogGallery from '../components/BlogGallery'
 import colors from '../components/styles/colors'
+import chroma from 'chroma-js'
 
 const BlogPostCardStyles = styled.div`
-background: rgba(51, 0, 38, .04)
+/* background: rgba(51, 0, 38, .04); */
 background: ${colors.greys[1]};
 
 /* background: #330026; */
 display: block;
 margin: .2rem;
 max-width: 500px;
-width: 100%;
+width: 95%;
 position: relative;
 margin: 2rem 0;
 padding: 1rem;
 border-radius: 2px;
 box-shadow: .2rem .2rem 1rem rgba(0, 0, 0, .2);
+overflow: hidden;
+
+/* @media only screen and (max-width: 500px) {
+  width: 95%
+} */
+img {
+  width: 95%;
+}
 
 h3 {
   color: #333;

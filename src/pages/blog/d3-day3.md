@@ -7,7 +7,7 @@ category: Viz
 tags: D3, Viz, FrontEnd
 summary: Creating my First d3.js viz by following along with Ben Clinkinbeard's d3 in 5 days email.
 description: none
-cover: "./flex.png"
+cover: "./d3-cropped.png"
 ---
 
 

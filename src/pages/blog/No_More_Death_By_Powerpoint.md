@@ -6,7 +6,7 @@ date: 2017-12-31
 category: Blog
 tags: Pug, Jade, Reveal
 description: none
-cover: "./flex.png"
+cover: "./gemma-evans-64661-unsplash.jpg"
 ---
 
 

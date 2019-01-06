@@ -16,12 +16,12 @@ align-items: center;
 `
 
 const BlogPostStyles = styled.div`
-background: rgba(51, 0, 38, .04);
+background: rgba(51, 0, 38, .08);
 /* background: #330026; */
 display: block;
 margin: .2rem;
 max-width: 800px;
-width: 100%;
+width: 95%;
 position: relative;
 margin: 2rem 0;
 padding: 1rem;
@@ -37,12 +37,26 @@ a {
 p>img {
   opacity: .8;
   box-shadow: .2rem .2rem 1rem rgba(51, 0, 38, .4);
-  width: 400px;
+  max-width: 400px;
+  width: 95%;
   align-self: center;
   justify-self: center;
   align-items: center;
   justify-items: center;
-  margin: 2rem 200px;
+  /* margin: 2rem 200px; */
+}
+
+blockquote {
+  color: #666;
+  border-left: 5px solid goldenrod;
+  padding: 0 1rem;
+}
+
+hr {
+  border-top: 1px solid goldenrod;
+  background: none;
+  margin: 1rem 2rem
+
 }
 `
 
