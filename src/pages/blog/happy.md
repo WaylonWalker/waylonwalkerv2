@@ -16,7 +16,7 @@ Today I want to take some time to talk about the things that make me happy in my
 A positive work atmosphere goes a long ways.  We all have enough negativity going on in our lives that is out of our control accepting any negativity in the workplace is a no go for me.  There was a point in which I was suffering a lot of negativity at work.  This began to trickle into every part of life, and it became hard to see positivity anywhere.  My wife not only noticed this, but put a polite request in for change.  It was definitely a low point and she could tell tell that my work life was not helping anything.
 
 ![positive gif](https://media.giphy.com/media/dJGYFScvBjfRabiH7m/giphy.gif)
-> courtesy [giphy](https://giphy.com/)
+Throw out the negativity - courtesy [giphy](https://giphy.com/)
 
 **Bring the positivity** to your workplace.  It is really difficult for folks to tear you down if you are the one that is always up beat and happy.  **People will notice**. When they do they will bring the good projects your way, Praise you for your hard work, and  Ask for and value your advice.  
 
@@ -33,7 +33,7 @@ Being in the position that I am in I am graced with access to many data sets, th
 ### Grind
 
 ![laser focus](https://media.giphy.com/media/3oEduGi1UWg9Q6nF84/giphy.gif)
-> courtesy [giphy](https://giphy.com/)
+Laser Focus - courtesy [giphy](https://giphy.com/)
 
 The last thing is that I need is a few hours of undistracted time to grind.  After I help some folks, and keep up with the latest skills I need to focus, **Laser Focus**.  I have a lot going on outside of work, so in order for me to keep some sort of balance I need to chrun out some quality hours of progress, otherwise I get behind, stressed, anxious, and start to loose my work-life balance as it is important for me to meet the deadlines that I commit to.
 
