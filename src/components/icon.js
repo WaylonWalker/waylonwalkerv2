@@ -26,7 +26,15 @@ const Icon = () => (
         }
       }
     `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => <Img
+      fluid={data.placeholderImage.childImageSharp.fluid}
+      style={{
+        height: '30px',
+        width: '30px',
+        marginTop: '.2rem',
+        marginRight: '1rem'
+      }}
+    />}
   />
 )
 export default Icon
