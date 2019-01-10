@@ -9,7 +9,7 @@ summary: Today we are adding scale to day 3's example horizontal bar chart.
 description: none
 cover: "./d3-cropped.png"
 ---
-
+<!-- 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js'></script>
 <style>
     #content{
@@ -49,7 +49,7 @@ cover: "./d3-cropped.png"
     width: 50%
     }
 </style>
-
+ -->
 
 ## Learn D3 in 5 days
 
@@ -58,13 +58,16 @@ For what we are creating in these posts d3 is way overkill and very verbose, but
 
 Today I will be learning about d3 scales, and adding them to the bar chart that we created yesterday.  Follow along as I try to create something interesting.
 
-![today's_result](/static/images/gifs/d3-day4.gif)
+![today's_result](d3-day4.gif)
 
 ## Recall Example 3 from yesterday
 _maybe a few days ago.... give me a break I have a lot of other priorities_
 
-In [yesterdays](./d3-day-3.html) post we created a working example of a horizontal bar chart that shows grades for a set of 5 students that are all in two classes; 'Math' and 'Science'.  The chart is interactive, and will switch subjects at the press of a button.  
+In [yesterdays](./d3-day3) post we created a working example of a horizontal bar chart that shows grades for a set of 5 students that are all in two classes; 'Math' and 'Science'.  The chart is interactive, and will switch subjects at the press of a button.  
 
+
+![d3 day 3 final result](d3-day3.gif)
+<!-- 
 <div id="chart3" class='chart'>
     <button class='math' onclick="render3('math')">Math</button>
     <button class='science' onclick="render3('science')">Science</button>
@@ -104,7 +107,7 @@ In [yesterdays](./d3-day-3.html) post we created a working example of a horizont
     }
     render3('math')
 </script>
-
+ -->
 ## Add Scales
 
 One issue with that plot was that the scale was created by hand.  In todays example we will let d3 take care of the scale for us.  We will define a linear scale with an input range and an output range.
@@ -165,7 +168,7 @@ width: 50%
 ```
 
 ## Final Result
-
+<!-- 
 <div id='buttons'>
     <h3>Subject</h3>
     <div id='subjects'>
@@ -255,7 +258,9 @@ width: 50%
     render4('math')
     chart4_size('big')
 </script>
+ -->
 
+![d3 day4 final result](d3-day4.gif)
 ### Final Markup
 
 Most of the markup here is for the buttons and the callbacks.  This is not really the focus of today's exercise.  I have included the html here so that you can see how the buttons are tied in to the Final Script.

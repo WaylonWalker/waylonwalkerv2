@@ -53,7 +53,7 @@ D3 is the ubiquitous dynamic visualization library for building custom interacti
 ## Final Result
 I cant express how fun it was to build this example. I always saw d3 as being super low level and that I could never build something in it.  It was so cool to watch the magic happen in such a short period of time.
 
-![final_result](/static/images/gifs/d3-day3.gif)
+![final_result](d3-day3.gif)
 ## Prep
 ### Load D3
 
@@ -127,6 +127,11 @@ d3.select('#chart1')
 
 ### Result
 
+![d3 day3 example 1](d3-day3-1.png)
+
+_example 1 plot_
+
+<!--
 <div id="chart1" class='chart'>
     <div></div>
     <div></div>
@@ -134,7 +139,6 @@ d3.select('#chart1')
     <div></div>
     <div></div>
 </div>
-
 
 <script>
     const data = [90, 270, 152, 42, 83]
@@ -146,6 +150,7 @@ d3.select('#chart1')
             return d + 'px'
         })
 </script>
+ -->
 
 
 ## Example 2
@@ -192,7 +197,7 @@ render('math')
 ```
 
 ### Result
-
+<!-- 
 <div id="chart2" class='chart'>
     <button class='math' onclick="render('math')">Math</button>
     <button class='science' onclick="render('science')">Science</button>
@@ -230,6 +235,11 @@ render('math')
     }
     render('math')
 </script>
+ -->
+
+![d3 day 3 example 2](d3-day3-2.gif)
+
+_example 2 working buttons_
 
 ## Example 3
 In Example2 the chart jumped from one state to the next with a complete wipe and redraw in betweeen.  In this example we will retain the same bars and only update their width.  This will allow us to transition/animate them.
@@ -277,6 +287,11 @@ function render3(subject) {
 }
 render3('math')
 ```
+
+![d3 day3 example 3](d3-day3.gif)
+
+_example 3 nice and smooth_
+<!-- 
 <div id="chart3" class='chart'>
     <button class='math' onclick="render3('math')">Math</button>
     <button class='science' onclick="render3('science')">Science</button>
@@ -318,7 +333,7 @@ render3('math')
     }
     render3('math')
 </script>
-
+ -->
 
 ## Final Thoughts
 
