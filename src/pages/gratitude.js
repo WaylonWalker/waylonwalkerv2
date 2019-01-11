@@ -24,7 +24,7 @@ export default class gratitude extends Component {
         <div style={{ maxWidth: '800px', margin: 'auto', padding: '1rem' }}>
           {
             posts.map((post, i) => {
-              console.log(post.node)
+              // console.log(post.node)
               return <GratitudePost node={post.node} />
             })
           }
