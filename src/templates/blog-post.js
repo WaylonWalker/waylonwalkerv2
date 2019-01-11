@@ -17,6 +17,7 @@ align-items: center;
 
 const BlogPostStyles = styled.div`
 background: rgba(51, 0, 38, .08);
+overflow: hidden;
 /* background: #330026; */
 display: block;
 margin: .2rem;
@@ -83,15 +84,23 @@ class BlogPostTemplate extends React.Component {
       <BlogPostWrapper>
         <BlogPostStyles>
           <h1
-            style={{ textAlign: 'right' }}
+            style={{ textAlign: 'right', zIndex: 2 }}
             className="blog title">
             {title}
           </h1>
           <p
-            style={{ textAlign: 'right' }}>
+            style={{ textAlign: 'right', zIndex: 2 }}>
             {date}
           </p>
-          <Img style={{ position: 'absolute', top: '0px', left: '-0rem', zIndex: '-1', opacity: '.6' }} fixed={cover} />
+          <Img
+            style={{
+              position: 'absolute',
+              top: '0px',
+              left: '-0rem',
+              // zIndex: '-1',
+              opacity: '.6'
+            }}
+            fixed={cover} />
           <p style={{ minHeight: '100px' }}>{description}</p>
           <div ref={(el) => { this.markdownContainer = el }}
             dangerouslySetInnerHTML={{ __html: content }} />
