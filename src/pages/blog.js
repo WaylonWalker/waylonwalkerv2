@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+// import PropTypes from 'prop-types'
+// import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import BlogPosts from '../components/BlogPosts'
 // import BlogGallery from '../components/BlogGallery'
@@ -22,8 +23,8 @@ h1 {
 export default class BlogPage extends React.Component {
   render() {
     const { data } = this.props
-    // console.log(data.allMarkdownRemark)
     const { edges: posts } = data.allMarkdownRemark
+    // console.log(data.allMarkdownRemark)
     // console.log(posts)
     // console.log(data.allMarkdownRemark)
     // console.log('posts: ', posts)

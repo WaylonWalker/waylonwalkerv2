@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Layout from '../components/layout'
-import { Link, graphql } from 'gatsby'
+// import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 
 function GratitudePost({ node, ...props }) {

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import BlogPostCard from '../components/blogPostCard'
-import { Link, graphql } from 'gatsby'
+// import { Link, graphql } from 'gatsby'
 
 // import BlogGallery from '../components/BlogGallery'
 const BlogPostsStyle = styled.div`
