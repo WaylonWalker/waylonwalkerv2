@@ -8,6 +8,7 @@ import colors from '../components/styles/colors'
 const BlogPostCardStyles = styled.div`
 /* background: rgba(51, 0, 38, .04); */
 background: ${colors.greys[1]};
+overflow: hidden;
 
 /* background: #330026; */
 display: block;
