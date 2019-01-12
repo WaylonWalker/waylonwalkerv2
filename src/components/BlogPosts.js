@@ -18,10 +18,10 @@ const BlogPosts = ({ posts, ...props }) => (
 
                 // console.log('i: ', i, ', post: ', post)
                 let status = true
-                console.log('post try: ', post['node'])
+                // console.log('post try: ', post['node'])
                 try {
                     status = post['node']['frontmatter']['status'].toLowerCase() !== 'draft'
-                    console.log('status:', status)
+                    // console.log('status:', status)
 
                 } catch (error) {
 

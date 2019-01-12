@@ -78,7 +78,7 @@ class BlogPostTemplate extends React.Component {
       // helmet,
     } = this.props
     // const PostContent = contentComponent || Content
-    console.log('cover: ', cover)
+    // console.log('cover: ', cover)
 
     return (
       <BlogPostWrapper>
