@@ -3,17 +3,20 @@ import colors from './colors'
 import back from '../../images/circuit_bubbles.png'
 
 const NavStyles = styled.nav`
+background: linear-gradient(160deg, rgba(0, 0, 0, .15), rgba(0,0,0,.04)), url(${back});
+box-shadow: 0rem 0rem 2rem ${colors.greys[3]};
+ul {
+max-width: 1200px;
+margin: auto;
 list-style-type: none;
 display: flex;
-background: linear-gradient(160deg, rgba(0, 0, 0, .15), rgba(0,0,0,.04)), url(${back});
 /* margin: 1rem; */
-margin: 0;
+/* margin: 0; */
 margin-bottom: 2rem;
 padding: 1rem;
 position: sticky;
 top: 0;
 z-index: 999;
-box-shadow: 0rem 0rem 2rem ${colors.greys[3]};
 a {
     color: ${colors['black']};
     text-decoration: none;
@@ -57,6 +60,7 @@ a.active {
     color: ${colors['purple'][0]}
 }
  
+}
 `
 
 export default NavStyles

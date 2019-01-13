@@ -14,10 +14,17 @@ export default class IndexPage extends React.Component {
     // console.log(data.allMarkdownRemark)
     return (
       <Layout>
-        <h1>About</h1>
-        <Image />
-        <h1>Blog</h1>
-        <BlogPosts posts={posts} />
+        <div id="content" style={{ maxWidth: '1200px', margin: 'auto' }}>
+          <section>
+            <h1>About</h1>
+            <Image />
+          </section>
+          <section>
+            <h1>Blog</h1>
+            <BlogPosts posts={posts} />
+
+          </section>
+        </div>
       </Layout>
 
     )

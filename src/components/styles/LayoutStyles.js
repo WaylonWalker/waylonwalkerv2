@@ -7,6 +7,9 @@ margin: 0;
 background: url(${back});
 background-size: 800px;
 
+section {
+    margin-bottom: 5rem;
+}
 
 a {
     color: #333;
