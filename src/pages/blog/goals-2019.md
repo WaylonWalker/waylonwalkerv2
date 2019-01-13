@@ -2,8 +2,8 @@
 templateKey: 'blog-post'
 path: '2019-goals'
 title: 2018 goals
-date: 2019-01-05
-status: draft
+date: 2019-01-12
+status: published
 description: 2019 goals
 cover: "./steve-halama-1275997-unsplash.jpg"
 ---
@@ -43,8 +43,7 @@ A **kanban** system is key to keeping it intentional.  I currently use a very si
 
 ### Leave a Legacy
 
-I want to leave behind a legacy that I can be proud of. I want to be known for bringing a positive attitude that 
-
+I want to leave behind a legacy that I can be proud of. I want to be known for bringing a positive attitude that inspires others to do their best work, enourage others, and work as a team.  It is in my blood to help as many people as I can.  I am in a unique role and have a unique skill set that allows me to do what would take some hours and days in minutes and hours.  I really enjoy helping these folks, but I know many of them are smart enough to do it on their own, they just do not know where to get started.  For this reason I really want to amp up my docs this year.  I want people to be able to answer 80% of their questions right from the docs before needing to come to me to get started.  I want this to be part of the legacy that I leave with my projects for the next person that encounters them.
 
 ---
 
@@ -64,9 +63,13 @@ I want to leave behind a legacy that I can be proud of. I want to be known for b
  
 ### Educational
 
+Last year I made monumental improvements to my web development while continuing to hone my backend skills.  This year I want to amp up my web front end skills even more. I am finding this to be an area that not very many people in my organization have and I can knock out some simple projects really quick and gain a lot of value.  Last year I started using **react** as a front end framework.  I want to double down learning the intricicies of how it works, and how to effectively layout a react project. I also want to keep upping my design skills.  As I do more layouts I find that they are easier and easier to layout, and as I am able to get them out faster it give me more time to hone in the design. Lastly I want to continue honing in my backend skills.  Working with data pipelines, Linux command line, the cloud, and database architecture.
+
+
 ---
 
 * Advanced React _dynamic web applications_
+* Refactoring UI _Rethinking how to layout data in logical ways_
 * Service Workies
 * AWS?? _we are moving to the cloud_
 * Continue Leveling up Linux Command Line
@@ -76,6 +79,8 @@ I want to leave behind a legacy that I can be proud of. I want to be known for b
 
 ## Personal
 
+At home I want to continue being a positive person.  Home is much harder to keep up a good attitude.  Mostly because I care more about my family and its harder to walk away and forget about a bad interaction with them.  I want to make sure that we keep up more positive interactions together as that will help everyone keep the positive attitude.  Lastly I would like to keep in touch with family better.  Rhiannon really loves a nice message to boost her day.  I would like to send her a few longer messages per week, and to one other family member at least once per week.  This can be in the form of a text, email, or hard copy letter in the mail.
+
 ---
 
 * be your best
@@ -83,6 +88,8 @@ I want to leave behind a legacy that I can be proud of. I want to be known for b
    * gratitude daily (300+)
 * 5 languages
 * letters to family
-* 
 
 ---
+
+
+**Bring it on 2019**  I am ready to take it on!
