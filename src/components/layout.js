@@ -32,7 +32,6 @@ const Layout = ({ children }) => (
           ]}
         >
 
-          <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js'></script>
           <html lang="en" />
         </Helmet>
         {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
