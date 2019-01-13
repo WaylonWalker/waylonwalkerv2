@@ -59,10 +59,10 @@ module.exports = {
         trackingId: "UA-113148616-1",
         exclude: ['/admin/**'],
       }
-    }
+    },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    'gatsby-plugin-offline',
   ],
 }
