@@ -4,10 +4,12 @@
 module.exports = {
   siteMetadata: {
     title: 'Waylon Walker',
+    siteUrl: 'https://waylonwalker.com'
   },
   plugins: [
     // `gatsby-plugin-sass`,
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -58,6 +60,7 @@ module.exports = {
         exclude: ['/admin/**'],
       }
     }
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
