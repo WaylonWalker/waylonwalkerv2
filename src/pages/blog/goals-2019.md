@@ -19,6 +19,8 @@ strong {
 
 _The year of intenionality_
 
+This is a follow up to my previous post [2018-retrospective](/blog/2018-retrospective/)
+
 ## professional
 
 This year I will become more productive, by intensionally working on a well thought out plan, learning the right technologies, and leave behind a positive legacy.
