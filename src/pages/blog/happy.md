@@ -1,7 +1,7 @@
 ---
 templateKey: 'blog-post'
 path: 'happy'
-title: Do More of What Makes You Happy
+title: Do More of What Brings You Joy
 date: 2019-01-01
 status: published
 description: happiness in the workplace
