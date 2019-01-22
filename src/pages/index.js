@@ -5,6 +5,12 @@ import Image from '../components/image'
 import Layout from '../components/layout'
 import BlogPosts from '../components/BlogPosts'
 
+const paragraphStyle = {
+  maxWidth: '800px',
+  margin: '2rem auto',
+  padding: '0 1rem',
+  lineHeight: '1.8rem'
+}
 
 
 export default class IndexPage extends React.Component {
@@ -17,13 +23,16 @@ export default class IndexPage extends React.Component {
         <div id="content" style={{ maxWidth: '1200px', margin: 'auto' }}>
           <section>
             <h1>About</h1>
-            <p style={{maxWidth: '800px', margin: '2rem auto', padding: '0 1rem'}}>
+            <p style={paragraphStyle}>
               I am a <strong>Husband</strong> and <strong>Father</strong> of 2 energetic Children.  They are the ones that get me out of bed in the morning.
-              Literally, no one beats <em>Wyatt</em> out of bed.  He is our crazy, never slowing down son, who his filled with <strong>Love</strong> and <strong>Compassion</strong>.  When someone is having a bad day, he is the first to notice and try to help in every way he can.  He is always trying to help <em>Ayla</em> throughout the day.  
+      Literally, no one beats <em>Wyatt</em> out of bed.  He is our crazy, never slowing down son, who his filled with <strong>Love</strong> and <strong>Compassion</strong>.  When someone is having a bad day, he is the first to notice and try to help in every way he can.  He is always trying to help <em>Ayla</em> throughout the day.  She is our little mommmy, she is <strong>caring</strong> and <strong>Sweet</strong>.  She does everything with her own style, if that what you call her sas, and never goes to bed before all of her babies are asleep first.  Rhiannon is my motivation.  She is <strong>organized</strong>, and <strong>creative</strong>.  Whether its organizing our house, or <a href='cuttinscrap.com'>cuttinscrap</a>she makes the perfect place for everything, and makes sure it looks beautiful.
            </p>
 
             <Image />
-            <p style={{padding: '2rem', margin: '2rem'}}>
+
+            <p style={paragraphStyle}>
+
+
 
             </p>
           </section>
