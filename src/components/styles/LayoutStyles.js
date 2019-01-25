@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import back from '../../images/circuit_bubbles.png'
+import back from '../../images/circuit_bubbles.jpg'
 
 const LayoutStyles = styled.div`
 padding: 0;
