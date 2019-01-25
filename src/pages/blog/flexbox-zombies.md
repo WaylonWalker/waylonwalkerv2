@@ -5,7 +5,7 @@ title: FlexBox
 date: 2018-04-22
 category: Blog
 tags: CSS, FrontEnd
-status: draft
+status: published
 description: none
 cover: "./flex.png"
 ---
@@ -83,7 +83,7 @@ cover: "./flex.png"
 I recently finished up the flexbox-zombies course to learn more about flexbox, and to become proficient with it.  I can truly say that this course has changed the way that I create layouts.  Flexbox is very intuitive now.  What this course does really well at is explaining the concepts and hitting you with a ton of examples that you can work through really quickly.
 
 
-![flexbox-zombies](/static/images/gifs/flexbox-zombies-12.gif)
+![flexbox-zombies](./flexbox-zombies-12.gif)
 > A clip from the final round against Dave
 
 
