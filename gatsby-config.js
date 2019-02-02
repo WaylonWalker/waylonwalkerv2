@@ -31,6 +31,7 @@ module.exports = {
       options: {
         plugins: [
           'gatsby-remark-copy-linked-files',
+          'gatsby-remark-social-cards',
           {
             resolve: 'gatsby-remark-images',
             options: {

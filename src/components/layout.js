@@ -27,8 +27,9 @@ const Layout = ({ children }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'twitter:card', content: "summary_large_image" },
+            { name: 'description', content: "Waylon Walker's personal website." },
+            { name: 'keywords', content: 'Personal Blog' },
           ]}
         >
 

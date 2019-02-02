@@ -6,6 +6,7 @@ padding: 0;
 margin: 0;
 background: url(${back});
 background-size: 800px;
+min-height: 100vh;
 
 section {
     margin-bottom: 5rem;
