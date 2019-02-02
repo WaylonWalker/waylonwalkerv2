@@ -144,6 +144,7 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
+  const twitterCover = post.frontmatter.twitterCover !== null ? post.frontmatter.twitterCover.childImageSharp.fixed : post.frontmatter.cover.childImageSharp.fixed
 
   return (
     <Layout description={post.frontmatter.description} title={post.frontmatter.title} keywords={post.frontmatter.tags} time={post.frontmatter.date} url={`https://cuttinscrap.com${post.frontmatter.path}`}>
@@ -155,7 +156,7 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         cover={post.frontmatter.cover.childImageSharp.fixed}
-        twitterCover={post.frontmatter.twitterCover.childImageSharp.fixed}
+        twitterCover={twitterCover}
         date={post.frontmatter.date}
       />
     </Layout>
