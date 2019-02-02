@@ -4,7 +4,7 @@ path: 'journey'
 title: It's not all about winning
 date: 2019-02-02
 status: published
-description: 
+description: This is my story into data science.
 cover: "./brett-patzke-725745-unsplash-cropped.jpg"
 ---
 _This is my story into data science._
