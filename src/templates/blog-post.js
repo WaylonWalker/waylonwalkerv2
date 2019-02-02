@@ -190,7 +190,7 @@ export const pageQuery = graphql`
         twitterCover {
           absolutePath
           childImageSharp {
-            fixed(width: 1200, height: 675) {
+            fixed(width: 800, height: 418) {
               ...GatsbyImageSharpFixed
             }
           }
