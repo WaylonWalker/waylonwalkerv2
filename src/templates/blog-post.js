@@ -78,9 +78,11 @@ class BlogPostTemplate extends React.Component {
       cover,
       date,
       // helmet,
+      twitterCover,
     } = this.props
     // const PostContent = contentComponent || Content
-    console.log('title: ', cover.src)
+
+    const twitterImage = twitterCover !== undefined ? twitterCover.src : cover.src
 
     return (
       <>
@@ -91,7 +93,7 @@ class BlogPostTemplate extends React.Component {
             { name: 'og:article:modified_time', content: date },
             { name: 'twitter:title', content: title },
             { name: 'description', content: description },
-            { name: 'twitter:image', content: 'https://www.waylonwalker.com' + cover.src },
+            { name: 'twitter:image', content: 'https://www.waylonwalker.com' + twitterImage },
             { name: 'twitter:description', content: description },
             { name: 'og:image', content: cover.src },
           ]}
@@ -153,6 +155,7 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         cover={post.frontmatter.cover.childImageSharp.fixed}
+        twitterCover={post.frontmatter.twitterCover.childImageSharp.fixed}
         date={post.frontmatter.date}
       />
     </Layout>
@@ -183,6 +186,14 @@ export const pageQuery = graphql`
         description
         tags
         path
+        twitterCover {
+          absolutePath
+          childImageSharp {
+            fixed(width: 1200, height: 675) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+         }
         cover {
           absolutePath
           childImageSharp {
