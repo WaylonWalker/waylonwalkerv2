@@ -27,9 +27,14 @@ const Layout = ({ children }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'twitter:card', content: "summary_large_image" },
+            { name: 'og:type', content: 'article' },
+            { name: 'og:title', content: 'Waylon Walker' },
+            { name: 'og:article:author', content: 'Waylon Walker' },
             { name: 'description', content: "Waylon Walker's personal website." },
             { name: 'keywords', content: 'Personal Blog' },
+            { name: 'twitter:creator', content: '@_waylonwalker' },
+            { name: 'twitter:card', content: "summary_large_image" },
+            { name: 'twitter:site', content: '@_waylonwalker' },
           ]}
         >
 

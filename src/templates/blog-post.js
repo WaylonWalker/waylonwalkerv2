@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 // import { kebabCase } from 'lodash'
@@ -48,9 +49,10 @@ p>img {
 }
 
 blockquote {
-  color: #666;
+  color: #777;
   border-left: 5px solid goldenrod;
   padding: 0 1rem;
+  font-size: 1.4rem;
 }
 
 hr {
@@ -78,39 +80,53 @@ class BlogPostTemplate extends React.Component {
       // helmet,
     } = this.props
     // const PostContent = contentComponent || Content
-    // console.log('cover: ', cover)
+    console.log('title: ', cover.src)
 
     return (
-      <BlogPostWrapper>
-        <BlogPostStyles>
-          <h1
-            style={{ textAlign: 'right', zIndex: 2 }}
-            className="blog title">
-            {title}
-          </h1>
-          <p
-            style={{ textAlign: 'right', zIndex: 2 }}>
-            {date}
-          </p>
-          <Img
-            style={{
-              position: 'absolute',
-              top: '0px',
-              left: '-0rem',
-              // zIndex: '-1',
-              opacity: '.6'
-            }}
-            fixed={cover} />
-          <p style={{ minHeight: '100px' }}>{description}</p>
-          <div ref={(el) => { this.markdownContainer = el }}
-            dangerouslySetInnerHTML={{ __html: content }} />
+      <>
+        <Helmet
+          meta={[
+            { name: 'og:title', content: title },
+            { name: 'og:article:published_time', content: date },
+            { name: 'og:article:modified_time', content: date },
+            { name: 'twitter:title', content: title },
+            { name: 'description', content: description },
+            { name: 'twitter:image', content: cover.src },
+            { name: 'og:image', content: cover.src },
+          ]}
 
-        </BlogPostStyles>
-        <p>
-          Check out my other
+        />
+        <BlogPostWrapper>
+          <BlogPostStyles>
+            <h1
+              style={{ textAlign: 'right', zIndex: 2 }}
+              className="blog title">
+              {title}
+            </h1>
+            <p
+              style={{ textAlign: 'right', zIndex: 2 }}>
+              {date}
+            </p>
+            <Img
+              style={{
+                position: 'absolute',
+                top: '0px',
+                left: '-0rem',
+                // zIndex: '-1',
+                opacity: '.6'
+              }}
+              fixed={cover} />
+            <p style={{ minHeight: '100px' }}>{description}</p>
+            <div ref={(el) => { this.markdownContainer = el }}
+              dangerouslySetInnerHTML={{ __html: content }} />
+
+          </BlogPostStyles>
+          <p>
+            Check out my other
           <Link to='/blog' > blogs</Link>
-        </p>
-      </BlogPostWrapper>
+          </p>
+        </BlogPostWrapper>
+      </>
     )
   }
 }
