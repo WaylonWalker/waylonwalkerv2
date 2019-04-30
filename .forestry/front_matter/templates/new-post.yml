@@ -35,3 +35,5 @@ fields:
   config:
     maxSize: 250
   label: Twitter Cover
+pages:
+- src/pages/blog/forestry-io.md
