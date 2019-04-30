@@ -1,0 +1,25 @@
+---
+label: New Post
+hide_body: false
+fields:
+- type: text
+  name: templateKey
+  label: templateKey
+- type: text
+  name: path
+  label: path
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+- type: text
+  name: status
+  label: status
+- type: text
+  name: description
+  label: description
+- type: file
+  name: cover
+  label: cover
