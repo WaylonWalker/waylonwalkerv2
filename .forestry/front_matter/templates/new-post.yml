@@ -30,3 +30,8 @@ fields:
 - type: file
   name: cover
   label: cover
+- name: twitter_cover
+  type: file
+  config:
+    maxSize: 250
+  label: Twitter Cover
