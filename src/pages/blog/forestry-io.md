@@ -2,17 +2,14 @@
 templateKey: blog-post
 path: test
 title: Forestry.io
-date: 2019-04-23T08:02:00Z
+date: 2019-04-23T08:02:00.000+00:00
 status: published
 description: Creating Posts from forestry.io.
 cover: "/static/forest.jpeg"
-twitter_cover: "/src/images/forest_twitter.jpeg"
+twitter_cover: "/static/forest_twitter.jpg"
 
 ---
 # Trying out forestry.io
-
-![](/picnic_table.jpg)
-
 
 ## Sorry Netlify
 
