@@ -10,11 +10,19 @@ module.exports = {
     // `gatsby-plugin-sass`,
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    'gatsby-remark-copy-linked-files',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+        {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/static`,
       },
     },
     {
@@ -31,14 +39,26 @@ module.exports = {
       options: {
         plugins: [
           'gatsby-remark-copy-linked-files',
-          'gatsby-remark-social-cards',
+          // 'gatsby-remark-social-cards',
           {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 590,
             }
+          },
+          {
+            resolve: "gatsby-remark-normalize-paths",
+            options: {
+              pathFields: ["image", "cover", "twitter_cover"],
+            },
           }
         ]
+      }
+    },
+    {
+      resolve: 'gatsby-remark-images',
+      options: {
+        maxWidth: 590,
       }
     },
 

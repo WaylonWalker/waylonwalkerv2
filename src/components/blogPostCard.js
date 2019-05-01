@@ -43,7 +43,7 @@ const BlogPostCard = ({ post, ...props }) => {
 
         <BlogPostCardStyles>
             <Link to={post['fields']['slug']}>
-                <Img style={{ opacity: '.6', position: 'relative', top: '-1rem', left: '-1rem' }} fixed={post['frontmatter']['cover']['childImageSharp']['fixed']} />
+                <Img style={{ opacity: '.6', position: 'relative', top: '-1rem', left: '-1rem' }} fixed={post.frontmatter.cover !== null ? post.frontmatter.cover.childImageSharp.fixed : ''} />
             </Link>
 
             <Link to={post['fields']['slug']}>
