@@ -13,6 +13,6 @@ twitter_cover: "/static/ray-hennessy-1553740-unsplash-1.jpg"
 
 a test post for testing
 
-![](/static/picnic_table.jpg)
+![](/picnic_table.jpg)
 
 > Chillin

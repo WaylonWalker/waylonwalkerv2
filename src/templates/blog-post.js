@@ -82,7 +82,7 @@ class BlogPostTemplate extends React.Component {
     } = this.props
     // const PostContent = contentComponent || Content
 
-    const twitterImage = twitterCover !== undefined ? twitterCover.src : cover.src
+    const twitterImage = twitterCover !== undefined ? twitter_cover.src : cover.src
 
     return (
       <>

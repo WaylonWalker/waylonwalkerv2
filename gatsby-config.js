@@ -21,7 +21,7 @@ module.exports = {
         {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
+        name: `static`,
         path: `${__dirname}/static`,
       },
     },
@@ -39,6 +39,7 @@ module.exports = {
       options: {
         plugins: [
           'gatsby-remark-copy-linked-files',
+          'gatsby-remark-static-images',
           // 'gatsby-remark-social-cards',
           {
             resolve: 'gatsby-remark-images',
@@ -55,13 +56,6 @@ module.exports = {
         ]
       }
     },
-    {
-      resolve: 'gatsby-remark-images',
-      options: {
-        maxWidth: 590,
-      }
-    },
-
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

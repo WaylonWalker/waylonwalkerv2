@@ -6,7 +6,7 @@ date: 2019-02-02
 status: published
 description: This is my story into data science.
 cover: "./brett-patzke-725745-unsplash-cropped.jpg"
-twitterCover: "./journey-twitter-card.jpg"
+twitter_cover: "./journey-twitter-card.jpg"
 ---
 _This is my story into data science._
 
