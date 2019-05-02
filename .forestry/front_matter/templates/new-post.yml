@@ -36,4 +36,5 @@ fields:
     maxSize: 250
   label: Twitter Cover
 pages:
+- src/pages/blog/testing.md
 - src/pages/blog/forestry-io.md
