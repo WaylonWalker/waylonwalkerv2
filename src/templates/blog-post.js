@@ -187,7 +187,7 @@ export const pageQuery = graphql`
         description
         tags
         path
-        twitterCover {
+        twitter_cover {
           absolutePath
           childImageSharp {
             fixed(width: 800, height: 418) {
