@@ -78,11 +78,11 @@ class BlogPostTemplate extends React.Component {
       cover,
       date,
       // helmet,
-      twitterCover,
+      twitter_cover,
     } = this.props
     // const PostContent = contentComponent || Content
 
-    const twitterImage = twitterCover !== undefined ? twitter_cover.src : cover.src
+    const twitterImage = twitter_cover !== undefined ? twitter_cover.src : cover.src
 
     return (
       <>
@@ -144,7 +144,7 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
-  const twitterCover = post.frontmatter.twitterCover !== null ? post.frontmatter.twitterCover.childImageSharp.fixed : post.frontmatter.cover !== null ? post.frontmatter.cover.childImageSharp.fixed : ''
+  const twitter_cover = post.frontmatter.twitter_cover !== null ? post.frontmatter.twitter_cover.childImageSharp.fixed : post.frontmatter.cover !== null ? post.frontmatter.cover.childImageSharp.fixed : ''
 
   return (
     <Layout description={post.frontmatter.description} title={post.frontmatter.title} keywords={post.frontmatter.tags} time={post.frontmatter.date} url={`https://cuttinscrap.com${post.frontmatter.path}`}>
@@ -156,7 +156,7 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         cover={post.frontmatter.cover !== null ? post.frontmatter.cover.childImageSharp.fixed : ''}
-        twitterCover={twitterCover}
+        twitter_cover={twitter_cover}
         date={post.frontmatter.date}
       />
     </Layout>
