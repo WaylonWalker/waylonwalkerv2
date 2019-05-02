@@ -9,10 +9,12 @@ cover: "/static/ray-hennessy-1553740-unsplash.jpg"
 twitter_cover: "/static/ray-hennessy-1553740-unsplash-1.jpg"
 
 ---
-# Testing
+# ![](/static/forest.jpeg)Testing
 
 a test post for testing
 
 ![](/picnic_table.jpg)
 
 > Chillin
+
+![](/IMG_20150125_141529366.jpg)
