@@ -9,7 +9,7 @@ cover: "/static/forest.jpeg"
 twitter_cover: "/static/forest_twitter.jpg"
 
 ---
-# ![](/forestry_image_3.gif)Trying out forestry.io
+# ying out forestry.io
 
 ## Sorry Netlify CMS
 
