@@ -9,7 +9,7 @@ cover: "/static/forest.jpeg"
 twitter_cover: "/static/forest_twitter.jpg"
 
 ---
-# ![](/static/forestry_image_3.gif)Trying out forestry.io
+# ![](/forestry_image_3.gif)Trying out forestry.io
 
 ## Sorry Netlify CMS
 
@@ -23,7 +23,7 @@ I have been playing with the netlify cms for a while now and it has been a decen
 
 Forestry.io has this amazing feature to create _create based on existing document_ 🤯.  This is great because it sets up the `.yml` config for me without error.  And If I really want to come back later to customize it more I have that option to.
 
-![](/static/Screenshot_20190503-165248.jpg)
+![](/Screenshot_20190503-165248.jpg)
 
 > By far my favorite feature is _create based on existing document_
 
@@ -31,13 +31,13 @@ Forestry.io has this amazing feature to create _create based on existing documen
 
 I have a use case for a photography site where the owner wants to be able to show off sample photos of each type of work she does.  I got it working in the netlify cms although it was not very user friendly.  Everything was nested in an accordian 😢.
 
-![](/static/Screenshot_20190507-144948.png)
+![](/Screenshot_20190507-144948.png)
 
 > Netlify multi image upload
 
 Next I looked into forrestry.io.  I pointed forestry.io at the existing git repo, created a template based on an existing document and **BAM**💥 a nice image grid appeared.
 
-![](/static/Screenshot_20190507-145044.png)
+![](/Screenshot_20190507-145044.png)
 
 > Forestry multi image gallery
 
@@ -45,13 +45,13 @@ Next I looked into forrestry.io.  I pointed forestry.io at the existing git repo
 
 The forestry.io editor is on point.  I can choose to edit using the WYSIWYG editor and still use markdown syntax!.  I can edit in markdown.  I can add images without fat-fingering the path and screwing up the whole post.  Its amazing!
 
-![](/static/2019-05-09 10-40-11_forestry.io.png)
+![](/2019-05-09 10-40-11_forestry.io.png)
 
 ## Images
 
 Image upload is on point!  Just click the add image button, it pops you into your media library, choose an image, or upload it and your off to the races 🏇.
 
-![](/static/forestry_image_3.gif)
+![](/forestry_image_3.gif)
 
 ## Im Sold 💲
 
