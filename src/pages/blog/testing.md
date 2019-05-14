@@ -3,7 +3,7 @@ templateKey: blog-post
 path: test
 title: Testing
 date: 2019-05-01T05:00:00Z
-status: Don't publish
+status: published
 description: This is a test
 cover: "/static/ray-hennessy-1553740-unsplash.jpg"
 twitter_cover: "/static/ray-hennessy-1553740-unsplash-1.jpg"
@@ -18,3 +18,5 @@ a test post for testing
 > Chillin
 
 ![](/IMG_20150125_141529366.jpg)
+
+![](/static/Screenshot_20190508-145353.png)
