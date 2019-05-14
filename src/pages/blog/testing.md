@@ -19,4 +19,4 @@ a test post for testing
 
 ![](/IMG_20150125_141529366.jpg)
 
-![](/static/Screenshot_20190508-145353.png)
+![](/images/Screenshot_20190508-145353.png)
