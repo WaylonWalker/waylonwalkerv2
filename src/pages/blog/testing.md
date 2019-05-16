@@ -3,7 +3,7 @@ templateKey: blog-post
 path: test
 title: Testing
 date: 2019-05-01T05:00:00Z
-status: published
+status: published-dont
 description: This is a test
 cover: "/static/ray-hennessy-1553740-unsplash.jpg"
 twitter_cover: "/static/ray-hennessy-1553740-unsplash-1.jpg"
