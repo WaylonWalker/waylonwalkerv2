@@ -10,11 +10,15 @@ sections:
   create: documents
   match: "**/*"
   new_doc_ext: md
+  templates:
+  - new-post
 - type: directory
   path: src/pages/gratitude
   label: gratitude
   create: all
   match: "**/*"
+  templates:
+  - gratitude
 upload_dir: static/images
 public_path: "/images"
 front_matter_path: ''
