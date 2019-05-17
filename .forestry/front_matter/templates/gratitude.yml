@@ -20,3 +20,5 @@ fields:
   default: now
   hidden: true
   description: Posted Date
+pages:
+- src/pages/gratitude/test.md
