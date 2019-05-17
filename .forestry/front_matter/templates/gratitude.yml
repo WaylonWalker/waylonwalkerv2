@@ -21,4 +21,5 @@ fields:
   hidden: false
   description: Posted Date
 pages:
+- src/pages/gratitude/gratitude-91-1.md
 - src/pages/gratitude/gratitude-91.md
