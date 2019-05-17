@@ -18,7 +18,7 @@ fields:
     display_utc: false
     export_format: ''
   default: now
-  hidden: true
+  hidden: false
   description: Posted Date
 pages:
 - src/pages/gratitude/gratitude-91.md
