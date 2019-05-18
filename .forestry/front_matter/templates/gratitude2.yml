@@ -18,3 +18,5 @@ fields:
   label: templateKey
   hidden: true
   default: gratitude
+pages:
+- src/pages/gratitude/good-morning.md
