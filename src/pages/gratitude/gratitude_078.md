@@ -1,7 +1,9 @@
-### Gratitude 078
+---
+title: Gratitude 078
+date: 2019-02-04
+templateKey: gratitude
 
-
-_Mon Feb  4 15:05:24 STD 2019_
+---
 
 #### Simplicity
 

@@ -1,7 +1,11 @@
-### Gratitude 085
+---
+title: Gratitude 085
+date: 2019-02-14
+templateKey: gratitude
+
+---
 
 
-_Thu Feb 14 14:58:26 STD 2019_
 
 #### Oh the Love
 

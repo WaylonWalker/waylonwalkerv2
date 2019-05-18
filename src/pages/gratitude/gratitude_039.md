@@ -1,5 +1,9 @@
-### Gratitude #039
-_03/14/2018 04:01:23 Waylon Walker_
+---
+title: Gratitude 039
+date: 2018-03-14
+templateKey: gratitude
+
+---
 
 #### Leis
 

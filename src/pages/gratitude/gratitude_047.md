@@ -1,5 +1,9 @@
-### Gratitude 047
-_April 21, 2018_
+---
+title: Gratitude 047
+date: 2018-04-21
+templateKey: gratitude
+
+---
 
 
 #### Bravery

@@ -1,6 +1,9 @@
-### Gratitude 081
+---
+title: Gratitude 081
+date: 2019-02-07
+templateKey: gratitude
 
-_Thu Feb  7 14:59:24 STD 2019_
+---
 
 #### Freedom to learn
 

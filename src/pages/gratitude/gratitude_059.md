@@ -1,6 +1,9 @@
-### Gratitude 059
+---
+title: Gratitude 059
+date: 2018-12-13
+templateKey: gratitude
 
-_2018-12-13_
+---
 
 #### Positivity
 

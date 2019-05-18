@@ -1,6 +1,9 @@
-### Gratitude 009
+---
+title: Gratitude 009
+date: 2017-12-21
+templateKey: gratitude
 
-_12/21/2017 10:40:39 PM Waylon Walker_
+---
 
 #### Good Doctors
 

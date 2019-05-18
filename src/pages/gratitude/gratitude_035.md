@@ -1,5 +1,9 @@
-### Gratitude #035
-_Fri Feb  2 20:59:54 CST 2018 Waylon Walker_
+---
+title: Gratitude 035
+date: 2018-02-01
+templateKey: gratitude
+
+---
 
 #### Peace
 

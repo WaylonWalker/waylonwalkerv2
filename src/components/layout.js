@@ -9,6 +9,7 @@ import Nav from './nav'
 import LayoutStyles from './styles/LayoutStyles'
 import './layout.css'
 // import './sass/main.sass'
+// import './styles/fonts/fonts.css'
 
 
 const Layout = ({ children }) => (

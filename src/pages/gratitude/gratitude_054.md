@@ -1,6 +1,9 @@
-### Gratitude 054
+---
+title: Gratitude 054
+date: 2018-11-13
+templateKey: gratitude
 
-_2018-11-13_
+---
 
 #### Hanging in there...
 

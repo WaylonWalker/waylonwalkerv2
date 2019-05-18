@@ -1,5 +1,9 @@
-### Gratitude 052
-_2018-11-09_
+---
+title: Gratitude 052
+date: 2018-11-09
+templateKey: gratitude
+
+---
 
 #### 6 years
 

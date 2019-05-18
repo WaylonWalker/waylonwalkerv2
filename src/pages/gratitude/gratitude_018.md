@@ -1,5 +1,9 @@
-### Gratitude #018
-_1/1/2018 8:35:39 PM Waylon Walker_
+---
+title: Gratitude 018
+date: 2019-01-01
+templateKey: gratitude
+
+---
 
 #### My First French Braid
 

@@ -1,7 +1,9 @@
-### Gratitude 076
+---
+title: Gratitude 077
+date: 2019-02-01
+templateKey: gratitude
 
-
-_Fri Feb  1 09:51:42 CST 2019_
+---
 
 
 #### Teacher Appreciation

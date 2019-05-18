@@ -1,5 +1,9 @@
-### Gratitude 075
+---
+title: Gratitude 075
+date: 2019-01-19
+templateKey: gratitude
 
+---
 
 #### Calm
 

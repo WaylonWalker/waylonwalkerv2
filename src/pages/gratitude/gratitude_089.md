@@ -1,6 +1,9 @@
-### Gratitude 089
+---
+title: Gratitude 089
+date: 2019-02-24
+templateKey: gratitude
 
-_Mon Feb 25 14:54:15 STD 2019_
+---
 
 #### Keeping Busy
 

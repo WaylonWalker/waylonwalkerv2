@@ -1,5 +1,9 @@
-### Gratitude #032
-_2018-01-29 06:38:29 Waylon Walker_
+---
+title: Gratitude 032
+date: 2018-01-29
+templateKey: gratitude
+
+---
 
 #### Get out and move
 

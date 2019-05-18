@@ -1,7 +1,9 @@
-### Gratitude 084
+---
+title: Gratitude 084
+date: 2019-02-11
+templateKey: gratitude
 
-
-_Mon Feb 11 15:06:40 STD 2019_
+---
 
 #### Reputation
 

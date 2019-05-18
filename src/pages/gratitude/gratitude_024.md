@@ -1,5 +1,9 @@
-### Gratitude #024
-_2018-01-11 05:48:19 Waylon Walker_
+---
+title: Gratitude 024
+date: 2018-01-11
+templateKey: gratitude
+
+---
 
 #### Support
 

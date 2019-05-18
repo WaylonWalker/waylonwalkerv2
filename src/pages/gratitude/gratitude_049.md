@@ -1,5 +1,9 @@
-### Gratitude 049
-_2018-08-30_
+---
+title: Gratitude 049
+date: 2018-08-30
+templateKey: gratitude
+
+---
 
 #### Support
 

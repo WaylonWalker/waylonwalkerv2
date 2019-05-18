@@ -1,6 +1,9 @@
-### Gratitude 071
+---
+title: Gratitude 071
+date: 2019-01-12
+templateKey: gratitude
 
-_Sat Jan 12 09:40:49 CST 2019_
+---
 
 
 #### The Right Words

@@ -1,5 +1,9 @@
-### Gratitude 049
-_2018-10-18_
+---
+title: Gratitude 049
+date: 2018-10-18
+templateKey: gratitude
+
+---
 
 #### Happy Birthday Ayla
 

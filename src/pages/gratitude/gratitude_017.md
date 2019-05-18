@@ -1,5 +1,9 @@
-### Gratitude #017
-_1/1/2018 10:15:26 AM Waylon Walker_
+---
+title: Gratitude 017
+date: 2018-01-01
+templateKey: gratitude
+
+---
 
 #### Breaks
 

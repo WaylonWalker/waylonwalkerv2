@@ -1,6 +1,9 @@
-### Gratitude 057
+---
+title: Gratitude 057
+date: 2018-12-01
+templateKey: gratitude
 
-_2018-12-01_
+---
 
 #### Feeling Good
 

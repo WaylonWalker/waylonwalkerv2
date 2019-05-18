@@ -1,6 +1,9 @@
-### Gratitude 063
+---
+title: Gratitude 063
+date: 2019-01-02
+templateKey: gratitude
 
-_2019-01-02_
+---
 
 #### Shaggy No More
 

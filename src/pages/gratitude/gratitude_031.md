@@ -1,5 +1,9 @@
-### Gratitude #031
-_2018-01-26 22:13:39 Waylon Walker_
+---
+title: Gratitude 031
+date: 2018-01-26
+templateKey: gratitude
+
+---
 
 #### Pick me up
 

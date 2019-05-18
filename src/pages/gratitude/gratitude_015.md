@@ -1,5 +1,9 @@
-### Gratitude #015
-_12/29/2017 11:20:11 PM Waylon Walker_
+---
+title: Gratitude 015
+date: 2017-12-29
+templateKey: gratitude
+
+---
 
 #### Special Moments
 

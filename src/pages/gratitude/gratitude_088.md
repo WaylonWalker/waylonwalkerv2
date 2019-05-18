@@ -1,4 +1,9 @@
-### Gratitude 088
+---
+title: Gratitude 088
+date: 2019-02-17
+templateKey: gratitude
+
+---
 
 #### Helping each other
 

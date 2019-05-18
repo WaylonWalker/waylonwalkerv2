@@ -40,7 +40,7 @@ exports.createPages = ({ actions, graphql }) => {
 
         posts.forEach(edge => {
             const id = edge.node.id
-            if (edge.node.frontmatter.templateKey) {
+            if (edge.node.frontmatter.templateKey !== "gratitude" && edge.node.frontmatter.templateKey !== null) {
 
                 createPage({
                     path: edge.node.fields.slug,

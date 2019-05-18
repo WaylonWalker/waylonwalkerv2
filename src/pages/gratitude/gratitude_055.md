@@ -1,6 +1,9 @@
-### Gratitude 055
+---
+title: Gratitude 055
+date: 2018-11-19
+templateKey: gratitude
 
-_2018-11-19_
+---
 
 #### Signs of Improvement
 

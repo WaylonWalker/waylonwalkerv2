@@ -1,5 +1,9 @@
-### Gratitude 051
-_2018-11-05_
+---
+title: Gratitude 051
+date: 2018-11-05
+templateKey: gratitude
+
+---
 
 #### Talking
 

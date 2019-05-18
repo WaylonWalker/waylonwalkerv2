@@ -1,6 +1,9 @@
+---
+title: Gratitude 022
+date: 2018-01-08
+templateKey: gratitude
 
-### Gratitude #022
-_2018-01-08 20:35:17 Waylon Walker_
+---
 
 
 #### Kid Time

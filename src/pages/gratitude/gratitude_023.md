@@ -1,6 +1,9 @@
+---
+title: Gratitude 023
+date: 2018-01-10
+templateKey: gratitude
 
-### Gratitude #023
-_2018-01-10 05:39:40 Waylon Walker_
+---
 
 
 #### Excitement

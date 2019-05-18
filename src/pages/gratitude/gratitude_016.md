@@ -1,5 +1,9 @@
-### Gratitude #016
-_12/31/2017 10:29:28 AM Waylon Walker_
+---
+title: Gratitude 016
+date: 2017-12-21
+templateKey: gratitude
+
+---
 
 #### One on One time
 

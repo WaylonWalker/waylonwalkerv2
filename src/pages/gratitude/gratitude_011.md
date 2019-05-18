@@ -1,5 +1,9 @@
-### Gratitude #011
-_12/23/2017 4:37:55 PM Waylon Walker_
+---
+title: Gratitude 011
+date: 2017-12-23
+templateKey: gratitude
+
+---
 
 ####  Happy Holidays Round 1
 

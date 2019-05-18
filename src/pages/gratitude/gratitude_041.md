@@ -1,5 +1,9 @@
-### Gratitude #0040
-_2018-03-24 15:23:52 Waylon Walker_
+---
+title: Gratitude 0040
+date: 2018-03-24
+templateKey: gratitude
+
+---
 
 #### I slept in
 

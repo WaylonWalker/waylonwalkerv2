@@ -1,7 +1,9 @@
-### Gratitude 079
+---
+title: Gratitude 079
+date: 2019-02-05
+templateKey: gratitude
 
-
-_Tue Feb  5 08:14:57 STD 2019_
+---
 
 #### Learning Resources
 

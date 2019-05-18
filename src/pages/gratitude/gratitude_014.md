@@ -1,5 +1,9 @@
-### Gratitude #014
-_12/28/2017 10:31:41 PM Waylon Walker_
+---
+title: Gratitude 014
+date: 2017-12-29
+templateKey: gratitude
+
+---
 
 #### Time Off
 

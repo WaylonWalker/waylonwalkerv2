@@ -1,5 +1,9 @@
-### Gratitude #034
-_2018-01-29 18:59:01 Waylon Walker_
+---
+title: Gratitude 034
+date: 2018-01-29
+templateKey: gratitude
+
+---
 
 #### Communication
 

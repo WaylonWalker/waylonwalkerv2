@@ -1,5 +1,9 @@
-### Gratitude #037
-_2018-02-04 15:58:48 Waylon Walker_
+---
+title: Gratitude 037
+date: 2018-02-04
+templateKey: gratitude
+
+---
 
 #### Kid Smarts
 

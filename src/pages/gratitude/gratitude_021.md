@@ -1,5 +1,9 @@
-### Gratitude #022
-_2018-01-07 09:25:53 Waylon Walker_
+---
+title: Gratitude 022
+date: 2018-01-07
+templateKey: gratitude
+
+---
 
 
 #### Adult Time

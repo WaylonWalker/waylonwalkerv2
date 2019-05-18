@@ -1,6 +1,9 @@
-### Gratitude 056
+---
+title: Gratitude 056
+date: 2018-11-19
+templateKey: gratitude
 
-_2018-11-19_
+---
 
 #### Reflection
 

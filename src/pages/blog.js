@@ -66,7 +66,7 @@ query BlogQuery {
             }
           }
 
-          date(formatString: "MMMM DD, YYYY")
+          date
         }
       }
     }

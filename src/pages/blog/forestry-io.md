@@ -9,7 +9,7 @@ cover: "/static/forest.jpeg"
 twitter_cover: "/static/forest_twitter.jpg"
 
 ---
-# ying out forestry.io
+# Testing out forestry.io
 
 ## Sorry Netlify CMS
 
@@ -55,7 +55,9 @@ Image upload is on point!  Just click the add image button, it pops you into you
 
 ## Im Sold 💲
 
-At this point I am sold.  Forestry.io is missing the nice side by side preview that netlify cms has, but honestly I have struggled to set that up to.  If I am being honest I just play front end developer on the side and setting up a CMS is not something that I plan on doing every day.  I am perfectly happy having some gui tools like forestry.io setup all of the configuration for me with just a few clicks.
+At this point I am sold. This blog is now written from Forrestry, and I love it.  It's great when I am away from my editor to make some progress on the go.  If I decide I dont like it in 6 months, I can move on. All of my content is still in markdown on the git repo.
+
+ Forestry.io is missing the nice side by side preview that netlify cms has, but honestly I have struggled to set that up to.  If I am being honest I just play front end developer on the side and setting up a CMS is not something that I plan on doing every day.  I am perfectly happy having some gui tools like forestry.io setup all of the configuration for me with just a few clicks.
 
 ## Bonus
 

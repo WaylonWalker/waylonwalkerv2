@@ -1,5 +1,9 @@
-### Gratitude #026
-_2018-01-21 09:31:40 Waylon Walker_
+---
+title: Gratitude 026
+date: 2018-01-21
+templateKey: gratitude
+
+---
 
 #### Calm
 

@@ -1,6 +1,9 @@
-### Gratitude 067
+---
+title: Gratitude 067
+date: 2019-01-08
+templateKey: gratitude
 
-_Tue Jan  8 15:49:08 STD 2019_
+---
 
 ####  Recognition from unexpected places
 

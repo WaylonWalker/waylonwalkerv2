@@ -1,5 +1,9 @@
-### Gratitude #027
-_2018-01-22 06:01:04 Waylon Walker_
+---
+title: Gratitude 027
+date: 2018-01-22
+templateKey: gratitude
+
+---
 
 #### Encouragement
 

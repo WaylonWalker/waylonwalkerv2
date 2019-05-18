@@ -1,6 +1,9 @@
-### Gratitude 069
+---
+title: Gratitude 069
+date: 2019-01-10
+templateKey: gratitude
 
-_Thu Jan 10 20:47:52 STD 2019_
+---
 
 #### New Devices
 

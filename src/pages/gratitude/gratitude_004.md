@@ -1,8 +1,9 @@
-<style>@import url("https://goo.gl/RrPQm5")</style>
+---
+title: Gratitude Journal 004
+date: 2017-12-16
+templateKey: gratitude
 
-
-### Gratitude Journal # 004
-_12/16/2017 10:52:23 AM Waylon Walker_
+---
 
 #### Sleep
 

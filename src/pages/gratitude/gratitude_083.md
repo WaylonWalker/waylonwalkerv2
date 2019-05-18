@@ -1,7 +1,9 @@
-### Gratitude 083
+---
+title: Gratitude 083
+date: 2019-02-10
+templateKey: gratitude
 
-
-_Sun Feb 10 16:18:33 STD 2019_
+---
 
 
 #### Manners

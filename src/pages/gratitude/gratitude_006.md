@@ -1,5 +1,9 @@
-### Gratitude Journal #006
-_12/18/2017 10:44:14 AM Waylon Walker_
+---
+title: Gratitude Journal 006
+date: 2017-12-18
+templateKey: gratitude
+
+---
 
 #### Restart
 

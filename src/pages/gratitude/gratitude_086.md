@@ -1,4 +1,9 @@
-### Gratitude 086
+---
+title: Gratitude 086
+date: 2019-02-15
+templateKey: gratitude
+
+---
 
 
 #### Getting out of the house

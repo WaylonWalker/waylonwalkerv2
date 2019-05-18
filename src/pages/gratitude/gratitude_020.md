@@ -1,5 +1,9 @@
-### Gratitude #020
-_1/3/2018 10:37:36 PM Waylon Walker_
+---
+title: Gratitude 020
+date: 2019-01-03
+templateKey: gratitude
+
+---
 
 
 #### Good Tunes

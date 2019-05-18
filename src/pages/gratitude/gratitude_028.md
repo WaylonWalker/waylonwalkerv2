@@ -1,5 +1,9 @@
-### Gratitude #028
-_2018-01-23 06:53:18 Waylon Walker_
+---
+title: Gratitude 028
+date: 2018-01-23
+templateKey: gratitude
+
+---
 
 #### Time
 

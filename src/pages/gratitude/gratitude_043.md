@@ -1,5 +1,9 @@
-### Gratitude #043
-_2018-03-30 Waylon Walker_
+---
+title: Gratitude 043
+date: 2018-03-30
+templateKey: gratitude
+
+---
 
 ####  Prep and Reflect
 

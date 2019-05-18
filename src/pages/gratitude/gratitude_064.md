@@ -1,6 +1,9 @@
-### Gratitude 64
+---
+title: Gratitude 64
+date: 2019-01-03
+templateKey: gratitude
 
-_Thu Jan  3 11:32:46 STD 2019_
+---
 
 #### Good Moods
 

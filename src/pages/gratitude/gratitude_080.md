@@ -1,7 +1,9 @@
-### Gratitude 080
+---
+title: Gratitude 080
+date: 2019-02-06
+templateKey: gratitude
 
-
-_Wed Feb  6 15:05:18 STD 2019_
+---
 
 #### Fun
 

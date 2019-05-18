@@ -1,4 +1,9 @@
-### Gratitude 087
+---
+title: Gratitude 087
+date: 2019-02-16
+templateKey: gratitude
+
+---
 
 
 #### Community

@@ -1,6 +1,9 @@
-### Gratitude 058
+---
+title: Gratitude 058
+date: 2018-12-12
+templateKey: gratitude
 
-_2018-12-0122_
+---
 
 #### Pick me up when I Fall
 

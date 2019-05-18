@@ -1,5 +1,9 @@
-### Gratitude #036
-_2018-02-03 12:56:11 Waylon Walker_
+---
+title: Gratitude 036
+date: 2018-02-03
+templateKey: gratitude
+
+---
 
 
 #### Special Time

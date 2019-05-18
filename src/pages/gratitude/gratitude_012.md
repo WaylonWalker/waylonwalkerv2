@@ -1,5 +1,9 @@
-### Gratitude #012
-_12/25/2017 12:40:22 AM Waylon Walker_
+---
+title: Gratitude 012
+date: 2017-12-25
+templateKey: gratitude
+
+---
 
 
 #### The Good Days

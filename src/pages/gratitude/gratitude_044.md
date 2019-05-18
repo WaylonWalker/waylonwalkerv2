@@ -1,5 +1,9 @@
-### Gratitude 044
-_April 13, 2018_
+---
+title: Gratitude 044
+date: 2018-04-13
+templateKey: gratitude
+
+---
 
 #### Running
 

@@ -1,6 +1,9 @@
-### Gratitude 061
+---
+title: Gratitude 061
+date: 2018-12-19
+templateKey: gratitude
 
-_2018-12-19_
+---
 
 #### Inspirational Work
 

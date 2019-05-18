@@ -1,6 +1,9 @@
-### Gratitude Journal #005
+---
+title: Gratitude Journal 005
+date: 2017-12-17
+templateKey: gratitude
 
-_12/17/2017 10:12:57 PM Waylon Walker_
+---
 
 #### Family
 

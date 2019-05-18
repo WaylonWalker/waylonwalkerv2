@@ -1,5 +1,9 @@
-### Gratitude #013
-_12/26/2017 9:13:51 AM Waylon Walker_
+---
+title: Gratitude 013
+date: 2017-12-26
+templateKey: gratitude
+
+---
 
 #### Long Days, Good Times
 

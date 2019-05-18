@@ -1,5 +1,9 @@
-### Gratitude #0040
-_2018-03-18 11:05:51 Waylon Walker_
+---
+title: Gratitude 0040
+date: 2018-03-18
+templateKey: gratitude
+
+---
 
 #### No More Credit Cards
 

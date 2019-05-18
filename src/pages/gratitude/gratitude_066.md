@@ -1,7 +1,9 @@
-### Gratitude 066
+---
+title: Gratitude 066
+date: 2019-01-05
+templateKey: gratitude
 
-
-_Sat Jan  5 20:09:41 STD 2019_
+---
 
 #### Great Friends
 

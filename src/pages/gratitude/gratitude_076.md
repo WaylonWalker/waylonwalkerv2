@@ -1,6 +1,9 @@
-### Gratitude 076
+---
+title: Gratitude 076
+date: 2019-01-21
+templateKey: gratitude
 
-_Mon Jan 21 10:39:18 STD 2019_
+---
 
 #### Team Work
 

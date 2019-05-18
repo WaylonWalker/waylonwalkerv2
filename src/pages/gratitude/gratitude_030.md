@@ -1,5 +1,9 @@
-### Gratitude #030
-_2018-01-25 10:05:21 Waylon Walker_
+---
+title: Gratitude 030
+date: 2018-01-25
+templateKey: gratitude
+
+---
 
 #### Great Friends
 

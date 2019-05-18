@@ -1,5 +1,9 @@
-### Gratitude #042
-_2018-03-26 Waylon Walker_
+---
+title: Gratitude 042
+date: 2018-03-26
+templateKey: gratitude
+
+---
 
 #### Happy Birthday
 

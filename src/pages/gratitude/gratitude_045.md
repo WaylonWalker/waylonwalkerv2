@@ -1,5 +1,9 @@
-### Gratitude 045
-_April 14, 2018_
+---
+title: Gratitude 045
+date: 2018-04-14
+templateKey: gratitude
+
+---
 
 #### Time Out
 

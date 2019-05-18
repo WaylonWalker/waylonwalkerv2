@@ -1,5 +1,9 @@
-### Gratitude #010
-_12/22/2017 6:39:21 AM Waylon Walker_
+---
+title: Gratitude 010
+date: 2017-12-22
+templateKey: gratitude
+
+---
 
 #### Strong Relationships
 

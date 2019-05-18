@@ -1,7 +1,9 @@
-<style>@import url("https://goo.gl/RrPQm5")</style>
+---
+title: Gratitude Journal 003
+date: 2017-12-15
+templateKey: gratitude
 
-### Gratitude Journal # 003
-_12/15/2017 6:34:19 AM Waylon Walker_
+---
 
 #### Community
 

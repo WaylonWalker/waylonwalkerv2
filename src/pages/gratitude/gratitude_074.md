@@ -1,6 +1,9 @@
-### Gratitude 074
+---
+title: Gratitude 074
+date: 2019-01-18
+templateKey: gratitude
 
-_January 18 6:36AM_
+---
 
 #### Anti-Imposter
 

@@ -1,6 +1,9 @@
-### Gratitude 068
+---
+title: Gratitude 068
+templateKey: gratitude
+date: 2019-01-09
 
-_Wed Jan  9 08:45:36 CST 2019_
+---
 
 #### Amazing People
 

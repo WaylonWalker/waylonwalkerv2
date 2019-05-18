@@ -1,5 +1,9 @@
-### Gratitude 048
-_April 22, 2018_
+---
+title: Gratitude 048
+date: 2018-04-22
+templateKey: gratitude
+
+---
 
 
 #### Playdate

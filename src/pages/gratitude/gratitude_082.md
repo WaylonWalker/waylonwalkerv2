@@ -1,7 +1,9 @@
-### Gratitude 082
+---
+title: Gratitude 082
+date: 2019-02-08
+templateKey: gratitude
 
-
-_Fri Feb  8 15:00:22 STD 2019_
+---
 
 #### Working Remotely
 

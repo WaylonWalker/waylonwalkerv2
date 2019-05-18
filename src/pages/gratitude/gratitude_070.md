@@ -1,7 +1,9 @@
-### Gratitude 070
+---
+title: Gratitude 070
+date: 2019-01-11
+templateKey: gratitude
 
-
-_Fri Jan 11 08:23:59 CST 2019_
+---
 
 
 #### Great Morning

@@ -1,5 +1,9 @@
-### Gratitude #019
-_1/2/2018 10:39:33 AM Waylon Walker_
+---
+title: Gratitude 019
+date: 2018-01-02
+templateKey: gratitude
+
+---
 
 #### My Parter
 

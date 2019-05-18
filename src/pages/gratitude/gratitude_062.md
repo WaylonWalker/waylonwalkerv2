@@ -1,6 +1,9 @@
-### Gratitude 062
+---
+title: Gratitude 062
+date: 2019-01-01
+templateKey: gratitude
 
-_2019-01-01_
+---
 
 #### Productive Break
 

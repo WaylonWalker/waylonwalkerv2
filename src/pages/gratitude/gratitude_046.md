@@ -1,5 +1,9 @@
-### Gratitude 046
-_April 17, 2018_
+---
+title: Gratitude 046
+date: 2018-04-17
+templateKey: gratitude
+
+---
 
 #### Kid Help
 

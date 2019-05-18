@@ -1,5 +1,9 @@
-### Gratitude 053
-_2018-11-11_
+---
+title: Gratitude 053
+date: 2018-11-11
+templateKey: gratitude
+
+---
 
 #### She is a RockStar
 

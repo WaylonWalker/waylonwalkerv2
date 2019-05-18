@@ -1,7 +1,9 @@
-### Gratitude 073
+---
+title: gratitude 073
+date: 2019-01-15
+templateKey: gratitude
 
-
-_Tue Jan 15 14:52:33 CST 2019_
+---
 
 #### Great Friends
 

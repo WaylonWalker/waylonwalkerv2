@@ -1,5 +1,9 @@
-### Gratitude Journal #008
-_12/20/2017 8:27 Waylon Walker_
+---
+title: Gratitude Journal 008
+date: 2017-12-20
+templateKey: gratitude
+
+---
 
 #### Strength
 

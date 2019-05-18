@@ -1,6 +1,9 @@
-### Gratitude 065
+---
+title: Gratitude 065
+date: 2019-01-04
+templateKey: gratitude
 
-_Fri Jan  4 22:08:36 STD 2019_
+---
 
 #### We played hard
 
