@@ -1,6 +1,5 @@
 ---
 title: Gratitude 072
-date: Mon Jan 14 06:06:21 STD 2019
 templateKey: gratitude
 date: 2019-01-14
 
