@@ -20,7 +20,7 @@ fields:
   default: now
   hidden: false
   description: Posted Date
-- name: templatekey
+- name: templateKey
   type: text
   config:
     required: false
