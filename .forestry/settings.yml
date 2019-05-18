@@ -19,7 +19,6 @@ sections:
   match: "**/*"
   templates:
   - gratitude2
-  - gratitude
 upload_dir: static/images
 public_path: "/images"
 front_matter_path: ''
