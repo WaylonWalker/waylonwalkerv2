@@ -26,9 +26,7 @@ const DateStyle = styled.div`
 
     position: absolute;
     bottom: -4.8rem;
-    /* font-family: sans-serif; */
-    font-family: "GallowTree";
-
+    font-family: sans-serif;
     font-weight: 700;
     color: rgba(0,0,0,.7);
   }
