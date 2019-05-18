@@ -8,6 +8,13 @@ fields:
 - type: datetime
   name: date
   label: date
+  default: now
+  config:
+    required: true
+    date_format: YYYY-MM-DD
+    export_format: ''
 - type: text
   name: templateKey
   label: templateKey
+  hidden: true
+  default: gratitude
