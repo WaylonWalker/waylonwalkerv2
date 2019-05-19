@@ -1,10 +1,7 @@
----
-title: Gratitude Journal 002
-date: 2017-12-15
-templateKey: gratitude
+--- 
+...
 
 ---
-
 #### Persistence
 
 Persistence is one of the great talents of my wife.  Today I am grateful for her persistence because she has the medicine that she needs for her MRI today.  Yesterday there was a struggle to get the doctors to get her prescription submitted to the pharmacy, and after calling many times she got it done within the last hour of the pharmacies operating hours.  Seriously who can get a prescription filled after 7:00PM!  I am just glad that she is able to have the medicine that she needs today.  It will make the procedure much easier.
