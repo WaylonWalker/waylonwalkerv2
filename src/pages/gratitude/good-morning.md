@@ -1,7 +1,5 @@
 --- 
-title: Gratitude 91
-date: 2019-05-18
-templateKey: gratitude
+...
 
 ---
 ### My own Pace
