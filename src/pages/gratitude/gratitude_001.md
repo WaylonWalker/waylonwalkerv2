@@ -1,10 +1,7 @@
----
-title: Gratitude Journal 001
-date: 2017-12-13
-templateKey: gratitude
+--- 
+...
 
 ---
-
 #### Initial post
 
 Thank You for getting up with me this morning.  I really appreciate all of the extra help.  It means a lot to have my life partner there with me in the morning helping with the kids.
