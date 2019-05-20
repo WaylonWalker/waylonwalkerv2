@@ -19,4 +19,5 @@ fields:
   hidden: true
   default: gratitude
 pages:
+- src/pages/gratitude/gratitude-093.md
 - src/pages/gratitude/good-morning.md
