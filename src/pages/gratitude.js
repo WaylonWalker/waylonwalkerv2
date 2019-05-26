@@ -32,7 +32,7 @@ const DateStyle = styled.div`
   }
   .day {
     font-size: 2rem;
-    position: absolute;jj
+    position: absolute;
     left: -1rem;
     font-weight: 700;
     font-family: sans-serif;
