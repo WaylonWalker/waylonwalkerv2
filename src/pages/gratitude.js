@@ -107,7 +107,6 @@ export const pageQuery = graphql`
           html
           frontmatter {
             title
-            _PARENT
             templateKey
             path
             date
