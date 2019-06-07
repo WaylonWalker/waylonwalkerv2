@@ -131,6 +131,10 @@ _Solution #1_
 
 It is common that I just forget to switch from the master/develop branch into my feature branch before starting work. You will first need to look at your `git log` and determine how many commits to go back or a git hash to go back to.
 
+
+**CAUTION** `git reset --hard` will kill changes and you will never get them back if you did not first put them somewhere.  I myself have been burned by this command, there is no recovering from a **hard** reset.
+
+
     git log
     # note commit hash or ~n to go back to
     git branch feature_branch
@@ -149,3 +153,30 @@ Sometimes when juggling many different features we are in the middle of several 
     git reset --hard HEAD ~3
     # or
     git reset --hard a1b2c4d4
+    
+
+## Another feature was complete before mine
+_pitfall #3_
+
+This can be a big matter of preference of how to deal with this just google `merge` vs `rebase`.  For this particular pitfall I prefer to **`rebase`**.  When you look at the git log and commit history it will appear as if you made your changes after everyone else made theirs.  I do this to clean up the PR and make it easier for the approver to read.  There will be less merge commits, and less history to try to understand.
+
+**Before pushing to the remote repository**
+
+```
+git fetch --all
+# or
+git checkout develop
+git pull
+git checkout feature_branch
+# then
+git rebase develop
+```
+
+**if its your first rodeo** or you are unsure how the rebase will go you can create a safty branch.
+
+```
+git branch saftey_feature_branch
+git fetch --all
+git rebase develop
+git branch -D safety_feature_branch # deletes safety_feature_branch
+```
