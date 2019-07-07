@@ -14,52 +14,51 @@ twitter_cover: "/images/alt b.jpg"
 This is by var the most useful set of keybindings that I use in vscode and is directly replicated from my tmux configuration.  It allows me to quickly jump up, down, left, right.  Do note that if you use vertical splits it does not work as well as tmux 😢.
 
 ![navigating vscode with keyboard shortcuts](/images/alt \[hjkl\].gif "Alt+[hjkl]")
-```
-[
-        {
-            "key": "alt+j",
-            "command": "workbench.action.terminal.focus",
-            "when": "editorFocus"
-        },
-    
-        {
-            "key": "alt+k",
-            "command": "workbench.action.focusFirstEditorGroup",
-            "when": "terminalFocus"
-        },
-        {
-            "key": "alt+k",
-            "command": "workbench.action.focusAboveGroup",
-            "when": "editorFocus"
-        },
-        {
-            "key": "alt+l",
-            "command": "-toggleFindInSelection",
-            "when": "editorFocus"
-        },
-        {
-            "key": "alt+l",
-            "command": "workbench.action.focusNextGroup",
-            "when": "editorFocus"
-        },
-        {
-            "key": "alt+h",
-            "command": "workbench.action.focusPreviousGroup",
-            "when": "editorFocus"
-        },
-    
-        {
-            "key": "alt+l",
-            "command": "workbench.action.terminal.focusNextPane",
-            "when": "terminalFocus"
-        },
-        {
-            "key": "alt+h",
-            "command": "workbench.action.terminal.focusPreviousPane",
-            "when": "terminalFocus"
-        },
-]
-```
+
+    [
+            {
+                "key": "alt+j",
+                "command": "workbench.action.terminal.focus",
+                "when": "editorFocus"
+            },
+        
+            {
+                "key": "alt+k",
+                "command": "workbench.action.focusFirstEditorGroup",
+                "when": "terminalFocus"
+            },
+            {
+                "key": "alt+k",
+                "command": "workbench.action.focusAboveGroup",
+                "when": "editorFocus"
+            },
+            {
+                "key": "alt+l",
+                "command": "-toggleFindInSelection",
+                "when": "editorFocus"
+            },
+            {
+                "key": "alt+l",
+                "command": "workbench.action.focusNextGroup",
+                "when": "editorFocus"
+            },
+            {
+                "key": "alt+h",
+                "command": "workbench.action.focusPreviousGroup",
+                "when": "editorFocus"
+            },
+        
+            {
+                "key": "alt+l",
+                "command": "workbench.action.terminal.focusNextPane",
+                "when": "terminalFocus"
+            },
+            {
+                "key": "alt+h",
+                "command": "workbench.action.terminal.focusPreviousPane",
+                "when": "terminalFocus"
+            },
+    ]
 
 ## Alt+b
 
@@ -117,23 +116,36 @@ I am often using this one when I have a process running that I watch like gatsby
 
 ![](/images/alt \[cnp\].gif)
 
+    [
+        {
+            "key": "alt+c",
+            "command": "workbench.action.terminal.new",
+            "when": "terminalFocus"
+        },
+        {
+            "key": "alt+n",
+            "command": "workbench.action.terminal.focusNext",
+            "when": "terminalFocus"
+        },
+    
+        {
+            "key": "alt+p",
+            "command": "workbench.action.terminal.focusPrevious",
+            "when": "terminalFocus"
+        },
+    ]
+
+## Alt+z
+
+This last one doesnt work as well as I would like but it sure does get the job done.  It Zooms (z) into the terminal from anywhere in vscode.  I can be in my editor and zoom out of the terminal to make more room, or zoom in to see what happened from my last edit.
+
+![](/images/alt z.gif)
+
 ```
 [
     {
-        "key": "alt+c",
-        "command": "workbench.action.terminal.new",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "alt+n",
-        "command": "workbench.action.terminal.focusNext",
-        "when": "terminalFocus"
-    },
-
-    {
-        "key": "alt+p",
-        "command": "workbench.action.terminal.focusPrevious",
-        "when": "terminalFocus"
+        "key": "alt+z",
+        "command": "workbench.action.toggleMaximizedPanel",
     },
 ]
 ```
