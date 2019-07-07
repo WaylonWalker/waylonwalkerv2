@@ -14,7 +14,8 @@ twitter_cover: "/images/alt b.jpg"
 This is by var the most useful set of keybindings that I use in vscode and is directly replicated from my tmux configuration.  It allows me to quickly jump up, down, left, right.  Do note that if you use vertical splits it does not work as well as tmux 😢.
 
 ![navigating vscode with keyboard shortcuts](/images/alt \[hjkl\].gif "Alt+[hjkl]")
-
+```
+[
         {
             "key": "alt+j",
             "command": "workbench.action.terminal.focus",
@@ -57,6 +58,8 @@ This is by var the most useful set of keybindings that I use in vscode and is di
             "command": "workbench.action.terminal.focusPreviousPane",
             "when": "terminalFocus"
         },
+]
+```
 
 ## Alt+b
 
@@ -105,3 +108,32 @@ This is another one replicated from tmux for quickly creatiting horizontal (s) a
             "when": "editorFocus"
         }
       ]
+
+## Alt+\[cnp\]
+
+Sometimes the terminal window gets a bit cramped inside of splits and you need to use different panes.  I replicated the cnp pattern from tmux here as well.  I can create (c) new panes, then go to the next (n), or previous (p) without leaving the comfort of my keyboard.
+
+I am often using this one when I have a process running that I watch like gatsby, and I need to quickly pop into a new pane to run a git command and back in to gatsby before jumping up to my editor.
+
+![](/images/alt \[cnp\].gif)
+
+```
+[
+    {
+        "key": "alt+c",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+n",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+
+    {
+        "key": "alt+p",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
+]
+```
