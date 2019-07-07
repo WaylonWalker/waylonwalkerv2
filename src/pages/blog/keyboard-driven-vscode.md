@@ -72,10 +72,13 @@ Since closing the sidebar is assigned to `ctrl+b` I thought that it made most se
         },
     ]
 
-## Alt+\[sv\]
+## Alt+\[svx\]
 
-This is another one replicated from tmux for quickly creatiting horizontal (s) and vertical (v) splits.
+This is another one replicated from tmux for quickly creatiting horizontal (s) and vertical (v) splits.  Once I am done with them I can close them with alt+x.
 
+![Make and destroy splits with ease in vscode.](/images/alt \[svx\].gif "spliting the editor")
+
+     [
         {
             "key": "alt+s",
             "command": "workbench.action.terminal.split",
@@ -91,4 +94,14 @@ This is another one replicated from tmux for quickly creatiting horizontal (s) a
             "command": "workbench.action.splitEditorOrthogonal",
             "when": "editorFocus"
         },
-    
+        {
+            "key": "alt+x",
+            "command": "workbench.action.terminal.kill",
+            "when": "terminalFocus"
+        },
+        {
+            "key": "alt+x",
+            "command": "workbench.action.closeActiveEditor",
+            "when": "editorFocus"
+        }
+      ]
