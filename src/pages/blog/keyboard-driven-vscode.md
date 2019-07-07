@@ -3,7 +3,7 @@ templateKey: blog-post
 path: keyboard-driven-vscode
 title: Keyboard Driven VSCode
 date: 2019-07-07T05:00:00Z
-status: draft
+status: published
 description: Reimagining my tmux configuration inside of vscode.
 cover: "/images/alt b.png"
 twitter_cover: "/images/alt b.jpg"
@@ -13,7 +13,7 @@ twitter_cover: "/images/alt b.jpg"
 
 This is by var the most useful set of keybindings that I use in vscode and is directly replicated from my tmux configuration.  It allows me to quickly jump up, down, left, right.  Do note that if you use vertical splits it does not work as well as tmux 😢.
 
-![](/images/alt \[hjkl\].gif)
+![navigating vscode with keyboard shortcuts](/images/alt \[hjkl\].gif "Alt+[hjkl]")
 
         {
             "key": "alt+j",
@@ -62,7 +62,7 @@ This is by var the most useful set of keybindings that I use in vscode and is di
 
 Since closing the sidebar is assigned to `ctrl+b` I thought that it made most sense to simulate the activity bar with `alt+b`.  There are many times when I just want to get as much out of the way as possible and this little bit does help.
 
-![](/images/alt b.gif)
+![hiding the activity bar ](/images/alt b.gif "Alt+b")
 
     [
         {
@@ -72,25 +72,23 @@ Since closing the sidebar is assigned to `ctrl+b` I thought that it made most se
         },
     ]
 
-## Alt+[sv]
+## Alt+\[sv\]
 
 This is another one replicated from tmux for quickly creatiting horizontal (s) and vertical (v) splits.
 
-```
-    {
-        "key": "alt+s",
-        "command": "workbench.action.terminal.split",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "alt+s",
-        "command": "workbench.action.splitEditor",
-        "when": "editorFocus"
-    },
-    {
-        "key": "alt+v",
-        "command": "workbench.action.splitEditorOrthogonal",
-        "when": "editorFocus"
-    },
-
-```
+        {
+            "key": "alt+s",
+            "command": "workbench.action.terminal.split",
+            "when": "terminalFocus"
+        },
+        {
+            "key": "alt+s",
+            "command": "workbench.action.splitEditor",
+            "when": "editorFocus"
+        },
+        {
+            "key": "alt+v",
+            "command": "workbench.action.splitEditorOrthogonal",
+            "when": "editorFocus"
+        },
+    
