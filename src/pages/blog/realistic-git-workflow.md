@@ -19,6 +19,8 @@ _sometimes things get messy_
 
 **pull 👉 branch 👉 format 👉 work👉 add 👉 commit 👉 pull 👉 rebase 👉 push**
 
+<iframe src='./clean' height=400 width=800 frameborder=None, >
+
 ### Pull
 
 As complicated as that seems it is pretty straight forward.  When you sit down to work the first thing you do is to **pull** down the teams latest working "develop" branch from git.

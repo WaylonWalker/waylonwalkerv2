@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "author": "Waylon Walker",
   "dependencies": {
+    "@gitgraph/js": "^1.3.0",
+    "@gitgraph/react": "^1.4.0",
     "@mdx-js/mdx": "^0.15.7",
     "@mdx-js/tag": "^0.15.6",
     "chroma-js": "^2.0.3",
