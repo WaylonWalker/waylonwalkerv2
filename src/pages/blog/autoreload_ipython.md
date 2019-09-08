@@ -17,14 +17,16 @@ I have used `%autoreload` for several years now with great success and 🔥 rapi
 
 🔥 Blazing Fast
 
-
 💥 Keeps me in the comfort of my text editor
-
 
 👏 Allows me to use Jupyter when I need
 
-
 👟 Extremely Reliable
+
+
+One of the biggest benefits that I find is that it shortens the distance between my module/library code and test code inside of a terminal/notebook.  Now I primarily use jupyter notebooks for the presentation aspect.  I develop code from the comfort of my editor with all of the tools I have setup, and run the functions in a notebook to get the output.  From there I might do some aggregations or plots, but the 🥩 meat of development is done outside of jupyter.
+
+> Now I primarily use jupyter notebooks for the presentation aspect.
 
 ## Enabling Autoreload
 
@@ -56,7 +58,7 @@ c.InteractiveShellApp.exec_lines.append('print("Warning: disable autoreload in i
 
 ## So what can gets updated??
 
-_Nearly everything..._
+🤲 _Nearly everything..._
 
 * new/updated functions
 * new/updated functions
@@ -65,15 +67,15 @@ _Nearly everything..._
 
 ## What does not get updated
 
-_restart_
+🔄 _needs restart_
 
 **config** files that are side loaded with modules typically do not get updated in my experience, and I tend to restart the session.
 
-**init** class methods do not get reran, but the session does not need to be reloaded.  The class instance will just need to be re-instanciated.
+**__init__** class methods do not get reran, but the session does not need to be reloaded.  The class instance will just need to be re-instanciated.
 
 ## Testing out the capabilities
 
-_💨 Watch_ it go
+💨 _Watch_ it go
 
 Here is a gif of me taking autoreload out for a test drive.  When creating the session test_autoreload.py does not even exist. From there new functions, classes, attributes, and methods are added in the file and all live reload into ipython.
 
@@ -81,8 +83,12 @@ Here is a gif of me taking autoreload out for a test drive.  When creating the s
 
 ## What About Jupyter Notebooks????
 
-_💥 Exactly the Same_
+💥 _Exactly the Same_
 
 Since jupyter uses ipython in be background Jupyter will use the same `ipython_config.py` file to have autoreload enabled by default.
 
 ![](/images/test_autoreload_jupyter.gif)
+
+## Go use it now
+
+Take the splash into
