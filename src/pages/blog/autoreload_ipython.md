@@ -2,10 +2,11 @@
 templateKey: blog-post
 path: autoreload_ipython
 title: Autoreload in Ipython
-date: 2020-01-01
+date: 2019-09-08
 status: published
 description: Autoreload in python
-cover: "/images/alex-perez-wEgR12N01Tk-unsplash.jpg"
+cover: "/static/images/alex-perez-wEgR12N01Tk-unsplash.jpg"
+twitter_cover: "/static/images/alex-perez-wEgR12N01Tk-unsplash.jpg"
 
 ---
 # Autoreload in Ipython

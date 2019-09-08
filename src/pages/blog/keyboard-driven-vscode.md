@@ -5,8 +5,8 @@ title: Keyboard Driven VSCode
 date: 2019-07-07T05:00:00Z
 status: published
 description: Reimagining my tmux configuration inside of vscode.
-cover: "/images/alt b.png"
-twitter_cover: "/images/alt b.jpg"
+cover: "/static/images/alt b.png"
+twitter_cover: "/static/images/alt b.jpg"
 
 ---
 ## Alt+\[hjkl\]
