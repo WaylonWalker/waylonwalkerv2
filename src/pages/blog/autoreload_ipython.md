@@ -2,30 +2,35 @@
 templateKey: blog-post
 path: autoreload_ipython
 title: Autoreload in Ipython
-date: 2019-09-08
+date: 2019-09-08T05:00:00Z
 status: published
 description: Autoreload in python
 cover: "/static/images/alex-perez-wEgR12N01Tk-unsplash.jpg"
-twitter_cover: "/static/images/alex-perez-wEgR12N01Tk-unsplash.jpg"
+twitter_cover: "/static/images/alex-perez-wEgR12N01Tk-unsplash-1.jpg"
 
 ---
 # Autoreload in Ipython
 
 I have used autoreload for several years now with great success and 🔥 rapid reloads.  It allows me to move super fast when developing libraries and modules.  They have made some great updates this year that allows class modules to be automatically be updated.
 
-
 ## What I like about autoreload
 
 🔥 Blazing Fast
+
+
 💥 Keeps me in the comfort of my text editor
+
+
 👏 Allows me to use Jupyter when I need
+
+
 👟 Extremely Reliable
 
+## Enabling Autoreload
 
-## Enabling Autoreload.
+_📐 config_
 
 This is a short script that I use to setup ipython so that it automatically reloads modules.  This allows me to use a separate terminal and editor, and keep data in memory while developing functions.
-
 
 ```DOS
 ipython profile create
@@ -51,7 +56,7 @@ c.InteractiveShellApp.exec_lines.append('print("Warning: disable autoreload in i
 
 ## So what can gets updated??
 
-Nearly everything...
+_Nearly everything..._
 
 * new/updated functions
 * new/updated functions
@@ -60,11 +65,15 @@ Nearly everything...
 
 ## What does not get updated
 
+_restart_
+
 **config** files that are side loaded with modules typically do not get updated in my experience, and I tend to restart the session.
 
-**__init__** class methods do not get reran, but the session does not need to be reloaded.  The class instance will just need to be re-instanciated.
+**init** class methods do not get reran, but the session does not need to be reloaded.  The class instance will just need to be re-instanciated.
 
 ## Testing out the capabilities
+
+_💨 Watch_ it go
 
 Here is a gif of me taking autoreload out for a test drive.  When creating the session test_autoreload.py does not even exist. From there new functions, classes, attributes, and methods are added in the file and all live reload into ipython.
 
@@ -72,11 +81,8 @@ Here is a gif of me taking autoreload out for a test drive.  When creating the s
 
 ## What About Jupyter Notebooks????
 
-_Exactly the Same_
+_💥 Exactly the Same_
 
 Since jupyter uses ipython in be background Jupyter will use the same `ipython_config.py` file to have autoreload enabled by default.
 
 ![](/images/test_autoreload_jupyter.gif)
-
-
-
