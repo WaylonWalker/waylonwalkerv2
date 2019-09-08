@@ -24,11 +24,12 @@ public_path: "/images"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
+instant_preview: 
 build:
-  preview_command: gatsby build
-  publish_command: gatsby build
   preview_output_directory: public
-  output_directory: public
-  instant_preview_command: gatsby develop -H 0.0.0.0 -p 8080
   preview_docker_image: forestryio/build:latest
   mount_path: "/opt/buildhome/repo"
+  instant_preview_command: gatsby develop -H 0.0.0.0 -p 8080
+  publish_command: gatsby build
+  output_directory: public
+  preview_command: gatsby build
