@@ -28,7 +28,7 @@ I have used `%autoreload` for several years now with great success and 🔥 rapi
 
 ## Enabling Autoreload
 
-_📐 config_
+📐 _config_
 
 This is a short script that I use to setup ipython so that it automatically reloads modules.  This allows me to use a separate terminal and editor, and keep data in memory while developing functions.
 
