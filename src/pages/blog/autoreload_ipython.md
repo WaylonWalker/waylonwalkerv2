@@ -91,4 +91,4 @@ Since jupyter uses ipython in be background Jupyter will use the same `ipython_c
 
 ## Go use it now
 
-Take the splash into
+Take the splash into rapid development of python functions with minimal distance between your modules/library and your ipython/jupyter session.
