@@ -3,16 +3,28 @@ templateKey: blog-post
 path: autoreload_ipython
 title: Autoreload in Ipython
 date: 2020-01-01
-status: draft
-description: none
+status: published
+description: Autoreload in python
 cover: "/images/alex-perez-wEgR12N01Tk-unsplash.jpg"
 
 ---
 # Autoreload in Ipython
 
+I have used autoreload for several years now with great success and 🔥 rapid reloads.  It allows me to move super fast when developing libraries and modules.  They have made some great updates this year that allows class modules to be automatically be updated.
+
+
+## What I like about autoreload
+
+🔥 Blazing Fast
+💥 Keeps me in the comfort of my text editor
+👏 Allows me to use Jupyter when I need
+👟 Extremely Reliable
+
+
+## Enabling Autoreload.
+
 This is a short script that I use to setup ipython so that it automatically reloads modules.  This allows me to use a separate terminal and editor, and keep data in memory while developing functions.
 
-I have used this for several years now with great success and 🔥 rapid reloads.  It allows me to move super fast when developing libraries and modules.  They have made some great updates this year that allows class modules to be automatically be updated.
 
 ```DOS
 ipython profile create
@@ -49,7 +61,7 @@ Nearly everything...
 
 **config** files that are side loaded with modules typically do not get updated in my experience, and I tend to restart the session.
 
-**\_\_init\_\_** class methods do not get reran, but the session does not need to be reloaded.  The class instance will just need to be re-instanciated.
+**__init__** class methods do not get reran, but the session does not need to be reloaded.  The class instance will just need to be re-instanciated.
 
 ## Testing out the capabilities
 
@@ -57,7 +69,13 @@ Here is a gif of me taking autoreload out for a test drive.  When creating the s
 
 ![](/images/test_autoreload4.gif)
 
-# What About Jupyter Notebooks????
+## What About Jupyter Notebooks????
+
+_Exactly the Same_
 
 Since jupyter uses ipython in be background Jupyter will use the same `ipython_config.py` file to have autoreload enabled by default.
+
+![](/images/test_autoreload_jupyter.gif)
+
+
 
