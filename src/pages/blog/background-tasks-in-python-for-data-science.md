@@ -3,10 +3,10 @@ templateKey: blog-post
 path: python-data-science-background
 title: Background Tasks in Python for Data Science
 date: 2019-09-10T05:00:00Z
-status: draft
+status: published
 description: ''
-cover: ''
-twitter_cover: ''
+cover: "/images/erwan-hesry-elayN_YscVg-unsplash.jpg"
+twitter_cover: "/images/erwan-hesry-elayN_YscVg-unsplash-3.jpg"
 
 ---
 This post is intended as an extension/update from [background tasks in python](https://waylonwalker.com/blog/background_1/).  I started using `background` the week that Kenneth Reitz released it.  It takes away so much boilerplate from running background tasks that I use it in more places than I probably should. After taking a look at that post today, I wanted to put a better data science example in here to help folks get started.
@@ -38,7 +38,12 @@ curl https://raw.githubusercontent.com/ParthS007/background/master/background.py
 ```
 
 
+## The Slow Function
 
+
+Imagine that this function is a big one!  This function is fairly realistic as it takes in some input and returns a DataFrame.  This is what a good half of my fuctions do in data science.  The internals of this function generally will include a sql query, load from s3 or a data catalog, an aggregation from another DataFrame.  In general it should do one simple thing.
+
+**Feel Free to copy this "boilerplate"** 
 ```
 import background
 from time import sleep
@@ -56,12 +61,23 @@ def long_func(i):
     
 ```
 
+
+## Calling the Slow Function
+
+If we were to call this function 10 times it would take 100s.  Not bad for a dumb example, but detrimental when this gets scaled up.  We want to utilize all of our available resources to reduce our development time and get moving on our project.
+
+Calling `long_func` will return a future object.  This object has a number of methods that you can read about in the [cpython docs](https://docs.python.org/3/library/concurrent.futures.html#future-objects).  The main one we are interested in is `result`.  I typically call these functions many times and put them into a list object so that I can track their progress and get their results.  If you needed to map inputs back to the result use a dictionary.
+
 ```
 %time futures = [long_func(i) for i in range(10)]
 ```
 
+```
 CPU times: user 319 µs, sys: 197 µs, total: 516 µs
 Wall time: 212 µs
+```
+
+Simply running the function completes in no time! This is because the future objects that are returned are non blocking and will run in a background task using the `ProcessPoolExecutor`.  To get the result back out we need to call the `result` method on the future object.`result` is a blocking function that will not realease until the function has completed.
 
 ```
 %%time 
@@ -69,5 +85,18 @@ futures = [long_func(i) for i in range(10)]
 pd.concat([future.result() for future in futures])
 ```
 
+```
 CPU times: user 5.38 ms, sys: 3.53 ms, total: 8.9 ms
 Wall time: 10 s
+```
+
+Note that this example completed in `10s`, the time it took for only one run, not all 10!
+
+## n
+
+By default the number of parallel processes wil be equal to the number of cpu threads on your machine. To increase the number of parallel processes (`max_workers`) set increase `background.n`.
+
+
+```
+background.n = 100
+```
