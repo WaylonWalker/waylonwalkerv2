@@ -65,33 +65,33 @@ Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 `
 
 const BlogPostCard = ({ post, ...props }) => {
-    const dt =  new Date(post.frontmatter.date)
-    const year = dt.getYear() + 1900
-    const month = dt.toLocaleString('en-us', { month: 'long' })
-    const day = dt.getDay()
-    return (
+  const dt = new Date(post.frontmatter.date)
+  const year = dt.getUTCFullYear()
+  const month = dt.toLocaleString('en-us', { month: 'long' })
+  const day = dt.getDate()
+  return (
 
-        <BlogPostCardStyles>
-            <Link to={post['fields']['slug']}>
-                <Img style={{ opacity: '.6', position: 'relative', top: '-1rem', left: '-1rem' }} fixed={post.frontmatter.cover !== null ? post.frontmatter.cover.childImageSharp.fixed : ''} />
-            </Link>
+    <BlogPostCardStyles>
+      <Link to={post['fields']['slug']}>
+        <Img style={{ opacity: '.6', position: 'relative', top: '-1rem', left: '-1rem' }} fixed={post.frontmatter.cover !== null ? post.frontmatter.cover.childImageSharp.fixed : ''} />
+      </Link>
 
-            <Link to={post['fields']['slug']}>
-                <h3>{post['frontmatter']['title']}</h3>
-            </Link>
-            {/* <p>{post['frontmatter']['cover']}</p> */}
-            {/* <p style={{
+      <Link to={post['fields']['slug']}>
+        <h3>{post['frontmatter']['title']}</h3>
+      </Link>
+      {/* <p>{post['frontmatter']['cover']}</p> */}
+      {/* <p style={{
                 textAlign: 'right', position: 'absolute', top: '3rem', right: '1rem', textShadow: '0rem 0rem .2rem rgba(255, 255, 255, .5)'
             }}>{month} {day}, {year}</p> */}
-            <div className="date">
-              <div className="year">{year}</div>
-              <div className="month">{month} {day}</div>
-            </div>
+      <div className="date">
+        <div className="year">{year}</div>
+        <div className="month">{month} {day}</div>
+      </div>
 
-            <p>{post['excerpt']}</p>
-        </BlogPostCardStyles >
+      <p>{post['excerpt']}</p>
+    </BlogPostCardStyles >
 
-    )
+  )
 }
 
 export default BlogPostCard
