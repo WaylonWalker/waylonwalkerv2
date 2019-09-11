@@ -13,6 +13,8 @@ This post is intended as an extension/update from [background tasks in python](h
 
 > I use it in more places than I probably should
 
+Before we get into it, I want to make a shout out to Kenneth Reitz for making this so easy.  Kenneth is a python God for all that he has given to the community in so many ways, especially with his ideas in building stupid simple api's for very complicated things.
+
 ## Installation
 
 ### install via pip
@@ -56,7 +58,6 @@ Imagine that this function is a big one!  This function is fairly realistic as i
 ## Calling the Slow Function
 
 _it's the future calling 🤙_
-
 
 If we were to call this function 10 times it would take 100s.  Not bad for a dumb example, but detrimental when this gets scaled up💥.  We want to utilize all of our available resources to reduce our development time and get moving on our project.
 
