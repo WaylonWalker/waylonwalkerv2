@@ -75,7 +75,7 @@ export default class gratitude extends Component {
       posts[i]['node']['date']['day'] = ("00" + dt.getDay()).slice(-2)
       })
 
-    console.log(posts)
+    // console.log(posts)
 
     // console.log(posts)
     return (
