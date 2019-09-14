@@ -6,8 +6,8 @@ date: 2019-09-11
 time: T05:00:00Z
 status: published
 description: 
-cover: "/static/images/yousef-al-nasser-261164-unsplash.jpg"
-twitter_cover: "/static/images/yousef-al-nasser-261164-unsplash-1.jpg"
+cover: "/static/images/andrew-spencer-Ricopz7JkbE-unsplash.jpg"
+twitter_cover: "/static/images/andrew-spencer-Ricopz7JkbE-unsplash.jpg"
 
 ---
 
