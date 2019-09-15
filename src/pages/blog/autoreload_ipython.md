@@ -2,7 +2,7 @@
 templateKey: blog-post
 path: autoreload_ipython
 title: Autoreload in Ipython
-date: 2019-09-08T05:00:00Z
+date: 2019-09-08T05:00:00.000+00:00
 status: published
 description: Autoreload in python
 cover: "/static/images/alex-perez-wEgR12N01Tk-unsplash.jpg"
@@ -80,6 +80,7 @@ c.InteractiveShellApp.exec_lines.append('print("Warning: disable autoreload in i
 Here is a gif of me taking autoreload out for a test drive.  When creating the session test_autoreload.py does not even exist. From there new functions, classes, attributes, and methods are added in the file and all live reload into ipython.
 
 ![](/images/test_autoreload4.gif)
+_for more gifs like these follow me on twitter [@waylonwalker](https://twitter.com/_WaylonWalker)_
 
 ## What About Jupyter Notebooks????
 
@@ -88,6 +89,7 @@ Here is a gif of me taking autoreload out for a test drive.  When creating the s
 Since jupyter uses ipython in be background Jupyter will use the same `ipython_config.py` file to have autoreload enabled by default.
 
 ![](/images/test_autoreload_jupyter.gif)
+_for more gifs like these follow me on twitter [@waylonwalker](https://twitter.com/_WaylonWalker)_
 
 ## Go use it now
 
