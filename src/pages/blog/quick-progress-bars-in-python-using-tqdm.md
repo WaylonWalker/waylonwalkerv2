@@ -12,8 +12,7 @@ twitter_cover: "/images/markus-spiske-7CjegTgBPKc-unsplash.jpg"
 tqdm is one of my favorite general purpose utility libraries in python.  It allows me to see progress of multipart processes as they happen.  I really like this for when I am developing something that takes some amount of time and I am unsure of performance.  It allows me to be patient when the process is going well and will finish in sufficient time, and allows me to 💥 kill it and find a way to make it perform better if it will not finish in sufficient time.
 
 ![](/images/tqdm2.gif)
-
-> for more gifs like these follow me on twitter [@waylonwalker](https://twitter.com/_WaylonWalker)
+_for more gifs like these follow me on twitter [@waylonwalker](https://twitter.com/_WaylonWalker)_
 
 **Add a simple Progress bar!**
 ```
