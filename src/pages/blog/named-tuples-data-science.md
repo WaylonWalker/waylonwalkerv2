@@ -38,6 +38,12 @@ def get_sales():
     engine.dispose()
     return df
 
+def get_inventory():
+    ...
+
+def get_pricing():
+    ...
+
 ```
 
 ### Create Metrics
@@ -46,14 +52,35 @@ Here we create our first function to calculate some metrics.  There are likely m
 
 ``` python
 def calculate_total_revenue(sales, pricing):
+    """calculates the total sales revenue for all of company XYZ"""
     sales = sales.join(pricing.set_index('sku'), on='sku')
     sales['revenue'] = sales['qty'] * sales['price']
     return sales['revenue'].sum()
+
+def calculate_inventory_sale_ratio(sales, inventory, pricing):
+    ...
+
+def calculate_inventory_sale_ratio(inventory, sales):
+    ...
+```
+
+Furthermore these functions will need to be called somewhere, this might be in a `make_report()` function that puts this data into an html template to be sent out to stakeholders, or to be served on a website. Notice how we have the same data showing up time and time again.  And sometimes we even ask for it in a different order 😲.It is important to recognize this early in the project before this gets our of hand.
+
+```
+def make_report():
+    """Makes stakeholder report for company XYZ"""
+    sales = get_sales()
+    inventory = get_inventory()
+    pricing = get_pricing()
+
+    revenue = calculate_total_revenue(sales, pricing)
+    sales_ratio = inventory_sale_ratio(sales, inventory, pricing)
+    inventory_sale_ratio(inventory, sales)
 ```
 
 ### getting out of hand
 
-Along the way our features, models, and out supervisors have all had their own needs and we have added new datasets, and several flags.
+Along the way our features, models, and out supervisors have all had their own needs and we have added new datasets, and several flags. This is the point at which anxiety starts creeping in.  We start spending a lot of time double checking the order of each call to make sure that we dont make a mistake.  And when someone else touches this model, we know what it looks like and cant help but think, "Oh God I hope they didn't screw up that horrid module!"
 
     
 ``` python
@@ -67,6 +94,43 @@ def calculate_total_revenue(sales, pricing, inventory, stored_at='LAX', min_pric
     sales  = sales.query(f'sale_date > {min_date}')
     sales  = sales.query(f'sale_date < {end_date}')
     return sales['revenue'].sum()
+
+def calculate_inventory_sale_ratio(sales, pricing, inventory, stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000'):
+    ...
+
+def calculate_inventory_sale_ratio(sales, pricing, inventory, stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000'):
+    ...
+
+def model_new_prices(sales, pricing, inventory, stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000'):
+    ...
+
+def model_production(sales, pricing, inventory, stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000'):
+    ...
+
+def completely_custom_metric_for_steve(sales, pricing, inventory, stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000'):
+    """Steve has been here 30 years and doesnt trust our metrics unless he can validate against the old metrics"""
+    ...
+```
+
+It gets even crazier when you start calling all of these functions! Note that we have a common theme of the same data getting passed into 
+
+```
+def make_report(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000', is_for_steve=False):
+    """Makes stakeholder report for company XYZ"""
+    sales = get_sales()
+    inventory = get_inventory()
+    pricing = get_pricing()
+
+    revenue = calculate_total_revenue(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+    sales_ratio = sales_ratio = inventory_sale_ratio(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+    inventory_sale_ratio = inventory_sale_ratio(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+    predicted_prices = model_new_prices(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+    predicted_production_rates = model_production_rate(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+    completely_custom_metric_for_steve(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+
+    # render report
+    ...
+    
 ```
 
 ### This code Stinks
@@ -97,6 +161,7 @@ data = ModelData(
 ```
 
 **refactor functions**
+Now that we have a clean data object how do we use it.  Simple, we pass in one data object, then access each attribute with the dot operator. These functions are now much cleaner to call and read.  Here I have chosen a poor name for our `data`, but in a real scenario you may have multple `namedtuples`.
 
 ``` python
 def calculate_total_revenue(data):
@@ -109,12 +174,32 @@ def calculate_total_revenue(data):
     sales  = sales.query(f'sale_date > {data.min_date}')
     sales  = sales.query(f'sale_date < {data.end_date}')
     return sales['revenue'].sum()
+
+...
+
 ```
 
 **call the function**
 
+Now that all of the data is store in a single object it is really easy to call each of our functions using one data instance.
+
+
+
 ```
-total_revenue = calculate_total_revenue(data)
+def make_report(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000', is_for_steve=False):
+    """Makes stakeholder report for company XYZ"""
+    data = ModelData(stored_at=stored_at, min_price=min_price, start_date=start_date, end_date=end_date)
+
+    revenue = calculate_total_revenue(data)
+    sales_ratio = sales_ratio = inventory_sale_ratio(data)
+    inventory_sale_ratio = inventory_sale_ratio(data)
+    predicted_prices = model_new_prices(data)
+    predicted_production_rates = model_production_rate(data)
+    completely_custom_metric_for_steve(data)
+
+    # render report
+    ...
+    
 ```
 
 ### Clean up your data science
