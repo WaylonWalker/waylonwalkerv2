@@ -27,6 +27,13 @@ fields:
 - type: text
   name: description
   label: description
+- name: related_post_label
+  type: text
+  config:
+    required: false
+  label: Replated Post Label
+  description: What to say before presenting related posts
+  default: Check out this related post
 - name: related_post
   type: list
   config:
