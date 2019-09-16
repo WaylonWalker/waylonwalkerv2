@@ -34,6 +34,16 @@ fields:
   label: Replated Post Label
   description: What to say before presenting related posts
   default: Check out this related post
+- name: related_post_body
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Related Post Body
+  description: More text to add to a related post.  Could present a series.
 - name: related_post
   type: list
   config:
