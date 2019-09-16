@@ -7,6 +7,13 @@ status: published
 description: ''
 cover: "/static/images/erwan-hesry-elayN_YscVg-unsplash.jpg"
 twitter_cover: "/static/images/erwan-hesry-elayN_YscVg-unsplash.jpg"
+related_post:
+- src/pages/blog/background_1.md
+tags:
+- python
+- code
+- quickie
+- datascience
 
 ---
 This post is intended as an extension/update from [background tasks in python](https://waylonwalker.com/blog/background_1/).  I started using `background` the week that Kenneth Reitz released it.  It takes away so much boilerplate from running background tasks that I use it in more places than I probably should. After taking a look at that post today, I wanted to put a better data science example in here to help folks get started.
