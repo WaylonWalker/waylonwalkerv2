@@ -8,6 +8,11 @@ status: published
 description: My git workflow based on real life.  Its  not always clean and simple.
 cover: "/static/images/yousef-al-nasser-261164-unsplash.jpg"
 twitter_cover: "/static/images/yousef-al-nasser-261164-unsplash-1.jpg"
+related_post: []
+tags:
+- code
+- git
+- lengthly
 
 ---
 # Realistic Git Workflow
