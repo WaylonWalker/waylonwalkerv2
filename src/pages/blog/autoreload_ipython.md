@@ -7,6 +7,8 @@ status: published
 description: Autoreload in python
 cover: "/static/images/alex-perez-wEgR12N01Tk-unsplash.jpg"
 twitter_cover: "/static/images/alex-perez-wEgR12N01Tk-unsplash-1.jpg"
+related_post:
+- src/pages/blog/readme_tables.md
 
 ---
 # Autoreload in Ipython
