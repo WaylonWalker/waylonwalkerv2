@@ -13,7 +13,6 @@ related_post:
 tags:
 - python
 - code
-- quickie
 - datascience
 
 ---
