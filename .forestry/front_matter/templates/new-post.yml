@@ -27,14 +27,6 @@ fields:
 - type: text
   name: description
   label: description
-- type: file
-  name: cover
-  label: cover
-- name: twitter_cover
-  type: file
-  config:
-    maxSize: 250
-  label: Twitter Cover
 - name: related_post
   type: list
   config:
@@ -50,6 +42,14 @@ fields:
   default: []
   label: Tags
   description: post tags help categorize and group posts
+- type: file
+  name: cover
+  label: cover
+- name: twitter_cover
+  type: file
+  config:
+    maxSize: 250
+  label: Twitter Cover
 pages:
 - src/pages/blog/keyboard-driven-vscode.md
 - src/pages/blog/forestry-io.md
