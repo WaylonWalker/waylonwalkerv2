@@ -7,6 +7,12 @@ status: published
 description: Creating Posts from forestry.io.
 cover: "/static/forest.jpeg"
 twitter_cover: "/static/forest_twitter.jpg"
+related_post:
+- src/pages/blog/flexbox-zombies.md
+tags:
+- code
+- quickie
+- CMS
 
 ---
 # Testing out forestry.io
