@@ -53,11 +53,11 @@ function GratitudePost({ node, ...props }) {
       }}
     >
       <h3>{node.frontmatter.title}</h3>
-        <DateStyle>
-        <div className='year'>{ node.date.year } </div>
+      <DateStyle>
+        <div className='year'>{node.date.year} </div>
         <div className='month'>{node.date.month} {node.date.day}</div>
 
-        </DateStyle>
+      </DateStyle>
       <div dangerouslySetInnerHTML={{ __html: node.html }} />
     </div>
   )
@@ -70,10 +70,10 @@ export default class gratitude extends Component {
     posts.map((post, i) => {
       const dt = new Date(post.node.frontmatter.date)
       posts[i]['node']['date'] = {}
-      posts[i]['node']['date']['year'] = dt.getYear()+1900
+      posts[i]['node']['date']['year'] = dt.getYear() + 1900
       posts[i]['node']['date']['month'] = dt.toLocaleString('en-us', { month: 'long' })
       posts[i]['node']['date']['day'] = ("00" + dt.getDay()).slice(-2)
-      })
+    })
 
     // console.log(posts)
 
@@ -113,7 +113,7 @@ export const pageQuery = graphql`
             status
             description
             category
-            tags
+            # tags
             summary
             slug
             coverCredits

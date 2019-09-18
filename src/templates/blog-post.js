@@ -185,7 +185,7 @@ export const pageQuery = graphql`
         date
         title
         description
-        tags
+        # tags
         path
         twitter_cover {
           absolutePath
