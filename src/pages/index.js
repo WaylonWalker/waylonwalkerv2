@@ -77,7 +77,7 @@ export default class IndexPage extends React.Component {
 
             <p style={paragraphStyle} />
           </section>
-          <section>
+          <section style={{ maxWidth: '800px' }}>
             <h1>Blog</h1>
             <BlogPosts posts={posts} />
           </section>

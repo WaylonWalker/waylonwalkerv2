@@ -14,6 +14,9 @@ const Nav = () => (
         <Link to='/blog' activeClassName='active'>Blog</Link>
       </li>
       <li>
+        <Link to='/notes' activeClassName='active'>Notes</Link>
+      </li>
+      <li>
         <Link to='/gratitude' activeClassName='active'>gratitude</Link>
       </li>
     </ul>

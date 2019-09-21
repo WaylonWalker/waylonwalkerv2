@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import BlogPostCard from '../components/blogPostCard'
 // import { kebabCase } from 'lodash'
 // import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
@@ -73,7 +74,7 @@ class BlogPostTemplate extends React.Component {
       content,
       // contentComponent,
       description,
-      // tags,
+      // tags,jjjj
       title,
       cover,
       date,
@@ -126,7 +127,7 @@ class BlogPostTemplate extends React.Component {
           </BlogPostStyles>
           <p>
             Check out my other
-          <Link to='/blog' > blogs</Link>
+          <Link to='/blog' style={{ margin: '.2rem' }} >blogs</Link>
           </p>
         </BlogPostWrapper>
       </>
@@ -177,7 +178,7 @@ export default BlogPost
 
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
+  query NoteByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html

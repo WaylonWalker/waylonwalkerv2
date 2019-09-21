@@ -4,7 +4,10 @@ path: 'pycon-2017-roundup'
 title: Pycon 2017 Roundup
 date: 2017-05-30
 category: Blog
-tags: Python, Pycon, Youtube
+tags: 
+    - python
+    - Pycon
+    - Youtube
 description: none
 cover: "./pycon-cityscape.png"
 ---
