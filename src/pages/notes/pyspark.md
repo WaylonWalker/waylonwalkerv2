@@ -9,7 +9,7 @@ status: ''
 description: ''
 related_post_body: ''
 related_post: []
-cover: ''
+cover: "/images/joshua-newton-RPUI6gtn49g-unsplash.jpg"
 twitter_cover: ''
 
 ---
