@@ -9,8 +9,8 @@ status: ''
 description: ''
 related_post_body: ''
 related_post: []
-cover: "/images/jonny-hayes-W1r5FAraSA0-unsplash.jpg"
-twitter_cover: ''
+cover: "static/images/jonny-hayes-W1r5FAraSA0-unsplash.jpg"
+twitter_cover: "static/images/jonny-hayes-W1r5FAraSA0-unsplash.jpg"
 
 ---
 # Tools
