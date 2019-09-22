@@ -68,3 +68,4 @@ fields:
     maxSize: 250
   label: Twitter Cover
 pages:
+- src/pages/notes/pyspark.md
