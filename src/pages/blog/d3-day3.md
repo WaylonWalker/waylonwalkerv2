@@ -67,7 +67,7 @@ I am going to load d3 from the cloudflare cdn for simplicity
 I will use this as by stylesheet throughout the examples.
 
 
-```
+```html
     <style>
         .chart {
             display: block;
@@ -245,7 +245,7 @@ _example 2 working buttons_
 In Example2 the chart jumped from one state to the next with a complete wipe and redraw in betweeen.  In this example we will retain the same bars and only update their width.  This will allow us to transition/animate them.
 
 ### Markup
-```
+```html
 <div id="chart3" class='chart'>
     <button class='math' onclick="render3('math')">Math</button>
     <button class='science' onclick="render3('science')">Science</button>

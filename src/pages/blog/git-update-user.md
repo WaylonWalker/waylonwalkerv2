@@ -40,7 +40,7 @@ git push --force --tags origin 'refs/heads/**'
 ## Cleanup
 
 Delete the `--bare` repo from your local machine.
-```
+```bash
 cd ..
 rm -rf repo.git
 ```

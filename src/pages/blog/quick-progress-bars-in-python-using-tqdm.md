@@ -17,10 +17,11 @@ tags:
 tqdm is one of my favorite general purpose utility libraries in python.  It allows me to see progress of multipart processes as they happen.  I really like this for when I am developing something that takes some amount of time and I am unsure of performance.  It allows me to be patient when the process is going well and will finish in sufficient time, and allows me to 💥 kill it and find a way to make it perform better if it will not finish in sufficient time.
 
 ![](/images/tqdm2.gif)
-_for more gifs like these follow me on twitter [@waylonwalker](https://twitter.com/_WaylonWalker)_
+_for more gifs like these follow me on twitter _
+[@waylonwalker](https://twitter.com/_WaylonWalker)
 
 **Add a simple Progress bar!**
-```
+```python
 from tqdm import tqdm
 from time import sleep
 
@@ -32,7 +33,7 @@ for i in tqdm(range(10)):
 
 TQDM also has a convenience function called trange that wraps the range function with a tqdm progress bar automatically.
 
-```
+```python
 from tqdm import trange
 from time import sleep
 
@@ -45,7 +46,7 @@ for i in trange(range(10)):
 
 There is also notebook support.  If you are bouncing between ipython and jupyter I recomend importing from the auto module.
 
-```
+```python
 from tqdm.auto import tqdm
 from time import sleep
 

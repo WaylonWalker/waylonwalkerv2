@@ -40,7 +40,7 @@ One of the biggest benefits that I find is that it shortens the distance between
 
 This is a short script that I use to setup ipython so that it automatically reloads modules.  This allows me to use a separate terminal and editor, and keep data in memory while developing functions.
 
-```DOS
+```bash
 ipython profile create
 ```
 

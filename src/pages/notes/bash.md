@@ -23,12 +23,12 @@ Bash is super powerful.
 ## File System Full
 
 **Show Remaining Space on Drives**
-```
+```bash
 df -h
 ```
 
 **show largest files in current directory**
-```
+```bash
 du . -h --max-depth=1
 ```
 

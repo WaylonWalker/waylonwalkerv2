@@ -49,12 +49,12 @@ p>img {
   /* margin: 2rem 200px; */
 }
 
-blockquote {
+/* blockquote {
   color: #777;
   border-left: 5px solid goldenrod;
   padding: 0 1rem;
   font-size: 1.4rem;
-}
+} */
 
 hr {
   border-top: 1px solid goldenrod;

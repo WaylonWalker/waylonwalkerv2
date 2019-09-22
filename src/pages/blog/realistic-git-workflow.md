@@ -170,7 +170,7 @@ This can be a big matter of preference of how to deal with this just google `mer
 
 **Before pushing to the remote repository**
 
-```
+```bash
 git fetch --all
 # or
 git checkout develop
@@ -182,7 +182,7 @@ git rebase develop
 
 **if its your first rodeo** or you are unsure how the rebase will go you can create a safty branch.
 
-```
+```bash
 git branch saftey_feature_branch
 git fetch --all
 git rebase develop
