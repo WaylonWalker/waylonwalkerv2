@@ -120,6 +120,13 @@ class BlogPostTemplate extends React.Component {
               }}
               fixed={cover} />
             <p style={{ minHeight: '100px' }}>{description}</p>
+            <p
+              style={{ maxWidth: `500px`, margin: `1rem auto`, color: `rbg(100, 100, 120)` }}
+            >
+              You are reading my notes.  This is a large collection of smaller
+              unfinished ideas.  If you find something here that needs to be
+              turned into a real post tweet it at
+              <a href='https://twitter.com/_WaylonWalker' style={{ padding: '.2rem' }}>@_waylonwalker</a></p>
             <div ref={(el) => { this.markdownContainer = el }}
               dangerouslySetInnerHTML={{ __html: content }} />
 

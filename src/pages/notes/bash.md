@@ -67,3 +67,71 @@ greset() { git status -s |  fzf -m | awk '{print $2}' |xargs git reset && git st
 ```bash
 fkill() {kill $(ps aux | fzf | awk '{print($2)}')}
 ```
+
+## Finding things
+
+### Files
+
+[fd-find](https://github.com/sharkdp/fd) is amazing for finding files, it even respects your `.gitignore` file 😲.  Install with `apt install fd-find`.
+
+```bash
+fd md
+```
+
+```bash
+ag -g python
+```
+```bash
+find . -n "*.md"
+```
+_++Vanilla Bonus_
+
+### Content
+
+
+** show matching text **
+```bash
+ag python
+```
+
+```bash
+grep -iR Python
+```
+_++Vanilla Bonus_
+
+
+** show file names only **
+```bash
+ag -l python
+```
+
+```bash
+grep -iRl python
+```
+_++Vanilla Bonus_
+
+### Recursively Replace text
+
+```bash
+agr() {ag -l "$1" | xargs sed -i "s/$1/$2/g"}
+```
+
+_++Vanilla Bonus_
+```bash
+grepr() {grep -iRl "$1" | xargs sed -i "s/$1/$2/g"}
+```
+
+**Extending `agr` or `grepr`**
+
+There are so many options inside of `grep`, `ag`, and `sed` that you could many an enormous amount of these if you really wanted to, but I like to keep it simple.  These cover 90% of my usage.  If I wanted to change something in the second half I would just paste in this command and edit it. More often though I want to limit the input, say only replace word1 to word2 inside of markdown files.
+
+**Limited Scope**
+
+```bash
+fd md | xargs argr python python3
+```
+
+```bash
+find . -n "*.md" | xargs grepr python python3
+```
+_++Vanilla Bonus_
