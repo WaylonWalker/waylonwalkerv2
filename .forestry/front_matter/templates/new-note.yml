@@ -68,5 +68,6 @@ fields:
     maxSize: 250
   label: Twitter Cover
 pages:
+- src/pages/notes/digital-ocean.md
 - src/pages/notes/pyspark.md
 - src/pages/notes/making-good-documentation-in-python.md
