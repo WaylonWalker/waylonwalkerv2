@@ -1,0 +1,70 @@
+---
+label: New Note
+hide_body: false
+fields:
+- type: text
+  name: templateKey
+  label: templateKey
+  default: notes
+  config:
+    required: true
+  hidden: true
+  description: Required to create blog page
+- type: text
+  name: path
+  label: path
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+  config:
+    required: true
+- type: text
+  name: status
+  label: status
+- type: text
+  name: description
+  label: description
+- name: related_post_label
+  type: text
+  config:
+    required: false
+  label: Replated Post Label
+  description: What to say before presenting related posts
+  default: Check out this related post
+- name: related_post_body
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Related Post Body
+  description: More text to add to a related post.  Could present a series.
+- name: related_post
+  type: list
+  config:
+    use_select: true
+    min: 
+    max: 
+    source:
+      type: pages
+      section: posts
+  label: Related Post
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
+  description: post tags help categorize and group posts
+- type: file
+  name: cover
+  label: cover
+- name: twitter_cover
+  type: file
+  config:
+    maxSize: 250
+  label: Twitter Cover
+pages:

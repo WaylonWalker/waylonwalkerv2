@@ -13,6 +13,14 @@ sections:
   templates:
   - new-post
 - type: directory
+  path: src/pages/notes
+  label: Notes
+  create: documents
+  match: "**/*"
+  new_doc_ext: md
+  templates:
+  - new-note
+- type: directory
   path: src/pages/gratitude
   label: gratitude
   create: all
