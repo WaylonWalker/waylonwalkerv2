@@ -70,5 +70,5 @@ fields:
 pages:
 - src/pages/notes/amazon-web-services.md
 - src/pages/notes/digital-ocean.md
-- src/pages/notes/pyspark.md
 - src/pages/notes/making-good-documentation-in-python.md
+- src/pages/notes/pyspark.md
