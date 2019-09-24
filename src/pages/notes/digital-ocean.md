@@ -13,3 +13,5 @@ cover: "/static/images/steve-halama-kfwQvL6niR8-unsplash.jpg"
 twitter_cover: "/static/images/steve-halama-kfwQvL6niR8-unsplash.jpg"
 
 ---
+
+I love digital ocean for it's **simplicity** and its commitment to open source.
