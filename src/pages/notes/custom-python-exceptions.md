@@ -9,8 +9,8 @@ status: published
 description: Custom Python Exceptions
 related_post_body: ''
 related_post: []
-cover: ''
-twitter_cover: ''
+cover: "/images/andrew-neel-_71nlAn-2YA-unsplash.jpg"
+twitter_cover: "/images/andrew-neel-_71nlAn-2YA-unsplash.jpg"
 
 ---
 ```
