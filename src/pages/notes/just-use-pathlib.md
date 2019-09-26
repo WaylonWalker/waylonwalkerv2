@@ -44,3 +44,19 @@ home = Path.home()
 ```python
 module_path = Path(__file__)
 ```
+
+**Others**
+Let's create a path relative to our current module.
+
+```python
+data_path = Path(__file__) / 'data'
+```
+
+## Check if files exist
+
+
+## Make Directories
+
+## List files
+
+## Glob Files
