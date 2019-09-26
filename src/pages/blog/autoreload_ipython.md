@@ -29,7 +29,6 @@ I have used `%autoreload` for several years now with great success and 🔥 rapi
 
 👟 Extremely Reliable
 
-
 One of the biggest benefits that I find is that it shortens the distance between my module/library code and test code inside of a terminal/notebook.  Now I primarily use jupyter notebooks for the presentation aspect.  I develop code from the comfort of my editor with all of the tools I have setup, and run the functions in a notebook to get the output.  From there I might do some aggregations or plots, but the 🥩 meat of development is done outside of jupyter.
 
 > Now I primarily use jupyter notebooks for the presentation aspect.
@@ -44,7 +43,7 @@ This is a short script that I use to setup ipython so that it automatically relo
 ipython profile create
 ```
 
-Then edit the created file `~/ipython/profile``_default/ipython__``config.py`.
+Then edit the created file `~/.ipython/profile_default/ipython_config.py`.
 
 ```python
 c.InteractiveShellApp.extensions = ['autoreload']
@@ -77,7 +76,7 @@ c.InteractiveShellApp.exec_lines.append('print("Warning: disable autoreload in i
 
 **config** files that are side loaded with modules typically do not get updated in my experience, and I tend to restart the session.
 
-**__init__** class methods do not get reran, but the session does not need to be reloaded.  The class instance will just need to be re-instanciated.
+**init** class methods do not get reran, but the session does not need to be reloaded.  The class instance will just need to be re-instanciated.
 
 ## Testing out the capabilities
 
@@ -86,7 +85,7 @@ c.InteractiveShellApp.exec_lines.append('print("Warning: disable autoreload in i
 Here is a gif of me taking autoreload out for a test drive.  When creating the session test_autoreload.py does not even exist. From there new functions, classes, attributes, and methods are added in the file and all live reload into ipython.
 
 ![](/images/test_autoreload4.gif)
-_for more gifs like these follow me on twitter [@waylonwalker](https://twitter.com/_WaylonWalker)_
+_for more gifs like these follow me on twitter_ [_@waylonwalker_](https://twitter.com/_WaylonWalker)
 
 ## What About Jupyter Notebooks????
 
@@ -95,7 +94,7 @@ _for more gifs like these follow me on twitter [@waylonwalker](https://twitter.c
 Since jupyter uses ipython in be background Jupyter will use the same `ipython_config.py` file to have autoreload enabled by default.
 
 ![](/images/test_autoreload_jupyter.gif)
-_for more gifs like these follow me on twitter [@waylonwalker](https://twitter.com/_WaylonWalker)_
+_for more gifs like these follow me on twitter_ [_@waylonwalker_](https://twitter.com/_WaylonWalker)
 
 ## Go use it now
 
