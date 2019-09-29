@@ -56,7 +56,27 @@ data_path = Path(__file__) / 'data'
 
 
 ## Make Directories
-
+```python
+data_path.mkdir(parents=True, exists_ok=True)
+```
+## rename files
+```ptyhon
+Path(data_path /'example.csv').rename('real.csv')
+```
 ## List files
 
 ## Glob Files
+```python
+data_path.glob('*.csv')
+```
+**recursively**
+```python
+data_path.rglob('*.csv')
+```
+
+## Write
+
+```python
+Path(data_path / 'meta.txt').write_text(f'created on {datetime.datetime.today()})
+
+```
