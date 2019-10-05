@@ -1,0 +1,16 @@
+---
+templateKey: notes
+related_post_label: Check out this related post
+tags: []
+path: debugging-python
+title: Debugging Python
+date: 2019-10-01T05:00:00Z
+status: published
+description: Debugging Python
+related_post_body: ''
+related_post: []
+cover: "/static/jayden-yoon-19DxK0IG-hQ-unsplash-1.jpg"
+twitter_cover: "/static/jayden-yoon-19DxK0IG-hQ-unsplash-1.jpg"
+
+---
+## Using pdb
