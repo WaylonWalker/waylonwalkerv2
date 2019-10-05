@@ -72,7 +72,7 @@ const BlogPostCard = ({ post, ...props }) => {
   return (
 
     <BlogPostCardStyles>
-      <Link to={post['fields']['slug']}>
+      <Link to={post['fields']['slug']} style={{ display: 'block', height: '125px', width: '100%', zIndex: '100' }}>
         <Img style={{ opacity: '.6', position: 'relative', top: '-1rem', left: '-1rem' }} fixed={post.frontmatter.cover !== null ? post.frontmatter.cover.childImageSharp.fixed : ''} />
       </Link>
 
@@ -84,11 +84,13 @@ const BlogPostCard = ({ post, ...props }) => {
                 textAlign: 'right', position: 'absolute', top: '3rem', right: '1rem', textShadow: '0rem 0rem .2rem rgba(255, 255, 255, .5)'
             }}>{month} {day}, {year}</p> */}
       <div className="date">
-        <div className="year">{year}</div>
-        <div className="month">{month} {day}</div>
+        <Link to={post['fields']['slug']}>
+          <div className="year">{year}</div>
+          <div className="month">{month} {day}</div>
+        </Link>
       </div>
 
-      <p>{post['excerpt']}</p>
+      <p style={{ minHeight: '100px' }}>{post['excerpt']}</p>
     </BlogPostCardStyles >
 
   )

@@ -12,8 +12,8 @@ status: published
 description: Filtering pandas DataFrames many different ways.
 related_post_body: ''
 related_post: []
-cover: "/static/images/nathan-dumlao-eksqjXTLpak-unsplash.jpg"
-twitter_cover: "/static/images/nathan-dumlao-eksqjXTLpak-unsplash.jpg"
+cover: "/static/nathan-dumlao-eksqjXTLpak-unsplash.jpg"
+twitter_cover: "/static/nathan-dumlao-eksqjXTLpak-unsplash.jpg"
 
 ---
 ## query

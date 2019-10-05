@@ -9,8 +9,8 @@ status: published
 description: ''
 related_post_body: ''
 related_post: []
-cover: "/static/images/steve-halama-kfwQvL6niR8-unsplash.jpg"
-twitter_cover: "/static/images/steve-halama-kfwQvL6niR8-unsplash.jpg"
+cover: "/static/steve-halama-kfwQvL6niR8-unsplash.jpg"
+twitter_cover: "/static/steve-halama-kfwQvL6niR8-unsplash.jpg"
 
 ---
 

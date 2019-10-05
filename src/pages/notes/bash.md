@@ -5,8 +5,8 @@ title: Bash
 date: 2019-09-08T05:00:00.000+00:00
 status: published
 description: Waylon Walker's Bash Notes
-cover: "/static/images/hannah-gibbs-BINLgyrG_fI-unsplash.jpg"
-twitter_cover: "/static/images/hannah-gibbs-BINLgyrG_fI-unsplash.jpg"
+cover: "/static/hannah-gibbs-BINLgyrG_fI-unsplash.jpg"
+twitter_cover: "/static/hannah-gibbs-BINLgyrG_fI-unsplash.jpg"
 related_post:
 - src/pages/blog/readme_tables.md
 tags:

@@ -6,8 +6,8 @@ date: 2019-05-27
 time: T05:00:00Z
 status: published
 description: My git workflow based on real life.  Its  not always clean and simple.
-cover: "/static/images/yousef-al-nasser-261164-unsplash.jpg"
-twitter_cover: "/static/images/yousef-al-nasser-261164-unsplash-1.jpg"
+cover: "/static/yousef-al-nasser-261164-unsplash.jpg"
+twitter_cover: "/static/yousef-al-nasser-261164-unsplash-1.jpg"
 related_post: []
 tags:
 - code

@@ -11,13 +11,13 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     'gatsby-remark-copy-linked-files',
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `images`,
+    //     path: `${__dirname}/src/images`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,6 +25,13 @@ module.exports = {
         path: `${__dirname}/static`,
       },
     },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `/static/images`,
+    //     path: `${__dirname}/static/images`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -66,7 +73,7 @@ module.exports = {
         background_color: '#B73CF6',
         theme_color: '#330026',
         display: 'minimal-ui',
-        icon: 'src/images/W.png', // This path is relative to the root of the site.
+        icon: 'static/W.png', // This path is relative to the root of the site.
       },
     },
     {

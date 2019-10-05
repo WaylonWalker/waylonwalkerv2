@@ -9,8 +9,8 @@ status: ''
 description: ''
 related_post_body: ''
 related_post: []
-cover: "/static/images/joshua-newton-RPUI6gtn49g-unsplash.jpg"
-twitter_cover: "/static/images/joshua-newton-RPUI6gtn49g-unsplash.jpg"
+cover: "/static/joshua-newton-RPUI6gtn49g-unsplash.jpg"
+twitter_cover: "/static/joshua-newton-RPUI6gtn49g-unsplash.jpg"
 
 ---
 I have been using pyspark since March 2019, here are my thoughts.

@@ -5,8 +5,8 @@ title: Background Tasks in Python for Data Science
 date: 2019-09-10T05:00:00.000+00:00
 status: published
 description: ''
-cover: "/static/images/erwan-hesry-elayN_YscVg-unsplash.jpg"
-twitter_cover: "/static/images/erwan-hesry-elayN_YscVg-unsplash.jpg"
+cover: "/static/erwan-hesry-elayN_YscVg-unsplash.jpg"
+twitter_cover: "/static/erwan-hesry-elayN_YscVg-unsplash.jpg"
 related_post:
 - src/pages/blog/background_1.md
 tags:

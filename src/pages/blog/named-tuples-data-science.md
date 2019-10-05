@@ -6,8 +6,8 @@ date: 2019-09-11
 time: T05:00:00Z
 status: published
 description: 
-cover: "/static/images/andrew-spencer-Ricopz7JkbE-unsplash.jpg"
-twitter_cover: "/static/images/andrew-spencer-Ricopz7JkbE-unsplash.jpg"
+cover: "/static/andrew-spencer-Ricopz7JkbE-unsplash.jpg"
+twitter_cover: "/static/andrew-spencer-Ricopz7JkbE-unsplash.jpg"
 related_post:
 - src/pages/blog/background-tasks-in-python-for-data-science.md
 tags:

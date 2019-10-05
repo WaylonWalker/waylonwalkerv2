@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import colors from './colors'
-import back from '../../images/circuit_bubbles.png'
+import back from '../../../static/circuit_bubbles.png'
 
 const NavStyles = styled.nav`
 background: linear-gradient(160deg, rgba(0, 0, 0, .15), rgba(0,0,0,.04)), url(${back});

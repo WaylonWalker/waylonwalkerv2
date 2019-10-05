@@ -5,8 +5,8 @@ title: Autoreload in Ipython
 date: 2019-09-08T05:00:00.000+00:00
 status: published
 description: Autoreload in python
-cover: "/static/images/alex-perez-wEgR12N01Tk-unsplash.jpg"
-twitter_cover: "/static/images/alex-perez-wEgR12N01Tk-unsplash-1.jpg"
+cover: "/static/alex-perez-wEgR12N01Tk-unsplash.jpg"
+twitter_cover: "/static/alex-perez-wEgR12N01Tk-unsplash-1.jpg"
 related_post:
 - src/pages/blog/readme_tables.md
 tags:

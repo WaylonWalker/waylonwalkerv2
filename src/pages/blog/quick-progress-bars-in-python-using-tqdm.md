@@ -5,8 +5,8 @@ title: Quick Progress Bars in python using TQDM
 date: 2019-09-18T05:00:00.000+00:00
 status: published
 description: Quick Progress Bars in python using TQDM
-cover: "/static/images/markus-spiske-7CjegTgBPKc-unsplash.jpg"
-twitter_cover: "/static/images/markus-spiske-7CjegTgBPKc-unsplash.jpg"
+cover: "/static/markus-spiske-7CjegTgBPKc-unsplash.jpg"
+twitter_cover: "/static/markus-spiske-7CjegTgBPKc-unsplash.jpg"
 related_post:
 - src/pages/blog/autoreload_ipython.md
 tags:
