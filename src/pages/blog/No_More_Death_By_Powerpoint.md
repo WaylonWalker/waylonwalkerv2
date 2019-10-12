@@ -4,7 +4,10 @@ path: 'no-more-death-by-powerpoint'
 title: No More Death By PowerPoint
 date: 2017-12-31
 category: Blog
-tags: Pug, Jade, Reveal
+tags: 
+    - Pug
+    - Jade
+    - Reveal
 description: none
 cover: "./gemma-evans-64661-unsplash.jpg"
 ---

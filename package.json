@@ -32,7 +32,9 @@
     "prismjs": "^1.17.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-flip-move": "^3.0.3",
     "react-helmet": "^5.2.1",
+    "react-on-screen": "^2.1.1",
     "styled-components": "^4.2.0"
   },
   "keywords": [

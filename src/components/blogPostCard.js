@@ -32,14 +32,10 @@ img {
 
 h3 {
   color: #333;
-  /* position: absolute; */
-  top: 1rem;
-  right: 1rem;
   text-shadow: 0rem 0rem .4rem rgba(255, 255, 255, .5);
   font-size: 1.5rem;
-  /* max-width: 300px; */
-  /* text-align: right; */
-  text-align: center
+  text-align: center;
+
 
 }
 
@@ -76,9 +72,6 @@ const BlogPostCard = ({ post, ...props }) => {
         <Img style={{ opacity: '.6', position: 'relative', top: '-1rem', left: '-1rem' }} fixed={post.frontmatter.cover !== null ? post.frontmatter.cover.childImageSharp.fixed : ''} />
       </Link>
 
-      <Link to={post['fields']['slug']}>
-        <h3>{post['frontmatter']['title']}</h3>
-      </Link>
       {/* <p>{post['frontmatter']['cover']}</p> */}
       {/* <p style={{
                 textAlign: 'right', position: 'absolute', top: '3rem', right: '1rem', textShadow: '0rem 0rem .2rem rgba(255, 255, 255, .5)'
@@ -90,6 +83,11 @@ const BlogPostCard = ({ post, ...props }) => {
         </Link>
       </div>
 
+      <Link to={post['fields']['slug']}>
+        <h3>{post['frontmatter']['title']}</h3>
+      </Link>
+
+      {/* <div className="excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} /> */}
       <p style={{ minHeight: '100px' }}>{post['excerpt']}</p>
     </BlogPostCardStyles >
 

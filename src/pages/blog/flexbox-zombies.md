@@ -168,7 +168,7 @@ I will use the following markup throughout the article, each with different css 
 ```
 ## Basic Technique
 
-[basic technique](/static/img/gif/basic-flexbox-technique.png)
+[basic technique](/img/gif/basic-flexbox-technique.png)
 
 ### 1. Turn on the crossbow
 

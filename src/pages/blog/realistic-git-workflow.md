@@ -21,7 +21,7 @@ _sometimes things get messy_
 
 ## The Clean Path
 
-![](/images/akira-hojo-652732-unsplash.jpg)
+![](/akira-hojo-652732-unsplash.jpg)
 
 **pull 👉 branch 👉 format 👉 work👉 add 👉 commit 👉 pull 👉 rebase 👉 push**
 
@@ -110,7 +110,7 @@ Opening a PR is not a done deal, it starts the conversation to get your code app
 
 _We all hit some pitfalls along the way_
 
-![](/images/ian-espinosa-177961-unsplash.jpg)
+![](/ian-espinosa-177961-unsplash.jpg)
 
 Things get dirty, the clean path is not always the path that is taken, but with git we can clean up our mess and make it look that way.
 

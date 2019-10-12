@@ -49,6 +49,7 @@ query BlogQuery {
     edges {
       node {
         excerpt(pruneLength: 400)
+        html
         id
         fields {
           slug

@@ -49,6 +49,7 @@ query NotesQuery {
     edges {
       node {
         excerpt(pruneLength: 400)
+        html
         id
         fields {
           slug

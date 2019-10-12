@@ -74,7 +74,7 @@ class BlogPostTemplate extends React.Component {
       content,
       // contentComponent,
       description,
-      // tags,jjjj
+      // tags,
       title,
       cover,
       date,
