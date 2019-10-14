@@ -101,3 +101,9 @@ By default the number of parallel processes wil be equal to the number of cpu th
 # Is it possible to overruse @background.task?
 
 I use this essentially anywhere that I cannot vectorize a python operation and push the compute down into those fast 💨 c extended libraries like numpy, and the operation takes more than a few minutes.  Nearly every big network request I make gets broken down into chunks and multithreaded.  Let me know... is is possible to overruse `@background.task`? Let me know your thoughts [@_WaylonWalker](https://twitter.com/_WaylonWalker).
+
+# Repl.It
+
+Play with the code here!  Try different values of background.n and n_runs.
+
+<iframe height="800px" width="100%" src="https://repl.it/@WaylonWalker/TestRepl?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
