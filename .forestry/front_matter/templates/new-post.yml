@@ -69,7 +69,7 @@ fields:
   label: Twitter Cover
 pages:
 - src/pages/blog/background-tasks-in-python-for-data-science.md
+- src/pages/blog/keyboard-driven-vscode.md
 - src/pages/blog/realistic-git-workflow.md
 - src/pages/blog/quick-progress-bars-in-python-using-tqdm.md
-- src/pages/blog/keyboard-driven-vscode.md
 - src/pages/blog/forestry-io.md
