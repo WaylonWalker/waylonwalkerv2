@@ -196,7 +196,7 @@ This last one doesnt work as well as I would like but it sure does get the job d
 
 🖱 right click in place
 
-I recently found this one, and find it quite useful to quickly do things like revert selected range, or extract variable.
+I recently found this one, and find it quite useful to quickly do things like revert selected range, or extract variable without leaving the keyboard.
 
 ``` json
 [
