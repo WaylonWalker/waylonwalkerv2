@@ -30,14 +30,26 @@ pipeline.only_nodes('cars.csv')
 ```
 
 **filter nodes like**
-```
-query_string = 'cars'
-nodes = [node.name for node in pipeline.nodes if query_string in node.name]
-pipeline.only_nodes(*nodes)
-```
 
-
+    query_string = 'cars'
+    nodes = [node.name for node in pipeline.nodes if query_string in node.name]
+    pipeline.only_nodes(*nodes)
 
 ## Loading Data
 
+### Finding data
+
+**simple keyword search**
+``` python
+    query = 'raw'
+    [data for data in io.list() if query in data]
+```
+
+**multi keyword serch**
+``` python
+query = 'raw sales'
+data_sets = io.list()
+for word in query.split():
+	data_sets = [data for data in data_sets if query in data]
+```
 ## Building pipelines
