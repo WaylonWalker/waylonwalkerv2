@@ -30,3 +30,5 @@ twitter_cover: ''
 
 [Colorama Example](https://github.com/tartley/colorama/raw/master/screenshots/ubuntu-demo.png)
 
+### [Click DidYouMean](https://github.com/click-contrib/click-didyoumean)
+
