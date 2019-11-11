@@ -68,6 +68,7 @@ fields:
     maxSize: 250
   label: Twitter Cover
 pages:
+- src/pages/notes/building-cli-apps-in-python.md
 - src/pages/notes/kedro.md
 - src/pages/notes/packages-to-investigate.md
 - src/pages/notes/debugging-python.md
