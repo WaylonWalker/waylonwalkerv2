@@ -9,8 +9,8 @@ status: published
 description: My Notes about using kedro
 related_post_body: ''
 related_post: []
-cover: ''
-twitter_cover: ''
+cover: "/static/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg"
+twitter_cover: "/static/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg"
 
 ---
 Below are some quick snippets/notes for when using kedro to build data pipelines.
@@ -40,16 +40,45 @@ pipeline.only_nodes('cars.csv')
 ### Finding data
 
 **simple keyword search**
+
 ``` python
     query = 'raw'
     [data for data in io.list() if query in data]
 ```
 
 **multi keyword serch**
+
 ``` python
 query = 'raw sales'
 data_sets = io.list()
 for word in query.split():
 	data_sets = [data for data in data_sets if query in data]
 ```
+
+**🐒query monkey patch**
+``` python
+def query(*search):
+	
+```
+## YOLO
+_You Only Load Once_
+
+**simple**
+``` python
+data = [io.load(d) for d in io.query('c_pri', 'cars')]
+```
+
+**more refined**
+
+``` python
+data = {d: io.load(d) for d in io.query('c_pri', 'cars')}
+```
+
+**🍷 refined like a fine wine**
+
+``` python
+from collections import SimpleNamespace
+data = SimpleNamesapce**{d: io.load(d) for d in io.query('c_pri', 'cars')})
+```
+
 ## Building pipelines
