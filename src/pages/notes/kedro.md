@@ -57,8 +57,13 @@ for word in query.split():
 
 **🐒query monkey patch**
 ``` python
-def query(*search):
-	
+def query(*search_terms):
+     data_sets = self.io.list()
+     for search in search_terms:
+         data_sets = [data for data in data_sets if search in data]
+     return data_sets
+     
+io.query = query
 ```
 ## YOLO
 _You Only Load Once_
@@ -80,5 +85,18 @@ data = {d: io.load(d) for d in io.query('c_pri', 'cars')}
 from collections import SimpleNamespace
 data = SimpleNamesapce**{d: io.load(d) for d in io.query('c_pri', 'cars')})
 ```
+
+**🧀 Make it a function**
+_getting funcy_
+
+``` python
+def yolo(*search_terms):
+	data = SimpleNamesapce**{d: io.load(d) for d in io.query('c_pri', 'cars')})
+    return data
+```
+
+## Pipeline Decorators
+
+[example - log_time](https://kedro.readthedocs.io/en/latest/_modules/kedro/pipeline/decorators.html#log_time)
 
 ## Building pipelines
