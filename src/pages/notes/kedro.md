@@ -31,9 +31,15 @@ pipeline.only_nodes('cars.csv')
 
 **filter nodes like**
 
+``` python
     query_string = 'cars'
-    nodes = [node.name for node in pipeline.nodes if query_string in node.name]
+    nodes = [
+       node.name 
+       for node in pipeline.nodes 
+       if query_string in node.name
+       ]
     pipeline.only_nodes(*nodes)
+```
 
 ## Loading Data
 
@@ -52,7 +58,11 @@ pipeline.only_nodes('cars.csv')
 query = 'raw sales'
 data_sets = io.list()
 for word in query.split():
-	data_sets = [data for data in data_sets if query in data]
+	data_sets = [
+       data 
+       for data in data_sets 
+       if query in data
+       ]
 ```
 
 **🐒query monkey patch**
@@ -60,7 +70,11 @@ for word in query.split():
 def query(*search_terms):
      data_sets = self.io.list()
      for search in search_terms:
-         data_sets = [data for data in data_sets if search in data]
+         data_sets = [
+         data 
+         for data in data_sets 
+         if search in data
+         ]
      return data_sets
      
 io.query = query
@@ -76,14 +90,20 @@ data = [io.load(d) for d in io.query('c_pri', 'cars')]
 **more refined**
 
 ``` python
-data = {d: io.load(d) for d in io.query('c_pri', 'cars')}
+data = {
+   d: io.load(d)
+   for d in io.query('c_pri', 'cars')
+   }
 ```
 
 **🍷 refined like a fine wine**
 
 ``` python
 from collections import SimpleNamespace
-data = SimpleNamesapce**{d: io.load(d) for d in io.query('c_pri', 'cars')})
+data = SimpleNamesapce**{
+   d: io.load(d) 
+   for d in io.query('c_pri', 'cars')
+   })
 ```
 
 **🧀 Make it a function**
@@ -91,7 +111,10 @@ _getting funcy_
 
 ``` python
 def yolo(*search_terms):
-	data = SimpleNamesapce**{d: io.load(d) for d in io.query('c_pri', 'cars')})
+	data = SimpleNamesapce(**{
+       d: io.load(d)
+       for d in io.query('c_pri', 'cars')
+    })
     return data
 ```
 
