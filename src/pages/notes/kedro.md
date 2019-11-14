@@ -20,13 +20,13 @@ Below are some quick snippets/notes for when using kedro to build data pipelines
 **filter by tags**
 
 ``` python
-pipeline.only_nodes_with_tags('cars')
+nodes = pipeline.only_nodes_with_tags('cars')
 ```
 
 **filter by node**
 
 ``` python
-pipeline.only_nodes('cars.csv')
+nodes = pipeline.only_nodes('b_int_cars')
 ```
 
 **filter nodes like**
@@ -65,7 +65,8 @@ for word in query.split():
        ]
 ```
 
-**🐒query monkey patch**
+**🐒 monkey patch it**
+
 ``` python
 def query(*search_terms):
      data_sets = self.io.list()
@@ -118,6 +119,11 @@ def yolo(*search_terms):
     return data
 ```
 
+**🐒 monkey patch it**
+
+``` python
+pipeline.yolo = yolo
+```
 ## Pipeline Decorators
 
 [example - log_time](https://kedro.readthedocs.io/en/latest/_modules/kedro/pipeline/decorators.html#log_time)
