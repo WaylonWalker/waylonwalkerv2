@@ -134,6 +134,9 @@ pipeline.yolo = yolo
 
 ## Building pipelines
 
+### Creating Nodes
+
+### Creating a pipeline
 
 ### Don't be so verbose
 
