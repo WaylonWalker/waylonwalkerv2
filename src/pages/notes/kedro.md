@@ -80,10 +80,13 @@ def query(*search_terms):
      
 io.query = query
 ```
+
 ## YOLO
+
 _You Only Load Once_
 
 **simple**
+
 ``` python
 data = [io.load(d) for d in io.query('c_pri', 'cars')]
 ```
@@ -124,8 +127,33 @@ def yolo(*search_terms):
 ``` python
 pipeline.yolo = yolo
 ```
+
 ## Pipeline Decorators
 
 [example - log_time](https://kedro.readthedocs.io/en/latest/_modules/kedro/pipeline/decorators.html#log_time)
 
 ## Building pipelines
+
+
+### Don't be so verbose
+
+Create similar nodes dynamically
+
+``` python
+def halve_dataframe(data: pd.DataFrame) -> List[pd.DataFrame]:
+    return np.array_split(data, 2)
+
+nodes = []
+datasets = [
+   'cars', 'trucks', 'boats', 'motorcycles', 'planes', 
+   'ships', 'busses', 'trains', 'subways'
+   ]
+
+for dataset in datasets
+   nodes.append(
+       node(halve_dataframe,
+            'e_modin_{dataset}',
+            ['train_{dataset}', 'test_{dataset}']),
+   )
+
+```
