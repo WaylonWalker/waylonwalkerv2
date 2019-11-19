@@ -39,50 +39,52 @@ This is by var the most useful set of keybindings that I use in vscode and is di
 
 ![navigating vscode with keyboard shortcuts](/images/alt \[hjkl\].gif "Alt+[hjkl]")
 
-    [
-            {
-                "key": "alt+j",
-                "command": "workbench.action.terminal.focus",
-                "when": "editorFocus"
-            },
-        
-            {
-                "key": "alt+k",
-                "command": "workbench.action.focusFirstEditorGroup",
-                "when": "terminalFocus"
-            },
-            {
-                "key": "alt+k",
-                "command": "workbench.action.focusAboveGroup",
-                "when": "editorFocus"
-            },
-            {
-                "key": "alt+l",
-                "command": "-toggleFindInSelection",
-                "when": "editorFocus"
-            },
-            {
-                "key": "alt+l",
-                "command": "workbench.action.focusNextGroup",
-                "when": "editorFocus"
-            },
-            {
-                "key": "alt+h",
-                "command": "workbench.action.focusPreviousGroup",
-                "when": "editorFocus"
-            },
-        
-            {
-                "key": "alt+l",
-                "command": "workbench.action.terminal.focusNextPane",
-                "when": "terminalFocus"
-            },
-            {
-                "key": "alt+h",
-                "command": "workbench.action.terminal.focusPreviousPane",
-                "when": "terminalFocus"
-            },
-    ]
+``` json
+[
+        {
+            "key": "alt+j",
+            "command": "workbench.action.terminal.focus",
+            "when": "editorFocus"
+        },
+    
+        {
+            "key": "alt+k",
+            "command": "workbench.action.focusFirstEditorGroup",
+            "when": "terminalFocus"
+        },
+        {
+            "key": "alt+k",
+            "command": "workbench.action.focusAboveGroup",
+            "when": "editorFocus"
+        },
+        {
+            "key": "alt+l",
+            "command": "-toggleFindInSelection",
+            "when": "editorFocus"
+        },
+        {
+            "key": "alt+l",
+            "command": "workbench.action.focusNextGroup",
+            "when": "editorFocus"
+        },
+        {
+            "key": "alt+h",
+            "command": "workbench.action.focusPreviousGroup",
+            "when": "editorFocus"
+        },
+    
+        {
+            "key": "alt+l",
+            "command": "workbench.action.terminal.focusNextPane",
+            "when": "terminalFocus"
+        },
+        {
+            "key": "alt+h",
+            "command": "workbench.action.terminal.focusPreviousPane",
+            "when": "terminalFocus"
+        },
+]
+```
 
 ## Alt+b
 
@@ -92,13 +94,15 @@ Since closing the sidebar is assigned to `ctrl+b` I thought that it made most se
 
 ![hiding the activity bar ](/images/alt b.gif "Alt+b")
 
-    [
-        {
-            "key": "alt+b",
-            "command": "workbench.action.toggleActivityBarVisibility",
-            "when": "editorFocus"
-        },
-    ]
+``` json
+[
+    {
+        "key": "alt+b",
+        "command": "workbench.action.toggleActivityBarVisibility",
+        "when": "editorFocus"
+    },
+]
+```
 
 ## Alt+\[svx\]
 
@@ -114,34 +118,35 @@ This is another one replicated from tmux for quickly creatiting horizontal (s) a
 
 ![Make and destroy splits with ease in vscode.](/images/alt \[svx\].gif "spliting the editor")
 
-     [
-        {
-            "key": "alt+s",
-            "command": "workbench.action.terminal.split",
-            "when": "terminalFocus"
-        },
-        {
-            "key": "alt+s",
-            "command": "workbench.action.splitEditor",
-            "when": "editorFocus"
-        },
-        {
-            "key": "alt+v",
-            "command": "workbench.action.splitEditorOrthogonal",
-            "when": "editorFocus"
-        },
-        {
-            "key": "alt+x",
-            "command": "workbench.action.terminal.kill",
-            "when": "terminalFocus"
-        },
-        {
-            "key": "alt+x",
-            "command": "workbench.action.closeActiveEditor",
-            "when": "editorFocus"
-        }
-      ]
-
+``` json
+[
+    {
+        "key": "alt+s",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+s",
+        "command": "workbench.action.splitEditor",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+v",
+        "command": "workbench.action.splitEditorOrthogonal",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+x",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+x",
+        "command": "workbench.action.closeActiveEditor",
+        "when": "editorFocus"
+    }
+]
+```
 ## Alt+\[cnp\]
 
 🤲 **Create** new workspace **alt+c**
@@ -156,24 +161,26 @@ I am often using this one when I have a process running that I watch like gatsby
 
 ![](/images/alt \[cnp\].gif)
 
-    [
-        {
-            "key": "alt+c",
-            "command": "workbench.action.terminal.new",
-            "when": "terminalFocus"
-        },
-        {
-            "key": "alt+n",
-            "command": "workbench.action.terminal.focusNext",
-            "when": "terminalFocus"
-        },
-    
-        {
-            "key": "alt+p",
-            "command": "workbench.action.terminal.focusPrevious",
-            "when": "terminalFocus"
-        },
-    ]
+``` json
+[
+    {
+        "key": "alt+c",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+n",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+
+    {
+        "key": "alt+p",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
+]
+```
 
 ## Alt+z
 
@@ -183,12 +190,14 @@ This last one doesnt work as well as I would like but it sure does get the job d
 
 ![](/images/alt z.gif)
 
-    [
-        {
-            "key": "alt+z",
-            "command": "workbench.action.toggleMaximizedPanel",
-        },
-    ]
+``` json
+[
+    {
+        "key": "alt+z",
+        "command": "workbench.action.toggleMaximizedPanel",
+    },
+]
+```
 
 # Bonus
 
