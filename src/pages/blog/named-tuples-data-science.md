@@ -68,15 +68,17 @@ def calculate_inventory_sale_ratio(inventory, sales):
 
 Furthermore these functions will need to be called somewhere, this might be in a `make_report()` function that puts this data into an html template to be sent out to stakeholders, or to be served on a website. Notice how we have the same data showing up time and time again.  And sometimes we even ask for it in a different order 😲.It is important to recognize this early in the project before this gets our of hand.
 
-    def make_report():
-        """Makes stakeholder report for company XYZ"""
-        sales = get_sales()
-        inventory = get_inventory()
-        pricing = get_pricing()
-    
-        revenue = calculate_total_revenue(sales, pricing)
-        sales_ratio = inventory_sale_ratio(sales, inventory, pricing)
-        inventory_sale_ratio(inventory, sales)
+```python
+def make_report():
+    """Makes stakeholder report for company XYZ"""
+    sales = get_sales()
+    inventory = get_inventory()
+    pricing = get_pricing()
+
+    revenue = calculate_total_revenue(sales, pricing)
+    sales_ratio = inventory_sale_ratio(sales, inventory, pricing)
+    inventory_sale_ratio(inventory, sales)
+```
 
 ### getting out of hand
 
@@ -113,22 +115,23 @@ def completely_custom_metric_for_steve(sales, pricing, inventory, stored_at='LAX
 
 It gets even crazier when you start calling all of these functions! Note that we have a common theme of the same data getting passed into
 
-    def make_report(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000', is_for_steve=False):
-        """Makes stakeholder report for company XYZ"""
-        sales = get_sales()
-        inventory = get_inventory()
-        pricing = get_pricing()
-    
-        revenue = calculate_total_revenue(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
-        sales_ratio = sales_ratio = inventory_sale_ratio(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
-        inventory_sale_ratio = inventory_sale_ratio(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
-        predicted_prices = model_new_prices(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
-        predicted_production_rates = model_production_rate(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
-        completely_custom_metric_for_steve(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
-    
-        # render report
-        ...
-        
+``` python
+def make_report(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000', is_for_steve=False):
+    """Makes stakeholder report for company XYZ"""
+    sales = get_sales()
+    inventory = get_inventory()
+    pricing = get_pricing()
+
+    revenue = calculate_total_revenue(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+    sales_ratio = sales_ratio = inventory_sale_ratio(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+    inventory_sale_ratio = inventory_sale_ratio(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+    predicted_prices = model_new_prices(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+    predicted_production_rates = model_production_rate(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+    completely_custom_metric_for_steve(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+
+    # render report
+    ...
+```
 
 ### This code Stinks
 
@@ -182,20 +185,21 @@ def calculate_total_revenue(data):
 
 Now that all of the data is store in a single object it is really easy to call each of our functions using one data instance.
 
-    def make_report(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000', is_for_steve=False):
-        """Makes stakeholder report for company XYZ"""
-        data = ModelData(stored_at=stored_at, min_price=min_price, start_date=start_date, end_date=end_date)
-    
-        revenue = calculate_total_revenue(data)
-        sales_ratio = sales_ratio = inventory_sale_ratio(data)
-        inventory_sale_ratio = inventory_sale_ratio(data)
-        predicted_prices = model_new_prices(data)
-        predicted_production_rates = model_production_rate(data)
-        completely_custom_metric_for_steve(data)
-    
-        # render report
-        ...
-        
+``` python
+def make_report(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000', is_for_steve=False):
+    """Makes stakeholder report for company XYZ"""
+    data = ModelData(stored_at=stored_at, min_price=min_price, start_date=start_date, end_date=end_date)
+
+    revenue = calculate_total_revenue(data)
+    sales_ratio = sales_ratio = inventory_sale_ratio(data)
+    inventory_sale_ratio = inventory_sale_ratio(data)
+    predicted_prices = model_new_prices(data)
+    predicted_production_rates = model_production_rate(data)
+    completely_custom_metric_for_steve(data)
+
+    # render report
+    ...
+```
 
 ### 🧹 Clean up your data science
 
