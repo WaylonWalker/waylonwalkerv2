@@ -39,13 +39,28 @@ a {
 p>img {
   opacity: .8;
   box-shadow: .2rem .2rem 1rem rgba(51, 0, 38, .4);
-  max-width: 400px;
-  width: 95%;
+  // max-width: 400px;
+  // width: 95%;
+  // width: 800px;
+  width: 836px !important;
+  left: -18px;
+  position: relative;
+
+  margin: auto;
   align-self: center;
   justify-self: center;
   align-items: center;
   justify-items: center;
   /* margin: 2rem 200px; */
+}
+
+.gatsby-highlight {
+  width: 836px !important;
+  left: -18px;
+  position: relative;
+  pre{
+  padding: 18px 36px;
+  }
 }
 
 blockquote {
@@ -60,6 +75,14 @@ hr {
   background: none;
   margin: 1rem 2rem
 
+}
+
+img {
+  margin: auto;
+  width: 836px;
+  max-width: 836px !important;
+  max-height: 200px;
+  object-fit: cover;
 }
 `
 

@@ -49,6 +49,12 @@ p>img {
   /* margin: 2rem 200px; */
 }
 
+img {
+  width: 100%;
+  border: 5px solid red;
+  max-width: 800px;
+}
+
 /* blockquote {
   color: #777;
   border-left: 5px solid goldenrod;
@@ -62,6 +68,7 @@ hr {
   margin: 1rem 2rem
 
 }
+
 `
 
 class BlogPostTemplate extends React.Component {
@@ -107,6 +114,7 @@ class BlogPostTemplate extends React.Component {
               className="blog title">
               {title}
             </h1>
+            here
             <p
               style={{ textAlign: 'right', zIndex: 2 }}>
               {date}

@@ -16,6 +16,9 @@ twitter_cover: "/static/68747470733a2f2f7261772e67697468756275736572636f6e74656e
 Below are some quick snippets/notes for when using kedro to build data pipelines.
 
 ## Running Pipelines
+![running pipelines](/rodion-kutsaev-xNdPWGJ6UCQ-unsplash.jpg)
+> Photo by Rodion Kutsaev on Unsplash
+
 
 **filter by tags**
 
@@ -42,8 +45,10 @@ nodes = pipeline.only_nodes('b_int_cars')
 ```
 
 ## Loading Data
+![loading data](/battlecreek-coffee-roasters-eg6OUchGCsw-unsplash.jpg)
+> Photo by Battlecreek Coffee Roasters on Unsplash
 
-### Finding data
+### 🔍 Finding data
 
 **simple keyword search**
 
@@ -81,7 +86,7 @@ def query(*search_terms):
 io.query = query
 ```
 
-## YOLO
+### YOLO
 
 _You Only Load Once_
 
@@ -117,7 +122,7 @@ _getting funcy_
 def yolo(*search_terms):
 	data = SimpleNamesapce(**{
        d: io.load(d)
-       for d in io.query('c_pri', 'cars')
+      for d in io.query('c_pri', 'cars')
     })
     return data
 ```
@@ -128,12 +133,14 @@ def yolo(*search_terms):
 pipeline.yolo = yolo
 ```
 
-## Pipeline Decorators
+### 🎂 Pipeline Decorators
 
 [example - log_time](https://kedro.readthedocs.io/en/latest/_modules/kedro/pipeline/decorators.html#log_time)
 
 ## Building pipelines
 
+![building pipelines](/roman-pentin-T5QT2bmiD4E-unsplash.jpg)
+> Photo by roman pentin on Unsplash
 ### Creating Nodes
 
 ### Creating a pipeline

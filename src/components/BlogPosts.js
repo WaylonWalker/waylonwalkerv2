@@ -15,6 +15,11 @@ min-height: 100vh;
 input {
   margin-left: 1rem;
 }
+
+img {
+  width: 100%;
+  border: 5px solid red;
+}
 `
 
 // incrementMaxEntries = () => {
