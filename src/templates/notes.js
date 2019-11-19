@@ -59,7 +59,7 @@ p>img {
   left: -18px;
   position: relative;
   pre{
-  padding: 18px 36px;
+    padding: 18px 36px;
   }
 }
 

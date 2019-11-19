@@ -11,38 +11,13 @@ related_post_body: ''
 related_post: []
 cover: "/static/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg"
 twitter_cover: "/static/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg"
-
 ---
 Below are some quick snippets/notes for when using kedro to build data pipelines.
 
-## Running Pipelines
-![running pipelines](/rodion-kutsaev-xNdPWGJ6UCQ-unsplash.jpg)
-> Photo by Rodion Kutsaev on Unsplash
+## Catalog
+![catalogs](/jesse-orrico-h6xNSDlgciU-unsplash.jpg)
+_Photo by jesse orrico on Unsplash_
 
-
-**filter by tags**
-
-``` python
-nodes = pipeline.only_nodes_with_tags('cars')
-```
-
-**filter by node**
-
-``` python
-nodes = pipeline.only_nodes('b_int_cars')
-```
-
-**filter nodes like**
-
-``` python
-    query_string = 'cars'
-    nodes = [
-       node.name 
-       for node in pipeline.nodes 
-       if query_string in node.name
-       ]
-    pipeline.only_nodes(*nodes)
-```
 
 ## Loading Data
 ![loading data](/battlecreek-coffee-roasters-eg6OUchGCsw-unsplash.jpg)
@@ -133,10 +108,6 @@ def yolo(*search_terms):
 pipeline.yolo = yolo
 ```
 
-### 🎂 Pipeline Decorators
-
-[example - log_time](https://kedro.readthedocs.io/en/latest/_modules/kedro/pipeline/decorators.html#log_time)
-
 ## Building pipelines
 
 ![building pipelines](/roman-pentin-T5QT2bmiD4E-unsplash.jpg)
@@ -167,3 +138,40 @@ for dataset in datasets
    )
 
 ```
+
+## Running Pipelines
+![running pipelines](/rodion-kutsaev-xNdPWGJ6UCQ-unsplash.jpg)
+> Photo by Rodion Kutsaev on Unsplash
+
+
+**filter by tags**
+
+``` python
+nodes = pipeline.only_nodes_with_tags('cars')
+```
+
+**filter by node**
+
+``` python
+nodes = pipeline.only_nodes('b_int_cars')
+```
+
+**filter nodes like**
+
+``` python
+    query_string = 'cars'
+    nodes = [
+       node.name 
+       for node in pipeline.nodes 
+       if query_string in node.name
+       ]
+    pipeline.only_nodes(*nodes)
+```
+
+
+### 🎂 Pipeline Decorators
+
+[example - log_time](https://kedro.readthedocs.io/en/latest/_modules/kedro/pipeline/decorators.html#log_time)
+
+
+

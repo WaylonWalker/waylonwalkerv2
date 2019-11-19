@@ -114,7 +114,6 @@ class BlogPostTemplate extends React.Component {
               className="blog title">
               {title}
             </h1>
-            here
             <p
               style={{ textAlign: 'right', zIndex: 2 }}>
               {date}
