@@ -12,31 +12,52 @@ related_post: []
 cover: "/static/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg"
 twitter_cover: "/static/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg"
 ---
-Below are some quick snippets/notes for when using kedro to build data pipelines.
 
-## Catalog
+
+# 🗣 Heads up
+Below are some quick snippets/notes for when using kedro to build data pipelines. So far I am just compiling snippets.  Eventually I will create several posts on kedro.  These are mostly things that I use In my everyday with kedro.  Some are a bit more essoteric.  Some are helpful when writing production code, some are useful more usefule for exploration.
+
+## 📚 Catalog
 ![catalogs](/jesse-orrico-h6xNSDlgciU-unsplash.jpg)
 _Photo by jesse orrico on Unsplash_
 
 
-## Loading Data
+## ⏳ Loading Data
 ![loading data](/battlecreek-coffee-roasters-eg6OUchGCsw-unsplash.jpg)
-> Photo by Battlecreek Coffee Roasters on Unsplash
+_Photo by Battlecreek Coffee Roasters on Unsplash_
+
+### Simple Loading
+
+``` python
+catalog.load('cars')
+```
+
+### list all datasets
+
+``` python
+catalog.list()
+```
+
+### Saving Data
+
+``` python
+catalog.save('cars', cars)
+```
 
 ### 🔍 Finding data
 
 **simple keyword search**
 
 ``` python
-    query = 'raw'
-    [data for data in io.list() if query in data]
+query = 'raw'
+[data for data in catalog.list() if query in data]
 ```
 
 **multi keyword serch**
 
 ``` python
 query = 'raw sales'
-data_sets = io.list()
+data_sets = catalog.list()
 for word in query.split():
 	data_sets = [
        data 
@@ -49,7 +70,7 @@ for word in query.split():
 
 ``` python
 def query(*search_terms):
-     data_sets = self.io.list()
+     data_sets = self.catalog.list()
      for search in search_terms:
          data_sets = [
          data 
@@ -58,25 +79,25 @@ def query(*search_terms):
          ]
      return data_sets
      
-io.query = query
+catalog.query = query
 ```
 
-### YOLO
+### 🤙 YOLO
 
 _You Only Load Once_
 
 **simple**
 
 ``` python
-data = [io.load(d) for d in io.query('c_pri', 'cars')]
+data = [catalog.load(d) for d in catalog.query('c_pri', 'cars')]
 ```
 
 **more refined**
 
 ``` python
 data = {
-   d: io.load(d)
-   for d in io.query('c_pri', 'cars')
+   d: catalog.load(d)
+   for d in catalog.query('c_pri', 'cars')
    }
 ```
 
@@ -85,8 +106,8 @@ data = {
 ``` python
 from collections import SimpleNamespace
 data = SimpleNamesapce**{
-   d: io.load(d) 
-   for d in io.query('c_pri', 'cars')
+   d: catalog.load(d) 
+   for d in catalog.query('c_pri', 'cars')
    })
 ```
 
@@ -96,8 +117,8 @@ _getting funcy_
 ``` python
 def yolo(*search_terms):
 	data = SimpleNamesapce(**{
-       d: io.load(d)
-      for d in io.query('c_pri', 'cars')
+       d: catalog.load(d)
+      for d in catalog.query('c_pri', 'cars')
     })
     return data
 ```
@@ -108,13 +129,13 @@ def yolo(*search_terms):
 pipeline.yolo = yolo
 ```
 
-## Building pipelines
+## 🛢 Building pipelines
 
 ![building pipelines](/roman-pentin-T5QT2bmiD4E-unsplash.jpg)
-> Photo by roman pentin on Unsplash
-### Creating Nodes
+_Photo by roman pentin on Unsplash_
+### 📍 Creating Nodes
 
-### Creating a pipeline
+### 🛢 Creating a pipeline
 
 ### Don't be so verbose
 
@@ -139,12 +160,13 @@ for dataset in datasets
 
 ```
 
-## Running Pipelines
+
+## 🏃‍♂️ Running Pipelines
 ![running pipelines](/rodion-kutsaev-xNdPWGJ6UCQ-unsplash.jpg)
-> Photo by Rodion Kutsaev on Unsplash
+_Photo by Rodion Kutsaev on Unsplash_
 
 
-**filter by tags**
+**🔖 filter by tags**
 
 ``` python
 nodes = pipeline.only_nodes_with_tags('cars')
@@ -159,13 +181,51 @@ nodes = pipeline.only_nodes('b_int_cars')
 **filter nodes like**
 
 ``` python
-    query_string = 'cars'
-    nodes = [
-       node.name 
-       for node in pipeline.nodes 
-       if query_string in node.name
-       ]
-    pipeline.only_nodes(*nodes)
+query_string = 'cars'
+nodes = [
+   node.name 
+   for node in pipeline.nodes 
+   if query_string in node.name
+   ]
+pipeline.only_nodes(*nodes)
+```
+
+**only nodes with tags** _or_
+
+``` python
+nodes = pipeline.only_nodes_with_tags('cars', 'trains')
+```
+
+**only nodes with tags** _and_
+``` python
+raw_nodes = pipeline.only_nodes_with_tags('raw')
+car_nodes = pipeline.only_nodes_with_tags('cars')
+raw_car_nodes = raw_nodes & car_nodes
+```
+
+``` python
+raw_nodes = (
+   pipeline
+   .only_nodes_with_tags('raw')
+   .only_nodes_with_tags('cars')
+   )
+```
+
+
+**add pipelines**
+``` python
+car_nodes = pipeline.only_nodes_with_tags('cars')
+train_nodes = pipeline.only_nodes_with_tags('trains')
+transportation_nodes = car_nodes + train_nodes
+```
+
+**ensure nodes are attached**
+``` python
+cars_attached = len(
+   pipeline
+   .only_nodes_with_tags('cars')
+   .grouped_nodes
+   ) == 1
 ```
 
 
