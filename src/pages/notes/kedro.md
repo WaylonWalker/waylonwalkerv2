@@ -13,6 +13,9 @@ cover: "/static/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f
 twitter_cover: "/static/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg"
 ---
 
+# [#kedrotips](https://twitter.com/search?q=%23kedrotips)
+
+I am tweeting out most of these snippets as I add them, you can find them all here [#kedrotips](https://twitter.com/search?q=%23kedrotips).
 
 # 🗣 Heads up
 Below are some quick snippets/notes for when using kedro to build data pipelines. So far I am just compiling snippets.  Eventually I will create several posts on kedro.  These are mostly things that I use In my everyday with kedro.  Some are a bit more essoteric.  Some are helpful when writing production code, some are useful more usefule for exploration.
@@ -52,6 +55,7 @@ catalog.save('cars', cars)
 query = 'raw'
 [data for data in catalog.list() if query in data]
 ```
+_see on [#kedrotips](https://twitter.com/_WaylonWalker/status/1197130980659732480?s=20)_
 
 **multi keyword serch**
 
@@ -65,6 +69,7 @@ for word in query.split():
        if query in data
        ]
 ```
+_see on [#kedrotips](https://twitter.com/_WaylonWalker/status/1197528461587419139?s=20)_
 
 **🐒 monkey patch it**
 
@@ -81,6 +86,7 @@ def query(*search_terms):
      
 catalog.query = query
 ```
+_see on [#kedrotips](https://twitter.com/_WaylonWalker/status/1197855759507300352?s=20)
 
 ### 🤙 YOLO
 
@@ -171,12 +177,14 @@ _Photo by Rodion Kutsaev on Unsplash_
 ``` python
 nodes = pipeline.only_nodes_with_tags('cars')
 ```
+_see on [#kedrotips](https://twitter.com/_WaylonWalker/status/1195319044808888321?s=20)_
 
 **filter by node**
 
 ``` python
 nodes = pipeline.only_nodes('b_int_cars')
 ```
+_see on [#kedrotips](https://twitter.com/_WaylonWalker/status/1196406204479737856?s=20)
 
 **filter nodes like**
 
@@ -189,6 +197,7 @@ nodes = [
    ]
 pipeline.only_nodes(*nodes)
 ```
+_see on [#kedrotips](https://twitter.com/_WaylonWalker/status/1196813895228428288?s=20)_
 
 **only nodes with tags** _or_
 
