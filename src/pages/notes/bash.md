@@ -33,6 +33,13 @@ df -h
 du . -h --max-depth=1
 ```
 
+**Move files then symlink them**
+
+``` bash
+mkdir /mnt/mounted_drive
+mv ~/bigdir /mnt/mounted_drive
+ln -s /mnt/mounted_drive/bigdir ~/bigdir
+```
 ## Fuzzy One Liners
 
 ```bash
