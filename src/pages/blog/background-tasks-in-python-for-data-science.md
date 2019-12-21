@@ -50,19 +50,21 @@ Imagine that this function is a big one!  This function is fairly realistic as i
 
 **Feel Free to copy this "boilerplate"**
 
-    import background
-    from time import sleep
-    import pandas as pd
+``` python
+import background
+from time import sleep
+import pandas as pd
+
+@background.task
+def long_func(i):
+    """
+    Simulates fetching data from a service 
+    and returning a pandas DataFrame.
     
-    @background.task
-    def long_func(i):
-    	"""
-        Simulates fetching data from a service 
-        and returning a pandas DataFrame.
-        
-        """
-        sleep(10)
-        return pd.DataFrame({'number_squared': [i**2]})
+    """
+    sleep(10)
+    return pd.DataFrame({'number_squared': [i**2]})
+```
 
 ## Calling the Slow Function
 
@@ -72,21 +74,25 @@ If we were to call this function 10 times it would take 100s.  Not bad for a dum
 
 Calling `long_func` will return a future object.  This object has a number of methods that you can read about in the [cpython docs](https://docs.python.org/3/library/concurrent.futures.html#future-objects).  The main one we are interested in is `result`.  I typically call these functions many times and put them into a list object so that I can track their progress and get their results.  If you needed to map inputs back to the result use a dictionary.
 
-    %time futures = [long_func(i) for i in range(10)]
-    
-    CPU times: user 319 µs, sys: 197 µs, total: 516 µs
-    Wall time: 212 µs
+``` python
+%time futures = [long_func(i) for i in range(10)]
+
+CPU times: user 319 µs, sys: 197 µs, total: 516 µs
+Wall time: 212 µs
+```
 
 ## Do something with those `results()`
 
 Simply running the function completes in no time! This is because the future objects that are returned are non blocking and will run in a background task using the `ProcessPoolExecutor`.  To get the result back out we need to call the `result` method on the future object.`result` is a blocking function that will not realease until the function has completed.
 
-    %%time 
-    futures = [long_func(i) for i in range(10)]
-    pd.concat([future.result() for future in futures])
-    
-    CPU times: user 5.38 ms, sys: 3.53 ms, total: 8.9 ms
-    Wall time: 10 s
+``` python
+%%time 
+futures = [long_func(i) for i in range(10)]
+pd.concat([future.result() for future in futures])
+
+CPU times: user 5.38 ms, sys: 3.53 ms, total: 8.9 ms
+Wall time: 10 s
+```
 
 Note that this example completed in `10s`, the time it took for only one run, not all 10! 😎
 
@@ -96,7 +102,9 @@ Note that this example completed in `10s`, the time it took for only one run, no
 
 By default the number of parallel processes wil be equal to the number of cpu threads on your machine. To increase the number of parallel processes (`max_workers`) set increase `background.n`.
 
-    background.n = 100
+``` python
+background.n = 100
+```
 
 # Is it possible to overruse @background.task?
 
