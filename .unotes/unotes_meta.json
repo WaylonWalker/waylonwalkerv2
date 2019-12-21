@@ -1,0 +1,115 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "__pycache__": {
+      "name": "__pycache__",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "public": {
+      "name": "public",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "set_state_in_python": {
+      "name": "set_state_in_python",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "src": {
+      "name": "src",
+      "isOrdered": true,
+      "folders": {
+        "components": {
+          "name": "components",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "images-old": {
+          "name": "images-old",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "pages": {
+          "name": "pages",
+          "isOrdered": true,
+          "folders": {
+            "blog": {
+              "name": "blog",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "gratitude": {
+              "name": "gratitude",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "notes": {
+              "name": "notes",
+              "isOrdered": true,
+              "folders": {},
+              "files": {
+                "bash": 0,
+                "amazon-web-services": 1,
+                "building-cli-apps-in-python": 2,
+                "custom-python-exceptions": 3,
+                "debugging-python": 4,
+                "digital-ocean": 5,
+                "filtering-pandas": 6,
+                "just-use-pathlib": 7,
+                "kedro": 8,
+                "making-good-documentation-in-python": 9,
+                "packages-to-investigate": 10,
+                "pyspark": 11
+              }
+            }
+          },
+          "files": {}
+        },
+        "templates": {
+          "name": "templates",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    },
+    "static": {
+      "name": "static",
+      "isOrdered": true,
+      "folders": {
+        "admin": {
+          "name": "admin",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "images": {
+          "name": "images",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    },
+    "uploads": {
+      "name": "uploads",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    }
+  },
+  "files": {
+    "readme": 0
+  }
+}
