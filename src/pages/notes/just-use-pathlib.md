@@ -7,7 +7,7 @@ tags:
 - code
 path: just-use-pathlob
 title: Just Use Pathlib
-date: 2019-09-26T05:00:00Z
+date: 2019-09-26T05:00:00.000+00:00
 status: published
 description: Pathlib is an amazing cross-platform path tool.
 related_post_body: ''
@@ -26,11 +26,10 @@ from pathlib import Path
 
 ## Create path object
 
-
 **Current Directory**
 
 ```python
-cwd = Path('.')
+cwd = Path('.').absolute()
 ```
 
 **Users Home Directory**
@@ -54,22 +53,28 @@ data_path = Path(__file__) / 'data'
 
 ## Check if files exist
 
-
 ## Make Directories
+
 ```python
 data_path.mkdir(parents=True, exists_ok=True)
 ```
+
 ## rename files
+
 ```ptyhon
 Path(data_path /'example.csv').rename('real.csv')
 ```
+
 ## List files
 
 ## Glob Files
+
 ```python
 data_path.glob('*.csv')
 ```
+
 **recursively**
+
 ```python
 data_path.rglob('*.csv')
 ```
@@ -78,5 +83,4 @@ data_path.rglob('*.csv')
 
 ```python
 Path(data_path / 'meta.txt').write_text(f'created on {datetime.datetime.today()})
-
 ```
