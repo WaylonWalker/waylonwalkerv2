@@ -20,6 +20,8 @@ twitter_cover: ''
 |-|-|
 |github: |[https://github.com/zaxr/bulwark](https://github.com/zaxr/bulwark)|
 
+I definitely want to try this out with kedro.
+
 Bulwark is a package for convenient property-based testing of pandas dataframes, supported for Python 3.5+.
 
 ## Example
