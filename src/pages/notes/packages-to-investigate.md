@@ -14,7 +14,7 @@ twitter_cover: ''
 
 ---
 * jmespath
-* 
+* Tabnine
 
 # Bulwark
 
@@ -36,4 +36,3 @@ Bulwark is a package for convenient property-based testing of pandas dataframes,
             # complex operations to determine result
             ...
         return result_df
-        
