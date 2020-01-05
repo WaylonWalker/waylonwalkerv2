@@ -14,6 +14,7 @@ twitter_cover: ''
 
 ---
 * jmespath
+* 
 
 # Bulwark
 
@@ -26,15 +27,13 @@ Bulwark is a package for convenient property-based testing of pandas dataframes,
 
 ## Example
 
-```
-    import bulwark.decorators as dc
-
-    @dc.IsShape((-1, 10))
-    @dc.IsMonotonic(strict=True)
-    @dc.HasNoNans()
-    def compute(df):
-        # complex operations to determine result
-        ...
-    return result_df
+        import bulwark.decorators as dc
     
-```
+        @dc.IsShape((-1, 10))
+        @dc.IsMonotonic(strict=True)
+        @dc.HasNoNans()
+        def compute(df):
+            # complex operations to determine result
+            ...
+        return result_df
+        
