@@ -75,9 +75,36 @@ There are a number of plugin managers for zsh, I tried each of the ones listed a
 
 After removing oh-my-zsh the first thing that I missed was the themes that it provided.  I went through a number of them and the one that seemed to have the smallest effect on performance and everything I needed was [starship](https://starship.rs/).  It's a really fast prompt written in rust.  The biggest thing that I needed to have that other prompts were misssing was conda environments.  I live much of my work life running python from various conda environments and it is crutial that I can see what environment I am in at all times.
 
-
 ![](/static/2020-01-04 12-36-31_Cortana.png)![](/static/max-larochelle-uu-Jw5SunYI-unsplash.jpg)
 
+## Finding Balance
 
+_Semi-lazy loading_
 
-## Semi-lazy loading
+![](/static/jeppe-hove-jensen-b3eaH1hguOA-unsplash.jpg)
+
+> Photo by [Jeppe Hove](https://unsplash.com/@haywire?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) Jensen on [Unsplash](https://unsplash.com/s/photos/balance?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+After struggling to get all of the features I wanted with a fast load time, I decided to only load what I needed upon startup.  Next I created a simple alias that loads in zgen and all of the plugins I want. By doing this I get two main benefits.  Obviously I get a faster starup time by loading less.  I got my startup time down to about 0.25s.
+
+### ⚡ Fast Loading
+
+I really like the fast startup time, because sometimes I am only loading up zsh to run a handful of commands that dont need much in the way of plugins
+
+**simple commands that need 💨 blazing start speed**
+
+_any single easy to type command, these are my common commands that I will open a terminal in my editor and just need to run quick._
+
+* vim
+* git add . && git commit && git push
+* sh my_script.sh
+* make build
+* bake build
+* pytest
+* gatsby develop
+* npm i
+* npm update
+* pip install
+* ipython
+
+The second benefit was that I can continue typing while plugins are loading.
