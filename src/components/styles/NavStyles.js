@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 import colors from './colors'
-import back from '../../../static/circuit_bubbles.png'
+// import back from '../../../static/circuit_bubbles.png'
+// background: linear - gradient(160deg, rgba(0, 0, 0, .15), rgba(0, 0, 0, .04)), url(${ back });
 
 const NavStyles = styled.nav`
-background: linear-gradient(160deg, rgba(0, 0, 0, .15), rgba(0,0,0,.04)), url(${back});
 box-shadow: 0rem 0rem 2rem ${colors.greys[3]};
+background: linear - gradient(160deg, rgba(0, 0, 0, .15), rgba(0, 0, 0, .04));
 ul {
 max-width: 1200px;
 margin: auto;
