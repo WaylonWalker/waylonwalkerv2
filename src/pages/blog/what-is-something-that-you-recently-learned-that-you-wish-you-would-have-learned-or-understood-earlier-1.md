@@ -19,7 +19,7 @@ Cover Photo I call **gaining clarity** by [David Travis](https://unsplash.com/@d
 
 ***
 
-Mine is the python debugger. I was a long holdout thinking that print statements were sufficient. That was untill I started having errors crop up in functions that took minutes to run. The thing that I most notably wish I would have known about is post_mortem. I attached
+Mine is the python debugger. I was a long holdout thinking that print statements were sufficient. That was untill I started having errors crop up in functions that took minutes to run. The thing that I most notably wish I would have known about is post_mortem.
 
 # Example
 
@@ -43,12 +43,10 @@ Mine is the python debugger. I was a long holdout thinking that print statements
           2     "repeats messages {repeats} number of times"
     ----> 3     print(f'{msg}\n' * repeats)
           4 
-    
 
 # Debug with iPython/Jupyter
 
     %debug
-    
 
 # Vanilla Debug
 
@@ -56,7 +54,6 @@ Mine is the python debugger. I was a long holdout thinking that print statements
     import sys
     
     pdb.post_mortem(sys.last_traceback)
-    
 
 # More
 
