@@ -130,11 +130,9 @@ After removing oh-my-zsh the first thing that I missed was the themes that it pr
 
 ![](/static/2020-01-04 12-36-31_Cortana.png)
 
-
 ## 💰 Bonus
 
 I applied the same logic to neovim and achieved similar results.  Again it just had too many plugins loading on startup for simple tasks.  I ended up taking a shortcut and load any heavy plugins upon NerdTreeToggle.  I dont really use NERDTree that much, but when I do its for more than just a quick edit.
-
 
 ``` bash
 # ~/.config/nvim/init.vim
