@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import BlogPostCard from '../components/blogPostCard'
 import FlipMove from 'react-flip-move'
-import TrackVisibility from 'react-on-screen';
+// import TrackVisibility from 'react-on-screen';
 // import { Link, graphql } from 'gatsby'
 
 // import BlogGallery from '../components/BlogGallery'
@@ -14,6 +14,9 @@ align-items: center;
 min-height: 100vh;
 input {
   margin-left: 1rem;
+}
+img {
+  margin: auto;
 }
 
 `
@@ -34,7 +37,7 @@ input {
 const BlogPosts = ({ posts, ...props }) => {
 
   const [search, setSearch] = useState('')
-  const [numPosts, incrementNumPosts] = useState(10)
+  // const [numPosts, incrementNumPosts] = useState(10)
   console.log(posts)
   return (
 
