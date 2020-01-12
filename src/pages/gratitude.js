@@ -73,6 +73,7 @@ export default class gratitude extends Component {
       posts[i]['node']['date']['year'] = dt.getYear() + 1900
       posts[i]['node']['date']['month'] = dt.toLocaleString('en-us', { month: 'long' })
       posts[i]['node']['date']['day'] = ("00" + dt.getDay()).slice(-2)
+      return posts
     })
 
     // console.log(posts)

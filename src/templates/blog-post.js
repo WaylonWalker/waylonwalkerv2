@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import BlogPostCard from '../components/blogPostCard'
+// import BlogPostCard from '../components/blogPostCard'
 // import { kebabCase } from 'lodash'
 // import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
@@ -32,6 +32,7 @@ border-radius: 2px;
 box-shadow: .2rem .2rem 1rem rgba(0, 0, 0, .2);
 display: flex;
 flex-direction: column;
+
 a {
   color: #333;
   text-decoration-color: #330026;
@@ -47,19 +48,22 @@ p>img {
   align-items: center;
   justify-items: center;
   /* margin: 2rem 200px; */
+  margin: auto;
 }
 
-img {
-  width: 100%;
-  max-width: 800px;
+p {
+  // display: flex;
 }
 
-/* blockquote {
+
+blockquote {
   color: #777;
-  border-left: 5px solid goldenrod;
-  padding: 0 1rem;
-  font-size: 1.4rem;
-} */
+  border-left: 2px solid goldenrod;
+  font-size: 1rem;
+  padding: 1rem 0 1rem .5rem;
+  margin: 1.5rem 0;
+  
+}
 
 hr {
   border-top: 1px solid goldenrod;
@@ -123,10 +127,10 @@ class BlogPostTemplate extends React.Component {
                 top: '0px',
                 left: '-0rem',
                 // zIndex: '-1',
-                opacity: '.6'
+                opacity: '.6',
               }}
               fixed={cover} />
-            <p style={{ minHeight: '100px' }}>{description}</p>
+            <p style={{ minHeight: '30px', margin: '0', padding: '0' }}>{description}</p>
             <div ref={(el) => { this.markdownContainer = el }}
               dangerouslySetInnerHTML={{ __html: content }} />
 
