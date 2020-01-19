@@ -4,15 +4,15 @@ related_post_label: Check out this related post
 tags: []
 path: kedro
 title: Kedro
-date: 2019-11-02T05:00:00Z
+date: 2019-11-02T05:00:00.000+00:00
 status: published
 description: My Notes about using kedro
 related_post_body: ''
 related_post: []
 cover: "/static/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg"
 twitter_cover: "/static/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg"
----
 
+---
 # [#kedrotips](https://twitter.com/search?q=%23kedrotips)
 
 I am tweeting out most of these snippets as I add them, you can find them all here [#kedrotips](https://twitter.com/search?q=%23kedrotips).
@@ -24,18 +24,26 @@ Below are some quick snippets/notes for when using kedro to build data pipelines
 ## 📚 Catalog
 
 ![catalogs](/jesse-orrico-h6xNSDlgciU-unsplash.jpg)
-*Photo by jesse orrico on Unsplash*
+_Photo by jesse orrico on Unsplash_
 
 ### CSVLocalDataSet
 
 **python**
+
 ``` python
+import pandas as pd
+iris = pd.read_csv('https://raw.githubusercontent.com/quantumblacklabs/kedro/d3218bd89ce8d1148b1f79dfe589065f47037be6/kedro/template/%7B%7B%20cookiecutter.repo_name%20%7D%7D/data/01_raw/iris.csv')
+
 data_set = CSVLocalDataSet(filepath="test.csv",
                                  load_args=None,
                                  save_args={"index": False})
+
+iris_data_set.save(iris)
+reloaded_iris = iris_data_set.load()                        
 ```
 
 **yaml**
+
 ``` yaml
 test_data:
    type: CSVLocalDataset
@@ -45,14 +53,15 @@ test_data:
       index: False
 ```
 
-
 ## CSVHTTPDataSet
 
 ``` python
 cities = CSVHTTPDataSet(
-    fileurl="https://people.sc.fsu.edu/~jburkardt/data/csv/cities.csv",
+    fileurl="https://raw.githubusercontent.com/quantumblacklabs/kedro/d3218bd89ce8d1148b1f79dfe589065f47037be6/kedro/template/%7B%7B%20cookiecutter.repo_name%20%7D%7D/data/01_raw/iris.csv",
     auth=None,
     load_args=None)
+    
+iris = iris_data_set.load() 
 ```
 
 ``` yaml
@@ -62,13 +71,21 @@ cities:
     auth: None
     load_args: None
 ```
+
 ## HDFLocalDataSet
 
 ``` python
-data_set = HDFLocalDataSet(filepath="test.hdf",
+import pandas as pd
+from kedro.io import HDFLocalDataSet
+
+iris = pd.read_csv('https://raw.githubusercontent.com/quantumblacklabs/kedro/d3218bd89ce8d1148b1f79dfe589065f47037be6/kedro/template/%7B%7B%20cookiecutter.repo_name%20%7D%7D/data/01_raw/iris.csv')
+iris_data_set = HDFLocalDataSet(filepath="iris.hdf",
                            key="test_hdf_key",
                            load_args=None,
                            save_args=None)
+
+iris_data_set.save(iris)
+reloaded_iris = iris_data_set.load()    
 ```
 
 ``` yaml
@@ -78,15 +95,21 @@ cars:
    key: test_hdf_key
 ```
 
-
 ## HDFS3LocalDataSet
 
 ``` python
-cars = HDFS3DataSet(filepath="cars.hdf",
+import pandas as pd
+from kedro.io import HDFS3DataSet
+
+iris = pd.read_csv('https://raw.githubusercontent.com/quantumblacklabs/kedro/d3218bd89ce8d1148b1f79dfe589065f47037be6/kedro/template/%7B%7B%20cookiecutter.repo_name%20%7D%7D/data/01_raw/iris.csv')
+iris_data_set = HDFS3DataSet(filepath="iris.hdf",
                         bucket_name="bucket-us-west-1",
                         key="test_hdf_key",
                         load_args=None,
                         save_args=None)
+
+iris_data_set.save(iris)
+reloaded_iris = iris_data_set.load()    
 ```
 
 ``` yaml
@@ -97,14 +120,50 @@ cars:
    key: test_hdf_key
 ```
 
+## JSONLocalDataSet
 
-JSONLocalDataSet
+``` python
+import pandas as pd
+from kedro.io import JSONLocalDataSet
 
-LambdaDataSet
+iris = pd.read_csv('https://raw.githubusercontent.com/quantumblacklabs/kedro/d3218bd89ce8d1148b1f79dfe589065f47037be6/kedro/template/%7B%7B%20cookiecutter.repo_name%20%7D%7D/data/01_raw/iris.csv')
+cars = JSONLocalDataSet(filepath="iris.json",
+                        load_args=None,
+                        save_args=None)
 
-MemoryDataSet
+iris_data_set.save(iris)
+reloaded_iris = iris_data_set.load()  
+```
 
-ParquetLocalDataSet
+``` yaml
+cars:
+   type: JSONLocalDataSet
+   filepath: iris.json
+```
+
+## ParquetLocalDataSet
+
+``` python
+import pandas as pd
+from kedro.io import ParquetLocalDataSet
+
+iris = pd.read_csv('https://raw.githubusercontent.com/quantumblacklabs/kedro/d3218bd89ce8d1148b1f79dfe589065f47037be6/kedro/template/%7B%7B%20cookiecutter.repo_name%20%7D%7D/data/01_raw/iris.csv')
+
+iris_data_set = ParquetLocalDataSet('iris', 
+                           engine='auto', 
+                           load_args=None, 
+                           save_args=None, 
+                           version=None)
+
+iris_data_set.save(iris)
+reloaded_iris = iris_data_set.load()
+```
+
+``` yaml
+cars:
+   type: JSONLocalDataSet
+   filepath: cars
+```
 
 PickleS3DataSet
 
@@ -116,11 +175,10 @@ TextLocalDataSet
 
 ExcelLocalDataSet
 
-
 ## ⏳ Loading Data
 
 ![loading data](/battlecreek-coffee-roasters-eg6OUchGCsw-unsplash.jpg)
-*Photo by Battlecreek Coffee Roasters on Unsplash*
+_Photo by Battlecreek Coffee Roasters on Unsplash_
 
 ### Simple Loading
 
@@ -149,7 +207,7 @@ query = 'raw'
 [data for data in catalog.list() if query in data]
 ```
 
-*see on [#kedrotips](https://twitter.com/_WaylonWalker/status/1197130980659732480?s=20)*
+_see on_ [_#kedrotips_](https://twitter.com/_WaylonWalker/status/1197130980659732480?s=20)
 
 **multi keyword serch**
 
@@ -164,7 +222,7 @@ for word in query.split():
        ]
 ```
 
-*see on [#kedrotips](https://twitter.com/_WaylonWalker/status/1197528461587419139?s=20)*
+_see on_ [_#kedrotips_](https://twitter.com/_WaylonWalker/status/1197528461587419139?s=20)
 
 **🐒 monkey patch it**
 
@@ -182,11 +240,11 @@ def query(*search_terms):
 catalog.query = query
 ```
 
-\_see on [#kedrotips](https://twitter.com/_WaylonWalker/status/1197855759507300352?s=20)
+_see on [#kedrotips](https://twitter.com/_WaylonWalker/status/1197855759507300352?s=20)
 
 ### 🤙 YOLO
 
-*You Only Load Once*
+_You Only Load Once_
 
 **simple**
 
@@ -217,7 +275,7 @@ data = SimpleNamespace**{
 ```
 
 **🧀 Make it a function**
-*getting funcy*
+_getting funcy_
 
 ``` python
 from types import SimpleNamespace
@@ -248,7 +306,7 @@ all_pri = catalog.yolo('c_pri')
 ## 🛢 Building pipelines
 
 ![building pipelines](/roman-pentin-T5QT2bmiD4E-unsplash.jpg)
-*Photo by roman pentin on Unsplash*
+_Photo by roman pentin on Unsplash_
 
 ### 📍 Creating Nodes
 
@@ -256,7 +314,6 @@ all_pri = catalog.yolo('c_pri')
 from kedro.pipeline import node
 node = node(lambda x: x.dropna(), inputs='raw_cars', outputs='int_cars')
 ```
-
 
 ``` python
 from kedro.pipeline import node
@@ -272,9 +329,6 @@ node = node(
    outputs='pri_cars'
    )
 ```
-
-
-
 
 ### 🛢 Creating a pipeline
 
@@ -305,7 +359,7 @@ for dataset in datasets
 ## 🏃‍♂️ Running Pipelines
 
 ![running pipelines](/rodion-kutsaev-xNdPWGJ6UCQ-unsplash.jpg)
-*Photo by Rodion Kutsaev on Unsplash*
+_Photo by Rodion Kutsaev on Unsplash_
 
 **🔖 filter by tags**
 
@@ -313,7 +367,7 @@ for dataset in datasets
 nodes = pipeline.only_nodes_with_tags('cars')
 ```
 
-*see on [#kedrotips](https://twitter.com/_WaylonWalker/status/1195319044808888321?s=20)*
+_see on_ [_#kedrotips_](https://twitter.com/_WaylonWalker/status/1195319044808888321?s=20)
 
 **filter by node**
 
@@ -321,7 +375,7 @@ nodes = pipeline.only_nodes_with_tags('cars')
 nodes = pipeline.only_nodes('b_int_cars')
 ```
 
-\_see on [#kedrotips](https://twitter.com/_WaylonWalker/status/1196406204479737856?s=20)
+_see on [#kedrotips](https://twitter.com/_WaylonWalker/status/1196406204479737856?s=20)
 
 **filter nodes like**
 
@@ -335,16 +389,15 @@ nodes = [
 pipeline.only_nodes(*nodes)
 ```
 
+_see on_ [_#kedrotips_](https://twitter.com/_WaylonWalker/status/1196813895228428288?s=20)
 
-*see on [#kedrotips](https://twitter.com/_WaylonWalker/status/1196813895228428288?s=20)*
-
-**only nodes with tags** *or*
+**only nodes with tags** _or_
 
 ``` python
 nodes = pipeline.only_nodes_with_tags('cars', 'trains')
 ```
 
-**only nodes with tags** *and*
+**only nodes with tags** _and_
 
 ``` python
 raw_nodes = pipeline.only_nodes_with_tags('raw')
@@ -380,8 +433,7 @@ cars_attached = len(
 
 ### 🎂 Pipeline Decorators
 
-[example - log\_time](https://kedro.readthedocs.io/en/latest/_modules/kedro/pipeline/decorators.html#log_time)
-
+[example - log_time](https://kedro.readthedocs.io/en/latest/_modules/kedro/pipeline/decorators.html#log_time)
 
 ``` python
 
@@ -390,7 +442,6 @@ cars_attached = len(
 
 from kedro.pipeline.decorators import log_time, mem_profile
 pipeline.decorate(log_running_time)
-
 
 
 
