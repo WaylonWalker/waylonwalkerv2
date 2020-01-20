@@ -1,6 +1,20 @@
 // google analytics tracking id
 // UA-113148616-1
 
+const makeDevToContent = (edge) => {
+
+  const frontMatter = `
+---
+title: ${edge.node.frontmatter.title}
+canonical_url: https://waylonwalker.com/blog/${edge.node.fields.slug},
+cover_image: ${edge.node.frontmatter.twitter_cover !== null ? edge.node.frontmatter.twitter_cover.relativePath : edge.node.frontmatter.cover !== null ? edge.node.frontmatter.cover.relativePath : ''}
+tags: zsh, ohmyzsh, wsl, dotfiles
+---
+  `
+  const body = edge.node.rawMarkdownBody
+  return frontMatter + body
+}
+
 module.exports = {
   siteMetadata: {
     title: 'Waylon Walker',
@@ -112,7 +126,7 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: 'https://waylonwalker.com/blog/' + edge.node.fields.slug,
                   guid: 'https://waylonwalker.com/blog/' + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.rawMarkdownBody }],
+                  custom_elements: [{ "content:encoded": makeDevToContent(edge) }],
                 })
               })
             },
@@ -130,6 +144,78 @@ module.exports = {
                       frontmatter {
                         title
                         date
+                        cover {
+                          relativePath
+                        }
+                        twitter_cover {
+                          relativePath
+                        }
+                      }
+
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/blog-rss-markdown.xml",
+            title: "Waylon Walker's Blog Feed in Markdown",
+            // optional configuration to insert feed reference in pages:
+            // if `string` is used, it will be used to create RegExp and then test if pathname of
+            // current page satisfied this regular expression;
+            // if not provided or `undefined`, all pages will have feed reference inserted
+            // match: "^/blog/",
+            // optional configuration to specify external rss feed, such as feedburner
+            link: "https://feeds.feedburner.com/gatsby/blog",
+          },
+        ],
+      },
+    },
+
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: 'https://waylonwalker.com/blog/' + edge.node.fields.slug,
+                  guid: 'https://waylonwalker.com/blog/' + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                  filter: { frontmatter: {templateKey: {in: ["blog-post"]},status: {in: ["published"]}} }
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                        twitter_cover {
+                          relativePath
+                        }
                       }
 
                     }
