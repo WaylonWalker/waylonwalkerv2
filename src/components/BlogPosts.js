@@ -38,7 +38,7 @@ const BlogPosts = ({ posts, ...props }) => {
 
   const [search, setSearch] = useState('')
   // const [numPosts, incrementNumPosts] = useState(10)
-  console.log(posts)
+  // console.log(posts)
   return (
 
     < BlogPostsStyle >
