@@ -110,9 +110,9 @@ module.exports = {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.frontmatter === 'blog-post' ? '/blog/' : edge.node.frontmatter === 'notes' ? '/notes/' : '' + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.frontmatter === 'blog-post' ? '/blog/' : edge.node.frontmatter === 'notes' ? '/notes/' : '' + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
+                  url: 'https://waylonwalker.com/blog/' + edge.node.fields.slug,
+                  guid: 'https://waylonwalker.com/blog/' + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.rawMarkdownBody }],
                 })
               })
             },
@@ -120,28 +120,30 @@ module.exports = {
               {
                 allMarkdownRemark(
                   sort: { order: DESC, fields: [frontmatter___date] },
+                  filter: { frontmatter: {templateKey: {in: ["blog-post"]},status: {in: ["published"]}} }
                 ) {
                   edges {
                     node {
                       excerpt
-                      html
+                      rawMarkdownBody
                       fields { slug }
                       frontmatter {
                         title
                         date
                       }
+
                     }
                   }
                 }
               }
             `,
-            output: "/rss.xml",
-            title: "Waylon Walker's Feed",
+            output: "/blog-rss.xml",
+            title: "Waylon Walker's Blog Feed",
             // optional configuration to insert feed reference in pages:
             // if `string` is used, it will be used to create RegExp and then test if pathname of
             // current page satisfied this regular expression;
             // if not provided or `undefined`, all pages will have feed reference inserted
-            match: "^/blog/",
+            // match: "^/blog/",
             // optional configuration to specify external rss feed, such as feedburner
             link: "https://feeds.feedburner.com/gatsby/blog",
           },
