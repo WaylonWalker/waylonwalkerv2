@@ -126,7 +126,7 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: 'https://waylonwalker.com/blog/' + edge.node.fields.slug,
                   guid: 'https://waylonwalker.com/blog/' + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": makeDevToContent(edge) }],
+                  custom_elements: [{ "content:encoded": edge.node.rawMarkdownBody }],
                 })
               })
             },
