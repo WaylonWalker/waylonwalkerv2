@@ -2,7 +2,7 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: debugging-python
+path: learning-python-debugger
 title: What is something that you recently learned that you wish you would have learned
   or understood earlier?
 date: 2020-01-10T06:00:00Z
@@ -11,15 +11,15 @@ description: What is something that you recently learned that you wish you would
   learned or understood earlier?
 related_post_body: ''
 related_post: []
-cover: ''
-twitter_cover: "/static/david-travis-aVvZJC0ynBQ-unsplash.jpg"
+cover: "/static/david-travis-aVvZJC0ynBQ-unsplash-1.jpg"
+twitter_cover: "/static/david-travis-aVvZJC0ynBQ-unsplash-1.jpg"
 
 ---
 Cover Photo I call **gaining clarity** by [David Travis](https://unsplash.com/@dtravisphd?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/clarity?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 ***
 
-Mine is the python debugger. I was a long holdout thinking that print statements were sufficient. That was untill I started having errors crop up in functions that took minutes to run. The thing that I most notably wish I would have known about is post_mortem. I attached
+Mine is the python debugger. I was a long holdout thinking that print statements were sufficient. That was untill I started having errors crop up in functions that took minutes to run. The thing that I most notably wish I would have known about is post_mortem.
 
 # Example
 
@@ -43,12 +43,10 @@ Mine is the python debugger. I was a long holdout thinking that print statements
           2     "repeats messages {repeats} number of times"
     ----> 3     print(f'{msg}\n' * repeats)
           4 
-    
 
 # Debug with iPython/Jupyter
 
     %debug
-    
 
 # Vanilla Debug
 
@@ -56,7 +54,6 @@ Mine is the python debugger. I was a long holdout thinking that print statements
     import sys
     
     pdb.post_mortem(sys.last_traceback)
-    
 
 # More
 

@@ -124,9 +124,9 @@ module.exports = {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
-                  url: 'https://waylonwalker.com/blog/' + edge.node.fields.slug,
-                  guid: 'https://waylonwalker.com/blog/' + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.rawMarkdownBody }],
+                  url: 'https://waylonwalker.com' + edge.node.fields.slug,
+                  guid: 'https://waylonwalker.com' + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.rawMarkdownBody.replace('\n', '<br>') }],
                 })
               })
             },
@@ -157,7 +157,7 @@ module.exports = {
                 }
               }
             `,
-            output: "/blog-rss-markdown.xml",
+            output: "/blog/markdown-rss.xml",
             title: "Waylon Walker's Blog Feed in Markdown",
             // optional configuration to insert feed reference in pages:
             // if `string` is used, it will be used to create RegExp and then test if pathname of
@@ -193,8 +193,8 @@ module.exports = {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
-                  url: 'https://waylonwalker.com/blog/' + edge.node.fields.slug,
-                  guid: 'https://waylonwalker.com/blog/' + edge.node.fields.slug,
+                  url: 'https://waylonwalker.com' + edge.node.fields.slug,
+                  guid: 'https://waylonwalker.com' + edge.node.fields.slug,
                   custom_elements: [{ "content:encoded": edge.node.html }],
                 })
               })
@@ -223,7 +223,7 @@ module.exports = {
                 }
               }
             `,
-            output: "/blog-rss.xml",
+            output: "/blog/rss.xml",
             title: "Waylon Walker's Blog Feed",
             // optional configuration to insert feed reference in pages:
             // if `string` is used, it will be used to create RegExp and then test if pathname of
