@@ -30,3 +30,13 @@ First off if you are stuck using cmd.exe, do yourself a favor and get cmder.  It
 ## Example
 
 ![](/static/cmd_exe_history_2.gif)
+
+## .bat
+
+The next simple technique is to save your commands into a 
+bat file. Any valid command ran with cmd.exe can be saved into a bat file and called again later by running it in the terminal.
+
+
+## Your quick tips
+
+let me know what quick cmd.exe tips you have.
