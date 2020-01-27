@@ -13,7 +13,7 @@ cover: "/static/2020-01-26 16-43-59_Start.png"
 twitter_cover: "/static/2020-01-26 16-43-59_Start.png"
 
 ---
-I spend a lot of my time at the terminal for my daily work, mostly in Linux or wsl.  One big reason for using wsl or cmd.exe is the ease of walking through history that fzf provides.  This week we had a windows bug in a cli and I was stuck in cmd.exe 😭
+I spend a lot of my time at the terminal for my daily work, mostly in Linux or wsl.  One big reason for using wsl over cmd.exe is the ease of walking through history that fzf provides.  This week we had a windows bug in a cli and I was stuck in vanilla cmd.exe 😭
 
 ## > Cmder
 
@@ -33,8 +33,7 @@ First off if you are stuck using cmd.exe, do yourself a favor and get cmder.  It
 
 ## .bat
 
-The next simple technique is to save your commands into a
-bat file. Any valid command ran with cmd.exe can be saved into a bat file and called again later by running it in the terminal.
+The next simple technique is to save your commands into a .bat file. Any valid command ran with cmd.exe can be saved into a bat file and called again later by running it in the terminal.
 
 **save your command**
 
