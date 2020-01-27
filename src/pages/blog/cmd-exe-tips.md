@@ -68,4 +68,4 @@ python cmd_example2.py
 
 let me know what quick cmd.exe tips you have.
 
-[![tweet your tip](/static/2020-01-27 06-32-34_Microsoft Text Input Application.png "tweet your tip")](https://twitter.com/intent/tweet?text=@waylonwalker%20my%20favorite%20cmd.exe%20tip%20is%20...%20https%3A//waylonwalker.com/blog/cmd-exe-tips/ "tweet your tip")
+[![tweet your tip](/2020-01-27 06-32-34_Microsoft Text Input Application.png "tweet your tip")](https://twitter.com/intent/tweet?text=@waylonwalker%20my%20favorite%20cmd.exe%20tip%20is%20...%20https%3A//waylonwalker.com/blog/cmd-exe-tips/ "tweet your tip")
