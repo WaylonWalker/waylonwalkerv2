@@ -17,7 +17,7 @@ I spend a lot of my time at the terminal for my daily work, mostly in Linux or w
 
 ## > Cmder
 
-![](/static/main.png)
+![](/main.png)
 
 First off if you are stuck using cmd.exe, do yourself a favor and get cmder.  It makes life just a bit easier.  It is super confugurable and comes with several power ups that make it a bit more enjoyable than cmd.exe.
 
