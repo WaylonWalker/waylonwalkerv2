@@ -44,10 +44,10 @@ use f7/f8 to get your command back add `> filename.bat` at the end, hit the home
 echo python cmd_example.py > cmd_example.bat
 ```
 
-**append
+**>> append**
 
 ``` bash
-echo python cmd_example2.py > cmd_example.bat
+echo python cmd_example2.py >> cmd_example.bat
 ```
 
 ## type not cat
