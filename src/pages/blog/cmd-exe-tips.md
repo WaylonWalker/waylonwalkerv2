@@ -9,8 +9,8 @@ status: published
 description: cmd.exe tips
 related_post_body: ''
 related_post: []
-cover: "/static/cmd_exe_history_2.gif"
-twitter_cover: "/static/cmd_exe_history_2.gif"
+cover: "/static/2020-01-26 16-43-59_Start.png"
+twitter_cover: "/static/2020-01-26 16-43-59_Start.png"
 
 ---
 I spend a lot of my time at the terminal for my daily work, mostly in Linux or wsl.  One big reason for using wsl or cmd.exe is the ease of walking through history that fzf provides.  This week we had a windows bug in a cli and I was stuck in cmd.exe 😭
