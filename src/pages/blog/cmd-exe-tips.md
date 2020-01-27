@@ -29,7 +29,7 @@ First off if you are stuck using cmd.exe, do yourself a favor and get cmder.  It
 
 ## Example
 
-![](/static/cmd_exe_history_2.gif)
+![](/cmd_exe_history_2.gif)
 
 ## .bat
 
