@@ -4,10 +4,6 @@ auto_deploy: false
 admin_path: "/static/admin"
 webhook_url: 
 sections:
-- type: document
-  path: static/_redirects
-  label: redirects
-  match: "**/*"
 - type: directory
   path: src/pages/blog
   label: Posts
@@ -31,6 +27,9 @@ sections:
   match: "**/*"
   templates:
   - gratitude2
+- type: document
+  path: static/_redirects
+  label: redirects
 upload_dir: static
 public_path: "/static"
 front_matter_path: ''
