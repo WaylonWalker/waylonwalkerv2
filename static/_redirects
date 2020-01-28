@@ -1,4 +1,35 @@
 # netlify redirects
 
-/b /blog
-/b* /blog/:splat
+/b              /blog
+/b*             /blog/:splat
+/n              /notes
+/n*             /blog/:splat
+/rss            /blog/rss.xml
+/md-rss         /blog/markdown-rss.xml
+/sitemap        /sitemap.xml
+
+
+# Short-Blog
+
+/b/cmdt         /blog/cmd-exe-tips/
+/b/wist         /blog/what-is-something-that-you-recently-learned-that-you-wish-you-would-have-learned-or-understood-earlier/
+/b/supz         /blog/supercharge-zsh-startup/
+/b/tqdm         /blog/quick-progress-bars-in-python-using-tqdm/
+/b/namt         /blog/named-tuples-data-science/
+/b/ipau         /blog/autoreload_ipython/
+/b/kdvs         /blog/keyboard-driven-vscode/
+/b/rgit         /blog/realistic-git-workflow/
+/b/frio         /blog/forestry-io/
+/b/gitr         /blog/git-rewrite-history/git-rewrite-history/
+/b/jour         /blog/journey/
+/b/gitu         blog/git-update-user/
+
+# External
+
+/redirects      https://github.com/WaylonWalker/waylonwalkerv2/edit/master/static/_redirects
+/twitter        https://twitter.com/_WaylonWalker
+/github         https://github.com/WaylonWalker
+/devto          https://dev.to/waylonwalker/
+/linkedin       https://www.linkedin.com/in/waylonwalker/
+/instagram      https://www.instagram.com/_waylonwalker/
+/ig             https://www.instagram.com/_waylonwalker/
