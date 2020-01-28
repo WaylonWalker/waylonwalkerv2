@@ -1,14 +1,5 @@
 # netlify redirects
 
-/b              /blog
-/b*             /blog/:splat
-/n              /notes
-/n*             /blog/:splat
-/rss            /blog/rss.xml
-/md-rss         /blog/markdown-rss.xml
-/sitemap        /sitemap.xml
-
-
 # Short-Blog
 
 /blog/cmdt         /blog/cmd-exe-tips/
@@ -22,7 +13,17 @@
 /blog/frio         /blog/forestry-io/
 /blog/gitr         /blog/git-rewrite-history/git-rewrite-history/
 /blog/jour         /blog/journey/
-/blog/gitu         blog/git-update-user/
+/blog/gitu         /blog/git-update-user/
+
+
+# more encompassing
+/b*             /blog/:splat
+/b              /blog
+/n*             /blog/:splat
+/n              /notes
+/rss            /blog/rss.xml
+/md-rss         /blog/markdown-rss.xml
+/sitemap        /sitemap.xml
 
 
 # External
