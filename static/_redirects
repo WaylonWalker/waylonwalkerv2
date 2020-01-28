@@ -11,18 +11,18 @@
 
 # Short-Blog
 
-/b/cmdt         /blog/cmd-exe-tips/
-/b/wist         /blog/what-is-something-that-you-recently-learned-that-you-wish-you-would-have-learned-or-understood-earlier/
-/b/supz         /blog/supercharge-zsh-startup/
-/b/tqdm         /blog/quick-progress-bars-in-python-using-tqdm/
-/b/namt         /blog/named-tuples-data-science/
-/b/ipau         /blog/autoreload_ipython/
-/b/kdvs         /blog/keyboard-driven-vscode/
-/b/rgit         /blog/realistic-git-workflow/
-/b/frio         /blog/forestry-io/
-/b/gitr         /blog/git-rewrite-history/git-rewrite-history/
-/b/jour         /blog/journey/
-/b/gitu         blog/git-update-user/
+/blog/cmdt         /blog/cmd-exe-tips/
+/blog/wist         /blog/what-is-something-that-you-recently-learned-that-you-wish-you-would-have-learned-or-understood-earlier/
+/blog/supz         /blog/supercharge-zsh-startup/
+/blog/tqdm         /blog/quick-progress-bars-in-python-using-tqdm/
+/blog/namt         /blog/named-tuples-data-science/
+/blog/ipau         /blog/autoreload_ipython/
+/blog/kdvs         /blog/keyboard-driven-vscode/
+/blog/rgit         /blog/realistic-git-workflow/
+/blog/frio         /blog/forestry-io/
+/blog/gitr         /blog/git-rewrite-history/git-rewrite-history/
+/blog/jour         /blog/journey/
+/blog/gitu         blog/git-update-user/
 
 # External
 
