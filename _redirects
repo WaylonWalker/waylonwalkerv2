@@ -1,0 +1,3 @@
+# netlify redirects
+
+/b* /blog/:splat
