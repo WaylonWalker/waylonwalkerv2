@@ -2,6 +2,7 @@
 
 # Short-Blog
 
+/blog/scli         /blog/simple-click/
 /blog/cmdt         /blog/cmd-exe-tips/
 /blog/wist         /blog/what-is-something-that-you-recently-learned-that-you-wish-you-would-have-learned-or-understood-earlier/
 /blog/supz         /blog/supercharge-zsh-startup/
@@ -28,9 +29,9 @@
 
 # more encompassing
 /b*             /blog/:splat
-/b              /blog
-/n*             /blog/:splat
-/n              /notes
+
+/n*             /notes/:splat
+
 /rss            /blog/rss.xml
 /md-rss         /blog/markdown-rss.xml
 /sitemap        /sitemap.xml
