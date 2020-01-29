@@ -14,7 +14,17 @@
 /blog/gitr         /blog/git-rewrite-history/git-rewrite-history/
 /blog/jour         /blog/journey/
 /blog/gitu         /blog/git-update-user/
-
+/blog/g019         /blog/goals-2019/
+/blog/r019         /blog/2018-retrospective/
+/blog/hapy         /blog/happy/
+/blog/rtab         /blog/readme_tables/
+/blog/pc18         /blog/Pycon_2018_roundup/
+/blog/d3d4         /blog/d3-day4/
+/blog/d3d3         /blog/d3-day3/
+/blog/flxz         /blog/flexbox-zombies/
+/blog/dsql         /blog/datacamp-sql/
+/blog/dppt         /blog/No_More_Death_By_Powerpoint/
+/blog/pc17         /blog/Pycon_2017_roundup/
 
 # more encompassing
 /b*             /blog/:splat
