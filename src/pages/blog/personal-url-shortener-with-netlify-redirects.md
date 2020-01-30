@@ -4,12 +4,12 @@ related_post_label: Check out this related post
 tags: []
 path: personal-url-shortener
 title: Personal URL shortener with Netlify Redirects
-date: 2020-01-29T06:00:00Z
+date: 2020-01-29T06:00:00.000+00:00
 status: published
 description: Personal URL shortener with Netlify Redirects
 related_post_body: ''
 related_post: []
-cover: "/static/URL shortener.png"
+cover: "/static/ozark-drones-oS8E1274cpY-unsplash.jpg"
 twitter_cover: "/static/URL shortener.png"
 
 ---
@@ -48,8 +48,6 @@ simply add a `_redirects` file to the root of your your published site with the 
     /twitter        https://twitter.com/_WaylonWalker
     /github         https://github.com/WaylonWalker
     /devto          https://dev.to/waylonwalker/
-    
-    
 
 # 🙌 Share those short links
 
