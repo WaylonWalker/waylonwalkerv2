@@ -4,7 +4,7 @@ related_post_label: Check out this related post
 tags: []
 path: simple_click
 title: simple click
-date: 2020-01-29T06:00:00Z
+date: 2020-01-29T06:00:00.000+00:00
 status: published
 description: Add helpful cli to your python libraries... All of them!
 related_post_body: ''
@@ -98,6 +98,10 @@ Entry points are the magic that make python cli tools available as their own com
     )
     
     
+
+# 🕶 See it in action
+
+![](/static/simple_click3.gif)[![See it in action](https://res.cloudinary.com/practicaldev/image/fetch/s--RiG3kZsy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/4zrhvj5yjzyk63np91g9.gif "See it in action")](https://res.cloudinary.com/practicaldev/image/fetch/s--RiG3kZsy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/4zrhvj5yjzyk63np91g9.gif)
 
 # 📢 Discuss
 
