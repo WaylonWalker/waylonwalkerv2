@@ -72,6 +72,7 @@ pages:
 - src/pages/blog/cmd-exe-tips.md
 - src/pages/blog/forestry-io.md
 - src/pages/blog/keyboard-driven-vscode.md
+- src/pages/blog/out-of-space.md
 - src/pages/blog/personal-url-shortener-with-netlify-redirects.md
 - src/pages/blog/quick-progress-bars-in-python-using-tqdm.md
 - src/pages/blog/realistic-git-workflow.md
