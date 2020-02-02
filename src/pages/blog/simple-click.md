@@ -9,11 +9,11 @@ status: published
 description: Add helpful cli to your python libraries... All of them!
 related_post_body: ''
 related_post: []
-cover: ''
-twitter_cover: ''
+cover: "/static/2020-02-02 09-40-45_Start.png"
+twitter_cover: "/static/2020-02-02 09-40-45_Start.png"
 
 ---
-cli tools are super handy and easy to add to your python libraries to supercharge them. Even if your library is not a cli tool there are a number of things that a cli can do to your library.
+![](/static/2020-02-02 09-47-14_Start.png)![](/static/2020-02-02 09-40-45_Start.png)cli tools are super handy and easy to add to your python libraries to supercharge them. Even if your library is not a cli tool there are a number of things that a cli can do to your library.
 
 # Example Ideas
 
@@ -59,7 +59,7 @@ Things a cli can do to enhance your library.
     if __name__ == '__main__':
         cli()
 
-# ✨ **init**.py
+# ✨ __init__.py
 
 For our simple_click library `__init__.py__` can be left empty. It is here purely to signify that simple_click is a library. It is likely that you will import other modules here that need to reside at the top level of your library api, your cli does not need to be at the top of of your api.
 
@@ -98,8 +98,10 @@ Entry points are the magic that make python cli tools available as their own com
 
 # 🕶 See it in action
 
-![](/static/simple_click3.gif)[![See it in action](https://res.cloudinary.com/practicaldev/image/fetch/s--RiG3kZsy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/4zrhvj5yjzyk63np91g9.gif "See it in action")](https://res.cloudinary.com/practicaldev/image/fetch/s--RiG3kZsy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/4zrhvj5yjzyk63np91g9.gif)
+[![See it in action](https://res.cloudinary.com/practicaldev/image/fetch/s--RiG3kZsy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/4zrhvj5yjzyk63np91g9.gif "See it in action")](https://res.cloudinary.com/practicaldev/image/fetch/s--RiG3kZsy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/4zrhvj5yjzyk63np91g9.gif)
 
 # 📢 Discuss
 
-What do You wish more python libraries included in their cli?
+What do You wish more python libraries included in their cli?  [Tweet it @_waylonwalker](https://twitter.com/intent/tweet?text=@_waylonwalker%20More%20libraries%20should%20...%0A%0Awaylonwalker.com/b/scli) 
+
+![Tweet it @_waylonwalker](https://twitter.com/intent/tweet?text=@_waylonwalker%20More%20libraries%20should%20...%0A%0Awaylonwalker.com/b/scli)
