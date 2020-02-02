@@ -77,6 +77,7 @@ pages:
 - src/pages/blog/quick-progress-bars-in-python-using-tqdm.md
 - src/pages/blog/realistic-git-workflow.md
 - src/pages/blog/rss-feed-for-your-gatsby-site.md
+- src/pages/blog/simple-click-2.md
 - src/pages/blog/simple-click.md
 - src/pages/blog/what-is-something-that-you-recently-learned-that-you-wish-you-would-have-learned-or-understood-earlier.md
 - src/pages/notes/what-datascientists-should-know-about-s3.md
