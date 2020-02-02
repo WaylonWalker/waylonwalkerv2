@@ -19,7 +19,9 @@ cli tools are super handy and easy to add to your python libraries to supercharg
 
 Things a cli can do to enhance your library.
 
-🆚 print version  
+🆚 print version
+🕶 print readme
+📝 print changelog  
 📃 print config  
 ✏ change config  
 👩‍🎓 run a tutorial  
@@ -36,7 +38,6 @@ Things a cli can do to enhance your library.
     └── simple_click
         ├── cli.py
         └── __init__.py
-    
 
 # ❯ cli.py
 
@@ -57,14 +58,12 @@ Things a cli can do to enhance your library.
     
     if __name__ == '__main__':
         cli()
-    
 
-# ✨ __init__.py
+# ✨ **init**.py
 
 For our simple_click library `__init__.py__` can be left empty. It is here purely to signify that simple_click is a library. It is likely that you will import other modules here that need to reside at the top level of your library api, your cli does not need to be at the top of of your api.
 
     # __init__.py
-    
 
 # 🚪 Entry Points
 
@@ -96,8 +95,6 @@ Entry points are the magic that make python cli tools available as their own com
         entry_points={"console_scripts": entry_points},
     
     )
-    
-    
 
 # 🕶 See it in action
 
