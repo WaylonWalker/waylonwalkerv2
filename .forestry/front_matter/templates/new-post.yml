@@ -67,6 +67,16 @@ fields:
   config:
     maxSize: 250
   label: Twitter Cover
+- name: twitter_announcement
+  type: textarea
+  default: I just dropped a new post check it out.
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: twitter announcement
+  description: Content of announcement tweet
 pages:
 - src/pages/blog/background-tasks-in-python-for-data-science.md
 - src/pages/blog/cmd-exe-tips.md
