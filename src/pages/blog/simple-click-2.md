@@ -11,5 +11,7 @@ related_post_body: ''
 related_post: []
 cover: ''
 twitter_cover: ''
+twitter_announcement: 'I just dropped my second post on building beautiful cli''s
+  in #python.'
 
 ---
