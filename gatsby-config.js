@@ -125,8 +125,8 @@ module.exports = {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
-                  url: 'https://waylonwalker.com' + edge.node.fields.slug,
-                  guid: 'https://waylonwalker.com' + edge.node.fields.slug,
+                  url: edge.node.frontmatter.short_url,
+                  guid: edge.node.fields.slug + '/tweet_0',
                   custom_elements: [
                     { "content:encoded": edge.node.frontmatter.twitter_announcement },
                     { "image": edge.node.frontmatter.twitter_cover === null ? '' : 'https://waylonwalker.com/' + edge.node.frontmatter.twitter_cover.relativePath }
@@ -145,6 +145,8 @@ module.exports = {
                       excerpt
                       fields { slug }
                       frontmatter {
+                        twitter_announcement
+                        short_url
                         title
                         date
                         cover {
