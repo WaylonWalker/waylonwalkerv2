@@ -16,6 +16,11 @@ related_post:
 - src/pages/blog/realistic-git-workflow.md
 cover: "/static/ship-faster.png"
 twitter_cover: "/static/ship-faster.png"
+twitter_week_1: ''
+twitter_week_2: ''
+twitter_month_1: ''
+twitter_month_3: ''
+short_url: waylonwalker.com/b/gitp
 
 ---
 Finally after years of hand typing out a full `git push --upstream my\_really\_long\_and\_descriptive\_branch\_name` I foudn there is a setting to automatcally push to the current branch. More realisitically I just did a `git push` let git yell at me, and copying the suggestion.

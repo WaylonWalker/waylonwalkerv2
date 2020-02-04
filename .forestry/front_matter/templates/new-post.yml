@@ -77,6 +77,51 @@ fields:
       format: markdown
   label: twitter announcement
   description: Content of announcement tweet
+- name: twitter_week_1
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: twitter week 1
+  description: tweet goes out 1 week after post
+- name: twitter_week_2
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: twitter week 2
+  description: tweet goes out 2 weeks after post
+- name: twitter_month_1
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: twitter month 1
+  description: tweet goes out 1 month after post
+- name: twitter_month_3
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: twitter month 3
+  description: tweet goes out 3 months after post
+- name: short_url
+  type: text
+  config:
+    required: false
+  label: short url
 pages:
 - src/pages/blog/background-tasks-in-python-for-data-science.md
 - src/pages/blog/cmd-exe-tips.md
