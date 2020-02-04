@@ -2,6 +2,7 @@
 
 # Short-Blog
 
+/blog/gitp         /blog/git-push-without-setting-upstream/
 /blog/oosp         /blog/out-of-space/
 /blog/purl         /blog/personal-url-shortener-with-netlify-redirects/
 /blog/scli         /blog/simple-click/
