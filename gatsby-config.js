@@ -25,7 +25,7 @@ module.exports = {
     // `gatsby-plugin-sass`,
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
-    'gatsby-remark-copy-linked-files',
+    // 'gatsby-remark-copy-linked-files',
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {
@@ -54,8 +54,8 @@ module.exports = {
         name: "pages",
       },
     },
-    'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -68,12 +68,13 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 590,
+              linkImagesToOriginal: false
             }
           },
           {
             resolve: "gatsby-remark-normalize-paths",
             options: {
-              pathFields: ["image", "cover", "twitter_cover"],
+              pathFields: ["image", "cover", "twitter_cover", "cover_image"],
             },
           }
         ]

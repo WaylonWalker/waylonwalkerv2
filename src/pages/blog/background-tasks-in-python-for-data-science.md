@@ -8,7 +8,7 @@ description: ''
 cover: "/static/erwan-hesry-elayN_YscVg-unsplash.jpg"
 twitter_cover: "/static/erwan-hesry-elayN_YscVg-unsplash.jpg"
 related_post:
-- src/pages/blog/quick-progress-bars-in-python-using-tqdm.md
+# - src/pages/blog/quick-progress-bars-in-python-using-tqdm.md
 tags:
 - python
 - code

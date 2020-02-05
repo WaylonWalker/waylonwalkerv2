@@ -8,7 +8,7 @@ description: Waylon Walker's Bash Notes
 cover: "/static/hannah-gibbs-BINLgyrG_fI-unsplash.jpg"
 twitter_cover: "/static/hannah-gibbs-BINLgyrG_fI-unsplash.jpg"
 related_post:
-- src/pages/blog/readme_tables.md
+# - src/pages/blog/readme_tables.md
 tags:
 - python
 - code

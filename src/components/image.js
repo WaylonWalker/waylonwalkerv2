@@ -17,16 +17,16 @@ const Image = () => (
   <StaticQuery
     query={graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "WalkerFamily2018_3.jpg" }) {
+        placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
           childImageSharp {
-            fluid(duotone: { highlight: "#fff0e6", shadow: "#330026" }, maxWidth: 1200) {
+            fluid(maxWidth: 600) {
               ...GatsbyImageSharpFluid
             }
           }
         }
       }
     `}
-    render={data => <Img style={{ maxWidth: '1200px', margin: 'auto' }} fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => <Img style={{ maxWidth: '600px', margin: 'auto', borderRadius: '25%' }} fluid={data.placeholderImage.childImageSharp.fluid} />}
   />
 )
 export default Image

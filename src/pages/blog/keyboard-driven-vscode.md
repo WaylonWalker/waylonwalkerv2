@@ -5,14 +5,13 @@ title: Keyboard Driven VSCode
 date: 2019-07-07T05:00:00.000+00:00
 status: published
 description: Reimagining my tmux configuration inside of vscode.
-cover: "/alt b.png"
-twitter_cover: "/alt b.jpg"
+cover: "/static/alt b.png"
+twitter_cover: "/static/alt b.jpg"
 tags:
 - code
 - editor
 - vscode
 related_post:
-- src/pages/blog/vim_notes.md
 related_post_label: ''
 related_post_body: ''
 

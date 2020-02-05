@@ -13,7 +13,7 @@ status: published
 description: git config --global push.default current
 related_post_body: ''
 related_post:
-- src/pages/blog/realistic-git-workflow.md
+# - src/pages/blog/realistic-git-workflow.md
 cover: "/static/ship-faster.png"
 twitter_cover: "/static/ship-faster.png"
 twitter_week_1: ''

@@ -8,7 +8,7 @@ description: Autoreload in python
 cover: "/static/alex-perez-wEgR12N01Tk-unsplash.jpg"
 twitter_cover: "/static/alex-perez-wEgR12N01Tk-unsplash-1.jpg"
 related_post:
-- src/pages/blog/readme_tables.md
+# - src/pages/blog/readme_tables.md
 tags:
 - python
 - code
