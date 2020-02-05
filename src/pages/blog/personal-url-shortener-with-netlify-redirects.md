@@ -8,8 +8,9 @@ date: 2020-01-29T06:00:00.000+00:00
 status: published
 description: Personal URL shortener with Netlify Redirects
 related_post_body: ''
-related_post: []
-cover: "/static/ozark-drones-oS8E1274cpY-unsplash.jpg"
+related_post:
+# cover: "/static/ozark-drones-oS8E1274cpY-unsplash.jpg"
+cover: "/static/URL shortener.png"
 twitter_cover: "/static/URL shortener.png"
 
 ---
@@ -25,30 +26,34 @@ I recently discovered a really cool feature of netlify that I have always looked
 
 simply add a `_redirects` file to the root of your your published site with the following format. The trick I found with my gatsby site was that it needed to be in my static directory `/static/_redirects`, not root. Next you just put space separated links on separate lines. #'s can be used for comments.
 
-    # netlify redirects
-    # from_url to_url
-    
-    # Short-Blog
-    
-    /blog/scli         /blog/simple-click/
-    /blog/cmdt         /blog/cmd-exe-tips/
-    .
-    .
-    .
-    
-    
-    # splats
-    
-    /b*             /blog/:splat
-    /n*             /notes/:splat
-    
-    
-    # External
-    
-    /twitter        https://twitter.com/_WaylonWalker
-    /github         https://github.com/WaylonWalker
-    /devto          https://dev.to/waylonwalker/
+``` markdown
+# netlify redirects
+# from_url to_url
+
+# Short-Blog
+
+/blog/scli         /blog/simple-click/
+/blog/cmdt         /blog/cmd-exe-tips/
+.
+.
+.
+
+
+# splats
+
+/b*             /blog/:splat
+/n*             /notes/:splat
+
+
+# External
+
+/twitter        https://twitter.com/_WaylonWalker
+/github         https://github.com/WaylonWalker
+/devto          https://dev.to/waylonwalker/
+```
 
 # 🙌 Share those short links
 
-Now with shorter links we have more space for our content without needing to use a service like bit.ly that makes our links unreadable.![](/static/URL shortener.png)
+Now with shorter links we have more space for our content without needing to use a service like bit.ly that makes our links unreadable.
+
+![url shortener](/static/URL shortener.png)

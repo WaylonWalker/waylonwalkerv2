@@ -11,9 +11,19 @@ related_post_body: ''
 related_post: []
 cover: "/static/2020-02-02 09-40-45_Start.png"
 twitter_cover: "/static/2020-02-02 09-40-45_Start.png"
+category: ''
+slug: ''
+summary: ''
 
 ---
-![](/static/2020-02-02 09-47-14_Start.png)![](/static/2020-02-02 09-40-45_Start.png)cli tools are super handy and easy to add to your python libraries to supercharge them. Even if your library is not a cli tool there are a number of things that a cli can do to your library.
+
+![](/2020-02-02 09-47-14_Start.png)
+
+![](/2020-02-02 09-40-45_Start.png)
+
+![](./flex.png)
+
+cli tools are super handy and easy to add to your python libraries to supercharge them. Even if your library is not a cli tool there are a number of things that a cli can do to your library.
 
 # Example Ideas
 

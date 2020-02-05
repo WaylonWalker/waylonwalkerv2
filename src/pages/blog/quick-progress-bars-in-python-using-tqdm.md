@@ -8,7 +8,7 @@ description: Quick Progress Bars in python using TQDM
 cover: "/static/photo-1448387473223-5c37445527e7.jpg"
 twitter_cover: "/static/photo-1448387473223-5c37445527e7.jpg"
 related_post:
-- src/pages/blog/autoreload_ipython.md
+# - src/pages/blog/autoreload_ipython.md
 tags:
 - python
 - code

@@ -6,14 +6,14 @@ tags:
 path: simple-click-2
 title: simple click 2
 date: 2020-02-03T06:00:00Z
-status: published
+status: draft
 description: ''
 related_post_body: ''
 related_post:
-- src/pages/blog/simple-click.md
-cover: ''
-twitter_cover: ''
-twitter_announcement: 'I just dropped my second post on building beautiful cli''s
+cover: "/static/2020-02-02 09-40-45_Start.png"
+twitter_cover: "/static/2020-02-02 09-40-45_Start.png"
+twitter_announcement: |
+  I just dropped my second post on building beautiful cli's
   in #python.'
 
 ---

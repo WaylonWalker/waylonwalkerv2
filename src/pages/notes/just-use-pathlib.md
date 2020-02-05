@@ -61,7 +61,7 @@ data_path.mkdir(parents=True, exists_ok=True)
 
 ## rename files
 
-```ptyhon
+```python
 Path(data_path /'example.csv').rename('real.csv')
 ```
 
