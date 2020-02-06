@@ -42,6 +42,4 @@ build:
   preview_docker_image: forestryio/build:latest
   mount_path: "/opt/buildhome/repo"
   instant_preview_command: gatsby develop -H 0.0.0.0 -p 8080
-  publish_command: gatsby build
-  output_directory: public
   preview_command: gatsby build
