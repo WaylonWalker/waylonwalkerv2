@@ -123,6 +123,7 @@ fields:
     required: false
   label: short url
 pages:
+- src/pages/blog/automate-your-deploys.md
 - src/pages/blog/background-tasks-in-python-for-data-science.md
 - src/pages/blog/cmd-exe-tips.md
 - src/pages/blog/forestry-io.md
