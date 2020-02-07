@@ -1,20 +1,6 @@
 // google analytics tracking id
 // UA-113148616-1
 
-const makeDevToContent = (edge) => {
-
-  const frontMatter = `
----
-title: ${edge.node.frontmatter.title}
-canonical_url: https://waylonwalker.com/blog/${edge.node.fields.slug},
-cover_image: ${edge.node.frontmatter.twitter_cover !== null ? edge.node.frontmatter.twitter_cover.relativePath : edge.node.frontmatter.cover !== null ? edge.node.frontmatter.cover.relativePath : ''}
-tags: zsh, ohmyzsh, wsl, dotfiles
----
-  `
-  const body = edge.node.rawMarkdownBody
-  return frontMatter + body
-}
-
 module.exports = {
   siteMetadata: {
     title: 'Waylon Walker',
@@ -25,6 +11,7 @@ module.exports = {
     // `gatsby-plugin-sass`,
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-styled-components',
     // 'gatsby-remark-copy-linked-files',
     // {
     //   resolve: `gatsby-source-filesystem`,
