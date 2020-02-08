@@ -8,21 +8,26 @@ import colors from '../components/styles/colors'
 const BlogPostCardStyles = styled.div`
 /* background: rgba(51, 0, 38, .04); */
 background: ${colors.greys[1]};
+background: #3E3846;
+background: linear-gradient(81deg, rgba(40,44,52,1) 0%, #3E3846 100%);
+color: white;
+
 overflow: hidden;
-position: relative;
+// position: relative;
 
 /* background: #330026; */
 display: block;
 margin: .2rem;
-max-width: 500px;
-width: 95%;
-position: relative;
+width: calc(min(500px, 95vw));
+// width: 95%;
+// position: relative;
 margin: 2rem 0;
-padding: 1rem;
+/* padding: 1rem; */
 border-radius: 2px;
-box-shadow: .2rem .2rem 1rem rgba(0, 0, 0, .2);
+box-shadow:  -8rem -6rem 8rem -6rem rgba(253, 221, 88, .2), 4rem 0 8rem rgba(88, 82, 185, .3), .2rem .2rem 1rem rgba(0, 0, 0, .2);
 overflow: hidden;
-
+// background: rgb(82,81,103);
+// background: linear-gradient(97deg, rgba(82,81,103,1) 0%, rgba(62,61,82,1) 100%);
 /* @media only screen and (max-width: 500px) {
   width: 95%
 } */
@@ -31,8 +36,9 @@ img {
 }
 
 h3 {
-  color: #333;
-  text-shadow: 0rem 0rem .4rem rgba(255, 255, 255, .5);
+  color: rgba(255, 255, 255, .8);
+  color: hsla(244, 60%, 70%, .7);
+  // text-shadow: 0rem 0rem .4rem rgba(255, 255, 255, .5);
   font-size: 1.5rem;
   text-align: center;
 
@@ -40,24 +46,43 @@ h3 {
 }
 
 .year {
-  position: absolute;
-  top: 3rem;
+  // position: absolute;
+  // top: 3rem;
   font-size: 5rem;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: 900;
   color: rgba(0,0,0,.1);
+  color: rgba(255, 255, 255, .05);
+  color: rgba(108, 99, 253, .1);
+  
+  text-align: center;
 }
 .month {
-  position: absolute;
-  top: 5rem;
+  // position: absolute;
+  // top: 5rem;
   font-size: 2rem;
   font-family: sans-serif;
   font-weight: 700;
   color: rgba(0,0,0,.5);
-
+  color: rgba(255, 255, 255, .6);
+  color: rgba(108, 99, 253, .6);
+  text-align: center;
+}
+.date {
+  margin: 1rem auto 2rem;
+}
+.bottom {
+  width: 100%;
+  min-height: 6rem;
+  position: relative;
+  /* border: 1px solid black; */
+  background: linear-gradient(97deg, #2A2D34 0%, #3C3745 100%);
+  /* background: linear-gradient(81deg, rgba(45,47,54,1) 0%, # 100%); */
+  z-index: 99;
 
 }
+
 `
 
 const BlogPostCard = ({ post, ...props }) => {
@@ -68,8 +93,8 @@ const BlogPostCard = ({ post, ...props }) => {
   return (
 
     <BlogPostCardStyles>
-      <Link to={post['fields']['slug']} style={{ display: 'block', height: '125px', width: '100%', zIndex: '100' }}>
-        <Img style={{ opacity: '.6', position: 'relative', top: '-1rem', left: '-1rem' }} fixed={post.frontmatter.cover !== null ? post.frontmatter.cover.childImageSharp.fixed : ''} />
+      <Link to={post['fields']['slug']} style={{ display: 'block', height: '210px', width: '100%', zIndex: '100' }}>
+        <Img fixed={post.frontmatter.cover !== null ? post.frontmatter.cover.childImageSharp.fixed : ''} />
       </Link>
 
       {/* <p>{post['frontmatter']['cover']}</p> */}
@@ -88,7 +113,11 @@ const BlogPostCard = ({ post, ...props }) => {
       </Link>
 
       {/* <div className="excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} /> */}
-      <p style={{ minHeight: '100px' }}>{post['excerpt']}</p>
+      {/* <p style={{}}>{post['description']}</p> */}
+      <div className="bottom">
+        <p>{post['description']}</p>
+
+      </div>
     </BlogPostCardStyles >
 
   )

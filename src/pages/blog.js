@@ -9,13 +9,22 @@ import BlogPosts from '../components/BlogPosts'
 // import chroma from 'chroma-js'
 
 const BlogPageStyles = styled.div`
-max-width: 800px;
+width: calc(min(1000px, 95vw));
 display: flex;
 justify-content: center;
 flex-direction: column;
 margin: auto;
+color: #e6ddeb;
+
 h1 {
+  /* color: #f9f7fa; */
   text-align: center;
+}
+p {
+  color: whitesmoke;
+  padding: 1rem;
+  margin: 3rem auto;
+  max-width: 500px;
 }
 `
 
@@ -61,7 +70,7 @@ query BlogQuery {
           cover {
             absolutePath
             childImageSharp {
-              fixed(width: 500, height: 125) {
+              fixed(width: 500, height: 210) {
                 ...GatsbyImageSharpFixed
               }
             }

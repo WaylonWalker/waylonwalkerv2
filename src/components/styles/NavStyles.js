@@ -4,8 +4,11 @@ import colors from './colors'
 // background: linear - gradient(160deg, rgba(0, 0, 0, .15), rgba(0, 0, 0, .04)), url(${ back });
 
 const NavStyles = styled.nav`
-box-shadow: 0rem 0rem 2rem ${colors.greys[3]};
-background: linear - gradient(160deg, rgba(0, 0, 0, .15), rgba(0, 0, 0, .04));
+box-shadow: 0rem 0rem 2rem rgba(0,0,0, .4);
+/* background: linear - gradient(160deg, rgba(0, 0, 0, .15), rgba(0, 0, 0, .04)); */
+/* background: #332D3A; */
+background: rgb(40,44,52);
+background: linear-gradient(81deg, rgba(40,44,52,1) 0%, #332D3A 90%, #392E3D 95%);
 ul {
 max-width: 1200px;
 margin: auto;
@@ -19,20 +22,23 @@ position: sticky;
 top: 0;
 z-index: 999;
 a {
-    color: ${colors['black']};
-    text-decoration: none;
+    color: ${colors.greys[2]};
+    // color: #FEDD58;
+    text - decoration: none;
 @import url('https://fonts.googleapis.com/css?family=Amiko|Arima+Madurai|Farsan|Lalezar|Mogra|Rakkas|Rasa|Shrikhand|Suez+One|Yatra+One');
-    font-family: 'Amiko', sans-serif;
+font - family: 'Amiko', sans - serif;
 }
 /* justify-content: space-around; */
 
 li {
     position: relative;
     padding: .4rem .8rem;
-    border-radius: .1rem;
-    transition: transform 100ms, box-shadow 100ms;
-    background: ${colors.greys[3]};
-    box-shadow: .2rem .2rem 1rem ${colors.greys[4]};
+    border - radius: .1rem;
+    transition: transform 100ms, box - shadow 100ms;
+    backround: ${ colors.greys[3]};
+    background: rgb(82, 81, 103);
+    background: linear-gradient(97deg, rgba(82, 81, 103, 1) 0%, rgba(62, 61, 82, 1) 100%);
+    box-shadow: .2rem .2rem .4rem rgba(0, 0, 0, .5);
     margin: 0 .2rem
 }
 
@@ -49,16 +55,17 @@ li {
     box-shadow: .2rem .2rem 1rem ${colors.greys[8]};
 } */
 
-li:hover {
+li: hover {
     /* background: rgba(51, 0, 38, .2); */
     /* ${colors.purple} */
-    box-shadow: .1rem .1rem 1.6rem ${colors.greys[4]};
+    // box-shadow: .1rem .1rem 1.6rem ${colors.greys[4]};
+    box - shadow: .2rem .2rem .2rem rgba(0, 0, 0, .5);
 
     transform: translate(.2rem, .2rem);
 }
 
 a.active {
-    color: ${colors['purple'][0]}
+    color: ${ colors['purple'][0]}
 }
  
 }
