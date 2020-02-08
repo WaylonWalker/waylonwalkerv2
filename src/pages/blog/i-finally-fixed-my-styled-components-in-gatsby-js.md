@@ -41,16 +41,16 @@ plugins: [
 
 ## Before
 
-![](/static/2020-02-06 15-27-45_Start.png)
+![](/2020-02-06 15-27-45_Start.png)
 
 ## After
 
-![](/static/2020-02-07 17-20-31_Start.png)
+![](/2020-02-07 17-20-31_Start.png)
 
 ## Why did it take so long to Fix?
 
 The real issue here was that I really didn't understand the problem as I described it above until I found the fix. It really did seem random that at odd times the styles would seem to vanish.  Sometimes never fully rehydrating at all.  Well actually I had fixed some production sites at work with it, but had no idea why it worked and therefore could not remember how I had fixed it, and google searched yielded no help.
 
-![](/static/the-moment-i-realized-the-true-problem.png)
+![](/the-moment-i-realized-the-true-problem.png)
 
-After re-watching Wes Bos's Advanced react course where he describes how to fix this issue for `next.js` sites it became clear that the problem was not random at all.  It was that they do not get statically rendered and are only on the page after react is re-hydrated.  The moment I realized the **true** problem I knew how to google it and quickly found there was a plugin for this. 
+After re-watching Wes Bos's Advanced react course where he describes how to fix this issue for `next.js` sites it became clear that the problem was not random at all.  It was that they do not get statically rendered and are only on the page after react is re-hydrated.  The moment I realized the **true** problem I knew how to google it and quickly found there was a plugin for this.
