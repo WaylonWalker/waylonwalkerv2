@@ -61,9 +61,9 @@ query NotesQuery {
           cover {
             absolutePath
             childImageSharp {
-              fixed(width: 500, height: 125) {
+              fixed(width: 500, height: 210) {
                 ...GatsbyImageSharpFixed
-              }
+              },
             }
           }
 

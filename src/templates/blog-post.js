@@ -18,12 +18,12 @@ align-items: center;
 `
 
 const BlogPostStyles = styled.div`
-background: rgba(51, 0, 38, .08);
+background: rgba(51, 0, 38, .13);
 overflow: hidden;
 /* background: #330026; */
 display: block;
 margin: .2rem;
-max-width: 800px;
+max-width: 1000px;
 width: 95%;
 position: relative;
 margin: 2rem 0;
@@ -32,6 +32,7 @@ border-radius: 2px;
 box-shadow: .2rem .2rem 1rem rgba(0, 0, 0, .2);
 display: flex;
 flex-direction: column;
+color: whitesmoke;
 
 a {
   color: #333;
@@ -53,6 +54,7 @@ p>img {
 
 p {
   // display: flex;
+  font-family: 'Amiko';
 }
 
 
@@ -72,6 +74,12 @@ hr {
 
 }
 
+h1 {
+  margin-top: 5rem;
+  font-family: sans-serif;
+  color: #6A65CA !important;
+}
+
 `
 
 class BlogPostTemplate extends React.Component {
@@ -87,6 +95,7 @@ class BlogPostTemplate extends React.Component {
       // tags,
       title,
       cover,
+      fluidCover,
       date,
       // helmet,
       twitter_cover,
@@ -112,6 +121,16 @@ class BlogPostTemplate extends React.Component {
         />
         <BlogPostWrapper>
           <BlogPostStyles>
+            <Img
+              style={{
+                // position: 'absolute',
+                // top: '0px',
+                // left: '-0rem',
+                // zIndex: '-1',
+                // opacity: '.6',
+              }}
+              fluid={fluidCover}
+            />
             <h1
               style={{ textAlign: 'right', zIndex: 2 }}
               className="blog title">
@@ -121,15 +140,6 @@ class BlogPostTemplate extends React.Component {
               style={{ textAlign: 'right', zIndex: 2 }}>
               {date}
             </p>
-            <Img
-              style={{
-                position: 'absolute',
-                top: '0px',
-                left: '-0rem',
-                // zIndex: '-1',
-                opacity: '.6',
-              }}
-              fixed={cover} />
             <p style={{ minHeight: '30px', margin: '0', padding: '0' }}>{description}</p>
             <div ref={(el) => { this.markdownContainer = el }}
               dangerouslySetInnerHTML={{ __html: content }} />
@@ -166,7 +176,16 @@ const BlogPost = ({ data }) => {
         // helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
-        cover={post.frontmatter.cover !== null ? post.frontmatter.cover.childImageSharp.fixed : ''}
+        cover={
+          post.frontmatter.cover !== null
+            ? post.frontmatter.cover.childImageSharp.fixed
+            : ''
+        }
+        fluidCover={
+          post.frontmatter.cover !== null
+            ? post.frontmatter.cover.childImageSharp.fluid
+            : ''
+        }
         twitter_cover={twitter_cover}
         date={post.frontmatter.date}
       />
@@ -209,8 +228,11 @@ export const pageQuery = graphql`
         cover {
           absolutePath
           childImageSharp {
-            fixed(width: 800, height: 200) {
+            fixed(width: 1000, height: 420) {
               ...GatsbyImageSharpFixed
+            },
+            fluid(maxWidth: 1000, maxHeight: 420) {
+              ...GatsbyImageSharpFluid
             }
           }
          }
