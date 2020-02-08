@@ -5,7 +5,7 @@ import colors from './colors'
 
 const NavStyles = styled.nav`
 box-shadow: 0rem 0rem 2rem ${colors.greys[3]};
-background: linear - gradient(160deg, rgba(0, 0, 0, .15), rgba(0, 0, 0, .04));
+background: whitesmoke;
 ul {
 max-width: 1200px;
 margin: auto;
