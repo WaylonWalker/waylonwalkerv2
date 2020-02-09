@@ -49,7 +49,7 @@ export default class IndexPage extends React.Component {
       <Layout>
         <div id="content" style={{ maxWidth: '1200px', margin: 'auto' }}>
           <section>
-            <h1>About</h1>
+            {/* <h1>About</h1>
             <p style={paragraphStyle}>
               I am a{' '}
               <span style={{ display: 'inline-block' }}>
@@ -71,13 +71,13 @@ export default class IndexPage extends React.Component {
               <strong>creative</strong>. Whether its organizing our house, or{' '}
               <a href="cuttinscrap.com">cuttinscrap</a>she makes the perfect
               place for everything, and makes sure it looks beautiful.
-            </p>
+            </p> */}
 
             <Image />
 
             <p style={paragraphStyle} />
           </section>
-          <section style={{ maxWidth: '800px' }}>
+          <section style={{ maxWidth: '1000px', margin: 'auto', textAlign: 'center', color: 'white' }}>
             <h1>Blog</h1>
             <BlogPosts posts={posts} />
           </section>
@@ -107,12 +107,18 @@ export const pageQuery = graphql`
             title
             templateKey
             status
+            description
             cover {
               absolutePath
               childImageSharp {
-                fixed(width: 500, height: 125) {
+                fixed(width: 500, height: 210) {
                   ...GatsbyImageSharpFixed
+                },
                 }
+                childImageSharp {
+                  fluid(maxWidth: 1000, maxHeight: 420) {
+                    ...GatsbyImageSharpFluid
+                  }
               }
             }
 
