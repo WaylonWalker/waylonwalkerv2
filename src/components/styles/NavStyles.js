@@ -4,6 +4,7 @@ import colors from './colors'
 // background: linear - gradient(160deg, rgba(0, 0, 0, .15), rgba(0, 0, 0, .04)), url(${ back });
 
 const NavStyles = styled.nav`
+z-index: 9999;
 box-shadow: 0rem 0rem 2rem rgba(0,0,0, .4);
 /* background: linear - gradient(160deg, rgba(0, 0, 0, .15), rgba(0, 0, 0, .04)); */
 /* background: #332D3A; */
@@ -37,7 +38,7 @@ li {
     transition: transform 100ms, box - shadow 100ms;
     backround: ${ colors.greys[3]};
     background: rgb(82, 81, 103);
-    background: linear-gradient(97deg, rgba(82, 81, 103, 1) 0%, rgba(62, 61, 82, 1) 100%);
+    background: linear-gradient(97deg, rgba(72, 71, 82, 1) 0%, rgba(62, 61, 82, 1) 100%);
     box-shadow: .2rem .2rem .4rem rgba(0, 0, 0, .5);
     margin: 0 .2rem
 }
