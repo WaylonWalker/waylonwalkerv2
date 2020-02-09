@@ -42,7 +42,7 @@ p>img {
   // max-width: 400px;
   // width: 95%;
   // width: 800px;
-  width: 836px !important;
+width: calc(min(1000px, 90vw));
   left: -18px;
   position: relative;
 
@@ -99,6 +99,7 @@ class BlogPostTemplate extends React.Component {
       // tags,
       title,
       cover,
+      fluidCover,
       date,
       // helmet,
       twitter_cover,
@@ -133,15 +134,7 @@ class BlogPostTemplate extends React.Component {
               style={{ textAlign: 'right', zIndex: 2 }}>
               {date}
             </p>
-            <Img
-              style={{
-                position: 'absolute',
-                top: '0px',
-                left: '-0rem',
-                // zIndex: '-1',
-                opacity: '.6'
-              }}
-              fixed={cover} />
+            {fluidCover !== undefined ? <Img fluid={fluidCover} /> : ''}
             <p style={{ minHeight: '100px' }}>{description}</p>
             <p
               style={{ maxWidth: `500px`, margin: `1rem auto`, color: `rbg(100, 100, 120)` }}
@@ -228,8 +221,11 @@ export const pageQuery = graphql`
         cover {
           absolutePath
           childImageSharp {
-            fixed(width: 800, height: 200) {
+            fixed(width: 1000, height: 420) {
               ...GatsbyImageSharpFixed
+            },
+            fluid(maxWidth: 1000, maxHeight: 420) {
+              ...GatsbyImageSharpFluid
             }
           }
          }
