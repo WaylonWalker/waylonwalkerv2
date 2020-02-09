@@ -8,7 +8,7 @@ import FlipMove from 'react-flip-move'
 // import BlogGallery from '../components/BlogGallery'
 const BlogPostsStyle = styled.div`
 display: flex;
-/* margin: auto; */
+margin: auto;
 flex-direction: column;
 justify-content: flex-start;
 align-items: center;
