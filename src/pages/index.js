@@ -107,6 +107,7 @@ export const pageQuery = graphql`
             title
             templateKey
             status
+            description
             cover {
               absolutePath
               childImageSharp {

@@ -23,11 +23,13 @@ position: sticky;
 top: 0;
 z-index: 999;
 a {
-    color: ${colors.greys[2]};
-    // color: #FEDD58;
-    text - decoration: none;
+    /* color: ${colors.greys[2]}; */
+  color: #FEDD58;
+  /* color: #36ACF1; */
+  
+    text-decoration: none;
 @import url('https://fonts.googleapis.com/css?family=Amiko|Arima+Madurai|Farsan|Lalezar|Mogra|Rakkas|Rasa|Shrikhand|Suez+One|Yatra+One');
-font - family: 'Amiko', sans - serif;
+font-family: 'Amiko', sans - serif;
 }
 /* justify-content: space-around; */
 

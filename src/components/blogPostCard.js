@@ -92,6 +92,7 @@ const BlogPostCard = ({ post, ...props }) => {
   const month = dt.toLocaleString('en-us', { month: 'long' })
   const day = dt.getDate()
   const cover = post.frontmatter.cover
+  console.log('post: ', post)
   return (
 
     <BlogPostCardStyles>
@@ -121,9 +122,8 @@ const BlogPostCard = ({ post, ...props }) => {
       </Link>
 
       {/* <div className="excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} /> */}
-      {/* <p style={{}}>{post['description']}</p> */}
       <div className="bottom">
-        <p>{post['frontmatter']['description']}</p>
+        <p>{post.frontmatter.description}</p>
 
       </div>
     </BlogPostCardStyles >
