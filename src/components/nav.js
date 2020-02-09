@@ -8,8 +8,6 @@ const Nav = () => (
   <Headroom style={{ zIndex: '9999' }}>
     <NavStyles>
       <ul>
-
-
         <Link to='/' activeClassName='active'>
           <Icon />
         </Link>
