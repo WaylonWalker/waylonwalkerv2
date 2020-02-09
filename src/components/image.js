@@ -19,7 +19,11 @@ const ProfileImageStyle = styled.div`
 margin: 3rem auto;
 width: calc(min(600px, 95vw));
 border-radius: 50%;
-box-shadow:  -15rem -2rem 8rem -6rem rgba(253, 221, 88, .09), 12rem 0 8rem rgba(88, 82, 185, .14), 0rem 0rem 2rem rgba(0, 0, 0, .3);
+box-shadow:  
+  -15rem -2rem 8rem -6rem rgba(253, 221, 88, .09),
+  12rem 0 8rem rgba(88, 82, 185, .14),
+  0rem 0rem 2rem rgba(0, 0, 0, .4),
+  0rem 0rem 5rem rgba(0, 0, 0, .1);
 img {
 width: calc(min(600px, 95vw));
 border-radius: 50%;
