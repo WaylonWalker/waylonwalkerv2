@@ -77,7 +77,7 @@ hr {
 h1 {
   margin-top: 5rem;
   font-family: sans-serif;
-  color: #6A65CA !important;
+  color: #6A65CA;
 }
 
 `
@@ -115,7 +115,7 @@ class BlogPostTemplate extends React.Component {
             { name: 'description', content: description },
             { name: 'twitter:image', content: 'https://www.waylonwalker.com' + twitterImage },
             { name: 'twitter:description', content: description },
-            { name: 'og:image', content: cover.src },
+            { name: 'og:image', content: 'https://www.waylonwalker.com' + cover.src },
           ]}
 
         />
