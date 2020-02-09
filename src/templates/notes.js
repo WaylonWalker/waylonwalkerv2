@@ -42,7 +42,7 @@ p>img {
   // max-width: 400px;
   // width: 95%;
   // width: 800px;
-  width: 836px !important;
+width: calc(min(1000px, 90vw));
   left: -18px;
   position: relative;
 

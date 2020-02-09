@@ -70,7 +70,8 @@ Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   text-align: center;
 }
 .date {
-  margin: 1rem auto 2rem;
+  margin: 0rem auto;
+  padding: 3rem 2rem 2rem;
 }
 .bottom {
   width: 100%;
@@ -90,11 +91,18 @@ const BlogPostCard = ({ post, ...props }) => {
   const year = dt.getUTCFullYear()
   const month = dt.toLocaleString('en-us', { month: 'long' })
   const day = dt.getDate()
+  const cover = post.frontmatter.cover
   return (
 
     <BlogPostCardStyles>
-      <Link to={post['fields']['slug']} style={{ display: 'block', height: '210px', width: '100%', zIndex: '100' }}>
-        <Img fixed={post.frontmatter.cover !== null ? post.frontmatter.cover.childImageSharp.fixed : ''} />
+      <Link to={post['fields']['slug']}
+      // style={{ display: 'block', height: '210px', width: '100%', zIndex: '100' }}
+      >
+        {
+          (cover === undefined || cover === null)
+            ? ''
+            : <Img fluid={cover.childImageSharp.fluid} />
+        }
       </Link>
 
       {/* <p>{post['frontmatter']['cover']}</p> */}
@@ -115,7 +123,7 @@ const BlogPostCard = ({ post, ...props }) => {
       {/* <div className="excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} /> */}
       {/* <p style={{}}>{post['description']}</p> */}
       <div className="bottom">
-        <p>{post['description']}</p>
+        <p>{post['frontmatter']['description']}</p>
 
       </div>
     </BlogPostCardStyles >
