@@ -31,11 +31,15 @@ This is what we are working with.  It has been my card design for at least a yea
 * cover art does not fit
 * I am not digging the date on cover art that also has text
 
-## Inspired
+## Feeling Inspired
 
-I have been really inspired by the **sick** lighting that has been hot on youtube and twitch lately.  As I was gearing up to re-design my cards I saw this post by [@chrisbiscardi](https://twitter.com/chrisbiscardi "@chrisbiscardi on twitter") and knew right then that I needed to do the same lighting effect on my redesign!
+I have been really inspired by the **sick** lighting that has been hot on youtube and twitch lately.  As I was gearing up to re-design my cards I saw this post by [@chrisbiscardi](https://twitter.com/chrisbiscardi "@chrisbiscardi on twitter") and knew right then that I needed to do a similar lighting effect on my redesign!
 
 ![](/static/inspiration-for-new-post-card-2020-Chris-Biscardi.png)
+
+## 
+
+I have also been digging gradients everywhere.  Sites like css tricks have really taken gradients to the next level.  There is not much that is a flat color on that page.
 
 ## Complete format
 
