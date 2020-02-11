@@ -37,11 +37,11 @@ I have been really into using a deep purple lately.  I feel like it is a neutral
 
 ### How I pick colors
 
-I am really bad at picking colors that go well together so for this I punt to utilizing others who have a better eye for this.  I commonly used a desktop app to pick colors out of my text editor theme or colors that [canva](canva.com "Canva") recommends.
+I am really bad at picking colors that go well together so for this I punt to utilizing others who have a better eye for this.  I commonly used the instant eyedropper desktop app to pick colors out of my text editor theme or colors that [canva](canva.com "Canva") recommends.
 
 ## Feeling Inspired
 
-Having gradients everywhere has been becoming very popular again.  Not the heavy highly saturated gradients from 00's presentation software, but gentle barely noticeable gradients.  Sites like css tricks have really taken gradients to the next level.  There is not much that is a flat color on that page.  There is a nice mix of subtle gradients and more noticeable ones that shift hue while still being easy on the eyes.
+Having gradients everywhere has been becoming very popular again.  Not the heavy highly saturated gradients from 00's presentation software. Gentle barely noticeable gradients, and soft gradients that flow smoothly from one color to the next.  So many splash screens and logos include these now.  
 
 I have been really inspired by the **sick** lighting that has been hot on youtube and twitch lately.  As I was gearing up to re-design my cards I saw this post by [@chrisbiscardi](https://twitter.com/chrisbiscardi "@chrisbiscardi on twitter") and knew right then that I needed to do a similar lighting effect on my redesign!
 
@@ -53,7 +53,7 @@ I heavily used [cssgradient.io/](https://cssgradient.io/ "https://cssgradient.io
 
 ### Matching Gradients
 
-I had a couple of places that needed to but up gradients against each other and 
+I had a couple of places that needed to but up gradients against each other and
 
 ## Complete format
 
