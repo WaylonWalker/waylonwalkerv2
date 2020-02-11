@@ -123,7 +123,7 @@ fields:
     required: false
   label: short url
 pages:
-- src/pages/blog/2020-waylonwalker-com-rebrand.md
+- src/pages/blog/2020-rebrand.md
 - src/pages/blog/automate-your-deploys.md
 - src/pages/blog/background-tasks-in-python-for-data-science.md
 - src/pages/blog/cmd-exe-tips.md
