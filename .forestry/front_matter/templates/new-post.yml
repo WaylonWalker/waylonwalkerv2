@@ -123,12 +123,14 @@ fields:
     required: false
   label: short url
 pages:
+- src/pages/blog/2020-waylonwalker-com-rebrand.md
 - src/pages/blog/automate-your-deploys.md
 - src/pages/blog/background-tasks-in-python-for-data-science.md
 - src/pages/blog/cmd-exe-tips.md
 - src/pages/blog/forestry-io.md
 - src/pages/blog/git-push-without-setting-upstream.md
 - src/pages/blog/i-finally-fixed-my-styled-components-in-gatsby-js.md
+- src/pages/blog/i-just-added-react-headroom-to-my-site.md
 - src/pages/blog/keyboard-driven-vscode.md
 - src/pages/blog/out-of-space.md
 - src/pages/blog/personal-url-shortener-with-netlify-redirects.md
