@@ -5,7 +5,7 @@ tags: []
 twitter_announcement: I just updated my personal site with a sick navbar with react-headroom.
 path: react-headroom
 title: I just added react-headroom to my site
-date: 2020-02-11T12:57:00Z
+date: 2020-02-11T12:57:00.000+00:00
 status: published
 description: It was so easy to get a professional looking navbar with just 3 lines
   of code.  This thing is so usable on mobile.
