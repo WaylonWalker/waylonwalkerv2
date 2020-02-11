@@ -5,7 +5,7 @@ tags: []
 twitter_announcement: I finally fixed my Styled-Components in gatsby.js
 path: fix-styled-components
 title: I finally fixed my Styled-Components in gatsby.js
-date: 2020-02-08T15:07:00Z
+date: 2020-02-08T15:07:00.000+00:00
 status: published
 description: I finally fixed my Styled-Components in gatsby.js
 related_post_body: ''
@@ -51,6 +51,6 @@ plugins: [
 
 The real issue here was that I really didn't understand the problem as I described it above until I found the fix. It really did seem random that at odd times the styles would seem to vanish.  Sometimes never fully rehydrating at all.  Well actually I had fixed some production sites at work with it, but had no idea why it worked and therefore could not remember how I had fixed it, and google searched yielded no help.
 
-![](/the-moment-i-realized-the-true-problem.png)
+![](/the-moment-i-realized-the-true-problem-1.png)
 
 After re-watching Wes Bos's Advanced react course where he describes how to fix this issue for `next.js` sites it became clear that the problem was not random at all.  It was that they do not get statically rendered and are only on the page after react is re-hydrated.  The moment I realized the **true** problem I knew how to google it and quickly found there was a plugin for this.
