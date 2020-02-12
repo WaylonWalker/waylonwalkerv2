@@ -1,0 +1,56 @@
+# netlify redirects
+
+# Short-Blog
+
+/hdrm              /blog/react-headroom/
+/blog/hdrm         /blog/react-headroom/
+/blog/styf         /blog/i-finally-fixed-my-styled-components-in-gatsby-js/
+/blog/zeit         /blog/should-i-switch-to-zeit-now/
+/blog/gitp         /blog/git-push-without-setting-upstream/
+/blog/oosp         /blog/out-of-space/
+/blog/purl         /blog/personal-url-shortener-with-netlify-redirects/
+/blog/scli         /blog/simple-click/
+/blog/cmdt         /blog/cmd-exe-tips/
+/blog/wist         /blog/what-is-something-that-you-recently-learned-that-you-wish-you-would-have-learned-or-understood-earlier/
+/blog/supz         /blog/supercharge-zsh-startup/
+/blog/tqdm         /blog/quick-progress-bars-in-python-using-tqdm/
+/blog/namt         /blog/named-tuples-data-science/
+/blog/ipau         /blog/autoreload_ipython/
+/blog/kdvs         /blog/keyboard-driven-vscode/
+/blog/rgit         /blog/realistic-git-workflow/
+/blog/frio         /blog/forestry-io/
+/blog/gitr         /blog/git-rewrite-history/git-rewrite-history/
+/blog/jour         /blog/journey/
+/blog/gitu         /blog/git-update-user/
+/blog/g019         /blog/goals-2019/
+/blog/r019         /blog/2018-retrospective/
+/blog/hapy         /blog/happy/
+/blog/rtab         /blog/readme_tables/
+/blog/pc18         /blog/Pycon_2018_roundup/
+/blog/d3d4         /blog/d3-day4/
+/blog/d3d3         /blog/d3-day3/
+/blog/flxz         /blog/flexbox-zombies/
+/blog/dsql         /blog/datacamp-sql/
+/blog/dppt         /blog/No_More_Death_By_Powerpoint/
+/blog/pc17         /blog/Pycon_2017_roundup/
+
+# more encompassing
+/b*             /blog/:splat
+
+/n*             /notes/:splat
+
+/rss            /blog/rss.xml
+/md-rss         /blog/markdown-rss.xml
+/sitemap        /sitemap.xml
+
+
+# External
+
+/redirects      https://github.com/WaylonWalker/waylonwalkerv2/edit/master/static/_redirects
+/twitter        https://twitter.com/_WaylonWalker
+/github         https://github.com/WaylonWalker
+/devto          https://dev.to/waylonwalker/
+/linkedin       https://www.linkedin.com/in/waylonwalker/
+/instagram      https://www.instagram.com/_waylonwalker/
+/ig             https://www.instagram.com/_waylonwalker/
+/buffer         https://publish.buffer.com/profile/5bc121e0dd50725a7130edd6/tab/queue
