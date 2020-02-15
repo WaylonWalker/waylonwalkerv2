@@ -15,7 +15,7 @@ section {
 }
 
 a {
-    color: #333;
+    color: #6F6BAE;
     text-decoration-color: goldenrod;
 }
 
