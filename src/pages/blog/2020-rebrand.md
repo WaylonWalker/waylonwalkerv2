@@ -58,3 +58,9 @@ I had a couple of places that needed to but up gradients against each other and
 ## Complete format
 
 ![](/static/new-post-card-2020.png)
+
+## A few days too late
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">😍 I have to admit, I&#39;m liking this whole Neomorphism thing, and this generator makes it pretty easy to make those soft effects in the browser: <br><br>In before the replies, it&#39;s ok if you don&#39;t like it too! Just try not to turn it into a flame war.<a href="https://t.co/ne8vSXlObc">https://t.co/ne8vSXlObc</a></p>&mdash; Sarah Drasner (@sarah_edo) <a href="https://twitter.com/sarah_edo/status/1227694049118679040?ref_src=twsrc%5Etfw">February 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">✨😂Added to `spark-joy`!<a href="https://t.co/1FPjqvccpb">https://t.co/1FPjqvccpb</a><br><br>Three other Card/Box Shadow Generators to give your divs a quick facelift:<br><br>- <a href="https://t.co/EFSSIiSrFj">https://t.co/EFSSIiSrFj</a> by <a href="https://twitter.com/gill_kyle?ref_src=twsrc%5Etfw">@gill_kyle</a> <br>- <a href="https://t.co/0yyw6wMuGO">https://t.co/0yyw6wMuGO</a> by <a href="https://twitter.com/funkensturm?ref_src=twsrc%5Etfw">@funkensturm</a><br>- <a href="https://t.co/tQ9NijDzUI">https://t.co/tQ9NijDzUI</a> by <a href="https://twitter.com/4lpine?ref_src=twsrc%5Etfw">@4lpine</a> <a href="https://t.co/HIrQktOABA">https://t.co/HIrQktOABA</a> <a href="https://t.co/WUcEkZqEzt">pic.twitter.com/WUcEkZqEzt</a></p>&mdash; shawn swyx wang🤗 (@swyx) <a href="https://twitter.com/swyx/status/1227697956587032576?ref_src=twsrc%5Etfw">February 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
