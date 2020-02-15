@@ -2,7 +2,10 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-twitter_announcement: I just dropped a new post check it out.
+twitter_announcement: |-
+  I just documented the story of my 2020 waylonwalker.com redesign on my blog.
+
+  waylonwalker.com/dsgn
 path: 2020-rebrand
 title: 2020 waylonwalker.com rebrand
 date: 2020-02-14T13:02:00Z
@@ -10,8 +13,8 @@ status: published
 description: ''
 related_post_body: '1. '
 related_post: []
-cover: ''
-twitter_cover: ''
+cover: "/static/2020-rebrand.png"
+twitter_cover: "/static/2020-rebrand.png"
 twitter_week_1: ''
 twitter_week_2: ''
 twitter_month_1: ''
@@ -88,7 +91,7 @@ box-shadow:
 
 ## A few days too late
 
-A few days later I saw this thread of tweets by [@sarah_edo](https://twitter.com/sarah_edo) and [@swyx](https://twitter.com/swyx) and realized that this style is called **neomorphism**.  There are some sweet tools referenced here, check them out if you are going for this design style.
+A few days later I saw this thread of tweets by [@sarah_edo](https://twitter.com/sarah_edo) and [@swyx](https://twitter.com/swyx) and realized that this style is called **neomorphism**.  There are some sweet tools referenced here, check the![](/static/2020-rebrand-1.png)m out if you are going for this design style.
 
 [![](/2020-02-15 11-05-55_Microsoft Text Input Application.png)](https://twitter.com/sarah_edo/status/1227694049118679040?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1227694049118679040&ref_url=http%3A%2F%2F127.0.0.1%3A5500%2Findex.html "neomorphism.io tweet from Sarah Drasner")
 
