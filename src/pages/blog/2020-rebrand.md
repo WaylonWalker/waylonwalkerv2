@@ -41,7 +41,7 @@ I am really bad at picking colors that go well together so for this I punt to ut
 
 ## Feeling Inspired
 
-Having gradients everywhere has been becoming very popular again.  Not the heavy highly saturated gradients from 00's presentation software. Gentle barely noticeable gradients, and soft gradients that flow smoothly from one color to the next.  So many splash screens and logos include these now.  
+Having gradients everywhere has been becoming very popular again.  Not the heavy highly saturated gradients from 00's presentation software. Gentle barely noticeable gradients, and soft gradients that flow smoothly from one color to the next.  So many splash screens and logos include these now.
 
 I have been really inspired by the **sick** lighting that has been hot on youtube and twitch lately.  As I was gearing up to re-design my cards I saw this post by [@chrisbiscardi](https://twitter.com/chrisbiscardi "@chrisbiscardi on twitter") and knew right then that I needed to do a similar lighting effect on my redesign!
 
