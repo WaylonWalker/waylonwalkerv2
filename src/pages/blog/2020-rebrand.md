@@ -8,7 +8,7 @@ twitter_announcement: |-
   waylonwalker.com/dsgn
 path: 2020-rebrand
 title: 2020 waylonwalker.com rebrand
-date: 2020-02-14T13:02:00Z
+date: 2020-02-17T13:02:00Z
 status: published
 description: ''
 related_post_body: '1. '
