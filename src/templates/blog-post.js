@@ -35,25 +35,32 @@ flex-direction: column;
 color: whitesmoke;
 
 a {
-  color: #333;
+  color: #6F6BAE;
   text-decoration-color: #330026;
   text-decoration-color: goldenrod; /* Wyatt chose goldenrod */
 }
 p>img {
-  opacity: .8;
+  /* opacity: .8; */
   box-shadow: .2rem .2rem 1rem rgba(51, 0, 38, .4);
-  max-width: 400px;
-  width: 95%;
+  max-width: 1000px;
+  width: 95vw;
   align-self: center;
   justify-self: center;
   align-items: center;
   justify-items: center;
-  /* margin: 2rem 200px; */
   margin: auto;
+}
+
+p:has(>img) {
+  margin: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 p {
   // display: flex;
+  /* margin: auto; */
   font-family: 'Amiko';
 }
 
