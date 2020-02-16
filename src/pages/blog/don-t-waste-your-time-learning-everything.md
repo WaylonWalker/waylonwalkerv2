@@ -6,8 +6,9 @@ twitter_announcement: Don't Waste Your time Learning Everything!
 path: dont-waste-your-time-learning-everything
 title: Don’t waste your time learning everything
 date: 2020-02-19T06:00:00Z
-status: ''
-description: ''
+status: published
+description: 'Stick to what you know, and learn a little bit of something new every
+  day. '
 related_post_body: ''
 related_post: []
 cover: "/static/dev.to.png"
