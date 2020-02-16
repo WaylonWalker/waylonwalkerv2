@@ -35,10 +35,11 @@ I suspect for some reason it has to do with attatching to the html element insid
 
 ## scroll.css
 
-I added `scroll.css` to my static directory, then imported it into 
-
+I added `scroll.css` to my static directory, then imported it into `gatsby-browser.js`
 
 ``` css
+ /* static/scroll.css */
+
 body::-webkit-scrollbar {
     width: 1rem;
   }
@@ -60,5 +61,9 @@ body::-webkit-scrollbar {
     background: linear-gradient(180deg, rgba(112,107,208,1) 0%, rgba(86,81,183,1) 100%);
     border: 1px solid rgba(86,81,183,.5);
   }
+```
 
+``` javascript
+// gatsby-browser.js
+import './static/scroll.css
 ```
