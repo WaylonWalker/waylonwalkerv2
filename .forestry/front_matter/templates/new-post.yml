@@ -127,6 +127,8 @@ pages:
 - src/pages/blog/automate-your-deploys.md
 - src/pages/blog/background-tasks-in-python-for-data-science.md
 - src/pages/blog/cmd-exe-tips.md
+- src/pages/blog/custom-scrollbar-design.md
+- src/pages/blog/don-t-waste-your-time-learning-everything.md
 - src/pages/blog/forestry-io.md
 - src/pages/blog/git-push-without-setting-upstream.md
 - src/pages/blog/i-finally-fixed-my-styled-components-in-gatsby-js.md
