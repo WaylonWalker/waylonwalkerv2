@@ -5,7 +5,7 @@ tags: []
 twitter_announcement: I setup a custom scrollbar on waylonwalker.com
 path: custom-scrollbar-design
 title: Custom Scrollbar Design
-date: 2020-02-19T13:02:00Z
+date: 2020-02-21T12:11:00Z
 status: published
 description: Getting a custom scrollbar on your site makes it stand out a bit compared
   to the very plain stock one that are on most sites.  This is how I set mine up on
