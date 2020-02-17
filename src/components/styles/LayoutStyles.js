@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import fonts from '../../../static/fonts.css'
+// import fonts from '../../../static/fonts.css'
 
 const LayoutStyles = styled.div`
 padding: 0;

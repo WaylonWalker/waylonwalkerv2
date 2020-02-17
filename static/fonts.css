@@ -20,24 +20,3 @@
     font-style: normal;
   }
 
-body::-webkit-scrollbar {
-    width: 1rem;
-  }
-
-  html {
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: #5651B7;
-  }
-
-  body::-webkit-scrollbar-track {
-    background: #392E3D;
-  }
-
-  body::-webkit-scrollbar-thumb {
-    background-color: #5651B7 ;
-    border-radius: .5rem;
-    background: rgb(112,107,208);
-    background: linear-gradient(180deg, rgba(112,107,208,1) 0%, rgba(86,81,183,1) 100%);
-    border: 1px solid rgba(86,81,183,.5);
-  }
