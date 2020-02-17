@@ -2,12 +2,14 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-twitter_announcement: I just dropped a new post check it out.
+twitter_announcement: I setup a custom scrollbar on waylonwalker.com
 path: custom-scrollbar-design
 title: Custom Scrollbar Design
 date: 2020-02-19T13:02:00Z
 status: published
-description: ''
+description: Getting a custom scrollbar on your site makes it stand out a bit compared
+  to the very plain stock one that are on most sites.  This is how I set mine up on
+  my gatsby site.
 related_post_body: ''
 related_post: []
 cover: "/static/custom-scrollbar-wtih-gatsbyjs.jpg"
@@ -35,7 +37,7 @@ I suspect for some reason it has to do with attatching to the html element insid
 
 ## scroll.css
 
-I added `scroll.css` to my static directory, then imported it into `gatsby-browser.js`
+I added `scroll.css` to my static directory, then imported it into `gatsby-browser.js` in order to get it loaded onto the page.
 
 ``` css
  /* static/scroll.css */
@@ -67,3 +69,17 @@ body::-webkit-scrollbar {
 // gatsby-browser.js
 import './static/scroll.css
 ```
+
+## It works
+
+ It was a bit finicky for me to find the right place to put everything, but this is the final result.  I found out that you can have a gradient on your `scrollbar-thumb`, but the `scrollbar-track` cannot, it also cannot be transparent.  I picked a color that matched my background the best for most use cases, but when the screen gets really narrow a line starts to appear.
+
+![My final result](/static/custom-scrollbar-with-css.gif "my final result, an example give of the final result live on waylonwalker.com")
+
+> My final result
+
+## Resources
+
+uses.tech layout.js: [layout.js](https://github.com/wesbos/awesome-uses/blob/124bdd64345bc64eb84879929f0e57cbb8752e34/src/components/layout.js#L74)
+
+css-trick article: [scrollbar](https://css-tricks.com/almanac/properties/s/scrollbar/ "css tricks scrollbar article")
