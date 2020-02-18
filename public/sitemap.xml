@@ -6,7 +6,6 @@
 <url> <loc>https://waylonwalker.com/blog/automate-your-deploys/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/2018-retrospective/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/No_More_Death_By_Powerpoint/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://waylonwalker.com/blog/custom-scrollbar-design/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/cmd-exe-tips/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/condabuild/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/d3-day5/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -63,6 +62,7 @@
 <url> <loc>https://waylonwalker.com/blog/d3-day4/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/flexbox-zombies/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/notes/kedro/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://waylonwalker.com/blog/custom-scrollbar-design/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/realistic-git-workflow/clean/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/gratitude/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
