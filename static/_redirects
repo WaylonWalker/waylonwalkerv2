@@ -1,6 +1,10 @@
 # netlify redirects
 
 # Short-Blog
+/csro              /blog/custom-scrollbar-design/
+/blog/csro         /blog/custom-scrollbar-design/
+/dwyt              /blog/don-t-waste-your-time-learning-everything/
+/blog/dwyt         /blog/don-t-waste-your-time-learning-everything/
 /dsgn              /blog/2020-rebrand/
 /blog/dsgn         /blog/2020-rebrand/
 /hdrm              /blog/react-headroom/
