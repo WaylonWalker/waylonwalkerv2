@@ -467,6 +467,7 @@ This one is probably one that is pushing the limits of what I would do in a list
 I find this one super useful to help me either move data beween environments, or avoid unnecessary database calls.
 
 ``` python
+raw_inputs = pipeline.all_inputs() - pipeline.all_outputs()
 raw_nodes = [node for node in pipeline.nodes if [i for i in raw_inputs if i in set(node.inputs)] != []]
 ```
 
