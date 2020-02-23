@@ -5,7 +5,7 @@ tags: []
 twitter_announcement: ''
 path: create-new-kedro-project
 title: Create New Kedro Project
-date: 2020-02-27T12:09:00Z
+date: 2020-03-02T12:09:00Z
 status: published
 description: Getting up and going with a brand new [kedro](kedro.readthedocs.io) project
   is super simple, thanks to the help of the `kedro new` command.  The ability to
