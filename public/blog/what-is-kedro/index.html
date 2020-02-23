@@ -41,15 +41,15 @@ data-styled.g5[id="blog-post__BlogPostStyles-t5wcn1-1"]{content:"dgFMrd,"}
 /static/e5f03663a696e21227f0556c13df0475/03ac3/what-is-kedro.png 500w,
 /static/e5f03663a696e21227f0556c13df0475/a8734/what-is-kedro.png 1000w" sizes="(max-width: 1000px) 100vw, 1000px" /><img loading="lazy" sizes="(max-width: 1000px) 100vw, 1000px" srcset="/static/e5f03663a696e21227f0556c13df0475/2d6f8/what-is-kedro.png 250w,
 /static/e5f03663a696e21227f0556c13df0475/03ac3/what-is-kedro.png 500w,
-/static/e5f03663a696e21227f0556c13df0475/a8734/what-is-kedro.png 1000w" src="/static/e5f03663a696e21227f0556c13df0475/a8734/what-is-kedro.png" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><h1 style="text-align:right;z-index:2" class="blog title">What is Kedro</h1><p style="text-align:right;z-index:2">2020-02-24T12:48:00.000Z</p><p style="min-height:30px;margin:0;padding:0"></p><div><p>Kedro is an open source data pipeline framework.  It provides guardrails to set your project up right from the start without needing to know deeply how to setup your own python library for data pipelining.  It includes really great ways to manipulate <code class="language-text">catalogs</code> and <code class="language-text">pipelines</code>.  This article will cover the 10K view of kedro, future articles will dive deper into each one.</p>
+/static/e5f03663a696e21227f0556c13df0475/a8734/what-is-kedro.png 1000w" src="/static/e5f03663a696e21227f0556c13df0475/a8734/what-is-kedro.png" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><h1 style="text-align:right;z-index:2" class="blog title">What is Kedro</h1><p style="text-align:right;z-index:2">2020-02-24T12:48:00.000Z</p><p style="min-height:30px;margin:0;padding:0"></p><div><p><a href="https://kedro.readthedocs.io">kedro</a> is an open source data pipeline framework.  It provides guardrails to set your project up right from the start without needing to know deeply how to setup your own python library for data pipelining.  It includes really great ways to manipulate <code class="language-text">catalogs</code> and <code class="language-text">pipelines</code>.  This article will cover the 10K view of <a href="https://kedro.readthedocs.io">kedro</a>, future articles will dive deper into each one.</p>
 <h2>Libraries</h2>
-<p>Currently kedro is broken down into 3 different libraries.</p>
-<p>💎 kedro
-📉 kedro-viz
-🏗 kedro-docker</p>
-<h2>Kedro</h2>
+<p>Currently <a href="https://kedro.readthedocs.io">kedro</a> is broken down into 3 different libraries.</p>
+<p>💎 <a href="https://kedro.readthedocs.io">kedro</a>
+📉 <a href="https://github.com/quantumblacklabs/kedro-viz">kedro-viz</a>
+🏗 [kedro-viz](<a href="https://github.com/quantumblacklabs/kedro-docker">https://github.com/quantumblacklabs/kedro-docker</a></p>
+<h2><a href="https://kedro.readthedocs.io">kedro</a></h2>
 <p><img src="https://waylonwalker.com/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg"></p>
-<p>kedro is the core of the ecosystem.  It provides the docs, getting started, <code class="language-text">kedro new</code> templates, and the core library including the catalog and pipeline.</p>
+<p><a href="https://kedro.readthedocs.io">kedro</a> is the core of the ecosystem.  It provides the docs, getting started, <code class="language-text">kedro new</code> templates, and the core library including the catalog and pipeline.</p>
 <h3>Catalog</h3>
 <p><img src="../../../jesse-orrico-h6xNSDlgciU-unsplash.jpg" alt="catalogs"></p>
 <p>Inside this core library is a data catalog object.  This allows you to specify attributes about your data, then load and save it without ever writing a single line of read/write code, which can become vary cumbersome.  Older versions would load this into the io variable, currently it loads into catalog.  The power of the catalog is that it allows you to read and write data by just referencing its name.  Typically this is done inside of a yaml file, but can be done in python.</p>
@@ -66,7 +66,7 @@ bikes_df <span class="token operator">=</span> pd<span class="token punctuation"
 catalog<span class="token punctuation">.</span>datasets<span class="token punctuation">.</span>bikes<span class="token punctuation">.</span>save<span class="token punctuation">(</span>bikes_df<span class="token punctuation">)</span></code></pre></div>
 <h3>Pipeline</h3>
 <p><img src="../../../roman-pentin-T5QT2bmiD4E-unsplash.jpg" alt="building pipelines"></p>
-<p>The pipeline object is the brains of kedro.  When working with kedro you simply define functions that take in data as arguments, manipulate it, and return a new dataset.  The pipeline will decide what order to execute these functions ini based on their dependencies.  It will then work with the catalog to load the data from the catalog pass it to your function, the save the returned data in the catalog.</p>
+<p>The pipeline object is the brains of <a href="https://kedro.readthedocs.io">kedro</a>.  When working with <a href="https://kedro.readthedocs.io">kedro</a> you simply define functions that take in data as arguments, manipulate it, and return a new dataset.  The pipeline will decide what order to execute these functions ini based on their dependencies.  It will then work with the catalog to load the data from the catalog pass it to your function, the save the returned data in the catalog.</p>
 <p>Here is an example pipeline from the docs.</p>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
@@ -90,14 +90,14 @@ nodes <span class="token operator">=</span> <span class="token punctuation">[</s
          <span class="token builtin">dict</span><span class="token punctuation">(</span>data<span class="token operator">=</span><span class="token string">'clean_boats2017'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
          <span class="token punctuation">[</span><span class="token string">'train_boats2017'</span><span class="token punctuation">,</span> <span class="token string">'test_boats2017'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token punctuation">]</span></code></pre></div>
-<h2>kedro-viz</h2>
-<p>kedro-viz is a priceless component to the kedro ecosystem.  It gives you x-ray vision into your project.  You can see exactly how data flows through your pipeline.  Since it is fully automated it is always up to date and never lies to you.  kedro-viz is an integral part of my daily debugging and refactoring toolbelt.</p>
+<h2><a href="https://github.com/quantumblacklabs/kedro-viz">kedro-viz</a></h2>
+<p><a href="https://github.com/quantumblacklabs/kedro-viz">kedro-viz</a> is a priceless component to the <a href="https://kedro.readthedocs.io">kedro</a> ecosystem.  It gives you x-ray vision into your project.  You can see exactly how data flows through your pipeline.  Since it is fully automated it is always up to date and never lies to you.  <a href="https://github.com/quantumblacklabs/kedro-viz">kedro-viz</a> is an integral part of my daily debugging and refactoring toolbelt.</p>
 <p>Starting the viz from the command line is super easy</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">cd</span> my-kedro-project
 kedro viz</code></pre></div>
 <p><img src="https://waylonwalker.com/pipeline_visualisation.png"></p>
-<h2>kedro-docker</h2>
-<p>kedro-docker is a simple way to set up your project for production.  It provides a few simple cli commands</p>
+<h2>[kedro-viz](<a href="https://github.com/quantumblacklabs/kedro-docker">https://github.com/quantumblacklabs/kedro-docker</a></h2>
+<p>[kedro-viz](<a href="https://github.com/quantumblacklabs/kedro-docker">https://github.com/quantumblacklabs/kedro-docker</a> is a simple way to set up your project for production.  It provides a few simple cli commands</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">cd</span> my-kedro-project
 kedro docker build
 kedro docker run</code></pre></div>
