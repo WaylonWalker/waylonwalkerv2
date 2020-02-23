@@ -436,17 +436,33 @@ cars_attached = len(
 [example - log_time](https://kedro.readthedocs.io/en/latest/_modules/kedro/pipeline/decorators.html#log_time)
 
 ``` python
-
-
-
-
 from kedro.pipeline.decorators import log_time, mem_profile
 pipeline.decorate(log_running_time)
+```
 
+## Pipeline IO
 
+`pipleine.all_inputs()` and `pipeline.all_outputs()` return sets of pipeline inputs and outputs and you can do set operations on them.  This is particularly useful to find the upper and lower edges of your pipeline or subset of pipeline.  The pipeline object here is any `kedro` pipeline including a filtered subset.
 
+### Find all raw data
 
+``` python
+pipeline.all_inputs() - pipeline.all_outputs()
+```
 
+### Find all final data
 
+``` python
+pipeline.all_inputs() - pipeline.all_outputs()
+```
 
+### Find all nodes that do not raw
+
+This one is probably one that is pushing the limits of what I would do in a list comprehension that I use in prod or even put into a text editor, but I commonly use ipython for my adhoc work and keeping it all in one line is very handy.  Complex list comprehensions kinda start becoming like regex in a way that they are really easy to write and really hard to read.  I don't think this one quite hits that point but its getting close.
+
+I find this one super useful to help me either move data beween environments, or avoid unnecessary database calls.
+
+``` python
+raw_inputs = pipeline.all_inputs() - pipeline.all_outputs()
+raw_nodes = [node for node in pipeline.nodes if [i for i in raw_inputs if i in set(node.inputs)] != []]
 ```

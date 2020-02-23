@@ -127,6 +127,7 @@ pages:
 - src/pages/blog/automate-your-deploys.md
 - src/pages/blog/background-tasks-in-python-for-data-science.md
 - src/pages/blog/cmd-exe-tips.md
+- src/pages/blog/create-new-kedro-project.md
 - src/pages/blog/custom-scrollbar-design.md
 - src/pages/blog/don-t-waste-your-time-learning-everything.md
 - src/pages/blog/forestry-io.md
@@ -135,6 +136,7 @@ pages:
 - src/pages/blog/keyboard-driven-vscode.md
 - src/pages/blog/out-of-space.md
 - src/pages/blog/personal-url-shortener-with-netlify-redirects.md
+- src/pages/blog/productive-one-on-one.md
 - src/pages/blog/quick-progress-bars-in-python-using-tqdm.md
 - src/pages/blog/react-headroom.md
 - src/pages/blog/realistic-git-workflow.md
@@ -142,6 +144,7 @@ pages:
 - src/pages/blog/should-i-switch-to-zeit-now.md
 - src/pages/blog/simple-click-2.md
 - src/pages/blog/simple-click.md
+- src/pages/blog/what-is-kedro.md
 - src/pages/blog/what-is-refactoring.md
 - src/pages/blog/what-is-something-that-you-recently-learned-that-you-wish-you-would-have-learned-or-understood-earlier.md
 - src/pages/blog/what-is-your-advice-for-new-data-scientists.md
