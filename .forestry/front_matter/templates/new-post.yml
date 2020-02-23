@@ -144,6 +144,7 @@ pages:
 - src/pages/blog/should-i-switch-to-zeit-now.md
 - src/pages/blog/simple-click-2.md
 - src/pages/blog/simple-click.md
+- src/pages/blog/what-is-kedro.md
 - src/pages/blog/what-is-refactoring.md
 - src/pages/blog/what-is-something-that-you-recently-learned-that-you-wish-you-would-have-learned-or-understood-earlier.md
 - src/pages/blog/what-is-your-advice-for-new-data-scientists.md
