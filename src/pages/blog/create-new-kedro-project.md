@@ -62,4 +62,26 @@ kedro install
 
 ![](/static/kedro-new-iris.gif)
 
-## END
+## Run the pipeline
+
+``` bash
+kedro run
+```
+
+
+## Install kedro-viz
+
+```bash
+pip install kedro-viz
+``` 
+
+
+
+## Visualize the pipeline
+
+
+``` bash
+kedro viz
+```
+
+
