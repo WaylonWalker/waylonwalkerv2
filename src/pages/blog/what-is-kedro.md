@@ -19,21 +19,21 @@ twitter_month_3: ''
 short_url: ''
 
 ---
-Kedro is an open source data pipeline framework.  It provides guardrails to set your project up right from the start without needing to know deeply how to setup your own python library for data pipelining.  It includes really great ways to manipulate `catalogs` and `pipelines`.  This article will cover the 10K view of kedro, future articles will dive deper into each one.
+[kedro](https://kedro.readthedocs.io) is an open source data pipeline framework.  It provides guardrails to set your project up right from the start without needing to know deeply how to setup your own python library for data pipelining.  It includes really great ways to manipulate `catalogs` and `pipelines`.  This article will cover the 10K view of [kedro](https://kedro.readthedocs.io), future articles will dive deper into each one.
 
 ## Libraries
 
-Currently kedro is broken down into 3 different libraries.
+Currently [kedro](https://kedro.readthedocs.io) is broken down into 3 different libraries.
 
-💎 kedro
-📉 kedro-viz
-🏗 kedro-docker
+💎 [kedro](https://kedro.readthedocs.io)
+📉 [kedro-viz](https://github.com/quantumblacklabs/kedro-viz)
+🏗 [kedro-viz](https://github.com/quantumblacklabs/kedro-docker
 
-## Kedro
+## [kedro](https://kedro.readthedocs.io)
 
 ![](https://waylonwalker.com/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg)
 
-kedro is the core of the ecosystem.  It provides the docs, getting started, `kedro new` templates, and the core library including the catalog and pipeline.
+[kedro](https://kedro.readthedocs.io) is the core of the ecosystem.  It provides the docs, getting started, `kedro new` templates, and the core library including the catalog and pipeline.
 
 ### Catalog
 
@@ -68,7 +68,7 @@ catalog.datasets.bikes.save(bikes_df)
 
 ![building pipelines](/roman-pentin-T5QT2bmiD4E-unsplash.jpg)
 
-The pipeline object is the brains of kedro.  When working with kedro you simply define functions that take in data as arguments, manipulate it, and return a new dataset.  The pipeline will decide what order to execute these functions ini based on their dependencies.  It will then work with the catalog to load the data from the catalog pass it to your function, the save the returned data in the catalog.
+The pipeline object is the brains of [kedro](https://kedro.readthedocs.io).  When working with [kedro](https://kedro.readthedocs.io) you simply define functions that take in data as arguments, manipulate it, and return a new dataset.  The pipeline will decide what order to execute these functions ini based on their dependencies.  It will then work with the catalog to load the data from the catalog pass it to your function, the save the returned data in the catalog.
 
 Here is an example pipeline from the docs.
 
@@ -97,9 +97,9 @@ nodes = [
 ]
 ```
 
-## kedro-viz
+## [kedro-viz](https://github.com/quantumblacklabs/kedro-viz)
 
-kedro-viz is a priceless component to the kedro ecosystem.  It gives you x-ray vision into your project.  You can see exactly how data flows through your pipeline.  Since it is fully automated it is always up to date and never lies to you.  kedro-viz is an integral part of my daily debugging and refactoring toolbelt.
+[kedro-viz](https://github.com/quantumblacklabs/kedro-viz) is a priceless component to the [kedro](https://kedro.readthedocs.io) ecosystem.  It gives you x-ray vision into your project.  You can see exactly how data flows through your pipeline.  Since it is fully automated it is always up to date and never lies to you.  [kedro-viz](https://github.com/quantumblacklabs/kedro-viz) is an integral part of my daily debugging and refactoring toolbelt.
 
 Starting the viz from the command line is super easy
 
@@ -110,9 +110,9 @@ kedro viz
 
 ![](https://waylonwalker.com/pipeline_visualisation.png)
 
-## kedro-docker
+## [kedro-viz](https://github.com/quantumblacklabs/kedro-docker
 
-kedro-docker is a simple way to set up your project for production.  It provides a few simple cli commands
+[kedro-viz](https://github.com/quantumblacklabs/kedro-docker is a simple way to set up your project for production.  It provides a few simple cli commands
 
 ``` bash
 cd my-kedro-project
