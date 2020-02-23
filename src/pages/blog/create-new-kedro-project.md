@@ -14,7 +14,7 @@ description: Getting up and going with a brand new [kedro](kedro.readthedocs.io)
 related_post_body: ''
 related_post: []
 cover: "/static/create-new-kedro-project.png"
-twitter_cover: ''
+twitter_cover: "/static/create-new-kedro-project.png"
 twitter_week_1: ''
 twitter_week_2: ''
 twitter_month_1: ''
@@ -40,7 +40,7 @@ I use conda to control my virtual environments and will create a new environment
 conda create -n kedro_iris python=3.7 -y
 ```
 
-![](/static/conda-create-kedro-iris.gif)
+![](https://waylonwalker.com/conda-create-kedro-iris.gif)
 
 Options
 
@@ -75,7 +75,7 @@ git init
 kedro install
 ```
 
-![](/static/kedro-new-iris.gif)
+![](https://waylonwalker.com/kedro-new-iris.gif)
 
 ## Run the pipeline
 
@@ -89,7 +89,7 @@ Lets run from the cli while in the same directory as kedro-iris
 kedro run
 ```
 
-![](/static/kedro-new-iris.gif)
+![](https://waylonwalker.com/kedro-new-iris.gif)
 
 ## Viz
 
@@ -113,7 +113,7 @@ pip install kedro-viz
 kedro viz
 ```
 
-![](/static/kedro-viz-iris.gif)
+![](https://waylonwalker.com/kedro-viz-iris.gif)
 
 ## 🏗 Docker
 
