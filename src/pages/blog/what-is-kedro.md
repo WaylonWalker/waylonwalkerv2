@@ -31,9 +31,13 @@ Currently kedro is broken down into 3 different libraries.
 
 ## Kedro
 
+![](/static/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg)
+
 kedro is the core of the ecosystem.  It provides the docs, getting started, `kedro new` templates, and the core library including the catalog and pipeline.
 
 ### Catalog
+
+![catalogs](/jesse-orrico-h6xNSDlgciU-unsplash.jpg)
 
 Inside this core library is a data catalog object.  This allows you to specify attributes about your data, then load and save it without ever writing a single line of read/write code, which can become vary cumbersome.  Older versions would load this into the io variable, currently it loads into catalog.  The power of the catalog is that it allows you to read and write data by just referencing its name.  Typically this is done inside of a yaml file, but can be done in python.
 
@@ -115,3 +119,16 @@ cd my-kedro-project
 kedro docker build
 kedro docker run
 ```
+
+## Other resources
+
+The [kedro docs](https://kedro.readthedocs.io/) have a ton of great resources.  They are searchable, but can be a bit of an overwhelming amount of data.
+
+I keep adding to my [kedro notes](https://waylonwalker.com/n/kedro/) as I find new and interesting things.
+
+I tweet out most of those snippets as I add them, you can find them all here [#kedrotips](https://twitter.com/search?q=%23kedrotips).
+
+
+## More to come
+
+I am planning to do more articles like this, you can stay up to date with them by following me on [dev.to](https://dev.to/waylonwalker), subscribing to my [rss feed](https://waylonwalker.com/blog/rss.xml), or subscribe to my [newsletter](https://waylonwalker.com/newsletter)
