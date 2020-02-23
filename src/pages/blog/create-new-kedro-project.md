@@ -22,7 +22,7 @@ twitter_month_3: ''
 short_url: ''
 
 ---
-This is a quickstart to getting a new [kedro](kedro.readthedocs.io) pipeline up and running.  After this article you should be able to understand how to get started with [kedro](kedro.readthedocs.io).
+This is a quickstart to getting a new [kedro](kedro.readthedocs.io) pipeline up and running.  After this article you should be able to understand how to get started with [kedro](kedro.readthedocs.io).  You can learn more about this [Hello World Example](https://kedro.readthedocs.io/en/stable/02_getting_started/04_hello_world.html) in the [docs](https://kedro.readthedocs.io/en/stable/02_getting_started/04_hello_world.html)
 
 🧹 Install [Kedro](kedro.readthedocs.io)
 
@@ -83,7 +83,6 @@ This will tell kedro to run your pipeline.  It will look at all of your nodes an
 
 > ✨ It will look at all of your nodes and determine the correct execution order for you
 
-
 Lets run from the cli while in the same directory as kedro-iris
 
 ``` bash
@@ -96,8 +95,7 @@ kedro run
 
 [kedro-viz](https://github.com/quantumblacklabs/kedro-viz) is a priceless feature of [kedro](kedro.readthedocs.io).  It's like x-ray vision into your pipeline.  I can't imagine working without it after having it over the past year.  Unlike traditional documentation [kedro-viz](https://github.com/quantumblacklabs/kedro-viz) cannot lie to you.  It will help guarantee your changes line up properly, plan out adding nodes, and identify dependencies of deprecating nodes.
 
->   Unlike traditional documentation [kedro-viz](https://github.com/quantumblacklabs/kedro-viz) cannot lie to you.
-
+> Unlike traditional documentation [kedro-viz](https://github.com/quantumblacklabs/kedro-viz) cannot lie to you.
 
 ## Install [kedro-viz](https://github.com/quantumblacklabs/kedro-viz)
 
@@ -123,9 +121,7 @@ There is another package that makes creating docker images from kedro projects s
 
 If you dont already have docker installed on your machine, feel free to skip this section.
 
-
 ### install [kedro-docker](https://github.com/quantumblacklabs/kedro-docker)
-
 
 ``` bash
 pip install kedro-docker
