@@ -61,10 +61,13 @@
 <url> <loc>https://waylonwalker.com/notes/just-use-pathlib/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/d3-day4/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/flexbox-zombies/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://waylonwalker.com/notes/kedro/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/custom-scrollbar-design/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/what-is-your-advice-for-new-data-scientists/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/what-is-refactoring/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://waylonwalker.com/notes/kedro/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://waylonwalker.com/blog/productive-one-on-one/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://waylonwalker.com/blog/create-new-kedro-project/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://waylonwalker.com/blog/what-is-kedro/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/realistic-git-workflow/clean/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/gratitude/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>

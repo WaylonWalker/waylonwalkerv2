@@ -7,11 +7,11 @@ path: what-is-kedro
 title: What is Kedro
 date: 2020-02-24T12:48:00Z
 status: published
-description: ''
+description: 'Kedro is an open source data pipeline framework.  It provides guardrails to set your project up right from the start without needing to know deeply how to setup your own python library for data pipelining.  It includes really great ways to manipulate `catalogs` and `pipelines`.  This article will cover the 10K view of kedro, future articles will dive deper into each one.'
 related_post_body: ''
 related_post: []
 cover: "/static/what-is-kedro.png"
-twitter_cover: ''
+twitter_cover: "/static/what-is-kedro.png"
 twitter_week_1: ''
 twitter_week_2: ''
 twitter_month_1: ''
@@ -31,7 +31,7 @@ Currently kedro is broken down into 3 different libraries.
 
 ## Kedro
 
-![](/static/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg)
+![](https://waylonwalker.com/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg)
 
 kedro is the core of the ecosystem.  It provides the docs, getting started, `kedro new` templates, and the core library including the catalog and pipeline.
 
@@ -108,7 +108,7 @@ cd my-kedro-project
 kedro viz
 ```
 
-![](/static/pipeline_visualisation.png)
+![](https://waylonwalker.com/pipeline_visualisation.png)
 
 ## kedro-docker
 
