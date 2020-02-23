@@ -1,0 +1,134 @@
+---
+templateKey: blog-post
+related_post_label: Check out this related post
+tags: []
+twitter_announcement: I just dropped a new post check it out.
+path: what-is-kedro
+title: What is Kedro
+date: 2020-02-24T12:48:00Z
+status: published
+description: ''
+related_post_body: ''
+related_post: []
+cover: "/static/what-is-kedro.png"
+twitter_cover: ''
+twitter_week_1: ''
+twitter_week_2: ''
+twitter_month_1: ''
+twitter_month_3: ''
+short_url: ''
+
+---
+Kedro is an open source data pipeline framework.  It provides guardrails to set your project up right from the start without needing to know deeply how to setup your own python library for data pipelining.  It includes really great ways to manipulate `catalogs` and `pipelines`.  This article will cover the 10K view of kedro, future articles will dive deper into each one.
+
+## Libraries
+
+Currently kedro is broken down into 3 different libraries.
+
+💎 kedro
+📉 kedro-viz
+🏗 kedro-docker
+
+## Kedro
+
+![](/static/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg)
+
+kedro is the core of the ecosystem.  It provides the docs, getting started, `kedro new` templates, and the core library including the catalog and pipeline.
+
+### Catalog
+
+![catalogs](/jesse-orrico-h6xNSDlgciU-unsplash.jpg)
+
+Inside this core library is a data catalog object.  This allows you to specify attributes about your data, then load and save it without ever writing a single line of read/write code, which can become vary cumbersome.  Older versions would load this into the io variable, currently it loads into catalog.  The power of the catalog is that it allows you to read and write data by just referencing its name.  Typically this is done inside of a yaml file, but can be done in python.
+
+Here is an example of a csv dataset stored locally
+
+``` yaml
+# Example 1: Loads a local csv file
+bikes:
+  type: CSVLocalDataSet
+  filepath: "data/01_raw/bikes.csv"
+```
+
+This dataset can be loaded by name
+
+``` python
+catalog.load('bikes')
+```
+
+Though it's not typical practice it is possible to save data to a catalog entry adhoc.  Typically the pipeline is used to run functions and save data for you.
+
+``` python
+import pandas as pd
+bikes_df = pd.DataFrame({...<bikes_data>...})
+catalog.datasets.bikes.save(bikes_df)
+```
+
+### Pipeline
+
+![building pipelines](/roman-pentin-T5QT2bmiD4E-unsplash.jpg)
+
+The pipeline object is the brains of kedro.  When working with kedro you simply define functions that take in data as arguments, manipulate it, and return a new dataset.  The pipeline will decide what order to execute these functions ini based on their dependencies.  It will then work with the catalog to load the data from the catalog pass it to your function, the save the returned data in the catalog.
+
+Here is an example pipeline from the docs.
+
+``` python
+import pandas as pd
+import numpy as np
+
+def clean_data(cars: pd.DataFrame,
+               boats: pd.DataFrame) -> Dict[str, pd.DataFrame]:
+    return dict(cars_df=cars.dropna(), boats_df=boats.dropna())
+
+def halve_dataframe(data: pd.DataFrame) -> List[pd.DataFrame]:
+    return np.array_split(data, 2)
+
+nodes = [
+    node(clean_data,
+         inputs=['cars2017', 'boats2017'],
+         outputs=dict(cars_df='clean_cars2017',
+                      boats_df='clean_boats2017')),
+    node(halve_dataframe,
+         'clean_cars2017',
+         ['train_cars2017', 'test_cars2017']),
+    node(halve_dataframe,
+         dict(data='clean_boats2017'),
+         ['train_boats2017', 'test_boats2017'])
+]
+```
+
+## kedro-viz
+
+kedro-viz is a priceless component to the kedro ecosystem.  It gives you x-ray vision into your project.  You can see exactly how data flows through your pipeline.  Since it is fully automated it is always up to date and never lies to you.  kedro-viz is an integral part of my daily debugging and refactoring toolbelt.
+
+Starting the viz from the command line is super easy
+
+``` bash
+cd my-kedro-project
+kedro viz
+```
+
+![](/static/pipeline_visualisation.png)
+
+## kedro-docker
+
+kedro-docker is a simple way to set up your project for production.  It provides a few simple cli commands
+
+``` bash
+cd my-kedro-project
+kedro docker build
+kedro docker run
+```
+
+## Other resources
+
+The [kedro docs](https://kedro.readthedocs.io/) have a ton of great resources.  They are searchable, but can be a bit of an overwhelming amount of data.
+
+I keep adding to my [kedro notes](https://waylonwalker.com/n/kedro/) as I find new and interesting things.
+
+I tweet out most of those snippets as I add them, you can find them all here [#kedrotips](https://twitter.com/search?q=%23kedrotips).
+
+
+## More to come
+
+I am planning to do more articles like this, you can stay up to date with them by following me on [dev.to](https://dev.to/waylonwalker), subscribing to my [rss feed](https://waylonwalker.com/blog/rss.xml), or subscribe to my [newsletter](https://waylonwalker.com/newsletter)
