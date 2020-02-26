@@ -122,6 +122,16 @@ fields:
   config:
     required: false
   label: short url
+- name: devto-url
+  type: text
+  config:
+    required: false
+  label: devto-url
+- name: devto-id
+  type: text
+  config:
+    required: false
+  label: devto-id
 pages:
 - src/pages/blog/2020-rebrand.md
 - src/pages/blog/automate-your-deploys.md
@@ -135,6 +145,7 @@ pages:
 - src/pages/blog/git-push-without-setting-upstream.md
 - src/pages/blog/i-finally-fixed-my-styled-components-in-gatsby-js.md
 - src/pages/blog/keyboard-driven-vscode.md
+- src/pages/blog/long-variable-names-are-good.md
 - src/pages/blog/out-of-space.md
 - src/pages/blog/personal-url-shortener-with-netlify-redirects.md
 - src/pages/blog/productive-one-on-one.md
@@ -145,6 +156,7 @@ pages:
 - src/pages/blog/should-i-switch-to-zeit-now.md
 - src/pages/blog/simple-click-2.md
 - src/pages/blog/simple-click.md
+- src/pages/blog/today-i-learned-git-diff-feature-master.md
 - src/pages/blog/what-is-kedro.md
 - src/pages/blog/what-is-refactoring.md
 - src/pages/blog/what-is-something-that-you-recently-learned-that-you-wish-you-would-have-learned-or-understood-earlier.md
