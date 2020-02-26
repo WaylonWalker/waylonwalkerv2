@@ -67,8 +67,10 @@
 <url> <loc>https://waylonwalker.com/notes/kedro/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/productive-one-on-one/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/create-new-kedro-project/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://waylonwalker.com/blog/what-is-kedro/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/do-you-hoist/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://waylonwalker.com/blog/long-variable-names-are-good/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://waylonwalker.com/blog/today-i-learned-git-diff-feature-master/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://waylonwalker.com/blog/what-is-kedro/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/realistic-git-workflow/clean/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/gratitude/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>

@@ -28,8 +28,10 @@ devto-id: "267197"
 Currently [kedro](https://kedro.readthedocs.io) is broken down into 3 different libraries.
 
 💎 [kedro](https://kedro.readthedocs.io)
+
 📉 [kedro-viz](https://github.com/quantumblacklabs/kedro-viz)
-🏗 [kedro-viz](https://github.com/quantumblacklabs/kedro-docker
+
+🏗 [kedro-docker](https://github.com/quantumblacklabs/kedro-docker)
 
 ## [kedro](https://kedro.readthedocs.io)
 
@@ -77,6 +79,8 @@ Here is an example pipeline from the docs.
 ``` python
 import pandas as pd
 import numpy as np
+from kedro.pipeline import Pipeline
+from kedro.pipeline import node
 
 def clean_data(cars: pd.DataFrame,
                boats: pd.DataFrame) -> Dict[str, pd.DataFrame]:
@@ -97,6 +101,8 @@ nodes = [
          dict(data='clean_boats2017'),
          ['train_boats2017', 'test_boats2017'])
 ]
+
+pipeline = Pipeline(nodes)
 ```
 
 ## [kedro-viz](https://github.com/quantumblacklabs/kedro-viz)
@@ -112,9 +118,9 @@ kedro viz
 
 ![](https://waylonwalker.com/pipeline_visualisation.png)
 
-## [kedro-viz](https://github.com/quantumblacklabs/kedro-docker
+## [kedro-docker](https://github.com/quantumblacklabs/kedro-docker)
 
-[kedro-viz](https://github.com/quantumblacklabs/kedro-docker is a simple way to set up your project for production.  It provides a few simple cli commands
+[kedro-docker](https://github.com/quantumblacklabs/kedro-docker) is a simple way to set up your project for production.  It provides a few simple cli commands
 
 ``` bash
 cd my-kedro-project
