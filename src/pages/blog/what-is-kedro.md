@@ -130,7 +130,6 @@ I keep adding to my [kedro notes](https://waylonwalker.com/n/kedro/) as I find n
 
 I tweet out most of those snippets as I add them, you can find them all here [#kedrotips](https://twitter.com/search?q=%23kedrotips).
 
-
 ## More to come
 
 I am planning to do more articles like this, you can stay up to date with them by following me on [dev.to](https://dev.to/waylonwalker), subscribing to my [rss feed](https://waylonwalker.com/blog/rss.xml), or subscribe to my [newsletter](https://waylonwalker.com/newsletter)
