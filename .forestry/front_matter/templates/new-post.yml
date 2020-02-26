@@ -122,6 +122,16 @@ fields:
   config:
     required: false
   label: short url
+- name: devto-url
+  type: text
+  config:
+    required: false
+  label: devto-url
+- name: devto-id
+  type: text
+  config:
+    required: false
+  label: devto-id
 pages:
 - src/pages/blog/2020-rebrand.md
 - src/pages/blog/automate-your-deploys.md
