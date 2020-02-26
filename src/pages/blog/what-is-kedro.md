@@ -17,6 +17,8 @@ twitter_week_2: ''
 twitter_month_1: ''
 twitter_month_3: ''
 short_url: ''
+devto-url: https://dev.to/waylonwalker/what-is-kedro-lob
+devto-id: "267197"
 
 ---
 Kedro is an open source data pipeline framework.  It provides guardrails to set your project up right from the start without needing to know deeply how to setup your own python library for data pipelining.  It includes really great ways to manipulate `catalogs` and `pipelines`.  This article will cover the 10K view of kedro, future articles will dive deper into each one.
