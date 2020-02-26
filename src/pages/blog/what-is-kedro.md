@@ -21,11 +21,14 @@ devto-url: https://dev.to/waylonwalker/what-is-kedro-lob
 devto-id: "267197"
 
 ---
-[kedro](https://kedro.readthedocs.io) is an open source data pipeline framework.  It provides guardrails to set your project up right from the start without needing to know deeply how to setup your own python library for data pipelining.  It includes really great ways to manipulate `catalogs` and `pipelines`.  This article will cover the 10K view of [kedro](https://kedro.readthedocs.io), future articles will dive deper into each one.
+[kedro](https://kedro.readthedocs.io) is an open-source data pipeline framework.  It provides guardrails to set your project up right from the start without needing to know deeply how to set up your own python library for data pipelining.  It includes great ways to manipulate `catalogs` and `pipelines`.  This article will cover the 10K view of [kedro](https://kedro.readthedocs.io), future articles will dive deeper into each one.
+
+<!-- {% slideshare DAZrqvJmuUUfFF %} -->
+
 
 ## Libraries
 
-Currently [kedro](https://kedro.readthedocs.io) is broken down into 3 different libraries.
+Currently, [kedro](https://kedro.readthedocs.io) is broken down into 3 different libraries.
 
 💎 [kedro](https://kedro.readthedocs.io)
 
@@ -35,17 +38,17 @@ Currently [kedro](https://kedro.readthedocs.io) is broken down into 3 different 
 
 ## [kedro](https://kedro.readthedocs.io)
 
-![](https://waylonwalker.com/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg)
+![kedro logo](https://waylonwalker.com/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg)
 
 [kedro](https://kedro.readthedocs.io) is the core of the ecosystem.  It provides the docs, getting started, `kedro new` templates, and the core library including the catalog and pipeline.
 
 ### Catalog
 
-![catalogs](/jesse-orrico-h6xNSDlgciU-unsplash.jpg)
+![catalogs](https://dev-to-uploads.s3.amazonaws.com/i/trzfj86dbq0ronis26x1.jpg)
 
-Inside this core library is a data catalog object.  This allows you to specify attributes about your data, then load and save it without ever writing a single line of read/write code, which can become vary cumbersome.  Older versions would load this into the io variable, currently it loads into catalog.  The power of the catalog is that it allows you to read and write data by just referencing its name.  Typically this is done inside of a yaml file, but can be done in python.
+Inside this core library is a data catalog object.  This allows you to specify attributes about your data, then load and save it without ever writing a single line of read/write code, which can become very cumbersome.  Older versions would load this into the io variable, currently it loads into the catalog.  The power of the catalog is that it allows you to read and write data by just referencing its name.  Typically this is done inside of a YAML file, but can be done in python.
 
-Here is an example of a csv dataset stored locally
+Here is an example of a CSV dataset stored locally
 
 ``` yaml
 # Example 1: Loads a local csv file
@@ -60,7 +63,7 @@ This dataset can be loaded by name
 catalog.load('bikes')
 ```
 
-Though it's not typical practice it is possible to save data to a catalog entry adhoc.  Typically the pipeline is used to run functions and save data for you.
+Though it's not typical practice it is possible to save data to a catalog entry ad-hoc.  Typically the pipeline is used to run functions and save data for you.
 
 ``` python
 import pandas as pd
@@ -70,7 +73,7 @@ catalog.datasets.bikes.save(bikes_df)
 
 ### Pipeline
 
-![building pipelines](/roman-pentin-T5QT2bmiD4E-unsplash.jpg)
+![building pipelines](https://waylonwalker.com/roman-pentin-T5QT2bmiD4E-unsplash.jpg)
 
 The pipeline object is the brains of [kedro](https://kedro.readthedocs.io).  When working with [kedro](https://kedro.readthedocs.io) you simply define functions that take in data as arguments, manipulate it, and return a new dataset.  The pipeline will decide what order to execute these functions ini based on their dependencies.  It will then work with the catalog to load the data from the catalog pass it to your function, the save the returned data in the catalog.
 
