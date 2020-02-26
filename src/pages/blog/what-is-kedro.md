@@ -17,6 +17,8 @@ twitter_week_2: ''
 twitter_month_1: ''
 twitter_month_3: ''
 short_url: ''
+devto-url: https://dev.to/waylonwalker/what-is-kedro-lob
+devto-id: "267197"
 
 ---
 [kedro](https://kedro.readthedocs.io) is an open source data pipeline framework.  It provides guardrails to set your project up right from the start without needing to know deeply how to setup your own python library for data pipelining.  It includes really great ways to manipulate `catalogs` and `pipelines`.  This article will cover the 10K view of [kedro](https://kedro.readthedocs.io), future articles will dive deper into each one.
@@ -127,7 +129,6 @@ The [kedro docs](https://kedro.readthedocs.io/) have a ton of great resources.  
 I keep adding to my [kedro notes](https://waylonwalker.com/n/kedro/) as I find new and interesting things.
 
 I tweet out most of those snippets as I add them, you can find them all here [#kedrotips](https://twitter.com/search?q=%23kedrotips).
-
 
 ## More to come
 
