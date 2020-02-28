@@ -48,7 +48,6 @@
 <url> <loc>https://waylonwalker.com/notes/filtering-pandas/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/notes/building-cli-apps-in-python/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/notes/debugging-python/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://waylonwalker.com/notes/bash/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/notes/making-good-documentation-in-python/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/notes/custom-python-exceptions/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/notes/packages-to-investigate/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -71,6 +70,7 @@
 <url> <loc>https://waylonwalker.com/blog/long-variable-names-are-good/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/today-i-learned-git-diff-feature-master/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/what-is-kedro/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://waylonwalker.com/notes/bash/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/blog/realistic-git-workflow/clean/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://waylonwalker.com/gratitude/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
