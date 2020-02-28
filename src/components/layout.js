@@ -1,18 +1,14 @@
 import React from 'react'
-// import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-// import Header from './header'
 import Nav from './nav'
+import Subscribe from './Subscribe'
 import LayoutStyles from './styles/LayoutStyles'
 import './layout.css'
-// import './sass/main.sass'
-// import './styles/fonts/fonts.css'
 
-
-const Layout = ({ children }) => (
+const Layout = ({ children, include_subscribe = true }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -24,7 +20,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <LayoutStyles>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -41,12 +37,15 @@ const Layout = ({ children }) => (
 
           <html lang="en" />
         </Helmet>
-        {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-        <LayoutStyles>
-          <Nav />
-          {children}
-        </LayoutStyles>
-      </>
+        <Nav />
+        {children}
+        {
+          include_subscribe === true
+            ? <Subscribe />
+            : ''
+        }
+        <p style={{ margin: '0' }}>.</p>
+      </LayoutStyles>
     )}
   />
 )

@@ -5,10 +5,9 @@ import { Link } from 'gatsby'
 import Headroom from 'react-headroom'
 
 const Nav = () => (
-  <Headroom>
+  <Headroom style={{ zIndex: '9999' }}>
     <NavStyles>
       <ul>
-
         <Link to='/' activeClassName='active'>
           <Icon />
         </Link>

@@ -10,6 +10,7 @@ module.exports = {
   plugins: [
     // `gatsby-plugin-sass`,
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-styled-components',
     // 'gatsby-remark-copy-linked-files',

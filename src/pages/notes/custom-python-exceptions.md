@@ -13,6 +13,9 @@ cover: "/static/andrew-neel-_71nlAn-2YA-unsplash.jpg"
 twitter_cover: "/static/andrew-neel-_71nlAn-2YA-unsplash-1.jpg"
 
 ---
+
+## Custom Exceptions
+
 ```
 class ProjectNameError(NameError):
     pass

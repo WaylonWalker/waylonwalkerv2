@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Amiko|Arima+Madurai|Farsan|Lalezar|Mogra|Rakkas|Rasa|Shrikhand|Suez+One|Yatra+One');
+@import url('https://fonts.googleapis.com/css?family=Amiko|Arima+Madurai|Farsan|Lalezar|Mogra|Rakkas|Rasa|Shrikhand|Suez+One|Yatra+One|Architects+Daughter');
 html {
   font-family: 'Farsan', sans-serif;
   -ms-text-size-adjust: 100%;
@@ -189,7 +189,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
+  font: 112.5%/1.45em 'Amiko', sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }

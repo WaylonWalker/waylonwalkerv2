@@ -11,6 +11,7 @@ import Layout from '../components/layout'
 import Img from 'gatsby-image'
 // import Blazy from 'blazy'
 
+
 const BlogPostWrapper = styled.div`
 display: flex;
 flex-direction: column;
@@ -18,12 +19,12 @@ align-items: center;
 `
 
 const BlogPostStyles = styled.div`
-background: rgba(51, 0, 38, .08);
+background: rgba(51, 0, 38, .13);
 overflow: hidden;
 /* background: #330026; */
 display: block;
 margin: .2rem;
-max-width: 800px;
+max-width: 1000px;
 width: 95%;
 position: relative;
 margin: 2rem 0;
@@ -32,27 +33,36 @@ border-radius: 2px;
 box-shadow: .2rem .2rem 1rem rgba(0, 0, 0, .2);
 display: flex;
 flex-direction: column;
+color: whitesmoke;
 
 a {
-  color: #333;
+  color: #6F6BAE;
   text-decoration-color: #330026;
   text-decoration-color: goldenrod; /* Wyatt chose goldenrod */
 }
 p>img {
-  opacity: .8;
+  /* opacity: .8; */
   box-shadow: .2rem .2rem 1rem rgba(51, 0, 38, .4);
-  max-width: 400px;
-  width: 95%;
+  max-width: 1000px;
+  width: 95vw;
   align-self: center;
   justify-self: center;
   align-items: center;
   justify-items: center;
-  /* margin: 2rem 200px; */
   margin: auto;
+}
+
+p:has(>img) {
+  margin: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 p {
   // display: flex;
+  /* margin: auto; */
+  font-family: 'Amiko';
 }
 
 
@@ -72,7 +82,45 @@ hr {
 
 }
 
+h1 {
+  margin-top: 5rem;
+  font-family: sans-serif;
+  color: #6A65CA;
+}
+
 `
+
+class DevToComments extends React.Component {
+  j
+  constructor(props) {
+    super(props)
+    this.state = { ...props, comments: undefined }
+  }
+  componentDidMount() {
+    fetch(`https://dev.to/api/comments?a_id=${this.state.devto_id}`)
+      .then((response) => {
+        return response.json()
+      })
+      .then((comments) => {
+        this.setState({ comments: comments })
+        console.log(comments[0].body_html)
+      })
+
+  }
+  render() {
+    return (
+      <>
+        <p>
+          devto article id is {this.state.devto_id}
+        </p>
+        {this.state.comments === undefined
+          ? ''
+          : <div className="comment" dangerouslySetInnerHTML={{ __html: this.state.comments[0].body_html }} />
+        }
+      </>
+    )
+  }
+}
 
 class BlogPostTemplate extends React.Component {
   // constructor(props) {
@@ -87,9 +135,12 @@ class BlogPostTemplate extends React.Component {
       // tags,
       title,
       cover,
+      fluidCover,
       date,
       // helmet,
       twitter_cover,
+      devto_url,
+      devto_id,
     } = this.props
     // const PostContent = contentComponent || Content
 
@@ -106,12 +157,22 @@ class BlogPostTemplate extends React.Component {
             { name: 'description', content: description },
             { name: 'twitter:image', content: 'https://www.waylonwalker.com' + twitterImage },
             { name: 'twitter:description', content: description },
-            { name: 'og:image', content: cover.src },
+            { name: 'og:image', content: 'https://www.waylonwalker.com' + cover.src },
           ]}
 
         />
         <BlogPostWrapper>
           <BlogPostStyles>
+            <Img
+              style={{
+                // position: 'absolute',
+                // top: '0px',
+                // left: '-0rem',
+                // zIndex: '-1',
+                // opacity: '.6',
+              }}
+              fluid={fluidCover}
+            />
             <h1
               style={{ textAlign: 'right', zIndex: 2 }}
               className="blog title">
@@ -121,20 +182,26 @@ class BlogPostTemplate extends React.Component {
               style={{ textAlign: 'right', zIndex: 2 }}>
               {date}
             </p>
-            <Img
-              style={{
-                position: 'absolute',
-                top: '0px',
-                left: '-0rem',
-                // zIndex: '-1',
-                opacity: '.6',
-              }}
-              fixed={cover} />
+            <p
+              style={{ textAlign: 'right', zIndex: 2 }}
+            >
+              This article was also cross posted to
+            {
+                devto_url === undefined
+                  ?
+                  console.log('devto_url', devto_url, 'devto_id', devto_id)
+                  : <a href={devto_url} > dev.to </a>
+              }
+              feel free to drop in to give it a ♥ and leave comment.
+
+            </p>
             <p style={{ minHeight: '30px', margin: '0', padding: '0' }}>{description}</p>
             <div ref={(el) => { this.markdownContainer = el }}
               dangerouslySetInnerHTML={{ __html: content }} />
 
           </BlogPostStyles>
+          <DevToComments devto_id={devto_id} />
+          <p>devtoid = {devto_id}</p>
           <p>
             Check out my other
           <Link to='/blog' style={{ margin: '.2rem' }} >blogs</Link>
@@ -150,6 +217,8 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
+  devto_url: PropTypes.string,
+  devto_id: PropTypes.string
   // helmet: PropTypes.instanceOf(Helmet),
 }
 
@@ -166,9 +235,21 @@ const BlogPost = ({ data }) => {
         // helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
-        cover={post.frontmatter.cover !== null ? post.frontmatter.cover.childImageSharp.fixed : ''}
+        cover={
+          post.frontmatter.cover !== null
+            ? post.frontmatter.cover.childImageSharp.fixed
+            : ''
+        }
+        fluidCover={
+          post.frontmatter.cover !== null
+            ? post.frontmatter.cover.childImageSharp.fluid
+            : ''
+        }
         twitter_cover={twitter_cover}
         date={post.frontmatter.date}
+        devto_url={post.frontmatter.devto_url}
+        devto_id={post.frontmatter.devto_id}
+
       />
     </Layout>
   )
@@ -194,6 +275,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         date
+        devto_url
+        devto_id
         title
         description
         # tags
@@ -209,8 +292,11 @@ export const pageQuery = graphql`
         cover {
           absolutePath
           childImageSharp {
-            fixed(width: 800, height: 200) {
+            fixed(width: 1000, height: 420) {
               ...GatsbyImageSharpFixed
+            },
+            fluid(maxWidth: 1000, maxHeight: 420) {
+              ...GatsbyImageSharpFluid
             }
           }
          }

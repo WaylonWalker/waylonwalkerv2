@@ -1,14 +1,24 @@
 # netlify redirects
 
 # Short-Blog
-
+/csro              /blog/custom-scrollbar-design/
+/blog/csro         /blog/custom-scrollbar-design/
+/dwyt              /blog/don-t-waste-your-time-learning-everything/
+/blog/dwyt         /blog/don-t-waste-your-time-learning-everything/
+/dsgn              /blog/2020-rebrand/
+/blog/dsgn         /blog/2020-rebrand/
 /hdrm              /blog/react-headroom/
 /blog/hdrm         /blog/react-headroom/
 /blog/styf         /blog/i-finally-fixed-my-styled-components-in-gatsby-js/
+/styf              /blog/i-finally-fixed-my-styled-components-in-gatsby-js/
 /blog/zeit         /blog/should-i-switch-to-zeit-now/
+/zeit              /blog/should-i-switch-to-zeit-now/
 /blog/gitp         /blog/git-push-without-setting-upstream/
+/gitp              /blog/git-push-without-setting-upstream/
 /blog/oosp         /blog/out-of-space/
+/oosp              /blog/out-of-space/
 /blog/purl         /blog/personal-url-shortener-with-netlify-redirects/
+/purl              /blog/personal-url-shortener-with-netlify-redirects/
 /blog/scli         /blog/simple-click/
 /blog/cmdt         /blog/cmd-exe-tips/
 /blog/wist         /blog/what-is-something-that-you-recently-learned-that-you-wish-you-would-have-learned-or-understood-earlier/
@@ -35,9 +45,9 @@
 /blog/pc17         /blog/Pycon_2017_roundup/
 
 # more encompassing
-/b*             /blog/:splat
+/b/*             /blog/:splat
 
-/n*             /notes/:splat
+/n/*             /notes/:splat
 
 /rss            /blog/rss.xml
 /md-rss         /blog/markdown-rss.xml
