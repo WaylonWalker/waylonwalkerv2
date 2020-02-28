@@ -7,8 +7,7 @@ status: published
 description: Waylon Walker's Bash Notes
 cover: "/static/hannah-gibbs-BINLgyrG_fI-unsplash.jpg"
 twitter_cover: "/static/hannah-gibbs-BINLgyrG_fI-unsplash.jpg"
-related_post:
-# - src/pages/blog/readme_tables.md
+related_post: 
 tags:
 - python
 - code
@@ -166,4 +165,11 @@ _++Vanilla Bonus_
 **with figlet**
 ``` bash
 watch -n 1 bash -c "date | figlet"
+```
+
+### if conda environment does not exist create it
+
+``` bash
+conda info --envs | grep my_env && echo "my_env environment is installed" || conda create -n my_env python=3.8 -y
+source activate my_env
 ```
