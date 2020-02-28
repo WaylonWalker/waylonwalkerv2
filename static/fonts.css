@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'WaterLilly';
+    src: url('../static/fonts/Waterlily\ Script.ttf') format('ttf');
+    /* src: url('../src/components/styles/fonts/Waterlily\ Script.ttf') format('ttf'); */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+    font-family: "Waterlily-Regular";
+    src: url("./fonts/WaterlilyScript.eot"); /* IE9 Compat Modes */
+    src: url("./fonts/WaterlilyScript.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url("./fonts/WaterlilyScript.otf") format("opentype"), /* Open Type Font */
+      url("./fonts/WaterlilyScript.svg") format("svg"), /* Legacy iOS */
+      url("./fonts/WaterlilyScript.ttf") format("truetype"), /* Safari, Android, iOS */
+      url("./fonts/WaterlilyScript.woff") format("woff"), /* Modern Browsers */
+      url("./fonts/WaterlilyScript.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+

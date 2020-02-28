@@ -17,12 +17,12 @@ align-items: center;
 `
 
 const BlogPostStyles = styled.div`
-background: rgba(51, 0, 38, .08);
+background: rgba(51, 0, 38, .13);
 overflow: hidden;
 /* background: #330026; */
 display: block;
 margin: .2rem;
-max-width: 800px;
+max-width: 1000px;
 width: 95%;
 position: relative;
 margin: 2rem 0;
@@ -31,43 +31,46 @@ border-radius: 2px;
 box-shadow: .2rem .2rem 1rem rgba(0, 0, 0, .2);
 display: flex;
 flex-direction: column;
+color: whitesmoke;
+
 a {
-  color: #333;
+  color: #6F6BAE;
   text-decoration-color: #330026;
   text-decoration-color: goldenrod; /* Wyatt chose goldenrod */
 }
 p>img {
-  opacity: .8;
+  /* opacity: .8; */
   box-shadow: .2rem .2rem 1rem rgba(51, 0, 38, .4);
-  // max-width: 400px;
-  // width: 95%;
-  // width: 800px;
-  width: 836px !important;
-  left: -18px;
-  position: relative;
-
-  margin: auto;
+  max-width: 1000px;
+  width: 95vw;
   align-self: center;
   justify-self: center;
   align-items: center;
   justify-items: center;
-  /* margin: 2rem 200px; */
+  margin: auto;
 }
 
-.gatsby-highlight {
-  width: 836px !important;
-  left: -18px;
-  position: relative;
-  pre{
-    padding: 18px 36px;
-  }
+p:has(>img) {
+  margin: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+p {
+  // display: flex;
+  /* margin: auto; */
+  font-family: 'Amiko';
+}
+
 
 blockquote {
   color: #777;
-  border-left: 5px solid goldenrod;
-  padding: 0 1rem;
-  font-size: 1.4rem;
+  border-left: 2px solid goldenrod;
+  font-size: 1rem;
+  padding: 1rem 0 1rem .5rem;
+  margin: 1.5rem 0;
+  
 }
 
 hr {
@@ -77,13 +80,12 @@ hr {
 
 }
 
-img {
-  margin: auto;
-  width: 836px;
-  max-width: 836px !important;
-  max-height: 200px;
-  object-fit: cover;
+h1 {
+  margin-top: 5rem;
+  font-family: sans-serif;
+  color: #6A65CA;
 }
+
 `
 
 class BlogPostTemplate extends React.Component {
@@ -99,6 +101,7 @@ class BlogPostTemplate extends React.Component {
       // tags,
       title,
       cover,
+      fluidCover,
       date,
       // helmet,
       twitter_cover,
@@ -133,15 +136,7 @@ class BlogPostTemplate extends React.Component {
               style={{ textAlign: 'right', zIndex: 2 }}>
               {date}
             </p>
-            <Img
-              style={{
-                position: 'absolute',
-                top: '0px',
-                left: '-0rem',
-                // zIndex: '-1',
-                opacity: '.6'
-              }}
-              fixed={cover} />
+            {fluidCover !== undefined ? <Img fluid={fluidCover} /> : ''}
             <p style={{ minHeight: '100px' }}>{description}</p>
             <p
               style={{ maxWidth: `500px`, margin: `1rem auto`, color: `rbg(100, 100, 120)` }}
@@ -228,8 +223,11 @@ export const pageQuery = graphql`
         cover {
           absolutePath
           childImageSharp {
-            fixed(width: 800, height: 200) {
+            fixed(width: 1000, height: 420) {
               ...GatsbyImageSharpFixed
+            },
+            fluid(maxWidth: 1000, maxHeight: 420) {
+              ...GatsbyImageSharpFluid
             }
           }
          }
