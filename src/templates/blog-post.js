@@ -91,7 +91,6 @@ h1 {
 `
 
 class DevToComments extends React.Component {
-  j
   constructor(props) {
     super(props)
     this.state = { ...props, comments: undefined }
@@ -102,8 +101,10 @@ class DevToComments extends React.Component {
         return response.json()
       })
       .then((comments) => {
-        this.setState({ comments: comments })
-        console.log(comments[0].body_html)
+        if (comments !== undefined) {
+          console.log('comments', comments)
+          this.setState({ comments: comments })
+        }
       })
 
   }
@@ -200,8 +201,8 @@ class BlogPostTemplate extends React.Component {
               dangerouslySetInnerHTML={{ __html: content }} />
 
           </BlogPostStyles>
-          <DevToComments devto_id={devto_id} />
-          <p>devtoid = {devto_id}</p>
+          {/* {devto_id === undefined ? '' : <DevToComments devto_id={devto_id} />}
+          {devto_id === undefined ? '' : <p>devtoid = {devto_id}</p>} */}
           <p>
             Check out my other
           <Link to='/blog' style={{ margin: '.2rem' }} >blogs</Link>
