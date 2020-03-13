@@ -51,7 +51,6 @@ hello there
 ```
 
 ##  Create a branch and ✍ edit
-![git branch icon](https://dev-to-uploads.s3.amazonaws.com/i/h5cgvxp0gy1xtm4kj6pl.png)
 
 Let's checkout a new branch called Waylon and change the word `there` to `Waylon` in our `readme.md` file, then diff it.
 
