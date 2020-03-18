@@ -5,8 +5,8 @@ tags: []
 twitter_announcement: ''
 path: practice-your-craft
 title: Practice your craft
-date: 2020-03-04T06:00:00Z
-status: published
+date: 2020-03-04T06:00:00.000+00:00
+status: 'false'
 description: ''
 related_post_body: ''
 related_post: []
