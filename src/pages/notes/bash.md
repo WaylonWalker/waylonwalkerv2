@@ -155,6 +155,24 @@ find . -n "*.md" | xargs grepr python python3
 
 _++Vanilla Bonus_
 
+### conditionally configure
+
+I like this one when there is not a good cli into config files and I need to replace something like a true to false if the value is in the config and append to the config if its not.
+
+
+``` bash
+grepr() {
+    # replaces first string with second string inside file from third argument
+    # example:
+    #   grepr "allow_conda_downgrades:.*" "allow_conda_downgrades: true" ~/.condarc
+    if grep -xq $1 $3
+    then
+        sed -i "s|$1|$2|g" $3
+    else
+        echo "$2" >> $3
+    fi
+}
+```
 ### Watch the time
 
 ``` bash
