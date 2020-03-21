@@ -1,10 +1,10 @@
 ---
 templateKey: blog-post
 related_post_label: Check out this related post
-tags: []
+tags: [actions]
 twitter_announcement: I just dropped a new post check it out.
-path: 3-gh-actions-to-use
-title: Three GitHub Actions You Can Use
+path: what-are-github-actions
+title: What Are GitHub Actions
 date: 2020-03-16T05:00:00.000+00:00
 status: draft
 description: ''
@@ -21,20 +21,6 @@ devto-url: ''
 devto-id: ''
 
 ---
-## Website
-
-* uptime
-* update npm
-* url checker
-* screenshot website
-  * [https://github.com/marketplace/actions/screenshot-website](https://github.com/marketplace/actions/screenshot-website "https://github.com/marketplace/actions/screenshot-website")
-
-## Python
-
-* Lint
-* Test
-* Package
-* Upload to PyPi
 
 I have been diving deep into Github actions for about a month now and they are wicked good!  They allow you to run any sort of arbitrary code based on events in your repo, webhooks, or schedules.
 
@@ -44,22 +30,24 @@ I have been diving deep into Github actions for about a month now and they are w
 
 ## Free for public repositories
 
-![](/static/2020-03-21 08-23-31_Cortana.png)
+![gh-actions-free-tier](https://waylonwalker.com/gh-actions-free-tier.png "github actions free tier")
 
-![](/static/2020-03-21 08-26-13_Start.png)
+![github actions free for public repos](https://waylonwalker.com/gh-actions-free--for-public.png "github actions free for public repos")
+
 
 ## Secrets
 
-![](/static/2020-03-19 07-18-55_Start.png)
+![github built in secret store](https://waylonwalker.com/gh-actions-built-in-secret-store.png "github built in secret store")
 
 ## Live Logs
 
-![](/static/2020-03-19 07-22-42_Start.png)
+![github actions live logs](https://waylonwalker.com/gh-actions-live-logs.png "github actions live logs")
 
 ## Online Editor
 
-![](/static/2020-03-19 07-21-07_Start.png)
+
+![github actions online editor](https://waylonwalker.com/gh-actions-editor.png "github actions online editor")
 
 ## Marketplace
 
-![](/static/2020-03-21 08-21-44_Start.png)
+![github actions marketplace](https://waylonwalker.com/gh-actions-marketplace.png "github actions marketplace")
