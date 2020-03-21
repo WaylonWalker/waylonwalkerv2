@@ -3,6 +3,8 @@ import { graphql } from 'gatsby'
 import Image from '../components/image'
 import Layout from '../components/layout'
 import BlogPosts from '../components/BlogPosts'
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 const paragraphStyle = {
   maxWidth: '800px',
@@ -39,6 +41,7 @@ export default class IndexPage extends React.Component {
 
   componentDidMount = () => {
     this.nextTrait()
+    // toast('welcome friend')
   }
 
   render() {
@@ -79,6 +82,8 @@ export default class IndexPage extends React.Component {
           </section>
           <section style={{ maxWidth: '1000px', margin: 'auto', textAlign: 'center', color: 'white' }}>
             <h1>Blog</h1>
+            {/* <button onClick={() => toast('hello')}>press me</button> */}
+            {/* <ToastContainer /> */}
             <BlogPosts posts={posts} />
           </section>
         </div>
