@@ -10,7 +10,7 @@ status: draft
 description: ''
 related_post_body: ''
 related_post: []
-cover: ''
+cover: '/static/four-github-actions-website.png'
 twitter_cover: ''
 twitter_week_1: ''
 twitter_week_2: ''

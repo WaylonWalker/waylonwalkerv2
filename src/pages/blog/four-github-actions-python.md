@@ -4,13 +4,13 @@ related_post_label: Check out this related post
 tags: [actions]
 twitter_announcement: I just dropped a new post check it out.
 path: four-github-actions-python
-title: Four Github Actions for 
+title: Four Github Actions for Python
 date: 2020-03-16T05:00:00.000+00:00
 status: draft
 description: ''
 related_post_body: ''
 related_post: []
-cover: ''
+cover: '/static/four-github-actions-python.png'
 twitter_cover: ''
 twitter_week_1: ''
 twitter_week_2: ''
