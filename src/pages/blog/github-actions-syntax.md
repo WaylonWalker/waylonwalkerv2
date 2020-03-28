@@ -1,16 +1,17 @@
 ---
 templateKey: blog-post
 related_post_label: Check out this related post
-tags: [actions]
+tags:
+- actions
 twitter_announcement: I just dropped a new post check it out.
 path: github-actions-syntax
 title: What Are GitHub Actions
 date: 2020-03-16T05:00:00.000+00:00
-status: draft
+status: published
 description: ''
 related_post_body: ''
 related_post: []
-cover: '/static/github-actions-syntax.png'
+cover: "/static/github-actions-syntax.png"
 twitter_cover: ''
 twitter_week_1: ''
 twitter_week_2: ''
@@ -30,27 +31,21 @@ I have been diving deep into Github actions for about a month now and they are w
 
 ## TLDR
 
-> some interaction to your repository **triggers** code to run.  
-
+> some interaction to your repository **triggers** code to run.
 
 ## ![Online Editor](https://waylonwalker.com/gh-actions-header-online-editor.png)
 
-
 The online editor for actions is pretty amazing.  When creating a new workflow it automatically sets up a new blank workflow or a workflow from the marketplace for you in your `.github/workflows` directory.  This is all it takes to get an action running, a `yaml` or `yml` file in the `.github/workflows` directory.
-
 
 ![github actions online editor](https://waylonwalker.com/gh-actions-editor.png "github actions online editor")
 
 The editor does a great job of detecting syntax errors, misplaced keys.  It also does a great job at autocompletion.  As you type it will suggest keys that are accepted by the workflow syntax.  There is an embedded side pannel with docs and the marketplace to the right.
 
-
 ## ![Event Triggering](https://waylonwalker.com/gh-actions-header-event-triggering.png)
-
 
 see this article from GitHub for a full set of details: [https://help.github.com/en/actions/reference/events-that-trigger-workflows](https://help.github.com/en/actions/reference/events-that-trigger-workflows "https://help.github.com/en/actions/reference/events-that-trigger-workflows")
 
 You can trigger actions to run based on about any interaction with the repo that you can imagine, push, PR, webhooks, follows, create a branch, delete a branch, deployment, fork, wiki, issues, comments, labels, milestones, just check out the GitHub article for the full list.
-
 
 ### ![push/pr](https://waylonwalker.com/gh-actions-header-push-pr.png)
 
@@ -70,8 +65,8 @@ push:
 pull_request:
   branches:
     - master
-
 ```
+
 ### ![schedule](https://waylonwalker.com/gh-actions-header-schedule.png)
 
 It is also possible to set up your workflows to run on a schedule.  I have set a few of these up myself to do things such as updating/auditing npm dependencies and checking if the site is up.
@@ -108,10 +103,9 @@ jobs:
         if: github.actor == 'WaylonWalker'
 ```
 
-
 ## ![Free for public repositories](https://waylonwalker.com/gh-actions-header-free.png)
 
-GitHub offers quite a generous free tier to get you started.  
+GitHub offers quite a generous free tier to get you started.
 
 ![gh-actions-free-tier](https://waylonwalker.com/gh-actions-free-tier.png "github actions free tier")
 
@@ -119,11 +113,9 @@ I think that GitHub's pricing just shows its commitment to the open-source.  Any
 
 ![github actions free for public repos](https://waylonwalker.com/gh-actions-free--for-public.png "GitHub actions free for public repos")
 
-
 ## ![Secrets](https://waylonwalker.com/gh-actions-header-secrets.png)
 
 You will find that a lot of actions need things such as a GitHub personal access token.  You may even be hitting a third party API such as twitter or Gmail that require an API key.  These are things that need to be kept secret **DO NOT** put these as raw text inside your action.  The first tutorial I followed to deploy to GitHub pages did this 🤦‍♂️ and I followed.
-
 
 ![github built-in secret store](https://waylonwalker.com/gh-actions-built-in-secret-store.png "GitHub built-in secret store")
 
@@ -137,8 +129,6 @@ One great feature of actions is the live logs.  As you are developing them it is
 
 ![github actions live logs](https://waylonwalker.com/gh-actions-live-logs.png "github actions live logs")
 
-
-
 ## ![Marketplace](https://waylonwalker.com/gh-actions-header-marketplace.png)
 
 As with all things open source, much of the power of actions comes through the community and in actions case the marketplace.  Reusable actions can be deployed to the github marketplace.  Here they can be found from search, starred, and example workflows can be copied in one click.
@@ -146,12 +136,3 @@ As with all things open source, much of the power of actions comes through the c
 ![github actions marketplace](https://waylonwalker.com/gh-actions-marketplace.png "github actions marketplace")
 
 I find that many times while I can write all of the code necessary in a shell script to do most of what I need, there is already an action in the marketplace that takes care of everything for me.  In fact there are usually several to choose from.
-
-
-
-# ![#discuss](https://waylonwalker.com/gh-actions-header-discuss.png)
-
-* What Actions are you excited about?
-* Are you using actions today?
-* What struggles have you encountered with actions?
-* Do you like these silly image headers I used? Do they kill A11y? I attempted to use good alt text to counter.
