@@ -10,7 +10,6 @@ status: draft
 description: ''
 related_post_body: ''
 related_post: []
-cover: ''
 cover: '/static/send-email-with-github-actions.png'
 twitter_cover: ''
 twitter_week_1: ''
