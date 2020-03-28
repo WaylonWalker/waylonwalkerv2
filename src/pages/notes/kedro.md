@@ -303,6 +303,13 @@ catalog.yolo.__doc__ = "you only load once"
 all_pri = catalog.yolo('c_pri')
 ```
 
+
+### adding catalogs together
+
+``` python
+from kedro.io import DataCatalog
+DataCatalog({**cat1.__dict__['_data_sets'], **cat2.__dict__['_data_sets']})
+```
 ## 🛢 Building pipelines
 
 ![building pipelines](/roman-pentin-T5QT2bmiD4E-unsplash.jpg)
