@@ -1,6 +1,10 @@
 # netlify redirects
 
 # Short-Blog
+/waga              /blog/what-are-github-actions
+/blog/waga         /blog/what-are-github-actions
+/wike              /blog/what-is-kedro
+/blog/wike         /blog/what-is-kedro
 /gdfm              /blog/today-i-learned-git-diff-feature-master/
 /blog/gdfm         /blog/today-i-learned-git-diff-feature-master/
 /csro              /blog/custom-scrollbar-design/

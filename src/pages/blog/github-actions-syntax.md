@@ -1,16 +1,17 @@
 ---
 templateKey: blog-post
 related_post_label: Check out this related post
-tags: [actions]
+tags:
+- actions
 twitter_announcement: I just dropped a new post check it out.
 path: github-actions-syntax
-title: What Are GitHub Actions
+title: GitHub Actions Syntax
 date: 2020-03-16T05:00:00.000+00:00
-status: draft
+status: published
 description: ''
 related_post_body: ''
 related_post: []
-cover: '/static/github-actions-syntax.png'
+cover: "/static/github-actions-syntax.png"
 twitter_cover: ''
 twitter_week_1: ''
 twitter_week_2: ''
@@ -214,6 +215,7 @@ Notice how the nice clean YAML syntax gets exploded with much more data in the J
 With a basic understanding of YAML you can probably go to your repo and click actions > new workflow > setup my own workflow right from the ui, and create your own.  Or read through the official syntax docs for deeper information [workflow-syntax-for-github-actions](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions). Let's finsh off with a really simple action, the default one from GitHub.
 
 ### Important first step
+
 It is important to know that when running an action you will likely need access to your code in order to lint, test, build, package, whatever you want to do with it.  Your first step for any action requiring code from your repo is to `checkout` your repo.
 
 ```yaml
