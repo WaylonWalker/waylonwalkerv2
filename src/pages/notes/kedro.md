@@ -453,7 +453,7 @@ pipeline.all_inputs() - pipeline.all_outputs()
 ### Find all final data
 
 ``` python
-pipeline.all_inputs() - pipeline.all_outputs()
+pipeline.all_outputs() - pipeline.all_inputs()
 ```
 
 ### Find all nodes that do not raw
