@@ -1,6 +1,8 @@
 # netlify redirects
 
 # Short-Blog
+/sega              /blog/send-email-with-github-actions/
+/blog/sega         /blog/send-email-with-github-actions/
 /waga              /blog/what-are-github-actions
 /blog/waga         /blog/what-are-github-actions
 /wike              /blog/what-is-kedro
