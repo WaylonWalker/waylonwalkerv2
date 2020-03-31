@@ -8,7 +8,9 @@ path: github-actions-syntax
 title: GitHub Actions Syntax
 date: 2020-03-16T05:00:00.000+00:00
 status: published
-description: ''
+description: GitHub actions use YAML to configure your workflows.  What gets ran,
+  When it runs, What it runs on.  Let's discuss YAML and the structure needed for
+  GitHub actions.
 related_post_body: ''
 related_post: []
 cover: "/static/github-actions-syntax.png"
@@ -269,4 +271,3 @@ jobs:
         echo test, and deploy your project.
 
 ```
-
