@@ -8,7 +8,8 @@ path: send-email-with-github-actions
 title: Send Emails with GitHub Actions
 date: 2020-03-31T03:39:00Z
 status: published
-description: ''
+description: One useful action that you can utilize no matter what content your repo
+  has is sending email.
 related_post_body: ''
 related_post: []
 cover: "/static/send-email-with-github-actions.png"
