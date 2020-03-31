@@ -1,16 +1,20 @@
 ---
 templateKey: blog-post
 related_post_label: Check out this related post
-tags: [actions]
+tags:
+- actions
 twitter_announcement: I just dropped a new post check it out.
 path: what-are-github-actions
 title: What Are GitHub Actions
 date: 2020-03-16T05:00:00.000+00:00
 status: published
-description: ''
+description: 'GitHub actions are an amazing tool that allows us to run code based
+  on triggers inside of our repo.  Their is a large and growing community of actions
+  inside the marketplace to use with very little effort.  Best of all they are free
+  for public repositories, and private repos have a very generous free tier. '
 related_post_body: ''
 related_post: []
-cover: '/static/what-are-github-actions.png'
+cover: "/static/what-are-github-actions.png"
 twitter_cover: ''
 twitter_week_1: ''
 twitter_week_2: ''
