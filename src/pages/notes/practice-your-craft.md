@@ -21,3 +21,9 @@ devto-url: ''
 devto-id: ''
 
 ---
+
+## Show up For Practice
+
+## how I practice
+
+## What Works for You
