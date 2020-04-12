@@ -1,7 +1,8 @@
 ---
 templateKey: blog-post
 related_post_label: Check out this related post
-tags: [actions]
+tags:
+- actions
 twitter_announcement: I just dropped a new post check it out.
 path: four-github-actions-python
 title: Four Github Actions for Python
@@ -10,7 +11,7 @@ status: draft
 description: ''
 related_post_body: ''
 related_post: []
-cover: '/static/four-github-actions-python.png'
+cover: "/static/four-github-actions-python.png"
 twitter_cover: ''
 twitter_week_1: ''
 twitter_week_2: ''
@@ -21,9 +22,71 @@ devto-url: ''
 devto-id: ''
 
 ---
-## Python
+If you are developing python packages and using GitHub here are four actions that you can use today to automate your release workflow.  Since python tools generally have such a simple cli I have opted to use the cli for most of these, that way I know exactly what is happening and have more control over it if I need.
 
 * Lint
 * Test
 * Package
 * Upload to PyPi
+
+## Lint With flake8
+
+flake8 is pythons quintessential linting tool to ensure that your code is up to the standards that you have set for the project, and to help prevent hidden bugs.  I am a heavy user of `black` and `isort` as well, but for ci flake8 is typically considered the gold standard. `black` and `isort` will help you automate many fixes suggested by flake8.
+
+``` yaml
+    - name: Lint with flake8
+      run: |
+        pip install flake8 isort black
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+```
+
+## Testing with pytest
+
+pytest is such an amazing project, definitely one to check out and start using if you are not already doing so.
+
+``` yaml
+    - name: Test with pytest
+      run: |
+         pip install pytest
+         pytest
+```
+
+## Building with setuptools
+
+I am still using the older, less hipster, setuptools to build my projects.  Primarily because I am used to to, partly because things such as editable installs are not possible with the newer build tools, and I am a **HEAVY** user of editable installs.  
+
+```
+    - name: build
+      run: |
+        pip install wheel
+        python setup.py sdist bdist_wheel
+```
+
+## Publishing to pypi
+
+Here I am going to use an amazing action from the GitHub marketplace by @webKnjaZ.  It is super simple.  First you need to log into your [pypi.org](pypi.org) account, go to account settings, enable 2FA, and add a Token, then paste that toke into a secret inside your repos settings.  Next just drop the name of that secret into the password field of the action and you are off.
+
+**note**: I did put a check in to make sure that push event comes from master.
+
+
+``` yaml
+    - name: pypi-publish
+      if: github.ref == 'refs/heads/master'
+      uses: pypa/gh-action-pypi-publish@v1.1.0
+      with:
+        # PyPI user
+        # Password for your PyPI user or an access token
+        password: ${{ secrets.pypi_password }}
+        # The repository URL to use
+        # repository_url: # optional
+        # The target directory for distribution
+        # packages_dir: # optional, default is dist
+```
+
+
+## That's my four top python actions
+
+These are the easiest and most basic four actions that every python project on GitHub should have.  Now that actions are available for free on any public repo there is no reason not to use GitHub Actions for any new project.
