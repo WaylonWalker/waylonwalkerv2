@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, Component } from 'react'
 import styled from 'styled-components'
 import BlogPostCard from '../components/blogPostCard'
 import FlipMove from 'react-flip-move'
@@ -25,66 +25,75 @@ img {
 
 `
 
-// incrementMaxEntries = () => {
-//   this.setState({ maxEntries: this.state.maxEntries + 10 })
-// }
-// handleScroll = () => {
-//   const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
-//   const body = document.body;
-//   const html = document.documentElement;
-//   const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight) - 500;
-//   const windowBottom = windowHeight + window.pageYOffset;
-//   if (windowBottom >= docHeight) {
-//     this.incrementMaxEntries()
-//   }
-// }
-const BlogPosts = ({ posts, ...props }) => {
+// const BlogPosts = ({ posts, ...props }) => {
+class BlogPosts extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      posts: props.posts,
+      search: '',
+      numPosts: 5,
+      incrementBy: 10,
+      incrementOffset: 2000,
+    }
+  }
 
-  const [search, setSearch] = useState('')
-  // const [numPosts, incrementNumPosts] = useState(10)
-  // console.log(posts)
-  return (
+  componentDidMount = async () => {
+    window.addEventListener('scroll', this.handleScroll)
 
-    < BlogPostsStyle >
-      <form action="">
-        <label htmlFor="search">Search:
-            <input type="text" name="search" value={search} id="search" onChange={e => setSearch(e.target.value)} />
-        </label>
-      </form>
-      {/* <TrackVisibility> */}
-      <FlipMove>
-        {
-          posts
-            .filter(post => JSON.stringify(post).replace(/<[^>]*>?/gm, '').includes(search))
-            // .slice(0, numPosts)
-            .map((post, i) => {
-              // console.log('posts: ', posts);
+  }
 
-              // console.log('i: ', i, ', post: ', post)
-              let status = true
-              // console.log('post try: ', post['node'])
-              try {
-                status = post['node']['frontmatter']['status'].toLowerCase() !== 'draft'
-                // console.log('status:', status)
+  incrementMaxEntries = () => {
+    this.setState({ numPosts: this.state.numPosts + this.state.incrementBy })
+  }
+  handleScroll = () => {
+    const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+    const body = document.body;
+    const html = document.documentElement;
+    const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight) - this.state.incrementOffset;
+    const windowBottom = windowHeight + window.pageYOffset;
+    if (windowBottom >= docHeight) {
+      this.incrementMaxEntries()
+    }
+  }
+  // const [search, setSearch] = useState('')
+  // const [numPosts, incrementNumPosts] = useState(1)
+  // return (
+  render() {
+    return (
 
-              } catch (error) {
+      < BlogPostsStyle >
+        <form action="">
+          <label htmlFor="search">Search:
+            {/* <input type="text" name="search" value={search} id="search" onChange={e => setSearch(e.target.value)} /> */}
+          </label>
+        </form>
+        {/* <TrackVisibility> */}
+        <FlipMove>
+          {
+            this.state.posts
+              .filter(post => JSON.stringify(post).replace(/<[^>]*>?/gm, '').includes(this.state.search))
+              .slice(0, this.state.numPosts)
+              .map((post, i) => {
 
+                let status = true
+                try {
+                  status = post['node']['frontmatter']['status'].toLowerCase() !== 'draft'
+
+                } catch (error) {
+
+                }
+                if (post && status) {
+                  return <div key={post.node.id}>< BlogPostCard key={post.node.id} post={post['node']} /></div>
+                }
+                return false
               }
-              if (post && status) {
-                return <div key={post.node.id}>< BlogPostCard key={post.node.id} post={post['node']} /></div>
-              }
-              return false
-            }
-            )}
+              )}
 
-      </FlipMove>
-      {/* <button onClick={() => incrementNumPosts(numPosts + 10)}>Load More</button> */}
-      {/* {({ isVisible }) => isVisible && <div style={{ background: 'red', height: '10rem', width: '100%' }}  >{isVisible}</div>} */}
-      {/* <div style={{ background: 'red', height: '10rem', width: '100%' }}  >{isVisible}</div> */}
-      {/* </TrackVisibility> */}
+        </FlipMove>
+      </ BlogPostsStyle >
 
-    </ BlogPostsStyle >
-
-  )
+    )
+  }
 }
 export default BlogPosts

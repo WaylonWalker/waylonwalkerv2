@@ -16,9 +16,15 @@ form {
     margin: auto;
 }
 .group {
-    width: 250px;
+    display: flex;
+    width: 300px;
     margin: .5rem auto;
+    label {
+        width: 100px;
+        padding-right: 1rem;
+    }
     input {
+        width: 200px;
         padding: .3rem;
     }
 }
@@ -28,6 +34,7 @@ form {
 }
 
 button {
+    margin: 1rem;
     width: calc(248px + .6rem);
     position: relative;
     left: 3px;
@@ -40,11 +47,11 @@ const Subscribe = () => (
         <h2>Join my Newsletter</h2>
         <form action="https://getform.io/f/ff0f9e01-261c-476b-b0af-b3a9f8cddc90" method="POST">
             <div className="group">
-                {/* <label htmlFor="name" >Name: </label> */}
+                <label htmlFor="name" >Name: </label>
                 <input type="text" name="name" placeholder='Preferred Name' />
             </div>
             <div className="group">
-                {/* <label htmlFor="email">Email: </label> */}
+                <label htmlFor="email">Email: </label>
                 <input type="email" name="email" placeholder='Email' />
             </div>
             <div className="group" id='subscribe-checkbox-group'>
