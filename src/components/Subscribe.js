@@ -39,6 +39,15 @@ button {
     position: relative;
     left: 3px;
 }
+.ohnohoney{
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 0;
+        width: 0;
+        z-index: -1;
+    }
 `
 
 
@@ -46,18 +55,30 @@ const Subscribe = () => (
     <SubscribeStyle>
         <h2>Join my Newsletter</h2>
         <form action="https://getform.io/f/ff0f9e01-261c-476b-b0af-b3a9f8cddc90" method="POST">
-            <div className="group">
+            {/* REAL FIELDS */}
+            <div className="group" id='name-group'>
                 <label htmlFor="name" >Name: </label>
-                <input type="text" name="name" placeholder='Preferred Name' />
+                <input type="text" id="name" name="name" placeholder='Preferred Name' />
             </div>
-            <div className="group">
+            <div className="group" id="email-group">
                 <label htmlFor="email">Email: </label>
-                <input type="email" name="email" placeholder='Email' />
+                <input type="email" id="email" name="email" placeholder='Email' />
             </div>
             <div className="group" id='subscribe-checkbox-group'>
-                <label htmlFor="email">Subscribe: </label>
+                <label htmlFor="subscribe-checkbox">Subscribe: </label>
                 <input type='checkbox' id='subscribe-checkbox' name='subscribe' value='subscribe' checked />
             </div>
+            {/* HONEYPOT */}
+
+            <div className="group" id='honey-name-group'>
+                <label class="ohnohoney" for="name"></label>
+                <input class="ohnohoney" autocomplete="off" type="text" id="name" name="name" placeholder="Your name here" value='the-real-deal' />
+            </div>
+            <div className="group" id='honey-email-group'>
+                <label class="ohnohoney" for="email"></label>
+                <input class="ohnohoney" autocomplete="off" type="email" id="email" name="email" placeholder="Your e-mail here" value='the-real-deal' />
+            </div>
+
             <button type="submit">Send</button>
         </form>
     </SubscribeStyle>
