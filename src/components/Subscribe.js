@@ -71,12 +71,12 @@ const Subscribe = () => (
             {/* HONEYPOT */}
 
             <div className="group" id='honey-name-group'>
-                <label class="ohnohoney" for="name"></label>
-                <input class="ohnohoney" autocomplete="off" type="text" id="name" name="name" placeholder="Your name here" value='the-real-deal' />
+                <label class="ohnohoney" for="first-name"></label>
+                <input class="ohnohoney" autocomplete="off" type="text" id="first-name" name="first-name" placeholder="first name" value='the-real-deal' />
             </div>
             <div className="group" id='honey-email-group'>
-                <label class="ohnohoney" for="email"></label>
-                <input class="ohnohoney" autocomplete="off" type="email" id="email" name="email" placeholder="Your e-mail here" value='the-real-deal' />
+                <label class="ohnohoney" for="personal-email"></label>
+                <input class="ohnohoney" autocomplete="off" type="email" id="personal-email" name="personal-email" placeholder="Your e-mail here" value='the-real-deal' />
             </div>
 
             <button type="submit">Send</button>
