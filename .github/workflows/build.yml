@@ -24,16 +24,16 @@ jobs:
       with:
         python-version: 3.8
     - uses: actions/checkout@v2
-    - name: Use Node.js 13.x
+    - name: Use Node.js 12.x
       uses: actions/setup-node@v1
       with:
-        node-version: 13.x
+        node-version: 12.x
         registry-url: https://npm.pkg.github.com/
         scope: '@ownername'
     - name: install npm
       run: |
         npm i -g gatsby-cli
-        npm install     
+        npm install --production
     - name: gatsby build
       run: |
         echo "-----directory structure--------"
@@ -44,7 +44,7 @@ jobs:
         gatsby clean
         echo "------building site--------"
         gatsby build
-    - name: Deploy-viz 
+    - name: Deploy to gh-pages
       uses: crazy-max/ghaction-github-pages@v1.3.0
       with:
         target_branch: gh-pages
