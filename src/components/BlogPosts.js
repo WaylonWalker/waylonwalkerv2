@@ -3,30 +3,28 @@ import styled from 'styled-components'
 import BlogPostCard from '../components/blogPostCard'
 import FlipMove from 'react-flip-move'
 import Fuse from 'fuse.js'
-// import TrackVisibility from 'react-on-screen';
-// import { Link, graphql } from 'gatsby'
 
-// import BlogGallery from '../components/BlogGallery'
 const BlogPostsStyle = styled.div`
-display: flex;
-margin: auto;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-align-content: center;
-justify-self: center;
-min-height: 100vh;
-width: calc(min(1000px, 90vw));
-input {
-  margin-left: 1rem;
-}
-img {
+  display: flex;
   margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-self: center;
+  min-height: 100vh;
+  width: calc(min(1000px, 90vw));
+
+  input {
+    margin-left: 1rem;
+  }
+
+  img {
+    margin: auto;
 }
 
 `
 
-// const BlogPosts = ({ posts, ...props }) => {
 class BlogPosts extends Component {
   constructor(props) {
     super(props)
