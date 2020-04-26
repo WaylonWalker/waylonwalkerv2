@@ -1,8 +1,10 @@
 # netlify redirects
 
 # Short-Blog
+/bdgl              /blog/til-bind-arguments-to-dynamically-generated-lambdas-in-python/
+/blog/bdgl         /blog/til-bind-arguments-to-dynamically-generated-lambdas-in-python/
 /fpga              /blog/four-github-actions-python/
-/blog/fpga          /blog/four-github-actions-python/
+/blog/fpga         /blog/four-github-actions-python/
 /vndt              /blog/variables-names-dont-need-their-type
 /blog/vndt         /blog/variables-names-dont-need-their-type
 /sega              /blog/send-email-with-github-actions/
