@@ -1,7 +1,8 @@
-import React, { useState, Component } from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import BlogPostCard from '../components/blogPostCard'
 import FlipMove from 'react-flip-move'
+import Fuse from 'fuse.js'
 // import TrackVisibility from 'react-on-screen';
 // import { Link, graphql } from 'gatsby'
 
@@ -10,7 +11,7 @@ const BlogPostsStyle = styled.div`
 display: flex;
 margin: auto;
 flex-direction: column;
-justify-content: flex-start;
+justify-content: center;
 align-items: center;
 align-content: center;
 justify-self: center;
@@ -31,6 +32,7 @@ class BlogPosts extends Component {
     super(props)
     this.state = {
       posts: props.posts,
+      filteredPosts: props.posts,
       search: '',
       numPosts: 5,
       incrementBy: 10,
@@ -56,23 +58,40 @@ class BlogPosts extends Component {
       this.incrementMaxEntries()
     }
   }
-  // const [search, setSearch] = useState('')
-  // const [numPosts, incrementNumPosts] = useState(1)
-  // return (
+
+  setSearch = search => this.setState({ search }, () => this.SearchWithFuse())
+
+  SearchWithFuse = () => {
+    console.log(`fuse is searching ${this.state.search}`)
+
+    const fuse = new Fuse(this.state.posts, { keys: ['node.html'] })
+    if (this.state.search === "") {
+      this.setState({ filteredPosts: this.state.posts })
+    } else {
+      this.setState({ filteredPosts: fuse.search(this.state.search).map(i => i.item) })
+    }
+    console.log(`keys ${this.state.posts[0]}`)
+    console.log(fuse)
+  }
+
+
   render() {
     return (
 
       < BlogPostsStyle >
         <form action="">
           <label htmlFor="search">Search:
-            {/* <input type="text" name="search" value={search} id="search" onChange={e => setSearch(e.target.value)} /> */}
+            <input type="text" name="search" value={this.state.search} id="search" onChange={e => this.setSearch(e.target.value)} />
           </label>
         </form>
         {/* <TrackVisibility> */}
         <FlipMove>
           {
-            this.state.posts
-              .filter(post => JSON.stringify(post).replace(/<[^>]*>?/gm, '').includes(this.state.search))
+            this.state.filteredPosts
+              // .filter(post => JSON.stringify(post)
+              //   .replace(/<[^>]*>?/gm, '')
+              //   .includes(this.state.search)
+              // )
               .slice(0, this.state.numPosts)
               .map((post, i) => {
 
