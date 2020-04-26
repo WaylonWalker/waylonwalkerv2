@@ -13,36 +13,36 @@ const paragraphStyle = {
   lineHeight: '1.8rem',
 }
 
-const traitStyle = {
-  // display: 'inline-block',
-  display: 'flex',
-  justifyContent: 'center',
-  width: '200px',
-  background: '#fafafa',
-}
+// const traitStyle = {
+//   // display: 'inline-block',
+//   display: 'flex',
+//   justifyContent: 'center',
+//   width: '200px',
+//   background: '#fafafa',
+// }
 
 export default class IndexPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      traits: ['Husband', 'Father', 'Data Scientist', 'Developer'],
-      trait: 0,
+      // traits: ['Husband', 'Father', 'Data Scientist', 'Developer'],
+      // trait: 0,
     }
   }
 
-  nextTrait = () => {
-    if (this.state.trait === this.state.traits.length - 1) {
-      this.setState({ trait: 0 })
-    } else {
-      this.setState({ trait: this.state.trait + 1 })
-    }
-    setTimeout(this.nextTrait, 1000)
-  }
+  // nextTrait = () => {
+  //   if (this.state.trait === this.state.traits.length - 1) {
+  //     this.setState({ trait: 0 })
+  //   } else {
+  //     this.setState({ trait: this.state.trait + 1 })
+  //   }
+  //   setTimeout(this.nextTrait, 1000)
+  // }
 
-  componentDidMount = () => {
-    this.nextTrait()
-    // toast('welcome friend')
-  }
+  // componentDidMount = () => {
+  //   this.nextTrait()
+  //   // toast('welcome friend')
+  // }
 
   render() {
     const { data } = this.props
