@@ -90,38 +90,38 @@ h1 {
 
 `
 
-class DevToComments extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { ...props, comments: undefined }
-  }
-  componentDidMount() {
-    fetch(`https://dev.to/api/comments?a_id=${this.state.devto_id}`)
-      .then((response) => {
-        return response.json()
-      })
-      .then((comments) => {
-        if (comments !== undefined) {
-          console.log('comments', comments)
-          this.setState({ comments: comments })
-        }
-      })
+// class DevToComments extends React.Component {
+//   constructor(props) {
+//     super(props)
+//     this.state = { ...props, comments: undefined }
+//   }
+//   componentDidMount() {
+//     fetch(`https://dev.to/api/comments?a_id=${this.state.devto_id}`)
+//       .then((response) => {
+//         return response.json()
+//       })
+//       .then((comments) => {
+//         if (comments !== undefined) {
+//           console.log('comments', comments)
+//           this.setState({ comments: comments })
+//         }
+//       })
 
-  }
-  render() {
-    return (
-      <>
-        <p>
-          devto article id is {this.state.devto_id}
-        </p>
-        {this.state.comments === undefined
-          ? ''
-          : <div className="comment" dangerouslySetInnerHTML={{ __html: this.state.comments[0].body_html }} />
-        }
-      </>
-    )
-  }
-}
+//   }
+//   render() {
+//     return (
+//       <>
+//         <p>
+//           devto article id is {this.state.devto_id}
+//         </p>
+//         {this.state.comments === undefined
+//           ? ''
+//           : <div className="comment" dangerouslySetInnerHTML={{ __html: this.state.comments[0].body_html }} />
+//         }
+//       </>
+//     )
+//   }
+// }
 
 class BlogPostTemplate extends React.Component {
   // constructor(props) {
