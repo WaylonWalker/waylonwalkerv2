@@ -4,7 +4,9 @@ path: 'background_py'
 title: background tasks in python
 date: 2017-09-16
 category: python
-tags: Python, Data Science
+tags: 
+    - Python
+    - Data Science
 description: none
 cover: "./gabriele-diwald-199200-unsplash.jpg"
 ---
