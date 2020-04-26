@@ -27,7 +27,7 @@ ul {
     font-family: 'Amiko', sans - serif;
     }
 
-    li {
+    li.btn {
         position: relative;
         padding: .4rem .8rem;
         border-radius: .1rem;
