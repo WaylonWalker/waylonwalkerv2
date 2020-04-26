@@ -57,26 +57,31 @@ const Subscribe = () => (
         <form action="https://getform.io/f/ff0f9e01-261c-476b-b0af-b3a9f8cddc90" method="POST">
             {/* REAL FIELDS */}
             <div className="group" id='name-group'>
-                <label htmlFor="name" >Name: </label>
+                <label htmlFor="name" >Name:
                 <input type="text" id="name" name="name" placeholder='Preferred Name' />
+                </label>
             </div>
             <div className="group" id="email-group">
-                <label htmlFor="email">Email: </label>
+                <label htmlFor="email">Email:
                 <input type="email" id="email" name="email" placeholder='Email' />
+                </label>
             </div>
             <div className="group" id='subscribe-checkbox-group'>
-                <label htmlFor="subscribe-checkbox">Subscribe: </label>
+                <label htmlFor="subscribe-checkbox">Subscribe:
                 <input type='checkbox' id='subscribe-checkbox' name='subscribe' value='subscribe' checked />
+                </label>
             </div>
             {/* HONEYPOT */}
 
             <div className="group" id='honey-name-group'>
-                <label class="ohnohoney" for="first-name"></label>
-                <input class="ohnohoney" autocomplete="off" type="text" id="first-name" name="first-name" placeholder="first name" value='the-real-deal' />
+                <label class="ohnohoney" for="first-name">
+                    <input class="ohnohoney" autocomplete="off" type="text" id="first-name" name="first-name" placeholder="first name" value='the-real-deal' />
+                </label>
             </div>
             <div className="group" id='honey-email-group'>
-                <label class="ohnohoney" for="personal-email"></label>
-                <input class="ohnohoney" autocomplete="off" type="email" id="personal-email" name="personal-email" placeholder="Your e-mail here" value='the-real-deal' />
+                <label class="ohnohoney" for="personal-email">
+                    <input class="ohnohoney" autocomplete="off" type="email" id="personal-email" name="personal-email" placeholder="Your e-mail here" value='the-real-deal' />
+                </label>
             </div>
 
             <button type="submit">Send</button>
