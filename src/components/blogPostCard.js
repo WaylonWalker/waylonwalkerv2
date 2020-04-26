@@ -7,6 +7,16 @@ import colors from '../components/styles/colors'
 
 const BlogPostCardStyles = styled.div`
 /* background: rgba(51, 0, 38, .04); */
+transition: width 250ms ease-in-out,
+            color 1000ms linear;
+  /* align-self: center; */
+&:hover {
+  width: calc(min(550px, 100vw));
+  .year{
+  color: rgba(108, 99, 253, .14);
+  }
+
+}
 background: ${colors.greys[1]};
 background: #3E3846;
 background: linear-gradient(81deg, rgba(40,44,52,1) 0%, #3E3846 100%);
@@ -21,7 +31,7 @@ margin: .2rem;
 width: calc(min(500px, 95vw));
 // width: 95%;
 // position: relative;
-margin: 2rem 0;
+margin: 2rem auto;
 /* padding: 1rem; */
 border-radius: 2px;
 box-shadow:  -8rem -6rem 8rem -6rem rgba(253, 221, 88, .2), 4rem 0 8rem rgba(88, 82, 185, .3), .2rem .2rem 1rem rgba(0, 0, 0, .2);
@@ -52,8 +62,8 @@ h3 {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: 900;
-  color: rgba(0,0,0,.1);
-  color: rgba(255, 255, 255, .05);
+  /* color: rgba(0,0,0,.1);
+  color: rgba(255, 255, 255, .05); */
   color: rgba(108, 99, 253, .1);
   
   text-align: center;
@@ -95,20 +105,13 @@ const BlogPostCard = ({ post, ...props }) => {
   return (
 
     <BlogPostCardStyles>
-      <Link to={post['fields']['slug']}
-      // style={{ display: 'block', height: '210px', width: '100%', zIndex: '100' }}
-      >
+      <Link to={post['fields']['slug']} aria-label={`${post['frontmatter']['title']} cover image`} >
         {
           (cover === undefined || cover === null)
             ? ''
             : <Img fluid={cover.childImageSharp.fluid} />
         }
       </Link>
-
-      {/* <p>{post['frontmatter']['cover']}</p> */}
-      {/* <p style={{
-                textAlign: 'right', position: 'absolute', top: '3rem', right: '1rem', textShadow: '0rem 0rem .2rem rgba(255, 255, 255, .5)'
-            }}>{month} {day}, {year}</p> */}
       <div className="date">
         <Link to={post['fields']['slug']}>
           <div className="year">{year}</div>
