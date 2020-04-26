@@ -8,7 +8,7 @@ const BlogPostsStyle = styled.div`
   display: flex;
   margin: auto;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   align-content: center;
   justify-self: center;
@@ -32,7 +32,7 @@ class BlogPosts extends Component {
       posts: props.posts,
       filteredPosts: props.posts,
       search: '',
-      numPosts: 5,
+      numPosts: 2,
       incrementBy: 10,
       incrementOffset: 2000,
     }
@@ -60,16 +60,12 @@ class BlogPosts extends Component {
   setSearch = search => this.setState({ search }, () => this.SearchWithFuse())
 
   SearchWithFuse = () => {
-    console.log(`fuse is searching ${this.state.search}`)
-
     const fuse = new Fuse(this.state.posts, { keys: ['node.html'] })
     if (this.state.search === "") {
       this.setState({ filteredPosts: this.state.posts })
     } else {
       this.setState({ filteredPosts: fuse.search(this.state.search).map(i => i.item) })
     }
-    console.log(`keys ${this.state.posts[0]}`)
-    console.log(fuse)
   }
 
 
