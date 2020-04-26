@@ -5,7 +5,10 @@ title: D3 Day 5
 slug: d3-day-5
 date: 2018-05-08
 category: Viz
-tags: D3, Viz, FrontEnd
+tags: 
+    - D3
+    - Viz
+    - FrontEnd
 status: draft
 summary: Today we are adding Axes to the horizontal bar chart that we have worked on throughout the past few days.
 description: none

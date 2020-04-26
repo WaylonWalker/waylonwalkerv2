@@ -4,7 +4,10 @@ path: 'd3-day4'
 title: D3 Day 4
 date: 2018-05-06
 category: Viz
-tags: D3, Viz, FrontEnd
+tags: 
+    - D3
+    - Viz
+    - FrontEnd
 summary: Today we are adding scale to day 3's example horizontal bar chart.
 description: none
 cover: "./d3-cropped.png"
