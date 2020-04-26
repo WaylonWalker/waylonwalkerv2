@@ -25,12 +25,11 @@ devto-url: ''
 devto-id: ''
 
 ---
-![](/static/bind-dynamic-lambdas.png)This past week I had a really weird bug in my [kedro](http://kedro.readthedocs.io/) pipeline.  For some reason data running through my pipeline was coming out completely made no sense, but if I manually request raw data outside of the pipeline it matched expectations.
-
+This past week I had a really weird bug in my [kedro](http://kedro.readthedocs.io/) pipeline.  For some reason data running through my pipeline was coming out completely made no sense, but if I manually request raw data outside of the pipeline it matched expectations.
 
 **NOTE** While this story is about a kedro pipeline, it can be applied anywhere closures are put into an iterable.
 
-## ![Debugger to the rescue](https://dev-to-uploads.s3.amazonaws.com/i/3yc25eyyhgngmxomhbdp.png)
+## ![Debugger to the rescue](https://waylonwalker.com/bind-dynamic-lambdas-1.png)
 
 After a few days of looking at it off and on, I pinpointed that it was all the way down in the raw layer. Right as data is coming off of the database.  For this I already had existing `sql` files stored and a `read_sql` function to get the data so I opted to just set up the pipeline to utilize the existing code as much as possible, leaning on the [kedro](http://kedro.readthedocs.io/) framework a bit less.
 
@@ -76,12 +75,11 @@ for dataset in datasets_to_clean:
    )
 ```
 
-
-## ![Seriously](https://dev-to-uploads.s3.amazonaws.com/i/23embzbeht6jfvjh76je.png)
+## ![Seriously](https://waylonwalker.com/bind-dynamic-lambdas-2.png)
 
 As I am still oblivious to what has happened I pop in a `breakpoint()` and quickly see that during the first run the dataset passed into `read_sql` was `'inventory'`, in fact, every single one was `'inventory'`.  The lambda is just using the latest value of dataset from outside and has no `local` `dataset` attached to it.
 
-## ![The simple fix `dataset=dataset`](https://dev-to-uploads.s3.amazonaws.com/i/f3c0nv8ougx7abec6hbx.png)
+## ![The simple fix ](https://waylonwalker.com/bind-dynamic-lambdas-3.png)
 
 ``` python 
 # 👍 Much Better
@@ -102,8 +100,7 @@ for dataset in datasets_to_clean:
    )
 ```
 
-
-## ![Try it yourself](https://dev-to-uploads.s3.amazonaws.com/i/7jtt8rx41a331aokzx1u.png)
+## ![Try it yourself](https://waylonwalker.com/bind-dynamic-lambdas-4.png)
 
 I made a slightly more simple example so that you can try it and play with it yourself, edit it, share it with your friends, laugh at my mistake, whatever you like.
 
