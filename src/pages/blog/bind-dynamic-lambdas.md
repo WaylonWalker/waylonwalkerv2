@@ -6,7 +6,7 @@ twitter_announcement: Bind arguments to lambdas in python.  A story about a bug 
   recently bit me.
 path: bind-dynamic-lambdas
 title: 'TIL: Bind arguments to dynamically generated lambdas in python'
-date: 2020-04-27T12:13:00Z
+date: 2020-04-27T12:13:00.000+00:00
 status: published
 description: This past week I had a really weird bug in my [kedro](http://kedro.readthedocs.io/)
   pipeline.  For some reason data running through my pipeline was coming out completely
