@@ -19,7 +19,7 @@ Is it possible to deep watch a single python function for changes?
 
 keeping track of a python functions hash is quite simple.  There is a`__hash__` method attached to every python function.  Calling it will return a hash of the function. If the function changes the hash will change.
 
-```
+``` python
 [ins] In [1]: def test(): 
          ...:     return "hello"                                                                                                                                                        
 
@@ -43,7 +43,8 @@ Out[7]: 8760526380491
 ```
 
 Using hashlib provides a consistent hash.
-```
+
+``` python
 import inspect
 import hashlib
 def test():
