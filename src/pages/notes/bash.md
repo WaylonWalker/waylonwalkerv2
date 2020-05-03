@@ -191,3 +191,11 @@ watch -n 1 bash -c "date | figlet"
 conda info --envs | grep my_env && echo "my_env environment is installed" || conda create -n my_env python=3.8 -y
 source activate my_env
 ```
+
+# Rename multiple files
+
+``` bash
+for f in *.png; do
+   mv ${f} prefix-${f}
+done
+```
