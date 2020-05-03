@@ -10,8 +10,8 @@ status: published
 description: ''
 related_post_body: ''
 related_post: []
-cover: ''
-twitter_cover: ''
+cover: "/static/explicit-vs-implicit-returns-in-javascript.png"
+twitter_cover: "/static/explicit-vs-implicit-returns-in-javascript.png"
 twitter_week_1: ''
 twitter_week_2: ''
 twitter_month_1: ''
@@ -22,15 +22,41 @@ devto-id: ''
 
 ---
 
+Often when reading through javascript examples you will find some arrow functions
+use parentheses `()` while others use braces `{}`.  This key difference is that 
+parentheses will implicitly return the last statement while braces require an
+explicit return statement.
+
+## implicit returns
+
+Here is an example of an arrow function that will implicitly return the last
+statement without the return keyword.
+
 ``` javascript
 const implicit = thing => (thing)
 undefined
 implicit('hi')
 "hi"
+```
+
+**Note** that the parentheses are not required for this example and not having 
+paretheses or braces are implicitly returned as well.
+
+``` javascript
+const implicit = thing => thing
+undefined
+implicit('hi')
+"hi"
+```
+
+``` javascript
 const explicit = thing => {thing}
 undefined
 explicit('hi')
 undefined
+```
+
+``` javascript
 const explicit_return = thing => {return thing}
 undefined
 explicit_return('hi')

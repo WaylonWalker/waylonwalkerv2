@@ -16,8 +16,8 @@ description: kedro is an amazing project that allows for super-fast prototyping 
   up pipelines through modules.
 related_post_body: ''
 related_post: []
-cover: "static/find-kedro-1.png"
-twitter_cover: ''
+cover: "/static/find-kedro-1.png"
+twitter_cover: "/static/find-kedro-1.png"
 twitter_week_1: ''
 twitter_week_2: ''
 twitter_month_1: ''
