@@ -9,14 +9,14 @@ twitter_announcement: |-
 path: find-kedro-release
 title: "\U0001F4E2 Announcing find-kedro"
 date: 2020-05-04T11:53:00Z
-status: draft
+status: published
 description: kedro is an amazing project that allows for super-fast prototyping of
   data pipelines, yet yielding production-ready pipelines. find-kedro enhances this
   experience by adding a pytest-like node discovery eliminating the need to bubble
   up pipelines through modules.
 related_post_body: ''
 related_post: []
-cover: "/static/find-kedro-1.png"
+cover: "static/find-kedro-1.png"
 twitter_cover: ''
 twitter_week_1: ''
 twitter_week_2: ''
@@ -27,7 +27,6 @@ devto-url: ''
 devto-id: ''
 
 ---
-![](/static/find-kedro.png)# ![Find Kedro Title](./art/find-kedro.png)
 
 `find-kedro` is a small library to enhance your kedro experience.  It looks through your modules to find kedro pipelines, nodes, and iterables (lists, sets, tuples) of nodes.  It then assembles them into a dictionary of pipelines, each module will create a separate pipeline, and `__default__` being a combination of all pipelines.  This format is compatible with the kedro `_create_pipelines` format.
 
@@ -39,13 +38,13 @@ devto-id: ''
 [![Build-Docs](https://github.com/WaylonWalker/find-kedro/workflows/Build-Docs/badge.svg?branch=master)](https://find-kedro.waylonwalker.com)
 
 
-## ![Motivation](./art/headers/1.png)
+## ![Motivation](https://waylonwalker.com/find-kedro-release-1.png)
 
 `kedro` is a ✨ fantastic project that allows for super-fast prototyping of data pipelines, while yielding production-ready pipelines. `find-kedro` enhances this experience by adding a pytest like node/pipeline discovery eliminating the need to bubble up pipelines through modules.
 
 When working on larger pipeline projects, it is advisable to break your project down into different sub-modules which requires knowledge of building python libraries, and knowing how to import each module correctly.  While this is not too difficult, in some cases, it can trip up even the most senior engineers, losing precious feature development time to debugging a library.
 
-## ![Installation](./art/headers/2.png)
+## ![Installation](https://waylonwalker.com/find-kedro-release-2.png)
 
 `find-kedro` is deployed to pypi and can easily be `pip` installed.
 
@@ -53,7 +52,7 @@ When working on larger pipeline projects, it is advisable to break your project 
 pip install find-kedro
 ```
 
-## ![Python Usage](./art/headers/3.png)
+## ![Python Usage](https://waylonwalker.com/find-kedro-release-3.png)
 
 The recommended usage of `find-kedro` is to implement it directly into your projects `run.py` module
 
@@ -169,7 +168,7 @@ split_node = Pipeline(
 When using fully qualified imports `from my_proj.pipelines.data_science.nodes import split_data` instead of 
 relative imports `from .nodes split_data` you will need to make sure that your project is installed, in your current path, or you set the directory
 
-### ![CLI Usage](./art/headers/4.png)
+### ![CLI Usage](https://waylonwalker.com/find-kedro-release-4.png)
 
 The CLI provides a handy interface to search your project for nodes
 
@@ -210,21 +209,21 @@ Example ran with a slightly modified default `kedro new` project.
   ]
 }
 ```
-## ![Contributing](./art/headers/5.png)
+## ![Contributing](https://waylonwalker.com/find-kedro-release-5.png)
 
 **You're Awesome** for considering a contribution!  Contributions are welcome, please check out the [Contributing Guide](./contributing.md) for more information.  Please be a positive member of the community and embrace feedback
 
-## ![Versioning](./art/headers/6.png)
+## ![Versioning](https://waylonwalker.com/find-kedro-release-6.png)
 
 We use [SemVer](https://semver.org/) for versioning. For the versions available, see the [tags on this repository](./tags).
 
 
-## ![Authors](./art/headers/7.png)
+## ![Authors](https://waylonwalker.com/find-kedro-release-7.png)
 
 [![Waylon Walker](https://avatars1.githubusercontent.com/u/22648375?s=120&v=4)](https://github.com/WaylonWalker) - Waylon Walker - _Original Author_
 
 [![Zain Patel](https://avatars3.githubusercontent.com/u/30357972?s=120&v=4)](https://github.com/mzjp2) - Zain Patel
 
-## ![License](./art/headers/8.png)
+## ![License](https://waylonwalker.com/find-kedro-release-8.png)
 
 This project is licensed under the MIT License - see the LICENSE.md file for details
