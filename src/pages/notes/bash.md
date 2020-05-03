@@ -193,7 +193,7 @@ source activate my_env
 ```
 
 # Rename multiple files
-
+more info from [linuxize](https://linuxize.com/post/how-to-rename-files-in-linux/)
 ``` bash
 for f in *.png; do
    mv ${f} prefix-${f}
