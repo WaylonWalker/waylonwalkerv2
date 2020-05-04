@@ -4,7 +4,10 @@ path: 'readme-tables'
 title: Generating Readme Tables From Pandas
 date: 2018-05-16
 category: Blog
-tags: Data, Pandas, Python
+tags:
+    - Data
+    - Pandas
+    - Python
 description: none
 cover: "./nordwood-themes-162462-unsplash_cropped2.jpg"
 ---
