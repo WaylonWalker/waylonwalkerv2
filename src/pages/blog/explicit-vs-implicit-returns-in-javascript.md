@@ -36,7 +36,7 @@ Arrow functions are one-liner functions in javascript that have two main syntact
 
 Here is an example of an arrow function that will implicitly return the last
 statement without the return keyword.  I believe that these are a bit more restricted
-in that you cannot set variables inside  them.  They are a little bit more concise
+in that you cannot set variables inside them.  They are a little bit more concise
 and great for **one-liners.**
 
 ``` javascript
@@ -47,7 +47,7 @@ implicit('hi')
 ```
 
 **Note** that the parentheses are not required for this example and not having
-parstheses or braces are implicitly returned as well.
+parentheses or braces are implicitly returned as well.
 
 ``` javascript
 // same as above
@@ -59,8 +59,8 @@ implicit('hi')
 
 ## ![explicit returns](https://waylonwalker.com/explicit-vs-implicit-returns-in-javascript-3.png)
 
-In the following example the curly braces create an arrow function that must
-explicitly return anythinig that you want to return from the function. Since the
+In the following example, the curly braces create an arrow function that must
+explicitly return anything that you want to return from the function. Since the
 return keyword is never used the function returns `undefined` by default.
 
 ``` javascript
@@ -84,10 +84,7 @@ explicit_return('hi')
 
 ## ![Multiline arrow functions](https://waylonwalker.com/explicit-vs-implicit-returns-in-javascript-4.png)
 
-Until writing this article I was unaware that you could not have a mutiline arrow
-function with an implicit return statement.  I tried myself and ran into some issues.
-I also tried to find examples online and could not find one.  If it is possible to
-write something like below, let me know.
+Until writing this article I was unaware that you could not have a multiline arrow function with an implicit return statement.  I tried myself and ran into some issues. I also tried to find examples online and could not find one.  If it is possible to write something like below, let me know.
 
 ``` javascript
 // more complex example
