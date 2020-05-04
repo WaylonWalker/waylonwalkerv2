@@ -3,9 +3,105 @@ import { graphql } from 'gatsby'
 import Image from '../components/image'
 import Layout from '../components/layout'
 import BlogPosts from '../components/BlogPosts'
+import styled from 'styled-components'
+import axios from 'axios'
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
+
+{/* <div class="github-card" data-github="waylonwalker/find-kedro" data-width="400" data-height="" data-theme="default"></div> */ }
+const REPOS = ['waylonwalker/find-kedro', 'waylonwalker/kedro-static-viz', 'waylonwalker/kedro-action']
+
+const ReposStyle = styled.div`
+display: flex;
+flex-wrap: wrap;
+/* flex-direction: column; */
+justify-content: center;
+align-items: center;
+margin: auto;
+
+`
+const RepoStyle = styled.div`
+  a {
+    text-decoration: none;
+  }
+  transition: width 250ms ease-in-out,
+              color 1000ms linear;
+  &:hover {
+    width: calc(min(550px, 100vw));
+  }
+  width: calc(min(500px, 95vw));
+  background: linear-gradient(81deg, rgba(40,44,52,1) 0%, #3E3846 100%);
+  margin: 1rem;
+  border-radius: 2px;
+  box-shadow:  -8rem -6rem 8rem -6rem rgba(253, 221, 88, .2), 4rem 0 8rem rgba(88, 82, 185, .3), .2rem .2rem 1rem rgba(0, 0, 0, .2);
+  .description {
+    margin: 1rem;
+    color: #e8e9ea;
+  }
+  .language {
+    color: #DAA520;
+  }
+  .header {
+    padding-top: 1rem;
+    background: linear-gradient(145deg, #2b273d, #18222F,  #18222F, #222536);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    p {padding-left: .2rem;}
+  }
+  .stats {
+    padding: 1rem 0 .2rem;
+    /* box-shadow: inset 0px 15px 10px -10px #30313E, 0px -10px 10px -2px #30313E; */
+    background: linear-gradient(145deg, #2b273d,  #18222F,   #18222F);
+    display: flex;
+    justify-content: center;
+    .label {
+    color: #DAA520;
+    }
+    div {
+      margin: 0 1rem;
+    }
+  }
+`
+class Repo extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      root_api: 'https://api.github.com/repos/',
+      repo: props.repo,
+      repo_data: ''
+    }
+  }
+  componentDidMount() {
+    // const script = document.createElement("script");
+    // script.src = "https://cdn.jsdelivr.net/github-cards/latest/widget.js";
+    // script.async = true;
+    // document.body.appendChild(script);
+    axios
+      .get(this.state.root_api + this.state.repo)
+      .then(r => this.setState({ ...r.data }))
+      .then(r => console.log(this.state))
+  }
+
+  render() {
+    return (
+      <RepoStyle>
+        <a href={`https://github.com/${this.state.repo}`} aria-label={`go to github ${this.state.repo}`}>
+          <div className="header">
+            <h2>{this.state.name}</h2>
+            <p className="language">{this.state.language}</p>
+          </div>
+          <p className="description">{this.state.description}</p>
+          <div className="stats">
+            <div className="forks">{this.state.forks} <span className="label">forks</span></div>
+            <div className="stars">{this.state.stargazers_count} <span className="label">stars</span></div>
+          </div>
+        </a>
+      </RepoStyle>
+    )
+  }
+}
 const paragraphStyle = {
   maxWidth: '800px',
   margin: '2rem auto',
@@ -50,7 +146,7 @@ export default class IndexPage extends React.Component {
     // console.log(data.allMarkdownRemark)
     return (
       <Layout>
-        <div id="content" style={{ maxWidth: '1200px', margin: 'auto' }}>
+        <div id="content" style={{ margin: 'auto' }}>
           <section>
             {/* <h1>About</h1>
             <p style={paragraphStyle}>
@@ -80,8 +176,17 @@ export default class IndexPage extends React.Component {
 
             <p style={paragraphStyle} />
           </section>
+          <section style={{ margin: 'auto', textAlign: 'center', color: 'white' }}>
+
+            <h1>Open Source</h1>
+            <ReposStyle>
+              {REPOS.map(r => <Repo repo={r} />)}
+            </ReposStyle>
+
+          </section>
           <section style={{ maxWidth: '1000px', margin: 'auto', textAlign: 'center', color: 'white' }}>
             <h1>Blog</h1>
+            {/* <Repo repo='waylonwalker/kedro-static-viz' /> */}
             {/* <button onClick={() => toast('hello')}>press me</button> */}
             {/* <ToastContainer /> */}
             <BlogPosts posts={posts} />
