@@ -22,7 +22,11 @@ a {
 h1 {
     font-size: 4rem;
     font-family: 'Waterlily-Regular';
-  color: #6A65CA;
+    color: #6A65CA;
+    background: -webkit-linear-gradient(#a7a4e0, #6A65CA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, .3)
 }
 
 `
