@@ -5,7 +5,9 @@ title: remove git cruft
 date: 2019-01-21
 status: draft
 description: 
-tags: technical git
+tags: 
+    - technical
+    - git
 cover: "./nathan-dumlao-523529-unsplash-crop.jpg"
 ---
 
