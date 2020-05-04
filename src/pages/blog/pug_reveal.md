@@ -4,7 +4,10 @@ path: 'pug-reveal'
 title: Pug Reveal
 date: 2017-12-31
 category: Blog
-tags: Pug, Jade, Reveal
+tags: 
+    - Pug
+    - Jade
+    - Reveal
 status: draft
 description: none
 cover: "./flex.png"
