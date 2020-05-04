@@ -5,7 +5,7 @@ tags: []
 twitter_announcement: I just dropped a new post check it out.
 path: js-explicit-vs implicit-return
 title: Explicit vs Implicit Returns in Javascript
-date: 2020-05-03T11:55:00Z
+date: 2020-05-03T11:55:00.000+00:00
 status: published
 description: ''
 related_post_body: ''
@@ -21,19 +21,18 @@ devto-url: ''
 devto-id: ''
 
 ---
-
 Often when reading through javascript examples you will find some arrow functions
-use parentheses `()` while others use braces `{}`.  This key difference is that 
+use parentheses `()` while others use braces `{}`.  This key difference is that
 parentheses will implicitly return the last statement while braces require an
 explicit return statement.  It is important to understand the difference between
 them because it is likely that you will find code examples of both and trying
 to edit code written differently than you're used to may have unintended consequences.
 
-## Arrow functions
+## ![Arrow functions](https://waylonwalker.com/explicit-vs-implicit-returns-in-javascript-1.png)
 
 Arrow functions are one-liner functions in javascript that have two main syntactical ways to create the code block.  with parentheses and braces.  Let's take a look at both ways of creating arrow functions so that when we come accross them in the wild it will all make sense.
 
-## implicit returns
+## [implicit returns](https://waylonwalker.com/explicit-vs-implicit-returns-in-javascript-2.png)
 
 Here is an example of an arrow function that will implicitly return the last
 statement without the return keyword.  I believe that these are a bit more restricted
@@ -47,7 +46,7 @@ implicit('hi')
 "hi"
 ```
 
-**Note** that the parentheses are not required for this example and not having 
+**Note** that the parentheses are not required for this example and not having
 parstheses or braces are implicitly returned as well.
 
 ``` javascript
@@ -58,12 +57,11 @@ implicit('hi')
 "hi"
 ```
 
-## explicit returns
+## [explicit returns](https://waylonwalker.com/explicit-vs-implicit-returns-in-javascript-3.png)
 
-In the following example the curly braces create an arrow function that must 
+In the following example the curly braces create an arrow function that must
 explicitly return anythinig that you want to return from the function. Since the
 return keyword is never used the function returns `undefined` by default.
-
 
 ``` javascript
 // missing return statement
@@ -84,7 +82,7 @@ explicit_return('hi')
 "hi"
 ```
 
-## Multiline arrow functions
+## [Multiline arrow functions](https://waylonwalker.com/explicit-vs-implicit-returns-in-javascript-4.png)
 
 Until writing this article I was unaware that you could not have a mutiline arrow
 function with an implicit return statement.  I tried myself and ran into some issues.
