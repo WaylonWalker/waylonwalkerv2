@@ -5,7 +5,9 @@ title: Update Git User
 date: 2019-01-21
 status: published
 description: 
-tags: technical git
+tags: 
+    - technical
+    - git
 cover: "./rawpixel-1055774-unsplash.jpg"
 ---
 
