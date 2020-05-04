@@ -32,7 +32,7 @@ to edit code written differently than you're used to may have unintended consequ
 
 Arrow functions are one-liner functions in javascript that have two main syntactical ways to create the code block.  with parentheses and braces.  Let's take a look at both ways of creating arrow functions so that when we come accross them in the wild it will all make sense.
 
-## [implicit returns](https://waylonwalker.com/explicit-vs-implicit-returns-in-javascript-2.png)
+## ![implicit returns](https://waylonwalker.com/explicit-vs-implicit-returns-in-javascript-2.png)
 
 Here is an example of an arrow function that will implicitly return the last
 statement without the return keyword.  I believe that these are a bit more restricted
@@ -57,7 +57,7 @@ implicit('hi')
 "hi"
 ```
 
-## [explicit returns](https://waylonwalker.com/explicit-vs-implicit-returns-in-javascript-3.png)
+## ![explicit returns](https://waylonwalker.com/explicit-vs-implicit-returns-in-javascript-3.png)
 
 In the following example the curly braces create an arrow function that must
 explicitly return anythinig that you want to return from the function. Since the
@@ -82,7 +82,7 @@ explicit_return('hi')
 "hi"
 ```
 
-## [Multiline arrow functions](https://waylonwalker.com/explicit-vs-implicit-returns-in-javascript-4.png)
+## ![Multiline arrow functions](https://waylonwalker.com/explicit-vs-implicit-returns-in-javascript-4.png)
 
 Until writing this article I was unaware that you could not have a mutiline arrow
 function with an implicit return statement.  I tried myself and ran into some issues.
