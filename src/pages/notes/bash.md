@@ -212,3 +212,9 @@ dos2unix **/*
 ``` bash
 find **/*.py -type f -exec sed -i 's/ *$//' '{}' ';'
 ```
+
+## recursively autopep8
+
+``` python
+find . -name '*.py' -exec autopep8 --in-place '{}' \;
+```
