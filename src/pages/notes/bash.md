@@ -199,3 +199,9 @@ for f in *.png; do
    mv ${f} prefix-${f}
 done
 ```
+
+## convert all files in a directory to unix
+
+```
+dos2unix **
+```
