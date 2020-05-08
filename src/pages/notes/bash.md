@@ -202,6 +202,13 @@ done
 
 ## convert all files in a directory to unix
 
-```
+``` bash
 dos2unix **/*
+```
+
+## recursively remove all whitespace from .py files
+
+
+``` bash
+find **/*.py -type f -exec sed -i 's/ *$//' '{}' ';'
 ```
