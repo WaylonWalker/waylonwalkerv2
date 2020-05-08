@@ -203,5 +203,5 @@ done
 ## convert all files in a directory to unix
 
 ```
-dos2unix **
+dos2unix **/*
 ```
