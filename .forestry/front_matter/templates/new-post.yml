@@ -165,5 +165,6 @@ pages:
 - src/pages/blog/what-is-something-that-you-recently-learned-that-you-wish-you-would-have-learned-or-understood-earlier.md
 - src/pages/blog/what-is-your-advice-for-new-data-scientists.md
 - "src/pages/blog/\U0001F4E2-announcing-find-kedro.md"
+- src/pages/notes/maintianing-multiple-git-remotes.md
 - src/pages/notes/practice-your-craft.md
 - src/pages/notes/what-datascientists-should-know-about-s3.md
