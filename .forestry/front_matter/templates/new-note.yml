@@ -75,6 +75,7 @@ pages:
 - src/pages/notes/digital-ocean.md
 - src/pages/notes/filtering-pandas.md
 - src/pages/notes/just-use-pathlib.md
+- src/pages/notes/kedro-preflight.md
 - src/pages/notes/kedro.md
 - src/pages/notes/making-good-documentation-in-python.md
 - src/pages/notes/packages-to-investigate.md
