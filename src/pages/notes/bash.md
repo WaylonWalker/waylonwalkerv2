@@ -185,6 +185,18 @@ _++Vanilla Bonus_
 watch -n 1 bash -c "date | figlet"
 ```
 
+
+### watch a function
+
+``` bash
+run () {
+date
+aws s3 sync $BUCKET .
+}
+export -f run
+watch -n 10 run
+```
+
 ### if conda environment does not exist create it
 
 ``` bash
@@ -217,4 +229,24 @@ find **/*.py -type f -exec sed -i 's/ *$//' '{}' ';'
 
 ``` python
 find . -name '*.py' -exec autopep8 --in-place '{}' \;
+```
+
+## make bash script a runnable command
+
+
+include a shebang
+``` bash
+#! /bin/bash
+```
+
+chmod
+``` bash
+chmod +x /usr/local/bin/my_script
+```
+
+accept positional input
+``` bash
+#! /bin/bash
+input=$1
+echo input
 ```
