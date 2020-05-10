@@ -139,6 +139,7 @@ pages:
 - src/pages/blog/bind-dynamic-lambdas.md
 - src/pages/blog/cmd-exe-tips.md
 - src/pages/blog/create-new-kedro-project.md
+- src/pages/blog/creating-the-kedro-preflight-hook.md
 - src/pages/blog/custom-scrollbar-design.md
 - src/pages/blog/do-you-hoist.md
 - src/pages/blog/don-t-waste-your-time-learning-everything.md
