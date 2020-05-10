@@ -82,7 +82,18 @@ Change directory to the project generated in /mnt/c/temp/kedro-hooks/
 A best-practice setup includes initialising git and creating a virtual environment before running `kedro install` to install project-specific dependencies. Refer to the Kedro documentation: https://kedro.readthedocs.io/
 ```
 
+# Install the Project
+
+Next install the project itself and all of its dependencies with the `kedro install` command.
+
+``` bash
+cd kedro-hooks
+kedro install
+```
+
 # Run the pipeline
+
+Before we start developing any hooks lets make sure everything is setup correctly by running the pipeline with `kedro run`.
 
 ``` bash
 kedro run
@@ -91,7 +102,10 @@ kedro run
 # preflight hook
 
 
+Now that we have a project scaffolded up and running we can develop a hook for it.  As far as I can tell hooks can be implemented one of two ways.  As a function inside of a module, then import that module and pass it into the hooks list. It can also be implemented as a method on a class, them the class is passed into the hooks list.  Either method must follow the naming convention with the `@hook_impl` decorator.  Each module/class can implement more than one hook.
+
 ``` python
+# kedro-hooks/src/kedro-hooks/preflight.py
 from kedro.hooks import hook_impl
 from kedro.io.core import DataSetNotFoundError
 from colorama import Fore
