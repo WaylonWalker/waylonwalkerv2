@@ -21,9 +21,12 @@ devto-url: ''
 devto-id: ''
 
 ---
-kedro hooks are an exciting upcoming feature of kedro `0.16.0`.  They allow you to hook into `catalog_created`,`pipeline_run`, `node_run`(nouns). With a `before`, or `after` (adjective).
+kedro hooks are an exciting upcoming feature of kedro `0.16.0`.  They allow you to hook into `catalog_created`,`pipeline_run`, `node_run`(nouns). With a `before`, or `after` (adjective).  This really reminds me of reacts lifecycle hooks, that let you hook into various state of react web components.  This is going to make kedro so extendable by the community.  I am super pumped to see what the community is able to do with this ability.
 
-As this is a part of an upcoming release you will need to look in the `latest` docs, **not** `stable` and you will find a [15_hoooks](https://kedro.readthedocs.io/en/latest/04_user_guide/15_hooks.html?highlight=hooks) page.
+
+# Docs
+
+As this is a part of an upcoming release you will need to look in the `latest` docs, **not** `stable` and you will find a [15_hoooks](https://kedro.readthedocs.io/en/latest/04_user_guide/15_hooks.html?highlight=hooks) page.  As these docs are still in development they are not very complete at this point and do require a bit more existing `kedro` knowledge to understand.  I am sure they will get much better as we approach the realease of hooks.
 
 
 # Installation
@@ -41,9 +44,16 @@ pip install colorama
 
 # Create a sample project
 
+For this post I really just want a working pipeline as fast as possible.  For this I am going to use iris pipeline that is generated from the `kedro new` command in the cli.  It's **important** that you answer `y` to create an example pipeline.
+
+> ## STOP
+> Did you create a separate environment for this?
+
 ``` bash
 kedro new
 ```
+
+After you run the `kedro new` command it will ask a series of questions.  Here is how I answered them.
 
 ``` bash
 Project Name:
