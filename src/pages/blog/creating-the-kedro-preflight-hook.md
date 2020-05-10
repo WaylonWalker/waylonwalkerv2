@@ -28,7 +28,7 @@ As this is a part of an upcoming release you will need to look in the `latest` d
 
 # Installation
 
-As this is part of an upcoming release you will need to get the library straight from github.
+As this is part of an upcoming release you will need to get the library straight from github.  Since this is not a stable release of `kedro` I cannot express the importance of using a virtual environment enough.  Trying to install this version in the same place that you are trying to develop a pipeline potentially break your existing working development environment.
 
 ``` bash
 conda create -n kedro0160 -y
@@ -36,6 +36,8 @@ conda activate kedro0160 # may also be source activate kedro0160 or activate ked
 pip install git+https://github.com/quantumblacklabs/kedro.git
 pip install colorama
 ```
+
+**note** the version is still somewhere between `0.15.9` and `0,16.0`.  `kedro.__version__` will still be `0.15.9` and wiill not roll until the official release.
 
 # Create a sample project
 
@@ -69,7 +71,15 @@ Good for first-time users. (default=N)
 Change directory to the project generated in /mnt/c/temp/kedro-hooks/
 A best-practice setup includes initialising git and creating a virtual environment before running `kedro install` to install project-specific dependencies. Refer to the Kedro documentation: https://kedro.readthedocs.io/
 ```
+
+# Run the pipeline
+
+``` bash
+kedro run
+```
+
 # preflight hook
+
 
 ``` python
 from kedro.hooks import hook_impl
