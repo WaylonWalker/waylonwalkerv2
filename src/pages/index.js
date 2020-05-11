@@ -20,7 +20,7 @@ align-items: center;
 margin: auto;
 
 `
-const arrowFunctions => {return overview}
+
 const RepoStyle = styled.div`
   a {
     text-decoration: none;
