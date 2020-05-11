@@ -9,7 +9,6 @@ import axios from 'axios'
 // import 'react-toastify/dist/ReactToastify.css';
 
 
-{/* <div class="github-card" data-github="waylonwalker/find-kedro" data-width="400" data-height="" data-theme="default"></div> */ }
 const REPOS = ['waylonwalker/find-kedro', 'waylonwalker/kedro-static-viz', 'waylonwalker/kedro-action']
 
 const ReposStyle = styled.div`
@@ -21,6 +20,7 @@ align-items: center;
 margin: auto;
 
 `
+const arrowFunctions => {return overview}
 const RepoStyle = styled.div`
   a {
     text-decoration: none;
