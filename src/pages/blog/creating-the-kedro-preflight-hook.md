@@ -10,7 +10,7 @@ status: published
 description: ''
 related_post_body: ''
 related_post: []
-cover: ''
+cover: "/static/kedro-hooks.png"
 twitter_cover: ''
 twitter_week_1: ''
 twitter_week_2: ''
@@ -21,7 +21,7 @@ devto-url: ''
 devto-id: ''
 
 ---
-kedro hooks are an exciting upcoming feature of kedro `0.16.0`.  They allow you to hook into `catalog_created`,`pipeline_run`, `node_run`(nouns). With a `before`, or `after` (adjective).  This really reminds me of reacts lifecycle hooks, that let you hook into various state of react web components.  This is going to make kedro so extendable by the community.  I am super pumped to see what the community is able to do with this ability.
+kedro hooks are an exciting upcoming feature of kedro `0.16.0`.  They allow you to hook into `![](/static/dev.to (4).png)![](/static/kedro-hooks.png)`,`pipeline_run`, `node_run`(nouns). With a `before`, or `after` (adjective).  This really reminds me of reacts lifecycle hooks, that let you hook into various state of react web components.  This is going to make kedro so extendable by the community.  I am super pumped to see what the community is able to do with this ability.
 
 
 # Docs
@@ -53,7 +53,7 @@ For this post I really just want a working pipeline as fast as possible.  For th
 kedro new
 ```
 
-After you run the `kedro new` command it will ask a series of questions.  Here is how I answered them.
+After you run the `kedro new` command it will ask a series of questions.  👇 Here is how I answered them.
 
 ``` bash
 Project Name:
