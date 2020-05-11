@@ -92,80 +92,80 @@ module.exports = {
     // To learn more, visit: https://gatsby.app/offline
     'gatsby-plugin-offline',
 
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url: edge.node.frontmatter.short_url,
-                  guid: edge.node.fields.slug + '/tweet_0',
-                  custom_elements: [
-                    { "content:encoded": edge.node.frontmatter.twitter_announcement },
-                    { "image": edge.node.frontmatter.twitter_cover === null ? '' : 'https://waylonwalker.com/' + edge.node.frontmatter.twitter_cover.relativePath }
-                  ],
-                })
-              })
-            },
-            query: `
-              {
-                allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                  filter: { frontmatter: {templateKey: {in: ["blog-post"]},status: {in: ["published"]}, twitter_announcement: {ne: null}} }
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      fields { slug }
-                      frontmatter {
-                        twitter_announcement
-                        short_url
-                        title
-                        date
-                        cover {
-                          relativePath
-                        }
-                        twitter_cover {
-                          id
-                          relativePath
-                        }
-                      }
+    // {
+    //   resolve: `gatsby-plugin-feed`,
+    //   options: {
+    //     query: `
+    //       {
+    //         site {
+    //           siteMetadata {
+    //             title
+    //             description
+    //             siteUrl
+    //             site_url: siteUrl
+    //           }
+    //         }
+    //       }
+    //     `,
+    //     feeds: [
+    //       {
+    //         serialize: ({ query: { site, allMarkdownRemark } }) => {
+    //           return allMarkdownRemark.edges.map(edge => {
+    //             return Object.assign({}, edge.node.frontmatter, {
+    //               description: edge.node.excerpt,
+    //               date: edge.node.frontmatter.date,
+    //               url: edge.node.frontmatter.short_url,
+    //               guid: edge.node.fields.slug + '/tweet_0',
+    //               custom_elements: [
+    //                 { "content:encoded": edge.node.frontmatter.twitter_announcement },
+    //                 { "image": edge.node.frontmatter.twitter_cover === null ? '' : 'https://waylonwalker.com/' + edge.node.frontmatter.twitter_cover.relativePath }
+    //               ],
+    //             })
+    //           })
+    //         },
+    //         query: `
+    //           {
+    //             allMarkdownRemark(
+    //               sort: { order: DESC, fields: [frontmatter___date] },
+    //               filter: { frontmatter: {templateKey: {in: ["blog-post"]},status: {in: ["published"]}, twitter_announcement: {ne: null}} }
+    //             ) {
+    //               edges {
+    //                 node {
+    //                   excerpt
+    //                   fields { slug }
+    //                   frontmatter {
+    //                     twitter_announcement
+    //                     short_url
+    //                     title
+    //                     date
+    //                     cover {
+    //                       relativePath
+    //                     }
+    //                     twitter_cover {
+    //                       id
+    //                       relativePath
+    //                     }
+    //                   }
 
-                    }
-                  }
-                }
-              }
-            `,
-            output: "/blog/tweet_0.xml",
-            title: "Waylon Walker's Blog announcement tweet schedule",
-            match: undefined,
-            // optional configuration to insert feed reference in pages:
-            // if `string` is used, it will be used to create RegExp and then test if pathname of
-            // current page satisfied this regular expression;
-            // if not provided or `undefined`, all pages will have feed reference inserted
-            // match: "^/blog/",
-            // optional configuration to specify external rss feed, such as feedburner
-            // link: "https://feeds.feedburner.com/gatsby/blog",
-          },
-        ],
-      },
-    },
+    //                 }
+    //               }
+    //             }
+    //           }
+    //         `,
+    //         output: "/blog/tweet_0.xml",
+    //         title: "Waylon Walker's Blog announcement tweet schedule",
+    //         match: undefined,
+    //         // optional configuration to insert feed reference in pages:
+    //         // if `string` is used, it will be used to create RegExp and then test if pathname of
+    //         // current page satisfied this regular expression;
+    //         // if not provided or `undefined`, all pages will have feed reference inserted
+    //         // match: "^/blog/",
+    //         // optional configuration to specify external rss feed, such as feedburner
+    //         // link: "https://feeds.feedburner.com/gatsby/blog",
+    //       },
+    //     ],
+    //   },
+    // },
 
     {
       resolve: `gatsby-plugin-feed`,
