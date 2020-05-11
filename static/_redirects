@@ -1,6 +1,8 @@
 # netlify redirects
 
 # Short-Blog
+/kpre              /blog/creating-the-kedro-preflight-hook/
+/blog/kpre         /blog/creating-the-kedro-preflight-hook/
 /bdgl              /blog/til-bind-arguments-to-dynamically-generated-lambdas-in-python/
 /blog/bdgl         /blog/til-bind-arguments-to-dynamically-generated-lambdas-in-python/
 /fpga              /blog/four-github-actions-python/
@@ -11,6 +13,8 @@
 /blog/sega         /blog/send-email-with-github-actions/
 /waga              /blog/what-are-github-actions
 /blog/waga         /blog/what-are-github-actions
+/knew              /blog/create-new-kedro-project/
+/blog/knew         /blog/create-new-kedro-project/
 /wike              /blog/what-is-kedro
 /blog/wike         /blog/what-is-kedro
 /gdfm              /blog/today-i-learned-git-diff-feature-master/
@@ -68,7 +72,7 @@
 /sitemap        /sitemap.xml
 
 
-# External
+#External
 
 /redirects      https://github.com/WaylonWalker/waylonwalkerv2/edit/master/static/_redirects
 /twitter        https://twitter.com/_WaylonWalker
