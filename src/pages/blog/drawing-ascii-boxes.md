@@ -88,3 +88,8 @@ devto-id: ''
 │                  │
 ╰――――――――――――――――――╯
 ```
+
+
+# Resources
+
+[Unicode Full-Width Characters](http://xahlee.info/comp/unicode_full-width_chars.html)
