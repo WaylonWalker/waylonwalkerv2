@@ -22,9 +22,9 @@ devto-url: ''
 devto-id: ''
 
 ---
-When creating cli's I often want some nice full width character.  I find it tough to find them, and when I do half the time its an image or something that cannot be copied 👿.
+When creating cli's I often want some nice full-width character.  I find it tough to find them, and when I do half the time it is an image or something that cannot be copied 👿.
 
-I rarely get very complex with my semi-manual ascii art.  I can do 98% if what I need with bars and corners.  
+I rarely get very complex with my semi-manual ASCII art.  I can do 98% of what I need with bars and corners.  Using some simple full-width characters can really give your cli a nice clean look.
 
 # Example
 
