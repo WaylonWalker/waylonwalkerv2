@@ -54,7 +54,7 @@ One of my new open source packages [find-kedro](https://find-kedro.waylonwalker.
 interrogate find-kedro -v
 ```
 
-![](/static/2020-05-14-19-46-51_start.png)
+![verbose interrogate on find-kedro](https://waylonwalker.com/interrogate-python-v.png)
 
 
 Personally I really like the **double verbose** output that gives you the names of everything missing a docstring and the line they occur on.
@@ -63,7 +63,7 @@ Personally I really like the **double verbose** output that gives you the names 
 interrogate find-kedro -vv
 ```
 
-![](/static/2020-05-14-19-48-19_start.png)
+![double verbose interrogate on find-kedro](https://waylonwalker.com/interrogate-python-vv.png)
 
 
 ## Give it a ⭐
