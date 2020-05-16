@@ -20,6 +20,9 @@ align-items: center;
 
 const BlogPostStyles = styled.div`
 background: rgba(51, 0, 38, .13);
+/* background: #201a34; */
+/* background: #1a1c33; */
+background: hsla(234, 33%, 15%, 0.66);
 overflow: hidden;
 /* background: #330026; */
 display: block;
@@ -34,6 +37,15 @@ box-shadow: .2rem .2rem 1rem rgba(0, 0, 0, .2);
 display: flex;
 flex-direction: column;
 color: whitesmoke;
+
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  width: 100%;
+  margin: 0rem;
+  padding: .3rem;
+}
 
 a {
   color: #6F6BAE;
@@ -84,8 +96,8 @@ hr {
 
 h1 {
   margin-top: 5rem;
-  font-family: sans-serif;
-  color: #6A65CA;
+  /* font-family: sans-serif; */
+  /* color: #6A65CA; */
 }
 
 `

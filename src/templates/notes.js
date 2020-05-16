@@ -82,8 +82,8 @@ hr {
 
 h1 {
   margin-top: 5rem;
-  font-family: sans-serif;
-  color: #6A65CA;
+  /* font-family: sans-serif;
+  color: #6A65CA; */
 }
 
 `
