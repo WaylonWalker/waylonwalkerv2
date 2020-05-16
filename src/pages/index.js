@@ -173,19 +173,20 @@ export default class IndexPage extends React.Component {
             </p> */}
 
             <Image />
+            <h1>Waylon Walker</h1>
 
             <p style={paragraphStyle} />
           </section>
           <section style={{ margin: 'auto', textAlign: 'center', color: 'white' }}>
 
-            <h1>Open Source</h1>
+            <h2>Open Source</h2>
             <ReposStyle>
               {REPOS.map(r => <Repo repo={r} />)}
             </ReposStyle>
 
           </section>
           <section style={{ maxWidth: '1000px', margin: 'auto', textAlign: 'center', color: 'white' }}>
-            <h1>Blog</h1>
+            <h2>Blog</h2>
             {/* <Repo repo='waylonwalker/kedro-static-viz' /> */}
             {/* <button onClick={() => toast('hello')}>press me</button> */}
             {/* <ToastContainer /> */}

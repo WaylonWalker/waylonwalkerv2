@@ -98,10 +98,10 @@ Out[35]: '1f2ff4c69eb69b545469686edd6f849136e104cd535785891586d90620328757'
 ```
 Now we have a consistent way to hash function code.
 
-# Deep hashing
+## Deep hashing
 
 
-## Find dependencies
+### Find dependencies
 
 setup a function in a module with a dependency
 ``` python
@@ -167,7 +167,7 @@ def _use_importmodule(path: Path, verbose: bool = False):
 
 ```
 
-## get code of dependency
+### get code of dependency
 
 the inspect module can tell us the filename of our current module.
 

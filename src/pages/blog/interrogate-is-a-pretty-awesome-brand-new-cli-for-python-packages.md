@@ -27,7 +27,7 @@ This thing is 🔥 hot off the press folks, we're talking the first release only
 
 > Nothing I have tried has come close to being this good
 
-# Interrogate
+## Interrogate
 
 It runs documentation coverage for your python project. It allows you to set the minimum amount of docstring coverage for your project and has some great setup instructions right in the readme.
 
