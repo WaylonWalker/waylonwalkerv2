@@ -178,16 +178,7 @@ class BlogPostTemplate extends React.Component {
         </Helmet>
         <BlogPostWrapper>
           <BlogPostStyles>
-            <Img
-              style={{
-                // position: 'absolute',
-                // top: '0px',
-                // left: '-0rem',
-                // zIndex: '-1',
-                // opacity: '.6',
-              }}
-              fluid={fluidCover}
-            />
+            <Img fluid={fluidCover} />
             <h1
               style={{ textAlign: 'right', zIndex: 2 }}
               className="blog title">
