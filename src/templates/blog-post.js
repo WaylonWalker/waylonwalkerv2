@@ -173,7 +173,9 @@ class BlogPostTemplate extends React.Component {
             { name: 'og:image', content: 'https://www.waylonwalker.com' + cover.src },
           ]}
 
-        />
+        >
+          <title>{title}</title>
+        </Helmet>
         <BlogPostWrapper>
           <BlogPostStyles>
             <Img
