@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
-// import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
-// import TheCatHasHat from '../components/styles/fonts/thecathashat-webfont.ttf'
-// import TheCatHasHat from '../components/styles/fonts/thecathasahat-webfont.ttf'
 
 
 const DateStyle = styled.div`
   position: absolute;
-  /* margin: 1rem 1rem 1rem auto; */
   top: 1.5rem
   width: 200px;
   right: 1rem;
@@ -76,15 +72,11 @@ export default class gratitude extends Component {
       return posts
     })
 
-    // console.log(posts)
-
-    // console.log(posts)
     return (
       <Layout>
         <h1 style={{ textAlign: 'center' }}>Gratitude</h1>
         <div style={{ maxWidth: '800px', margin: 'auto', padding: '1rem' }}>
           {posts.map((post, i) => (
-            // console.log(post.node)
             <GratitudePost node={post.node} />
           ))}
         </div>
