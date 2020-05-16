@@ -62,6 +62,8 @@
 /blog/dppt         /blog/No_More_Death_By_Powerpoint/
 /blog/pc17         /blog/Pycon_2017_roundup/
 
+/bash              /notes/bash/
+
 # more encompassing
 /b/*             /blog/:splat
 

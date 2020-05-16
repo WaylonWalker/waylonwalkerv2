@@ -250,3 +250,28 @@ accept positional input
 input=$1
 echo input
 ```
+
+# Using pyp
+
+``` bash
+pipx install pyp
+```
+
+
+## replacement for cut
+
+``` bash
+❯ python -m http.server 5000 &
+[1] 8574
+
+✦ ❯ Serving HTTP on 0.0.0.0 port 5000 (http://0.0.0.0:5000/) ...
+
+✦ ❯ ps aux | grep "python -m http.server" | grep -v grep | pyp 'line.split()[1]' | xargs kill
+[1]  + terminated  python -m http.server 5000
+```
+
+## replacement for wc
+
+``` bash
+conda info --envs | pyp 'len(lines) - 3 # account for header and base'
+```
