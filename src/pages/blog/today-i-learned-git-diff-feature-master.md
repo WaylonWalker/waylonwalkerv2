@@ -46,7 +46,7 @@ cat readme.md
 
 After all of that, we have a git repository on our local machine with a single file `readme.md` that contains the following.
 
-``` txt
+``` bash
 hello there
 ```
 
