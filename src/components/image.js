@@ -16,8 +16,8 @@ import styled from 'styled-components'
 
 const ProfileImageStyle = styled.div`
 /* padding: 1rem; */
-margin: 3rem auto;
-width: calc(min(600px, 95vw));
+margin: 3rem;
+width: 300px;
 border-radius: 50%;
 box-shadow:  
   -15rem -2rem 8rem -6rem rgba(253, 221, 88, .09),
@@ -25,7 +25,7 @@ box-shadow:
   0rem 0rem 2rem rgba(0, 0, 0, .4),
   0rem 0rem 5rem rgba(0, 0, 0, .1);
 img {
-width: calc(min(600px, 95vw));
+width: 300px;
 border-radius: 50%;
 margin: auto;
 }
@@ -37,7 +37,7 @@ const Image = () => (
       query {
         placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 600) {
+            fluid(maxWidth: 300) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -46,7 +46,7 @@ const Image = () => (
     `}
       render={data => <Img
         // style={{ width: 'calc(min(600px, 95vw))', margin: 'auto', borderRadius: '50%', boxShadow: '0 0 1.5rem rgba(0, 0, 0, .5), 0 0 .25rem rgba(0, 0, 0, .4)' }}
-        style={{ width: 'calc(min(600px, 95vw))' }}
+        style={{ width: '300px' }}
         fluid={data.placeholderImage.childImageSharp.fluid} />}
     />
   </ProfileImageStyle>
