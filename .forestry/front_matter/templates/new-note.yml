@@ -68,6 +68,7 @@ fields:
     maxSize: 250
   label: Twitter Cover
 pages:
+- src/pages/notes/adding-google-fonts-to-a-gatsbyjs-site.md
 - src/pages/notes/amazon-web-services.md
 - src/pages/notes/building-cli-apps-in-python.md
 - src/pages/notes/custom-python-exceptions.md
