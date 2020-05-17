@@ -179,14 +179,14 @@ export default class IndexPage extends React.Component {
           </section>
           <section style={{ margin: 'auto', textAlign: 'center', color: 'white' }}>
 
-            <h2>Open Source</h2>
+            <h2 id="open-source">Open Source</h2>
             <ReposStyle>
               {REPOS.map(r => <Repo repo={r} />)}
             </ReposStyle>
 
           </section>
           <section style={{ maxWidth: '1000px', margin: 'auto', textAlign: 'center', color: 'white' }}>
-            <h2>Blog</h2>
+            <h2 id='blog'>Blog</h2>
             {/* <Repo repo='waylonwalker/kedro-static-viz' /> */}
             {/* <button onClick={() => toast('hello')}>press me</button> */}
             {/* <ToastContainer /> */}
