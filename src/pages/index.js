@@ -123,43 +123,12 @@ class Repo extends React.Component {
     )
   }
 }
-const paragraphStyle = {
-  maxWidth: '800px',
-  margin: '2rem auto',
-  padding: '0 1rem',
-  lineHeight: '1.8rem',
-}
-
-// const traitStyle = {
-//   // display: 'inline-block',
-//   display: 'flex',
-//   justifyContent: 'center',
-//   width: '200px',
-//   background: '#fafafa',
-// }
 
 export default class IndexPage extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      // traits: ['Husband', 'Father', 'Data Scientist', 'Developer'],
-      // trait: 0,
-    }
+    this.state = {}
   }
-
-  // nextTrait = () => {
-  //   if (this.state.trait === this.state.traits.length - 1) {
-  //     this.setState({ trait: 0 })
-  //   } else {
-  //     this.setState({ trait: this.state.trait + 1 })
-  //   }
-  //   setTimeout(this.nextTrait, 1000)
-  // }
-
-  // componentDidMount = () => {
-  //   this.nextTrait()
-  //   // toast('welcome friend')
-  // }
 
   render() {
     const { data } = this.props
@@ -191,8 +160,6 @@ export default class IndexPage extends React.Component {
             </section>
             <section style={{ maxWidth: '1000px', margin: 'auto', textAlign: 'center', color: 'white' }}>
               <h2 id='blog'>Blog</h2>
-              {/* <Repo repo='waylonwalker/kedro-static-viz' /> */}
-              {/* <button onClick={() => toast('hello')}>press me</button> */}
               {/* <ToastContainer /> */}
               <BlogPosts posts={posts} />
             </section>
