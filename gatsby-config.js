@@ -5,7 +5,8 @@ module.exports = {
   siteMetadata: {
     title: 'Waylon Walker',
     siteUrl: 'https://waylonwalker.com',
-    description: "Waylon Walker is a Sr. Data Scientist with a passion for learning and teaching others."
+    // description: "Waylon Walker is a Sr. Data Scientist with a passion for learning and teaching others.",
+    description = "Practicing my craft in public, sharing my experience along the way.  Python, Kedro, JamStack, Gatsby, Data, Automation"
   },
   plugins: [
     // `gatsby-plugin-sass`,
