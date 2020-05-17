@@ -11,6 +11,26 @@ import axios from 'axios'
 
 const REPOS = ['waylonwalker/find-kedro', 'waylonwalker/kedro-static-viz', 'waylonwalker/kedro-action']
 
+const IndexStyle = styled.div`
+h1{
+  margin: auto;
+  max-width: 900px;
+  text-align: center;
+}
+p {
+  margin: auto;
+  max-width: 500px;
+  padding-top: 1rem;
+}
+#about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+`
+
 const ReposStyle = styled.div`
 display: flex;
 flex-wrap: wrap;
@@ -41,6 +61,7 @@ const RepoStyle = styled.div`
   }
   .language {
     color: #DAA520;
+    margin: 0;
   }
   .header {
     padding-top: 1rem;
@@ -146,54 +167,38 @@ export default class IndexPage extends React.Component {
     // console.log(data.allMarkdownRemark)
     return (
       <Layout>
-        <div id="content" style={{ margin: 'auto' }}>
-          <section>
-            {/* <h1>About</h1>
-            <p style={paragraphStyle}>
-              I am a{' '}
-              <span style={{ display: 'inline-block' }}>
-                <span style={traitStyle}>
-                  <strong>{this.state.traits[this.state.trait]}</strong>
-                </span>
-              </span>{' '}
-              of 2 energetic Children. They are the ones that get me out of bed
-              in the morning. Literally, no one beats <em>Wyatt</em> out of bed.
-              He is our crazy, never slowing down son, who his filled with{' '}
-              <strong>Love</strong> and <strong>Compassion</strong>. When
-              someone is having a bad day, he is the first to notice and try to
-              help in every way he can. He is always trying to help{' '}
-              <em>Ayla</em> throughout the day. She is our little mommmy, she is{' '}
-              <strong>caring</strong> and <strong>Sweet</strong>. She does
-              everything with her own style, if that what you call her sas, and
-              never goes to bed before all of her babies are asleep first.
-              Rhiannon is my motivation. She is <strong>organized</strong>, and{' '}
-              <strong>creative</strong>. Whether its organizing our house, or{' '}
-              <a href="cuttinscrap.com">cuttinscrap</a>she makes the perfect
-              place for everything, and makes sure it looks beautiful.
-            </p> */}
+        <IndexStyle>
+          <div id="content" style={{ margin: 'auto' }}>
+            <section id='about'>
+              <Image />
+              <div className="about-text">
+                <h1  >Hello, I am Waylon Walker.</h1>
 
-            <Image />
-            <h1>Waylon Walker</h1>
+                <p>I am a Data Scientist from Illinois.  I have a passion for learning and teaching others.  </p>
+                <p>I love what I do, and am constantly honing my craft.  You can follow along with me, I try to document my journey the best I can by writing articles.</p>
 
-            <p style={paragraphStyle} />
-          </section>
-          <section style={{ margin: 'auto', textAlign: 'center', color: 'white' }}>
+              </div>
 
-            <h2 id="open-source">Open Source</h2>
-            <ReposStyle>
-              {REPOS.map(r => <Repo repo={r} />)}
-            </ReposStyle>
+            </section>
+            <section style={{ margin: 'auto', textAlign: 'center', color: 'white' }}>
 
-          </section>
-          <section style={{ maxWidth: '1000px', margin: 'auto', textAlign: 'center', color: 'white' }}>
-            <h2 id='blog'>Blog</h2>
-            {/* <Repo repo='waylonwalker/kedro-static-viz' /> */}
-            {/* <button onClick={() => toast('hello')}>press me</button> */}
-            {/* <ToastContainer /> */}
-            <BlogPosts posts={posts} />
-          </section>
-        </div>
-      </Layout>
+              <h2 id="open-source">Open Source</h2>
+              <p>In my spare time I like to take what I have learned to make things easier for others.  I maintain {REPOS.length} open source packages that you can find below.</p>
+              <ReposStyle>
+                {REPOS.map(r => <Repo repo={r} key={r} />)}
+              </ReposStyle>
+
+            </section>
+            <section style={{ maxWidth: '1000px', margin: 'auto', textAlign: 'center', color: 'white' }}>
+              <h2 id='blog'>Blog</h2>
+              {/* <Repo repo='waylonwalker/kedro-static-viz' /> */}
+              {/* <button onClick={() => toast('hello')}>press me</button> */}
+              {/* <ToastContainer /> */}
+              <BlogPosts posts={posts} />
+            </section>
+          </div >
+        </IndexStyle>
+      </Layout >
     )
   }
 }
