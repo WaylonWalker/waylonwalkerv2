@@ -8,12 +8,15 @@ import colors from '../components/styles/colors'
 const BlogPostCardStyles = styled.div`
 /* background: rgba(51, 0, 38, .04); */
 transition: width 250ms ease-in-out,
-            color 1000ms linear;
+            color 1000ms linear,
+            transform 1000ms linear;
   /* align-self: center; */
 &:hover {
   width: calc(min(550px, 100vw));
   .year{
   color: rgba(108, 99, 253, .14);
+  transform: rotate(-1.4deg);
+
   }
 
 }
@@ -49,8 +52,9 @@ h3 {
   color: rgba(255, 255, 255, .8);
   color: hsla(244, 60%, 70%, .7);
   // text-shadow: 0rem 0rem .4rem rgba(255, 255, 255, .5);
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   text-align: center;
+  transform: rotate(-1deg);
 
 
 }
@@ -67,6 +71,7 @@ Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: rgba(108, 99, 253, .1);
   
   text-align: center;
+  transform: rotate(.6deg);
 }
 .month {
   // position: absolute;
@@ -78,6 +83,7 @@ Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: rgba(255, 255, 255, .6);
   color: rgba(108, 99, 253, .6);
   text-align: center;
+  transform: rotate(2deg);
 }
 .date {
   margin: 0rem auto;
@@ -92,6 +98,10 @@ Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   /* background: linear-gradient(81deg, rgba(45,47,54,1) 0%, # 100%); */
   z-index: 99;
 
+}
+
+p {
+  transform: rotate(-.7deg);
 }
 
 `
@@ -120,7 +130,7 @@ const BlogPostCard = ({ post, ...props }) => {
       </div>
 
       <Link to={post['fields']['slug']}>
-        <h3>{post['frontmatter']['title']}</h3>
+        <h3 id={post['frontmatter']['title']}>{post['frontmatter']['title']}</h3>
       </Link>
 
       {/* <div className="excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} /> */}
