@@ -81,7 +81,7 @@ class Repo extends React.Component {
     axios
       .get(this.state.root_api + this.state.repo)
       .then(r => this.setState({ ...r.data }))
-      .then(r => console.log(this.state))
+    // .then(r => console.log(this.state))
   }
 
   render() {
