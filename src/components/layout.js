@@ -40,7 +40,7 @@ const Layout = ({ children, include_subscribe = true }) => (
             { name: 'og:description', content: data.site.siteMetadata.description },
             { name: 'twitter:description', content: data.site.siteMetadata.description },
             { name: 'keywords', content: 'python, kedro, datascience, bash, command line, javascript, gatsby' },
-            { name: 'twitter:card', content: 'summary' },
+            { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:site', content: '@_waylonwalker' },
             { name: 'twitter:creator', content: '@_waylonwalker' },
             { name: 'twitter:image', content: 'https://waylonwalker.com/waylon-walker.png' }
