@@ -8,6 +8,8 @@ import Subscribe from './Subscribe'
 import LayoutStyles from './styles/LayoutStyles'
 import './layout.css'
 
+const description = 'Practicing my craft in public, sharing my experience along the way.  Python, Kedro, JamStack, Gatsby, Data, Automation'
+
 const Layout = ({ children, include_subscribe = true }) => (
   <StaticQuery
     query={graphql`
@@ -15,6 +17,8 @@ const Layout = ({ children, include_subscribe = true }) => (
         site {
           siteMetadata {
             title
+            description
+            siteUrl
           }
         }
       }
@@ -32,20 +36,22 @@ const Layout = ({ children, include_subscribe = true }) => (
             { name: 'og:image:width', content: '1000' },
             { name: 'og:image:height', content: '420' },
             { name: 'og:locale', content: 'en_US' },
-            { name: 'description', content: `${data.site.siteMetadata.description}` },
-            { name: 'og:description', content: `${data.site.siteMetadata.description}` },
-            { name: 'twitter:description', content: `${data.site.siteMetadata.description}` },
-            { name: 'keywords', content: 'Personal Blog' },
-            { name: 'twitter:card', content: "summary" },
+            { name: 'description', content: data.site.siteMetadata.description },
+            { name: 'og:description', content: data.site.siteMetadata.description },
+            { name: 'twitter:description', content: data.site.siteMetadata.description },
+            { name: 'keywords', content: 'python, kedro, datascience, bash, command line, javascript, gatsby' },
+            { name: 'twitter:card', content: 'summary' },
             { name: 'twitter:site', content: '@_waylonwalker' },
             { name: 'twitter:creator', content: '@_waylonwalker' },
             { name: 'twitter:image', content: 'https://waylonwalker.com/waylon-walker.png' }
           ]}
         >
 
-          <html lang="en" />
+          <html lang='en' />
+          <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
         </Helmet>
         <Nav />
+        <h1>description</h1>
         {children}
         {
           include_subscribe === true

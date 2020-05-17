@@ -5,7 +5,6 @@ module.exports = {
   siteMetadata: {
     title: 'Waylon Walker',
     siteUrl: 'https://waylonwalker.com',
-    // description: "Waylon Walker is a Sr. Data Scientist with a passion for learning and teaching others.",
     description: "Practicing my craft in public, sharing my experience along the way.  Python, Kedro, JamStack, Gatsby, Data, Automation"
   },
   plugins: [
@@ -23,17 +22,17 @@ module.exports = {
     //   },
     // },
 
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Space Mono`,
-            variants: [`400`, `700`]
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Space Mono`,
+    //         variants: [`400`, `700`]
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
