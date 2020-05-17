@@ -8,6 +8,7 @@ import Subscribe from './Subscribe'
 import LayoutStyles from './styles/LayoutStyles'
 import './layout.css'
 
+const description = "Practicing my craft in public, sharing my experience along the way.  Python, Kedro, JamStack, Gatsby, Data, Automation"
 const Layout = ({ children, include_subscribe = true }) => (
   <StaticQuery
     query={graphql`
@@ -23,15 +24,23 @@ const Layout = ({ children, include_subscribe = true }) => (
       <LayoutStyles>
         <Helmet
           title={data.site.siteMetadata.title}
+          htmlAttributes={{ lang: 'en' }}
           meta={[
             { name: 'og:type', content: 'article' },
             { name: 'og:title', content: 'Waylon Walker' },
             { name: 'og:article:author', content: 'Waylon Walker' },
-            { name: 'description', content: "Waylon Walker's personal website." },
+            { name: 'og:image', content: 'https://waylonwalker.com/waylon-walker.png' },
+            { name: 'og:image:width', content: '1000' },
+            { name: 'og:image:height', content: '420' },
+            { name: 'og:locale', content: 'en_US' },
+            { name: 'description', content: `${description}` },
+            { name: 'og:description', content: `${description}` },
+            { name: 'twitter:description', content: `${description}` },
             { name: 'keywords', content: 'Personal Blog' },
-            { name: 'twitter:creator', content: '@_waylonwalker' },
-            { name: 'twitter:card', content: "summary_large_image" },
+            { name: 'twitter:card', content: "summary" },
             { name: 'twitter:site', content: '@_waylonwalker' },
+            { name: 'twitter:creator', content: '@_waylonwalker' },
+            { name: 'twitter:image', content: 'https://waylonwalker.com/waylon-walker.png' }
           ]}
         >
 

@@ -21,6 +21,18 @@ module.exports = {
     //     path: `${__dirname}/src/images`,
     //   },
     // },
+
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Space Mono`,
+            variants: [`400`, `700`]
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -51,6 +63,7 @@ module.exports = {
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-static-images',
           `gatsby-remark-prismjs`,
+          `gatsby-remark-images-zoom`,
           // 'gatsby-remark-social-cards',
           {
             resolve: 'gatsby-remark-images',
