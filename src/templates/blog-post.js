@@ -194,8 +194,8 @@ class BlogPostTemplate extends React.Component {
               This article was also cross posted to
             {
                 devto_url === undefined
-                  ?
-                  console.log('devto_url', devto_url, 'devto_id', devto_id)
+                  ? 'hi'
+                  // console.log('devto_url', devto_url, 'devto_id', devto_id)
                   : <a href={devto_url} > dev.to </a>
               }
               feel free to drop in to give it a ♥ and leave comment.
@@ -237,7 +237,7 @@ const BlogPost = ({ data }) => {
       <BlogPostTemplate
         content={post.html}
         // contentComponent={HTMLContent}
-        // description={post.frontmatter.description}
+        description={post.frontmatter.description}
         // helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
