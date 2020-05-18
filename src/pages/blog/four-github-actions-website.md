@@ -6,7 +6,7 @@ tags:
 twitter_announcement: I just dropped a new post check it out.
 path: four-github-actions-website
 title: Four github actions for your website
-date: 2020-05-18T13:02:00Z
+date: 2020-05-18T13:02:00.000+00:00
 status: published
 description: GitHub actions can give you confidence that your site is up and running,
   with the latests JavaScript packages, does not have broken links, and can even take
@@ -25,23 +25,21 @@ devto-url: ''
 devto-id: ''
 
 ---
-GitHub actions are a new GitHub feature that will trigger GitHub to spin up a virtual machine and run some tasks with some special access to your repo.  It can interact with comments/issues, it can clone your repo, You can explicitly pass in secrets so that it can commit back to the repo or deploy to another service.  The environment may be a linux, windows, or even a mac machiine.  I believe this is wildy incredible for the open source commnunity, putting these tools in the same place that we are already collaborating is so convenient.
+GitHub's actions are a new GitHub feature that will trigger GitHub to spin up a virtual machine and run some tasks with some special access to your repo. It can interact with comments/issues, it can clone your repo, You can explicitly pass in secrets so that it can commit back to the repo or deploy to another service. The environment may be a Linux, windows, or even a mac machine. I believe this is wildly incredible for the open-source community, putting these tools in the same place that we are already collaborating is so convenient.
 
 ## What can they do for my personal website? 🤔
 
-GitHub actions can give you confidence that your site is up and running, with the latests JavaScript packages, does not have broken links, and can even take screenshots of what your website looks like on different screen sizes and operating systems.
+GitHub actions can give you confidence that your site is up and running, with the latest JavaScript packages, does not have broken links, and can even take screenshots of what your website looks like on different screen sizes and operating systems.
 
-* periodically check that the website is up
-* update npm
-* url checker
-* screenshot website
-  * [https://github.com/marketplace/actions/screenshot-website](https://github.com/marketplace/actions/screenshot-website "https://github.com/marketplace/actions/screenshot-website")
-
+- periodically check that the website is up
+- update npm
+- url checker
+- screenshot website
 
 
 ## [srt32/uptime](https://github.com/srt32/uptime)
 
-[srt32/uptime](https://github.com/srt32/uptime) is an action that you can run on any public website.  I run this one several times every day and it gives me confidence that my various sites are still up and  running.  It ensures that my build didnt break something, nothing is wrong with my hosting provider, or my DNS.
+[srt32/uptime](https://github.com/srt32/uptime) is an action that you can run on any public website. I run this one several times every day and it gives me confidence that my various sites are still up and running. It ensures that my build didn't break something, nothing is wrong with my hosting provider, or my DNS.
 
 ``` yaml
 name: check if site is up
@@ -64,12 +62,11 @@ jobs:
 
 ## [taichi/actions-package-update](https://github.com/taichi/actions-package-update)
 
-Here is another one to make sure that your package.json does not get too far out of date, or have any vulnerabilities.  [taichi/actions-package-update](https://github.com/taichi/actions-package-update) will submit a PR back to your repo with any updated dependencies.  Since it submits it as a pr, your tests triggered by PRs should also run.  giving you confidence that you are ready to update.
+Here is another one to make sure that your package.json does not get too far out of date, or have any vulnerabilities. [taichi/actions-package-update](https://github.com/taichi/actions-package-update) will submit a PR back to your repo with any updated dependencies. Since it submits it as a pr, your tests triggered by PRs should also run. giving you confidence that you are ready to update.
 
 ![image of a PR submitted by actions-package-update](https://github.com/taichi/actions-package-update/raw/master/docs/actions-package-update.png "image of a PR submitted by actions-package-update")
 
-
-Example  to update `package.json` every wednesday night at midnight.
+Example to update `package.json` every Wednesday night at midnight.
 
 ``` yaml
 on:
@@ -97,7 +94,7 @@ jobs:
 
 ## [urlstechie/urlchecker-action](https://github.com/urlstechie/urlchecker-action)
 
-[urlstechie/urlchecker-action](https://github.com/urlstechie/urlchecker-action) is an action to collect and check urls in a project and report on broken links.  This is another one to give yourself some confidence that you are not linking out to a broken site, and can give you a heads up before you have frustrated users.
+[urlstechie/urlchecker-action](https://github.com/urlstechie/urlchecker-action) is an action to collect and check URLs in a project and report on broken links. This is another one to give yourself some confidence that you are not linking out to a broken site, and can give you a heads up before you have frustrated users.
 
 ``` yaml
 name: Check URLs
@@ -140,8 +137,7 @@ jobs:
 
 ## [swinton/screenshot-website](https://github.com/swinton/screenshot-website)
 
-
-[swinton/screenshot-website](https://github.com/swinton/screenshot-website) will take a screenshot of your website.  It can even run a matrix of sizes and os's to check how your site looks on various systems.
+[swinton/screenshot-website](https://github.com/swinton/screenshot-website) will take a screenshot of your website. It can even run a matrix of sizes and os's to check how your site looks on various systems.
 
 ``` yaml
 name: screenshot-website
@@ -166,3 +162,4 @@ jobs:
         source: https://waylonwalker.com/
         destination: screenshot-${{ matrix.os }}-${{ matrix.width }}.png
         width: ${{ matrix.width }}
+```
