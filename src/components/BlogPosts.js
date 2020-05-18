@@ -23,6 +23,12 @@ const BlogPostsStyle = styled.div`
     margin: auto;
 }
 
+.robots {
+  display: None;
+  opacity: 0;
+  visibility: hidden;
+}
+
 `
 
 class BlogPosts extends Component {
@@ -68,7 +74,6 @@ class BlogPosts extends Component {
     }
   }
 
-
   render() {
     return (
 
@@ -78,31 +83,26 @@ class BlogPosts extends Component {
             <input type="text" name="search" value={this.state.search} id="search" onChange={e => this.setSearch(e.target.value)} />
           </label>
         </form>
-        {/* <TrackVisibility> */}
-        <FlipMove>
+        <FlipMove >
           {
             this.state.filteredPosts
-              // .filter(post => JSON.stringify(post)
-              //   .replace(/<[^>]*>?/gm, '')
-              //   .includes(this.state.search)
-              // )
               .slice(0, this.state.numPosts)
               .map((post, i) => {
-
                 let status = true
                 try {
                   status = post['node']['frontmatter']['status'].toLowerCase() !== 'draft'
-
                 } catch (error) {
-
                 }
                 if (post && status) {
                   return <div key={post.node.id}>< BlogPostCard key={post.node.id} post={post['node']} /></div>
                 }
                 return false
               }
-              )}
-
+              )
+          }
+          < div className="robots">
+            {this.state.posts.map((post, i) => <li><a href={post.node['fields']['slug']} >{post.node.frontmatter.title}</a></li>)}
+          </div>
         </FlipMove>
       </ BlogPostsStyle >
 
