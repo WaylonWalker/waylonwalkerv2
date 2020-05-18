@@ -15,4 +15,4 @@ jobs:
     - name: URLs-checker
       uses: urlstechie/urlchecker-action@0.2.1
       with:
-        file_types: **/*.md
+        file_types: '**/*.md'
