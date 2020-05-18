@@ -67,6 +67,7 @@ query BlogQuery {
           title
           templateKey
           status
+          description
           cover {
             absolutePath
             childImageSharp {
