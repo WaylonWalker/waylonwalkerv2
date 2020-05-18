@@ -123,7 +123,7 @@ class Repo extends React.Component {
   render() {
     return (
       <RepoStyle>
-        <a href={`https://github.com/${this.state.repo}`} aria-label={`go to github ${this.state.repo}`}>
+        <a href={`https://github.com/${this.state.repo}`} aria-label={`go to github ${this.state.repo}`} title={this.state.repo}>
           <div className="header">
             <h2>{this.state.name}</h2>
             <p className="language">{this.state.language}</p>
