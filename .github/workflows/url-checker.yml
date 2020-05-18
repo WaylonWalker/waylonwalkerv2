@@ -15,5 +15,4 @@ jobs:
     - name: URLs-checker
       uses: urlstechie/urlchecker-action@0.2.1
       with:
-        subfolder: src/pages
         file_types: .md, .mdx
