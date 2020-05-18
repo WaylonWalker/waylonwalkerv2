@@ -45,9 +45,9 @@ const Image = () => (
       }
     `}
       render={data => <Img
-        // style={{ width: 'calc(min(600px, 95vw))', margin: 'auto', borderRadius: '50%', boxShadow: '0 0 1.5rem rgba(0, 0, 0, .5), 0 0 .25rem rgba(0, 0, 0, .4)' }}
         style={{ width: '300px' }}
         fluid={data.placeholderImage.childImageSharp.fluid} />}
+      alt='Profile picture of Waylon Walker looking into the distance in front of a red brick building'
     />
   </ProfileImageStyle>
 )
