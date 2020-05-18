@@ -5,11 +5,26 @@ import Layout from '../components/layout'
 import BlogPosts from '../components/BlogPosts'
 import styled from 'styled-components'
 import axios from 'axios'
+import { useSpring, animated } from 'react-spring'
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
 
 const REPOS = ['waylonwalker/find-kedro', 'waylonwalker/kedro-static-viz', 'waylonwalker/kedro-action']
+
+// const animationConfig = { config: { friction: 18, }, delay: 800 }
+// const animationFromRight = useSpring({
+//   to:
+//   {
+//     opacity: 1,
+//     right: '0px'
+//   },
+//   from: {
+//     opacity: 0,
+//     right: '75px'
+//   },
+//   ...animationConfig
+// })
 
 const IndexStyle = styled.div`
 h1{
