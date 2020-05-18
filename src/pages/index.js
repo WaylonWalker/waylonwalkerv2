@@ -12,20 +12,66 @@ import { useSpring, animated } from 'react-spring'
 
 const REPOS = ['waylonwalker/find-kedro', 'waylonwalker/kedro-static-viz', 'waylonwalker/kedro-action']
 
-// const animationConfig = { config: { friction: 18, }, delay: 800 }
-// const animationFromRight = useSpring({
-//   to:
-//   {
-//     opacity: 1,
-//     right: '0px'
-//   },
-//   from: {
-//     opacity: 0,
-//     right: '75px'
-//   },
-//   ...animationConfig
-// })
 
+const About = () => {
+  const animationConfig = { config: { friction: 18, }, delay: 800 }
+  const animationFromLeft = useSpring({
+    to:
+    {
+      opacity: 1,
+      right: '0px'
+    },
+    from: {
+      opacity: 0,
+      right: '-75px',
+      position: 'relative'
+    },
+    ...animationConfig
+  })
+  const animationFromLeft2 = useSpring({
+    to:
+    {
+      opacity: 1,
+      right: '0px'
+    },
+    from: {
+      opacity: 0,
+      right: '-75px',
+      position: 'relative'
+    },
+    ...animationConfig,
+    delay: 2400,
+  })
+  const animationFromRight = useSpring({
+    to:
+    {
+      opacity: 1,
+      right: '0px'
+    },
+    from: {
+      opacity: 0,
+      right: '75px',
+      position: 'relative'
+    },
+    ...animationConfig,
+    delay: 1600,
+  })
+  return (
+
+    <section id='about'>
+      <Image />
+      <div className="about-text">
+        <animated.h1 style={{ ...animationFromLeft }} >Hello, I am Waylon Walker.</animated.h1>
+
+        <animated.p style={{ ...animationFromRight }} > I am a Data Scientist from Illinois.  I have a passion for learning and teaching others.  </animated.p>
+        <animated.p style={{ ...animationFromLeft2 }}>I love what I do, and am constantly honing my craft.  You can follow along with me, I try to document my journey the best I can by writing articles.</animated.p>
+
+      </div>
+
+    </section >
+
+  )
+}
 const IndexStyle = styled.div`
 h1{
   margin: auto;
@@ -153,17 +199,7 @@ export default class IndexPage extends React.Component {
       <Layout>
         <IndexStyle>
           <div id="content" style={{ margin: 'auto' }}>
-            <section id='about'>
-              <Image />
-              <div className="about-text">
-                <h1  >Hello, I am Waylon Walker.</h1>
-
-                <p>I am a Data Scientist from Illinois.  I have a passion for learning and teaching others.  </p>
-                <p>I love what I do, and am constantly honing my craft.  You can follow along with me, I try to document my journey the best I can by writing articles.</p>
-
-              </div>
-
-            </section>
+            <About />
             <section style={{ margin: 'auto', textAlign: 'center', color: 'white' }}>
 
               <h2 id="open-source">Open Source</h2>
