@@ -6,9 +6,12 @@ tags:
 twitter_announcement: I just dropped a new post check it out.
 path: four-github-actions-website
 title: Four github actions for your website
-date: 2020-03-16T05:00:00.000+00:00
+date: 2020-05-18T13:02:00Z
 status: published
-description: ''
+description: GitHub actions can give you confidence that your site is up and running,
+  with the latests JavaScript packages, does not have broken links, and can even take
+  screenshots of what your website looks like on different screen sizes and operating
+  systems.
 related_post_body: ''
 related_post: []
 cover: "/static/four-github-actions-website.png"
@@ -26,7 +29,7 @@ GitHub actions are a new GitHub feature that will trigger GitHub to spin up a vi
 
 ## What can they do for my personal website? 🤔
 
-
+GitHub actions can give you confidence that your site is up and running, with the latests JavaScript packages, does not have broken links, and can even take screenshots of what your website looks like on different screen sizes and operating systems.
 
 * periodically check that the website is up
 * update npm
