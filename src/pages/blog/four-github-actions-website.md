@@ -71,7 +71,7 @@ Example  to update `package.json` every wednesday night at midnight.
 ``` yaml
 on:
   schedule:
-  - cron: 0 0 * * 5
+  - cron: 0 0 * * 3
 name: Update
 jobs:
   package-update:
@@ -134,3 +134,32 @@ jobs:
         # choose if the force pass or not
         force_pass : true
 ```
+
+## [swinton/screenshot-website](https://github.com/swinton/screenshot-website)
+
+
+[swinton/screenshot-website](https://github.com/swinton/screenshot-website) will take a screenshot of your website.  It can even run a matrix of sizes and os's to check how your site looks on various systems.
+
+``` yaml
+name: screenshot-website
+on:
+  schedule:
+    - cron: '0 0 0 * *'
+
+jobs:
+  screenshot:
+    name: Screenshot
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        width: [1200, 992, 768, 600]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+
+    - name: Screenshot Website
+      uses: swinton/screenshot-website@v1.x
+      with:
+        source: https://waylonwalker.com/
+        destination: screenshot-${{ matrix.os }}-${{ matrix.width }}.png
+        width: ${{ matrix.width }}
