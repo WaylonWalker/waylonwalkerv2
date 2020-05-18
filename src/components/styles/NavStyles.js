@@ -23,7 +23,7 @@ ul {
     a {
     color: #FEDD58;
     text-decoration: none;
-    @import url('https://fonts.googleapis.com/css?family=Amiko|Arima+Madurai|Farsan|Lalezar|Mogra|Rakkas|Rasa|Shrikhand|Suez+One|Yatra+One');
+    /* @import url('https://fonts.googleapis.com/css?family=Amiko|Arima+Madurai|Farsan|Lalezar|Mogra|Rakkas|Rasa|Shrikhand|Suez+One|Yatra+One'); */
     font-family: 'Amiko', sans - serif;
     }
 
