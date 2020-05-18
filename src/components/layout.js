@@ -51,7 +51,6 @@ const Layout = ({ children, include_subscribe = true }) => (
           <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
         </Helmet>
         <Nav />
-        <h1>description</h1>
         {children}
         {
           include_subscribe === true
