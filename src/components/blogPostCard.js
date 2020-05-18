@@ -115,7 +115,7 @@ const BlogPostCard = ({ post, ...props }) => {
   return (
 
     <BlogPostCardStyles>
-      <Link to={post['fields']['slug']} aria-label={`${post['frontmatter']['title']} cover image`} >
+      <Link to={post['fields']['slug']} aria-label={`${post['frontmatter']['title']} cover image`} title={`${post['frontmatter']['title']}`}>
         {
           (cover === undefined || cover === null)
             ? ''
@@ -123,13 +123,13 @@ const BlogPostCard = ({ post, ...props }) => {
         }
       </Link>
       <div className="date">
-        <Link to={post['fields']['slug']}>
+        <Link to={post['fields']['slug']} aria-label={`${post['frontmatter']['title']} cover image`} title={`${post['frontmatter']['title']}`}>
           <div className="year">{year}</div>
           <div className="month">{month} {day}</div>
         </Link>
       </div>
 
-      <Link to={post['fields']['slug']}>
+      <Link to={post['fields']['slug']} aria-label={`${post['frontmatter']['title']} cover image`} title={`${post['frontmatter']['title']}`}>
         <h3 id={post['frontmatter']['title']}>{post['frontmatter']['title']}</h3>
       </Link>
 
