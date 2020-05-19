@@ -49,13 +49,13 @@ const Layout = ({ children, include_subscribe = true }) => (
 
           <html lang='en' />
           <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-          <link href="https://twitter.com/_WaylonWalker" rel="me"></link>
-          <link href="https://github.com/waylonwalker" rel="me"></link>
-          <link href="https://dev.to/waylonwalker" rel="me"></link>
-          <link href="https://www.instagram.com/_waylonwalker/" rel="me"></link>
-          <link href="https://medium.com/@waylonwalker" rel="me"></link>
-          <link href="mailtto:waylon@waylonwalker.com" rel="me"></link>
-          <link href="mailtto:quadmx08@gmail.com" rel="me"></link>
+          <link href="https://twitter.com/_WaylonWalker" rel="me" />
+          <link href="https://github.com/waylonwalker" rel="me" />
+          <link href="https://dev.to/waylonwalker" rel="me" />
+          <link href="https://www.instagram.com/_waylonwalker/" rel="me" />
+          <link href="https://medium.com/@waylonwalker" rel="me" />
+          <link href="mailtto:waylon@waylonwalker.com" rel="me" />
+          <link href="mailtto:quadmx08@gmail.com" rel="me" />
         </Helmet>
 
         <Nav />
