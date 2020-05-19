@@ -56,6 +56,8 @@ const Layout = ({ children, include_subscribe = true }) => (
           <link href="https://medium.com/@waylonwalker" rel="me" />
           <link href="mailtto:waylon@waylonwalker.com" rel="me" />
           <link href="mailtto:quadmx08@gmail.com" rel="me" />
+          <link rel="webmention" href="https://webmention.io/waylonwalker.com/webmention" />
+          <link rel="pingback" href="https://webmention.io/waylonwalker.com/xmlrpc" />
         </Helmet>
 
         <Nav />
