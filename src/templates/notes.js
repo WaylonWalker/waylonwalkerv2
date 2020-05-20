@@ -117,7 +117,7 @@ class BlogPostTemplate extends React.Component {
             { name: 'og:title', content: title },
             { name: 'og:article:published_time', content: date },
             { name: 'og:article:modified_time', content: date },
-            { name: 'twitter:title', content: title },
+            { name: 'twitter:title', content: title + ' | Waylon Walker' },
             { name: 'description', content: description },
             { name: 'twitter:image', content: 'https://www.waylonwalker.com' + twitterImage },
             { name: 'twitter:description', content: description },

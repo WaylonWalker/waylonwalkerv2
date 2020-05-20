@@ -30,7 +30,7 @@ const Layout = ({ children, include_subscribe = true }) => (
           htmlAttributes={{ lang: 'en' }}
           meta={[
             { name: 'og:type', content: 'article' },
-            { name: 'og:title', content: 'Waylon Walker' },
+            { name: 'og:title', content: "Waylon Walker's Digital Garden" },
             { name: 'og:article:author', content: 'Waylon Walker' },
             { name: 'og:image', content: 'https://waylonwalker.com/waylon-walker.png' },
             { name: 'og:image:width', content: '1000' },
@@ -40,6 +40,7 @@ const Layout = ({ children, include_subscribe = true }) => (
             { name: 'og:description', content: data.site.siteMetadata.description },
             { name: 'twitter:description', content: data.site.siteMetadata.description },
             { name: 'keywords', content: 'python, kedro, datascience, bash, command line, javascript, gatsby' },
+            { name: 'twitter:title', content: "Waylon Walker's Digital Garden" },
             { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:site', content: '@_waylonwalker' },
             { name: 'twitter:creator', content: '@_waylonwalker' },
