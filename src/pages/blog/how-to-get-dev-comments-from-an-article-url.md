@@ -7,7 +7,12 @@ path: devto-comments-from-url
 title: How to get Dev Comments from an article Url
 date: 2020-05-20T10:00:00Z
 status: published
-description: ''
+description: "I want to incorporate some of the wonderful comments, \U0001F495, \U0001F984,
+  and \U0001F516's that I have been getting on dev.to on my website.  I have dabbled
+  once or twice with no avail this time I am taking notes on my journey, so follow
+  along and let's get there together.  By the end of this post, I will have a way
+  to get comments from posts on the client-side thanks to the wonderfully open dev.to
+  API."
 related_post_body: ''
 related_post: []
 cover: "/static/dev-to-comments-from-url.png"
