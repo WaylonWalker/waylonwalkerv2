@@ -1,91 +1,45 @@
 import React from 'react'
 import styled from 'styled-components'
+import Helmet from 'react-helmet'
+import { Link } from 'gatsby'
 
 const SubscribeStyle = styled.div`
 max-width: 500px;
-color: rgba(255,255,255,.9);
-background: #3E3846;
+margin: auto;
+margin-bottom: 5rem;
+padding: 2rem 5rem 1rem;
 background: linear-gradient(81deg, rgba(40,44,52,1) 0%, #3E3846 100%);
-box-shadow:  -8rem -6rem 8rem -6rem rgba(253, 221, 88, .2), 4rem 0 8rem rgba(88, 82, 185, .3), .2rem .2rem 1rem rgba(0, 0, 0, .2);
-border-radius: 12px;
-padding: 5rem 0;
-margin: 5rem auto;
+box-shadow:
+  -8rem -6rem 8rem -6rem rgba(253, 221, 88, .2),
+ 4rem 0 8rem rgba(88, 82, 185, .3),
+ /* 0rem 0rem .5rem rgba(20, 40, 20, .8), */
+ 0rem 0rem 2rem -1.6rem rgba(255, 215, 70, .8);
+ color:#D68FBB;
 text-align: center;
-/* display: flex; */
-form {
-    margin: auto;
-}
-.group {
-    display: flex;
-    width: 300px;
-    margin: .5rem auto;
-    label {
-        width: 100px;
-        padding-right: 1rem;
-    }
-    input {
-        width: 200px;
-        padding: .3rem;
-    }
+
+a {
+    display: block;
+    background: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 5px;
+    background: linear-gradient(120deg, hsla(323deg, 100%, 90%, 1) 0%, #D68FBB 50%);
+    font-size:1.5rem;
+    color: #2B2E37;
+
 }
 
-#subscribe-checkbox-group {
-    display: none;
+p {
+    margin: 2rem 0 0 
 }
-
-button {
-    margin: 1rem;
-    width: calc(248px + .6rem);
-    position: relative;
-    left: 3px;
-}
-.ohnohoney{
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 0;
-        width: 0;
-        z-index: -1;
-    }
 `
-
-
 const Subscribe = () => (
     <SubscribeStyle>
-        <h2>Join my Newsletter</h2>
-        <form action="https://getform.io/f/ff0f9e01-261c-476b-b0af-b3a9f8cddc90" method="POST">
-            {/* REAL FIELDS */}
-            <div className="group" id='name-group'>
-                <label htmlFor="name" >Name:
-                <input type="text" id="name" name="name" placeholder='Preferred Name' />
-                </label>
-            </div>
-            <div className="group" id="email-group">
-                <label htmlFor="email">Email:
-                <input type="email" id="email" name="email" placeholder='Email' />
-                </label>
-            </div>
-            <div className="group" id='subscribe-checkbox-group'>
-                <label htmlFor="subscribe-checkbox">Subscribe:
-                <input type='checkbox' id='subscribe-checkbox' name='subscribe' defaultValue='subscribe' defaultChecked />
-                </label>
-            </div>
-            {/* HONEYPOT */}
-
-            <div className="group" id='honey-name-group'>
-                <label className="ohnohoney" htmlFor="first-name">
-                    <input className="ohnohoney" autoComplete="off" type="text" id="first-name" name="first-name" placeholder="first name" defaultValue='the-real-deal' />
-                </label>
-            </div>
-            <div className="group" id='honey-email-group'>
-                <label className="ohnohoney" htmlFor="personal-email">
-                    <input className="ohnohoney" autoComplete="off" type="email" id="personal-email" name="personal-email" placeholder="Your e-mail here" defaultValue='the-real-deal' />
-                </label>
-            </div>
-
-            <button type="submit">Send</button>
-        </form>
+        <h3>Join my NewsLetter</h3>
+        <Link to='/newsletter' title='Subscribe to my Newsletter'>Subscribe</Link>
+        <p>Unsubscribe at any time</p>
     </SubscribeStyle>
 )
 
