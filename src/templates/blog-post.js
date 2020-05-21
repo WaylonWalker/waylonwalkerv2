@@ -202,7 +202,7 @@ class BlogPostTemplate extends React.Component {
               feel free to drop in to give it a ♥ and leave comment.
 
             </p>
-            <p style={{ minHeight: '30px', margin: '0', padding: '0' }}>{description}</p>
+            {/* <p style={{ minHeight: '30px', margin: '0', padding: '0' }}>{description}</p> */}
             <div ref={(el) => { this.markdownContainer = el }}
               dangerouslySetInnerHTML={{ __html: content }} />
 
