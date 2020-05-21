@@ -22,6 +22,9 @@ const Nav = () => (
         <li className='btn'>
           <Link to='/gratitude' activeClassName='active'>gratitude</Link>
         </li>
+        <li className='btn'>
+          <Link to='/newsletter' activeClassName='active'>Newsletter</Link>
+        </li>
       </ul>
     </NavStyles >
   </Headroom>
