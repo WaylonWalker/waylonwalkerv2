@@ -1,6 +1,9 @@
 # netlify redirects
 
 # Short-Blog
+/blog/thank-you    /blog/thank-you
+/thank-you         /blog/thank-you
+/ty                /blog/thank-you
 /kpre              /blog/creating-the-kedro-preflight-hook/
 /blog/kpre         /blog/creating-the-kedro-preflight-hook/
 /bdgl              /blog/til-bind-arguments-to-dynamically-generated-lambdas-in-python/
