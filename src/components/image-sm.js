@@ -29,6 +29,10 @@ width: 150px;
 border-radius: 50%;
 margin: auto;
 }
+img:hover {
+  transform: rotate(1deg) scale(1.02);
+  
+}
 `
 const Image = () => (
   <ProfileImageStyle>

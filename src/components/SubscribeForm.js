@@ -6,6 +6,7 @@ import Image from '../components/image-sm'
 const SubscribeFormStyle = styled.div`
 
 /* .email-octopus-form-wrapper { */
+    transition: transform 2s ease-in-out;
     margin: 5rem auto;
     max-width: 500px;
     padding: 2rem 5rem 1rem;
@@ -28,11 +29,33 @@ button {
     font-size:1.5rem;
     color: #2B2E37;
     margin: auto;
+    margin-right: 4rem;
+    transform: rotate(5deg);
+}
+
+button:hover {
+    transition: transform 200ms ease-in-out;
+    /* padding: .5rem .75rem !important; */
+    background: linear-gradient(120deg, hsla(323deg, 100%, 85%, 1) 0%, #D68FBB 50%);
+    transform: rotate(3deg) scale(1.1);
+}
+
+label {
+    transition: transform 100ms cubic-bezier(.31,.47,.76,1.23);
+    }
+label: hover {
+    transform: rotate(1deg);
 }
 
 .email-octopus-form-wrapper h2 {
-	font-size: 20px;
+    transition: transform 200ms ease-in-out;
+    transform: rotate(-3deg);
+	font-size: 1.5rem;
 	margin: 0 0 25px
+}
+
+.email-octopus-form-wrapper h2:hover {
+    transform: rotate(-2deg) scale(1.2);
 }
 
 .email-octopus-form-row {
@@ -48,19 +71,20 @@ button {
 	max-width: 400px;
 	padding: 8px;
 	height: 32px;
-	border: 1px solid #ccc
+	border: 1px solid #ccc;
 }
 
 .email-octopus-form-row-consent {
-	margin-top: 20px
+	margin-top: 20px;
 }
 
 .email-octopus-form-row-consent label {
-	vertical-align: top
+	vertical-align: top;
 }
 
 .email-octopus-form-row-subscribe {
-	margin-top: 20px
+	margin-top: 20px;
+    margin-left: 4rem;
 }
 
 .email-octopus-form-row-subscribe button {
