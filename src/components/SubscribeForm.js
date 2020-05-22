@@ -110,44 +110,67 @@ label: hover {
 
 `
 
+const WIPStyle = styled.div`
+max-width: 400px;
+margin: auto;
+border: 4px solid salmon;
+padding: 2rem 1rem;
+    background: linear-gradient(81deg, rgba(40,44,52,1) 0%, #3E3846 100%);
+    box-shadow:
+    -8rem -6rem 8rem -6rem rgba(253, 221, 88, .2),
+    4rem 0 8rem rgba(88, 82, 185, .3),
+    0rem 0rem 2rem -1.6rem rgba(255, 215, 70, .8);
+    color:#D68FBB;
+
+`
+const WIP = () => (
+    <WIPStyle>
+        <h2>⚠ Work in progress ⚠</h2>
+        <p>appologies for the inconvenience, but this page is still a bit of a work in progress.  If you dont see a little white ♻recaptcha logo at the bottom right corner, <strong>refresh</strong> and it should pop up.</p>
+
+    </WIPStyle>
+)
 
 const SubscribeForm = () => (
-    <SubscribeFormStyle>
-        <Helmet>
-            <link rel="stylesheet" href="https://emailoctopus.com/bundles/emailoctopuslist/css/formEmbed.css" />
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <script src="https://emailoctopus.com/bundles/emailoctopuslist/js/1.4/recaptcha.js"></script>
-            <script src="https://emailoctopus.com/bundles/emailoctopuslist/js/1.4/formEmbed.js"></script>
-        </Helmet>
-        <Image />
-        <div className="email-octopus-form-wrapper">
-            <h2 className="email-octopus-heading">Join My Newsletter</h2>
-            <p className="email-octopus-success-message" />
-            <p className="email-octopus-error-message" />
-            <form method="post" action="https://emailoctopus.com/lists/b194a4af-9875-11ea-a3d0-06b4694bee2a/members/embedded/1.3s/add" className="email-octopus-form" data-sitekey="6LdYsmsUAAAAAPXVTt-ovRsPIJ_IVhvYBBhGvRV6">
-                <div className="email-octopus-form-row">
-                    <label htmlFor="field_0">Email address</label>
-                    <input id="field_0" name="field_0" type="email" placeholder />
-                </div>
-                <div className="email-octopus-form-row">
-                    <label htmlFor="field_1">First name</label>
-                    <input id="field_1" name="field_1" type="text" placeholder />
-                </div>
-                <div className="email-octopus-form-row">
-                    <label htmlFor="field_2">Last name</label>
-                    <input id="field_2" name="field_2" type="text" placeholder />
-                </div>
-                <div className="email-octopus-form-row-hp" aria-hidden="true">
-                    {/* Do not remove this field, otherwise you risk bot sign-ups */}
-                    <input type="text" name="hpb194a4af-9875-11ea-a3d0-06b4694bee2a" tabIndex={-1} autoComplete="nope" />
-                </div>
-                <div className="email-octopus-form-row-subscribe">
-                    <input type="hidden" name="successRedirectUrl" value="https://waylonwalker.com/ty" />
-                    <button type="submit">Subscribe</button>
-                </div>
-            </form>
-        </div>
-    </SubscribeFormStyle>
+    <>
+        <SubscribeFormStyle>
+            <Helmet>
+                <link rel="stylesheet" href="https://emailoctopus.com/bundles/emailoctopuslist/css/formEmbed.css" />
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                <script src="https://emailoctopus.com/bundles/emailoctopuslist/js/1.4/recaptcha.js"></script>
+                <script src="https://emailoctopus.com/bundles/emailoctopuslist/js/1.4/formEmbed.js"></script>
+            </Helmet>
+            <Image />
+            <div className="email-octopus-form-wrapper">
+                <h2 className="email-octopus-heading">Join My Newsletter</h2>
+                <p className="email-octopus-success-message" />
+                <p className="email-octopus-error-message" />
+                <form method="post" action="https://emailoctopus.com/lists/b194a4af-9875-11ea-a3d0-06b4694bee2a/members/embedded/1.3s/add" className="email-octopus-form" data-sitekey="6LdYsmsUAAAAAPXVTt-ovRsPIJ_IVhvYBBhGvRV6">
+                    <div className="email-octopus-form-row">
+                        <label htmlFor="field_0">Email address</label>
+                        <input id="field_0" name="field_0" type="email" placeholder />
+                    </div>
+                    <div className="email-octopus-form-row">
+                        <label htmlFor="field_1">First name</label>
+                        <input id="field_1" name="field_1" type="text" placeholder />
+                    </div>
+                    <div className="email-octopus-form-row">
+                        <label htmlFor="field_2">Last name</label>
+                        <input id="field_2" name="field_2" type="text" placeholder />
+                    </div>
+                    <div className="email-octopus-form-row-hp" aria-hidden="true">
+                        {/* Do not remove this field, otherwise you risk bot sign-ups */}
+                        <input type="text" name="hpb194a4af-9875-11ea-a3d0-06b4694bee2a" tabIndex={-1} autoComplete="nope" />
+                    </div>
+                    <div className="email-octopus-form-row-subscribe">
+                        <input type="hidden" name="successRedirectUrl" value="https://waylonwalker.com/ty" />
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </SubscribeFormStyle>
+        <WIP />
+    </>
 )
 
 export default SubscribeForm
