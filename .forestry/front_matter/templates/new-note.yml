@@ -75,6 +75,7 @@ pages:
 - src/pages/notes/debugging-python.md
 - src/pages/notes/digital-ocean.md
 - src/pages/notes/filtering-pandas.md
+- src/pages/notes/gatsby-scripts-with-onload.md
 - src/pages/notes/just-use-pathlib.md
 - src/pages/notes/kedro-preflight.md
 - src/pages/notes/kedro.md
