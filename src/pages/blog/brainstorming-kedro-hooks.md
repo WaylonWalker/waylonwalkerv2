@@ -25,44 +25,49 @@ This post is a branstorming work in progress.
 
 🧠
 
-
 ## before_catalog_created
 
-I 
+I
 
 ## after_catalog_created
 
 * filepath replacer
 * bucket replacer
 
-
 ## before_pipeline_run
 
 * preflight
 * check that data exists
 
-
 ## after_pipeline_run
 
 * Great Expectations
 
-
-
 ## before_node_run
-
 
 ## after_node_run!
 
 * Great Expectations
 * save stats/meta data
 
+## Execution Order
+
+1. after_catalog_created
+2. before_pipeline_run
+  * args
+      * run_params = run_params = {'run_id': '2020-05-23T15.24.23.958Z', 'project_path': '/mnt/c/temp/kedro0160', 'env': 'local', 'kedro_version': '0.15.9', 'tags': (), 'from_nodes': [], 'to_nodes': [], 'node_names': (), 'from_inputs': [], 'load_versions': {}, 'pipeline_name': None, 'extra_params': {}, 'git_sha': None}
+      * pipeline
+      * catalog
+3. before_node_run
+4. after_node_run
+5. 
+
+
 ## When does data get saved???
 
 * before or after node hook?
 
-
 ## ??Unsure??
-
 
 * does before  catalog load have access to parameters?
 
@@ -72,4 +77,3 @@ I
 * try to load `filepath_<branch>`
 * if load fails try `filepath`
 * save data to `filepath_<branch>`
-
