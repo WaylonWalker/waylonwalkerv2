@@ -152,6 +152,7 @@ pages:
 - src/pages/blog/how-to-get-dev-comments-from-an-article-url.md
 - src/pages/blog/i-finally-fixed-my-styled-components-in-gatsby-js.md
 - src/pages/blog/interrogate-is-a-pretty-awesome-brand-new-cli-for-python-packages.md
+- src/pages/blog/kedro-class-hooks.md
 - src/pages/blog/keyboard-driven-vscode.md
 - src/pages/blog/long-variable-names-are-good.md
 - src/pages/blog/out-of-space.md
@@ -164,7 +165,6 @@ pages:
 - src/pages/blog/should-i-switch-to-zeit-now.md
 - src/pages/blog/simple-click-2.md
 - src/pages/blog/simple-click.md
-- src/pages/blog/some-notes-on-kedro-hooks.md
 - src/pages/blog/thank-you.md
 - src/pages/blog/today-i-learned-git-diff-feature-master.md
 - src/pages/blog/variables-names-don-t-need-their-type.md
