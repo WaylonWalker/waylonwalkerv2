@@ -164,6 +164,7 @@ pages:
 - src/pages/blog/should-i-switch-to-zeit-now.md
 - src/pages/blog/simple-click-2.md
 - src/pages/blog/simple-click.md
+- src/pages/blog/some-notes-on-kedro-hooks.md
 - src/pages/blog/thank-you.md
 - src/pages/blog/today-i-learned-git-diff-feature-master.md
 - src/pages/blog/variables-names-don-t-need-their-type.md
