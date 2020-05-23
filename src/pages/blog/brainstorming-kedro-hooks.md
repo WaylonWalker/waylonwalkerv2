@@ -40,7 +40,7 @@ This post is a 🧠 branstorming work in progress.
 
 ## before_node_run
 
-## after_node_run!
+## after_node_run
 
 * Great Expectations
 * save stats/meta data
