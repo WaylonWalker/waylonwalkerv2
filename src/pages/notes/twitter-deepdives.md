@@ -35,6 +35,8 @@ Inspired by Chris Achard
 
 ### Learn kedro in 5 days
 
+Email course inspired by learn d3 in 5 days
+
 ### Mail
 
 * Share your knowledge
@@ -47,3 +49,5 @@ Inspired by Chris Achard
 * Build your audience
 * Be nice
 * Have empathy
+* Learn your way
+* Continuous learning
