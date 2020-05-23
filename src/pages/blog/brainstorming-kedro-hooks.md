@@ -21,13 +21,7 @@ devto-url: ''
 devto-id: ''
 
 ---
-This post is a branstorming work in progress.
-
-🧠
-
-## before_catalog_created
-
-I
+This post is a 🧠 branstorming work in progress.
 
 ## after_catalog_created
 
@@ -54,14 +48,15 @@ I
 
 1. after_catalog_created
 2. before_pipeline_run
-  * args
-      * run_params = run_params = {'run_id': '2020-05-23T15.24.23.958Z', 'project_path': '/mnt/c/temp/kedro0160', 'env': 'local', 'kedro_version': '0.15.9', 'tags': (), 'from_nodes': [], 'to_nodes': [], 'node_names': (), 'from_inputs': [], 'load_versions': {}, 'pipeline_name': None, 'extra_params': {}, 'git_sha': None}
-      * pipeline
-      * catalog
-3. before_node_run
-4. after_node_run
-5. 
 
+* args
+  * run_params = run_params = {'run_id': '2020-05-23T15.24.23.958Z', 'project_path': '/mnt/c/temp/kedro0160', 'env': 'local', 'kedro_version': '0.15.9', 'tags': (), 'from_nodes': \[\], 'to_nodes': \[\], 'node_names': (), 'from_inputs': \[\], 'load_versions': {}, 'pipeline_name': None, 'extra_params': {}, 'git_sha': None}
+  * pipeline
+  * catalog
+
+1. before_node_run
+2. after_node_run
+3. 
 
 ## When does data get saved???
 
