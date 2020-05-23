@@ -21,10 +21,9 @@ devto-url: ''
 devto-id: ''
 
 ---
-
 This post is a branstorming work in progress.
 
-
+🧠
 
 
 ## before_catalog_created
@@ -65,7 +64,12 @@ I
 ## ??Unsure??
 
 
+* does before  catalog load have access to parameters?
+
+### steel toes
+
 * is there a way to prevent toe stepping?
 * try to load `filepath_<branch>`
 * if load fails try `filepath`
 * save data to `filepath_<branch>`
+
