@@ -7,7 +7,10 @@ path: kedro-class-hooks
 title: Kedro Class Hooks
 date: 2020-05-23T05:00:00Z
 status: published
-description: ''
+description: There are two main ways to create kedro hooks, with modules and classes.  Each
+  one still uses the same verbiage as the function/method names.  Class hooks seem
+  a bit special as they give you a way to configure them so that they are a bit more
+  generally useful.
 related_post_body: ''
 related_post: []
 cover: "/static/kedro-class-hooks.png"
@@ -22,6 +25,8 @@ devto-id: ''
 
 ---
 There are two main ways to create kedro hooks, with modules and classes.  Each one still uses the same verbiage as the function/method names.
+
+Class hooks seem a bit special as they give you a way to configure them so that they are a bit more generally useful.
 
 ## class hook without `self`
 
