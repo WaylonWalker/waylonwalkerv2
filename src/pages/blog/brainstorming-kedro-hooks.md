@@ -3,7 +3,7 @@ templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
 twitter_announcement: I just dropped a new post check it out.
-path: kedro-hook-ideas
+path: brainstorming-kedro-hooks
 title: Brainstorming Kedro Hooks
 date: 2020-05-22T22:02:00Z
 status: published
@@ -23,6 +23,10 @@ devto-id: ''
 
 ---
 This post is a 🧠 branstorming work in progress.
+
+> ### What is Kedro 🤔
+> If you are completely unsure what kedro is be sure to check out my [what is kedro](https://waylonwalker.com/wike) post
+
 
 ## after_catalog_created
 
@@ -46,6 +50,11 @@ This post is a 🧠 branstorming work in progress.
 * save stats/meta data
 
 ## Execution Order
+
+hooks are executed in reverse order of the hooks list.
+
+hooks with `tryfirst` will be moved to the end of the list  
+hooks with `trylast` will be moved to the end of the list
 
 1. after_catalog_created
 2. before_pipeline_run

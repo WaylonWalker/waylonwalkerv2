@@ -28,6 +28,10 @@ There are two main ways to create kedro hooks, with modules and classes.  Each o
 
 Class hooks seem a bit special as they give you a way to configure them so that they are a bit more generally useful.
 
+> ### What is Kedro 🤔
+> If you are completely unsure what kedro is be sure to check out my [what is kedro](https://waylonwalker.com/wike) post
+
+
 ## class hook without `self`
 
 If we create a class-based kedro hook without `self` in the method calls, we simply pass the hook class itself into the hooks list.
