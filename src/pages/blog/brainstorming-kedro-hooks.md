@@ -7,7 +7,8 @@ path: kedro-hook-ideas
 title: Brainstorming Kedro Hooks
 date: 2020-05-22T22:02:00Z
 status: published
-description: ''
+description: "This post is a \U0001F9E0 branstorming work in progress, I will likely
+  use it as a storage location/brain dump of hook ideas."
 related_post_body: ''
 related_post: []
 cover: "/static/brainstorming-kedro-hooks.png"
