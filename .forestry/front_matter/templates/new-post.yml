@@ -137,6 +137,7 @@ pages:
 - src/pages/blog/automate-your-deploys.md
 - src/pages/blog/background-tasks-in-python-for-data-science.md
 - src/pages/blog/bind-dynamic-lambdas.md
+- src/pages/blog/brainstorming-kedro-hooks.md
 - src/pages/blog/cmd-exe-tips.md
 - src/pages/blog/create-custom-kedro-dataset.md
 - src/pages/blog/create-new-kedro-project.md
