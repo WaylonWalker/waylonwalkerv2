@@ -5,7 +5,7 @@ tags: []
 twitter_announcement: ''
 path: create-new-kedro-project
 title: Create New Kedro Project
-date: 2020-03-02T12:09:00Z
+date: 2020-03-02T12:09:00.000+00:00
 status: published
 description: Getting up and going with a brand new [kedro](kedro.readthedocs.io) project
   is super simple, thanks to the help of the `kedro new` command.  The ability to
@@ -20,6 +20,8 @@ twitter_week_2: ''
 twitter_month_1: ''
 twitter_month_3: ''
 short_url: ''
+devto-url: ''
+devto-id: ''
 
 ---
 This is a quickstart to getting a new [kedro](kedro.readthedocs.io) pipeline up and running.  After this article you should be able to understand how to get started with [kedro](kedro.readthedocs.io).  You can learn more about this [Hello World Example](https://kedro.readthedocs.io/en/stable/02_getting_started/04_hello_world.html) in the [docs](https://kedro.readthedocs.io/en/stable/02_getting_started/04_hello_world.html)
@@ -36,8 +38,10 @@ This is a quickstart to getting a new [kedro](kedro.readthedocs.io) pipeline up 
 
 I use conda to control my virtual environments and will create a new environment called `kedro_iris` with the following command.  **note** the latest compatible version of python is 3.7.
 
+**EDIT**: as of kedro 0.16.0 kedro supports up to 3.8
+
 ``` bash
-conda create -n kedro_iris python=3.7 -y
+conda create -n kedro_iris python=3.8 -y
 ```
 
 ![](https://waylonwalker.com/conda-create-kedro-iris.gif)
@@ -55,6 +59,8 @@ source activate kedro_iris
 ## Install [Kedro](kedro.readthedocs.io)
 
 Currently `kedro==0.15.5` is available on pypi and can be pip installed.
+
+**EDIT** kedro is up to [![PyPI version](https://badge.fury.io/py/kedro.svg)](https://pypi.org/project/kedro/)
 
 ``` bash
 pip install kedro
@@ -175,7 +181,6 @@ The [kedro docs](https://kedro.readthedocs.io/) have a ton of great resources.  
 I keep adding to my [kedro notes](https://waylonwalker.com/n/kedro/) as I find new and interesting things.
 
 I tweet out most of those snippets as I add them, you can find them all here [#kedrotips](https://twitter.com/search?q=%23kedrotips).
-
 
 ## More to come
 
