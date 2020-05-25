@@ -10,7 +10,7 @@ import { useSpring, animated } from 'react-spring'
 // import 'react-toastify/dist/ReactToastify.css';
 
 
-const REPOS = ['waylonwalker/find-kedro', 'waylonwalker/kedro-static-viz', 'waylonwalker/kedro-action', waylonwalker/steel-toes]
+const REPOS = ['waylonwalker/find-kedro', 'waylonwalker/kedro-static-viz', 'waylonwalker/kedro-action', 'waylonwalker/steel-toes']
 
 
 const About = () => {
