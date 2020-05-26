@@ -34,7 +34,7 @@ margin: .2rem;
 width: calc(min(500px, 95vw));
 // width: 95%;
 // position: relative;
-margin: 2rem auto;
+margin: 2rem;
 /* padding: 1rem; */
 border-radius: 2px;
 box-shadow:  -8rem -6rem 8rem -6rem rgba(253, 221, 88, .2), 4rem 0 8rem rgba(88, 82, 185, .3), .2rem .2rem 1rem rgba(0, 0, 0, .2);

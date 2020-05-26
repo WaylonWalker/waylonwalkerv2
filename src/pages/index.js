@@ -200,7 +200,7 @@ export default class IndexPage extends React.Component {
         <IndexStyle>
           <div id="content" style={{ margin: 'auto' }}>
             <About />
-            <section style={{ margin: 'auto', textAlign: 'center', color: 'white' }}>
+            <section style={{ margin: '2rem auto', padding: "5rem 0", textAlign: 'center', color: 'white', background: 'rgba(33, 0, 25, .2)', boxShadow: '0 0 2rem rgba(0, 0, 0, .5)' }}>
 
               <h2 id="open-source">Open Source</h2>
               <p>In my spare time I like to take what I have learned to make things easier for others.  I maintain {REPOS.length} open source packages that you can find below.</p>
@@ -209,7 +209,7 @@ export default class IndexPage extends React.Component {
               </ReposStyle>
 
             </section>
-            <section style={{ maxWidth: '1000px', margin: 'auto', textAlign: 'center', color: 'white' }}>
+            <section style={{ maxWidth: '1800px', margin: 'auto', textAlign: 'center', color: 'white' }}>
               <h2 id='blog'>Blog</h2>
               {/* <ToastContainer /> */}
               <BlogPosts posts={posts} />

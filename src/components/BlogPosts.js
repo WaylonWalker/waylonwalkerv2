@@ -9,11 +9,12 @@ const BlogPostsStyle = styled.div`
   margin: auto;
   flex-direction: column;
   justify-content: flex-start;
+
   align-items: center;
   align-content: center;
   justify-self: center;
   min-height: 100vh;
-  width: calc(min(1000px, 90vw));
+  width: calc(min(1800px, 90vw));
 
   input {
     margin-left: 1rem;
@@ -21,6 +22,16 @@ const BlogPostsStyle = styled.div`
 
   img {
     margin: auto;
+}
+
+.post-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.post-wrapper: {
+  display: inline-flex;
 }
 
 .robots {
@@ -38,8 +49,8 @@ class BlogPosts extends Component {
       posts: props.posts,
       filteredPosts: props.posts,
       search: '',
-      numPosts: 2,
-      incrementBy: 10,
+      numPosts: 3,
+      incrementBy: 9,
       incrementOffset: 2000,
     }
   }
@@ -83,7 +94,7 @@ class BlogPosts extends Component {
             <input type="text" name="search" value={this.state.search} id="search" onChange={e => this.setSearch(e.target.value)} />
           </label>
         </form>
-        <FlipMove >
+        <FlipMove className='post-cards'>
           {
             this.state.filteredPosts
               .slice(0, this.state.numPosts)
@@ -94,7 +105,7 @@ class BlogPosts extends Component {
                 } catch (error) {
                 }
                 if (post && status) {
-                  return <div key={post.node.id}>< BlogPostCard key={post.node.id} post={post['node']} /></div>
+                  return <div key={post.node.id} className='post-wrapper' style={{ display: 'inline-flex' }}>< BlogPostCard key={post.node.id} post={post['node']} /></div>
                 }
                 return false
               }
