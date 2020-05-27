@@ -3,8 +3,8 @@ templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
 twitter_announcement: I just dropped a new post check it out.
-path: kedro-class-hooks
-title: Kedro Class Hooks
+path: configurable-kedro
+title: Create Configurable Kedro Hooks
 date: 2020-05-23T05:00:00.000+00:00
 status: published
 description: There are two main ways to create kedro hooks, with modules and classes.  Each
@@ -13,7 +13,7 @@ description: There are two main ways to create kedro hooks, with modules and cla
   generally useful.
 related_post_body: ''
 related_post: []
-cover: "/static/kedro-class-hooks.png"
+cover: "/static/configurable-kedro-hooks.png"
 twitter_cover: ''
 twitter_week_1: ''
 twitter_week_2: ''
@@ -33,6 +33,7 @@ Class hooks seem a bit special as they give you a way to configure them so that 
 > If you are completely unsure what kedro is be sure to check out my [what is kedro](https://waylonwalker.com/wike) post
 
 ## Installation
+
 .create a new environment manager of choice.  Here I will use `conda`. Then we will install `kedro` from pypi.
 
 ``` bash
@@ -44,11 +45,13 @@ pip install kedro
 ## Create a sample project
 
 > ### Kedro new
+>
 > For more details check out my full post on [kedro new](https://waylonwalker.com/knew)
 
 For this post I really just want a working pipeline as fast as possible.  For this I am going to use iris pipeline that is generated from the `kedro new` command in the cli.  It's **important** that you answer `y` to create an example pipeline.
 
 > ### Hold On ✋
+>
 > Did you create a separate environment for this?  Please do.
 
 ``` bash
@@ -95,7 +98,7 @@ kedro install
 
 ### 🏃‍♀️ Run the pipeline
 
-Before we start developing any hooks lets make sure everything is setup correctly by running the pipeline with `kedro run`.
+Before we start developing any hooks lets make sure everything is set up correctly by running the pipeline with `kedro run`.
 
 ``` bash
 kedro run
@@ -103,7 +106,7 @@ kedro run
 
 ## class hook without `self`
 
-A kedro class based hook is a class with methods using the kedro lifecycle names, decorated with `@hook_impll`, If we create a class-based kedro hook without `self` in the method calls, we simply pass the hook class itself into the hooks list. And we are off.  Kedro will call each method as it hits that point in its lifecycle.  It will pass any of the possible arguments, see arguments below.  Each method has a different set of possible arguments.  You don't need to ask for all of them, but I did here so that you could see them.
+A kedro class-based hook is a class with methods using the kedro lifecycle names, decorated with `@hook_impll`, If we create a class-based kedro hook without `self` in the method calls, we simply pass the hook class itself into the hooks list. And we are off.  Kedro will call each method as it hits that point in its lifecycle.  It will pass any of the possible arguments, see arguments below.  Each method has a different set of possible arguments.  You don't need to ask for all of them, but I did here so that you could see them.
 
 ``` python
 from kedro.framework.hooks import hook_impl
@@ -111,49 +114,58 @@ from kedro.framework.hooks import hook_impl
 class debug_hook:
     """debugs all kedro hook points"""
 
+	@staticmethod
     @hook_impl
     def before_pipeline_run(run_params, pipeline, catalog):
         "pops into a debugger before pipeline run"
         print('I hooked in right before the pipeline run')
         if self.should_before_pipeline_run:
             breakpoint()
-
+  
+	@staticmethod
     @hook_impl
     def after_pipeline_run(run_params, pipeline, catalog):
         "pops into a debugger after pipeline run"
         print('I hooked in right after the pipeline run')
         breakpoint()
 
+	@staticmethod
     @hook_impl
     def on_pipeline_error(error, run_params, pipeline, catalog):
         "pops into a debugger on pipeline error"
         print('I hooked into the pipeline during an error')
         breakpoint()
 
+	@staticmethod
     @hook_impl
     def after_catalog_created(catalog, conf_catalog, conf_creds, feed_dict, save_version, load_versions, run_id):
         "pops into a debugger after catalog created"
         print('I hooked in right after the catalog created')
         breakpoint()
 
+	@staticmethod
     @hook_impl
     def before_node_run(node, catalog, inputs, is_async, run_id):
         "pops into a debugger before node run"
         print('I hooked in right before the node run')
         breakpoint()
 
+	@staticmethod
     @hook_impl
     def after_node_run(node, catalog, inputs, outputs, is_async, run_id):
         "pops into a debugger after node run"
         print('I hooked in right after the node run')
         breakpoint()
 
+	@staticmethod
     @hook_impl
     def on_node_error(error, node, catalog, inputs, is_async, run_id):
         "pops into a debugger on node error"
         print('I hooked into the node during an error')
         breakpoint()
 ```
+
+#### Implement the hook object
 
 With this version of the hook it gets added to the `ProjectContext` as the class itself, not an instance.
 
@@ -175,7 +187,7 @@ class ProjectContext(KedroContext):
 
 ## Generalizing debug_hook
 
-If we want to generalize the debug hook and make it a bit more re-usable accross all of our projects, we can include the `self` argument, on each method and a `__init__` method in which we can configure our hook.  This will make the hook configurable.  We can now create an instance of the `debug_hook` class, and tell it which lifecycle points should trigger the debugger.
+If we want to generalize the debug hook and make it a bit more re-usable across all of our projects, we can include the `self` argument, on each method and a `__init__` method in which we can configure our hook.  This will make the hook configurable.  We can now create an instance of the `debug_hook` class, and tell it which lifecycle points should trigger the debugger.
 
 ``` python
 """ Kedro Debug Hook module """
@@ -294,6 +306,8 @@ class debug_hook:
             breakpoint()
 ```
 
+#### implement the hook instance
+
 When `self` is used in the method calls we must pass an instance of the `debug_hook` into the hooks list, not the class itself.
 
 ``` python
@@ -312,4 +326,4 @@ class ProjectContext(KedroContext):
 
 ## Final thoughts
 
-Hooks are an amazing addition to the kedro framework that will allow the community to make big changes to how their kedro project gets ran without needing to change kedro itself.  Using a hook class with self can make them so much more configureable, and reusable accross different projects without a lot of extra code. Personally I still really like the module method that we used in [kedro-preflight](https://waylonwalker.com/blog/creating-the-kedro-preflight-hook/).
+Hooks are an amazing addition to the kedro framework that will allow the community to make big changes to how their kedro project gets ran without needing to change kedro itself.  Using a hook class with self can make them so much more configurable, and reusable across different projects without a lot of extra code. Personally I still really like the module method that we used in [kedro-preflight](https://waylonwalker.com/blog/creating-the-kedro-preflight-hook/).
