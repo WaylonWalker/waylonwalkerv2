@@ -5,7 +5,7 @@ tags: []
 twitter_announcement: I just dropped a new post check it out.
 path: kedro-static-viz-0-3-0
 title: Kedro Static Viz 0.3.0 is out with Hooks Support
-date: 2020-05-28T05:00:00Z
+date: 2020-05-28T05:00:00.000+00:00
 status: published
 description: ''
 related_post_body: ''
@@ -27,27 +27,26 @@ Even though it is a static site there is no functionality lost.  The only thing 
 
 ## ⚡ It's Fast
 
-Even though its built on gatsbyjs the full site builds in under 2s even on slower hardware.  This is because the site is already pre-rendered and stripped of any excess.  Its zipped up right into the python package and is typically used with the cli, but now can be used with python, or as a hook as well.
-
+Even though it's built on gatsbyjs the full site builds in under 2s even on slower hardware.  This is because the site is already pre-rendered and stripped of any excess.  It's zipped up right into the python package and is typically used with the cli, but now can be used with python, or as a hook as well.
 
 > ### What is [kedro-viz](https://github.com/quantumblacklabs/kedro-viz) 🤔
 
 Kedro viz is a fantastic kedro plugin that allows you to visualize your data pipeline.  Kedro allows you to quickly build production-ready pipelines where you just configure a catalog, then toss python functions into a big pile.  Kedro figures out the order everything needs ran in for you, allows you to run a datasets dependencies or dependents only.  [kedro-viz](https://github.com/quantumblacklabs/kedro-viz) gives you a great way to see this ordering visually.
 
-![a visualization of a kedro data pipeline featuring data and functions flowing together.](/static/pipeline_visualisation-1.png "kedro visualization")
+![a visualization of a kedro data pipeline featuring data and functions flowing together.](https://waylonwalker.com/pipeline_visualisation-1.png "kedro visualization")
 
 > kedro visualization from the projects readme
 
 ## Check out a live running example
 
-Using the power of github actions the I have built a kedro iris pipeline visualization that can be found on [http://kedro-static-viz.waylonwalker.com/](http://kedro-static-viz.waylonwalker.com/)
-
+Using the power of GitHub actions the I have built a kedro iris pipeline visualization that can be found on [http://kedro-static-viz.waylonwalker.com/](http://kedro-static-viz.waylonwalker.com/)
 
 ## Itching to get started with kedro
 
 You can be up and running in a matter of minutes if you already have python running on your machine.
 
 Make a virtual environment with your environment manager of choice.
+
 ``` python
 conda create -n kedro-practice python=3.8 -y
 conda activate kedro-practice
@@ -55,10 +54,8 @@ conda activate kedro-practice
 
 Install kedro. Then create a new project with their awesome cli template built on cookiecutter. Make sure to answer `y` to get a prebuilt example pipeline with data.
 
-```
-pip install kedro kedro-static-viz
-kedro new
-```
+    pip install kedro kedro-static-viz
+    kedro new
 
 ## Vizualize your pipeline with the cli 〽
 
@@ -72,9 +69,7 @@ Since we used `kedro-static-viz` you will have a new directory called `public` t
 
 ## Ready to try out the new hooks feature 🙋‍♀️
 
-
 Open up your `<project>/src/run.py` and add the hook to your `ProjectContext` class.  Next time you run your pipeline you will have an updated pipeline.
-  
 
 ``` python
 from kedro_static_viz.hooks import StaticViz
@@ -87,19 +82,17 @@ class ProjectContext(KedroContext):
 ```
 
 ## Now Run that pipeline 🏃‍♀️
-  
-  
+
 Run your pipeline and enjoy that fresh kedro viz each and every time you run your pipeline.
 
 ``` bash
 kedro run
 ```
-  
+
 ## Want to make your own hooks 🎣
 
 Check out some of my other articles on building kedro hooks.
-  
+
 [![creating customizable kedro hooks](https://waylonwalker.com/configurable-kedro-hooks.png)](https://waylonwalker.com/blog/kedro-class-hooks/)
 
-  
 [![creating the kedro preflight hook](https://waylonwalker.com/kedro-hooks.png)](https://waylonwalker.com/blog/creating-the-kedro-preflight-hook/)
