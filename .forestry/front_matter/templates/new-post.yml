@@ -152,7 +152,7 @@ pages:
 - src/pages/blog/how-to-get-dev-comments-from-an-article-url.md
 - src/pages/blog/i-finally-fixed-my-styled-components-in-gatsby-js.md
 - src/pages/blog/interrogate-is-a-pretty-awesome-brand-new-cli-for-python-packages.md
-- src/pages/blog/kedro-0.3.0-is-out-with-hooks-support.md
+- src/pages/blog/kedro-0-3-0-is-out-with-hooks-support.md
 - src/pages/blog/kedro-class-hooks.md
 - src/pages/blog/keyboard-driven-vscode.md
 - src/pages/blog/long-variable-names-are-good.md
