@@ -10,7 +10,7 @@ status: published
 description: ''
 related_post_body: ''
 related_post: []
-cover: "/static/kedro-static-viz-0-3-0-is-out-with-hooks-support.png"
+cover: "/static/kedro-static-viz-0-3-0.png"
 twitter_cover: ''
 twitter_week_1: ''
 twitter_week_2: ''
