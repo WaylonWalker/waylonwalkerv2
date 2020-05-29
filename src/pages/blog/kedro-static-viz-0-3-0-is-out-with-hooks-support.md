@@ -4,13 +4,13 @@ related_post_label: Check out this related post
 tags: []
 twitter_announcement: I just dropped a new post check it out.
 path: kedro-static-viz-0-3-0
-title: Kedro 0.3.0 is out with Hooks Support
+title: Kedro Static Viz 0.3.0 is out with Hooks Support
 date: 2020-05-28T05:00:00Z
 status: published
 description: ''
 related_post_body: ''
 related_post: []
-cover: "/static/ww-hot-tip-002-1.jpeg"
+cover: "/static/kedro-static-viz-0-3-0-is-out-with-hooks-support.png"
 twitter_cover: ''
 twitter_week_1: ''
 twitter_week_2: ''
@@ -29,15 +29,19 @@ Even though it is a static site there is no functionality lost.  The only thing 
 
 Even though its built on gatsbyjs the full site builds in under 2s even on slower hardware.  This is because the site is already pre-rendered and stripped of any excess.  Its zipped up right into the python package and is typically used with the cli, but now can be used with python, or as a hook as well.
 
-## Check out a live running example
-
-Using the power of github actions the I have built a kedro iris pipeline visualization that can be found on [http://kedro-static-viz.waylonwalker.com/](http://kedro-static-viz.waylonwalker.com/)
 
 > ### What is [kedro-viz](https://github.com/quantumblacklabs/kedro-viz) 🤔
 
 Kedro viz is a fantastic kedro plugin that allows you to visualize your data pipeline.  Kedro allows you to quickly build production-ready pipelines where you just configure a catalog, then toss python functions into a big pile.  Kedro figures out the order everything needs ran in for you, allows you to run a datasets dependencies or dependents only.  [kedro-viz](https://github.com/quantumblacklabs/kedro-viz) gives you a great way to see this ordering visually.
 
 ![a visualization of a kedro data pipeline featuring data and functions flowing together.](/static/pipeline_visualisation-1.png "kedro visualization")
+
+> kedro visualization from the projects readme
+
+## Check out a live running example
+
+Using the power of github actions the I have built a kedro iris pipeline visualization that can be found on [http://kedro-static-viz.waylonwalker.com/](http://kedro-static-viz.waylonwalker.com/)
+
 
 ## Itching to get started with kedro
 
