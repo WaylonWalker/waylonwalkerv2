@@ -25,11 +25,11 @@ devto-id: ''
 
 Even though it is a static site there is no functionality lost.  The only thing that's missing is the flask server.  With [kedro-static-viz](https://github.com/WaylonWalker/kedro-static-viz) you can deploy your visualization to a number of static hosting providers such as GitHub pages free of charge with wicked fast performance
 
-### ⚡ It's Fast
+## ⚡ It's Fast
 
 Even though its built on gatsbyjs the full site builds in under 2s even on slower hardware.  This is because the site is already pre-rendered and stripped of any excess.  Its zipped up right into the python package and is typically used with the cli, but now can be used with python, or as a hook as well.
 
-### Check out a live running example
+## Check out a live running example
 
 Using the power of github actions the I have built a kedro iris pipeline visualization that can be found on [http://kedro-static-viz.waylonwalker.com/](http://kedro-static-viz.waylonwalker.com/)
 
@@ -39,7 +39,7 @@ Kedro viz is a fantastic kedro plugin that allows you to visualize your data pip
 
 ![a visualization of a kedro data pipeline featuring data and functions flowing together.](/static/pipeline_visualisation-1.png "kedro visualization")
 
-### Itching to get started with kedro
+## Itching to get started with kedro
 
 You can be up and running in a matter of minutes if you already have python running on your machine.
 
@@ -56,7 +56,7 @@ pip install kedro kedro-static-viz
 kedro new
 ```
 
-### Vizualize your pipeline with the cli 〽
+## Vizualize your pipeline with the cli 〽
 
 For local use when you already have the full project `kedro viz` is a great tool to use, but this is an article about kedro-static-viz.
 
@@ -66,7 +66,7 @@ kedro-static-viz static-viz
 
 Since we used `kedro-static-viz` you will have a new directory called `public` that you can host on any static web hosting service, like GitHub pages or Netlify.
 
-### Ready to try out the new hooks feature 🙋‍♀️
+## Ready to try out the new hooks feature 🙋‍♀️
 
 
 Open up your `<project>/src/run.py` and add the hook to your `ProjectContext` class.  Next time you run your pipeline you will have an updated pipeline.
@@ -82,7 +82,7 @@ class ProjectContext(KedroContext):
    hooks = [ StaticViz() ]
 ```
 
-### Now Run that pipeline 🏃‍♀️
+## Now Run that pipeline 🏃‍♀️
   
   
 Run your pipeline and enjoy that fresh kedro viz each and every time you run your pipeline.
