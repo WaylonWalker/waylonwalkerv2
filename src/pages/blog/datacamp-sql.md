@@ -38,7 +38,6 @@ cover: "./sql-wide.png"
 <meta name="og:site_name" content="waylonwalker.com">
 <meta name="og:type" content="website">
 
-# Stepping up my SQL game
 
 In 2018 I transitioned from a Product Engineering (Mechanical) role to a Data Scientist Role.  I entered this space with strong subject matter expertise with our products, our data, munging through data in pyhon, and data visualization in python.  My sql skills were lacking to say the least.  I had learned what I needed to know to get data from our relational databases, then use pandas to do any further analysis.    Just run something like the following and you have data.
 
