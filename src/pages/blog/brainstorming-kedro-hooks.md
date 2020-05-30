@@ -114,7 +114,7 @@ Kedro is so amazing at promoting collaboration between team members.  Each team 
 
 ## Static viz hook
 
-Before pipeline run 
+Before pipeline run
 
 * make site
 * Set node status to queued
@@ -139,4 +139,6 @@ After pipeline run
 
 * Set complete status
 
-After node run set complete 
+After node run 
+
+* set complete
