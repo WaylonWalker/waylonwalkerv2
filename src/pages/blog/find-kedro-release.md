@@ -48,7 +48,7 @@ When working on larger pipeline projects, it is advisable to break your project 
 
 `find-kedro` is deployed to pypi and can easily be `pip` installed.
 
-``` console
+``` bash
 pip install find-kedro
 ```
 

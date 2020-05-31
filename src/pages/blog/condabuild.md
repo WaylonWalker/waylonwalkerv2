@@ -12,8 +12,7 @@ cover: "./flex.png"
 # Conda Build
 
 ## Install Conda Build
-```cmd
-
+``` bash
 conda update conda
 conda install conda-build
 ```
