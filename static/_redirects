@@ -1,6 +1,8 @@
 # netlify redirects
 
 # Short-Blog
+/blog/ksvh         /blog/kedro-static-viz-0-3-0
+/ksvh              /blog/kedro-static-viz-0-3-0
 /blog/kcho         /blog/kedro-class-hooks
 /kcho              /blog/kedro-class-hooks
 /blog/bkho         /blog/brainstorming-kedro-hooks
