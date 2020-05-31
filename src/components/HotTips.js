@@ -86,7 +86,6 @@ class HotTips extends Component {
   }
 
   render() {
-    console.log(this.state.posts)
     return (
 
       < HotTipsStyle >
