@@ -194,7 +194,7 @@ class Tip extends React.Component {
     const filePath = fileAbsolutePath.split('/')
     const file = filePath[filePath.length - 1].slice(0, -3)
     const link = `https://waylonwalker.com/hot-tips/${file}`
-    const tweetLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(p1) + '%0A%0A' + link}`
+    const tweetLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(content.slice(0, 150)) + '%0A%0A@waylonwalker%0A%0A' + link}`
 
 
     return (
