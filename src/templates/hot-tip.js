@@ -28,14 +28,13 @@ const TipTemplate = ({ data }) => {
   )
 }
 
-Tip.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }),
-}
+// Tip.propTypes = {
+//   data: PropTypes.shape({
+//     markdownRemark: PropTypes.object,
+//   }),
+// }
 
 export {
-  Tip,
   TipTemplate
 }
 export default TipTemplate

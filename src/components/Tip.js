@@ -9,6 +9,8 @@ import domtoimage from 'dom-to-image'
 // import pdfmake from 'pdfmake'
 // import Img from 'gatsby-image'
 import { FiCamera, FiTwitter } from 'react-icons/fi'
+import { DOMParser } from 'xmldom'
+
 
 const TipWrapper = styled.div`
 height: max(90vh, 512px);
@@ -185,6 +187,7 @@ class Tip extends React.Component {
 
     const { date, tags, afterImage } = frontmatter
     let domparser = new DOMParser()
+    // const doc = new JSDOM(html).window.document
     const doc = domparser.parseFromString(html, 'text/html')
     const content = doc.querySelector('html').innerText
     const p1 = doc.querySelector('p').innerText
