@@ -9,7 +9,7 @@ sections:
   label: hot-tips
   create: all
   match: "**/*"
-  new_doc_ext: ".md"
+  new_doc_ext: md
 - type: directory
   path: src/pages/blog
   label: Posts

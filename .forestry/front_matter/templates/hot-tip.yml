@@ -1,0 +1,16 @@
+---
+label: hot-tip
+hide_body: false
+fields:
+- type: text
+  name: templateKey
+  label: templateKey
+- type: datetime
+  name: date
+  label: date
+- type: list
+  name: tags
+  label: tags
+- type: file
+  name: afterImage
+  label: afterImage
