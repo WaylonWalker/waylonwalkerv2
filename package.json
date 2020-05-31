@@ -34,6 +34,7 @@
         "gatsby-remark-static-images": "^1.1.0",
         "gatsby-source-filesystem": "^2.1.48",
         "gatsby-transformer-remark": "^2.6.50",
+        "gatsby-transformer-remark-plaintext": "^1.0.3",
         "gatsby-transformer-sharp": "^2.3.14",
         "logrocket": "^1.0.7",
         "prismjs": "^1.19.0",

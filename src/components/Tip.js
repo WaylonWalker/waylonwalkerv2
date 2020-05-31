@@ -9,7 +9,6 @@ import domtoimage from 'dom-to-image'
 // import pdfmake from 'pdfmake'
 // import Img from 'gatsby-image'
 import { FiCamera, FiTwitter } from 'react-icons/fi'
-import { DOMParser } from 'xmldom'
 
 
 const TipWrapper = styled.div`
@@ -176,36 +175,38 @@ class Tip extends React.Component {
 
 
   // }
+  // componentDidMount() {
+  //   let domparser = new DOMParser()
+  //   const doc = domparser.parseFromString(html, 'text/html')
+  //   const content = doc.querySelector('html').innerText
+  //   const p1 = doc.querySelector('p').innerText
+  // }
 
 
   render() {
     const {
       html,
+      content,
       frontmatter,
       fileAbsolutePath
     } = this.props
-
     const { date, tags, afterImage } = frontmatter
-    let domparser = new DOMParser()
-    // const doc = new JSDOM(html).window.document
-    const doc = domparser.parseFromString(html, 'text/html')
-    const content = doc.querySelector('html').innerText
-    const p1 = doc.querySelector('p').innerText
     const filePath = fileAbsolutePath.split('/')
     const file = filePath[filePath.length - 1].slice(0, -3)
     const link = `https://waylonwalker.com/hot-tips/${file}`
     const tweetLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(p1) + '%0A%0A' + link}`
 
+
     return (
       <>
         <Helmet
           meta={[
-            { name: 'og:title', content: p1 + ' | Waylon Walker' },
+            { name: 'og:title', content: content.slice(0, 65) + ' | Waylon Walker' },
             { name: 'og:article:published_time', content: date },
             { name: 'og:article:modified_time', content: date },
             { name: 'og:description', content: content },
             { name: 'description', content: content },
-            { name: 'twitter:title', content: p1 + ' | Waylon Walker' },
+            { name: 'twitter:title', content: content.slice(0, 65) + ' | Waylon Walker' },
             // { name: 'twitter:image', content: 'https://www.waylonwalker.com' + twitterImage },
             { name: 'twitter:description', content: content },
             // { name: 'og:image', content: 'https://www.waylonwalker.com' + cover.src },

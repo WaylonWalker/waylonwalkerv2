@@ -81,6 +81,7 @@ module.exports = {
         ]
       }
     },
+    `gatsby-transformer-remark-plaintext`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

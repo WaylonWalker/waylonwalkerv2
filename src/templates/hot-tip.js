@@ -14,6 +14,7 @@ import Tip from '../components/Tip'
 
 const TipTemplate = ({ data }) => {
   const html = data.markdownRemark.html
+  const plainText = data.markdownRemark.plainText
   const frontmatter = data.markdownRemark.frontmatter
   const fileAbsolutePath = data.markdownRemark.fileAbsolutePath
 
@@ -22,6 +23,7 @@ const TipTemplate = ({ data }) => {
       <Tip
         frontmatter={frontmatter}
         html={html}
+        content={plainText}
         fileAbsolutePath={fileAbsolutePath}
       />
     </Layout>
@@ -45,6 +47,7 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      plainText
       fileAbsolutePath
       frontmatter {
         date

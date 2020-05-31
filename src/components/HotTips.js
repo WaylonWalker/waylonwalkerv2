@@ -100,7 +100,7 @@ class HotTips extends Component {
             this.state.filteredPosts
               .slice(0, this.state.numPosts)
               .map((post, i) => {
-                return <div key={post.node.id} className='post-wrapper' style={{ display: 'inline-flex' }}>< Tip key={post.node.id} frontmatter={post.node.frontmatter} html={post.node.html} fileAbsolutePath={post.node.fileAbsolutePath} /></div>
+                return <div key={post.node.id} className='post-wrapper' style={{ display: 'inline-flex' }}>< Tip key={post.node.id} frontmatter={post.node.frontmatter} html={post.node.html} content={post.node.plainText} fileAbsolutePath={post.node.fileAbsolutePath} /></div>
               }
               )
           }
