@@ -5,6 +5,14 @@ admin_path: "/static/admin"
 webhook_url: 
 sections:
 - type: directory
+  path: src/pages/hot_tips
+  label: hot-tips
+  create: all
+  match: "**/*"
+  new_doc_ext: md
+  templates:
+  - hot-tip
+- type: directory
   path: src/pages/blog
   label: Posts
   create: documents
