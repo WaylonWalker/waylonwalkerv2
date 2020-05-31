@@ -30,3 +30,5 @@ fields:
 - type: file
   name: afterImage
   label: afterImage
+pages:
+- src/pages/hot_tips/003.md
