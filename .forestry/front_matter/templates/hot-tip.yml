@@ -1,16 +1,32 @@
 ---
 label: hot-tip
-hide_body: false
+hide_body: true
 fields:
 - type: text
   name: templateKey
   label: templateKey
+  config:
+    required: true
+  default: hot-tip
+  hidden: true
 - type: datetime
   name: date
   label: date
+  default: now
 - type: list
   name: tags
   label: tags
+  config:
+    use_select: true
+    source:
+      type: simple
+    options:
+    - kedro
+    - python
+    - data
+    - webdev
+    - cli
+    - career
 - type: file
   name: afterImage
   label: afterImage
