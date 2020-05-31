@@ -108,7 +108,7 @@ export const pageQuery = graphql`
             category
             # tags
             summary
-            slug
+            # slug
             coverCredits
             twitterCover
             coverCredit
