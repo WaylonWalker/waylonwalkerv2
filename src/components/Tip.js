@@ -213,7 +213,7 @@ class Tip extends React.Component {
           ]}
 
         >
-          <title>{p1}</title>
+          <title>{content.slice(0, 65)}</title>
         </Helmet>
         <TipWrapper id='tip-wrapper'>
 
