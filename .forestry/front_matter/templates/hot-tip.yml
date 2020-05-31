@@ -32,3 +32,4 @@ fields:
   label: afterImage
 pages:
 - src/pages/hot_tips/003.md
+- src/pages/hot_tips/004.md
