@@ -10,7 +10,7 @@ status: published
 description: ''
 related_post_body: ''
 related_post: []
-cover: ''
+cover: "/static/pre-commit-is-awesome.png"
 twitter_cover: ''
 twitter_week_1: ''
 twitter_week_2: ''
