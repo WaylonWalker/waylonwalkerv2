@@ -158,6 +158,7 @@ pages:
 - src/pages/blog/long-variable-names-are-good.md
 - src/pages/blog/out-of-space.md
 - src/pages/blog/personal-url-shortener-with-netlify-redirects.md
+- src/pages/blog/pre-commit-is-awesome.md
 - src/pages/blog/productive-one-on-one.md
 - src/pages/blog/quick-progress-bars-in-python-using-tqdm.md
 - src/pages/blog/react-headroom.md
