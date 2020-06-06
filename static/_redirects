@@ -82,6 +82,7 @@
 /md-rss         /blog/markdown-rss.xml
 /sitemap        /sitemap.xml
 
+/static/*       /:splat
 
 #External
 
