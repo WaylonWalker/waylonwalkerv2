@@ -27,6 +27,7 @@ fields:
     - webdev
     - cli
     - career
+    - git
 - type: file
   name: afterImage
   label: afterImage
