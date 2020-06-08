@@ -7,11 +7,13 @@ path: pre-commit
 title: pre-commit is awesome
 date: 2020-06-05T05:00:00.000+00:00
 status: published
-description: ''
+description: I recently discovered the ✨ awesomeness that is pre-commit. I steered
+  away from it for so long because it seemed like a big daunting thing to set up,
+  but really it's easy.
 related_post_body: ''
 related_post: []
 cover: "/static/pre-commit-is-awesome.png"
-twitter_cover: ''
+twitter_cover: "/static/pre-commit-is-awesome.png"
 twitter_week_1: ''
 twitter_week_2: ''
 twitter_month_1: ''
