@@ -5,7 +5,7 @@ tags: []
 twitter_announcement: I just dropped a new post check it out.
 path: pre-commit
 title: pre-commit is awesome
-date: 2020-06-05T05:00:00Z
+date: 2020-06-05T05:00:00.000+00:00
 status: published
 description: ''
 related_post_body: ''
@@ -21,7 +21,7 @@ devto-url: ''
 devto-id: ''
 
 ---
-I recently discovered the ✨ awesomeness that is `pre-commit`.  I steered away from it for so long because it seemed like a big daunting thing to set up, but really it's easy.
+I recently discovered the ✨ awesomeness that is `pre-commit`. I steered away from it for so long because it seemed like a big daunting thing to set up, but really it's easy.
 
 ## Quickstart
 
@@ -37,7 +37,7 @@ git commit -m "added pre-commit"
 
 ## Cloned Repo
 
-Once someone has created the `.pre-commit-config.yaml` everyone on the team will want to be running it for consistency's sake.  (make sure everyone agrees with the config you have chosen first).  Simply install the existing config.
+Once someone has created the `.pre-commit-config.yaml` everyone on the team will want to be running it for consistency's sake. (make sure everyone agrees with the config you have chosen first). Simply install the existing config.
 
 ``` bash
 pip install pre-commit
@@ -49,19 +49,19 @@ git commit -m "added pre-commit"
 
 ## sample-config
 
-The sample configuration does some really basic, file ending, trailing-whitespace fixing.  And checks for files too large for git.  This one saved me when I tried to commit linux `rpm` once 🤦‍♀️.
+The sample configuration does some really basic, file ending, trailing-whitespace fixing. And checks for files too large for git. This one saved me when I tried to commit linux `rpm` once 🤦‍♀️.
 
-```yaml
+``` yaml
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
+- repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.4.0
     hooks:
-    -   id: trailing-whitespace
-    -   id: end-of-file-fixer
-    -   id: check-yaml
-    -   id: check-added-large-files
+    - id: trailing-whitespace
+    - id: end-of-file-fixer
+    - id: check-yaml
+    - id: check-added-large-files
 ```
 
 ## Adding some extras from pre-commit themselves
@@ -77,13 +77,13 @@ Here I have added a couple of extra ones form pre-commit
     - id: flake8 # runs python flake8
 ```
 
-The submodules one is big.  I have seen several folks trying to learn git for the first time mistakenly start nesting all of their projects underneath each other and eventually losing a lot of work.  Trying to learn the command line and git all at once can be really confusing.
+The submodules one is big. I have seen several folks trying to learn git for the first time mistakenly start nesting all of their projects underneath each other and eventually losing a lot of work. Trying to learn the command line and git all at once can be really confusing.
 
 ## skip pre-commit
 
 So you have a big codebase and you are trying to get pre-commit ready, but you just need your changes in.
 
-``` bash
+``` yaml
 git commit -m "commiting wihout pre-commit" --no-verify
 ```
 
@@ -91,7 +91,7 @@ git commit -m "commiting wihout pre-commit" --no-verify
 
 If you have an existing repo and want to run pre-commit on everything, since it was pre-existing, you can do that manually.
 
-``` bash
+``` yaml
 pre-commit run --all-files
 ```
 
@@ -106,12 +106,12 @@ Here is a git status after committing with some trailing whitespace issues.
 On branch master
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
-        modified:   README.md
+        modified: README.md
 
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-        modified:   README.md
+        modified: README.md
 ```
 
 `pre-commit` will keep yelling at you about `trailing whitespace` until you add the files.
@@ -124,24 +124,24 @@ git add README.md
 
 _give me more_
 
-These almost make it **too** easy.  Sharing your process to get up and running without `pre-commit` can involve a lot of instructions.  Installing several different tools, then running them manually, probably forgetting to do so sometimes.  These will automatically install and only run scoped to the files that have changed, not on the whole repo.
+These almost make it **too** easy. Sharing your process to get up and running without `pre-commit` can involve a lot of instructions. Installing several different tools, then running them manually, probably forgetting to do so sometimes. These will automatically install and only run scoped to the files that have changed, not on the whole repo.
 
 ### isort
 
 ``` yaml
-  - repo: https://github.com/asottile/seed-isort-config
-    rev: v2.1.1
-    hooks:
-      - id: seed-isort-config
-  - repo: https://github.com/pre-commit/mirrors-isort
-    rev: v4.3.21
-    hooks:
-      - id: isort
+- repo: https://github.com/asottile/seed-isort-config
+rev: v2.1.1
+hooks:
+    - id: seed-isort-config
+- repo: https://github.com/pre-commit/mirrors-isort
+rev: v4.3.21
+hooks:
+    - id: isort
 ```
 
 ### .isort.cfg
 
-In order to get isort to play nicely with black, I found great success with the following config placed in the root of the repo at `.isort.cfg`.  Without these settings, I found that you commits will consistently fail checks because `isort` and `black` are fighting each other.
+In order to get isort to play nicely with black, I found great success with the following config placed in the root of the repo at `.isort.cfg`. Without these settings, I found that you commits will consistently fail checks because `isort` and `black` are fighting each other.
 
 ``` toml
 [settings]
@@ -154,9 +154,9 @@ line_length=88
 
 ### .flake8
 
-Just as with `isort` flake8 tends to complain about a few things that black does.  To get them to play nicely together place this file in the root of the repo at `.flake8`.
+Just as with `isort` flake8 tends to complain about a few things that black does. To get them to play nicely together place this file in the root of the repo at `.flake8`.
 
-``` python
+``` toml
 # taken from black
 # added E231 as is conflicts with black formatting
 [flake8]
@@ -168,25 +168,25 @@ select = B,C,E,F,W,T4,B9
 
 ### black
 
-Black is an amazing CLI tool the python community has been blessed with.  It was developed by python core dev Lukasz Langa after deep research of real python projects.  It will autoformat your project and will check that the AST before and after remains the same ensuring that the code will run exactly the same.  It only makes it more readable.  I keep black installed and set to run on save.  Many times I will bang out some sloppy code with long lines or poor indentation hit save and let black take care of the easy work.
+Black is an amazing CLI tool the python community has been blessed with. It was developed by python core dev Lukasz Langa after deep research of real python projects. It will autoformat your project and will check that the AST before and after remains the same ensuring that the code will run exactly the same. It only makes it more readable. I keep black installed and set to run on save. Many times I will bang out some sloppy code with long lines or poor indentation hit save and let black take care of the easy work.
 
 ``` yaml
-    - repo: https://github.com/asottile/blacken-docs
-      rev: v1.7.0
-      hooks:
-          - id: blacken-docs
-            additional_dependencies: [black
-  - repo: https://github.com/psf/black
+- repo: https://github.com/asottile/blacken-docs
+    rev: v1.7.0
+    hooks:
+        - id: blacken-docs
+        - additional_dependencies: [black
+- repo: https://github.com/psf/black
     rev: 19.3b0
     hooks:
-      - id: black
+        - id: black
 ```
 
 ### mypy
 
-I have recently fallen in love with mypy.  It has saved me from shipping some bugs that would not have been caught with tests, even with 100% coverage.  I don't have 100% coverage across every possible type entered.
+I have recently fallen in love with mypy. It has saved me from shipping some bugs that would not have been caught with tests, even with 100% coverage. I don't have 100% coverage across every possible type entered.
 
-```yaml
+``` yaml
     - repo: https://github.com/pre-commit/mirrors-mypy
       rev: v0.720
       hooks:
@@ -196,7 +196,7 @@ I have recently fallen in love with mypy.  It has saved me from shipping some bu
 
 ## Your own plugin
 
-Sometimes you have a CLI tool that you want to run, but there is no plugin.  No worries, you can install manually set the repo to local, and add an entry for your CLI command to run.
+Sometimes you have a CLI tool that you want to run, but there is no plugin. No worries, you can install manually set the repo to local, and add an entry for your CLI command to run.
 
 ``` yaml
     - repo: local
@@ -206,3 +206,9 @@ Sometimes you have a CLI tool that you want to run, but there is no plugin.  No 
           types: [file, python]
           entry: interrogate -f 100 -vv
 ```
+
+---
+
+I have been writing short snippets about my mentality breaking into the tech/data industry in my newsletter, 👇 check it out and lets get the conversation started.
+
+[![Sign up for my Newsletter](https://waylonwalker.com/waylon-walker-newsletter.png)](https://waylonwalker.com/newsletter)
