@@ -175,7 +175,7 @@ Black is an amazing CLI tool the python community has been blessed with. It was 
     rev: v1.7.0
     hooks:
         - id: blacken-docs
-        - additional_dependencies: [black
+        - additional_dependencies: [black]
 - repo: https://github.com/psf/black
     rev: 19.3b0
     hooks:
@@ -207,7 +207,7 @@ Sometimes you have a CLI tool that you want to run, but there is no plugin. No w
           entry: interrogate -f 100 -vv
 ```
 
----
+***
 
 I have been writing short snippets about my mentality breaking into the tech/data industry in my newsletter, 👇 check it out and lets get the conversation started.
 
