@@ -1,6 +1,8 @@
 # netlify redirects
 
 # Short-Blog
+/blog/pcia        /blog/pre-commit-is-awesome/
+/pcia        /blog/pre-commit-is-awesome/
 /blog/ksvh         /blog/kedro-static-viz-0-3-0
 /ksvh              /blog/kedro-static-viz-0-3-0
 /blog/kcho         /blog/kedro-class-hooks
