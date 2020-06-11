@@ -170,6 +170,7 @@ pages:
 - src/pages/blog/simple-click.md
 - src/pages/blog/thank-you.md
 - src/pages/blog/today-i-learned-git-diff-feature-master.md
+- src/pages/blog/understanding-python-args-and-kwargs.md
 - src/pages/blog/variables-names-don-t-need-their-type.md
 - src/pages/blog/what-is-kedro.md
 - src/pages/blog/what-is-refactoring.md
