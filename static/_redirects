@@ -1,6 +1,8 @@
 # netlify redirects
 
 # Short-Blog
+/blog/pcia         /blog/pre-commit-is-awesome
+/pcia              /blog/pre-commit-is-awesome
 /blog/ksvh         /blog/kedro-static-viz-0-3-0
 /ksvh              /blog/kedro-static-viz-0-3-0
 /blog/kcho         /blog/kedro-class-hooks
@@ -82,6 +84,7 @@
 /md-rss         /blog/markdown-rss.xml
 /sitemap        /sitemap.xml
 
+/static/*       /:splat
 
 #External
 
@@ -95,3 +98,4 @@
 /instagram      https://www.instagram.com/_waylonwalker/
 /ig             https://www.instagram.com/_waylonwalker/
 /buffer         https://publish.buffer.com/profile/5bc121e0dd50725a7130edd6/tab/queue
+/cars.csv       https://gist.githubusercontent.com/noamross/e5d3e859aa0c794be10b/raw/b999fb4425b54c63cab088c0ce2c0d6ce961a563/cars.csv

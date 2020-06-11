@@ -38,7 +38,10 @@ p {
 const Subscribe = () => (
     <SubscribeStyle>
         <h3>Join my NewsLetter</h3>
+        <p>I write short articles about developing a <strong>successful mindset</strong> for the tech industry once or so per week.</p>
+        <p></p>
         <Link to='/newsletter' title='Subscribe to my Newsletter'>Subscribe</Link>
+        <p>Someday I hope to announce courses/side projects there as well.</p>
         <p>Unsubscribe at any time</p>
     </SubscribeStyle>
 )

@@ -275,3 +275,9 @@ pipx install pyp
 ``` bash
 conda info --envs | pyp 'len(lines) - 3 # account for header and base'
 ```
+
+## print contents of shell function
+
+``` bash
+declare -f <function-name>
+```

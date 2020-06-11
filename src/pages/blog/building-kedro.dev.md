@@ -1,0 +1,65 @@
+---
+templateKey: blog-post
+related_post_label: Check out this related post
+tags: []
+twitter_announcement: I just dropped a new post check it out.
+path: building-kedro-dev
+title: Building kedro.dev
+date: 2020-06-05T05:00:00Z
+status: published
+description: This is my jour
+related_post_body: ''
+related_post: []
+cover: ''
+twitter_cover: ''
+twitter_week_1: ''
+twitter_week_2: ''
+twitter_month_1: ''
+twitter_month_3: ''
+short_url: ''
+devto-url: ''
+devto-id: ''
+
+---
+Follow along the Journey as I build out [kedro.dev](kedro.dev).
+
+## Building a Community
+
+I have really enjoyed my own personal journey as I have started to build all of my data pipeline projects with the kedro framework.  I want to start building a place to share resources with the community.  I want to see this community grow and flourish.  They say in front end web development if you are not using a framework you end up building one.  That's exactly what I was doing before I started using kedro.  I want to build out a set of resources that this community can learn from and start to use the framework at their own pace without needing to develop their own from scratch.
+
+## research
+
+Looking into the front end frameworks
+
+### pages
+
+* banner
+* nav
+	* docs -> readthedocs
+    * tutorial -> kedro-examples
+    * blog -> medium
+    * community
+    	* support
+        * team
+        * courses
+        * examples
+        * meetups
+        * conferences
+        * articles
+        * podcasts
+        * videos
+        * external resources
+	* search
+* examples
+* footer
+* sponsors
+* newsletter
+* copyright
+* 
+
+### components
+
+* edit this page
+* scrolling toc
+
+ 

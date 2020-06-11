@@ -27,9 +27,18 @@ fields:
     - webdev
     - cli
     - career
+    - git
 - type: file
   name: afterImage
   label: afterImage
 pages:
 - src/pages/hot_tips/003.md
 - src/pages/hot_tips/004.md
+- src/pages/hot_tips/005.md
+- src/pages/hot_tips/006.md
+- src/pages/hot_tips/007.md
+- src/pages/hot_tips/008.md
+- src/pages/hot_tips/009.md
+- src/pages/hot_tips/010.md
+- src/pages/hot_tips/011.md
+- src/pages/hot_tips/012.md
