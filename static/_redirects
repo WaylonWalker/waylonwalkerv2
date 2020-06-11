@@ -73,6 +73,27 @@
 /blog/dppt         /blog/No_More_Death_By_Powerpoint/
 /blog/pc17         /blog/Pycon_2017_roundup/
 
+# underscores to -
+
+/blog/autoreload_python    /blog/autoreload-python
+/blog/background_1         /blog/background-1
+/blog/No_More_Death_By_Powerpoint    /blog/death-by-powerpoint
+/blog/pandas_pattern       /blog/pandas-pattern
+/blog/pug_reveal           /blog/pug-reveal
+/blog/Pycon_2017_Roundup   /blog/pycon-2017-roundup
+/blog/Pycon_2018_Roundup   /blog/pycon-2018-roundup
+/blog/pyspark_v_pandas     /blog/pyspark-v-pandas
+/blog/python_tips          /blog/python-tips
+/blog/readme_tables        /blog/readme-tables
+/blog/vim_notes            /blog/vim-notes
+
+# rename long posts
+
+/blog/i-finally-fixed-my-styled-components-in-gatsby-js /blog/fix-styled-components-in-gatsby
+/blog/interrogate-is-a-pretty-awesome-brand-new-cli-for-python-packages  /blog/interrogate
+/blog/what-is-something-that-you-recently-learned-that-you-wish-you-would-have-learned-or-understood-earlier  /blog/learn-early
+/blog/what-is-your-advice-for-new-data-scientists  /blog/data-scientist-advice
+
 /bash              /notes/bash/
 
 # more encompassing
