@@ -44,7 +44,8 @@ const Layout = ({ children, include_subscribe = true }) => (
             { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:site', content: '@_waylonwalker' },
             { name: 'twitter:creator', content: '@_waylonwalker' },
-            { name: 'twitter:image', content: 'https://waylonwalker.com/waylon-walker.png' }
+            { name: 'twitter:image', content: 'https://waylonwalker.com/waylon-walker.png' },
+            { name: 'monetization', content: '$ilp.uphold.com/MGN2ni2YMXaQ' }
           ]}
         >
 
