@@ -8,7 +8,7 @@ description: none
 cover: "./flex.png"
 ---
 
-# Follow Your Passion
+## Follow Your Passion
 
 _my journey into data science_
 
