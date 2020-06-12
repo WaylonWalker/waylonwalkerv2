@@ -7,7 +7,10 @@ path: kedro-static-viz-0-3-0
 title: Kedro Static Viz 0.3.0 is out with Hooks Support
 date: 2020-05-28T05:00:00.000+00:00
 status: published
-description: 'kedro-static-viz is out with support for the newly released hooks feature.  This means that you can have `kedro-static-viz` automatically deploy a full gatsby site `before_pipeline_run` keeping your visualization always up to date.'
+description: kedro-static-viz is out with support for the newly released hooks
+    feature.  This means that you can have `kedro-static-viz` automatically
+    deploy a full gatsby site `before_pipeline_run` keeping your visualization
+    always up to date.
 related_post_body: ''
 related_post: []
 cover: "/static/kedro-static-viz-0-3-0.png"
