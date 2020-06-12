@@ -6,7 +6,7 @@ path: speed-up-cli-apps
 title: Supercharge Zsh Startup
 date: 2020-01-03T06:00:00.000+00:00
 status: published
-description: ''
+description: 'I have been using oh-my-zsh successfully for about 2 years now. But lately my startup time has been really bothersome. It has grown to the point where it was taking about **5.5s** to startup a shell!  This is ok if I am going to spend some time in here for awhile and do some work that benefits from all of the autocompletions, plugins, and shortcuts that oh-my-zsh brings.  But to only jump in to run a handful of commands is infuriating.'
 related_post_body: ''
 related_post: []
 cover: "/static/max-larochelle-uu-Jw5SunYI-unsplash.jpg"
