@@ -11,13 +11,13 @@ transition: width 250ms ease-in-out,
             color 1000ms linear,
             transform 1000ms linear;
   /* align-self: center; */
-&:hover {
+/* &:hover {
   width: calc(min(550px, 100vw));
   .year{
   color: rgba(108, 99, 253, .14);
   transform: rotate(-1.4deg);
 
-  }
+  } */
 
 }
 background: ${colors.greys[1]};
