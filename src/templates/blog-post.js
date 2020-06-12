@@ -2,14 +2,9 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-// import BlogPostCard from '../components/blogPostCard'
-// import { kebabCase } from 'lodash'
-// import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
-// import Content, { HTMLContent } from '../components/Content'
 import Img from 'gatsby-image'
-// import Blazy from 'blazy'
 
 
 const BlogPostWrapper = styled.div`
@@ -20,11 +15,8 @@ align-items: center;
 
 const BlogPostStyles = styled.div`
 background: rgba(51, 0, 38, .13);
-/* background: #201a34; */
-/* background: #1a1c33; */
 background: hsla(234, 33%, 15%, 0.66);
 overflow: hidden;
-/* background: #330026; */
 display: block;
 margin: .2rem;
 max-width: 1000px;
@@ -73,7 +65,6 @@ p:has(>img) {
 
 p {
   // display: flex;
-  /* margin: auto; */
   font-family: 'Amiko';
 }
 
@@ -96,44 +87,9 @@ hr {
 
 h1 {
   margin-top: 5rem;
-  /* font-family: sans-serif; */
-  /* color: #6A65CA; */
 }
 
 `
-
-// class DevToComments extends React.Component {
-//   constructor(props) {
-//     super(props)
-//     this.state = { ...props, comments: undefined }
-//   }
-//   componentDidMount() {
-//     fetch(`https://dev.to/api/comments?a_id=${this.state.devto_id}`)
-//       .then((response) => {
-//         return response.json()
-//       })
-//       .then((comments) => {
-//         if (comments !== undefined) {
-//           console.log('comments', comments)
-//           this.setState({ comments: comments })
-//         }
-//       })
-
-//   }
-//   render() {
-//     return (
-//       <>
-//         <p>
-//           devto article id is {this.state.devto_id}
-//         </p>
-//         {this.state.comments === undefined
-//           ? ''
-//           : <div className="comment" dangerouslySetInnerHTML={{ __html: this.state.comments[0].body_html }} />
-//         }
-//       </>
-//     )
-//   }
-// }
 
 class BlogPostTemplate extends React.Component {
   // constructor(props) {
@@ -143,6 +99,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const {
       content,
+      slug,
       // contentComponent,
       description,
       // tags,
@@ -163,15 +120,18 @@ class BlogPostTemplate extends React.Component {
       <>
         <Helmet
           meta={[
+            { name: 'title', content: title + ' | Waylon Walker' },
+            { name: 'description', content: description },
             { name: 'og:title', content: title + ' | Waylon Walker' },
+            { name: 'og:url', content: `https://waylonwalker.com${slug}` },
             { name: 'og:article:published_time', content: date },
             { name: 'og:article:modified_time', content: date },
             { name: 'og:description', content: description },
-            { name: 'description', content: description },
+            { name: 'og:image', content: 'https://www.waylonwalker.com' + twitterImage },
             { name: 'twitter:title', content: title + ' | Waylon Walker' },
+            { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:image', content: 'https://www.waylonwalker.com' + twitterImage },
             { name: 'twitter:description', content: description },
-            { name: 'og:image', content: 'https://www.waylonwalker.com' + cover.src },
           ]}
 
         >
@@ -196,7 +156,6 @@ class BlogPostTemplate extends React.Component {
             {
                 devto_url === undefined
                   ? 'hi'
-                  // console.log('devto_url', devto_url, 'devto_id', devto_id)
                   : <a href={devto_url} > dev.to </a>
               }
               feel free to drop in to give it a ♥ and leave comment.
@@ -205,6 +164,11 @@ class BlogPostTemplate extends React.Component {
             {/* <p style={{ minHeight: '30px', margin: '0', padding: '0' }}>{description}</p> */}
             <div ref={(el) => { this.markdownContainer = el }}
               dangerouslySetInnerHTML={{ __html: content }} />
+            <hr />
+            <br />
+            <p style={{ paddingLeft: '2rem' }}>
+              <span role='img' aria-label=''>👀</span> see an issue, edit this post on <a href={`https://github.com/WaylonWalker/waylonwalkerv2/edit/master/src/pages${slug.slice(0, -1)}.md`} alt='edit post url' title='edit this post'>GitHub</a>
+            </p>
 
           </BlogPostStyles>
           {/* {devto_id === undefined ? '' : <DevToComments devto_id={devto_id} />}
@@ -213,7 +177,7 @@ class BlogPostTemplate extends React.Component {
             Check out my other
           <Link to='/blog' style={{ margin: '.2rem' }} >blogs</Link>
           </p>
-        </BlogPostWrapper>
+        </BlogPostWrapper >
       </>
     )
   }
@@ -221,6 +185,7 @@ class BlogPostTemplate extends React.Component {
 
 BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
+  slug: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
@@ -234,9 +199,10 @@ const BlogPost = ({ data }) => {
   const twitter_cover = post.frontmatter.twitter_cover !== null ? post.frontmatter.twitter_cover.childImageSharp.fixed : post.frontmatter.cover !== null ? post.frontmatter.cover.childImageSharp.fixed : ''
 
   return (
-    <Layout description={post.frontmatter.description} title={post.frontmatter.title} keywords={post.frontmatter.tags} time={post.frontmatter.date} url={`https://cuttinscrap.com${post.frontmatter.path}`}>
+    <Layout description={post.frontmatter.description} title={post.frontmatter.title} keywords={post.frontmatter.tags} time={post.frontmatter.date} url={`https://waylonwalker.com${post.frontmatter.path}`}>
       <BlogPostTemplate
         content={post.html}
+        slug={post.fields.slug}
         // contentComponent={HTMLContent}
         description={post.frontmatter.description}
         // helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
@@ -258,6 +224,7 @@ const BlogPost = ({ data }) => {
         devto_id={post.frontmatter.devto_id}
 
       />
+
     </Layout>
   )
 }
@@ -277,9 +244,10 @@ export default BlogPost
 
 export const pageQuery = graphql`
   query NoteByID($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+      markdownRemark(id: {eq: $id }) {
       id
       html
+      fields {slug}
       frontmatter {
         date
         devto_url
@@ -289,22 +257,22 @@ export const pageQuery = graphql`
         # tags
         path
         twitter_cover {
-          absolutePath
+                absolutePath
           childImageSharp {
-            fixed(width: 800, height: 418) {
-              ...GatsbyImageSharpFixed
-            }
+                fixed(width: 800, height: 418) {
+                ...GatsbyImageSharpFixed
+              }
           }
          }
         cover {
-          absolutePath
+                absolutePath
           childImageSharp {
-            fixed(width: 1000, height: 420) {
-              ...GatsbyImageSharpFixed
-            },
+                fixed(width: 1000, height: 420) {
+                ...GatsbyImageSharpFixed
+              },
             fluid(maxWidth: 1000, maxHeight: 420) {
-              ...GatsbyImageSharpFluid
-            }
+                ...GatsbyImageSharpFluid
+              }
           }
          }
  
