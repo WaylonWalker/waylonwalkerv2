@@ -9,6 +9,7 @@ module.exports = {
   },
   plugins: [
     // `gatsby-plugin-sass`,
+    `gatsby-plugin-preact`,
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sitemap',
