@@ -28,8 +28,8 @@
 /blog/knew         /blog/create-new-kedro-project/
 /wike              /blog/what-is-kedro
 /blog/wike         /blog/what-is-kedro
-/gdfm              /blog/today-i-learned-git-diff-feature-master/
-/blog/gdfm         /blog/today-i-learned-git-diff-feature-master/
+/gdfm              /blog/today-i-learned-git-diff-feature-main/
+/blog/gdfm         /blog/today-i-learned-git-diff-feature-main/
 /csro              /blog/custom-scrollbar-design/
 /blog/csro         /blog/custom-scrollbar-design/
 /dwyt              /blog/don-t-waste-your-time-learning-everything/
@@ -73,6 +73,10 @@
 /blog/dppt         /blog/No_More_Death_By_Powerpoint/
 /blog/pc17         /blog/Pycon_2017_roundup/
 
+# master -> main
+
+/blog/today-i-learned-git-diff-feature-master/   /blog/git-diff-feature-main/
+
 # underscores to -
 
 /blog/autoreload_python    /blog/autoreload-python
@@ -111,7 +115,7 @@
 
 /kedro-class-hooks-template https://gist.github.com/WaylonWalker/b97fd496e838422644ed300212ea0c1f
 /kcht           https://gist.github.com/WaylonWalker/b97fd496e838422644ed300212ea0c1f
-/redirects      https://github.com/WaylonWalker/waylonwalkerv2/edit/master/static/_redirects
+/redirects      https://github.com/WaylonWalker/waylonwalkerv2/edit/main/static/_redirects
 /twitter        https://twitter.com/_WaylonWalker
 /github         https://github.com/WaylonWalker
 /devto          https://dev.to/waylonwalker/

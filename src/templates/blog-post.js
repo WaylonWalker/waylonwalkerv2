@@ -167,7 +167,7 @@ class BlogPostTemplate extends React.Component {
             <hr />
             <br />
             <p style={{ paddingLeft: '2rem' }}>
-              <span role='img' aria-label=''>👀</span> see an issue, edit this post on <a href={`https://github.com/WaylonWalker/waylonwalkerv2/edit/master/src/pages${slug.slice(0, -1)}.md`} alt='edit post url' title='edit this post'>GitHub</a>
+              <span role='img' aria-label=''>👀</span> see an issue, edit this post on <a href={`https://github.com/WaylonWalker/waylonwalkerv2/edit/main/src/pages${slug.slice(0, -1)}.md`} alt='edit post url' title='edit this post'>GitHub</a>
             </p>
 
           </BlogPostStyles>

@@ -65,15 +65,15 @@ The most common and default trigger you will come across is the `on push`.  This
 on: [push, pull_request]
 ```
 
-You can also filter to only run on specific branches.  You probably only want to run your release workflow on the master branch, but want linting and testing on all branches.
+You can also filter to only run on specific branches.  You probably only want to run your release workflow on the main branch, but want linting and testing on all branches.
 
 ``` yaml
 push:
   branches:
-   - master
+   - main
 pull_request:
   branches:
-    - master
+    - main
 
 ```
 ### ![schedule](https://waylonwalker.com/gh-actions-header-schedule.png)

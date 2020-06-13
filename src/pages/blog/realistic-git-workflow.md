@@ -104,7 +104,7 @@ Open your repository in your web browser and you should see that you have just p
 
 ### Your Not Done yet
 
-Opening a PR is not a done deal, it starts the conversation to get your code approved to be merged into the develop or master branch.  Your approver may have an idea to clean it up to make it more readable/maintainable, or something to make it more performant.  Remember that a second set of eyes sometimes has a new set of clarity that you do not as you have seen the work from start to end.  At this point they may request changes, discussion, or choose to accept and merge it in.
+Opening a PR is not a done deal, it starts the conversation to get your code approved to be merged into the develop or main branch.  Your approver may have an idea to clean it up to make it more readable/maintainable, or something to make it more performant.  Remember that a second set of eyes sometimes has a new set of clarity that you do not as you have seen the work from start to end.  At this point they may request changes, discussion, or choose to accept and merge it in.
 
 ## Realistically
 
@@ -114,11 +114,11 @@ _We all hit some pitfalls along the way_
 
 Things get dirty, the clean path is not always the path that is taken, but with git we can clean up our mess and make it look that way.
 
-## I started working from master/develop before branching
+## I started working from main/develop before branching
 
 _Pitfall #1_
 
-This is my most common pitfall.  I get really excited to start work and jump right in.  Then when I go to make some commits I see that `master` branch staring me right in the face from my bash prompt.
+This is my most common pitfall.  I get really excited to start work and jump right in.  Then when I go to make some commits I see that `main` branch staring me right in the face from my bash prompt.
 
 **stash those changes away**
 
@@ -137,7 +137,7 @@ _Pitfall #2_
 **Create a new branch**
 _Solution #1_
 
-It is common that I just forget to switch from the master/develop branch into my feature branch before starting work. You will first need to look at your `git log` and determine how many commits to go back or a git hash to go back to.
+It is common that I just forget to switch from the main/develop branch into my feature branch before starting work. You will first need to look at your `git log` and determine how many commits to go back or a git hash to go back to.
 
 
 **CAUTION** `git reset --hard` will kill changes and you will never get them back if you did not first put them somewhere.  I myself have been burned by this command, there is no recovering from a **hard** reset.

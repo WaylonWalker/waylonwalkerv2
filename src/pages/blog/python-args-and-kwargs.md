@@ -21,9 +21,6 @@ devto-url: ''
 devto-id: ''
 
 ---
-Passing inputs into kedro is a key concept.  Understanding how it accepts a single catalog key as input is quite trivial that easily makes sense, but passing a list or dictionary of catalog entries can be a bit confusing.
-
-## *args/**args review
 
 I setup a repl.it with these examples so that you can quickly jump in, run it, break it, fix it, add breakpoints and really get a feel for them yourself. Check it out 👉 [https://repl.it/@WaylonWalker/args#main.py](https://repl.it/@WaylonWalker/args#main.py)
 

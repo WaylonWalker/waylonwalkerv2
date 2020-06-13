@@ -25,5 +25,5 @@ devto-id: ''
 ``` bash
 git remote -v
 git remote add gitlab <url>
-git push gitlab master
+git push gitlab main
 ```

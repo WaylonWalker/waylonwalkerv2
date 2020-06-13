@@ -233,7 +233,7 @@ It is important to know that when running an action you will likely need access 
 ```
 ### ![Default example](https://waylonwalker.com/gh-actions-syntax-h3/7.png)
 
-This example runs a workflow called `CI` on ubuntu on every push or PR to the master branch.  Within the build job it does a checkout of the repo, then runs two shell steps.
+This example runs a workflow called `CI` on ubuntu on every push or PR to the main branch.  Within the build job it does a checkout of the repo, then runs two shell steps.
 
 ``` YAML
 # This is a basic workflow to help you get started with Actions
@@ -241,12 +241,12 @@ This example runs a workflow called `CI` on ubuntu on every push or PR to the ma
 name: CI
 
 # Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+# events but only for the main branch
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

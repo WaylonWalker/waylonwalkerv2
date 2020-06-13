@@ -108,7 +108,7 @@ Here is a git status after committing with some trailing whitespace issues.
 
 ``` bash
 ❯ git status
-On branch master
+On branch main
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         modified: README.md
