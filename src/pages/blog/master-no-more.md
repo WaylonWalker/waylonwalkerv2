@@ -76,9 +76,23 @@ More info on refactoring your blog routes with netlify here.
 [![gracefully redirect cover image](https://waylonwalker.com/gracefully-redirect.png)](https://waylonwalker.com/blog/gracefully-redirect/)
 
 
-## Edit This post Links
+## _"Edit This post"_ Links
 
-I literally just added edit this post links to my rss feed and my blog feed.  This was a simple find and replace inside of my blog template and `gatsby-config.js`
+I literally just added _"edit this post"_ links to my rss feed and my blog feed.  This was a simple find and replace inside of my blog template and `gatsby-config.js`
+
+## Don't Forget about CI
+
+If you have build/deploy processes that specifically run on master or not on master dont forget to change those to main.  I did everything in a single commit and as soon as I pushed to main it started deploying gloriously.
+
+``` diff
+name: 🌱 Deploy site
+
+on:
+  push:
+    branches:
+-      - master
++      - main
+```
 
 ## Now the fun part
 _removing **master** completely_
