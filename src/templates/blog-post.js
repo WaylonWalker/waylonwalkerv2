@@ -65,7 +65,7 @@ p:has(>img) {
 
 p {
   // display: flex;
-  font-family: 'Amiko';
+  /* font-family: 'Amiko'; */
 }
 
 
