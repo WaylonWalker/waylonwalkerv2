@@ -10,7 +10,7 @@ status: published
 description: ''
 related_post_body: ''
 related_post: []
-cover: ''
+cover: '/static/python-args-kwargs.png'
 twitter_cover: ''
 twitter_week_1: ''
 twitter_week_2: ''
@@ -95,8 +95,11 @@ Inversely we can send a list of things as individual arguments by **unpacking** 
 
 ## **kwargs are for dictionaries
 
+Just like `*args` being for lists, `**kwargs` are for dictionaries.  When packing them up inside of a function. The argument name passed in becomes the key, then invers happens when unpacking, the key becomes the argument for the function.
 
 ## ![recieving **kwargs](/args-kwargs/3.png)
+
+Here is a function accepting `**printrows` as it's only input. Any keyword argument that you pass into the function will get packed into a dictionary.
 
 ``` python
 def printer(**printrows: str) -> None:
@@ -111,12 +114,35 @@ lunch spam
 dinner ham
 ```
 
+Any arguments passed in will throw a `TypeError`, since this `printer` does not accept any positional arguments.
+
+``` python
+>>>printer('one')
+--------------------------------------------------------------------------- 
+TypeError                                 Traceback (most recent call last)
+<ipython-input-2-f03e96cb5e14> in <module>
+----> 1 printer("one")
+
+TypeError: printer() takes 0 positional arguments but 1 was given
+```
+
+## Avoid Anti-Patterns
+
+Just as above, if your items are clearly separate things, make them separate things and do not use `**kwargs`.  `**kwargs` are great when you have collections of things that all get treated exactly the sam, if they get treated differently, or you are expecting certain keys to always exist it will be very confusing to your users what they need to pass in.
+
 ## ![sending **kwargs](/args-kwargs/4.png)
+
+Sending `**kwargs` is quite useful.  Especially when combining various libraries together.  Often times you can coerse objects into a dictionary, often with something like `.to_dict()`, then pass that whole dictionary to another function.  This makes gluing different libraries together a breeze at times.
+
 
 ``` python
 >>> things_to_print = {breakfast:'eggs', lunch:'spam', dinner:'ham'}
->>> printer()
+>>> printer(**things_to_print)
 breakfast eggs
 lunch spam
 dinner ham
 ```
+
+---
+
+I hope this helps you understand `*args` and `**kwargs` just a bit more.  They can be quite handy to greatly simplify repetative code, expecially if we already have the data setup in the right data structure.
