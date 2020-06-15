@@ -7,10 +7,14 @@ path: python-args-kwargs
 title: understanding python *args and **kwargs
 date: 2020-06-10T05:00:00Z
 status: published
-description: ''
+description: Python `*args` and `**kwargs` are super useful tools, that when 
+  used properly can make you code much simpler and easier to maintain.  Large
+  manual conversions from a dataset to function arguments can be packed and
+  unpacked into lists or dictionaries. Beware though, this power **can** lead
+  to some really unreadable/unusable code if done wrong.
 related_post_body: ''
 related_post: []
-cover: '/static/python-args-kwargs.png'
+cover: 'python-args-kwargs.png'
 twitter_cover: ''
 twitter_week_1: ''
 twitter_week_2: ''
@@ -26,11 +30,16 @@ devto-id: ''
 /* h2 {display: block;} */
 h2>img { margin: auto; width: 100%;}
 </style>
-I setup a repl.it with these examples so that you can quickly jump in, run it, break it, fix it, add breakpoints and really get a feel for them yourself. Check it out 👉 [https://repl.it/@WaylonWalker/args#main.py](https://repl.it/@WaylonWalker/args#main.py)
 
-## *args are for lists 
+Python `*args` and `**kwargs` are super useful tools, that when used properly can make you code much simpler and easier to maintain.  Large manual conversions from a dataset to function arguments can be packed and unpacked into lists or dictionaries. Beware though, this power **can** lead to some really unreadable/unusable code if done wrong.
 
-## ![recieving *args](/args-kwargs/1.png "sending *args collects all arguments into a list inside of the function")
+
+
+## *args are for lists
+
+*args are some magical syntax that will collect function arguments into a list, or unpack a list into individual arguments.
+
+## ![recieving *args](https://waylonwalker.com/args-kwargs/1.png "sending *args collects all arguments into a list inside of the function")
 
 When recieving variables as a `*<varname>`, commonly `*args`, the arguments get **packed** into an ordered list.
 
@@ -79,7 +88,7 @@ def get_user_data(github_username, devto_username):
   ...
 ```
 
-## ![sending *args](/args-kwargs/2.png "sending *args unpacks a list into individual arguments to be used in the function")
+## ![sending *args](https://waylonwalker.com/args-kwargs/2.png "sending *args unpacks a list into individual arguments to be used in the function")
 
 Inversely we can send a list of things as individual arguments by **unpacking** them into the function call.
 
@@ -97,7 +106,7 @@ Inversely we can send a list of things as individual arguments by **unpacking** 
 
 Just like `*args` being for lists, `**kwargs` are for dictionaries.  When packing them up inside of a function. The argument name passed in becomes the key, then invers happens when unpacking, the key becomes the argument for the function.
 
-## ![recieving **kwargs](/args-kwargs/3.png)
+## ![recieving **kwargs](https://waylonwalker.com/args-kwargs/3.png)
 
 Here is a function accepting `**printrows` as it's only input. Any keyword argument that you pass into the function will get packed into a dictionary.
 
@@ -130,7 +139,7 @@ TypeError: printer() takes 0 positional arguments but 1 was given
 
 Just as above, if your items are clearly separate things, make them separate things and do not use `**kwargs`.  `**kwargs` are great when you have collections of things that all get treated exactly the sam, if they get treated differently, or you are expecting certain keys to always exist it will be very confusing to your users what they need to pass in.
 
-## ![sending **kwargs](/args-kwargs/4.png)
+## ![sending **kwargs](https://waylonwalker.com/args-kwargs/4.png)
 
 Sending `**kwargs` is quite useful.  Especially when combining various libraries together.  Often times you can coerse objects into a dictionary, often with something like `.to_dict()`, then pass that whole dictionary to another function.  This makes gluing different libraries together a breeze at times.
 
@@ -142,6 +151,10 @@ breakfast eggs
 lunch spam
 dinner ham
 ```
+
+---
+
+I setup a repl.it with these examples so that you can quickly jump in, run it, break it, fix it, add breakpoints and really get a feel for them yourself. Check it out 👉 [https://repl.it/@WaylonWalker/args#main.py](https://repl.it/@WaylonWalker/args#main.py)
 
 ---
 
