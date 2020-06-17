@@ -61,7 +61,8 @@ Lets look at an example node that combines more than one dataset. When kedro has
 from kedro.pipeline import node
 
 def create_sales_report(sales, products):
-    "decodes product codes into 
+    "adds product metadata to the sales data"
+    ...
 
 
 my_node = node(
@@ -85,3 +86,75 @@ sales_report = create_sales_report(*input_data)
 # save the data to the output
 catalog.datasets.sales_report.save(sales_report)
 ```
+
+## More generalizable functons
+
+We can also use `*args` to make our functions a little bit more generalizable. The first that
+comes to my mind is a unioner. The second
+
+``` python
+def unioner(*dfs: pd.DataFrame): -> pd.DataFrame
+    pd.concat(dfs)
+```
+
+Now we can pass any number of DataFrames into our kedro node to get unioned together, but
+do we really need a function for a one-liner... No we can use an inline function for this case.
+
+``` python
+my_node = node(
+    func=lambda *dfs: pd.concat(dfs),
+    input=['sales_2017', 'sales_2018'],
+    output='sales',
+)
+```
+
+## `*args` scares the crap out of me!
+
+It's great for the `unioner` example where its a collection of similar things where order
+does not matter.  But for the `create_sales_report` function.  Those are distinctly different
+inputs.  If someone does a refactoring and changes the order in one place or another it's
+going to turn into a bad day real fast.
+
+## **kwargs are a bit better
+
+Let's refactor the `create_sales_report` before someone tries to ruin our day.  We can easily
+do this by passing a dictionary (keys are the argument name, values are the catalog key)
+of arguments to kedro instead of a list.
+
+``` python
+from kedro.pipeline import node
+
+def create_sales_report(sales, products):
+    "adds product metadata to the sales data"
+    ...
+
+my_node = node(
+    func=create_sales_report,
+    inputs={'sales': 'pri_sales', 'products': 'pri_products'},
+    output='sales_report',
+    )
+```
+
+Now if someone tries to refactor the order of arguments we are safe!
+
+## Simulating the pipelien run with `**kwargs`
+
+Pretty much the same as before, except with `**kwargs` and `dictionaries` keeping us a bit
+more safe.
+
+``` python
+# inputs you gave kedro
+inputs={'sales': 'pri_sales', 'products': 'pri_products'},
+# load data
+input_data = {arg: catalog.load(entry) for arg, entry in inputs.items()}
+# run the node
+sales_report = create_sales_report(**input_data)
+# save the data to the output
+catalog.datasets.sales_report.save(sales_report)
+```
+
+## Stay Safe
+
+Kedro inputs are quite easy to understand if you already have a grasp of `*args` and `**kwargs`
+and if you dont it is still fairly intuitive to pick up.  Stay on the safe side, if your
+collection of inputs are clearly different things, use a dictionary for safety.
