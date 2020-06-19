@@ -10,8 +10,8 @@ status: published
 description: 
 related_post_body: ''
 related_post: []
-cover: '/kedro-inputs.png'
-twitter_cover: '/kedro-inputs.png'
+cover: 'kedro-inputs.png'
+twitter_cover: 'kedro-inputs.png'
 twitter_week_1: ''
 twitter_week_2: ''
 twitter_month_1: ''
@@ -31,6 +31,9 @@ Check out this post for a review of how `*args` `**kwargs` work in python.
 [![python args and kwargs](https://waylonwalker.com/python-args-kwargs.png)](https://waylonwalker.com/blog/python-args-kwargs)
 > [python args and kwargs](https://waylonwalker.com/blog/python-args-kwargs) article by [@_waylonwalker](https://twitter.com/_WaylonWalker)
 
+## All Kedro inputs are catalog Entries
+
+When kedro runs your pipeline it uses the catalog to imperatively load your data, meaning thatyou dont tell kedro how to load your data, you tell it where your data is and what type it is.  These catalog entries are like a `key-value` store.  You just need to giive the key when setting up a node.
 
 ## Single Inputs
 
@@ -72,7 +75,7 @@ my_node = node(
     )
 ```
 
-## simulating pipeline run
+## simulating pipeline run using 2 inputs
 
 Here We can simulate what kedro does during the pipeline run by using `*args`.
 
