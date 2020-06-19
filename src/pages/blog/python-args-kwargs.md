@@ -14,8 +14,8 @@ description: Python `*args` and `**kwargs` are super useful tools, that when
   to some really unreadable/unusable code if done wrong.
 related_post_body: ''
 related_post: []
-cover: 'python-args-kwargs.png'
-twitter_cover: ''
+cover: '/static/python-args-kwargs.png'
+twitter_cover: '/static/python-args-kwargs.png'
 twitter_week_1: ''
 twitter_week_2: ''
 twitter_month_1: ''

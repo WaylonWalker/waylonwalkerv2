@@ -14,7 +14,7 @@ description: Passing inputs into kedro is a key concept. Understanding how it
 related_post_body: ''
 related_post: []
 cover: 'kedro-inputs.png'
-twitter_cover: 'kedro-inputs.png'
+twitter_cover: ''
 twitter_week_1: ''
 twitter_week_2: ''
 twitter_month_1: ''
@@ -36,7 +36,7 @@ Check out this post for a review of how `*args` `**kwargs` work in python.
 
 ## All Kedro inputs are catalog Entries
 
-When kedro runs your pipeline it uses the catalog to imperatively load your data, meaning thatyou dont tell kedro how to load your data, you tell it where your data is and what type it is.  These catalog entries are like a `key-value` store.  You just need to giive the key when setting up a node.
+When kedro runs your pipeline it uses the catalog to imperatively load your data, meaning that you don't tell kedro how to load your data, you tell it where your data is and what type it is.  These catalog entries are like a `key-value` store.  You just need to give the key when setting up a node.
 
 ## Single Inputs
 
@@ -61,7 +61,7 @@ my_node = node(
 
 ## List of inputs
 
-Lets look at an example node that combines more than one dataset. When kedro has sees a list of catalog entries it will load up each catalog entry sequentially then pass them in order to the `create_sales_report` function.
+Let's look at an example node that combines more than one dataset. When kedro has sees a list of catalog entries it will load up each catalog entry sequentially then pass them in order to the `create_sales_report` function.
 
 ``` python
 from kedro.pipeline import node
@@ -93,7 +93,7 @@ sales_report = create_sales_report(*input_data)
 catalog.datasets.sales_report.save(sales_report)
 ```
 
-## More generalizable functons
+## More generalizable functions
 
 We can also use `*args` to make our functions a little bit more generalizable. The first that
 comes to my mind is a unioner. The second
@@ -118,7 +118,7 @@ my_node = node(
 
 It's great for the `unioner` example where its a collection of similar things where order
 does not matter.  But for the `create_sales_report` function.  Those are distinctly different
-inputs.  If someone does a refactoring and changes the order in one place or another it's
+inputs.  If someone does some refactoring and changes the order in one place or another it's
 going to turn into a bad day real fast.
 
 ## **kwargs are a bit better
@@ -143,10 +143,10 @@ my_node = node(
 
 Now if someone tries to refactor the order of arguments we are safe!
 
-## Simulating the pipelien run with `**kwargs`
+## Simulating the pipeline run with `**kwargs`
 
 Pretty much the same as before, except with `**kwargs` and `dictionaries` keeping us a bit
-more safe.
+safer.
 
 ``` python
 # inputs you gave kedro
@@ -162,5 +162,5 @@ catalog.datasets.sales_report.save(sales_report)
 ## Stay Safe
 
 Kedro inputs are quite easy to understand if you already have a grasp of `*args` and `**kwargs`
-and if you dont it is still fairly intuitive to pick up.  Stay on the safe side, if your
+and if you don't it is still fairly intuitive to pick up.  Stay on the safe side, if your
 collection of inputs are clearly different things, use a dictionary for safety.
