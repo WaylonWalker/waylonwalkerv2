@@ -1,6 +1,8 @@
 # netlify redirects
 
 # Short-Blog
+/blog/8cat         /blog/eight-years-cat
+/8cat              /blog/eight-years-cat
 /blog/parg         /blog/python-args-kwargs
 /parg              /blog/python-args-kwargs
 /blog/pcia         /blog/pre-commit-is-awesome
