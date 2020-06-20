@@ -4,8 +4,8 @@ related_post_label: Check out this related post
 tags: []
 twitter_announcement: I just dropped a new post check it out.
 path: eight-years-cat
-title: understanding python *args and **kwargs
-date: 2020-06-10T05:00:00Z
+title: My first eight years as a working professional.
+date: 2020-06-19T05:00:00Z
 status: published
 description: This day 8 years ago I started my first day as a Mechanical 
   Engineer. I am so grateful for this journey that I have been able to have. 
@@ -23,6 +23,8 @@ devto-url: ''
 devto-id: ''
 
 ---
+
+
 
 This day 8 years ago I started my first day as a Mechanical Engineer. I am so grateful for this journey that I have been able to have. There is no way that I could have planned this journey from the beginning.  
   

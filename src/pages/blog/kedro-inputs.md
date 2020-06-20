@@ -5,7 +5,7 @@ tags: ['blog', 'JAMStack', 'netlify']
 twitter_announcement: I just dropped a new post check it out.
 path: kedro-inputs
 title: How Kedro handles your inputs
-date: 2020-06-11T05:00:00Z
+date: 2020-06-19T03:00:00Z
 status: published
 description: Passing inputs into kedro is a key concept. Understanding how it
     accepts a single catalog key as input is quite trivial that easily makes
@@ -13,8 +13,8 @@ description: Passing inputs into kedro is a key concept. Understanding how it
     confusing.
 related_post_body: ''
 related_post: []
-cover: 'kedro-inputs.png'
-twitter_cover: ''
+cover: '/static/kedro-inputs.png'
+twitter_cover: '/static/kedro-inputs.png'
 twitter_week_1: ''
 twitter_week_2: ''
 twitter_month_1: ''
