@@ -17,7 +17,7 @@ const Icon = () => (
   <StaticQuery
     query={graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "W.png" }) {
+        placeholderImage: file(relativePath: { eq: "8bitcc.png" }) {
           childImageSharp {
             fluid(maxWidth: 300) {
               ...GatsbyImageSharpFluid
