@@ -13,5 +13,3 @@ Last night we made a long trip back from my In-Laws.  Which was a great day by t
 
 
 Moments like these do not seem to come often enough.  I really enjoy playing with the whole family and the full level of craziness that it brings, but having a calm one on one time with one member of the family seems extra special.  It was the perfect ending to a long day with lots of packing, travel, and excitement.
-
-

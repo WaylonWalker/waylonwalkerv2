@@ -23,26 +23,26 @@ Mine is the python debugger. I was a long holdout thinking that print statements
 
 # Example
 
-    [ins] In [4]: def repeater(msg, repeats=1): 
-             ...:     "repeats messages {repeats} number of times" 
-             ...:     print(f'{msg}\n' * repeats) 
-    
-    [ins] In [5]: repeater('hi', 3)                                                                                                                                                                                                                       
+    [ins] In [4]: def repeater(msg, repeats=1):
+             ...:     "repeats messages {repeats} number of times"
+             ...:     print(f'{msg}\n' * repeats)
+
+    [ins] In [5]: repeater('hi', 3)
     hi
     hi
     hi
-    
-    [ins] In [6]: repeater('hi', 'a')                                                                                                                                                                                                                     
+
+    [ins] In [6]: repeater('hi', 'a')
     ---------------------------------------------------------------------------
     TypeError                                 Traceback (most recent call last)
     <ipython-input-6-0ec595774c81> in <module>
     ----> 1 repeater('hi', 'a')
-    
+
     <ipython-input-4-530890de75cd> in repeater(msg, repeats)
           1 def repeater(msg, repeats=1):
           2     "repeats messages {repeats} number of times"
     ----> 3     print(f'{msg}\n' * repeats)
-          4 
+          4
 
 # Debug with iPython/Jupyter
 
@@ -52,7 +52,7 @@ Mine is the python debugger. I was a long holdout thinking that print statements
 
     import pdb
     import sys
-    
+
     pdb.post_mortem(sys.last_traceback)
 
 # More

@@ -39,7 +39,7 @@ data_set = CSVLocalDataSet(filepath="test.csv",
                                  save_args={"index": False})
 
 iris_data_set.save(iris)
-reloaded_iris = iris_data_set.load()                        
+reloaded_iris = iris_data_set.load()
 ```
 
 **yaml**
@@ -49,7 +49,7 @@ test_data:
    type: CSVLocalDataset
    filepath: test.csv
    load_args: None
-   save_args: 
+   save_args:
       index: False
 ```
 
@@ -60,8 +60,8 @@ cities = CSVHTTPDataSet(
     fileurl="https://raw.githubusercontent.com/quantumblacklabs/kedro/d3218bd89ce8d1148b1f79dfe589065f47037be6/kedro/template/%7B%7B%20cookiecutter.repo_name%20%7D%7D/data/01_raw/iris.csv",
     auth=None,
     load_args=None)
-    
-iris = iris_data_set.load() 
+
+iris = iris_data_set.load()
 ```
 
 ``` yaml
@@ -85,7 +85,7 @@ iris_data_set = HDFLocalDataSet(filepath="iris.hdf",
                            save_args=None)
 
 iris_data_set.save(iris)
-reloaded_iris = iris_data_set.load()    
+reloaded_iris = iris_data_set.load()
 ```
 
 ``` yaml
@@ -109,7 +109,7 @@ iris_data_set = HDFS3DataSet(filepath="iris.hdf",
                         save_args=None)
 
 iris_data_set.save(iris)
-reloaded_iris = iris_data_set.load()    
+reloaded_iris = iris_data_set.load()
 ```
 
 ``` yaml
@@ -132,7 +132,7 @@ cars = JSONLocalDataSet(filepath="iris.json",
                         save_args=None)
 
 iris_data_set.save(iris)
-reloaded_iris = iris_data_set.load()  
+reloaded_iris = iris_data_set.load()
 ```
 
 ``` yaml
@@ -149,10 +149,10 @@ from kedro.io import ParquetLocalDataSet
 
 iris = pd.read_csv('https://raw.githubusercontent.com/quantumblacklabs/kedro/d3218bd89ce8d1148b1f79dfe589065f47037be6/kedro/template/%7B%7B%20cookiecutter.repo_name%20%7D%7D/data/01_raw/iris.csv')
 
-iris_data_set = ParquetLocalDataSet('iris', 
-                           engine='auto', 
-                           load_args=None, 
-                           save_args=None, 
+iris_data_set = ParquetLocalDataSet('iris',
+                           engine='auto',
+                           load_args=None,
+                           save_args=None,
                            version=None)
 
 iris_data_set.save(iris)
@@ -216,8 +216,8 @@ query = 'raw sales'
 data_sets = catalog.list()
 for word in query.split():
 	data_sets = [
-       data 
-       for data in data_sets 
+       data
+       for data in data_sets
        if query in data
        ]
 ```
@@ -231,12 +231,12 @@ def query(*search_terms):
      data_sets = catalog.list()
      for search in search_terms:
          data_sets = [
-         data 
-         for data in data_sets 
+         data
+         for data in data_sets
          if search in data
          ]
      return data_sets
-     
+
 catalog.query = query
 ```
 
@@ -249,8 +249,8 @@ _You Only Load Once_
 **simple**
 
 ``` python
-data = [catalog.load(d) 
-        for d in 
+data = [catalog.load(d)
+        for d in
         catalog.query('c_pri', 'cars')
         ]
 ```
@@ -269,7 +269,7 @@ data = {
 ``` python
 from types import SimpleNamespace
 data = SimpleNamespace**{
-   d: catalog.load(d) 
+   d: catalog.load(d)
    for d in catalog.query('c_pri', 'cars')
    })
 ```
@@ -281,7 +281,7 @@ _getting funcy_
 from types import SimpleNamespace
 
 def yolo(*search_terms):
-   """you only load once 
+   """you only load once
    using query method from previous tip"""
    data = SimpleNamespace(**{
        d: catalog.load(d)
@@ -350,7 +350,7 @@ def halve_dataframe(data: pd.DataFrame) -> List[pd.DataFrame]:
 
 nodes = []
 datasets = [
-   'cars', 'trucks', 'boats', 'motorcycles', 'planes', 
+   'cars', 'trucks', 'boats', 'motorcycles', 'planes',
    'ships', 'busses', 'trains', 'subways'
    ]
 
@@ -389,8 +389,8 @@ _see on [#kedrotips](https://twitter.com/_WaylonWalker/status/119640620447973785
 ``` python
 query_string = 'cars'
 nodes = [
-   node.name 
-   for node in pipeline.nodes 
+   node.name
+   for node in pipeline.nodes
    if query_string in node.name
    ]
 pipeline.only_nodes(*nodes)

@@ -18,13 +18,13 @@ twitter_cover: ''
 
 ### Zappier
 
-* Free 
+* Free
 * only one step is free
 * can take rss to social
 
 ### Automate.io
 
-* 
+*
 
 ## Form submission
 

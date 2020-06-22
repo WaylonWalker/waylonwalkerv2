@@ -60,7 +60,7 @@ Following yesterdays post, I am going to rename my markdown files
 
 ``` diff
 + # master -> main
-+ 
++
 + /blog/today-i-learned-git-diff-feature-master/   /blog/git-diff-feature-main/
 ```
 

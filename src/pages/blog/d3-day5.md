@@ -5,7 +5,7 @@ title: D3 Day 5
 slug: d3-day-5
 date: 2018-05-08
 category: Viz
-tags: 
+tags:
     - D3
     - Viz
     - FrontEnd
@@ -263,5 +263,3 @@ For what we are creating in these posts d3 is way overkill and very verbose, but
     render5('math')
     chart5_size('big')
 </script>
-
-

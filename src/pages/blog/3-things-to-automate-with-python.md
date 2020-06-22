@@ -40,7 +40,7 @@ csvs_combined.to_csv('processed/combined.csv')
 
 ## Fetch data from a url
 
-It might be possible that the other team shares their data on a website.  If you can get access to the data via a url, as in the example below there is no need to go to the website to save the data every week/month, you can have python do that for you.  It's very likely that you will need to combine this with step one in many workflows.  Now your data compiling can be done in one single running of a script.  Your data is still in a format that excel can read and you can stick with a hybrid workflow while you become comfortable in python.  
+It might be possible that the other team shares their data on a website.  If you can get access to the data via a url, as in the example below there is no need to go to the website to save the data every week/month, you can have python do that for you.  It's very likely that you will need to combine this with step one in many workflows.  Now your data compiling can be done in one single running of a script.  Your data is still in a format that excel can read and you can stick with a hybrid workflow while you become comfortable in python.
 
 There is no shame in opening excel to do something in 5 minutes that would take an hour of research to do in python.  If you stick to it though, piece by piece everything will come together.  You will be able to do more in python than you could imagine in excel and you will wonder how you did it without the help of python.
 

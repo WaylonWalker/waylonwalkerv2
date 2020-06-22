@@ -35,7 +35,7 @@ After a few days of looking at it off and on, I pinpointed that it was all the w
 
 I have dynamically created lists of pipeline nodes many times in the past, but typically I take data from [kedro](http://kedro.readthedocs.io/) input and use it in the lambda.  I prefer the simplicity of using lambdas over `functools.partial`.  It typically looks something like this.
 
-``` python 
+``` python
 # 👍  I do this all the time
 from kedro.pipeline import node
 from my_generic_project_lib import clean
@@ -56,7 +56,7 @@ for dataset in datasets_to_clean:
 
 What was different this time is that I needed to pass in the name of the dataset to my read_sql function, not the data loaded in the framework.
 
-``` python 
+``` python
 # ❌ This does not work
 from kedro.pipeline import node
 from my_generic_project_lib import read_sql
@@ -81,7 +81,7 @@ As I am still oblivious to what has happened I pop in a `breakpoint()` and quick
 
 ## ![The simple fix ](https://waylonwalker.com/bind-dynamic-lambdas-3.png)
 
-``` python 
+``` python
 # 👍 Much Better
 from kedro.pipeline import node
 from my_generic_project_lib import read_sql

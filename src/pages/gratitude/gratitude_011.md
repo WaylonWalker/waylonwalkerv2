@@ -11,5 +11,3 @@ I am grateful that we have been able to make it to my family for Christmas time.
 
 
 > I am very grateful to see them sharing and having fun together
-
-

@@ -21,7 +21,7 @@ tqdm is one of my favorite general purpose utility libraries in python.  It allo
 
 ![](/tqdm2.gif)
 
-> for more gifs like these follow me on twitter 
+> for more gifs like these follow me on twitter
 [@waylonwalker](https://twitter.com/_WaylonWalker)
 
 **Add a simple Progress bar!**

@@ -147,7 +147,7 @@ I will use the following markup throughout the article, each with different css 
 
     .flex_container:hover {
     /* But not on hover, let the user pause the annimation*/
-        animation: none 
+        animation: none
     }
 
     @keyframes animate_container {
@@ -174,7 +174,7 @@ I will use the following markup throughout the article, each with different css 
 
 ### 1. Turn on the crossbow
 
-_applied to the flex container_  
+_applied to the flex container_
 ```display: flex;```
 
 Turning on flexbox on the flex container will cause all child elements to align in a row at the top left corner of the parent container.  By defualt they will shrink to the minimum content size, but not automatically grow larger than their specified size.
@@ -202,11 +202,11 @@ Turning on flexbox on the flex container will cause all child elements to align 
 
 
 ### 2. Aim it if necessary
-_applied to the flex container_  
+_applied to the flex container_
 
 This parameter determines the direction that the flexbox container will orient the flex items.
 
-**example** ```flex-direction: row```  
+**example** ```flex-direction: row```
 **options** = ```('row'(default), 'column',  'row-reverse', 'column-reverse')```
 
 #### row
@@ -306,11 +306,11 @@ This parameter determines the direction that the flexbox container will orient t
 </div>
 
 ### 3. Line them up along the red Justify Laser
-_applied to the flex container_  
+_applied to the flex container_
 
-This parameter determines justification of the flex items within the flex container.  Think spacing or positioning around the flex items.  
+This parameter determines justification of the flex items within the flex container.  Think spacing or positioning around the flex items.
 
-**example** ```justify-content: flex-end;```  
+**example** ```justify-content: flex-end;```
 **options** = ```('flex-start', 'flex-end', 'space-between', 'space-around', 'space-evenly', 'stretch', 'center', 'start', 'end', 'left', 'right')```
 
 
@@ -389,9 +389,9 @@ This parameter determines justification of the flex items within the flex contai
 
 
 ### 3b. Align them along the  blue Alignment Laser
-_applied to the flex container_  
-* ```align-items: flex-end;```  
-* options = ('flex-start', 'flex-end', 'normal', 'end', 'self-start', 'self-end', 'center', 'start' 'end')  
+_applied to the flex container_
+* ```align-items: flex-end;```
+* options = ('flex-start', 'flex-end', 'normal', 'end', 'self-start', 'self-end', 'center', 'start' 'end')
 
 <style>.c4a .flex_container { height: 200px; display: flex; align-items: flex-start; }</style>
 <style>.c4b .flex_container { height: 200px; display: flex; align-items: flex-end; }</style>
@@ -432,12 +432,12 @@ _applied to the flex container_
 
 
 
-### 4. Take care of any one-off alignments  
+### 4. Take care of any one-off alignments
 _applied to items_
 * ```align-self: flex-start;```
 * options = ('flex-start', 'flex-end', 'normal', 'end', 'self-start', 'self-end', 'center', 'start' 'end')
 <style>
-    .c5d .flex_container { height: 200px; display: flex; align-items: stretch; } 
+    .c5d .flex_container { height: 200px; display: flex; align-items: stretch; }
     .c5d .item:nth-of-type(1){ align-self: flex-start  }
     .c5d .item:nth-of-type(2){ align-self: center}
     .c5d .item:nth-of-type(3){ height: auto; align-self: stretch;}
@@ -451,10 +451,10 @@ the align-self property is used to take care of one off alignments and is applie
 
 ``` css
 .flex_container {
-    display: flex; 
-     } 
+    display: flex;
+     }
 .item:nth-of-type(1){
-     align-self: flex-start  
+     align-self: flex-start
      }
 .item:nth-of-type(2){
      align-self: center
@@ -469,7 +469,7 @@ the align-self property is used to take care of one off alignments and is applie
 
 <div class='c5d'> <div class='flex_container'> <div class='item'>1</div> <div class='item'>2</div> <div class='item'>3</div> <div class='item'>4</div> </div> </div>
 
-### 6. growth along the red Justify Laser  
+### 6. growth along the red Justify Laser
 _applied to items_
 * ```flex-grow: 1```
 
@@ -509,9 +509,9 @@ By setting ```flex-grow: 2;``` on item  ```1``` will take up the available free 
 
 <div class='c6b'> <div class='flex_container'> <div class='item'>1</div> <div class='item'>2</div> <div class='item'>3</div> <div class='item'>4</div> </div> </div>
 
-### 7. setting length of items along the red Justify Laser  
-_applied to items_  
-_in order of importance_  
+### 7. setting length of items along the red Justify Laser
+_applied to items_
+_in order of importance_
 * ```min-width```
 * ```max-width```
 * **```flex-basis```**
@@ -552,7 +552,7 @@ _behaves similar to z-index_
 <div class='c8b'> <div class='flex_container'> <div class='item'>1</div> <div class='item'>2</div> <div class='item'>3</div> <div class='item'>4</div> </div> </div>
 
 ### 9. Get your own Line
-_applied to the flex container_  
+_applied to the flex container_
 
 * ```flex-wrap``` - options= ```(wrap, nowrap(default))```
 * prefers wrap over shrink
@@ -572,7 +572,7 @@ _applied to the flex container_
 <div class='c9a'> <div class='flex_container'> <div class='item'>1</div> <div class='item'>2</div> <div class='item'>3</div> <div class='item'>4</div> </div> </div>
 
 ### 10. Aligning wrapped content
-_applied to the flex container_ 
+_applied to the flex container_
 
 *  ```align-content``` - same specs as align-items but works on wrapped content.
 
@@ -593,7 +593,7 @@ _applied to the flex container_
 
 ### 11. Shortcuts
 
-**flex**  
+**flex**
 _applied to the flex items_
 *  ```flex: grow, shrink, basis```
 * defaults - ```flex: 1 1 0px```
@@ -603,7 +603,7 @@ _applied to the flex items_
 **flex-flow**
 _applied to the flex container_
 * ```flex: flex-direction flex-wrap```
-* 
+*
 
 ### Chapter 7: In a Perfect World (flex-basis)
 
@@ -616,4 +616,3 @@ _applied to the flex container_
 When Shooting Horizontally it controls width
 
 When Shooting Vertically it controls height
-

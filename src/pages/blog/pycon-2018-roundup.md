@@ -28,7 +28,7 @@ This is an **Incomplete** working post.
     * xarray
     * scipy.sparse
     * sparse package
-    * scipy.sparce.csgraph 
+    * scipy.sparce.csgraph
 * Cython
     * Add types
 * Numba
@@ -39,7 +39,7 @@ This is an **Incomplete** working post.
     * distributed tasks
     * Can be executed locally or on a cluster
 * Look for an existing package
-    * **resist the urge to reinvent the wheel**  
+    * **resist the urge to reinvent the wheel**
 
 [![Click to Watch](http://img.youtube.com/vi/zQeYx87mfyw/0.jpg)](https://www.youtube.com/watch?v=zQeYx87mfyw)
 
@@ -70,16 +70,16 @@ I was a bit sad when I was looking through the list of PyCon 2018 talks and did 
 
 Asks the right questions before writing the first line of code.  Even the simplest questions such as averages have many possible pitfalls along the way.  Alex discusses how to prepare your data before averaging in this talk.  He brings some new _"Jargon"_ .  I am not sure that this jargon made this any easier for me to understand or discuss.  It may take some time for this one to sink in to become effective.  I feel like using plain english is more effective as it is more easily understood by anyone.  "find the **daily** average **sales** by **seller**"
 ### Jargon
-**Collapsing key:** 
-* the collapsed/aggregated data relevant to this analysis  
+**Collapsing key:**
+* the collapsed/aggregated data relevant to this analysis
 * _we are overriding the primary key (i.e. what a table defines as an observation)_
 * the original number of rows
 
-**Grouping key:** the key defining a group**  
-* _eg. "for each Seller" is (seller), "for each Country and city is (Country, City)_  
+**Grouping key:** the key defining a group**
+* _eg. "for each Seller" is (seller), "for each Country and city is (Country, City)_
 * this defines how many rows are in the result
 
-** Obvervation key: a unit of observation for this analysis**  
+** Obvervation key: a unit of observation for this analysis**
 * _eg. "daily average" is (Date), "across regions" is (Region)_
 * this defines how many rows are in the denominator
 
@@ -122,7 +122,7 @@ FROM (
 GROUP BY
     Seller -- Grouping Key
 
-    
+
 ```
 ### Pandas Example
 I am interested in trying out this technique of using the second groupby.  I typically use an unstack instead, but that relies on having the order of the Collapsing key correct.

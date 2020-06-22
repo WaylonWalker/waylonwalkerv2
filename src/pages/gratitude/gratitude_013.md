@@ -11,4 +11,3 @@ This Christmas we had two events on Christmas day, with 5 hours of travel, and a
 
 
 I am glad everyone was able to enjoy the food.  Both events were very accomodating to our family allergies.  The first event was a potato bar where everything was kept separate and you could personalize your dish.  The kids really just wanted to snack all day.  At the second event they went out of their way to find dairy free butter to cook wtih.  There were only one or two items that had dairy in them.  It feels good to be supported by your family.
-

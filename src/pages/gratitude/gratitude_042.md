@@ -13,5 +13,3 @@ I didnt forget the most special of all.  Rhiannon, my beautiful wife, was a sold
 
 
 All in all this was one of the best days I have had in awhile, Thanks everyone!
-
-

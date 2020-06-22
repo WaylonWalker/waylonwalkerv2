@@ -12,7 +12,7 @@ _This is my story into data science._
 
 # The Journey Begins
 
-I am addicted to the process of learning and improving my skills nearly to a fault. The reason I say nearly is because my addiction is fueled with results.  I crave the output of my work enhance the work of others.  I jump with joy as I see users gain insights they could have never imagined before.  My mouth starts watering as I see their boring repetitive data mining activites be completed in a matter of seconds, opening up their mind to focus on their expertise.  The day I stop learning will be the day that I start looking for another career path. 
+I am addicted to the process of learning and improving my skills nearly to a fault. The reason I say nearly is because my addiction is fueled with results.  I crave the output of my work enhance the work of others.  I jump with joy as I see users gain insights they could have never imagined before.  My mouth starts watering as I see their boring repetitive data mining activites be completed in a matter of seconds, opening up their mind to focus on their expertise.  The day I stop learning will be the day that I start looking for another career path.
 
 > It's not all about winning.
 
@@ -32,8 +32,6 @@ I was addicted.  I felt like there is so much knowledge easily obtained online i
 By 2017 I was really good at gaining results for our business, and decided to make the jump to the data science team.  I have achieved great results, and have been recognized as a high contributor to our business.  Still I do not feel like I have won.  My goals are always moving and will always be 3-6 months ahead of me.  I truly enjoy the process of learning, and providing value so much that I will never let myself sit back and think that I have won and its time to reap the rewards of my hard work.  I will say that I am winning.  Not because of any results, awards or recognition, but because I am happy.  I have found a career path that I really enjoy the journey and I am not just trying to get on the fast track to a destination.
 
 ![exploring](./michelle-spencer-1116-unsplash.jpg)
-> Life is too short to stay on a path you do not enjoy. 
+> Life is too short to stay on a path you do not enjoy.
 
 Enjoy the journey, explore new paths, and do what brings you joy.  Life is too short to stay on a path you do not enjoy. Focus on the process not the Destination.
-
-

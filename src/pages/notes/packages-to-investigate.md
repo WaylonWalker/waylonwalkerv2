@@ -28,7 +28,7 @@ Bulwark is a package for convenient property-based testing of pandas dataframes,
 ## Example
 
         import bulwark.decorators as dc
-    
+
         @dc.IsShape((-1, 10))
         @dc.IsMonotonic(strict=True)
         @dc.HasNoNans()

@@ -27,7 +27,7 @@ This year I will become more productive, by intensionally working on a well thou
 
 ### Productivity
 
-Last year I was able to make some great strides in my productivity and focus.  This year I want to be able to bring it up a notch.  **Intentionality** plays a big part in this.  Taking some time to sit down and think about the tasks you realistically want to complete for the day, then focusing on those tasks one at a time.  
+Last year I was able to make some great strides in my productivity and focus.  This year I want to be able to bring it up a notch.  **Intentionality** plays a big part in this.  Taking some time to sit down and think about the tasks you realistically want to complete for the day, then focusing on those tasks one at a time.
 
 I started off the year last year using the **pomodoro** system to focus on one task and one task only for 25 minutes at a time.  This worked really well for me but I quickly fell off of the train and fell into my old trap of reacting to the loudest customer over the items I put **intensionally** on my todo list.
 
@@ -62,7 +62,7 @@ I want to leave behind a legacy that I can be proud of. I want to be known for b
 
 ---
 
- 
+
 ### Educational
 
 Last year I made monumental improvements to my web development while continuing to hone my backend skills.  This year I want to amp up my web front end skills even more. I am finding this to be an area that not very many people in my organization have and I can knock out some simple projects really quick and gain a lot of value.  Last year I started using **react** as a front end framework.  I want to double down learning the intricicies of how it works, and how to effectively layout a react project. I also want to keep upping my design skills.  As I do more layouts I find that they are easier and easier to layout, and as I am able to get them out faster it give me more time to hone in the design. Lastly I want to continue honing in my backend skills.  Working with data pipelines, Linux command line, the cloud, and database architecture.

@@ -16,4 +16,3 @@ Today was one of those days.  I spent much of the day helping Rhiannon set up th
 
 
 I also really enjoyed getting to play in the fresh snow with Wyatt.  He loved it.  We shoveled it into big piles to jump in, threw snowballs, and just had the best of adventure.  Ayla and Rhiannon came to the window to watch, and they laughed at us while we acted silly.  Today was Christmas, one of the most magical days of the year to spend with the ones you love most.
-

@@ -58,9 +58,9 @@ import pandas as pd
 @background.task
 def long_func(i):
     """
-    Simulates fetching data from a service 
+    Simulates fetching data from a service
     and returning a pandas DataFrame.
-    
+
     """
     sleep(10)
     return pd.DataFrame({'number_squared': [i**2]})
@@ -86,7 +86,7 @@ Wall time: 212 µs
 Simply running the function completes in no time! This is because the future objects that are returned are non blocking and will run in a background task using the `ProcessPoolExecutor`.  To get the result back out we need to call the `result` method on the future object.`result` is a blocking function that will not realease until the function has completed.
 
 ``` python
-%%time 
+%%time
 futures = [long_func(i) for i in range(10)]
 pd.concat([future.result() for future in futures])
 

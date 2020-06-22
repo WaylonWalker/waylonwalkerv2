@@ -19,7 +19,7 @@ const ProfileImageStyle = styled.div`
 margin: 3rem;
 width: 300px;
 border-radius: 50%;
-box-shadow:  
+box-shadow:
   -15rem -2rem 8rem -6rem rgba(253, 221, 88, .09),
   12rem 0 8rem rgba(88, 82, 185, .14),
   0rem 0rem 2rem rgba(0, 0, 0, .4),

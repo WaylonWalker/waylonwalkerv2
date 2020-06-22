@@ -4,7 +4,7 @@ path: 'python_tips'
 title: Python Tips
 date: 2019-01-21
 status: draft
-description: 
+description:
 cover: "./brett-patzke-725745-unsplash-cropped.jpg"
 ---
 
@@ -16,4 +16,4 @@ cover: "./brett-patzke-725745-unsplash-cropped.jpg"
 * func(**input)
 * locals().update(d)
 
-### 
+###

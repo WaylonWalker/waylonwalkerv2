@@ -4,7 +4,7 @@ path: 'datacamp-sql'
 title: Stepping Up My SQL Game
 date: 2018-03-25
 category: Blog
-tags: 
+tags:
     - Data
     - SQL
     - Learning
@@ -42,11 +42,11 @@ cover: "./sql-wide.png"
 In 2018 I transitioned from a Product Engineering (Mechanical) role to a Data Scientist Role.  I entered this space with strong subject matter expertise with our products, our data, munging through data in pyhon, and data visualization in python.  My sql skills were lacking to say the least.  I had learned what I needed to know to get data from our relational databases, then use pandas to do any further analysis.    Just run something like the following and you have data.
 
 ``` sql
-SELECT 
-    * 
-FROM 
-    Table 
-Where 
+SELECT
+    *
+FROM
+    Table
+Where
     col_1 = 'col_1_filter'
 ```
 
@@ -65,26 +65,26 @@ course on DataCamp.  I will use these notes as a refresher when I need a quick r
 When joining two tables on the same column the ```USING``` clause can be used as a shorthand.
 
 **without using**
-```sql 
-SELECT * 
+```sql
+SELECT *
 
-FROM 
+FROM
     Table1 as t1
 
-LEFT JOIN 
+LEFT JOIN
     Table2 as t2
     ON t1.id = t2.id
 ```
 
 **with using**
-```sql 
-SELECT 
-    * 
+```sql
+SELECT
+    *
 
-FROM 
+FROM
     Table1 as t1
 
-LEFT JOIN 
+LEFT JOIN
     Table2 as t2
     USING (id)
 ```
@@ -129,15 +129,15 @@ This is where I have really stepped up my sql game.  I was able to get practice 
 
 #### WHERE
 
-Subqueries are commonly found in the where clause to filter data.  Below is an example given in the course to select only the Asian countries with below average fertility rate from the states table. 
+Subqueries are commonly found in the where clause to filter data.  Below is an example given in the course to select only the Asian countries with below average fertility rate from the states table.
 
 ``` sql
-SELECT 
+SELECT
    name,
    fert_rate
-FROM 
+FROM
     states
-WHERE 
+WHERE
     continent = 'Asia'
 AND fert_rate <
         (SELECT AVG(fert_rate)
@@ -151,11 +151,11 @@ Subqueries can be found in the `SELECT` clause to create new columns of data.  T
 ``` sql
 SELECT DISTINCT
     continent,
-    (SELECT 
+    (SELECT
         COUNT(*)
-     FROM 
+     FROM
         states
-     WHERE 
+     WHERE
         prime_ministers.continent = states.continent
     ) AS countries_num
 
@@ -164,7 +164,7 @@ From Prime Ministers
 
 #### FROM
 
-subqueries found in the `FROM` clause can be very helpful to create a new dataset from an existing table.  I find these the easiest to read as it is not much different than creating a new table.  Again this can be very powerful in creating new columns that were not easily available otherwise.  
+subqueries found in the `FROM` clause can be very helpful to create a new dataset from an existing table.  I find these the easiest to read as it is not much different than creating a new table.  Again this can be very powerful in creating new columns that were not easily available otherwise.
 
 
 ``` sql
@@ -181,7 +181,7 @@ FROM
     FROM
         states
 
-    GROUP BY 
+    GROUP BY
         continent
     ) as subquery
 
@@ -202,26 +202,26 @@ SELECT DISTINCT
     e.total_investment,
     e.imports
 
-FROM 
+FROM
     countries as c
-LEFT JOIN 
+LEFT JOIN
     economies as e
     ON c.code = e.code
 
     AND c.code in (
-    SELECT 
-        l.code 
-    FROM 
+    SELECT
+        l.code
+    FROM
         languages as l
-    WHERE 
+    WHERE
         official = true
     )
 
-WHERE 
+WHERE
     c.region = 'Central America'
 AND e.year = 2015
 
-ORDER BY 
+ORDER BY
     c.name asc;
 ```
 

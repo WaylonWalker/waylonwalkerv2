@@ -61,7 +61,7 @@ pytest is such an amazing project, definitely one to check out and start using i
 
 ## ![Building with setuptools](https://waylonwalker.com/gh-actions-python-headers/3.png)
 
-I am still using the older, less hipster, setuptools to build my projects.  Primarily because I am used to to, partly because things such as editable installs are not possible with the newer build tools, and I am a **HEAVY** user of editable installs.  
+I am still using the older, less hipster, setuptools to build my projects.  Primarily because I am used to to, partly because things such as editable installs are not possible with the newer build tools, and I am a **HEAVY** user of editable installs.
 
 ```
     - name: build

@@ -7,7 +7,7 @@ path: python-args-kwargs
 title: Refactoring your blog urls
 date: 2020-06-11T05:00:00Z
 status: published
-description: 
+description:
 related_post_body: ''
 related_post: []
 cover: '/static/gracefully-redirect.png'
@@ -21,5 +21,3 @@ devto-url: ''
 devto-id: ''
 
 ---
-
-

@@ -7,7 +7,7 @@ path: python-args-kwargs
 title: understanding python *args and **kwargs
 date: 2020-06-10T05:00:00Z
 status: published
-description: Python `*args` and `**kwargs` are super useful tools, that when 
+description: Python `*args` and `**kwargs` are super useful tools, that when
   used properly can make you code much simpler and easier to maintain.  Large
   manual conversions from a dataset to function arguments can be packed and
   unpacked into lists or dictionaries. Beware though, this power **can** lead
@@ -59,11 +59,11 @@ def printer(*printrows: str) -> None:
 1 spam
 2 ham
 ```
-  
+
 ## Be Aware of AntiPatterns
 
 If your `*args` collection is distictly different things, then make them separate variables.  Using `*args` as a crutch can lead to a really confusing api for your users, even yourself.
-  
+
 ## ❌
 
 Here `*args` is confusing as we are a bit unsure of what to pass to `get_user_data`, or which order it needs to be in without reading the code.
@@ -127,7 +127,7 @@ Any arguments passed in will throw a `TypeError`, since this `printer` does not 
 
 ``` python
 >>>printer('one')
---------------------------------------------------------------------------- 
+---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 <ipython-input-2-f03e96cb5e14> in <module>
 ----> 1 printer("one")

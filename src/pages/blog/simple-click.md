@@ -32,10 +32,10 @@ Things a cli can do to enhance your library.
 
 🆚 print version
 🕶 print readme
-📝 print changelog  
-📃 print config  
-✏ change config  
-👩‍🎓 run a tutorial  
+📝 print changelog
+📃 print config
+✏ change config
+👩‍🎓 run a tutorial
 🏗 scaffold a project with cookiecutter
 
 # 🖱 [Click](https://click.palletsprojects.com/)
@@ -55,19 +55,19 @@ Things a cli can do to enhance your library.
 ``` python
     # simple_click/cli.py
     import click
-    
+
     __version__ = "1.0.0"
-    
+
     @click.group()
     def cli():
        pass
-    
+
     @cli.command()
     def version():
         """prints project version"""
         click.echo(__version__)
-    
-    
+
+
     if __name__ == '__main__':
         cli()
 ```
@@ -86,9 +86,9 @@ Entry points are the magic that make python cli tools available as their own com
 
 ``` python
     # setup.py
-    
+
     from setuptools import setup, find_packages
-    
+
     # this is the 🥩 meat of this snippet
     # simple_click is the command name
     # = simple_click is the library name
@@ -96,20 +96,20 @@ Entry points are the magic that make python cli tools available as their own com
     # :cli is the cli function
     #
     # the second item is a shorthand alias to the main command
-    
+
     entry_points = [
        "simple_click = simple_click.cli:cli",
        "scli         = simple_click.cli:cli",
     ]
-    
-    
+
+
     setup(
         name='simple_click',
         version='1.0.0',
         url='https://github.com/mypackage.git',
         packages=find_packages(),
         entry_points={"console_scripts": entry_points},
-    
+
     )
 ```
 

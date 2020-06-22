@@ -80,9 +80,9 @@ I have been really inspired by the **sick** lighting that has been hot on youtub
 For this step I did not use any tooling, though I found some that could have been helpful later.  I literally just started stacking up different colors of box shadow, pulling a big blur, shifting them around, and adjusting the color opacity until everything looks just right.  Again I went really subtle here, comparing back to Chris's backdrop I am a bit more subtle than even that.
 
 ``` css
-box-shadow:  
-   -8rem -6rem 8rem -6rem rgba(253, 221, 88, .2), 
-   4rem 0 8rem rgba(88, 82, 185, .3), 
+box-shadow:
+   -8rem -6rem 8rem -6rem rgba(253, 221, 88, .2),
+   4rem 0 8rem rgba(88, 82, 185, .3),
    .2rem .2rem 1rem rgba(0, 0, 0, .2);
 ```
 
@@ -114,9 +114,9 @@ Links to all of the tools referenced in this article.
 
 [brumm.af/shadows](https://t.co/0yyw6wMuGO?amp=1 "https://brumm.af/shadows")
 
-[components.ai/box-shadows](https://t.co/tQ9NijDzUI?amp=1 "https://components.ai/box-shadows")  
-  
-  
+[components.ai/box-shadows](https://t.co/tQ9NijDzUI?amp=1 "https://components.ai/box-shadows")
+
+
 # Shameless 🔌
 
 I just started a newsletter [Join Here](https://waylonwalker.com/newsletter/ "https://waylonwalker.com/newsletter/") and lets start the discussion.  I want to know about my audience and what they want to hear about from me.

@@ -45,7 +45,7 @@ This is by var the most useful set of keybindings that I use in vscode and is di
             "command": "workbench.action.terminal.focus",
             "when": "editorFocus"
         },
-    
+
         {
             "key": "alt+k",
             "command": "workbench.action.focusFirstEditorGroup",
@@ -71,7 +71,7 @@ This is by var the most useful set of keybindings that I use in vscode and is di
             "command": "workbench.action.focusPreviousGroup",
             "when": "editorFocus"
         },
-    
+
         {
             "key": "alt+l",
             "command": "workbench.action.terminal.focusNextPane",

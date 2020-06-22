@@ -31,7 +31,7 @@ Kedro provides an efficient way to build out data catalogs with their yaml api. 
 
 Under the hood there is an `AbstractDataSet` that each connector inherits from.  It sets up a lot of the behind the scenes structure for us so that we dont have to.  For the most part kedro has connectors for about anything that you want to load, csv, parquet, sql, json, from about anywhere, http, s3, localfile system are just some of the examples.
 
-Here is a DataSet implementation from their docs.  Here you can see the barebones example straight from the docs.  Parameters from the yaml catalog will get passed in 
+Here is a DataSet implementation from their docs.  Here you can see the barebones example straight from the docs.  Parameters from the yaml catalog will get passed in
 
 ``` python
 from pathlib import Path

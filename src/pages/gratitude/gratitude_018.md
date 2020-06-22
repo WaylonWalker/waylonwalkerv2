@@ -14,4 +14,3 @@ Tonight was the last night of the big holiday vacation and I finally got that sp
 I ran out of time, but I will still mention that she painted her first set of toes.
 
 ![](/static/toes.jpg)
-

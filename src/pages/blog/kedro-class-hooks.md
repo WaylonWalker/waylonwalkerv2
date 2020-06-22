@@ -121,7 +121,7 @@ class debug_hook:
         print('I hooked in right before the pipeline run')
         if self.should_before_pipeline_run:
             breakpoint()
-  
+
 	@staticmethod
     @hook_impl
     def after_pipeline_run(run_params, pipeline, catalog):

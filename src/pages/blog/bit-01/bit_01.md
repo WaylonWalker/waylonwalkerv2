@@ -6,11 +6,11 @@ date: 2019-02-10
 status: draft
 description: How to setup a data science project in python.
 cover: "verstappen-photography-532656-unsplash.jpg"
-coverCredits: Photo by Verstappen Photography on Unsplash 
+coverCredits: Photo by Verstappen Photography on Unsplash
 twitterCover: "./bit-01-twitter-card.jpg"
 ---
 
-# TLDR 
+# TLDR
 
 Use **[.gitignore.io](https://www.gitignore.io)** and consider adding an alias to your terminal to quickly add a .gitignore to any project missing one.
 

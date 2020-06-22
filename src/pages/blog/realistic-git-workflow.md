@@ -161,7 +161,7 @@ Sometimes when juggling many different features we are in the middle of several 
     git reset --hard HEAD ~3
     # or
     git reset --hard a1b2c4d4
-    
+
 
 ## Another feature was complete before mine
 _pitfall #3_

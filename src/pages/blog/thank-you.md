@@ -23,6 +23,6 @@ devto-id: ''
 ---
 # ✨ You're Awesome
 
-Thank you so much for subscribing to my newsletter.  It's still early days, do dont expect much 😉. 
+Thank you so much for subscribing to my newsletter.  It's still early days, do dont expect much 😉.
 
 My hope is that you find some wicked sweet content here and stay tuned for more, but if you dont like it you can opt-out at any time.

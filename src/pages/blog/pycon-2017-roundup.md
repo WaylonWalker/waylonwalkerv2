@@ -4,7 +4,7 @@ path: 'pycon-2017-roundup'
 title: Pycon 2017 Roundup
 date: 2017-05-30
 category: Blog
-tags: 
+tags:
     - python
     - Pycon
     - Youtube
@@ -36,8 +36,6 @@ Good afternoon fellow Data Geeks.  Last week [Pycon](https://www.youtube.com/cha
 
 ## What's on Tap
 
-This afternoon we have a cup of from one of my favorite roasters Thirty Thiry Coffee.  This 
+This afternoon we have a cup of from one of my favorite roasters Thirty Thiry Coffee.  This
 
 [![Whats on Tap](http://www.thirty-thirtycoffee.com/wp-content/uploads/2016/09/thirty-thirty-peoria-logo.png)](http://www.thirty-thirtycoffee.com/ "Whats on Tap")
-
-

@@ -19,7 +19,7 @@ const ProfileImageStyle = styled.div`
 margin: -3rem auto 2rem;
 width: 150px;
 border-radius: 50%;
-box-shadow:  
+box-shadow:
   -1rem -1rem 2rem -1.2rem rgba(253, 221, 88, .1),
   2rem 0 4rem rgba(88, 82, 185, .08),
   0rem 0rem 1rem rgba(0, 0, 0, .4),
@@ -31,7 +31,7 @@ margin: auto;
 }
 img:hover {
   transform: rotate(1deg) scale(1.02);
-  
+
 }
 `
 const Image = () => (

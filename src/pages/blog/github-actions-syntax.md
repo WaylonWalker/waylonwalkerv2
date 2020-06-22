@@ -89,7 +89,7 @@ These are the keys, with their parents, that I found most useful.  You can find 
     * env
     * if
     * steps
-    
+
 ### ![Combining arrays and objects](https://waylonwalker.com/gh-actions-syntax-h3/5.png)
 
 
@@ -148,7 +148,7 @@ preserved: |
 folded: >
     This is some long text
     that I do not want on
-    one line, but it is 
+    one line, but it is
     really a one-liner
 ```
 

@@ -300,7 +300,7 @@ plot_data.head()
 
 
 
-    date        item      
+    date        item
     2017-01-01  markers       9
                 note cards    5
                 paper         1
@@ -795,5 +795,3 @@ plot_data.head(10)
   </tbody>
 </table>
 </div>
-
-

@@ -113,7 +113,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 strong {
-  font-size: 2.2rem; 
+  font-size: 2.2rem;
   color: #DAA520;
   display: inline-block;
   transform: rotate(-10deg);
@@ -222,6 +222,3 @@ Tip.propTypes = {
 
 
 export default Tip
-
-
-

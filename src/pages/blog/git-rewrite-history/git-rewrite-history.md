@@ -4,8 +4,8 @@ path: git-rewrite-history
 title: Rewrite History with Git
 date: 2019-02-05
 status: published
-description: 
-tags: 
+description:
+tags:
     - technical
     - git
 cover: "neonbrand-618322-unsplash.jpg"

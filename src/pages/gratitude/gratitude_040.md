@@ -11,4 +11,3 @@ Let's face it we all know that credit cards are bad and we should not let them g
 
 
 This would not have been possible without the help of several folks.  First off Rhiannon, as if you are not on the same page as your wife with finances, you will never fix your financial problems.  Second Dave Ramsey for showing us the light. And finally our friends who have supported us more than we can even thank them for.
-

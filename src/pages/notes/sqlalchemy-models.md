@@ -75,4 +75,3 @@ class User(Base, MyBaseHelper):
     firstname = Column('firstname', Text())
     lastname = Column('lastname', Text())
 ```
-

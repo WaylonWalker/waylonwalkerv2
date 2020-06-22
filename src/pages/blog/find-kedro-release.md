@@ -165,7 +165,7 @@ split_node = Pipeline(
 
 ### Fully Qualified imports
 
-When using fully qualified imports `from my_proj.pipelines.data_science.nodes import split_data` instead of 
+When using fully qualified imports `from my_proj.pipelines.data_science.nodes import split_data` instead of
 relative imports `from .nodes split_data` you will need to make sure that your project is installed, in your current path, or you set the directory
 
 ### ![CLI Usage](https://waylonwalker.com/find-kedro-release-4.png)

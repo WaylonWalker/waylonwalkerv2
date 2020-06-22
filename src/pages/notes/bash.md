@@ -7,7 +7,7 @@ status: published
 description: Waylon Walker's Bash Notes
 cover: "/static/hannah-gibbs-BINLgyrG_fI-unsplash.jpg"
 twitter_cover: "/static/hannah-gibbs-BINLgyrG_fI-unsplash.jpg"
-related_post: 
+related_post:
 tags:
 - python
 - code

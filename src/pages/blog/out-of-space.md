@@ -36,7 +36,7 @@ This shows us where to start and gives a baseline of how much space we have recl
 ``` bash
 df -h
 ```
-    
+
 
 ### show largest files in current directory
 
@@ -45,13 +45,13 @@ Next keep drilling into directories that are big and running this command to see
 ``` bash
 du . -h --max-depth=1
 ```
-   
+
 Honestly I rarely bother unless the directory is in the GB's of space.  A super simple filter for that is to just grep for G.
 
 ``` bash
 du . -h --max-depth=1 | grep G
 ```
-   
+
 
 ## conda
 
@@ -62,9 +62,9 @@ As a first baseline lets see how many enviroments we are starting with. I starte
 ``` bash
 conda info --envs | tail -n +2 | wc -l
 ```
-    
 
-  
+
+
 bash
 
 ### Lets batch it out!
@@ -86,7 +86,7 @@ When I am creating one of these complicated bash pipelines including xargs I gen
 
 ``` bash
 cat ~/.conda_envs_remove | tr '\n' '\0' | xargs -l -0 echo "conda remove --all -y -n "
-```    
+```
 
 ## Cache
 

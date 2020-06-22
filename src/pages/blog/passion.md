@@ -18,6 +18,3 @@ In January 2018 I started work as a full time data scientist turning my passion 
 ## Find Your Role
 
 When I first started as a full time  mechanical engineer
-
-
-

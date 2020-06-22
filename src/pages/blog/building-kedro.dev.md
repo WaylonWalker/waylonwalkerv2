@@ -7,7 +7,7 @@ path: building-kedro-dev
 title: Building kedro.dev
 date: 2020-06-05T05:00:00Z
 status: published
-description: This is my jour
+description: This is my journey to building up the community page.
 related_post_body: ''
 related_post: []
 cover: ''
@@ -29,7 +29,7 @@ I have really enjoyed my own personal journey as I have started to build all of 
 
 ## research
 
-Looking into the front end frameworks
+Looking into the front end frameworks to see how they welcome their community.  Much of my inspiration is from them, bringing lessons learned to data.
 
 ### pages
 
@@ -55,11 +55,25 @@ Looking into the front end frameworks
 * sponsors
 * newsletter
 * copyright
-* 
+*
 
 ### components
 
 * edit this page
 * scrolling toc
 
- 
+## Stack Overflow Api
+
+fetch last 5 posts.
+
+```
+https://api.stackexchange.com/2.2/questions?order=desc&sort=activity&site=stackoverflow&tagged=kedro&pagesize=5
+```
+
+## DEV.to api
+
+fetch last 5 posts
+
+```
+https://dev.to/api/articles?tag=kedro&per_page=5&page=1
+```

@@ -40,7 +40,6 @@ I have gone quite awhile without using ```c``` and instead using ```d```.  The r
     12. Spelling suggestions                           |i CTRL-X s|
     13. keywords in 'complete'                         |i CTRL-N|
 
-## z-commands 
+## z-commands
 
 ```zn```		Fold none: reset 'foldenable'.  All folds will be open.
-

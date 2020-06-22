@@ -22,5 +22,3 @@ Recently the kids have really been into singing in the car with Daddy on the way
 * Ride by Twenty One Pilots
 
 P.S. Its so awesome to see how into the Mac Lethal song they are.  It has a really cool message about being kind to others, and treating everyone with respect.
-
-

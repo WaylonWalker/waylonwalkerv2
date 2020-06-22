@@ -4,7 +4,7 @@ path: 'background_py'
 title: background tasks in python
 date: 2017-09-16
 category: python
-tags: 
+tags:
     - Python
     - Data Science
 description: none
@@ -30,13 +30,13 @@ import background as bg
 %watermark -d -v -p background
 ```
 
-    2017-09-16 
-    
+    2017-09-16
+
     CPython 3.6.2
     IPython 6.1.0
-    
+
     background n
-    
+
 
 ## Define Worker Functions
 
@@ -68,7 +68,7 @@ for _ in range(100):
 ```
 
     Wall time: 1min 40s
-    
+
 
 ### Reaction
 
@@ -98,20 +98,20 @@ while not all([f.done() for f in f_list]):
 ```
 
     Wall time: 13.1 s
-    
+
 
 ### Reaction
 
 I know what your saying this time.
 
->really a 7.6x improvement...  Is that really even woth the extra work.  
+>really a 7.6x improvement...  Is that really even woth the extra work.
 
 
 Fine then lets crank it up to 11!
 
 ### Lots of Background
 
-lets set the number of background processes to a value just higher to than the number of workers we need to run in order to start them all simultaneously. With this simple example that is not very CPU intensive we see the result is just over the amount of time that it takes to run 1 worker. 
+lets set the number of background processes to a value just higher to than the number of workers we need to run in order to start them all simultaneously. With this simple example that is not very CPU intensive we see the result is just over the amount of time that it takes to run 1 worker.
 
 
 ```python
@@ -128,7 +128,7 @@ while not all([f.done() for f in f_list]):
 ```
 
     Wall time: 1.09 s
-    
+
 
 ### Reaction
 

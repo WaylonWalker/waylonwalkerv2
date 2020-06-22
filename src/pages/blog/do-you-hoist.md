@@ -51,7 +51,7 @@ Running this code will log out "Waylon"
 
 I am most familiar with python which does not variable hoist so this one kinda confused me at first.  It only hoists the variable declaration not the value of the variable.  It defines whether the variable is going to be `var`, `let`, or `const` and sets it to undefined.
 
-> It only hoists the variable declaration not the value of the variable. 
+> It only hoists the variable declaration not the value of the variable.
 
 ``` javascript
 console.log('name: ', name)

@@ -34,7 +34,7 @@ I have been diving deep into Github actions for about a month now and they are w
 
 ## TLDR
 
-> some interaction to your repository **triggers** code to run.  
+> some interaction to your repository **triggers** code to run.
 
 
 ## ![Online Editor](https://waylonwalker.com/gh-actions-header-online-editor.png)
@@ -115,7 +115,7 @@ jobs:
 
 ## ![Free for public repositories](https://waylonwalker.com/gh-actions-header-free.png)
 
-GitHub offers quite a generous free tier to get you started.  
+GitHub offers quite a generous free tier to get you started.
 
 ![gh-actions-free-tier](https://waylonwalker.com/gh-actions-free-tier.png "github actions free tier")
 

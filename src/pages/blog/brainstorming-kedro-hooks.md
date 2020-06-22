@@ -54,13 +54,13 @@ This post is a 🧠 branstorming work in progress.
 
 * Great Expectations
 * save stats/meta data
-* 
+*
 
 ## Execution Order
 
 hooks are executed in reverse order of the hooks list.
 
-hooks with `tryfirst` will be moved to the end of the list  
+hooks with `tryfirst` will be moved to the end of the list
 hooks with `trylast` will be moved to the end of the list
 
 1. after_catalog_created
@@ -73,7 +73,7 @@ hooks with `trylast` will be moved to the end of the list
 
 1. before_node_run
 2. after_node_run
-3. 
+3.
 
 ## When does data get saved???
 
@@ -83,7 +83,7 @@ hooks with `trylast` will be moved to the end of the list
 
 * does before  catalog load have access to parameters?
   * Yes
-* 
+*
 
 ### \[steel toes\](https://github.com/waylonwalker/steel-toes/)6
 
@@ -103,7 +103,7 @@ Kedro is so amazing at promoting collaboration between team members.  Each team 
 * on after_catalog_load check for existing "branch" data
 * if "branch" data exists load that
 * otherwise keep default
-* 
+*
 
 ### Run only nodes that have changed
 
@@ -139,6 +139,6 @@ After pipeline run
 
 * Set complete status
 
-After node run 
+After node run
 
 * set complete

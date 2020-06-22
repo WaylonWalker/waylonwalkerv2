@@ -4,7 +4,7 @@ path: 'no-more-death-by-powerpoint'
 title: No More Death By PowerPoint
 date: 2017-12-31
 category: Blog
-tags: 
+tags:
     - Pug
     - Jade
     - Reveal
@@ -33,7 +33,7 @@ The human brain is very capable of processing up to 6 items very efficiently, be
 
 ## Size and Contrast
 
-The most important points should be the fist thing that your eye goes to on the screen.  
+The most important points should be the fist thing that your eye goes to on the screen.
 
 ## More Slides
 

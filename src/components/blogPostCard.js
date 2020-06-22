@@ -69,7 +69,7 @@ Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   /* color: rgba(0,0,0,.1);
   color: rgba(255, 255, 255, .05); */
   color: rgba(108, 99, 253, .1);
-  
+
   text-align: center;
   transform: rotate(.6deg);
 }

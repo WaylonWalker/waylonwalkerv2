@@ -4,7 +4,7 @@ path: 'd3-day3'
 title: D3 Day 3
 date: 2018-05-05
 category: Viz
-tags: 
+tags:
     - D3
     - Viz
     - FrontEnd
@@ -200,7 +200,7 @@ render('math')
 ```
 
 ### Result
-<!-- 
+<!--
 <div id="chart2" class='chart'>
     <button class='math' onclick="render('math')">Math</button>
     <button class='science' onclick="render('science')">Science</button>
@@ -294,7 +294,7 @@ render3('math')
 ![d3 day3 example 3](d3-day3.gif)
 
 _example 3 nice and smooth_
-<!-- 
+<!--
 <div id="chart3" class='chart'>
     <button class='math' onclick="render3('math')">Math</button>
     <button class='science' onclick="render3('science')">Science</button>

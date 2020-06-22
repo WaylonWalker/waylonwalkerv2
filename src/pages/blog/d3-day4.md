@@ -4,7 +4,7 @@ path: 'd3-day4'
 title: D3 Day 4
 date: 2018-05-06
 category: Viz
-tags: 
+tags:
     - D3
     - Viz
     - FrontEnd
@@ -12,7 +12,7 @@ summary: Today we are adding scale to day 3's example horizontal bar chart.
 description: none
 cover: "./d3-cropped.png"
 ---
-<!-- 
+<!--
 <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js'></script>
 <style>
     #content{
@@ -66,11 +66,11 @@ Today I will be learning about d3 scales, and adding them to the bar chart that 
 ## Recall Example 3 from yesterday
 _maybe a few days ago.... give me a break I have a lot of other priorities_
 
-In [yesterdays](./d3-day3) post we created a working example of a horizontal bar chart that shows grades for a set of 5 students that are all in two classes; 'Math' and 'Science'.  The chart is interactive, and will switch subjects at the press of a button.  
+In [yesterdays](./d3-day3) post we created a working example of a horizontal bar chart that shows grades for a set of 5 students that are all in two classes; 'Math' and 'Science'.  The chart is interactive, and will switch subjects at the press of a button.
 
 
 ![d3 day 3 final result](d3-day3.gif)
-<!-- 
+<!--
 <div id="chart3" class='chart'>
     <button class='math' onclick="render3('math')">Math</button>
     <button class='science' onclick="render3('science')">Science</button>
@@ -121,7 +121,7 @@ let xScale = d3.scaleLinear()
     .range([0, width()]);
 ```
 
-Then we will change the following .style method call from ```return (d[subject]-50 * 3) + 'px'``` to ```return xScale(d[subject]) = 'px'```.  
+Then we will change the following .style method call from ```return (d[subject]-50 * 3) + 'px'``` to ```return xScale(d[subject]) = 'px'```.
 
 ```javascript
 newBars.merge(bars)
@@ -133,11 +133,11 @@ newBars.merge(bars)
 ```
 ### Keeping it dry
 
-Note that if we had many different elements using the same scale with this code it would only exist in one place ```xScale``` and not separately in each style function.  This makes our viz much more maintainable as we may see a need to change the scales in the future.  
+Note that if we had many different elements using the same scale with this code it would only exist in one place ```xScale``` and not separately in each style function.  This makes our viz much more maintainable as we may see a need to change the scales in the future.
 
 ### Adding Some Flair
 
-To give this viz some simple flair, and a reason that we might want to use scales.  I added a new set of buttons to allow us to change the chart size and see the viz respond.  Check out the markup in the Final Markup section if your interested in that.  I do want to point out that I used the d3 selectors to add the chart size classes to the chart.  
+To give this viz some simple flair, and a reason that we might want to use scales.  I added a new set of buttons to allow us to change the chart size and see the viz respond.  Check out the markup in the Final Markup section if your interested in that.  I do want to point out that I used the d3 selectors to add the chart size classes to the chart.
 
 The select api is very jQuery inspired, but the method chaining syntax feels very natural to me as my main data tools is pandas. The d3 methods feel very much like method chaining in python.  In fact, besides the way the function is defined it reads very much like python.  This feels very comfortable to me as I am always loosing track of braces and semicolons when writing javascript!
 
@@ -171,7 +171,7 @@ width: 50%
 ```
 
 ## Final Result
-<!-- 
+<!--
 <div id='buttons'>
     <h3>Subject</h3>
     <div id='subjects'>

@@ -89,7 +89,7 @@ const get_tweet = (data, key, offset) => {
     const day = 60 * 60 * 24 * 1000
     nextDay = new Date(date.getTime() + offset * day)
     console.log(`next_day`, nextDay)
-    
+
     return {
         description: data.frontmatter.description,
         date: data.frontmatter.date,

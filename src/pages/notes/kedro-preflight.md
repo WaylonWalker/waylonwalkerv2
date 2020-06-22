@@ -28,7 +28,7 @@ This is a very rough idea for a kedro package to prevent time lost to get partwa
 
 # Implementation
 
-``` python 
+``` python
 @hook_spec
 def before_pipeline_run(run_params, pipeline, catalog):
 
