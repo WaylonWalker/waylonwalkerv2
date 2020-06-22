@@ -144,43 +144,12 @@ class Tip extends React.Component {
     domtoimage.toJpeg(document.getElementById(`tip-${file}`), { quality: 0.98 })
       .then(function (dataUrl) {
         var link = document.createElement('a');
-        link.download = `ww-hot-tip-${file}.jpeg`;
+        link.download = `ww-hot-tip-${file}.jpg`;
         link.href = dataUrl;
         link.click();
       });
   }
 
-  // componentDidMount = async () => {
-  //   let domparser = new DOMParser()
-  //   let tipEl = document.getElementById('tip')
-  //   html2canvas(tipEl)
-  //     .then(canvas => { document.getElementById('canvas').appendChild(canvas) })
-  //     .then(canvas => {
-  //       const el = document.getElementById('canvas').querySelector('canvas')
-  //       console.log(el)
-  //       const data = el.toDataURL()
-  //       const pdfExportSetting = {
-  //         content: [
-  //           {
-  //             image: data,
-  //             width: 1024,
-  //             height: 512,
-  //             margin: [0, 0, 0, 0]
-  //           }
-  //         ]
-  //       };
-  //       pdfmake.createPdf(pdfExportSetting).download('test.pdf')
-
-  //     })
-
-
-  // }
-  // componentDidMount() {
-  //   let domparser = new DOMParser()
-  //   const doc = domparser.parseFromString(html, 'text/html')
-  //   const content = doc.querySelector('html').innerText
-  //   const p1 = doc.querySelector('p').innerText
-  // }
 
 
   render() {
@@ -207,9 +176,12 @@ class Tip extends React.Component {
             { name: 'og:description', content: content },
             { name: 'description', content: content },
             { name: 'twitter:title', content: content.slice(0, 65) + ' | Waylon Walker' },
-            // { name: 'twitter:image', content: 'https://www.waylonwalker.com' + twitterImage },
+            { name: 'twitter:image', content: `https://www.waylonwalker.com/ww-hot-tip-${file}.jpg` },
+            { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:description', content: content },
-            // { name: 'og:image', content: 'https://www.waylonwalker.com' + cover.src },
+            { name: 'og:image', content: `https://www.waylonwalker.com/ww-hot-tip-${file}.jpg` },
+            { name: 'og:image:width', content: '1024' },
+            { name: 'og:image:height', content: '512' },
           ]}
 
         >
