@@ -30,6 +30,7 @@ border-radius: 50%;
 margin: auto;
 }
 `
+
 const Image = () => (
   <ProfileImageStyle>
     <StaticQuery
