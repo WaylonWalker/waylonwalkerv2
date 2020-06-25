@@ -68,9 +68,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: "@ownername"
       - name: install npm
-        run: |
-          npm i -g gatsby-cli
-          npm install --production
+        run: npm install --production
       - name: gatsby build
         run: gatsby build
       - name: Deploy to gh-pages
