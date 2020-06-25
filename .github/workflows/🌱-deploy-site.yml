@@ -19,11 +19,15 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Set up Python 3.7
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.8
+      # - name: Set up Python 3.7
+      #   uses: actions/setup-python@v1
+      #   with:
+      #     python-version: 3.8
       - uses: actions/checkout@v2
+
+      - name: npm cache directory
+        id: npm-cache-directory
+        run: echo "::set-output name=dir::$(npm config get cache)"
 
       - name: Cache npm
         uses: actions/cache@v2
