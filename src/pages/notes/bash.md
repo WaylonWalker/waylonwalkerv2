@@ -281,3 +281,11 @@ conda info --envs | pyp 'len(lines) - 3 # account for header and base'
 ``` bash
 declare -f <function-name>
 ```
+
+## batch rename files
+
+``` bash
+for f in *.jpeg; do
+    mv -- "$f" "${f%.jpeg}.jpg"
+done
+```

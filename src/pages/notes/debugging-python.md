@@ -9,8 +9,8 @@ status: published
 description: Debugging Python
 related_post_body: ''
 related_post: []
-cover: "/static/jayden-yoon-19DxK0IG-hQ-unsplash-1.jpg"
-twitter_cover: "/static/jayden-yoon-19DxK0IG-hQ-unsplash-1.jpg"
+cover: "/static/jayden-yoon-19DxK0IG-hQ-unsplash.jpg"
+twitter_cover: "/static/jayden-yoon-19DxK0IG-hQ-unsplash.jpg"
 
 ---
 ## Using pdb
