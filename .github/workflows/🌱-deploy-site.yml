@@ -72,15 +72,7 @@ jobs:
           npm i -g gatsby-cli
           npm install --production
       - name: gatsby build
-        run: |
-          echo "-----directory structure--------"
-          ls
-          echo "-----directory structure--------"
-          ls src
-          echo "-----clean--------"
-          gatsby clean
-          echo "------building site--------"
-          gatsby build
+        run: gatsby build
       - name: Deploy to gh-pages
         uses: crazy-max/ghaction-github-pages@v1.3.0
         with:
