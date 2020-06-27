@@ -40,7 +40,8 @@ const Subscribe = () => (
         <h3>Join my NewsLetter</h3>
         <p>I write short articles about developing a <strong>successful mindset</strong> for the tech industry once or so per week.</p>
         <p></p>
-        <Link to='/newsletter' title='Subscribe to my Newsletter'>Subscribe</Link>
+        {/* <Link to='/newsletter' title='Subscribe to my Newsletter'>Subscribe</Link> */}
+        <a href='waylonwalker.com/news' title='Subscribe to my Newsletter'>Subscribe</a>
         <p>Someday I hope to announce courses/side projects there as well.</p>
         <p>Unsubscribe at any time</p>
     </SubscribeStyle>
