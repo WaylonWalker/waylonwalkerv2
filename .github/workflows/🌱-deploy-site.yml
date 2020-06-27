@@ -52,6 +52,13 @@ jobs:
           key: ${{ runner.os }}-gatsby-cache-directory
           restore-keys: |
             ${{ runner.os }}-cache-directory
+      - uses: dorny/paths-filter@v2.2.0
+        id: filter
+        with:
+          # inline YAML or path to separate file (e.g.: .github/filters.yaml)
+          filters: |
+            npm:
+              - 'package*.json'
 
       # - name: Cache gatsby public directory
       #   uses: actions/cache@v2
@@ -67,9 +74,10 @@ jobs:
           node-version: 12.x
           registry-url: https://npm.pkg.github.com/
           scope: "@ownername"
-      # - uses: bahmutov/npm-install@v1
-      # - name: install npm
-      #   run: npm install --production
+#       - uses: bahmutov/npm-install@v1
+      - name: install npm
+        if: steps.filter.outputs.npm == 'true'
+        run: npm install --production
       - name: 🔨 gatsby build
         run: npm run build
         env:

@@ -2,181 +2,174 @@
 label: New Post
 hide_body: false
 fields:
-  - type: text
-    name: templateKey
-    label: templateKey
-    default: blog-post
-    config:
-      required: true
-    hidden: true
-    description: Required to create blog page
-  - type: text
-    name: path
-    label: path
-  - type: text
-    name: title
-    label: title
-  - type: datetime
-    name: date
-    label: date
-    config:
-      required: true
-  - type: text
-    name: status
-    label: status
-  - type: text
-    name: description
-    label: description
-  - name: related_post_label
-    type: text
-    config:
-      required: false
-    label: Replated Post Label
-    description: What to say before presenting related posts
-    default: Check out this related post
-  - name: related_post_body
-    type: textarea
-    default: ""
-    config:
-      required: false
-      wysiwyg: true
-      schema:
-        format: markdown
-    label: Related Post Body
-    description: More text to add to a related post.  Could present a series.
-  - name: related_post
-    type: list
-    config:
-      use_select: true
-      min:
-      max:
-      source:
-        type: pages
-        section: posts
-    label: Related Post
-  - name: tags
-    type: tag_list
-    default: []
-    label: Tags
-    description: post tags help categorize and group posts
-  - type: file
-    name: cover
-    label: cover
-  - name: twitter_cover
-    type: file
-    config:
-      maxSize: 250
-    label: Twitter Cover
-  - name: twitter_announcement
-    type: textarea
-    default: I just dropped a new post check it out.
-    config:
-      required: false
-      wysiwyg: false
-      schema:
-        format: markdown
-    label: twitter announcement
-    description: Content of announcement tweet
-  - name: twitter_week_1
-    type: textarea
-    default: ""
-    config:
-      required: false
-      wysiwyg: false
-      schema:
-        format: markdown
-    label: twitter week 1
-    description: tweet goes out 1 week after post
-  - name: twitter_week_2
-    type: textarea
-    default: ""
-    config:
-      required: false
-      wysiwyg: false
-      schema:
-        format: markdown
-    label: twitter week 2
-    description: tweet goes out 2 weeks after post
-  - name: twitter_month_1
-    type: textarea
-    default: ""
-    config:
-      required: false
-      wysiwyg: false
-      schema:
-        format: markdown
-    label: twitter month 1
-    description: tweet goes out 1 month after post
-  - name: twitter_month_3
-    type: textarea
-    default: ""
-    config:
-      required: false
-      wysiwyg: false
-      schema:
-        format: markdown
-    label: twitter month 3
-    description: tweet goes out 3 months after post
-  - name: short_url
-    type: text
-    config:
-      required: false
-    label: short url
-  - name: devto-url
-    type: text
-    config:
-      required: false
-    label: devto-url
-  - name: devto-id
-    type: text
-    config:
-      required: false
-    label: devto-id
+- type: text
+  name: templateKey
+  label: templateKey
+  default: blog-post
+  config:
+    required: true
+  hidden: true
+  description: Required to create blog page
+- type: text
+  name: path
+  label: path
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+  config:
+    required: true
+- type: text
+  name: status
+  label: status
+- type: text
+  name: description
+  label: description
+- name: related_post_label
+  type: text
+  config:
+    required: false
+  label: Replated Post Label
+  description: What to say before presenting related posts
+  default: Check out this related post
+- name: related_post_body
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Related Post Body
+  description: More text to add to a related post.  Could present a series.
+- name: related_post
+  type: list
+  config:
+    use_select: true
+    min: 
+    max: 
+    source:
+      type: pages
+      section: posts
+  label: Related Post
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
+  description: post tags help categorize and group posts
+- type: file
+  name: cover
+  label: cover
+- name: twitter_cover
+  type: file
+  config:
+    maxSize: 250
+  label: Twitter Cover
+- name: twitter_announcement
+  type: textarea
+  default: I just dropped a new post check it out.
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: twitter announcement
+  description: Content of announcement tweet
+- name: twitter_week_1
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: twitter week 1
+  description: tweet goes out 1 week after post
+- name: twitter_week_2
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: twitter week 2
+  description: tweet goes out 2 weeks after post
+- name: twitter_month_1
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: twitter month 1
+  description: tweet goes out 1 month after post
+- name: twitter_month_3
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: twitter month 3
+  description: tweet goes out 3 months after post
+- name: short_url
+  type: text
+  config:
+    required: false
+  label: short url
+- name: devto-url
+  type: text
+  config:
+    required: false
+  label: devto-url
+- name: devto-id
+  type: text
+  config:
+    required: false
+  label: devto-id
 pages:
-  - src/pages/blog/2020-rebrand.md
-  - src/pages/blog/automate-your-deploys.md
-  - src/pages/blog/background-tasks-in-python-for-data-science.md
-  - src/pages/blog/bind-dynamic-lambdas.md
-  - src/pages/blog/brainstorming-kedro-hooks.md
-  - src/pages/blog/building-kedro.dev.md
-  - src/pages/blog/cmd-exe-tips.md
-  - src/pages/blog/create-custom-kedro-dataset.md
-  - src/pages/blog/create-new-kedro-project.md
-  - src/pages/blog/creating-the-kedro-preflight-hook.md
-  - src/pages/blog/custom-scrollbar-design.md
-  - src/pages/blog/do-you-hoist.md
-  - src/pages/blog/don-t-waste-your-time-learning-everything.md
-  - src/pages/blog/drawing-ascii-boxes.md
-  - src/pages/blog/explicit-vs-implicit-returns-in-javascript.md
-  - src/pages/blog/forestry-io.md
-  - src/pages/blog/git-push-without-setting-upstream.md
-  - src/pages/blog/how-to-get-dev-comments-from-an-article-url.md
-  - src/pages/blog/i-finally-fixed-my-styled-components-in-gatsby-js.md
-  - src/pages/blog/interrogate-is-a-pretty-awesome-brand-new-cli-for-python-packages.md
-  - src/pages/blog/kedro-class-hooks.md
-  - src/pages/blog/kedro-static-viz-0-3-0.md
-  - src/pages/blog/keyboard-driven-vscode.md
-  - src/pages/blog/long-variable-names-are-good.md
-  - src/pages/blog/out-of-space.md
-  - src/pages/blog/personal-url-shortener-with-netlify-redirects.md
-  - src/pages/blog/pre-commit-is-awesome.md
-  - src/pages/blog/productive-one-on-one.md
-  - src/pages/blog/quick-progress-bars-in-python-using-tqdm.md
-  - src/pages/blog/react-headroom.md
-  - src/pages/blog/realistic-git-workflow.md
-  - src/pages/blog/rss-feed-for-your-gatsby-site.md
-  - src/pages/blog/should-i-switch-to-zeit-now.md
-  - src/pages/blog/simple-click-2.md
-  - src/pages/blog/simple-click.md
-  - src/pages/blog/thank-you.md
-  - src/pages/blog/today-i-learned-git-diff-feature-main.md
-  - src/pages/blog/understanding-python-args-and-kwargs.md
-  - src/pages/blog/variables-names-don-t-need-their-type.md
-  - src/pages/blog/what-is-kedro.md
-  - src/pages/blog/what-is-refactoring.md
-  - src/pages/blog/what-is-something-that-you-recently-learned-that-you-wish-you-would-have-learned-or-understood-earlier.md
-  - src/pages/blog/what-is-your-advice-for-new-data-scientists.md
-  - "src/pages/blog/\U0001F4E2-announcing-find-kedro.md"
-  - src/pages/notes/maintianing-multiple-git-remotes.md
-  - src/pages/notes/practice-your-craft.md
-  - src/pages/notes/what-datascientists-should-know-about-s3.md
+- src/pages/blog/2020-rebrand.md
+- src/pages/blog/automate-your-deploys.md
+- src/pages/blog/background-tasks-in-python-for-data-science.md
+- src/pages/blog/bind-dynamic-lambdas.md
+- src/pages/blog/brainstorming-kedro-hooks.md
+- src/pages/blog/building-kedro.dev.md
+- src/pages/blog/cmd-exe-tips.md
+- src/pages/blog/create-custom-kedro-dataset.md
+- src/pages/blog/create-new-kedro-project.md
+- src/pages/blog/creating-the-kedro-preflight-hook.md
+- src/pages/blog/custom-scrollbar-design.md
+- src/pages/blog/do-you-hoist.md
+- src/pages/blog/don-t-waste-your-time-learning-everything.md
+- src/pages/blog/drawing-ascii-boxes.md
+- src/pages/blog/explicit-vs-implicit-returns-in-javascript.md
+- src/pages/blog/forestry-io.md
+- src/pages/blog/git-push-without-setting-upstream.md
+- src/pages/blog/how-to-get-dev-comments-from-an-article-url.md
+- src/pages/blog/kedro-class-hooks.md
+- src/pages/blog/kedro-static-viz-0-3-0.md
+- src/pages/blog/keyboard-driven-vscode.md
+- src/pages/blog/long-variable-names-are-good.md
+- src/pages/blog/out-of-space.md
+- src/pages/blog/personal-url-shortener-with-netlify-redirects.md
+- src/pages/blog/pre-commit-is-awesome.md
+- src/pages/blog/productive-one-on-one.md
+- src/pages/blog/quick-progress-bars-in-python-using-tqdm.md
+- src/pages/blog/react-headroom.md
+- src/pages/blog/realistic-git-workflow.md
+- src/pages/blog/rss-feed-for-your-gatsby-site.md
+- src/pages/blog/should-i-switch-to-zeit-now.md
+- src/pages/blog/simple-click-2.md
+- src/pages/blog/simple-click.md
+- src/pages/blog/thank-you.md
+- src/pages/blog/variables-names-don-t-need-their-type.md
+- src/pages/blog/what-is-kedro.md
+- src/pages/blog/what-is-refactoring.md
+- src/pages/notes/maintianing-multiple-git-remotes.md
+- src/pages/notes/practice-your-craft.md
+- src/pages/notes/what-datascientists-should-know-about-s3.md
