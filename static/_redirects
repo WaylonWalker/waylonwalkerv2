@@ -1,6 +1,8 @@
 # netlify redirects
 
 # Short-Blog
+/blog/kcre         /blog/kedro-catalog-search
+/kcre              /blog/kedro-catalog-search
 /blog/8cat         /blog/eight-years-cat
 /8cat              /blog/eight-years-cat
 /blog/parg         /blog/python-args-kwargs
