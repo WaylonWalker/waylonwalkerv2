@@ -38,3 +38,16 @@ twitter_cover: ''
 
 * mdx
 * touch typing
+
+## Newsletter
+
+* Don't jump too early
+* keep a pulse on new things
+* be nice
+* take breaks
+* practice
+* optimize the hard things
+* failure
+* dont listen to the haters
+* Just start (make 20minutes)
+*

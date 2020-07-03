@@ -22,13 +22,6 @@ devto-id: ''
 
 ---
 
-## Reasons you might not be ready to fully adopt kedro
-
-There is no shame in not being ready to fully adopt a new framework.  It may feel a bit overwhelming to mentally adopt.  It might feel like a big task to convert an existing codebase.  The catalog is probably the easiest component of kedro to start adopting.
-
-* Existing projects not built with kedro
-* kedro feels too complicated for your use-case
-* stepping into the framework
 
 ## Why use kedro catalog?
 
@@ -36,13 +29,17 @@ While using the catalog alone will not reap all of the benefits of the framework
 
 Taking a step into kedro by adopting the catalog first will give you a way to organize all of your data loads in one place, and stop manually writing read/write code, which can be different for each data and storage type. You just don't need to think about it.
 
+---
+
 * iperitive loading style
-* warms you up for the full framework
-* warms up the project for the full framework
 * organizes your data
 * all file locations can be quickly identified
-* gives you one place to load from
-* gets your mind into thinking about layers rather than `df1`, `df2`...
+* can be dropped into kedro later
+
+---
+
+> "can be dropped into kedro later"
+> Let's talk a bit more about that
 
 ## 2 Ways to Gracefully adopt the catalog
 _How do I get started with the kedro catalog_
@@ -124,7 +121,7 @@ catalog.add_feed_dict
 The framework makes appending
 
 ``` python
-catalog = DataCatalog({**catalog.__dict__, **new_catalog.__dict__})
+catalog = DataCatalog({**catalog.datasets.__dict__, **new_catalog.datasets.__dict__})
 ``
 
 
