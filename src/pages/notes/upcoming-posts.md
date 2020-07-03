@@ -18,7 +18,7 @@ twitter_cover: ''
 ## Core
 
 * gracefully adopt kedro
-    * catalog
+    * catalog - in progress
     * pipeline
 * professional python
     * cookiecutter
@@ -26,8 +26,15 @@ twitter_cover: ''
     * black
     * mypy
     * pre-commit
+    * click
+* Actions
+    * How I cut my gatsby deployment in half
+* VSCODE update
+    * plugins I use
     *
+* uses
 
 ## learning
 
 * mdx
+* touch typing
