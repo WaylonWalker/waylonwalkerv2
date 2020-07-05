@@ -166,8 +166,15 @@ class BlogPostTemplate extends React.Component {
               dangerouslySetInnerHTML={{ __html: content }} />
             <hr />
             <br />
-            <p style={{ paddingLeft: '2rem' }}>
+            {/* <p style={{ paddingLeft: '2rem' }}> */}
+            <p style={{ display: 'flex', justify: 'center', textAlign: 'center', margin: '3rem auto' }}>
               <span role='img' aria-label=''>👀</span> see an issue, edit this post on <a href={`https://github.com/WaylonWalker/waylonwalkerv2/edit/main/src/pages${slug.slice(0, -1)}.md`} alt='edit post url' title='edit this post'>GitHub</a>
+            </p>
+            <p style={{ display: 'flex', justify: 'center', margin: 'auto', textAlign: 'center', marginBottom: '.5rem' }}>
+              If you found value in this post <br />and want to send a tip.
+            </p>
+            <p style={{ display: 'flex', justify: 'center' }}>
+              <a href="https://www.buymeacoffee.com/bBdtMQO" target="_blank" style={{ display: 'inline-block', margin: 'auto' }}><img src="https://cdn.buymeacoffee.com/buttons/lato-violet.png" alt="Buy Me A Coffee" style={{ height: '51px', width: '217px', margin: 'auto' }} /></a>
             </p>
 
           </BlogPostStyles>
