@@ -27,6 +27,7 @@ twitter_cover: ''
     * mypy
     * pre-commit
     * click
+* My top pandas methods
 * Actions
     * How I cut my gatsby deployment in half
 * VSCODE update
