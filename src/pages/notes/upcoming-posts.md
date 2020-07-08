@@ -46,9 +46,10 @@ twitter_cover: ''
 * keep a pulse on new things
 * be nice
 * take breaks
+* push at the right time
 * practice
 * optimize the hard things
 * failure
 * dont listen to the haters
-* Just start (make 20minutes)
+* Just start (make 20 minutes)
 *
