@@ -8,13 +8,23 @@ z-index: 9999;
 box-shadow: 0rem 0rem 2rem rgba(0,0,0, .4);
 background: rgb(40,44,52);
 background: linear-gradient(81deg, rgba(40,44,52,1) 0%, #332D3A 90%, #392E3D 95%);
+margin-bottom: 2rem;
+
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    max-width: 800px;
+}
+
 
 ul {
-    max-width: 1200px;
-    margin: auto;
+    /* max-width: 1200px; */
+    margin: 0;
     list-style-type: none;
     display: flex;
-    margin-bottom: 2rem;
     padding: 1rem;
     position: sticky;
     top: 0;
