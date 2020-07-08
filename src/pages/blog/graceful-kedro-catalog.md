@@ -103,6 +103,8 @@ If you do happen to be in a module deeper into an existing library I tend to lev
 ``` python
 from pathlib import Path
 conf_loader = ConfLoader([Path(__file__).parents[1] / 'conf/base'])
+conf_catalog = conf_loader.get("catalog*", "catalog/**")
+new_catalog = DataCatalog.from_config(conf_catalog)
 ```
 
 > I find leveraging the `__file__` magic a bit more robust when possible as it does not depend on your current working directory.
@@ -112,7 +114,7 @@ conf_loader = ConfLoader([Path(__file__).parents[1] / 'conf/base'])
 Let's say that you are already using a kedro project, but you are wanting to develop new features entirely in the context of a notebook.  You can easily create a catalog as shown above.  Since the kedro catalog variable is typically `catalog`, we will call it `new_catalog` and add it to the existing `catalog` below.  If you are not quite sure what that `**catalog` syntax is doing check out my article on `**kwargs`.
 
 ``` python
-catalog.add_feed_dict
+catalog.add_feed_dict(new_catalog.datasets.__dict__)
 ```
 
 [![python args and kwargs](https://waylonwalker.com/python-args-kwargs.png)](https://waylonwalker.com/blog/python-args-kwargs)
