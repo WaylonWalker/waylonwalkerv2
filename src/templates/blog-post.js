@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import Img from 'gatsby-image'
+import { FiTwitter, FiGithub } from "react-icons/fi";
 
 
 const BlogPostWrapper = styled.div`
@@ -89,6 +90,23 @@ h1 {
   margin-top: 5rem;
 }
 
+.tweet {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 0;
+
+}
+
+.tweet a {
+  display: inline-block;
+  border-radius: 5px;
+  padding: .5rem 1rem;
+  background: #645FC4;
+  color: #FEDD58;
+  text-decoration: none;
+
+}
+
 `
 
 class BlogPostTemplate extends React.Component {
@@ -99,6 +117,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const {
       content,
+      url,
       slug,
       // contentComponent,
       description,
@@ -109,12 +128,13 @@ class BlogPostTemplate extends React.Component {
       date,
       // helmet,
       twitter_cover,
-      devto_url,
-      devto_id,
+      // devto_url,
+      // devto_id,
     } = this.props
     // const PostContent = contentComponent || Content
 
     const twitterImage = twitter_cover !== undefined ? twitter_cover.src : cover.src
+    const tweetLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title.slice(0, 150)) + '%0A%0A@waylonwalker%0A%0A' + url}`
 
     return (
       <>
@@ -149,7 +169,11 @@ class BlogPostTemplate extends React.Component {
               style={{ textAlign: 'right', zIndex: 2 }}>
               {date}
             </p>
-            <p
+            <div className="tweet">
+              <a href={tweetLink} >🙌 Share this post on <FiTwitter /></a>
+            </div>
+            <hr style={{ margin: '1rem 25% ' }} />
+            {/* <p
               style={{ textAlign: 'right', zIndex: 2 }}
             >
               This article was also cross posted to
@@ -160,15 +184,15 @@ class BlogPostTemplate extends React.Component {
               }
               feel free to drop in to give it a ♥ and leave comment.
 
-            </p>
+            </p> */}
             {/* <p style={{ minHeight: '30px', margin: '0', padding: '0' }}>{description}</p> */}
             <div ref={(el) => { this.markdownContainer = el }}
               dangerouslySetInnerHTML={{ __html: content }} />
-            <hr />
+            <hr style={{ margin: '3rem 25% 0' }} />
             <br />
             {/* <p style={{ paddingLeft: '2rem' }}> */}
             <p style={{ display: 'flex', justify: 'center', textAlign: 'center', margin: '3rem auto' }}>
-              <span role='img' aria-label=''>👀</span> see an issue, edit this post on <a href={`https://github.com/WaylonWalker/waylonwalkerv2/edit/main/src/pages${slug.slice(0, -1)}.md`} alt='edit post url' title='edit this post'>GitHub</a>
+              <span role='img' aria-label=''>👀</span> see an issue, edit this post on <a href={`https://github.com/WaylonWalker/waylonwalkerv2/edit/main/src/pages${slug.slice(0, -1)}.md`} alt='edit post url' title='edit this post'> <FiGithub /> GitHub</a>
             </p>
             <p style={{ display: 'flex', justify: 'center', margin: 'auto', textAlign: 'center', marginBottom: '.5rem' }}>
               If you found value in this post <br />and want to send a tip.
@@ -176,6 +200,11 @@ class BlogPostTemplate extends React.Component {
             <p style={{ display: 'flex', justify: 'center' }}>
               <a href="https://www.buymeacoffee.com/bBdtMQO" target="_blank" style={{ display: 'inline-block', margin: 'auto' }}><img src="https://cdn.buymeacoffee.com/buttons/lato-violet.png" alt="Buy Me A Coffee" style={{ height: '51px', width: '217px', margin: 'auto' }} /></a>
             </p>
+
+            <div className="tweet" style={{ justifyContent: 'center', flexDirection: 'column', alignItems: 'center', maxWidth: '300px', margin: '1rem auto', textAlign: 'center' }}>
+              <p>If you want to show your support, non-monetarily</p>
+              <a href={tweetLink} >🙌 Share this post on <FiTwitter /></a>
+            </div>
 
           </BlogPostStyles>
           {/* {devto_id === undefined ? '' : <DevToComments devto_id={devto_id} />}
@@ -209,6 +238,7 @@ const BlogPost = ({ data }) => {
     <Layout description={post.frontmatter.description} title={post.frontmatter.title} keywords={post.frontmatter.tags} time={post.frontmatter.date} url={`https://waylonwalker.com${post.frontmatter.path}`}>
       <BlogPostTemplate
         content={post.html}
+        url={`https://waylonwalker.com${post.frontmatter.path}`}
         slug={post.fields.slug}
         // contentComponent={HTMLContent}
         description={post.frontmatter.description}
