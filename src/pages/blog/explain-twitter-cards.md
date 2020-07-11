@@ -12,8 +12,8 @@ description: Can someone explain how or why twitter cards render differently
     tags, the full list can be found in their
 related_post_body: ''
 related_post: []
-cover: '/explain-twitter-cards.png'
-twitter_cover: '/explain-twitter-cards.png'
+cover: '/static/explain-twitter-cards.png'
+twitter_cover: '/static/explain-twitter-cards.png'
 twitter_week_1: ''
 twitter_week_2: ''
 twitter_month_1: ''
@@ -37,14 +37,14 @@ Mobile Looks fine.
 
 On Desktop it is not picing up the image.
 
-![not rendered card](https://waylonwalker.com/twitter-card-rendered.png)
+![not rendered card](https://waylonwalker.com/twitter-card-not-rendered.png)
 
 
 ## Twitter Card Validator
 
 The Validator renders the card correctly.  I tried the official [twitter card validator](https://cards-dev.twitter.com/validator), as well as [heymeta.com](https://www.heymeta.com/url/waylonwalker.com/latest), and [metatags.io](https://metatags.io/).  All look good.
 
-![rendered card with validator](https://waylonwalker.com/twitter-card-rendered.png)
+![rendered card with validator](https://waylonwalker.com/twitter-card-validator.png)
 
 ## Can Cards be updated?
 _even with a redirect?_
