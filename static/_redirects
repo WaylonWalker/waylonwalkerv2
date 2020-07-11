@@ -1,8 +1,9 @@
 # netlify redirects
 
 # Short-Blog
-/latest            /blog/kedro-catalog-search/
-/latest.png        /kedro-catalog-search.png
+
+/latest            /blog/whats-on-your-github-profile/
+/latest.png        /whats-on-your-github-profile.png
 /blog/kcre         /blog/kedro-catalog-search
 /kcre              /blog/kedro-catalog-search
 /blog/8cat         /blog/eight-years-cat
