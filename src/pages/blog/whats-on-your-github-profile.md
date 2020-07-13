@@ -5,7 +5,7 @@ tags: ['blog', 'JAMStack', 'netlify']
 twitter_announcement: I just dropped a new post check it out.
 path: whats-on-your-github-profile
 title: 🤓 What's on your GitHub Profile
-date: 2020-06-29T03:00:00Z
+date: 2020-07-11T03:00:00Z
 status: published
 description:
 related_post_body: ''
