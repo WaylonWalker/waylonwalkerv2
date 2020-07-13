@@ -7,7 +7,11 @@ path: parsing-rss-python
 title: 🐍 Parsing RSS feeds with Python
 date: 2020-07-13T03:00:00Z
 status: published
-description:
+description: I am looking into a way to replace my google reader experience
+    that I had back in 2013 before google took it from us. I am starting by
+    learning how to parse feeds with python, and without much previous knowledge
+    it proved to be much easier than anticipated thanks to the `feedparser`
+    library.
 related_post_body: ''
 related_post: []
 cover: '/static/parsing-rss-python.png'
