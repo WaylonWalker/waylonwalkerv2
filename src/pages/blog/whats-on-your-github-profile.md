@@ -39,3 +39,9 @@ I tightened mine up and took inspiration from a few others.
 [![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/zl9o2kmxoy2c7xv16pbz.png)](https://github.com/waylonwalker)
 
 Share a screenshot and link of yours [on dev](https://dev.to/waylonwalker/what-s-on-your-github-profile-40p3).
+
+# updated again
+
+Updated with a list of latest Twitter followers, using GitHub actions.
+
+![waylonwalkers GitHub profile](https://dev-to-uploads.s3.amazonaws.com/i/f8fcm9dvvozj4rzh4376.png)
