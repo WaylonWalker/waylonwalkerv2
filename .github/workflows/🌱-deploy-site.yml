@@ -5,6 +5,7 @@ name: 🌱 Deploy site
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -74,7 +75,7 @@ jobs:
           node-version: 12.x
           registry-url: https://npm.pkg.github.com/
           scope: "@ownername"
-#       - uses: bahmutov/npm-install@v1
+      #       - uses: bahmutov/npm-install@v1
       - name: install npm
         if: steps.filter.outputs.npm == 'true'
         run: npm install --production
