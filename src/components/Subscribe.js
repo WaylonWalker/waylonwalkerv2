@@ -41,7 +41,7 @@ const Subscribe = () => (
         <p>I write short articles about developing a <strong>successful mindset</strong> for the tech industry once or so per week.</p>
         <p></p>
         {/* <Link to='/newsletter' title='Subscribe to my Newsletter'>Subscribe</Link> */}
-        <a href='waylonwalker.com/news' title='Subscribe to my Newsletter'>Subscribe</a>
+        <a href='https://emailoctopus.com/lists/b194a4af-9875-11ea-a3d0-06b4694bee2a/forms/subscribe' title='Subscribe to my Newsletter'>Subscribe</a>
         <p>Someday I hope to announce courses/side projects there as well.</p>
         <p>Unsubscribe at any time</p>
     </SubscribeStyle>
