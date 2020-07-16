@@ -7,7 +7,10 @@ path: why-use-cms
 title: Why use a cms
 date: 2020-07-14T03:00:00Z
 status: published
-description:
+description: When first learning to code its very common to hard code
+    everything right into the code. This happens with most folks in just about
+    any language. Whether its html or markdown for front end content, or even
+    hardcoding parameters in our backend languages like python, or node.js.
 related_post_body: ''
 related_post: []
 cover: '/static/why-use-cms.png'
