@@ -40,10 +40,15 @@ Very severe chronic health issues from my family restricted my ability to travel
 
 It was in these times that I found a love for data, and taking action from insights I found with data. I learned how to use python to enable me to be more effective. I did this primarily from hospital waiting rooms and many overnight stays. This gave my mind a break from some of the really difficult things in life but also catapulted my career in a new direction.
 
+
 🔼 Be flexible
+
 🔼 Always be open and ready for change
+
 🔼 Never stop learning
+
 🔼 Keep a positive attitude
+
 🔼 Be kind to others
 
 ---
