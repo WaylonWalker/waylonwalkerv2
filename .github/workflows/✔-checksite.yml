@@ -1,5 +1,6 @@
 name: ✔ check if site is up
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"
 
