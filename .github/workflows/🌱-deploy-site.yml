@@ -61,13 +61,13 @@ jobs:
             npm:
               - 'package*.json'
 
-      # - name: Cache gatsby public directory
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: public/
-      #     key: ${{ runner.os }}-gatsby-public-directory
-      #     restore-keys: |
-      #       ${{ runner.os }}-public-director
+      - name: Cache gatsby public directory
+        uses: actions/cache@v2
+        with:
+          path: public/
+          key: ${{ runner.os }}-gatsby-public-directory
+          restore-keys: |
+            ${{ runner.os }}-public-director
 
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
