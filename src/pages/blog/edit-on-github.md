@@ -1,11 +1,11 @@
 ---
 templateKey: blog-post
 related_post_label: Check out this related post
-tags: ['blog', 'JAMStack', 'netlify']
+tags: ['blog', 'JAMStack', 'GitHub']
 twitter_announcement: I just dropped a new post check it out.
 path: python-args-kwargs
 title: Edit On GitHub
-date: 2020-06-11T05:00:00Z
+date: 2020-07-18T05:00:00Z
 status: published
 description: I recently added a button to my blog, and subsequently my posts on [DEV.to](https://dev.to/waylonwalker).  It's the best thing that I have done for it in a while.  
 related_post_body: ''
