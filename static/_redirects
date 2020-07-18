@@ -1,9 +1,18 @@
 # netlify redirects
 
-# Short-Blog
+# image upload
+/i                 https://github.com/WaylonWalker/waylonwalkerv2/upload/main/static
+
+# profile image
+/p                 https://waylonwalker.com/8bitc.png
+
+# latest-post
 
 /latest            /blog/whats-on-your-github-profile/
 /latest.png        /whats-on-your-github-profile.png
+
+# Short-Blog
+
 /blog/kcre         /blog/kedro-catalog-search
 /kcre              /blog/kedro-catalog-search
 /blog/8cat         /blog/eight-years-cat
@@ -87,6 +96,7 @@
 /blog/today-i-learned-git-diff-feature-master/   /blog/git-diff-feature-main/
 
 # underscores to -
+# this was a redesign done in 2020
 
 /blog/autoreload_python    /blog/autoreload-python
 /blog/background_1         /blog/background-1
@@ -121,9 +131,10 @@
 /static/*       /:splat
 
 #External
-/news          https://emailoctopus.com/lists/b194a4af-9875-11ea-a3d0-06b4694bee2a/forms/subscribe
-/newsletter          https://emailoctopus.com/lists/b194a4af-9875-11ea-a3d0-06b4694bee2a/forms/subscribe
-/zoom          https://us04web.zoom.us/j/4579767936?pwd=YithZjVwSENrUlpiU2h6ckJiZ1o4QT09
+
+/news           https://emailoctopus.com/lists/b194a4af-9875-11ea-a3d0-06b4694bee2a/forms/subscribe
+/newsletter     https://emailoctopus.com/lists/b194a4af-9875-11ea-a3d0-06b4694bee2a/forms/subscribe
+/zoom           https://us04web.zoom.us/j/4579767936?pwd=YithZjVwSENrUlpiU2h6ckJiZ1o4QT09
 /kedro-class-hooks-template https://gist.github.com/WaylonWalker/b97fd496e838422644ed300212ea0c1f
 /kcht           https://gist.github.com/WaylonWalker/b97fd496e838422644ed300212ea0c1f
 /redirects      https://github.com/WaylonWalker/waylonwalkerv2/edit/main/static/_redirects
@@ -131,6 +142,7 @@
 /github         https://github.com/WaylonWalker
 /devto          https://dev.to/waylonwalker/
 /linkedin       https://www.linkedin.com/in/waylonwalker/
+/li             https://www.linkedin.com/in/waylonwalker/
 /instagram      https://www.instagram.com/_waylonwalker/
 /ig             https://www.instagram.com/_waylonwalker/
 /buffer         https://publish.buffer.com/profile/5bc121e0dd50725a7130edd6/tab/queue
