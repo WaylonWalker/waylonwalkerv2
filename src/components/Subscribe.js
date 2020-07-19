@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Helmet from 'react-helmet'
-import { Link } from 'gatsby'
+// import Helmet from 'react-helmet'
+// import { Link } from 'gatsby'
 
 const SubscribeStyle = styled.div`
 max-width: 500px;
