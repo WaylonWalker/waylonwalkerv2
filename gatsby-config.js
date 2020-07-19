@@ -1,10 +1,43 @@
 // google analytics tracking id
 // UA-113148616-1
 
-CoffeeButton = `
-<a href='https://www.buymeacoffee.com/bBdtMQO'>
-  <img src='https://cdn.buymeacoffee.com/buttons/lato-violet.png' width='200px' />
-</a>
+const CoffeeButton = `
+<table style="border: none;" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td>
+                <a href="https://twitter.com/_waylonwalker"><img width="30" src="https://github.com/WaylonWalker/WaylonWalker/blob/main/icon/twitter.png?raw=true" /></a>
+            </td>
+            <td>
+                <a href="https://instagram.com/_waylonwalker"><img width="30" src="https://github.com/WaylonWalker/WaylonWalker/blob/main/icon/instagram.jpg?raw=true" /></a>
+            </td>
+            <td>
+                <a href="https://www.linkedin.com/in/waylonwalker/"><img width="30" src="https://github.com/WaylonWalker/WaylonWalker/blob/main/icon/linkedin.png?raw=true" /></a>
+            </td>
+            <td>
+                <a href="https://www.buymeacoffee.com/bBdtMQO">
+                    <img src="https://cdn.buymeacoffee.com/buttons/lato-violet.png" width="200px" />
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+`
+const NewsletterCallToAction = `
+<p>
+  I have been writing short snippets about my mentality breaking into the
+  tech/data industry in my newsletter, 👇 check it out and lets get the
+  conversation started.
+</p>
+<p>
+  <a href="https://waylonwalker.com/newsletter">
+    <img
+      src="https://res.cloudinary.com/practicaldev/image/fetch/s--uOcrEpdd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://waylonwalker.com/waylon-walker-newsletter.png"
+      alt="Sign up for my Newsletter"
+      loading="lazy"
+    >
+  </a>
+</p>
 `
 module.exports = {
   siteMetadata: {
@@ -211,7 +244,10 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: 'https://waylonwalker.com' + edge.node.fields.slug,
                   guid: 'https://waylonwalker.com' + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html + `<hr><br><span role='img' aria-label=''>👀</span> see an issue, edit this post on <a href='https://github.com/WaylonWalker/waylonwalkerv2/edit/main/src/pages${edge.node.fields.slug.slice(0, -1)}.md' alt='edit post url' title='edit this post'>GitHub</a><br><hr>${CoffeeButton}<br><hr><p>I have been writing short snippets about my mentality breaking into the tech/data industry in my newsletter, 👇 check it out and lets get the conversation started.</p> <p><a href="https://waylonwalker.com/newsletter"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--uOcrEpdd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://waylonwalker.com/waylon-walker-newsletter.png" alt="Sign up for my Newsletter" loading="lazy"></a></p>` }],
+                  custom_elements: [
+                    { "content:encoded": edge.node.html + `<hr><br><span role='img' aria-label=''>👀</span> see an issue, edit this post on <a href='https://github.com/WaylonWalker/waylonwalkerv2/edit/main/src/pages${edge.node.fields.slug.slice(0, -1)}.md' alt='edit post url' title='edit this post'>GitHub</a><br><hr>${CoffeeButton}<br><hr>${NewsletterCallToAction}` },
+                    { "cover_image": edge.node.fields.slug.replace('/blog', '') + '.png' }
+                  ],
                 })
               })
             },
