@@ -233,6 +233,7 @@ export const pageQuery = graphql`
         node {
           excerpt(pruneLength: 400, format: PLAIN)
           html
+          plainText
           id
           fields {
             slug
@@ -242,6 +243,7 @@ export const pageQuery = graphql`
             templateKey
             status
             description
+            tags
             cover {
               absolutePath
               childImageSharp {

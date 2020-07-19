@@ -77,11 +77,30 @@ class BlogPosts extends Component {
   setSearch = search => this.setState({ search }, () => this.SearchWithFuse())
 
   SearchWithFuse = () => {
-    const fuse = new Fuse(this.state.posts, { keys: ['node.html'] })
+    console.log("fusing with plainText\n\n")
+    console.log(this.state.posts)
+    const fuse = new Fuse(
+      this.state.posts,
+      {
+        keys: [
+          'node.plainText',
+          {
+            name: 'node.frontmatter.tags',
+            weight: 2
+          },
+          {
+            name: 'node.frontmatter.title',
+            weight: 2.5
+          }
+        ],
+        useExtendedSearch: true
+      }
+    )
     if (this.state.search === "") {
       this.setState({ filteredPosts: this.state.posts })
     } else {
       this.setState({ filteredPosts: fuse.search(this.state.search).map(i => i.item) })
+      console.log(fuse.search(this.state.search))
     }
   }
 

@@ -98,6 +98,7 @@ export const pageQuery = graphql`
         node {
           id
           html
+          plainText
           frontmatter {
             title
             templateKey
@@ -106,7 +107,7 @@ export const pageQuery = graphql`
             status
             description
             category
-            # tags
+            tags
             summary
             # slug
             coverCredits

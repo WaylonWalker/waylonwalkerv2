@@ -59,6 +59,7 @@ query BlogQuery {
       node {
         excerpt(pruneLength: 400)
         html
+        plainText
         id
         fields {
           slug
@@ -68,6 +69,7 @@ query BlogQuery {
           templateKey
           status
           description
+          tags
           cover {
             absolutePath
             childImageSharp {

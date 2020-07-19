@@ -8,7 +8,7 @@ import Subscribe from './Subscribe'
 import LayoutStyles from './styles/LayoutStyles'
 import './layout.css'
 
-const description = 'Practicing my craft in public, sharing my experience along the way.  Python, Kedro, JamStack, Gatsby, Data, Automation'
+// const description = 'Practicing my craft in public, sharing my experience along the way.  Python, Kedro, JamStack, Gatsby, Data, Automation'
 
 const Layout = ({ children, include_subscribe = true }) => (
   <StaticQuery
