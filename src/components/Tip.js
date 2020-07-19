@@ -198,8 +198,8 @@ class Tip extends React.Component {
               <img className='after-image' src={afterImage} alt='footer logo inside of the tip' />
             </div>
           </TipStyles>
-          <button className='btn camera' title='download an image of this tip' onClick={() => this.download(`${file}`)} ><FiCamera /></button>
-          <div className='tags'>{tags.map(tag => <a ref={`https://waylonwalker.com/hot-tips/tag/${tag}`} className="tag" >{tag}</a>)}</div>
+          <button className='btn camera' aria-label='download image' title='download an image of this tip' onClick={() => this.download(`${file}`)} ><FiCamera /></button>
+          <div className='tags'>{tags.map(tag => <a href={`https://waylonwalker.com/hot-tips/tag/${tag}`} className="tag" >{tag}</a>)}</div>
           <a className='btn twitter' href={tweetLink} title='share this tip on twitter'> <FiTwitter /> </a>
         </TipWrapper>
         <div id="canvas"></div>

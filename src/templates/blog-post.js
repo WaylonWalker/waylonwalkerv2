@@ -104,6 +104,7 @@ h1 {
   background: #645FC4;
   color: #FEDD58;
   text-decoration: none;
+  vertical-align: center;
 
 }
 
@@ -170,7 +171,7 @@ class BlogPostTemplate extends React.Component {
               {date}
             </p>
             <div className="tweet">
-              <a href={tweetLink} >🙌 Share this post on <FiTwitter /></a>
+              <a href={tweetLink} ><span role='img' aria-label='sharing hands'>🙌</span> Share this post on <FiTwitter /></a>
             </div>
             <hr style={{ margin: '1rem 25% ' }} />
             {/* <p
@@ -198,12 +199,12 @@ class BlogPostTemplate extends React.Component {
               If you found value in this post <br />and want to send a tip.
             </p>
             <p style={{ display: 'flex', justify: 'center' }}>
-              <a href="https://www.buymeacoffee.com/bBdtMQO" target="_blank" style={{ display: 'inline-block', margin: 'auto' }}><img src="https://cdn.buymeacoffee.com/buttons/lato-violet.png" alt="Buy Me A Coffee" style={{ height: '51px', width: '217px', margin: 'auto' }} /></a>
+              <a href="https://www.buymeacoffee.com/bBdtMQO" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', margin: 'auto' }}><img src="https://cdn.buymeacoffee.com/buttons/lato-violet.png" alt="Buy Me A Coffee" style={{ height: '51px', width: '217px', margin: 'auto' }} /></a>
             </p>
 
             <div className="tweet" style={{ justifyContent: 'center', flexDirection: 'column', alignItems: 'center', maxWidth: '300px', margin: '1rem auto', textAlign: 'center' }}>
               <p>If you want to show your support, non-monetarily</p>
-              <a href={tweetLink} >🙌 Share this post on <FiTwitter /></a>
+              <a href={tweetLink} ><span role='img' aria-label='sharing hands'>🙌</span> Share this post on <FiTwitter /></a>
             </div>
 
           </BlogPostStyles>

@@ -91,7 +91,7 @@ class BlogPosts extends Component {
       < BlogPostsStyle >
         <form action="">
           <label htmlFor="search">Search:
-            <input type="text" name="search" value={this.state.search} id="search" onChange={e => this.setSearch(e.target.value)} />
+            <input type="text" aria-label='search' name="search" value={this.state.search} id="search" onChange={e => this.setSearch(e.target.value)} />
           </label>
         </form>
         <FlipMove className='post-cards'>

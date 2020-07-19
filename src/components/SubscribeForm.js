@@ -148,22 +148,22 @@ const SubscribeForm = () => (
                 <form method="post" action="https://emailoctopus.com/lists/b194a4af-9875-11ea-a3d0-06b4694bee2a/members/embedded/1.3s/add" className="email-octopus-form" data-sitekey="6LdYsmsUAAAAAPXVTt-ovRsPIJ_IVhvYBBhGvRV6">
                     <div className="email-octopus-form-row">
                         <label htmlFor="field_0">Email address</label>
-                        <input id="field_0" name="field_0" type="email" placeholder />
+                        <input aria-label='email' id="field_0" name="field_0" type="email" placeholder />
                     </div>
                     <div className="email-octopus-form-row">
                         <label htmlFor="field_1">First name</label>
-                        <input id="field_1" name="field_1" type="text" placeholder />
+                        <input aria-label='first name' id="field_1" name="field_1" type="text" placeholder />
                     </div>
                     <div className="email-octopus-form-row">
                         <label htmlFor="field_2">Last name</label>
-                        <input id="field_2" name="field_2" type="text" placeholder />
+                        <input aria-label="last name" id="field_2" name="field_2" type="text" placeholder />
                     </div>
                     <div className="email-octopus-form-row-hp" aria-hidden="true">
                         {/* Do not remove this field, otherwise you risk bot sign-ups */}
-                        <input type="text" name="hpb194a4af-9875-11ea-a3d0-06b4694bee2a" tabIndex={-1} autoComplete="nope" />
+                        <input aria-label='anti bot' type="text" name="hpb194a4af-9875-11ea-a3d0-06b4694bee2a" tabIndex={-1} autoComplete="nope" />
                     </div>
                     <div className="email-octopus-form-row-subscribe">
-                        <input type="hidden" name="successRedirectUrl" value="https://waylonwalker.com/ty" />
+                        <input aria-label='subscribe' type="hidden" name="successRedirectUrl" value="https://waylonwalker.com/ty" />
                         <button type="submit">Subscribe</button>
                     </div>
                 </form>
