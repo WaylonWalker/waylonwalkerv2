@@ -84,14 +84,14 @@ class BlogPosts extends Component {
       {
         keys: [
           'node.plainText',
-          {
-            name: 'node.frontmatter.tags',
-            weight: 2
-          },
-          {
-            name: 'node.frontmatter.title',
-            weight: 2.5
-          }
+          // {
+          //   name: 'node.frontmatter.tags',
+          //   weight: 2
+          // },
+          // {
+          //   name: 'node.frontmatter.title',
+          //   weight: 2.5
+          // }
         ],
         useExtendedSearch: true
       }
