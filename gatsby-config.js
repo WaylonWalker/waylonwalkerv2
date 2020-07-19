@@ -1,6 +1,11 @@
 // google analytics tracking id
 // UA-113148616-1
 
+CoffeeButton = `
+<a href='https://www.buymeacoffee.com/bBdtMQO'>
+  <img src='https://cdn.buymeacoffee.com/buttons/lato-violet.png' width='200px' />
+</a>
+`
 module.exports = {
   siteMetadata: {
     title: 'Waylon Walker',
@@ -206,7 +211,7 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: 'https://waylonwalker.com' + edge.node.fields.slug,
                   guid: 'https://waylonwalker.com' + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html + `<hr><br><span role='img' aria-label=''>👀</span> see an issue, edit this post on <a href='https://github.com/WaylonWalker/waylonwalkerv2/edit/main/src/pages${edge.node.fields.slug.slice(0, -1)}.md' alt='edit post url' title='edit this post'>GitHub</a><br><hr><a href="https://www.buymeacoffee.com/bBdtMQO" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-violet.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a><br><hr><p>I have been writing short snippets about my mentality breaking into the tech/data industry in my newsletter, 👇 check it out and lets get the conversation started.</p> <p><a href="https://waylonwalker.com/newsletter"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--uOcrEpdd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://waylonwalker.com/waylon-walker-newsletter.png" alt="Sign up for my Newsletter" loading="lazy"></a></p>` }],
+                  custom_elements: [{ "content:encoded": edge.node.html + `<hr><br><span role='img' aria-label=''>👀</span> see an issue, edit this post on <a href='https://github.com/WaylonWalker/waylonwalkerv2/edit/main/src/pages${edge.node.fields.slug.slice(0, -1)}.md' alt='edit post url' title='edit this post'>GitHub</a><br><hr>${CoffeeButton}<br><hr><p>I have been writing short snippets about my mentality breaking into the tech/data industry in my newsletter, 👇 check it out and lets get the conversation started.</p> <p><a href="https://waylonwalker.com/newsletter"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--uOcrEpdd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://waylonwalker.com/waylon-walker-newsletter.png" alt="Sign up for my Newsletter" loading="lazy"></a></p>` }],
                 })
               })
             },
