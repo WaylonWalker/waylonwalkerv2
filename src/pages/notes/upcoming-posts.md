@@ -9,31 +9,39 @@ status: published
 description: My Notes about using kedro
 related_post_body: ''
 related_post: []
-cover: ""
+cover: ''
 twitter_cover: ''
 
 ---
-
-
 ## Core
 
 * gracefully adopt kedro
-    * catalog - in progress
-    * pipeline
+  * catalog - in progress
+  * pipeline
 * professional python
-    * cookiecutter
-    * flake8
-    * black
-    * mypy
-    * pre-commit
-    * click
+  * cookiecutter
+  * flake8
+  * black
+  * mypy
+  * pre-commit
+  * click
 * My top pandas methods
 * Actions
-    * How I cut my gatsby deployment in half
+  * How I cut my gatsby deployment in half
 * VSCODE update
-    * plugins I use
-    *
+  * plugins I use
+  * 
 * uses
+
+## python
+
+* [What does if __name__ == “__main__”: do?
+](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)
+* [ternary operators](https://stackoverflow.com/questions/394809/does-python-have-a-ternary-conditional-operator)
+* [check if file exists](https://stackoverflow.com/questions/82831/how-do-i-check-whether-a-file-exists-without-exceptions)
+* [calling external commands](https://stackoverflow.com/questions/89228/calling-an-external-command-from-python)
+* [merging dictionaries](https://stackoverflow.com/questions/38987/how-do-i-merge-two-dictionaries-in-a-single-expression-in-python-taking-union-o)
+* 
 
 ## learning
 
