@@ -135,7 +135,8 @@ class BlogPostTemplate extends React.Component {
     // const PostContent = contentComponent || Content
 
     const twitterImage = twitter_cover !== undefined ? twitter_cover.src : cover.src
-    const tweetLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title.slice(0, 150)) + '%0A%0A@waylonwalker%0A%0A' + url}`
+    const shortTitle = title === null ? '' : encodeURIComponent(title.slice(0, 150))
+    const tweetLink = `https://twitter.com/intent/tweet?text=${shortTitle + '%0A%0A@waylonwalker%0A%0A' + url}`
 
     return (
       <>
