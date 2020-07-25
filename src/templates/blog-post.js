@@ -159,20 +159,20 @@ class BlogPostTemplate extends React.Component {
         >
           <title>{title}</title>
         </Helmet>
-        <BlogPostWrapper>
+        <BlogPostWrapper className='blog-post'>
           <BlogPostStyles>
-            <Img fluid={fluidCover} />
+            <Img fluid={fluidCover} className='post-cover-image' />
             <h1
               style={{ textAlign: 'right', zIndex: 2 }}
               className="blog title">
               {title}
             </h1>
-            <p
+            <p className='post-date'
               style={{ textAlign: 'right', zIndex: 2 }}>
               {date}
             </p>
             <div className="tweet">
-              <a href={tweetLink} ><span role='img' aria-label='sharing hands'>🙌</span> Share this post on <FiTwitter /></a>
+              <a href={tweetLink} className='post-tweet-link'><span role='img' aria-label='sharing hands'>🙌</span> Share this post on <FiTwitter /></a>
             </div>
             <hr style={{ margin: '1rem 25% ' }} />
             {/* <p
@@ -188,30 +188,30 @@ class BlogPostTemplate extends React.Component {
 
             </p> */}
             {/* <p style={{ minHeight: '30px', margin: '0', padding: '0' }}>{description}</p> */}
-            <div ref={(el) => { this.markdownContainer = el }}
+            <div className='post-body' ref={(el) => { this.markdownContainer = el }}
               dangerouslySetInnerHTML={{ __html: content }} />
             <hr style={{ margin: '3rem 25% 0' }} />
             <br />
             {/* <p style={{ paddingLeft: '2rem' }}> */}
-            <p style={{ display: 'flex', justify: 'center', textAlign: 'center', margin: '3rem auto' }}>
+            <p className='post-edit' style={{ display: 'flex', justify: 'center', textAlign: 'center', margin: '3rem auto' }}>
               <span role='img' aria-label=''>👀</span> see an issue, edit this post on <a href={`https://github.com/WaylonWalker/waylonwalkerv2/edit/main/src/pages${slug.slice(0, -1)}.md`} alt='edit post url' title='edit this post'> <FiGithub /> GitHub</a>
             </p>
-            <p style={{ display: 'flex', justify: 'center', margin: 'auto', textAlign: 'center', marginBottom: '.5rem' }}>
+            <p className='post-tip-message' style={{ display: 'flex', justify: 'center', margin: 'auto', textAlign: 'center', marginBottom: '.5rem' }}>
               If you found value in this post <br />and want to send a tip.
             </p>
-            <p style={{ display: 'flex', justify: 'center' }}>
+            <p class-name='post-tip-link' style={{ display: 'flex', justify: 'center' }}>
               <a href="https://www.buymeacoffee.com/bBdtMQO" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', margin: 'auto' }}><img src="https://cdn.buymeacoffee.com/buttons/lato-violet.png" alt="Buy Me A Coffee" style={{ height: '51px', width: '217px', margin: 'auto' }} /></a>
             </p>
 
             <div className="tweet" style={{ justifyContent: 'center', flexDirection: 'column', alignItems: 'center', maxWidth: '300px', margin: '1rem auto', textAlign: 'center' }}>
               <p>If you want to show your support, non-monetarily</p>
-              <a href={tweetLink} ><span role='img' aria-label='sharing hands'>🙌</span> Share this post on <FiTwitter /></a>
+              <a className='post-tweet-link' href={tweetLink} ><span role='img' aria-label='sharing hands'>🙌</span> Share this post on <FiTwitter /></a>
             </div>
 
           </BlogPostStyles>
           {/* {devto_id === undefined ? '' : <DevToComments devto_id={devto_id} />}
           {devto_id === undefined ? '' : <p>devtoid = {devto_id}</p>} */}
-          <p>
+          <p className='post-cta-all-posts'>
             Check out my other
           <Link to='/blog' style={{ margin: '.2rem' }} >blogs</Link>
           </p>
