@@ -4,7 +4,7 @@ related_post_label: Check out this related post
 tags: ['python', 'LearnInPublic']
 twitter_announcement: I just dropped a new post check it out.
 path: practice-python-online
-title:
+title: 🐍 Practice Python Online
 date: 2020-06-19T05:00:00Z
 status: published
 description: When learning a new skill it's important to practice along the
