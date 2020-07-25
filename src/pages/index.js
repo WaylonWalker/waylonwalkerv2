@@ -116,15 +116,15 @@ const RepoStyle = styled.div`
   margin: 1rem;
   border-radius: 2px;
   box-shadow:  -8rem -6rem 8rem -6rem rgba(253, 221, 88, .2), 4rem 0 8rem rgba(88, 82, 185, .3), .2rem .2rem 1rem rgba(0, 0, 0, .2);
-  .description {
+  .repo-description {
     margin: 1rem;
     color: #e8e9ea;
   }
-  .language {
+  .repo-language {
     color: #DAA520;
     margin: 0;
   }
-  .header {
+  .repo-header {
     padding-top: 1rem;
     background: linear-gradient(145deg, #2b273d, #18222F,  #18222F, #222536);
     display: flex;
@@ -132,7 +132,7 @@ const RepoStyle = styled.div`
     justify-content: center;
     p {padding-left: .2rem;}
   }
-  .stats {
+  .repo-stats {
     padding: 1rem 0 .2rem;
     /* box-shadow: inset 0px 15px 10px -10px #30313E, 0px -10px 10px -2px #30313E; */
     background: linear-gradient(145deg, #2b273d,  #18222F,   #18222F);
@@ -168,16 +168,16 @@ class Repo extends React.Component {
 
   render() {
     return (
-      <RepoStyle>
+      <RepoStyle className='repo'>
         <a href={`https://github.com/${this.state.repo}`} aria-label={`go to github ${this.state.repo}`} title={this.state.repo}>
-          <div className="header">
-            <h2>{this.state.name}</h2>
-            <p className="language">{this.state.language}</p>
+          <div className="repo-header">
+            <h2 className='repo-name'>{this.state.name}</h2>
+            <p className="repo-language">{this.state.language}</p>
           </div>
-          <p className="description">{this.state.description}</p>
-          <div className="stats">
-            <div className="forks">{this.state.forks} <span className="label">forks</span></div>
-            <div className="stars">{this.state.stargazers_count} <span className="label">stars</span></div>
+          <p className="repo-description">{this.state.description}</p>
+          <div className="repo-stats">
+            <div className="repo-forks">{this.state.forks} <span className="label">forks</span></div>
+            <div className="repo-stars">{this.state.stargazers_count} <span className="label">stars</span></div>
           </div>
         </a>
       </RepoStyle>
