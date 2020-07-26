@@ -4,7 +4,7 @@ related_post_label: Check out this related post
 tags: []
 path: new-machine
 title: New Machine
-date: 2020-07-25T05:00:00Z
+date: 2020-07-25T05:00:00.000+00:00
 status: published
 description: ''
 related_post_body: ''
@@ -35,6 +35,8 @@ apt install python3-venv
 pip install pipx
 pipx install black
 pipx install shell-functools
+pip install ipython
+
 
 # docker
 sudo apt update
