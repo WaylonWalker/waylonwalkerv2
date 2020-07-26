@@ -13,7 +13,7 @@ cover: ''
 twitter_cover: ''
 
 ---
-Today I setup a new machine on Digital Ocean,  Here are my installation notes.
+Today I setup a new machine on Digital Ocean to use with TestProject.io,  Here are my installation notes.
 
 ``` bash
 apt update && apt upgrade -y
@@ -68,4 +68,54 @@ apt install silversearcher-ag
 # bat
 apt install bat
 echo "alias cat=batcat" >> ~/.zshrc
+
+# testproject.io tokens
+echo 'export TP_AGENT_ALIAS="Digital Ocean Agent"' >>" ~/.zshrc
+echo "export TP_AGENT_API_KEY=<your-key> >>" ~/.zshrc
+echo "export TP_DEV_TOKEN=<your-token> >>" ~/.zshrc
+
+```
+
+
+envsubst < .github/ci/docker-compose.yml > docker-compose.yml
+
+``` yaml
+# .github/ci/docker-compose.yml
+version: "3.1"
+services:
+  testproject-agent:
+    image: testproject/agent:latest
+    container_name: testproject-agent
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      TP_API_KEY: "${TP_API_KEY}"
+      TP_AGENT_ALIAS: "GitHub Action Agent"
+      TP_AGENT_TEMP: "true"
+      TP_SDK_PORT: "8686"
+      CHROME: "chrome:4444"
+      CHROME_EXT: "localhost:5555"
+      FIREFOX: "firefox:4444"
+      FIREFOX_EXT: "localhost:6666"
+    ports:
+    - "8585:8585"
+    - "8686:8686"
+  chrome:
+    image: selenium/standalone-chrome
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+    - "5555:4444"
+  firefox:
+    image: selenium/standalone-firefox
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+    - "6666:4444"
+```
+
+
+``` bash
+docker-compose -f docker-compose.yml
 ```
