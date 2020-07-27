@@ -2,15 +2,16 @@
 templateKey: notes
 related_post_label: Check out this related post
 tags: []
-path: new-machine
-title: New Machine
+path: new-machine-tpio
+title: New Machine for developing Tests with TestProject.io
 date: 2020-07-25T05:00:00.000+00:00
 status: published
-description: ''
+description: Today I setup a new machine on Digital Ocean to use with
+  TestProject.io, Here are my installation notes.
 related_post_body: ''
 related_post: []
-cover: ''
-twitter_cover: ''
+cover: /static/new-machine-tpio.png
+twitter_cover: /static/new-machine-tpio.png
 
 ---
 Today I setup a new machine on Digital Ocean to use with TestProject.io,  Here are my installation notes.
