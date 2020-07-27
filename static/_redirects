@@ -4,12 +4,13 @@
 /i                 https://github.com/WaylonWalker/waylonwalkerv2/upload/main/static
 
 # profile image
+/profile           https://waylonwalker.com/8bitc.png
 /p                 https://waylonwalker.com/8bitc.png
 
 # latest-post
 
-/latest            /blog/whats-on-your-github-profile/
-/latest.png        /whats-on-your-github-profile.png
+/latest            /blog/practice-python-online/
+/latest.png        /practice-python-online.png
 
 # Short-Blog
 
@@ -138,6 +139,7 @@
 /kedro-class-hooks-template https://gist.github.com/WaylonWalker/b97fd496e838422644ed300212ea0c1f
 /kcht           https://gist.github.com/WaylonWalker/b97fd496e838422644ed300212ea0c1f
 /redirects      https://github.com/WaylonWalker/waylonwalkerv2/edit/main/static/_redirects
+/actions        https://github.com/WaylonWalker/waylonwalkerv2/actions
 /twitter        https://twitter.com/_WaylonWalker
 /github         https://github.com/WaylonWalker
 /devto          https://dev.to/waylonwalker/
