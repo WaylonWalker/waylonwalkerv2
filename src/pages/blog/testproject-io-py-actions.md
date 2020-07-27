@@ -3,7 +3,7 @@ templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['python',]
 twitter_announcement: I just dropped a new post check it out.
-path: test-project-io-py-actions
+path: testproject-io-py-actions
 title: Integration testing with Python, TestProject.io, and GitHub Actions
 date: 2020-07-27T05:00:00Z
 status: published
@@ -13,8 +13,8 @@ description: As I continue to build out
     want to explore some integration testing options using GitHub actions.
 related_post_body: ''
 related_post: []
-cover: /static/test-project-io-py-actions.png
-twitter_cover: /static/test-project-io-py-actions.png
+cover: /static/testproject-io-py-actions.png
+twitter_cover: /static/testproject-io-py-actions.png
 twitter_week_1: ''
 twitter_week_2: ''
 twitter_month_1: ''
@@ -43,10 +43,10 @@ I chose to start with the GitHub repos as they seemed a bit more straight forwar
 
 ## TestProject.io
 
-I am trying out [testproject.io](https://testproject.io) for the first time on this project.  My experience so far has been top notch.  There was an existing suite of docker images/files setup to run the testproject agent in a docker container alongside of headless chrome and firefox drivers.  The first think that you are going to need are a [TP\_DEV\_TOKEN ](https://app.testproject.io/#/integrations/sdk) and [TP\_API\_KEY](https://app.testproject.io/#/integrations/api).  These will give testproject access to your account so that it can post results to your [dashboard](https://app.testproject.io/#/reports)
+I am trying out [TestProject.io](https://TestProject.io) for the first time on this project.  My experience so far has been top notch.  There was an existing suite of docker images/files setup to run the TestProject agent in a docker container alongside of headless chrome and firefox drivers.  The first thing that you are going to need are a [TP\_DEV\_TOKEN ](https://app.TestProject.io/#/integrations/sdk) and [TP\_API\_KEY](https://app.TestProject.io/#/integrations/api).  These will give TestProject access to your account so that it can automatically post results to your [dashboard](https://app.TestProject.io/#/reports)
 
-* [TP\_DEV\_TOKEN ](https://app.testproject.io/#/integrations/sdk)
-* [TP\_API\_KEY](https://app.testproject.io/#/integrations/api)
+* [TP\_DEV\_TOKEN ](https://app.TestProject.io/#/integrations/sdk)
+* [TP\_API\_KEY](https://app.TestProject.io/#/integrations/api)
 
 ### Put these in secrets in your repo
 
@@ -54,11 +54,11 @@ In your GitHub repo go to `settings>Secrets`, or append `settings/secrets` to th
 
 ![Secrets panel in the GitHub Repo](https://waylonwalker.com/test-waylonwalker-com-secrets.png)
 
-### [Forum](https://forum.testproject.io/t/install-agent-inside-github-actions/2334/3)
+### [Forum](https://forum.TestProject.io/t/install-agent-inside-github-actions/2334/3)
 
 ## Setup Dev
 
-To expedite developemnt I went ahead and setup development environment that I could log into on Digital Ocean.  This allowed me to get all of my tests working a bit quicker than just running them through GitHub, but being as similar as possible.  This allowed me to learn the ins and outs of setting up testproject without needing to do a full install everytime through github actions.
+To expedite developemnt I went ahead and setup development environment that I could log into on Digital Ocean.  This allowed me to get all of my tests working a bit quicker than just running them through GitHub, but being as similar as possible.  This allowed me to learn the ins and outs of setting up TestProject without needing to do a full install everytime through github actions.
 
 [![Test Project Dev Machine setup notes card](https://waylonwalker.com/new-machine-tpio.png)](https://waylonwalker.com/notes/new-machine-tpio)
 > I am not going to go into full dev machine setup here, but you can read my [setup notes](https://waylonwalker.com/notes/new-machine-tpio).
@@ -68,7 +68,7 @@ _you can see my full results on [github.com/waylonwalker/waylonwalker-com-tests]
 
 I chose to go down the route of using pytest.  I really liked the idea of utilizing fixtures, automatically running my test functions, and utilizing a bit of the pytest reporting capabilities.
 
-**NOTE** per pytest standard practice I named the directory containing tests `tests`.  While this works, testproject.io uses this director as the default name for the project.  If I were to go back I would either rename the directory to what I want to show up on testproject.io or configure the project name inside of the config.
+**NOTE** per pytest standard practice I named the directory containing tests `tests`.  While this works, TestProject.io uses this director as the default name for the project.  If I were to go back I would either rename the directory to what I want to show up on TestProject.io or configure the project name inside of the config.
 
 ### [conftest.py](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/tests/conftest.py)
 
@@ -79,7 +79,7 @@ pytest automatically imports [conftest.py](https://github.com/WaylonWalker/waylo
 
 import time
 import pytest
-from src.testproject.sdk.drivers import webdriver
+from src.TestProject.sdk.drivers import webdriver
 
 @pytest.fixture
 def driver():
@@ -96,7 +96,7 @@ The above sample is a bit **simplified**.  I ran into some inconsistencies in th
 ### [test_repos](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/tests/test_repos.py)
 
 
-I have initially setup 3 different tests for the repo cards.  I set a list of repos that I expect to show up in the cards.  These tests are quite easy to do with testproject.io as it is using selenium and a headless browser to execute javascript under the hood.
+I have initially setup 3 different tests for the repo cards.  I set a list of repos that I expect to show up in the cards.  These tests are quite easy to do with TestProject.io as it is using selenium and a headless browser to execute javascript under the hood.
 
 If you are not familiar a **headless browser** runs the engine as your browser without a graphical user interface.  JavaScript gets fully loaded and parsed, and the dom is completely interactive programatically.
 
@@ -160,6 +160,6 @@ def test_repo_stars_loaded(slow_driver):
 ### [docker-compose.yml](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/ci/docker-compose.yml)
 
 
-## TextProject.io Dashboard
+## TestProject.io Dashboard
 
 ![My Dashboard for test_repos](https://waylonwalker.com/tpio-test-repos.png)
