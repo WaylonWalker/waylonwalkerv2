@@ -14,7 +14,8 @@ const BlogPostsStyle = styled.div`
   align-content: center;
   justify-self: center;
   min-height: 100vh;
-  width: calc(min(1800px, 90vw));
+  /* width: calc(min(1800px, 90vw)); */
+  width: calc(min(800px, 90vw));
 
   input {
     margin-left: 1rem;
