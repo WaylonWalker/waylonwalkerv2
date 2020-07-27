@@ -25,7 +25,7 @@ const Nav = () => (
             <Link to='/gratitude' activeClassName='active'>gratitude</Link>
           </li>
           <li className='btn'>
-            <a href='https://emailoctopus.com/lists/b194a4af-9875-11ea-a3d0-06b4694bee2a/forms/subscribe' activeClassName='active'>Newsletter</Link>
+            <a href='https://emailoctopus.com/lists/b194a4af-9875-11ea-a3d0-06b4694bee2a/forms/subscribe' activeClassName='active'>Newsletter</a>
           </li>
         </ul>
         <Social />
