@@ -69,6 +69,16 @@ p {
   /* font-family: 'Amiko'; */
 }
 
+h2 {
+  margin-top: 5rem;
+}
+
+ul {
+  border-left: 1px solid #FF66C4;
+  padding: .5rem 0 .025rem 3rem;
+  margin: 2rem;
+}
+
 
 blockquote {
   color: #777;
