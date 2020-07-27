@@ -60,7 +60,7 @@ In your GitHub repo go to `settings>Secrets`, or append `settings/secrets` to th
 
 To expedite developemnt I went ahead and setup development environment that I could log into on Digital Ocean.  This allowed me to get all of my tests working a bit quicker than just running them through GitHub, but being as similar as possible.  This allowed me to learn the ins and outs of setting up testproject without needing to do a full install everytime through github actions.
 
-[![Test Project Dev Machine setup notes card](https://waylonwalker.com/notes/new-machine-tpio.png)](https://waylonwalker.com/notes/new-machine-tpio)
+[![Test Project Dev Machine setup notes card](https://waylonwalker.com/new-machine-tpio.png)](https://waylonwalker.com/notes/new-machine-tpio)
 > I am not going to go into full dev machine setup here, but you can read my [setup notes](https://waylonwalker.com/notes/new-machine-tpio).
 
 ### [pytest](https://github.com/WaylonWalker/waylonwalker-com-tests/tree/master/tests)
