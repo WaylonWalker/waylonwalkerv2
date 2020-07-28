@@ -153,13 +153,86 @@ def test_repo_stars_loaded(slow_driver):
         assert int(num_stars) > 0
         assert label == 'stars'
 ```
-## [GitHub Actions](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/workflows/test-waylonwalker-com.yml)
-
-
 
 ### [docker-compose.yml](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/ci/docker-compose.yml)
+
+## [GitHub Actions](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/workflows/test-waylonwalker-com.yml)
+
+Now that I have my GitHub repo setup with my [tests](https://github.com/WaylonWalker/waylonwalker-com-tests/tree/master/tests) successfully running in pytest, lets get it running inside of GitHub actions automatically.
+
+``` yaml
+name: Test WaylonWalker.com
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '*/10 * * * *'
+```
+
+You can see in the section above I have setup to run everytime there is a push to or pull request open to main.  I also set a fairly agressive test schedule to run every 10 minutes.  For now this is just to build confidence in the tests and get more data in the reports to explore.  I will likely turn this down later.
+
+``` yaml
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@main
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.8' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+        architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+    - run: pip install -r requirements.txt
+    - name: Run TestProject Agent
+      env:
+        TP_API_KEY: ${{ secrets.TP_API_KEY }}
+      run: |
+        envsubst < .github/ci/docker-compose.yml > docker-compose.yml
+        cat docker-compose.yml
+        docker-compose -f docker-compose.yml up -d
+    - name: Wait for Agent to Register
+      run: |
+        trap 'kill $(jobs -p)' EXIT
+        attempt_counter=0
+        max_attempts=100
+        mkdir -p build/reports/agent
+        docker-compose -f docker-compose.yml logs -f | tee build/reports/agent/log.txt&
+        until curl -s http://localhost:8585/api/status | jq '.registered' | grep true; do
+          if [ ${attempt_counter} -eq ${max_attempts} ]; then
+            echo "Agent failed to register. Terminating..."
+            exit 1
+          fi
+          attempt_counter=$(($attempt_counter+1))
+          echo
+          sleep 1
+        done
+    - run: pytest
+      env:
+        TP_DEV_TOKEN: ${{ secrets.TP_DEV_TOKEN }}
+        TP_AGENT_URL: http://localhost:8585
+```
+
+In the test job you can see that we have rendered the [TP\_API\_KEY](https://app.TestProject.io/#/integrations/api) into the [docker-compose.yml](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/ci/docker-compose.yml) file so that TestProject has access to it.  We have also exposed our [TP\_DEV\_TOKEN ](https://app.TestProject.io/#/integrations/sdk) to pytest.
+
+### Waiting for the Agent to register
+
+I think the most interesting part of the workflow above is how we wait for the agent to register.  The shell script is a bit terse, but it looks for exceeding the `max_attempts` allowed or that the agent has started by using its `/api/status` rest api.  This prevents us from wasting too much time by setting a big wait, or trying to move on too early and running pytest without a running agent.
+
 
 
 ## TestProject.io Dashboard
 
+One one of the coolest features that you get from testproject are teh [reports](https://app.testproject.io/#/reports) dashboard.  To me this felt like a premium feature for free.  Here you can see a timeseries plot of your tests success rate over time.  It gives you a bit of an ability to slice in, but not a lot.  Some of the filters are pre canned, like past 2 days are past 30 days cannot be customized.
+
 ![My Dashboard for test_repos](https://waylonwalker.com/tpio-test-repos.png)
+
+As you drill in you can see individual tests that have been ran, select them and see individual reports for each test.  Personally I really like the layout on the side.  It converts the steps ran by the driver into a human readable "flowchart", and each step can be opened up to see their values.  It would be nice if it picked up my pytest assertions, but picking up what it did was great.
+
+![driver flow of test_repo_stars_loaded](https://waylonwalker.com/test_repo_stars_loaded.png)
