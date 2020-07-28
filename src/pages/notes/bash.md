@@ -7,7 +7,7 @@ status: published
 description: Waylon Walker's Bash Notes
 cover: "/static/hannah-gibbs-BINLgyrG_fI-unsplash.jpg"
 twitter_cover: "/static/hannah-gibbs-BINLgyrG_fI-unsplash.jpg"
-related_post:
+related_post: 
 tags:
 - python
 - code
@@ -288,4 +288,25 @@ declare -f <function-name>
 for f in *.jpeg; do
     mv -- "$f" "${f%.jpeg}.jpg"
 done
+```
+
+## convert markdown files to reveal.js
+
+https://github.com/jgm/pandoc/wiki/Using-pandoc-to-produce-reveal.js-slides
+install pandoc
+``` bash
+apt install pandoc
+```
+
+setup
+
+``` bash
+wget https://github.com/hakimel/reveal.js/archive/master.tar.gz
+tar -xzvf master.tar.gz
+mv reveal.js-master reveal.js
+```
+
+convert
+``` bash
+pandoc -t revealjs -s -o myslides.html myslides.md -V revealjs-url=https://unpkg.com/reveal.js@3.9.2/
 ```
