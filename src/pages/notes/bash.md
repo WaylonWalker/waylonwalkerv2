@@ -310,3 +310,7 @@ convert
 ``` bash
 pandoc -t revealjs -s -o myslides.html myslides.md -V revealjs-url=https://unpkg.com/reveal.js@3.9.2/
 ```
+
+## Autocomplete for click applications
+
+see the [docs](https://click.palletsprojects.com/en/7.x/bashcomplete/) for more details
