@@ -317,6 +317,19 @@ convert
 pandoc -t revealjs -s -o myslides.html myslides.md -V revealjs-url=https://unpkg.com/reveal.js@3.9.2/
 ```
 
+## Render Markdown at the command line
+
+[Glow](https://github.com/charmbracelet/glow) is a terminal markdown renderer written in go.  There iis a prebuilt binary that can simply be unzipped and executed to render markdow.
+
+``` bash
+wget https://github.com/charmbracelet/glow/releases/download/v0.2.0/glow_0.2.0_linux_x86_64.tar.gz
+tar -xzf glow_0.2.0_linux_x86_64.tar.gz
+chmod +x glow
+sudo mv glow /usr/bin
+
+glow <filename>
+```
+
 ## Autocomplete for click applications
 
 see the [docs](https://click.palletsprojects.com/en/7.x/bashcomplete/) for more details
