@@ -39,6 +39,7 @@ mkdir /mnt/mounted_drive
 mv ~/bigdir /mnt/mounted_drive
 ln -s /mnt/mounted_drive/bigdir ~/bigdir
 ```
+
 ## Fuzzy One Liners
 
 ```bash
@@ -159,7 +160,6 @@ _++Vanilla Bonus_
 
 I like this one when there is not a good cli into config files and I need to replace something like a true to false if the value is in the config and append to the config if its not.
 
-
 ``` bash
 grepr() {
     # replaces first string with second string inside file from third argument
@@ -173,18 +173,20 @@ grepr() {
     fi
 }
 ```
+
 ### Watch the time
 
 ``` bash
 watch -n 1 date
 ```
+
 _++Vanilla Bonus_
 
 **with figlet**
+
 ``` bash
 watch -n 1 bash -c "date | figlet"
 ```
-
 
 ### watch a function
 
@@ -205,7 +207,9 @@ source activate my_env
 ```
 
 # Rename multiple files
+
 more info from [linuxize](https://linuxize.com/post/how-to-rename-files-in-linux/)
+
 ``` bash
 for f in *.png; do
    mv ${f} prefix-${f}
@@ -220,7 +224,6 @@ dos2unix **/*
 
 ## recursively remove all whitespace from .py files
 
-
 ``` bash
 find **/*.py -type f -exec sed -i 's/ *$//' '{}' ';'
 ```
@@ -233,18 +236,20 @@ find . -name '*.py' -exec autopep8 --in-place '{}' \;
 
 ## make bash script a runnable command
 
-
 include a shebang
+
 ``` bash
 #! /bin/bash
 ```
 
 chmod
+
 ``` bash
 chmod +x /usr/local/bin/my_script
 ```
 
 accept positional input
+
 ``` bash
 #! /bin/bash
 input=$1
@@ -256,7 +261,6 @@ echo input
 ``` bash
 pipx install pyp
 ```
-
 
 ## replacement for cut
 
@@ -294,6 +298,7 @@ done
 
 https://github.com/jgm/pandoc/wiki/Using-pandoc-to-produce-reveal.js-slides
 install pandoc
+
 ``` bash
 apt install pandoc
 ```
@@ -307,6 +312,7 @@ mv reveal.js-master reveal.js
 ```
 
 convert
+
 ``` bash
 pandoc -t revealjs -s -o myslides.html myslides.md -V revealjs-url=https://unpkg.com/reveal.js@3.9.2/
 ```
@@ -314,3 +320,7 @@ pandoc -t revealjs -s -o myslides.html myslides.md -V revealjs-url=https://unpkg
 ## Autocomplete for click applications
 
 see the [docs](https://click.palletsprojects.com/en/7.x/bashcomplete/) for more details
+
+## Autocomplete for non click python cli's
+
+shtab [https://github.com/iterative/shtab](https://github.com/iterative/shtab "https://github.com/iterative/shtab")
