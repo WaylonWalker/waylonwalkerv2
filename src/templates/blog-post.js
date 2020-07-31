@@ -57,6 +57,21 @@ p>img {
   margin: auto;
 }
 
+strong {
+  color: #D68FBB;
+  display: inline-block;
+  transform: rotate(-2deg);
+}
+
+em {
+  color: #6F6BAE;
+  display: inline-block;
+  transform: rotate(.2deg);
+  background: rgba(255, 255, 255,.04);
+  padding: .1rem .8rem;
+
+}
+
 p:has(>img) {
   margin: 8rem;
   display: flex;
@@ -116,6 +131,11 @@ h1 {
   text-decoration: none;
   vertical-align: center;
 
+}
+
+.post-body hr {
+  border-top: 2px solid rgba(218, 165, 32, .2);
+  margin: 3rem 40% !important;
 }
 
 `

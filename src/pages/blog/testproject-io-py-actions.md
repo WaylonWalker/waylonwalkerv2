@@ -25,32 +25,32 @@ devto-id: ''
 
 ---
 
-As I continue to build out [waylonwalker.com](https://waylonwalker.com/) I sometimes run into some errors that are not caught becuase I do not have good testing implemented.  I want to explore some integration testing options using GitHub actions.
+As I continue to build out [waylonwalker.com](https://waylonwalker.com/) I sometimes run into some errors that are not caught because I do not have good testing implemented.  I want to explore some integration testing options using GitHub's actions.
 
-Running integration tests will not prevent bugs from happening completely, but it will allow me to quickly spot them and roll back.
+Running integration tests will not prevent bugs from happening completely, but it will allow me to quickly spot them and rollback.
 
 
 ---
 
 ## 🤔 What to test first?
 
-The very first thing that comes to my mind is anything that is loaded or ran client side.  Two things quickly came to mind here.  I run gatsby so most of my content is statically rendered, and it yells at me if something isn't as expected.  For performance reasons I lazy load cards on my blogroll, loading all of the header images gets heavy and kills lighthouse (if anyone actually cares). I am also loading some information from my top open source libraries that I have created.  To prevent the need to rebuild the whole site to get the latest information I am just using the GitHub api client side.
+The very first thing that comes to my mind is anything that is loaded or ran client-side.  Two things quickly came to mind here.  I run gatsby so most of my content is statically rendered, and it yells at me if something isn't as expected.  For performance reasons I lazy load cards on my blogroll, loading all of the header images gets heavy and kills lighthouse (if anyone actually cares). I am also loading some information from the top open-source libraries that I have created.  To prevent the need to rebuild the whole site to get the latest information I am just using the GitHub API client-side.
 
 
 things I was looking for from features to test
 
-* client side interactions
-* external api
+* client-side interactions
+* external API
 
 features on my blog to consider testing
 
-* lazy loaded blog cards
-* GitHub repos
+* lazy-loaded blog cards
+* GitHub Repos
 
 
 ## Repo Cards
 
-I chose to start with the GitHub repos as they seemed a bit more straight forward, and it's been awhile since I have done any selenium.
+I chose to start with the GitHub repos as they seemed a bit more straight forward, and it's been a while since I have done any selenium.
 
 <p style='text-align: center'>
 <img src='https://waylonwalker.com/open-source-cards.png' style='width:600px; max-width:80%; margin: auto;' alt='Open Source cards as they look on waylonwalker.com'/>
@@ -60,14 +60,14 @@ I chose to start with the GitHub repos as they seemed a bit more straight forwar
 
 ## TestProject.io
 
-I am trying out [TestProject.io](https://TestProject.io) for the first time on this project.  My experience so far has been top notch.  There was an existing suite of docker images/files setup to run the TestProject agent in a docker container alongside of headless chrome and firefox drivers.  The first thing that you are going to need are a [TP\_DEV\_TOKEN ](https://app.TestProject.io/#/integrations/sdk) and [TP\_API\_KEY](https://app.TestProject.io/#/integrations/api).  These will give TestProject access to your account so that it can automatically post results to your [dashboard](https://app.TestProject.io/#/reports)
+I am trying out [TestProject.io](https://TestProject.io) for the first time on this project.  My experience so far has been top-notch.  There was an existing suite of docker images/files set up to run the TestProject agent in a docker container alongside headless chrome and firefox drivers.  The first thing that you are going to need is a [TP\_DEV\_TOKEN ](https://app.TestProject.io/#/integrations/sdk) and [TP\_API\_KEY](https://app.TestProject.io/#/integrations/api).  These will give TestProject access to your account so that it can automatically post results to your [dashboard](https://app.TestProject.io/#/reports)
 
 * [TP\_DEV\_TOKEN ](https://app.TestProject.io/#/integrations/sdk)
 * [TP\_API\_KEY](https://app.TestProject.io/#/integrations/api)
 
 ### Put these in secrets in your repo
 
-In your GitHub repo go to `settings>Secrets`, or append `settings/secrets` to the url to your repo, and add the tokens.  This will give GitHub safe access to them without them being available to the public, contributors, log files, or anything.
+In your GitHub repo go to `settings>Secrets`, or append `settings/secrets` to the URL to your repo, and add the tokens.  This will give GitHub safe access to them without them being available to the public, contributors, log files, or anything.
 
 
 <p style='text-align: center'>
@@ -77,12 +77,12 @@ In your GitHub repo go to `settings>Secrets`, or append `settings/secrets` to th
 
 ## Setup Dev
 
-To expedite developemnt I went ahead and setup development environment that I could log into on Digital Ocean.  This allowed me to get all of my tests working a bit quicker than just running them through GitHub, but being as similar as possible.  This allowed me to learn the ins and outs of setting up TestProject without needing to do a full install everytime through github actions.
+To expedite development I went ahead and set up development environment that I could log into on Digital Ocean.  This allowed me to get all of my tests working a bit quicker than just running them through GitHub, but being as similar as possible.  This allowed me to learn the ins and outs of setting up TestProject without needing to do a full install every time through Github's actions.
 
 [![Test Project Dev Machine setup notes card](https://waylonwalker.com/new-machine-tpio.png)](https://waylonwalker.com/notes/new-machine-tpio)
 > I am not going to go into full dev machine setup here, but you can read my [setup notes](https://waylonwalker.com/notes/new-machine-tpio).
 
-## Pytest
+## 🐍 Pytest
 _you can see all of the tests ran with pytest on [github](https://github.com/waylonwalker/waylonwalker-com-tests/tree/master/tests)_
 
 I chose to go down the route of using pytest.  I really liked the idea of utilizing fixtures, automatically running my test functions, and utilizing a bit of the pytest reporting capabilities.
@@ -94,7 +94,7 @@ I chose to go down the route of using pytest.  I really liked the idea of utiliz
 _You can see the [conftest.py](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/tests/conftest.py) live on GitHub._
 
 
-pytest automatically imports [conftest.py](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/tests/conftest.py) modules from the same directory that you are working from.  It's common to place fixtures used accross multiple files here.  I placed a driver fixture in this module so that as I create more tests it will be available everywhere by default.
+pytest automatically imports [conftest.py](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/tests/conftest.py) modules from the same directory that you are working from.  It's common to place fixtures used across multiple files here.  I placed a driver fixture in this module so that as I create more tests it will be available everywhere by default.
 
 > conftest.py stores fixtures for all modules in a directory.
 
@@ -103,7 +103,7 @@ pytest automatically imports [conftest.py](https://github.com/WaylonWalker/waylo
 
 import time
 import pytest
-from src.TestProject.sdk.drivers import webdriver
+from src.TestProject.sdk.drivers import web driver
 
 @pytest.fixture
 def driver():
@@ -115,20 +115,20 @@ def driver():
 ```
 > Look at the full version of [conftest.py](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/tests/conftest.py)
 
-The above sample is a bit **simplified**.  I ran into some inconsistencies in the real version and found that some tests had a better pass rate if I added a wait.  I eneded up with a `driver` and a `slow_driver` fixture.
+The above sample is a bit **simplified**.  I ran into some inconsistencies in the real version and found that some tests had a better pass rate if I added a wait.  I ended up with a `driver` and a `slow_driver` fixture.
 
 ## test_repos.py
 
 _see the full [testrepos.py](waylonwalker.com/testrepos.py) on GitHub_
 
 
-I have initially setup 3 different tests for the repo cards.  I set a list of repos that I expect to show up in the cards.  These tests are quite easy to do with TestProject.io as it is using selenium and a headless browser to execute javascript under the hood.
+I have initially set up 3 different tests for the repo cards.  I set a list of repos that I expect to show up in the cards.  These tests are quite easy to do with TestProject.io as it is using selenium and a headless browser to execute javascript under the hood.
 
-If you are not familiar a **headless browser** runs the engine as your browser without a graphical user interface.  JavaScript gets fully loaded and parsed, and the dom is completely interactive programatically.
+If you are not familiar a **headless browser** runs the engine as your browser without a graphical user interface.  JavaScript gets fully loaded and parsed, and the dom is completely interactive programmatically.
 
 ``` python
 """
-Test that GitHub repo data dynamically loads client side.
+Test that GitHub repo data dynamically loads the client-side.
 """
 
 REPOS = [
@@ -140,7 +140,7 @@ REPOS = [
 
 def test_repos_loaded(slow_driver):
     """
-    Test that the each repo-name exists as a title in one of the repo cards.
+    Test that each repo-name exists as a title in one of the repo cards.
 
     On waylonwalker.com repo cards have a title with a class of "repo-name"
     """
@@ -167,7 +167,7 @@ def test_repo_description_loaded(slow_driver):
 
 def test_repo_stars_loaded(slow_driver):
     """
-    Ensure that stars are properly parsed from the api and loaded client side
+    Ensure that stars are properly parsed from the API and loaded client-side
 
     On waylonwalker.com repo cards have a stars element with a class of "repo-stars" and
     is displayed as "n stars"
@@ -185,16 +185,16 @@ _[forum.TestProject.io](https://forum.TestProject.io/t/install-agent-inside-gith
 
 Before jumping into the real action.  I quickly wanted to mention the **amazing** ✨  discord server that they have going.
 
-I was a bit confused about how to setup TestProject.io up inside of actions.  I was with a promt response linking me to the exact example I needed.  The tests were written in java, but they had setup the docker-compose steps that I needed.
+I was a bit confused about how to set up TestProject.io inside of actions.  I was with a prompt response linking me to the exact example I needed.  The tests were written in java, but they had set up the docker-compose steps that I needed.
 
 
 ---
 
-## GitHub Actions
+## GitHub Actions 🎬
 
-_[GitHub Actions](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/workflows/test-waylonwalker-com.yml)_
+_[test-waylonwalker-com.yml](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/workflows/test-waylonwalker-com.yml)_
 
-Now that I have my GitHub repo setup with my [tests](https://github.com/WaylonWalker/waylonwalker-com-tests/tree/master/tests) successfully running in pytest, lets get it running inside of GitHub actions automatically.
+Now that I have my GitHub repo setup with my [tests](https://github.com/WaylonWalker/waylonwalker-com-tests/tree/master/tests) successfully running in pytest, let's get it running inside of GitHub actions automatically.
 
 ``` yaml
 name: Test WaylonWalker.com
@@ -210,7 +210,7 @@ on:
     - cron: '*/10 * * * *'
 ```
 
-You can see in the section above I have setup to run everytime there is a push to or pull request open to main.  I also set a fairly agressive test schedule to run every **10** **minutes**.  For now this is just to build confidence in the tests and get more data in the reports to explore.  I will likely turn this down later.
+You can see in the section above I have set up to run every time there is a push to or pull request open to main.  I also set a fairly aggressive test schedule to run every **10** **minutes**.  For now, this is just to build confidence in the tests and get more data in the reports to explore.  I will likely turn this down later.
 
 ``` yaml
 
@@ -246,20 +246,69 @@ In the test job you can see that we have rendered the [TP\_API\_KEY](https://app
 
 _[docker-compose.yml](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/ci/docker-compose.yml)_
 
+The following [docker-compose.yml](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/ci/docker-compose.yml) file was graciously contributed by [@vitalybu](https://github.com/vitalybu) in the [testproject-io/java-sdk](https://github.com/testproject-io/java-sdk/blob/master/.github/ci/docker-compose.yml) repo.  It sets up a template with the **`TP_API_KEY`** as a variable for envsubst, headless browsers for chrome and firefox, and the TestProject.io agent.
 
-## Waiting for the Agent to register
+``` yaml
+version: "3.1"
+services:
+  testproject-agent:
+    image: testproject/agent:latest
+    container_name: testproject-agent
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      TP_API_KEY: "${TP_API_KEY}"
+      TP_AGENT_TEMP: "true"
+      TP_SDK_PORT: "8686"
+      CHROME: "chrome:4444"
+      CHROME_EXT: "localhost:5555"
+      FIREFOX: "firefox:4444"
+      FIREFOX_EXT: "localhost:6666"
+    ports:
+    - "8585:8585"
+    - "8686:8686"
+  chrome:
+    image: selenium/standalone-chrome
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+    - "5555:4444"
+  firefox:
+    image: selenium/standalone-firefox
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+    - "6666:4444"
+```
+
+## ⌚ Waiting for the Agent to register
 _[wait for agent.sh](https://waylonwalker.com/waitforagent.sh)_
 
+I think the most interesting part of the workflow above is how we wait for the agent to register.  The shell script is a bit terse, but it looks for exceeding the `max_attempts` allowed or that the agent has started by using its `/api/status` rest API.  This prevents us from wasting too much time by setting a big wait, or trying to move on too early and running pytest without a running agent.
 
-I think the most interesting part of the workflow above is how we wait for the agent to register.  The shell script is a bit terse, but it looks for exceeding the `max_attempts` allowed or that the agent has started by using its `/api/status` rest api.  This prevents us from wasting too much time by setting a big wait, or trying to move on too early and running pytest without a running agent.
+``` bash
+trap 'kill $(jobs -p)' EXIT
+attempt_counter=0
+max_attempts=100
+mkdir -p build/reports/agent
+docker-compose -f docker-compose.yml logs -f | tee build/reports/agent/log.txt&
+until curl -s http://localhost:8585/api/status | jq '.registered' | grep true; do
+    if [ ${attempt_counter} -eq ${max_attempts} ]; then
+    echo "Agent failed to register. Terminating..."
+    exit 1
+    fi
+    attempt_counter=$(($attempt_counter+1))
+    echo
+    sleep 1
+done
+```
 
 
+## TestProject.io Dashboard 〽
 
-## TestProject.io Dashboard
+One one of the coolest features that you get from TestProject.io are the [reports](https://app.testproject.io/#/reports) dashboard.  To me, this felt like a premium feature for **free**.  Here you can see a time-series plot of your tests success rate over time.  It gives you a bit of an ability to slice in, but not a lot.  Some of the filters are pre-canned, like the past 2 days are past 30 days cannot be customized.
 
-One one of the coolest features that you get from testproject are teh [reports](https://app.testproject.io/#/reports) dashboard.  To me this felt like a premium feature for free.  Here you can see a timeseries plot of your tests success rate over time.  It gives you a bit of an ability to slice in, but not a lot.  Some of the filters are pre canned, like past 2 days are past 30 days cannot be customized.
-
-![]()
 <p style='text-align: center'>
   <img
     style='width:800px; max-width:80%; margin: auto;'
@@ -270,7 +319,7 @@ One one of the coolest features that you get from testproject are teh [reports](
 
 ## A single test flow in the dashboard
 
-As you drill in you can see individual tests that have been ran, select them and see individual reports for each test.  Personally I really like the layout on the side.  It converts the steps ran by the driver into a human readable "flowchart", and each step can be opened up to see their values.  It would be nice if it picked up my pytest assertions, but picking up what it did was great.
+As you drill in you can see individual tests that have been run, select them, and see individual reports for each test.  Personally I really like the layout on the side.  It converts the steps ran by the driver into a human-readable _flowchart_, and each step can be opened up to see their values.  It would be nice if it picked up my pytest assertions, but picking up what it did was great.
 
 
 <p style='text-align: center'>
@@ -280,3 +329,10 @@ As you drill in you can see individual tests that have been ran, select them and
     alt="driver flow of test_repo_stars_loaded"
   />
 </p>
+
+
+## Overall 😄
+
+The experience I had setting up TestProject.io to run inside GitHub's actions was great.  It was fairly simple to set up and get running with many of the greatest integration testing tools of today, selenium, chrome, firefox.
+
+Now I am going to turn the test frequency down a bit.
