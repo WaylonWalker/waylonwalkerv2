@@ -81,7 +81,6 @@ pages:
 - src/pages/notes/kedro-preflight.md
 - src/pages/notes/kedro.md
 - src/pages/notes/making-good-documentation-in-python.md
-- src/pages/notes/new-machine.md
 - src/pages/notes/packages-to-investigate.md
 - src/pages/notes/pyspark.md
 - src/pages/notes/python-deepwatch.md
