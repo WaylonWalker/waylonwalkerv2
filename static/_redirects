@@ -149,3 +149,7 @@
 /ig             https://www.instagram.com/_waylonwalker/
 /buffer         https://publish.buffer.com/profile/5bc121e0dd50725a7130edd6/tab/queue
 /cars.csv       https://gist.githubusercontent.com/noamross/e5d3e859aa0c794be10b/raw/b999fb4425b54c63cab088c0ce2c0d6ce961a563/cars.csv
+
+# nesting issue in blog post
+/testrepos.py https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/tests/test_repos.py
+/waitforagent.sh https://github.com/WaylonWalker/waylonwalker-com-tests/blob/main/.github/ci/wait_for_agent.sh

@@ -24,21 +24,38 @@ devto-url: ''
 devto-id: ''
 
 ---
+
 As I continue to build out [waylonwalker.com](https://waylonwalker.com/) I sometimes run into some errors that are not caught becuase I do not have good testing implemented.  I want to explore some integration testing options using GitHub actions.
 
 Running integration tests will not prevent bugs from happening completely, but it will allow me to quickly spot them and roll back.
 
 
+---
+
 ## 🤔 What to test first?
 
 The very first thing that comes to my mind is anything that is loaded or ran client side.  Two things quickly came to mind here.  I run gatsby so most of my content is statically rendered, and it yells at me if something isn't as expected.  For performance reasons I lazy load cards on my blogroll, loading all of the header images gets heavy and kills lighthouse (if anyone actually cares). I am also loading some information from my top open source libraries that I have created.  To prevent the need to rebuild the whole site to get the latest information I am just using the GitHub api client side.
 
+
+things I was looking for from features to test
+
+* client side interactions
+* external api
+
+features on my blog to consider testing
+
 * lazy loaded blog cards
 * GitHub repos
 
+
+## Repo Cards
+
 I chose to start with the GitHub repos as they seemed a bit more straight forward, and it's been awhile since I have done any selenium.
 
-![Open Source cards as they look on waylonwalker.com](https://waylonwalker.com/open-source-cards.png)
+<p style='text-align: center'>
+<img src='https://waylonwalker.com/open-source-cards.png' style='width:600px; max-width:80%; margin: auto;' alt='Open Source cards as they look on waylonwalker.com'/>
+</p>
+
 > here is what the GitHub repo cards look like
 
 ## TestProject.io
@@ -52,9 +69,11 @@ I am trying out [TestProject.io](https://TestProject.io) for the first time on t
 
 In your GitHub repo go to `settings>Secrets`, or append `settings/secrets` to the url to your repo, and add the tokens.  This will give GitHub safe access to them without them being available to the public, contributors, log files, or anything.
 
-![Secrets panel in the GitHub Repo](https://waylonwalker.com/test-waylonwalker-com-secrets.png)
 
-### [Forum](https://forum.TestProject.io/t/install-agent-inside-github-actions/2334/3)
+<p style='text-align: center'>
+<img src='https://waylonwalker.com/test-waylonwalker-com-secrets.png' style='width:600px; max-width:80%; margin: auto;' alt='Secrets panel in the GitHub Repo'/>
+</p>
+
 
 ## Setup Dev
 
@@ -63,16 +82,21 @@ To expedite developemnt I went ahead and setup development environment that I co
 [![Test Project Dev Machine setup notes card](https://waylonwalker.com/new-machine-tpio.png)](https://waylonwalker.com/notes/new-machine-tpio)
 > I am not going to go into full dev machine setup here, but you can read my [setup notes](https://waylonwalker.com/notes/new-machine-tpio).
 
-### [pytest](https://github.com/WaylonWalker/waylonwalker-com-tests/tree/master/tests)
-_you can see my full results on [github.com/waylonwalker/waylonwalker-com-tests](https://github.com/waylonwalker/waylonwalker-com-tests/tree/master/tests)_
+## Pytest
+_you can see all of the tests ran with pytest on [github](https://github.com/waylonwalker/waylonwalker-com-tests/tree/master/tests)_
 
 I chose to go down the route of using pytest.  I really liked the idea of utilizing fixtures, automatically running my test functions, and utilizing a bit of the pytest reporting capabilities.
 
 **NOTE** per pytest standard practice I named the directory containing tests `tests`.  While this works, TestProject.io uses this director as the default name for the project.  If I were to go back I would either rename the directory to what I want to show up on TestProject.io or configure the project name inside of the config.
 
-### [conftest.py](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/tests/conftest.py)
+
+## conftest.py
+_You can see the [conftest.py](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/tests/conftest.py) live on GitHub._
+
 
 pytest automatically imports [conftest.py](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/tests/conftest.py) modules from the same directory that you are working from.  It's common to place fixtures used accross multiple files here.  I placed a driver fixture in this module so that as I create more tests it will be available everywhere by default.
+
+> conftest.py stores fixtures for all modules in a directory.
 
 ``` python
 # tests/conftest.py
@@ -93,7 +117,9 @@ def driver():
 
 The above sample is a bit **simplified**.  I ran into some inconsistencies in the real version and found that some tests had a better pass rate if I added a wait.  I eneded up with a `driver` and a `slow_driver` fixture.
 
-### [test_repos](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/tests/test_repos.py)
+## test_repos.py
+
+_see the full [testrepos.py](waylonwalker.com/testrepos.py) on GitHub_
 
 
 I have initially setup 3 different tests for the repo cards.  I set a list of repos that I expect to show up in the cards.  These tests are quite easy to do with TestProject.io as it is using selenium and a headless browser to execute javascript under the hood.
@@ -154,9 +180,19 @@ def test_repo_stars_loaded(slow_driver):
         assert label == 'stars'
 ```
 
-### [docker-compose.yml](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/ci/docker-compose.yml)
+## Forum
+_[forum.TestProject.io](https://forum.TestProject.io/t/install-agent-inside-github-actions/2334/3)_
 
-## [GitHub Actions](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/workflows/test-waylonwalker-com.yml)
+Before jumping into the real action.  I quickly wanted to mention the **amazing** ✨  discord server that they have going.
+
+I was a bit confused about how to setup TestProject.io up inside of actions.  I was with a promt response linking me to the exact example I needed.  The tests were written in java, but they had setup the docker-compose steps that I needed.
+
+
+---
+
+## GitHub Actions
+
+_[GitHub Actions](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/workflows/test-waylonwalker-com.yml)_
 
 Now that I have my GitHub repo setup with my [tests](https://github.com/WaylonWalker/waylonwalker-com-tests/tree/master/tests) successfully running in pytest, lets get it running inside of GitHub actions automatically.
 
@@ -174,11 +210,10 @@ on:
     - cron: '*/10 * * * *'
 ```
 
-You can see in the section above I have setup to run everytime there is a push to or pull request open to main.  I also set a fairly agressive test schedule to run every 10 minutes.  For now this is just to build confidence in the tests and get more data in the reports to explore.  I will likely turn this down later.
+You can see in the section above I have setup to run everytime there is a push to or pull request open to main.  I also set a fairly agressive test schedule to run every **10** **minutes**.  For now this is just to build confidence in the tests and get more data in the reports to explore.  I will likely turn this down later.
 
 ``` yaml
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -187,41 +222,34 @@ jobs:
     - uses: actions/checkout@main
     - uses: actions/setup-python@v2
       with:
-        python-version: '3.8' # Version range or exact version of a Python version to use, using SemVer's version range syntax
-        architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+        python-version: '3.8'
     - run: pip install -r requirements.txt
     - name: Run TestProject Agent
       env:
-        TP_API_KEY: ${{ secrets.TP_API_KEY }}
+        TP_API_KEY: ${{ secrets.TP_API_KEY }} # < Let Secrets handle your keys
       run: |
         envsubst < .github/ci/docker-compose.yml > docker-compose.yml
         cat docker-compose.yml
         docker-compose -f docker-compose.yml up -d
     - name: Wait for Agent to Register
-      run: |
-        trap 'kill $(jobs -p)' EXIT
-        attempt_counter=0
-        max_attempts=100
-        mkdir -p build/reports/agent
-        docker-compose -f docker-compose.yml logs -f | tee build/reports/agent/log.txt&
-        until curl -s http://localhost:8585/api/status | jq '.registered' | grep true; do
-          if [ ${attempt_counter} -eq ${max_attempts} ]; then
-            echo "Agent failed to register. Terminating..."
-            exit 1
-          fi
-          attempt_counter=$(($attempt_counter+1))
-          echo
-          sleep 1
-        done
+      run: bash .github/ci/wait_for_agent.sh
     - run: pytest
       env:
-        TP_DEV_TOKEN: ${{ secrets.TP_DEV_TOKEN }}
+        TP_DEV_TOKEN: ${{ secrets.TP_DEV_TOKEN }} # < Let Secrets handle your tokens
         TP_AGENT_URL: http://localhost:8585
 ```
 
-In the test job you can see that we have rendered the [TP\_API\_KEY](https://app.TestProject.io/#/integrations/api) into the [docker-compose.yml](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/ci/docker-compose.yml) file so that TestProject has access to it.  We have also exposed our [TP\_DEV\_TOKEN ](https://app.TestProject.io/#/integrations/sdk) to pytest.
+In the test job you can see that we have rendered the [TP\_API\_KEY](https://app.TestProject.io/#/integrations/api) into the [docker-compose.yml](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/ci/docker-compose.yml) using `envsubst` file so that TestProject has access to it.  We have also exposed our [TP\_DEV\_TOKEN ](https://app.TestProject.io/#/integrations/sdk) to pytest.
 
-### Waiting for the Agent to register
+
+## docker-compose.yml
+
+_[docker-compose.yml](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/ci/docker-compose.yml)_
+
+
+## Waiting for the Agent to register
+_[wait for agent.sh](https://waylonwalker.com/waitforagent.sh)_
+
 
 I think the most interesting part of the workflow above is how we wait for the agent to register.  The shell script is a bit terse, but it looks for exceeding the `max_attempts` allowed or that the agent has started by using its `/api/status` rest api.  This prevents us from wasting too much time by setting a big wait, or trying to move on too early and running pytest without a running agent.
 
@@ -231,8 +259,24 @@ I think the most interesting part of the workflow above is how we wait for the a
 
 One one of the coolest features that you get from testproject are teh [reports](https://app.testproject.io/#/reports) dashboard.  To me this felt like a premium feature for free.  Here you can see a timeseries plot of your tests success rate over time.  It gives you a bit of an ability to slice in, but not a lot.  Some of the filters are pre canned, like past 2 days are past 30 days cannot be customized.
 
-![My Dashboard for test_repos](https://waylonwalker.com/tpio-test-repos.png)
+![]()
+<p style='text-align: center'>
+  <img
+    style='width:800px; max-width:80%; margin: auto;'
+    src="https://waylonwalker.com/tpio-test-repos.png"
+    alt="My Dashboard for test_repos"
+  />
+</p>
+
+## A single test flow in the dashboard
 
 As you drill in you can see individual tests that have been ran, select them and see individual reports for each test.  Personally I really like the layout on the side.  It converts the steps ran by the driver into a human readable "flowchart", and each step can be opened up to see their values.  It would be nice if it picked up my pytest assertions, but picking up what it did was great.
 
-![driver flow of test_repo_stars_loaded](https://waylonwalker.com/test_repo_stars_loaded.png)
+
+<p style='text-align: center'>
+  <img
+    style='width:350px; max-width:80%; margin: auto;'
+    src="https://waylonwalker.com/test_repo_stars_loaded.png"
+    alt="driver flow of test_repo_stars_loaded"
+  />
+</p>
