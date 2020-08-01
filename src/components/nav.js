@@ -6,7 +6,8 @@ import { Link } from 'gatsby'
 import Headroom from 'react-headroom'
 
 const Nav = () => (
-  <Headroom style={{ zIndex: '9999' }}>
+  <Headroom style={{ zIndex: '9999', height: '96px' }}>
+    {/* 96 px reolves layout shift */}
     <NavStyles>
       <div className="content">
         <ul>
