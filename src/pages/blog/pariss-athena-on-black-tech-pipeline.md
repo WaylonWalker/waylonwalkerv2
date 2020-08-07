@@ -7,7 +7,13 @@ path: pariss-athena-on-black-tech-pipeline
 title: Black Tech Pipeline
 date: 2020-08-03T05:00:00Z
 status: published
-description:
+description: I was particularly inspired by @chantastic episode 103 of the
+react podcast with @ParissAthena. They spoke about the black tech pipeline as
+well as Diversity, Equity, and Inclusion. Pariss is quite an inspiration. She
+has done so much work to create a better place for POC in tech. I like that
+not only is she helping them get jobs but acting as a mentor for their first
+few months on the job to make sure that they are able to find their place and
+fit in.
 related_post_body: ''
 related_post: []
 cover: '/static/pariss-athena-on-black-tech-pipeline.png'
@@ -87,3 +93,16 @@ Sign up for the [Black Tech Pipeline Newsletter](https://blacktechpipeline.subst
 ---
 
 ## Follow them they are some amazing people.
+
+I have been trying to build out the content in mine.  I later found this is called a shadow newsletter or evergreen newsletter.  I will say that it gets tough to keep up with.  I've been trying to do it weekly, but have definitely had some folks get ahead of my pace, I'll have to figure out how to split the out and resend articles they missed.
+
+-- for yours --
+
+I like the branding that you have put into it, and how it matches yoru cover images elsewhere.
+
+I like how you have included sections of posts from various places that pull me in and make me want to go see more.
+
+your video to @WellMax81 is amazing, do more of those.
+
+
+One thing, I am not sure if there is a "right" direction with this, but it doesnt give me any new content.  If I were to have been following you everywhere I would have likely seen a lot of this already.  That might make me wonder why I am subscribed over time.
