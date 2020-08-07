@@ -40,7 +40,7 @@
         "logrocket": "^1.0.8",
         "preact": "^10.4.4",
         "preact-render-to-string": "^5.1.9",
-        "prismjs": "^1.20.0",
+        "prismjs": "^1.21.0",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-flip-move": "^3.0.4",
