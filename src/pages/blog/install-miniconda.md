@@ -23,11 +23,11 @@ devto-id: ''
 
 ---
 
-miniconda is a python distribution from continuum.  It's a slimmed down version of their very popular anaconda distribution.  It comes with its own environment manager, and has eased the install process for many that do not have a way to compile c-extentions.  It made it much easier to install the data science stack on windows a few years ago.  These days windows is much better than it was back then at compiling c-extentions.  I still like its environment manager, which installs to a global directory rather than a local directory for your project.
+miniconda is a python distribution from continuum. It's a slimmed-down version of their very popular anaconda distribution. It comes with its own environment manager and has eased the install process for many that do not have a way to compile c-extensions. It made it much easier to install the data science stack on windows a few years ago. These days windows are much better than it was back then at compiling c-extensions. I still like its environment manager, which installs to a global directory rather than a local directory for your project.
 
-## Installing miniconda on linux
+## Installing miniconda on Linux
 
-Installing miniconda on linux can be a bit tricky the first time you do it completely from the terminal.  The following snippet will create a directory to install miniconda into, download the latest python 3 based install script for linux 64 bit, run the install script, delete the install script, then add a conda initialize to your bash or zsh shell.  After doing this you can restart your shell and conda will be ready to go.
+Installing miniconda on Linux can be a bit tricky the first time you do it completely from the terminal. The following snippet will create a directory to install miniconda into, download the latest python 3 based install script for Linux 64 bit, run the install script, delete the install script, then add a conda initialize to your bash or zsh shell. After doing this you can restart your shell and conda will be ready to go.
 
 ``` bash
 mkdir -p ~/miniconda3
