@@ -8,12 +8,12 @@ title: Black Tech Pipeline
 date: 2020-08-03T05:00:00Z
 status: published
 description: I was particularly inspired by @chantastic episode 103 of the
-react podcast with @ParissAthena. They spoke about the black tech pipeline as
-well as Diversity, Equity, and Inclusion. Pariss is quite an inspiration. She
-has done so much work to create a better place for POC in tech. I like that
-not only is she helping them get jobs but acting as a mentor for their first
-few months on the job to make sure that they are able to find their place and
-fit in.
+    react podcast with @ParissAthena. They spoke about the black tech pipeline as
+    well as Diversity, Equity, and Inclusion. Pariss is quite an inspiration. She
+    has done so much work to create a better place for POC in tech. I like that
+    not only is she helping them get jobs but acting as a mentor for their first
+    few months on the job to make sure that they are able to find their place and
+    fit in.
 related_post_body: ''
 related_post: []
 cover: '/static/pariss-athena-on-black-tech-pipeline.png'
