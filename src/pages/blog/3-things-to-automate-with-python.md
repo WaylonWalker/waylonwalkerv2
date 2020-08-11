@@ -4,8 +4,8 @@ related_post_label: Check out this related post
 tags: [python]
 twitter_announcement: I just dropped a new post check it out.
 path: 3-things-to-automate-with-python
-title: Three things to Automate with Python
-date: 2020-06-01T05:00:00.000+00:00
+title: Three things to Automate with Python using Pandas
+date: 2020-08-11T05:00:00.000+00:00
 status: published
 description: Here are three things that I see my non programming counterparts doing every single day.  These really sum up so much of what folks do within an office.
 related_post_body: ''
@@ -22,7 +22,11 @@ devto-id: ''
 
 ---
 
-Here are three things that I see my non programming counterparts doing every single day.  These really sum up so much of what folks do within an office.  So many of us dabble in or become power users of spreadsheets without knowing there is an alternative out there that can save us time, automate boring things, and allow us to open up our minds for the part that we add value, Thinking about the data.  Lets face it, stitching together spreadsheets is zero value add by itself, but if you can see something in the data and take action on it, this can be huge value add to your company.
+Here are three things that I see my non programming counterparts doing every single day.  These really sum up so much of what folks do within an office.  So many of us dabble in or become power users of spreadsheets without knowing there is an alternative out there that can save us time, automate boring things, and allow us to open up our minds for the part that we add value, Thinking about the data.
+
+## Focus on Value Add Operations
+
+Lets face it, stitching together spreadsheets is zero value add by itself, but if you can see something in the data and take action on it, this can be huge value add to your company. Learning just a bit of python will help focus more of your attention on "value add operations" and leave the mundane stuff to your computer.
 
 
 ## Merge a directory full of spreadsheets into one
@@ -73,3 +77,15 @@ engine.dispose()
 
 inventory.to_csv('cars')
 ```
+
+## Learning to automate has value
+
+I often see folks joking that developers will spend 10 minutes to automate a 1 minute task that they will only ever do once.  There is definitely a limit to when your time is more valueable just doing the task and moving on, but as you hone your skills you will get much faster.
+
+Things that needed research slowly become intuitive.  Things that used to be brain twisting 50 lines can be an easy to read 12.
+
+Slowly you get better.
+
+Things that were unfeasible become part of your wheelhouse.
+
+Give value to the learning process of automating tasks.
