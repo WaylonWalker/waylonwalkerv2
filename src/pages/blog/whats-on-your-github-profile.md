@@ -7,7 +7,7 @@ path: whats-on-your-github-profile
 title: 🤓 What's on your GitHub Profile
 date: 2020-07-11T03:00:00Z
 status: published
-description:
+description: Comment on the DEV.to thread to show off what is on your GitHub profile.
 related_post_body: ''
 related_post: []
 cover: '/static/whats-on-your-github-profile.png'

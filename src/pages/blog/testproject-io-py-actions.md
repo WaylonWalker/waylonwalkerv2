@@ -79,7 +79,16 @@ In your GitHub repo go to `settings>Secrets`, or append `settings/secrets` to th
 
 To expedite development I went ahead and set up development environment that I could log into on Digital Ocean.  This allowed me to get all of my tests working a bit quicker than just running them through GitHub, but being as similar as possible.  This allowed me to learn the ins and outs of setting up TestProject without needing to do a full install every time through Github's actions.
 
-[![Test Project Dev Machine setup notes card](https://waylonwalker.com/new-machine-tpio-rm.png)](https://waylonwalker.com/notes/new-machine-tpio)
+<p style='text-align: center'>
+<a href='https://waylonwalker.com/notes/new-machine-tpio'>
+  <img
+    style='width:500px; max-width:80%; margin: auto;'
+    src="https://waylonwalker.com/new-machine-tpio-rm.png"
+    alt="Test Project Dev Machine setup notes card"
+  />
+  </a>
+</p>
+
 > I am not going to go into full dev machine setup here, but you can read my [setup notes](https://waylonwalker.com/notes/new-machine-tpio).
 
 ## 🐍 Pytest
@@ -332,7 +341,6 @@ As you drill in you can see individual tests that have been run, select them, an
 
 
 ## Overall 😄
-
 The experience I had setting up TestProject.io to run inside GitHub's actions was great.  It was fairly simple to set up and get running with many of the greatest integration testing tools of today, selenium, chrome, firefox.
 
 Now I am going to turn the test frequency down a bit.

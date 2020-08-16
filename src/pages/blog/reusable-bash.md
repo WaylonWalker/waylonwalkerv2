@@ -7,7 +7,10 @@ path: reusable-bash
 title: Creating Reusable Bash Scripts
 date: 2020-08-13T05:00:00Z
 status: published
-description:
+description: Bash is a language that is quite useful for automation no matter
+    what language you write in. Bash can do so many powerful system-level tasks.
+    Even if you are on windows these days you are likely to come across bash
+    inside a cloud VM, Continuous Integration, or even inside of docker.
 related_post_body: ''
 related_post: []
 cover: '/static/reusable-bash.png'
@@ -43,8 +46,8 @@ Functions in bash are quite simple. They are something that I wish I would have 
 _<small><mark>syntax</mark></small>_
 
 ``` bash
-#!/bin/bash
-# hello_world.sh
+#!/bin/sh
+# hello_world
 hello_world () {
     echo "hello world"
 }
@@ -55,7 +58,7 @@ Source the file to load the function and run it from the terminal.
 _<small><mark>run it</mark></small>_
 
 ``` bash
-source hello_world.sh
+source hello_world
 hello_world
 ```
 
@@ -80,8 +83,8 @@ Positional arguments can be pulled out quite easily using `$1` for the first one
 
 _<small><mark>syntax</mark></small>_
 ``` bash
-#!/bin/bash
-# hello.sh
+#!/bin/sh
+# hello
 hello () {
     echo "hello $1"
 
@@ -90,7 +93,7 @@ hello () {
 _<small><mark>run it</mark></small>_
 
 ``` bash
-source hello.sh
+source hello
 hello Waylon
 ```
 
@@ -107,7 +110,7 @@ More than one argument would be ignored since we are only looking at `$1`.
 _<small><mark>run it</mark></small>_
 
 ``` bash
-source hello.sh
+source hello
 hello Waylon Walker
 ```
 
@@ -126,8 +129,8 @@ Bash has another special variable `$@` that stores **all arguments** in one.
 _<small><mark>syntax</mark></small>_
 
 ``` bash
-#!/bin/bash
-# hello.sh
+#!/bin/sh
+# hello
 hello () {
     echo "hello $@"
 }
@@ -138,7 +141,7 @@ Just the same as before.
 _<small><mark>run it</mark></small>_
 
 ``` bash
-source hello.sh
+source hello
 hello Waylon Walker
 ```
 
@@ -159,28 +162,25 @@ The easiest and most common way to handle an error in bash is through the use of
 
 Here I have a concrete example from earlier today. I was creating a bash script to run a python script from cron. The bash script is there to make sure that we have the python environment, activate it, and run. If it doesn't have it, it should create it.
 
-``` bash
+``` bash{15-19}{numberLines: true}
 # creates the conda environment
 create_env() {
-    conda create -n $1 python=3.8
-    conda activate $1
+    conda create -n "$1" python=3.8
+    conda activate "$1"
     pip install -r requirements.txt
 }
 
 
 # checks if the conda environment exists
 env_exists() {
-conda info --envs | awk '{print $1}' | tail -n +3 | grep -w $1 > /dev/null
+conda info --envs | awk '{print $1}' | tail -n +3 | grep -w "$1" > /dev/null
 }
 
 
 # creates the conda environment if it doesn't exist
-# 👇 This is the meat of the error handling section 👇
 create_if () {
-env_exists $1 && echo "environment exists" || create_env $1
+env_exists "$1" && echo "environment exists" || create_env "$1"
 }
-# 👆 ―――――――――――――――――――――――――――――――――――――――――――――― 👆
-
 
 create_if my_env
 ```

@@ -7,7 +7,16 @@ import Layout from '../components/layout'
 import Img from 'gatsby-image'
 import { FiTwitter, FiGithub } from "react-icons/fi";
 
+const linkify = (el) => (el.innerText.toLowerCase().replace(/\s/g, '-'))
 
+const AddFiLink = (el) => (
+  el.innerHTML = `
+  ${el.innerHTML}
+  <a href='#${linkify(el)}'>
+  <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+  </a>
+  `
+)
 const BlogPostWrapper = styled.div`
 display: flex;
 flex-direction: column;
@@ -144,6 +153,15 @@ class BlogPostTemplate extends React.Component {
   // constructor(props) {
   //   super(props)
   // }
+  componentDidMount() {
+    [...document.querySelectorAll('h1:not(.no-link),h2:not(.no-link),h3:not(.no-link),h4:not(.no-link),h5:not(.no-link),h6:not(.no-link)')].map(h => h.id = linkify(h));
+    [...document.querySelectorAll('h1:not(.no-link),h2:not(.no-link),h3:not(.no-link),h4:not(.no-link),h5:not(.no-link),h6:not(.no-link)')].map(h => h.innerHTML = AddFiLink(h));
+    [...document.querySelectorAll('em')].filter(e => e.querySelector('mark') !== null).map(e => e.classList.add('no-highlight'));
+    [...document.querySelectorAll('p')].filter(e => e.querySelector('.no-highlight') !== null).map(e => e.classList.add('no-padding'));
+    if (window.location.href.slice(-1) === '/') {
+      window.history.pushState({}, null, window.location.href.slice(0, -1))
+    }
+  }
 
   render() {
     const {

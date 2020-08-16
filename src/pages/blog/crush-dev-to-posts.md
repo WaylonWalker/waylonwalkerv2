@@ -5,13 +5,13 @@ tags: ['blog', 'JAMStack', 'netlify']
 twitter_announcement: I just dropped a new post check it out.
 path: python-args-kwargs
 title: How to crush amazing posts on DEV
-date: 2020-06-11T05:00:00Z
+date: 2020-08-07T05:00:00Z
 status: published
 description:
 related_post_body: ''
 related_post: []
-cover: '/static/gracefully-redirect.png'
-twitter_cover: '/static/gracefully-redirect.png'
+cover: '/static/crush-dev-to-posts.png'
+twitter_cover: '/static/crush-dev-to-posts.png'
 twitter_week_1: ''
 twitter_week_2: ''
 twitter_month_1: ''
