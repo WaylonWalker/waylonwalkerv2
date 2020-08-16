@@ -4,6 +4,7 @@ import BlogPostCard from '../components/blogPostCard'
 import FlipMove from 'react-flip-move'
 import Fuse from 'fuse.js'
 
+
 const BlogPostsStyle = styled.div`
   display: flex;
   margin: auto;

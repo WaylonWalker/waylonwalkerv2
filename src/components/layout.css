@@ -910,3 +910,27 @@ pre.line-numbers>code {
     padding-right: 0.8em;
     text-align: right;
 }
+
+.gatsby-highlight-code-line {
+    background: rgba(148, 221, 255, 0.075);
+}
+
+.gatsby-highlight-code-line::before {
+    content: "\A";
+    /* background: black; */
+    padding: 1px 8px;
+}
+
+mark {
+    background-color: #ff66c4b4;
+}
+
+em.no-highlight {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+p.no-padding {
+    background-color: rgba(150, 208, 246, 0.061) !important;
+    margin-bottom: -9px !important;
+    border-radius: 5px 5px 0 0;
+}
