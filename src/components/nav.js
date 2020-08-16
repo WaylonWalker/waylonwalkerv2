@@ -7,23 +7,23 @@ import Headroom from 'react-headroom'
 
 const Nav = () => (
   <Headroom style={{ zIndex: '9999', height: '96px' }}>
-    {/* 96 px reolves layout shift */}
+    {/* 96 px reolves cumulative layout shift */}
     <NavStyles>
       <div className="content">
         <ul>
           <li>
-            <Link to='/' activeClassName='active' aria-label='home'>
+            <Link to='/' activeclassname='active' aria-label='home'>
               <Icon />
             </Link>
           </li>
           <li className='btn'>
-            <Link to='/blog' activeClassName='active'>Blog</Link>
+            <Link to='/blog' activeclassname='active'>Blog</Link>
           </li>
           <li className='btn'>
-            <Link to='/notes' activeClassName='active'>Notes</Link>
+            <Link to='/notes' activeclassname='active'>Notes</Link>
           </li>
           <li className='btn'>
-            <Link to='/gratitude' activeClassName='active'>gratitude</Link>
+            <Link to='/gratitude' activeclassname='active'>gratitude</Link>
           </li>
           <li className='btn'>
             <a href='https://emailoctopus.com/lists/b194a4af-9875-11ea-a3d0-06b4694bee2a/forms/subscribe' activeClassName='active'>Newsletter</a>
