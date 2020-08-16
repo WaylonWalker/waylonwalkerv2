@@ -14,6 +14,8 @@
 
 # Short-Blog
 
+/blog/wrbs         /blog/reusable-bash
+/wrbs              /blog/reusable-bash
 /blog/kcre         /blog/kedro-catalog-search
 /kcre              /blog/kedro-catalog-search
 /blog/8cat         /blog/eight-years-cat
