@@ -36,6 +36,8 @@ const Layout = ({ children, include_subscribe = true }) => (
             { name: 'og:image:width', content: '1000' },
             { name: 'og:image:height', content: '420' },
             { name: 'og:locale', content: 'en_US' },
+            { name: 'og:site_name', content: 'Waylon Walker' },
+            { name: 'og:url', content: 'https://waylonwalker.com' },
             { name: 'description', content: data.site.siteMetadata.description },
             { name: 'og:description', content: data.site.siteMetadata.description },
             { name: 'twitter:description', content: data.site.siteMetadata.description },
@@ -50,7 +52,7 @@ const Layout = ({ children, include_subscribe = true }) => (
         >
 
           <html lang='en' />
-          <link rel='preload' href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+          {/* <link rel='preload' href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" /> */}
           <link href="https://twitter.com/_WaylonWalker" rel="me" />
           <link href="https://github.com/waylonwalker" rel="me" />
           <link href="https://dev.to/waylonwalker" rel="me" />
