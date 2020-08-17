@@ -5,7 +5,9 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import Img from 'gatsby-image'
-import { FiTwitter, FiGithub } from "react-icons/fi";
+import { FiTwitter, FiGithub, FiLinkedin, FiFacebook } from "react-icons/fi";
+import { DiHackernews } from "react-icons/di";
+import { IoLogoReddit } from "react-icons/io";
 
 const linkify = (el) => (el.innerText.toLowerCase().replace(/\s/g, '-'))
 
@@ -34,6 +36,7 @@ width: 95%;
 position: relative;
 margin: 2rem 0;
 padding: 1rem;
+padding-bottom: 5rem !important;
 border-radius: 2px;
 box-shadow: .2rem .2rem 1rem rgba(0, 0, 0, .2);
 display: flex;
@@ -142,6 +145,39 @@ h1 {
 
 }
 
+.share {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #D68FBB;
+  background-color: rgba(214, 143, 187, .1);
+  border-radius: 5px;
+  a {
+    padding: .2rem .5rem;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+    padding-right: .2rem;
+  }
+  ul {
+    li {
+      margin: 0;
+      padding: 0;
+    }
+  display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 1.3rem;
+
+  }
+}
+
 .post-body hr {
   border-top: 2px solid rgba(218, 165, 32, .2);
   margin: 3rem 40% !important;
@@ -185,6 +221,12 @@ class BlogPostTemplate extends React.Component {
     const twitterImage = twitter_cover !== undefined ? twitter_cover.src : cover.src
     const shortTitle = title === null ? '' : encodeURIComponent(title.slice(0, 150))
     const tweetLink = `https://twitter.com/intent/tweet?text=${shortTitle + '%0A%0A@waylonwalker%0A%0A' + url}`
+    const hnLink = `https://news.ycombinator.com/submitlink?u=${url}&t=${shortTitle}`
+    const linkedinLink = `https://www.linkedin.com/sharing/share-offsite/?url=${url.split(':').join('%3A').split('/').join('%2F')}`
+    // https://www.linkedin.com/shareArticle?mini=true&url=https://dev.to/waylonwalker/what-is-kedro-lob&title=%F0%9F%A4%B7%E2%80%8D%E2%99%80%EF%B8%8F%20What%20is%20Kedro%20(The%20Parts)&summary=kedro%20is%20an%20open-source%20data%20pipeline%20framework.%20%20It%20provides%20guardrails%20to%20set%20your%20project%20up%20right...&source=DEV
+
+    const redditLink = `https://www.reddit.com/submit?url=${url}&title=${shortTitle}`
+    const facebookLink = `https://www.facebook.com/sharer.php?u=${url}`
 
     return (
       <>
@@ -193,7 +235,7 @@ class BlogPostTemplate extends React.Component {
             { name: 'title', content: title + ' | Waylon Walker' },
             { name: 'description', content: description },
             { name: 'og:title', content: title + ' | Waylon Walker' },
-            { name: 'og:url', content: `https://waylonwalker.com${slug}` },
+            { name: 'og:url', content: url },
             { name: 'og:article:published_time', content: date },
             { name: 'og:article:modified_time', content: date },
             { name: 'og:description', content: description },
@@ -219,41 +261,60 @@ class BlogPostTemplate extends React.Component {
               style={{ textAlign: 'right', zIndex: 2 }}>
               {date}
             </p>
-            <div className="tweet">
-              <a href={tweetLink} className='post-tweet-link'><span role='img' aria-label='sharing hands'>🙌</span> Share this post on <FiTwitter /></a>
+            <div className="share">
+              <p>
+                <span role='img' aria-label='sharing hands'>🙌</span> Share this post
+            </p>
+              <ul>
+                <li>
+                  <a href={tweetLink} className='post-tweet-link'><FiTwitter /></a>
+                </li>
+                <li>
+                  <a href={hnLink} className='post-hn-link'><DiHackernews /></a>
+                </li>
+                <li>
+                  <a href={redditLink} className='post-reddit-link'><IoLogoReddit /></a>
+                </li>
+                <li>
+                  <a href={facebookLink} className='post-facebook-link'><FiFacebook /></a>
+                </li>
+
+              </ul>
             </div>
             <hr style={{ margin: '1rem 25% ' }} />
-            {/* <p
-              style={{ textAlign: 'right', zIndex: 2 }}
-            >
-              This article was also cross posted to
-            {
-                devto_url === undefined
-                  ? 'hi'
-                  : <a href={devto_url} > dev.to </a>
-              }
-              feel free to drop in to give it a ♥ and leave comment.
-
-            </p> */}
-            {/* <p style={{ minHeight: '30px', margin: '0', padding: '0' }}>{description}</p> */}
             <div className='post-body' ref={(el) => { this.markdownContainer = el }}
               dangerouslySetInnerHTML={{ __html: content }} />
             <hr style={{ margin: '3rem 25% 0' }} />
             <br />
-            {/* <p style={{ paddingLeft: '2rem' }}> */}
             <p className='post-edit' style={{ display: 'flex', justify: 'center', textAlign: 'center', margin: '3rem auto' }}>
               <span role='img' aria-label=''>👀</span> see an issue, edit this post on <a href={`https://github.com/WaylonWalker/waylonwalkerv2/edit/main/src/pages${slug.slice(0, -1)}.md`} alt='edit post url' title='edit this post'> <FiGithub /> GitHub</a>
             </p>
             <p className='post-tip-message' style={{ display: 'flex', justify: 'center', margin: 'auto', textAlign: 'center', marginBottom: '.5rem' }}>
               If you found value in this post <br />and want to send a tip.
             </p>
-            <p class-name='post-tip-link' style={{ display: 'flex', justify: 'center' }}>
+            <p class-name='post-tip-link' style={{ display: 'flex', justify: 'center', marginBottom: '4rem' }}>
               <a href="https://www.buymeacoffee.com/bBdtMQO" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', margin: 'auto' }}><img src="https://cdn.buymeacoffee.com/buttons/lato-violet.png" alt="Buy Me A Coffee" style={{ height: '51px', width: '217px', margin: 'auto' }} /></a>
             </p>
 
-            <div className="tweet" style={{ justifyContent: 'center', flexDirection: 'column', alignItems: 'center', maxWidth: '300px', margin: '1rem auto', textAlign: 'center' }}>
-              <p>If you want to show your support, non-monetarily</p>
-              <a className='post-tweet-link' href={tweetLink} ><span role='img' aria-label='sharing hands'>🙌</span> Share this post on <FiTwitter /></a>
+            <div className="share">
+              <p>
+                <span role='img' aria-label='sharing hands'>🙌</span> Share this post
+            </p>
+              <ul>
+                <li>
+                  <a href={tweetLink} className='post-tweet-link'><FiTwitter /></a>
+                </li>
+                <li>
+                  <a href={hnLink} className='post-hn-link'><DiHackernews /></a>
+                </li>
+                <li>
+                  <a href={redditLink} className='post-reddit-link'><IoLogoReddit /></a>
+                </li>
+                <li>
+                  <a href={facebookLink} className='post-facebook-link'><FiFacebook /></a>
+                </li>
+
+              </ul>
             </div>
 
           </BlogPostStyles>
@@ -288,7 +349,7 @@ const BlogPost = ({ data }) => {
     <Layout description={post.frontmatter.description} title={post.frontmatter.title} keywords={post.frontmatter.tags} time={post.frontmatter.date} url={`https://waylonwalker.com${post.frontmatter.path}`}>
       <BlogPostTemplate
         content={post.html}
-        url={`https://waylonwalker.com${post.frontmatter.path}`}
+        url={`https://waylonwalker.com/blog/${post.frontmatter.path}`}
         slug={post.fields.slug}
         // contentComponent={HTMLContent}
         description={post.frontmatter.description}
