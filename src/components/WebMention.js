@@ -23,7 +23,12 @@ padding: 0;
 color: rgba(255, 255, 255, 0.85);
 max-width: 500px;
 min-height: 4rem;
-li{
+
+a.mention-link {
+    color: rgba(255, 255, 255, 0.85);
+    display: block;
+    height: 100%;
+    width: 100%;
     display: flex;
     min-height: 60px;
     align-items: center;
@@ -118,10 +123,11 @@ export default class WebMention extends React.Component {
 
 const Mention = ({ mentionData, url }) => (
     <li>
-        {mentionData.data.author ? <img src={mentionData.data.author.photo} /> : ''}
-        <div className="content">
-            <div dangerouslySetInnerHTML={{ __html: mentionData.activity.sentence_html.split(`<a href="${url}">${url}</a>`).join('').split(`<a href="${url}/">${url}/</a>`).join('').split(" replied '").join("<br><br> '").split('to a tweet').join('').split('favorited a tweet').join('<br><br>&nbsp&nbsp&nbsp&nbspfavorited a tweet') }} />
-            <a className='mention-link' href={mentionData.data.url}>Check it</a>
-        </div>
+        <a className='mention-link no-decoration' href={mentionData.data.url}>
+            {mentionData.data.author ? <img src={mentionData.data.author.photo} /> : ''}
+            <div className="content">
+                <div dangerouslySetInnerHTML={{ __html: mentionData.activity.sentence_html.split(`<a href="${url}">${url}</a>`).join('').split(`<a href="${url}/">${url}/</a>`).join('').split(" replied '").join("<br><br> '").split('to a tweet').join('').split('favorited a tweet').join('<br><br>&nbsp&nbsp&nbsp&nbspfavorited a tweet') }} />
+            </div>
+        </a>
     </li>
 )

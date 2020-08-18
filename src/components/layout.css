@@ -934,3 +934,7 @@ p.no-padding {
     margin-bottom: -9px !important;
     border-radius: 5px 5px 0 0;
 }
+
+a.no-decoration {
+    text-decoration: none !important;
+}
