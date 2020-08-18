@@ -4,7 +4,7 @@ related_post_label: Check out this related post
 tags: ['bash', 'python']
 twitter_announcement: I just dropped a new post check it out.
 path: python-args-kwargs
-title: Installing miniconda on linux (from the command line)
+title: How to Install miniconda on linux (from the command line only)
 date: 2020-08-10T05:00:00Z
 status: published
 description: Installing miniconda from only the command line can be a bit of
