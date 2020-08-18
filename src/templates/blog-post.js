@@ -299,7 +299,7 @@ class BlogPostTemplate extends React.Component {
                 {date}
               </time>
             </a>
-            <div class='h-card' >
+            <div class='h-card p-author' rel='author'>
               <div className='content'>
                 <a className='p-name u-url' href='http://waylonwalker.com/'><span className='p-given-name'>Waylon</span><span className='p-family-name'>Walker</span></a>
                 <p calss='p-note'>Learning in Public</p>
