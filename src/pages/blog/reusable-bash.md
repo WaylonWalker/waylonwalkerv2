@@ -30,9 +30,9 @@ Bash is a language that is quite useful for automation no matter what language y
 I have three techniques that help me write more composable bash scripts.
 
 1. [functions](#functions)
-1. [Arguments](#arguments)
-  1. [positional arguments](#positional-arguments)
-  1. [All Arguments](#all-arguments)
+  * [Arguments](#arguments)
+  * [positional arguments](#positional-arguments)
+  * [All Arguments](#all-arguments)
 1. [Error Handling](#error-handling)
 1. [main script](#main-script)
 
