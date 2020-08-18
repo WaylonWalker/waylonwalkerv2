@@ -21,7 +21,7 @@ color: #FF66C4;
 
 const Social = () => (
     <SocialStyle>
-        <ul>
+        <ul className="social">
             <li>
                 <a href="https://dev.to/waylonwalker">
                     <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Waylon Walker's DEV Profile" height={30} width={30} />

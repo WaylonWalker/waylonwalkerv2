@@ -9,6 +9,8 @@ import Img from 'gatsby-image'
 import { FiTwitter, FiGithub, FiLinkedin, FiFacebook } from "react-icons/fi";
 import { DiHackernews } from "react-icons/di";
 import { IoLogoReddit } from "react-icons/io";
+// import Social from '../components/social'
+import Icon from '../components/icon'
 
 const linkify = (el) => (el.innerText.toLowerCase().replace(/\s/g, '-'))
 
@@ -26,7 +28,7 @@ flex-direction: column;
 align-items: center;
 `
 
-const BlogPostStyles = styled.div`
+const BlogPostStyles = styled.article`
 background: rgba(51, 0, 38, .13);
 background: hsla(234, 33%, 15%, 0.66);
 overflow: hidden;
@@ -43,6 +45,12 @@ box-shadow: .2rem .2rem 1rem rgba(0, 0, 0, .2);
 display: flex;
 flex-direction: column;
 color: whitesmoke;
+.u-url {
+  color: rgba(255, 255, 255, .8);
+  text-decoration: none;
+  text-align: right;
+  margin-bottom: 2rem;
+}
 
 @media (max-width: 700px) {
   h1 {
@@ -148,7 +156,7 @@ h1 {
 
 .share {
   max-width: 800px;
-  margin: 0 auto;
+  margin: .8rem auto;
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
@@ -184,6 +192,30 @@ h1 {
   margin: 3rem 40% !important;
 }
 
+.h-card {
+  /* background-color: rgba(255, 255, 255, .2); */
+  /* padding: 1rem; */
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  img {
+    width: 50px;
+    border-radius: 50%;
+    margin: .2rem;
+    display: none;
+  }
+  ul.social {
+    list-style-type: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    li: {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
 `
 
 class BlogPostTemplate extends React.Component {
@@ -228,6 +260,7 @@ class BlogPostTemplate extends React.Component {
 
     const redditLink = `https://www.reddit.com/submit?url=${url}&title=${shortTitle}`
     const facebookLink = `https://www.facebook.com/sharer.php?u=${url}`
+    const day = new Date(date.replace(/-/g, "/"))
 
     return (
       <>
@@ -251,17 +284,29 @@ class BlogPostTemplate extends React.Component {
           <title>{title}</title>
         </Helmet>
         <BlogPostWrapper className='blog-post'>
-          <BlogPostStyles>
+          <BlogPostStyles className='h-entry'>
             <Img fluid={fluidCover} className='post-cover-image' />
             <h1
               style={{ textAlign: 'right', zIndex: 2 }}
               className="blog title">
               {title}
             </h1>
-            <p className='post-date'
-              style={{ textAlign: 'right', zIndex: 2 }}>
-              {date}
-            </p>
+            <a class='u-url' href={url}>
+              <time
+                className='dt-published post-date'
+                datetime={date}
+                style={{ textAlign: 'right', zIndex: 2 }}>
+                {date}
+              </time>
+            </a>
+            <div class='h-card' >
+              <div className='content'>
+                <a className='p-name u-url' href='http://waylonwalker.com/'>Waylon Walker</a>
+                {/* <Social /> */}
+              </div>
+              <img class='u-photo' alt='author profile' src='https://waylonwalker.com/p' />
+            </div>
+
             <div className="share">
               <p>
                 <span role='img' aria-label='sharing hands'>🙌</span> Share this post
