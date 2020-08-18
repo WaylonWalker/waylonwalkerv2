@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
+import WebMention from '../components/WebMention'
 import Img from 'gatsby-image'
 import { FiTwitter, FiGithub, FiLinkedin, FiFacebook } from "react-icons/fi";
 import { DiHackernews } from "react-icons/di";
@@ -324,6 +325,7 @@ class BlogPostTemplate extends React.Component {
             Check out my other
           <Link to='/blog' style={{ margin: '.2rem' }} >blogs</Link>
           </p>
+          <WebMention url={url} />
         </BlogPostWrapper >
       </>
     )
