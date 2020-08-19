@@ -107,3 +107,33 @@ _from the repo_
     # Optional: Disable dirty check and always try to create a commit and push
     skip_dirty_check: true
     ```
+    
+## More Actions
+
+If you're new to actions check out these articles on using actions.
+
+<TABLE>
+  <TR>
+    <TD>
+      <a href='https://waylonwalker.com/notes/four-github-actions-website'>
+      <img
+        style='width:250px; max-width:80%; margin: auto; float: left'
+        src="https://waylonwalker.com/four-github-actions-website-rm.png"
+        alt="GitHub Actions Syntax article card"
+        />
+      </a>
+    </TD>
+    <TD>
+      <a href='https://waylonwalker.com/notes/four-github-actions-python'>
+      <img
+        style='width:250px; max-width:80%; margin: auto; float: right;'
+        src="https://waylonwalker.com/four-github-actions-python-rm.png"
+        alt="GitHub Actions Syntax article card"
+        />
+      </a>
+    </TD>
+  </TR>
+</TABLE>
+
+
+> If you're new to actions check out this article on using actions.
