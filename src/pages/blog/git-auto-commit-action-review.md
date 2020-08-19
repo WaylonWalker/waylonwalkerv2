@@ -134,6 +134,3 @@ If you're new to actions check out these articles on using actions.
     </TD>
   </TR>
 </TABLE>
-
-
-> If you're new to actions check out this article on using actions.
