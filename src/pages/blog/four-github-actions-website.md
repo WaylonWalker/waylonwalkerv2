@@ -64,7 +64,9 @@ jobs:
 
 Here is another one to make sure that your package.json does not get too far out of date, or have any vulnerabilities. [taichi/actions-package-update](https://github.com/taichi/actions-package-update) will submit a PR back to your repo with any updated dependencies. Since it submits it as a pr, your tests triggered by PRs should also run. giving you confidence that you are ready to update.
 
-![image of a PR submitted by actions-package-update](https://github.com/taichi/actions-package-update/raw/master/docs/actions-package-update.png "image of a PR submitted by actions-package-update")
+<p style='text-align: center'>
+<img src='https://github.com/taichi/actions-package-update/raw/master/docs/actions-package-update.png' style='width:600px; max-width:80%; margin: auto;' alt='image of a PR submitted by actions-package-update'/>
+</p>
 
 Example to update `package.json` every Wednesday night at midnight.
 
