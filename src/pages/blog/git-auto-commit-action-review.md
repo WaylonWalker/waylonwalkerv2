@@ -34,6 +34,19 @@ This has been by far the easiest way to commit back to a repo that I have seen. 
 
 You must give it a commit message and thats it.  Optionally you can configure a number of things.  Its possible to configure the `commit_user_name`, `commit_user_email`, and `commit_author`.  I often also scope the `file_pattern` to a certain subset of files.
 
+---
+
+<p style='text-align: center'>
+<a href='https://waylonwalker.com/blog/github-actions-syntax'>
+  <img
+    style='width:500px; max-width:80%; margin: auto;'
+    src="https://waylonwalker.com/github-actions-syntax-rm.png"
+    alt="GitHub Actions Syntax article card"
+  />
+  </a>
+</p>
+
+> If you're new to actions check out this article on using actions.
 
 ---
 
@@ -94,4 +107,30 @@ _from the repo_
 
     # Optional: Disable dirty check and always try to create a commit and push
     skip_dirty_check: true
-    ```
+```
+
+## More Actions
+
+If you're new to actions check out this article on using actions.
+
+<TABLE>
+<TR>
+   <TD>
+      <a href='https://waylonwalker.com/blog/four-github-actions-website'>
+      <img
+         style='margin: auto; float: left'
+         src="https://waylonwalker.com/four-github-actions-website-rm.png"
+         alt="GitHub Actions Syntax article card"
+         />
+      </a>
+   </TD>
+   <TD>
+      <a href='https://waylonwalker.com/blog/four-github-actions-python'>
+      <img
+         style='margin: auto; float: right;'
+         src="https://waylonwalker.com/four-github-actions-python-rm.png"
+         alt="GitHub Actions Syntax article card"
+         />
+      </a>
+   </TD>
+</TR>

@@ -203,6 +203,23 @@ I was a bit confused about how to set up TestProject.io inside of actions.  I wa
 
 _[test-waylonwalker-com.yml](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/workflows/test-waylonwalker-com.yml)_
 
+GitHub actions are a continuous integration, continuous delivery service by GitHub that will spin up a VM and run a set of steps upon a number of triggers including push, pull request, and schedule.
+---
+
+<p style='text-align: center'>
+<a href='https://waylonwalker.com/blog/github-actions-syntax'>
+  <img
+    style='width:500px; max-width:80%; margin: auto;'
+    src="https://waylonwalker.com/github-actions-syntax-rm.png"
+    alt="GitHub Actions Syntax article card"
+  />
+  </a>
+</p>
+
+> If you're new to actions check out this article on using actions.
+
+---
+
 Now that I have my GitHub repo setup with my [tests](https://github.com/WaylonWalker/waylonwalker-com-tests/tree/master/tests) successfully running in pytest, let's get it running inside of GitHub actions automatically.
 
 ``` yaml
@@ -344,3 +361,31 @@ As you drill in you can see individual tests that have been run, select them, an
 The experience I had setting up TestProject.io to run inside GitHub's actions was great.  It was fairly simple to set up and get running with many of the greatest integration testing tools of today, selenium, chrome, firefox.
 
 Now I am going to turn the test frequency down a bit.
+
+---
+
+## More Actions
+
+If you're new to actions check out this article on using actions.
+
+<TABLE>
+<TR>
+   <TD>
+      <a href='https://waylonwalker.com/blog/four-github-actions-website'>
+      <img
+         style='margin: auto; float: left'
+         src="https://waylonwalker.com/four-github-actions-website-rm.png"
+         alt="GitHub Actions Syntax article card"
+         />
+      </a>
+   </TD>
+   <TD>
+      <a href='https://waylonwalker.com/blog/four-github-actions-python'>
+      <img
+         style='margin: auto; float: right;'
+         src="https://waylonwalker.com/four-github-actions-python-rm.png"
+         alt="GitHub Actions Syntax article card"
+         />
+      </a>
+   </TD>
+</TR>
