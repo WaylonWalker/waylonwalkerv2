@@ -102,6 +102,7 @@ For more information read this article, [https://docs.docker.com/config/pruning/
 
 ``` bash
 docker system prune
+docker system prune --volumes
 ```
 
 Running these two sets of commands cleared up about **70GB** of space for me with very little effort on my behalf. I hope others find the first command helpful to batch remove many conda environments at once.
