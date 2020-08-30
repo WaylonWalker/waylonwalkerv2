@@ -133,7 +133,20 @@ class BlogPosts extends Component {
               )
           }
           < div className="robots">
-            {this.state.posts.map((post, i) => <li><h3 id={`${post.node.frontmatter.title}-robot`}>{post.node.frontmatter.title}</h3><div className="description">{post.node.frontmatter.description}</div><a href={post.node['fields']['slug']} title={post.node.frontmatter.title}>{post.node.frontmatter.title}</a></li>)}
+            {
+              this.state.posts.map((post, i) =>
+                <li>
+                  <h3 id={`${post.node.frontmatter.title}-robot`}>{post.node.frontmatter.title}</h3>
+                  <div className="description">{post.node.frontmatter.description}</div>
+                  {
+                    post.node.fields.slug === null
+                      ? ''
+                      : <a href={post.node['fields']['slug']} title={post.node.frontmatter.title}>
+                        {post.node.frontmatter.title}
+                      </a>
+                  }
+                </li>)
+            }
           </div>
         </FlipMove>
       </ BlogPostsStyle >
