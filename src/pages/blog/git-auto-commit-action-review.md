@@ -48,6 +48,18 @@ You must give it a commit message and thats it.  Optionally you can configure a 
 
 > If you're new to actions check out this article on using actions.
 
+<p style='text-align: center'>
+<a href='https://waylonwalker.com/notes/github-actions-syntax'>
+  <img
+    style='width:500px; max-width:80%; margin: auto;'
+    src="https://waylonwalker.com/github-actions-syntax-rm.png"
+    alt="GitHub Actions Syntax article card"
+  />
+  </a>
+</p>
+
+> If you're new to actions check out this article on using actions.
+
 ---
 
 You do need to be careful to checkout the repo just a bit different than normal.
@@ -107,30 +119,32 @@ _from the repo_
 
     # Optional: Disable dirty check and always try to create a commit and push
     skip_dirty_check: true
-```
+
+  ```
 
 ## More Actions
 
-If you're new to actions check out this article on using actions.
+If you're new to actions check out these articles on using actions.
 
 <TABLE>
-<TR>
-   <TD>
-      <a href='https://waylonwalker.com/blog/four-github-actions-website'>
+  <TR>
+    <TD>
+      <a href='https://waylonwalker.com/notes/four-github-actions-website'>
       <img
-         style='margin: auto; float: left'
-         src="https://waylonwalker.com/four-github-actions-website-rm.png"
-         alt="GitHub Actions Syntax article card"
-         />
+        style='width:250px; max-width:80%; margin: auto; float: left'
+        src="https://waylonwalker.com/four-github-actions-website-rm.png"
+        alt="GitHub Actions Syntax article card"
+        />
       </a>
-   </TD>
-   <TD>
-      <a href='https://waylonwalker.com/blog/four-github-actions-python'>
+    </TD>
+    <TD>
+      <a href='https://waylonwalker.com/notes/four-github-actions-python'>
       <img
-         style='margin: auto; float: right;'
-         src="https://waylonwalker.com/four-github-actions-python-rm.png"
-         alt="GitHub Actions Syntax article card"
-         />
+        style='width:250px; max-width:80%; margin: auto; float: right;'
+        src="https://waylonwalker.com/four-github-actions-python-rm.png"
+        alt="GitHub Actions Syntax article card"
+        />
       </a>
-   </TD>
-</TR>
+    </TD>
+  </TR>
+</TABLE>

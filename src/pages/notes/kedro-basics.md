@@ -31,6 +31,9 @@ Learn Kedro in 5 days
 ## Day 2
 
 * catalog
+* filter catalog
+* load data
+* fsspec
 
 ## Day 3
 
@@ -39,4 +42,17 @@ Learn Kedro in 5 days
 
 ## Day 4
 
+
+* filter pipeline
+* run partial pipeline
+
 ## Day 5
+
+* kedro docker
+* GitHub Actions
+
+# Advanced Kedro
+
+* hooks
+* custom datasets
+* modular pipelines

@@ -18,6 +18,14 @@ twitter_cover: ''
 * gracefully adopt kedro
   * catalog - in progress
   * pipeline
+* kedro
+  * filter viz
+  * Steel-toes env
+  * Why framework
+  * How I write pipelines
+  * when I write pipelines
+  * Convert a notebooks to pipelines
+  * Testing Pipelines
 * professional python
   * cookiecutter
   * flake8
@@ -25,6 +33,10 @@ twitter_cover: ''
   * mypy
   * pre-commit
   * click
+  * pytest
+    * git
+    * parametrize
+    * environment variables
 * My top pandas methods
 * Actions
   * How I cut my gatsby deployment in half
