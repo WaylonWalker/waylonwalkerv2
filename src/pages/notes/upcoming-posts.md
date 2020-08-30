@@ -22,9 +22,10 @@ twitter_cover: ''
   * filter viz
   * Steel-toes env
   * Why framework
-  * How I write pypes
-  * when I write pypes
-  * Convert a notebooks to pypes
+  * How I write pipelines
+  * when I write pipelines
+  * Convert a notebooks to pipelines
+  * Testing Pipelines
 * professional python
   * cookiecutter
   * flake8
