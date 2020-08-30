@@ -58,7 +58,41 @@ color: whitesmoke;
   }
   width: 100%;
   margin: 0rem;
-  padding: .3rem;
+  padding: 0rem;
+  margin: 0rem;
+
+  /* p, pre, ul, li {
+    font-size: .7rem;
+    font-size: .83rem;
+    line-height: 1rem;
+  } */
+
+
+  p {
+    padding: 0 .8rem;
+  }
+  h1 {
+    padding: 1rem;
+
+  }
+  h2 {
+    padding-left: 1rem;
+  }
+  h3 {
+    padding-left: 1.4rem;
+  }
+
+  h4, h5, h6{
+    padding-left: 1.6rem;
+  }
+
+  ul, ol {
+    padding: 1.2rem;
+  }
+}
+
+pre {
+  margin-bottom: 1rem;
 }
 
 a {
@@ -292,12 +326,14 @@ class BlogPostTemplate extends React.Component {
               {title}
             </h1>
             <a class='u-url' href={url}>
-              <time
-                className='dt-published post-date'
-                datetime={date}
-                style={{ textAlign: 'right', zIndex: 2 }}>
-                {date}
-              </time>
+              <p>
+                <time
+                  className='dt-published post-date'
+                  datetime={date}
+                  style={{ textAlign: 'right', zIndex: 2 }}>
+                  {date}
+                </time>
+              </p>
             </a>
             <div class='h-card p-author' rel='author'>
               <div className='content'>
