@@ -77,7 +77,7 @@ jobs:
           scope: "@ownername"
       #       - uses: bahmutov/npm-install@v1
       - name: install npm
-        if: steps.filter.outputs.npm == 'true'
+        # if: steps.filter.outputs.npm == 'true'
         run: npm install --production
       - name: 🔨 gatsby build
         run: npm run build
