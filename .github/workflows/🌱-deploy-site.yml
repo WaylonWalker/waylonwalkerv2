@@ -6,8 +6,6 @@ name: 🌱 Deploy site
 # events but only for the main branch
 on:
   workflow_dispatch:
-    inputs:
-      cache: true
   push:
     branches:
       - main
