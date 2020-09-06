@@ -124,7 +124,7 @@ export default class WebMention extends React.Component {
 const Mention = ({ mentionData, url }) => (
     <li>
         <a className='mention-link no-decoration' href={mentionData.data.url}>
-            {mentionData.data.author ? <img src={mentionData.data.author.photo} /> : ''}
+            {mentionData.data.author ? <img alt='authors profile' src={mentionData.data.author.photo} /> : ''}
             <div className="content">
                 <div dangerouslySetInnerHTML={{ __html: mentionData.activity.sentence_html.split(`<a href="${url}">${url}</a>`).join('').split(`<a href="${url}/">${url}/</a>`).join('').split(" replied '").join("<br><br> '").split('to a tweet').join('').split('favorited a tweet').join('<br><br>&nbsp&nbsp&nbsp&nbspfavorited a tweet') }} />
             </div>
