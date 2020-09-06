@@ -6,11 +6,11 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import WebMention from '../components/WebMention'
 import Img from 'gatsby-image'
-import { FiTwitter, FiGithub, FiLinkedin, FiFacebook } from "react-icons/fi";
+import { FiTwitter, FiGithub, FiFacebook } from "react-icons/fi";
 import { DiHackernews } from "react-icons/di";
 import { IoLogoReddit } from "react-icons/io";
 // import Social from '../components/social'
-import Icon from '../components/icon'
+// import Icon from '../components/icon'
 
 const linkify = (el) => (el.innerText.toLowerCase().replace(/\s/g, '-'))
 
@@ -289,12 +289,12 @@ class BlogPostTemplate extends React.Component {
     const shortTitle = title === null ? '' : encodeURIComponent(title.slice(0, 150))
     const tweetLink = `https://twitter.com/intent/tweet?text=${shortTitle + '%0A%0A@waylonwalker%0A%0A' + url}`
     const hnLink = `https://news.ycombinator.com/submitlink?u=${url}&t=${shortTitle}`
-    const linkedinLink = `https://www.linkedin.com/sharing/share-offsite/?url=${url.split(':').join('%3A').split('/').join('%2F')}`
+    // const linkedinLink = `https://www.linkedin.com/sharing/share-offsite/?url=${url.split(':').join('%3A').split('/').join('%2F')}`
     // https://www.linkedin.com/shareArticle?mini=true&url=https://dev.to/waylonwalker/what-is-kedro-lob&title=%F0%9F%A4%B7%E2%80%8D%E2%99%80%EF%B8%8F%20What%20is%20Kedro%20(The%20Parts)&summary=kedro%20is%20an%20open-source%20data%20pipeline%20framework.%20%20It%20provides%20guardrails%20to%20set%20your%20project%20up%20right...&source=DEV
 
     const redditLink = `https://www.reddit.com/submit?url=${url}&title=${shortTitle}`
     const facebookLink = `https://www.facebook.com/sharer.php?u=${url}`
-    const day = new Date(date.replace(/-/g, "/"))
+    // const day = new Date(date.replace(/-/g, "/"))
 
     return (
       <>
@@ -350,16 +350,16 @@ class BlogPostTemplate extends React.Component {
             </p>
               <ul>
                 <li>
-                  <a href={tweetLink} className='post-tweet-link'><FiTwitter /></a>
+                  <a aria-label='tweet' href={tweetLink} className='post-tweet-link'><FiTwitter /></a>
                 </li>
                 <li>
-                  <a href={hnLink} className='post-hn-link'><DiHackernews /></a>
+                  <a aria-label='post on hacker news' href={hnLink} className='post-hn-link'><DiHackernews /></a>
                 </li>
                 <li>
-                  <a href={redditLink} className='post-reddit-link'><IoLogoReddit /></a>
+                  <a aria-label='post on reddit' href={redditLink} className='post-reddit-link'><IoLogoReddit /></a>
                 </li>
                 <li>
-                  <a href={facebookLink} className='post-facebook-link'><FiFacebook /></a>
+                  <a aria-label='post on facebook' href={facebookLink} className='post-facebook-link'><FiFacebook /></a>
                 </li>
 
               </ul>
@@ -385,16 +385,16 @@ class BlogPostTemplate extends React.Component {
             </p>
               <ul>
                 <li>
-                  <a href={tweetLink} className='post-tweet-link'><FiTwitter /></a>
+                  <a aria-label='tweet' href={tweetLink} className='post-tweet-link'><FiTwitter /></a>
                 </li>
                 <li>
-                  <a href={hnLink} className='post-hn-link'><DiHackernews /></a>
+                  <a aria-label='post on hacker news' href={hnLink} className='post-hn-link'><DiHackernews /></a>
                 </li>
                 <li>
-                  <a href={redditLink} className='post-reddit-link'><IoLogoReddit /></a>
+                  <a aria-label='post on reddit' href={redditLink} className='post-reddit-link'><IoLogoReddit /></a>
                 </li>
                 <li>
-                  <a href={facebookLink} className='post-facebook-link'><FiFacebook /></a>
+                  <a aria-label='post on facebook' href={facebookLink} className='post-facebook-link'><FiFacebook /></a>
                 </li>
 
               </ul>
