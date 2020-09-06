@@ -6,9 +6,13 @@ name: 🌱 Deploy site
 # events but only for the main branch
 on:
   workflow_dispatch:
+    inputs:
+      cache: true
   push:
     branches:
       - main
+    inputs:
+      cache: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -29,9 +33,11 @@ jobs:
       - name: npm cache directory
         id: npm-cache-directory
         run: echo "::set-output name=dir::$(npm config get cache)"
+        if: ${{ github.events.inputs.cache }}
 
       - name: Cache npm
         uses: actions/cache@v2
+        if: ${{ github.events.inputs.cache }}
         with:
           path: ${{ steps.npm-cache-directory.outputs.dir }}
           key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
@@ -40,6 +46,7 @@ jobs:
 
       - name: Cache node_modules
         uses: actions/cache@v2
+        if: ${{ github.events.inputs.cache }}
         with:
           path: node_modules
           key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
@@ -48,6 +55,7 @@ jobs:
 
       - name: Cache gatsby cache directory
         uses: actions/cache@v2
+        if: ${{ github.events.inputs.cache }}
         with:
           path: .cache
           key: ${{ runner.os }}-gatsby-cache-directory
@@ -63,6 +71,7 @@ jobs:
 
       - name: Cache gatsby public directory
         uses: actions/cache@v2
+        if: ${{ github.events.inputs.cache }}
         with:
           path: public/
           key: ${{ runner.os }}-gatsby-public-directory
