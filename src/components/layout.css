@@ -10,6 +10,7 @@ body {
 }
 
 ::selection {
+    color: #433e91;
     background: #ffcf0d;
 }
 
