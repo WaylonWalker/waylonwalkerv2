@@ -26,53 +26,48 @@ jobs:
       #     python-version: 3.8
       - uses: actions/checkout@v2
 
-      - name: npm cache directory
-        id: npm-cache-directory
-        run: echo "::set-output name=dir::$(npm config get cache)"
-        if: ${{ github.events.inputs.cache }}
+      # - name: npm cache directory
+      #   id: npm-cache-directory
+      #   run: echo "::set-output name=dir::$(npm config get cache)"
 
-      - name: Cache npm
-        uses: actions/cache@v2
-        if: ${{ github.events.inputs.cache }}
-        with:
-          path: ${{ steps.npm-cache-directory.outputs.dir }}
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
+      # - name: Cache npm
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ${{ steps.npm-cache-directory.outputs.dir }}
+      #     key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-npm-
 
-      - name: Cache node_modules
-        uses: actions/cache@v2
-        if: ${{ github.events.inputs.cache }}
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
+      # - name: Cache node_modules
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: node_modules
+      #     key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-npm-
 
-      - name: Cache gatsby cache directory
-        uses: actions/cache@v2
-        if: ${{ github.events.inputs.cache }}
-        with:
-          path: .cache
-          key: ${{ runner.os }}-gatsby-cache-directory
-          restore-keys: |
-            ${{ runner.os }}-cache-directory
-      - uses: dorny/paths-filter@v2.2.0
-        id: filter
-        with:
-          # inline YAML or path to separate file (e.g.: .github/filters.yaml)
-          filters: |
-            npm:
-              - 'package*.json'
+      # - name: Cache gatsby cache directory
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: .cache
+      #     key: ${{ runner.os }}-gatsby-cache-directory
+      #     restore-keys: |
+      #       ${{ runner.os }}-cache-directory
+      # - uses: dorny/paths-filter@v2.2.0
+      #   id: filter
+      #   with:
+      #     # inline YAML or path to separate file (e.g.: .github/filters.yaml)
+      #     filters: |
+      #       npm:
+      #         - 'package*.json'
 
-      - name: Cache gatsby public directory
-        uses: actions/cache@v2
-        if: ${{ github.events.inputs.cache }}
-        with:
-          path: public/
-          key: ${{ runner.os }}-gatsby-public-directory
-          restore-keys: |
-            ${{ runner.os }}-public-director
+      # - name: Cache gatsby public directory
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: public/
+      #     key: ${{ runner.os }}-gatsby-public-directory
+      #     restore-keys: |
+      #       ${{ runner.os }}-public-director
 
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
