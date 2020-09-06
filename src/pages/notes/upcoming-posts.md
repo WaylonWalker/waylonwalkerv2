@@ -71,4 +71,6 @@ twitter_cover: ''
 * failure
 * dont listen to the haters
 * Just start (make 20 minutes)
-* 
+* Mistakes Happen
+* Accountability
+* Giving without Expectations
