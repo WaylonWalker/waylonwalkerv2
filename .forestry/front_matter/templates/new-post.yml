@@ -139,6 +139,7 @@ pages:
 - src/pages/blog/bind-dynamic-lambdas.md
 - src/pages/blog/brainstorming-kedro-hooks.md
 - src/pages/blog/building-kedro.dev.md
+- src/pages/blog/chrome-extensions-i-use.md
 - src/pages/blog/cmd-exe-tips.md
 - src/pages/blog/create-custom-kedro-dataset.md
 - src/pages/blog/create-new-kedro-project.md
