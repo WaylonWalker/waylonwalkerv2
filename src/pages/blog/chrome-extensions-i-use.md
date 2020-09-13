@@ -24,11 +24,20 @@ devto-id: ''
 ---
 There are many useful chrome extensions out there.  I probably have way too many installed, here are four that I am currently using.
 
+1. [LastPass](#lastpass)
+1. [Stylus](#stylus)
+1. [Vimium](#vimium)
+1. [hypothesis](#hypothesis)
+
+---
+
 ## [LastPass](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd?hl=en)
 
 Love it or hate it passwords are hard to manage.  Everyone needs a password manager to avoid the dreaded password reuse, and to be able to quickly rotate them with a service.  I use lastpass, thus it's browser extension is my most used extension.
 
 [![lastpass](https://waylonwalker.com/chrome-extension-lastpass.png)](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd?hl=en)
+
+---
 
 ## [Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en)
 
@@ -38,12 +47,15 @@ Personally I mostly use it to add my favorite syntax highlighting theme to jupyt
 
 [![lastpass](https://waylonwalker.com/chrome-extension-stylus.png)](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en)
 
+---
+
 ## [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en)
 
 Vimium adds vim-like keybindings to chrome.  I don't use it a ton but it comes in handy to fully utilize the keyboard on some sites that aren't well suited to keyboard use.
 
 [![vimium](https://waylonwalker.com/chrome-extension-vimium.png)](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en)
 
+---
 
 ## [hypothesis](https://chrome.google.com/webstore/detail/hypothesis-web-pdf-annota/bjfhmglciegochdpefhhlphglcehbmek?hl=en)
 
