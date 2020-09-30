@@ -25,6 +25,7 @@ A common linting error thrown by various linters is for trailing whitespace.  I 
 
 ## One-Liner to strip whitespace
 
+_<small><mark>bash</mark></small>_
 ``` bash
 git grep -I --name-only -z -e '' | xargs -0 sed -i -e 's/[ \t]\+\(\r\?\)$/\1/'
 ```
