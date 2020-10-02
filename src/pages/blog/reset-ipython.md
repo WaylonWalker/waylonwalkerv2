@@ -179,7 +179,7 @@ The above tips will help you reclaim used memory in ipython, but the following t
 <a href='https://waylonwalker.com/blog/autoreload-ipython'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/blog/autoreload-ipython-rm.png"
+    src="https://waylonwalker.com/autoreload-ipython-rm.png"
     alt="Autoreload in Ipython"
   />
   </a>
