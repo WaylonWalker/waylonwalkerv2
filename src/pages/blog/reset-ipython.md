@@ -176,10 +176,10 @@ Out[11]: ['a']
 The above tips will help you reclaim used memory in ipython, but the following tip is one that single handedly is the reason I use Ipython for faster development over anything else.
 
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/autoreload-ipython-rm.png'>
+<a href='https://waylonwalker.com/blog/autoreload-ipython'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/blog/autoreload-ipython"
+    src="https://waylonwalker.com/blog/autoreload-ipython-rm.png"
     alt="Autoreload in Ipython"
   />
   </a>
