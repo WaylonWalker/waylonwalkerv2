@@ -47,7 +47,7 @@ sudo apt-get install htop # install it from your package repo
 htop
 ```
 
-![htop in use](waylonwalker.com/htop-2.0.png)
+![htop in use](https://waylonwalker.com/htop-2.0.png)
 
 ## First step throw more swap at it
 
