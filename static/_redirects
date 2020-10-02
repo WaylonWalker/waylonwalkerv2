@@ -1,7 +1,10 @@
 # netlify redirects
 
 # image upload
+/upload            https://github.com/WaylonWalker/waylonwalkerv2/upload/main/static
+/uploads           https://github.com/WaylonWalker/waylonwalkerv2/upload/main/static
 /i                 https://github.com/WaylonWalker/waylonwalkerv2/upload/main/static
+
 
 # profile image
 /profile           https://waylonwalker.com/8bitc.png
