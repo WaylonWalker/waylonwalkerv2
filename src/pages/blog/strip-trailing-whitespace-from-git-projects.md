@@ -10,8 +10,8 @@ status: published
 description: ''
 related_post_body: ''
 related_post: []
-cover: ''
-twitter_cover: ''
+cover: '/static/strip-trailing-whitespace-from-git-projects.png'
+twitter_cover: '/static/strip-trailing-whitespace-from-git-projects.png'
 twitter_week_1: ''
 twitter_week_2: ''
 twitter_month_1: ''
