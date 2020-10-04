@@ -84,9 +84,9 @@ export default class WebMention extends React.Component {
         const data_no_slash = await this.getWebmention(cleanedUrl)
         const data_slash = await this.getWebmention(cleanedUrl + '/')
         let data = [...data_no_slash, ...data_slash,]
-        console.log('webmentions')
-        console.log(data)
-        console.log(data.length)
+        // console.log('webmentions')
+        // console.log(data)
+        // console.log(data.length)
 
         data.map(m => m.activity.sentence_html.replace(this.state.url, ''))
         // if desired to split likes and replies later use activity.type
@@ -112,7 +112,7 @@ export default class WebMention extends React.Component {
                 <p>tweet about this post and it will show up here.</p>
 
                 <WebMentionList>
-                    {this.state.loading ? 'loading' : this.state.data.map(m => <Mention mentionData={m} url={this.state.url} />)}
+                    {this.state.loading ? 'loading' : this.state.data.map((m, i) => <Mention key={i} mentionData={m} url={this.state.url} />)}
                 </WebMentionList>
 
             </WebMentionStyle>
