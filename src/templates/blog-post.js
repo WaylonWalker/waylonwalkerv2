@@ -325,23 +325,23 @@ class BlogPostTemplate extends React.Component {
               className="blog title">
               {title}
             </h1>
-            <a class='u-url' href={url}>
+            <a className='u-url' href={url}>
               <p>
                 <time
                   className='dt-published post-date'
-                  datetime={date}
+                  dateTime={date}
                   style={{ textAlign: 'right', zIndex: 2 }}>
                   {date}
                 </time>
               </p>
             </a>
-            <div class='h-card p-author' rel='author'>
+            <div className='h-card p-author' rel='author'>
               <div className='content'>
                 <a className='p-name u-url' href='http://waylonwalker.com/'><span className='p-given-name'>Waylon</span><span className='p-family-name'>Walker</span></a>
                 <p calss='p-note'>Learning in Public</p>
                 {/* <Social /> */}
               </div>
-              <img class='u-photo' alt='author profile' src='https://waylonwalker.com/p' />
+              <img className='u-photo' alt='author profile' src='https://waylonwalker.com/p' />
             </div>
 
             <div className="share">
