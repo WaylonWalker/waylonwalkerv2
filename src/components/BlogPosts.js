@@ -61,7 +61,19 @@ class BlogPosts extends Component {
     window.addEventListener('scroll', this.handleScroll)
     const url = new URL(window.location.href)
     const search = url.searchParams.get('search')
-    this.setState({search }, () => this.SearchWithFuse())
+    if (search !== null) {
+      this.setState({search }, () => this.SearchWithFuse())
+      const el = document.getElementById('blog')
+      // console.log('scrolling')
+      el.scrollIntoView()
+
+    }
+    // console.log(`base search ${search}`)
+
+  }
+
+  fuseSortFn = (a, b) => {
+    return a.score = b.score
 
   }
 
@@ -93,6 +105,7 @@ class BlogPosts extends Component {
         ignoreFieldNorm: true,
         ingludeScore: true,
         threshold: 0.4,
+        sortFn: this.fuseSortFn,
         keys: [
 
           'node.plainText',
@@ -113,7 +126,7 @@ class BlogPosts extends Component {
     } else {
       this.setState({ filteredPosts: fuse.search(this.state.search).map(i => i.item) })
       // console.log('fuse search')
-      const result = fuse.search(this.state.search)
+      // const result = fuse.search(this.state.search)
       // console.log(result)
       // console.log('filtered')
       // console.log(this.state.filteredPosts)
