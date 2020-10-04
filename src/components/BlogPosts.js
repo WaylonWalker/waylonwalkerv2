@@ -135,7 +135,7 @@ class BlogPosts extends Component {
           < div className="robots">
             {
               this.state.posts.map((post, i) =>
-                <li>
+                <li key={post.node.id} >
                   <h3 id={`${post.node.frontmatter.title}-robot`}>{post.node.frontmatter.title}</h3>
                   <div className="description">{post.node.frontmatter.description}</div>
                   {
