@@ -75,18 +75,17 @@ sudo mkswap $SWAPFILE
 sudo swapon $SWAPFILE
 ```
 
-https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-20-04/featured.jpg?ezimgfmt=ng:webp/ngcb30
-
 <p style='text-align: center'>
 <a href='https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-20-04/'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-20-04/featured.jpg?ezimgfmt=ng:webp/ngcb30"
+    src="https://waylonwalker.com/linuxize-how-to-add-swap-space-on-ubuntu-20-04.jpg"
     alt="How to Add Swap Space on Ubuntu 20.04"
   />
   </a>
 </p>
 
+[linuxize how to add swap space on ubuntu 20.04](https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-20-04/)
 
 More details on creating swapfiles checkout [linuxize](https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-20-04/).  It is my favorite linux tutorial site!
 
