@@ -59,6 +59,9 @@ class BlogPosts extends Component {
 
   componentDidMount = async () => {
     window.addEventListener('scroll', this.handleScroll)
+    const url = new URL(window.location.href)
+    const search = url.searchParams.get('search')
+    this.setState({search }, () => this.SearchWithFuse())
 
   }
 
@@ -79,21 +82,28 @@ class BlogPosts extends Component {
   setSearch = search => this.setState({ search }, () => this.SearchWithFuse())
 
   SearchWithFuse = () => {
-    console.log("fusing with plainText\n\n")
-    console.log(this.state.posts)
+    // console.log("fusing with plainText\n\n")
+    // console.log(`searching for ${this.state.search}`)
+
+    // console.log(this.state.posts)
     const fuse = new Fuse(
       this.state.posts,
       {
+        ignoreLocation: true,
+        ignoreFieldNorm: true,
+        ingludeScore: true,
+        threshold: 0.4,
         keys: [
+
           'node.plainText',
-          // {
-          //   name: 'node.frontmatter.tags',
-          //   weight: 2
-          // },
-          // {
-          //   name: 'node.frontmatter.title',
-          //   weight: 2.5
-          // }
+          {
+            name: 'node.frontmatter.tags',
+            weight: 1.2
+          },
+          {
+            name: 'node.frontmatter.title',
+            weight: 1.5
+          }
         ],
         useExtendedSearch: true
       }
@@ -102,7 +112,12 @@ class BlogPosts extends Component {
       this.setState({ filteredPosts: this.state.posts })
     } else {
       this.setState({ filteredPosts: fuse.search(this.state.search).map(i => i.item) })
-      console.log(fuse.search(this.state.search))
+      // console.log('fuse search')
+      const result = fuse.search(this.state.search)
+      // console.log(result)
+      // console.log('filtered')
+      // console.log(this.state.filteredPosts)
+      window.history.pushState({}, null, `?search=${this.state.search}`)
     }
   }
 
