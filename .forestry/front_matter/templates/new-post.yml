@@ -139,6 +139,7 @@ pages:
 - src/pages/blog/bind-dynamic-lambdas.md
 - src/pages/blog/brainstorming-kedro-hooks.md
 - src/pages/blog/building-kedro.dev.md
+- src/pages/blog/chrome-extensions-i-use.md
 - src/pages/blog/cmd-exe-tips.md
 - src/pages/blog/create-custom-kedro-dataset.md
 - src/pages/blog/create-new-kedro-project.md
@@ -162,10 +163,12 @@ pages:
 - src/pages/blog/quick-progress-bars-in-python-using-tqdm.md
 - src/pages/blog/react-headroom.md
 - src/pages/blog/realistic-git-workflow.md
+- src/pages/blog/reclaim-memory-usage-in-jupyter.md
 - src/pages/blog/rss-feed-for-your-gatsby-site.md
 - src/pages/blog/should-i-switch-to-zeit-now.md
 - src/pages/blog/simple-click-2.md
 - src/pages/blog/simple-click.md
+- src/pages/blog/strip-trailing-whitespace-from-git-projects.md
 - src/pages/blog/thank-you.md
 - src/pages/blog/variables-names-don-t-need-their-type.md
 - src/pages/blog/what-is-kedro.md
