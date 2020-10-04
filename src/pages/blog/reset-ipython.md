@@ -184,3 +184,5 @@ The above tips will help you reclaim used memory in ipython, but the following t
   />
   </a>
 </p>
+
+[autoreload-ipython](https://waylonwalker.com/blog/autoreload-ipython) one of my biggest productivity boosts.
