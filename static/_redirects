@@ -18,6 +18,8 @@
 
 # Short-Blog
 
+/blog/ripy         /blog/reset-ipython
+/ripy              /blog/reset-ipython
 /blog/wrbs         /blog/reusable-bash
 /wrbs              /blog/reusable-bash
 /blog/kcre         /blog/kedro-catalog-search
