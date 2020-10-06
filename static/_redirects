@@ -13,13 +13,15 @@
 
 # latest-post
 
-/latest            /blog/reusable-bash/
-/latest.png        /reusable-bash.png
+/latest            /blog/reset-ipython
+/latest.png        /reset-ipython.png
 
 # Short-Blog
 
 /blog/ripy         /blog/reset-ipython
 /ripy              /blog/reset-ipython
+/blog/ripy.png     /blog/reset-ipython.png
+/ripy.png          /blog/reset-ipython.png
 /blog/wrbs         /blog/reusable-bash
 /wrbs              /blog/reusable-bash
 /blog/kcre         /blog/kedro-catalog-search
