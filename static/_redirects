@@ -14,11 +14,15 @@
 
 # latest-post
 
-/latest            /blog/reset-ipython
-/latest.png        /reset-ipython.png
+/latest            /blog/designing-kedro-router
+/latest.png        /designing-kedro-router.png
 
 # Short-Blog
 
+/blog/kdrt         /blog/designing-kedro-router
+/kdrt              /blog/designing-kedro-router
+/blog/kdrt.png     /blog/designing-kedro-router.png
+/kdrt.png          /blog/designing-kedro-router.png
 /blog/ripy         /blog/reset-ipython
 /ripy              /blog/reset-ipython
 /blog/ripy.png     /blog/reset-ipython.png
