@@ -5,7 +5,7 @@ tags: ['python']
 twitter_announcement: I just dropped a new post check it out.
 path: designing-kedro-router
 title: Designing a "Router" for kedro
-date: 2020-10-01T05:00:00Z
+date: 2020-10-08T05:00:00Z
 status: published
 description: I released a router-like plugin for kedro back in April 2020.
     This was not the first design, the idea actually came from one of the QB
