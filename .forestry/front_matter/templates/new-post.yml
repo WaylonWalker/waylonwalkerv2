@@ -155,6 +155,7 @@ pages:
 - src/pages/blog/kedro-class-hooks.md
 - src/pages/blog/kedro-static-viz-0-3-0.md
 - src/pages/blog/keyboard-driven-vscode.md
+- src/pages/blog/list-the-latest-files-to-change-in-a-git-repo.md
 - src/pages/blog/long-variable-names-are-good.md
 - src/pages/blog/out-of-space.md
 - src/pages/blog/personal-url-shortener-with-netlify-redirects.md
@@ -163,7 +164,6 @@ pages:
 - src/pages/blog/quick-progress-bars-in-python-using-tqdm.md
 - src/pages/blog/react-headroom.md
 - src/pages/blog/realistic-git-workflow.md
-- src/pages/blog/reclaim-memory-usage-in-jupyter.md
 - src/pages/blog/rss-feed-for-your-gatsby-site.md
 - src/pages/blog/should-i-switch-to-zeit-now.md
 - src/pages/blog/simple-click-2.md
