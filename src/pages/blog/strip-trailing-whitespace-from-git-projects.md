@@ -30,5 +30,17 @@ _<small><mark>bash</mark></small>_
 git grep -I --name-only -z -e '' | xargs -0 sed -i -e 's/[ \t]\+\(\r\?\)$/\1/'
 ```
 
-[![pre-commit article](https://waylonwalker.com/pre-commit-is-awesome.png)](https://waylonwalker.com/blog/pre-commit-is-awesome)
-read more about pre-commit here.
+
+
+<p style='text-align: center' align='center'>
+<a href='https://waylonwalker.com/blog/pre-commit-is-awesome'>
+  <img
+    style='width:400px; max-width:80%; margin: auto;'
+    width='400'
+    src="https://waylonwalker.com/pre-commit-is-awesome.png"
+    alt="pre-commit article"
+  />
+  </a>
+</p>
+
+read more about pre-commit [here](https://waylonwalker.com/blog/pre-commit-is-awesome).
