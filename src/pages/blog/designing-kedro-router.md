@@ -142,6 +142,7 @@ nodes.append(
 
 # Want a simple guide to get started with find kedro
 
+
 <p style='text-align: center' align='center'>
 <a href='https://find.kedro.dev/examples/iris/>
   <img
