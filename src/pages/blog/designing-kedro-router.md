@@ -140,6 +140,21 @@ nodes.append(
 ```
 
 
+# Want a simple guide to get started with find kedro
+
+<p style='text-align: center' align='center'>
+<a href='https://find.kedro.dev/examples/iris/>
+  <img
+    style='width:400px; max-width:80%; border-radius: '35px'; margin: auto;'
+    width='400'
+    src="https://waylonwalker.com/find-kedro-examples-iris.png"
+    alt="Find Kedro Iris example"
+  />
+  </a>
+</p>
+
+In [this doc](https://find.kedro.dev/examples/iris/) I transform the kedro iris template to find-kedro.
+
 # Ready to start using kedro
 
 If you still have not tried out kedro, it's easier than you think. Check out [create-new-kedro-project](https://waylonwalker.com/blog/create-new-kedro-project) to get a project started in just a few minutes.
