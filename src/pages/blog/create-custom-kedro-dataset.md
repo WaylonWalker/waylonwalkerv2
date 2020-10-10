@@ -38,7 +38,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from kedro.io import AbstractVersionedDataSet
+from kedro.io import AbstractDataSet
 
 
 class MyOwnDataSet(AbstractDataSet):
