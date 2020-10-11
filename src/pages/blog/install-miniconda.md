@@ -79,7 +79,7 @@ install_miniconda > /dev/null 2>&1
 
 **logged**
 ```
-install_miniconda > miniconda_install.log
+install_miniconda > miniconda_install.log 2>&1
 ```
 
 ## Cross posted to DEV
