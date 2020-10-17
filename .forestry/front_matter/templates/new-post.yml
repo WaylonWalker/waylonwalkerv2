@@ -150,6 +150,7 @@ pages:
 - src/pages/blog/don-t-waste-your-time-learning-everything.md
 - src/pages/blog/drawing-ascii-boxes.md
 - src/pages/blog/explicit-vs-implicit-returns-in-javascript.md
+- src/pages/blog/fix-git-commit-author.md
 - src/pages/blog/forestry-io.md
 - src/pages/blog/git-push-without-setting-upstream.md
 - src/pages/blog/how-to-get-dev-comments-from-an-article-url.md
