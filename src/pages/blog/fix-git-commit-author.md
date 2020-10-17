@@ -10,8 +10,8 @@ status: published
 description: ''
 related_post_body: ''
 related_post: []
-cover: ''
-twitter_cover: ''
+cover: '/static/fix-git-commit-author.png'
+twitter_cover: '/static/fix-git-commit-author.ong'
 twitter_week_1: ''
 twitter_week_2: ''
 twitter_month_1: ''
