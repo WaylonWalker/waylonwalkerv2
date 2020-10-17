@@ -88,6 +88,8 @@ Once you are satisfied with your changes, run
   git rebase --continue
 ```
 
+## Fix First wrong Commit
+
 Checking the log again I an now on my first commit with a mistake.
 
 ``` bash
@@ -150,6 +152,8 @@ Date:   Fri Oct 2 15:33:09 2020 +0100
 
     Fix docs reference for registering `pipelines`
 ```
+
+# Fix all commits
 
 Now to do this for 18 other commits.  I found that chaining the three commands into a bash oneliner was quite helpful.  I turned off pre-commit hooks with `--no-verify`.  I also turned off the `log` pager by adding `--no-pager`.
 
