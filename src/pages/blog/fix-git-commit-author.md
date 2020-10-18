@@ -7,7 +7,8 @@ path: fix-git-commit-author
 title: Fix git commit author
 date: 2020-10-17T05:00:00.000+00:00
 status: published
-description: ''
+description: "I was 20 commits into a hackoberfest PR when I suddenly realized they
+  they all had my work email on them instead of my personal email \U0001F631."
 related_post_body: ''
 related_post: []
 cover: "/static/fix-git-commit-author.png"
