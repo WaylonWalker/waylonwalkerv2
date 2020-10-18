@@ -5,13 +5,13 @@ tags: []
 twitter_announcement: I just dropped a new post check it out.
 path: fix-git-author
 title: Fix git commit author
-date: 2020-10-17T05:00:00Z
+date: 2020-10-17T05:00:00.000+00:00
 status: published
 description: ''
 related_post_body: ''
 related_post: []
-cover: '/static/fix-git-commit-author.png'
-twitter_cover: '/static/fix-git-commit-author.ong'
+cover: "/static/fix-git-commit-author.png"
+twitter_cover: "/static/fix-git-commit-author.ong"
 twitter_week_1: ''
 twitter_week_2: ''
 twitter_month_1: ''
@@ -23,8 +23,8 @@ devto-id: ''
 ---
 I was 20 commits into a hackoberfest PR when I suddenly realized they they all had my work email on them instead of my personal email 😱.
 
-
 ## Change the email for this repo
+
 _stop the bleeding_
 
 Before anything else set the email correctly!
@@ -58,13 +58,13 @@ Date:   Fri Oct 2 15:33:09 2020 +0100
 ## start the rebase
 
 Now I start the rebase 20 commits back from HEAD.  THis will pop you into a text file with a list of commits, for this change simply replace all `pick` with `edit`.
-  
+
 ``` bash
 git rebase -i HEAD~20
 ```
 
 Run git log to see where we ended up.
-  
+
 ``` bash
 $ git log
 commit 1756f5d121bd06c459560b2e982e0d7b6879e9ca
@@ -75,7 +75,7 @@ Date:   Fri Oct 2 15:33:09 2020 +0100
 ```
 
 As expected we ended up on Kiyo's commit. So we can simply move forward without any edits.
-  
+
 ``` bash
 $ git rebase --continue
 Stopped at e162ca7...  correct function name in tests
@@ -155,7 +155,7 @@ Date:   Fri Oct 2 15:33:09 2020 +0100
 
 # Fix all commits
 
-Now to do this for 18 other commits.  I found that chaining the three commands into a bash oneliner was quite helpful.  I turned off pre-commit hooks with `--no-verify`.  I also turned off the `log` pager by adding `--no-pager`.
+Now to do this for 18 other commits.  I found that chaining the three commands into a bash one-liner was quite helpful.  I turned off pre-commit hooks with `--no-verify`.  I also turned off the `log` pager by adding `--no-pager`.
 
 ``` bash
 git rebase --continue && git commit --amend --reset-author --no-edit --no-verify && git --no-pager log -n 3
@@ -164,9 +164,13 @@ git rebase --continue && git commit --amend --reset-author --no-edit --no-verify
 ## Done
 
 This was quick and easy for 19 commits.  I have tried to loop through changes like this in the past, and it does get a bit hairy.  I find its easier to just setup a one-liner and crank through them one by one.
-  
+
+## A note on changing history...
+
+Since this was done in a rebase it has changed the history of the repo.  This is ok to do only when you are the only person or are in close communication with everyone using the repo.  One thing I have ran into is that if you do this after you submit a PR, but before its completed it duplicates your commits in a merge.  For this particular change I simply closed the first PR and opened a second.  If someone has a better suggestion, I would be glad to know a better way.
+
 ## ReCap
- 
+
 ``` bash
 cd kedro
 git config user.name "Waylon Walker"
