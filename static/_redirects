@@ -22,10 +22,16 @@
 
 # Short-Blog
 
+/blog/fgca         /blog/fix-git-commit-author
+/fgca              /blog/fix-git-commit-author
+/blog/fgca.png     /blog/fix-git-commit-author.png
+/fgca.png          /blog/fix-git-commit-author.png
+
 /blog/kdrt         /blog/designing-kedro-router
 /kdrt              /blog/designing-kedro-router
 /blog/kdrt.png     /blog/designing-kedro-router.png
 /kdrt.png          /blog/designing-kedro-router.png
+
 /blog/ripy         /blog/reset-ipython
 /ripy              /blog/reset-ipython
 /blog/ripy.png     /blog/reset-ipython.png
