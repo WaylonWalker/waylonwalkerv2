@@ -22,8 +22,18 @@ devto-url: ''
 devto-id: ''
 
 ---
-I was 20 commits into a hackoberfest PR when I suddenly realized they they all had my work email on them instead of my personal email 😱.
 
+I was 20 commits into a hackoberfest PR when I suddenly realized they they all had my work email on them instead of my personal email 😱.  This is the story of how I corrected my email address on 19 individual commits after already submitting for a PR.
+
+1. [Change the email for this repo](#change-the-email-for-this-repo)
+1. [Prepare for rebasing](#prepare-for-rebasing)
+1. [start the rebase](#start-the-rebase)
+1. [🛠 Fix First wrong Commit](#fix-first-wrong-commit)
+1. [Fix all commits](#fix-all-commits)
+1. [Done](#done)
+1. [ReCap](#recap)
+
+    
 ## Change the email for this repo
 
 _stop the bleeding_
@@ -89,7 +99,7 @@ Once you are satisfied with your changes, run
   git rebase --continue
 ```
 
-## Fix First wrong Commit
+## 🛠 Fix First wrong Commit
 
 Checking the log again I an now on my first commit with a mistake.
 
@@ -154,7 +164,7 @@ Date:   Fri Oct 2 15:33:09 2020 +0100
     Fix docs reference for registering `pipelines`
 ```
 
-# Fix all commits
+## Fix all commits
 
 Now to do this for 18 other commits.  I found that chaining the three commands into a bash one-liner was quite helpful.  I turned off pre-commit hooks with `--no-verify`.  I also turned off the `log` pager by adding `--no-pager`.
 
