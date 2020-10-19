@@ -169,7 +169,9 @@ Date:   Fri Oct 2 15:33:09 2020 +0100
 Now to do this for 18 other commits.  I found that chaining the three commands into a bash one-liner was quite helpful.  I turned off pre-commit hooks with `--no-verify`.  I also turned off the `log` pager by adding `--no-pager`.
 
 ``` bash
-git rebase --continue && git commit --amend --reset-author --no-edit --no-verify && git --no-pager log -n 3
+git rebase --continue && \
+git commit --amend --reset-author --no-edit --no-verify && \
+git --no-pager log -n 3
 ```
 
 ## Done
