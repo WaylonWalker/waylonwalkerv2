@@ -42,15 +42,16 @@ const NewsletterCallToAction = `
 
 const DevFooter = (slug) => {
   return `
-  <table style='border: none;'  cellspacing="0" cellpadding="0">
+    ---
+
+    <table>
     <tbody>
       <tr>
         <td colspan="5">
           I have been writing short snippets about my mentality breaking into the tech/data industry in my <a href="https://waylonwalker.com/newsletter">newsletter</a>, 👉 check it out and lets get the conversation started.
         </td>
         <td colspan="1">
-          <h3>Newsletter Signup</h3>
-          <p><a href="https://waylonwalker.com/newsletter"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--uOcrEpdd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://waylonwalker.com/waylon-walker-newsletter.png" alt="Sign up for my Newsletter"></a></p>
+          <p><a href="https://waylonwalker.com/newsletter"><img src="https://waylonwalker.com/waylon-walker-newsletter.png" alt="Sign up for my Newsletter"></a></p>
         </td>
       </tr>
       <tr>
@@ -71,7 +72,7 @@ const DevFooter = (slug) => {
         </td>
       </tr>
     </tbody>
-  </table>
+    </table>
   `
 }
 
