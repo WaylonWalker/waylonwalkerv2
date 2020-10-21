@@ -1,0 +1,53 @@
+---
+templateKey: blog-post
+related_post_label: Check out this related post
+tags: []
+twitter_announcement: I just dropped a new post check it out.
+path: stories_10-10-2020_10-21-2020
+title: A brain dump of stories
+date: 2020-10-21T05:00:00Z
+status: published
+description: I started making stories as kind of a brain dump a few times per day
+  and posting them to LinkedIn.  Here are the last 11 days of stories
+related_post_body: ''
+related_post: []
+cover: ''
+twitter_cover: ''
+twitter_week_1: ''
+twitter_week_2: ''
+twitter_month_1: ''
+twitter_month_3: ''
+short_url: ''
+devto-url: ''
+devto-id: ''
+
+---
+I started making stories as kind of a brain dump a few times per day and posting them to LinkedIn.  Here are the last 11 days of stories
+
+
+I store all the stories on my website with the hopes of doing something with them on my own platform eventually. For now it makes it easy to make these posts.
+
+``` bash
+cd static/stories
+ls | xargs -I {} echo '![](https://waylonwalker.com/stories/{})'
+```
+
+## Stories 10-10-2020 - 10-21-2020
+
+
+
+[![](https://waylonwalker.com/stories/README.md)](https://waylonwalker.com/stories/README.md)
+[![](https://waylonwalker.com/stories/TIL-kedro-sorts-nodes.png)](https://waylonwalker.com/stories/TIL-kedro-sorts-nodes.png)
+[![](https://waylonwalker.com/stories/disable-base-pip.png)](https://waylonwalker.com/stories/disable-base-pip.png)
+[![](https://waylonwalker.com/stories/discovered-social-cards.png)](https://waylonwalker.com/stories/discovered-social-cards.png)
+[![](https://waylonwalker.com/stories/find-kedro-de1-contributor.png)](https://waylonwalker.com/stories/find-kedro-de1-contributor.png)
+[![](https://waylonwalker.com/stories/hacktoberfest-2020-kedro-538-tests-pass.png)](https://waylonwalker.com/stories/hacktoberfest-2020-kedro-538-tests-pass.png)
+[![](https://waylonwalker.com/stories/itertools.product-cars-regions.png)](https://waylonwalker.com/stories/itertools.product-cars-regions.png)
+[![](https://waylonwalker.com/stories/kedro-run-only-missing.png)](https://waylonwalker.com/stories/kedro-run-only-missing.png)
+[![](https://waylonwalker.com/stories/new-post-designing-kedro-router.png)](https://waylonwalker.com/stories/new-post-designing-kedro-router.png)
+[![](https://waylonwalker.com/stories/power-is-nothing-without-control.png)](https://waylonwalker.com/stories/power-is-nothing-without-control.png)
+[![](https://waylonwalker.com/stories/progress-over-perfection-comment.png)](https://waylonwalker.com/stories/progress-over-perfection-comment.png)
+[![](https://waylonwalker.com/stories/quick-tdb.png)](https://waylonwalker.com/stories/quick-tdb.png)
+[![](https://waylonwalker.com/stories/running-ci-for-hacktoberfest-kedro.png)](https://waylonwalker.com/stories/running-ci-for-hacktoberfest-kedro.png)
+[![](https://waylonwalker.com/stories/three-ds-openings.png)](https://waylonwalker.com/stories/three-ds-openings.png)
+[![](https://waylonwalker.com/stories/use-venv.png)](https://waylonwalker.com/stories/use-venv.png)
