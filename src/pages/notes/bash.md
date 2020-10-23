@@ -337,3 +337,17 @@ see the [docs](https://click.palletsprojects.com/en/7.x/bashcomplete/) for more 
 ## Autocomplete for non click python cli's
 
 shtab [https://github.com/iterative/shtab](https://github.com/iterative/shtab "https://github.com/iterative/shtab")
+
+## Ensure functions reset context
+
+
+``` bash
+project_log() {
+   _dir=$(pwd)
+   _project_log() {
+      cd ~/projects/project
+      git log
+   }
+   _project_log $@ && cd $_dir || cd $_dir
+}
+```
