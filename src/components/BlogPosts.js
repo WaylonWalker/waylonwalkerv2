@@ -10,6 +10,7 @@ const BlogPostsStyle = styled.div`
   margin: auto;
   flex-direction: column;
   justify-content: flex-start;
+  margin-top: 1rem;
 
   align-items: center;
   align-content: center;
@@ -40,6 +41,11 @@ const BlogPostsStyle = styled.div`
   display: None;
   opacity: 0;
   visibility: hidden;
+}
+
+form {
+  margin: 0;
+  padding: 0;
 }
 
 `

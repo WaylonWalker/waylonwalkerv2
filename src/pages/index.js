@@ -7,7 +7,7 @@ import Repo from '../components/Repo'
 import styled from 'styled-components'
 // import axios from 'axios'
 import { useSpring, animated } from 'react-spring'
-
+import Social from '../components/social'
 
 const REPOS = ['waylonwalker/find-kedro', 'waylonwalker/kedro-static-viz', 'waylonwalker/kedro-action', 'waylonwalker/steel-toes']
 
@@ -55,17 +55,36 @@ const About = () => {
     ...animationConfig,
     delay: 1600,
   })
+  const animationFromRight2 = useSpring({
+    to:
+    {
+      opacity: 1,
+      right: '0px'
+    },
+    from: {
+      opacity: 0,
+      right: '75px',
+      position: 'relative'
+    },
+    ...animationConfig,
+    delay: 3200,
+  })
   return (
 
-    <section id='about'>
+    <section id='about' style={{marginBottom: 0}}>
+      <div className='image'>
       <Image />
+      <Social />
+      </div>
       <div className="about-text">
         <animated.h1 style={{ ...animationFromLeft }} >Hello, I am Waylon Walker.</animated.h1>
 
-        <animated.p style={{ ...animationFromRight }} > I am a Data Scientist from Illinois.  I have a passion for learning and teaching others.  </animated.p>
+        <animated.p style={{ ...animationFromRight }} > I am a Data Scientist from Illinois.  I have a passion for <b>learning</b> and <em>teaching</em> others.  </animated.p>
         <animated.p style={{ ...animationFromLeft2 }}>I love what I do, and am constantly honing my craft.  You can follow along with me, I try to document my journey the best I can by writing articles.</animated.p>
+        <animated.p style={{ ...animationFromRight2 }}>I contribute to <a href='https://github.com/waylonwalker'>open source</a> when I can.</animated.p>
 
       </div>
+
 
     </section >
 
@@ -112,21 +131,21 @@ export default class IndexPage extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
     // console.log(data.allMarkdownRemark)
     return (
-      <Layout>
+      <Layout include_nav={false} include_subscribe={false}>
         <IndexStyle>
           <div id="content" style={{ margin: 'auto' }}>
             <About />
-            <section style={{ margin: '2rem auto', padding: "5rem 0", textAlign: 'center', color: 'white', background: 'rgba(33, 0, 25, .2)', boxShadow: '0 0 2rem rgba(0, 0, 0, .5)' }}>
+            {/* <section style={{ margin: '2rem auto', padding: "5rem 0", textAlign: 'center', color: 'white', background: 'rgba(33, 0, 25, .2)', boxShadow: '0 0 2rem rgba(0, 0, 0, .5)' }}> */}
 
-              <h2 id="open-source">Open Source</h2>
-              <p>In my spare time I like to take what I have learned to make things easier for others.  I maintain {REPOS.length} open source packages that you can find below.</p>
-              <ReposStyle>
-                {REPOS.map(r => <Repo repo={r} key={r} />)}
-              </ReposStyle>
+            {/*   <h2 id="open-source">Open Source</h2> */}
+            {/*   <p>In my spare time I like to take what I have learned to make things easier for others.  I maintain {REPOS.length} open source packages that you can find below.</p> */}
+            {/*   <ReposStyle> */}
+            {/*     {REPOS.map(r => <Repo repo={r} key={r} />)} */}
+            {/*   </ReposStyle> */}
 
-            </section>
+            {/* </section> */}
             <section style={{ maxWidth: '1800px', margin: 'auto', textAlign: 'center', color: 'white' }}>
-              <h2 id='blog'>Blog</h2>
+              {/* <h2 id='blog'>Blog</h2> */}
               {/* <ToastContainer /> */}
               <BlogPosts posts={posts} />
             </section>

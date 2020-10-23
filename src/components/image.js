@@ -15,8 +15,7 @@ import styled from 'styled-components'
  */
 
 const ProfileImageStyle = styled.div`
-/* padding: 1rem; */
-margin: 3rem;
+margin: 3rem 3rem 1rem;
 width: 300px;
 border-radius: 50%;
 box-shadow:

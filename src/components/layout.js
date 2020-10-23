@@ -10,7 +10,7 @@ import './layout.css'
 
 // const description = 'Practicing my craft in public, sharing my experience along the way.  Python, Kedro, JamStack, Gatsby, Data, Automation'
 
-const Layout = ({ children, include_subscribe = true }) => (
+const Layout = ({ children,include_nav = true, include_subscribe = true }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -64,7 +64,10 @@ const Layout = ({ children, include_subscribe = true }) => (
           <link rel="pingback" href="https://webmention.io/waylonwalker.com/xmlrpc" />
         </Helmet>
 
-        <Nav />
+        { include_nav === true
+          ? <Nav />
+          : ''
+        }
         {children}
         {
           include_subscribe === true
