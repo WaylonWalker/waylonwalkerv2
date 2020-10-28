@@ -9,7 +9,7 @@ status: published
 description: Things to read later
 related_post_body: ''
 related_post: []
-cover: ''
+cover: "/static/reading-list.png"
 twitter_cover: ''
 
 ---
