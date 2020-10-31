@@ -4,7 +4,7 @@ related_post_label: Check out this related post
 tags: []
 path: reasons-to-kedro
 title: Reasons to Kedro
-date: 2020-10-31T05:00:00Z
+date: 2020-10-31T05:00:00.000+00:00
 status: published
 description: ''
 related_post_body: ''
@@ -28,6 +28,7 @@ twitter_cover: ''
   * pip install
   * make your own
 * hooks
+* flexible expandable cli
 
 ## Reasons Not to Kedro
 
@@ -35,5 +36,7 @@ twitter_cover: ''
 * Data is not in a widely supported format
 * Micro short-lived project
 * Large Project / Deadline
-  *  Use a lower profile project to learn first
+  * Use a lower profile project to learn first
 * Team not willing to change
+* Need minimal dependencies
+* God Project
