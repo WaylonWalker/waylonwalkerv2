@@ -10,7 +10,7 @@ status: published
 description: ''
 related_post_body: ''
 related_post: []
-cover: ''
+cover: "/static/reasons-to-kedro.png"
 twitter_cover: ''
 twitter_week_1: ''
 twitter_week_2: ''
@@ -140,3 +140,4 @@ class ExcelLocalDataSet(AbstractDataSet):
 
 ## flexible cli
 
+![](/static/reasons-to-kedro-1.png)
