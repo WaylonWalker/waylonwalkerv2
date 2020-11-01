@@ -39,4 +39,4 @@ twitter_cover: ''
   * Use a lower profile project to learn first
 * Team not willing to change
 * Need minimal dependencies
-* God Project
+* God Project - kedro owns everything??
