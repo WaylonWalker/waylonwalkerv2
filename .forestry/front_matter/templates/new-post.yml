@@ -166,6 +166,7 @@ pages:
 - src/pages/blog/quick-progress-bars-in-python-using-tqdm.md
 - src/pages/blog/react-headroom.md
 - src/pages/blog/realistic-git-workflow.md
+- src/pages/blog/reasons-to-kedro.md
 - src/pages/blog/rss-feed-for-your-gatsby-site.md
 - src/pages/blog/should-i-switch-to-zeit-now.md
 - src/pages/blog/simple-click-2.md
