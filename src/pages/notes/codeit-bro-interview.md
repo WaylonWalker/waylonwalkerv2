@@ -103,7 +103,6 @@ You can do it, there are more folks out there crushing Data Science and Software
 * Keep a positive attitude
 * Be kind to others
 
-
 > Tell us about your journey towards becoming a successful data scientist?
 
 > Which tools you use for Data Science and which one do you recommend for beginners?
