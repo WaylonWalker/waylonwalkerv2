@@ -71,6 +71,7 @@ pages:
 - src/pages/notes/adding-google-fonts-to-a-gatsbyjs-site.md
 - src/pages/notes/amazon-web-services.md
 - src/pages/notes/building-cli-apps-in-python.md
+- src/pages/notes/codeit-bro-interview.md
 - src/pages/notes/custom-python-exceptions.md
 - src/pages/notes/debugging-python.md
 - src/pages/notes/digital-ocean.md
