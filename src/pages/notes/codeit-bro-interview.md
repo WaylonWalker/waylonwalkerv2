@@ -4,7 +4,7 @@ related_post_label: Check out this related post
 tags: []
 path: codeit-bro-interview
 title: Codeit Bro Interview
-date: 2020-11-02T06:00:00Z
+date: 2020-11-02T06:00:00.000+00:00
 status: published
 description: ''
 related_post_body: ''
@@ -62,39 +62,46 @@ Going to production
 
 > What are the most required skills for a data scientist?
 
-A good understanding of the business problems you are trying to solve.  This requires very good communication between Subject matter experts and the Data Science team.  
-
-For technnical skills python is going to be my go to core skill.
-
 * Communication
 * project Estimation
-* Understanding of the business problems you are trying to solve
+* Subject Matter Expertise
 * Python
 
 
+A good understanding of the business problems you are trying to solve.  This requires very good communication between Subject matter experts and the Data Science team.  
+
+For the technical side, python is the core skill that I stick with.  As I said before this quickly starts to grow as you start needing to take projects into production.  Learning how to write good python efficiently without needing to look up much really frees up your brain to focus on the harder challenge of solving the problem at hand.
+
+Learn how to frame up your problem ahead of time and be flexible in just the right ways.  Let's make up a ficticious transportation company that is split into a number of divisions for car, train, bus, etc.  All too often I see projects setup as a pilot for the car division, or even a micro subset of the car division.  The proof of concept takes off, and now we need to expand the project from one city to a whole region, but since the city was hard coded in it makes it really hard to expand. After a few months we have a lot of copy and paste code and at some point it becomes nearly imposssible to make any changes without needing to change everything, or expand to new regions or divisions. Understand the inputs to your problem set early on and plan for them to change.
 
 
 > How a beginner can create a roadmap to become a successful data scientist in the present scenario?
 
+Someone who is currenlty working in any sort of role that involves manipulating data in excel can get their foot in the door by automating the work their team does in python, or visualizing it in a more powerful tool. 
+
+You will quickly find that you can handle much more data than spreadsheet tools can, you can start expanding projects to utilize more data, or use that extra free time to find new insights you didnt have time for before.
+
 > How much Maths is required to be a good data scientist? \[You can also share which concepts should everyone focus on more\]
+
+I have a lot of math background from my Mechanical Engineering degree that I havn't use in years.  To be clear I am not generally building models in my day to day.  My role kinda sits between Data Engineering and MLOps these days.  I scaffold up new projects for the team, take on more complex data pipelining projects, and own our whole deployment system.  None of this really requires advanced math on a day to day basis.
+
+> What are some concepts that everyone should know more
+
+Linters.  They are so easy to run that no one should be bad code that fails linting these days.  You can set them to run from your favorite editor, the command line, in a git commit, from GitHub Actions, or an Azure pipeline, just figure out the ones that fit you and run them.
 
 > Will data science be replaced by AI?
 
-Everything that we see today will be different in the future whether replaced by AI or the next hot topic.
+Everything that we see today will be different in the future whether replaced by AI or the next hot topic.  There might be subsets of our work that is completely automated away.  I think it will be a great opportunity to focus our minds on more difficult things that AI cannot.  Data Science is a relatively new field, be ready for it to change and move with it.
 
 > Words of advice for people without a Computer Science background?
 
-You can do it
+You can do it, there are more folks out there crushing Data Science and Software Engineering in general without a Computer Science background than you realize.  Dont let the imposter syndrome get to you.  Keep honing your skills and be confident.
 
-🔼 Be flexible
-
-🔼 Always be open and ready for change
-
-🔼 Never stop learning
-
-🔼 Keep a positive attitude
-
-🔼 Be kind to others
+* Be flexible
+* Always be open and ready for change
+* Never stop learning
+* Keep a positive attitude
+* Be kind to others
 
 
 > Tell us about your journey towards becoming a successful data scientist?
@@ -102,5 +109,7 @@ You can do it
 > Which tools you use for Data Science and which one do you recommend for beginners?
 
 > Is data science a stressful job?
+
+It definitely can be if you let it.
 
 > What type of problems you faced every day as a data scientist?
