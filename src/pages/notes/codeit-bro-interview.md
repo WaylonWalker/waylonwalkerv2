@@ -110,6 +110,6 @@ You can do it, there are more folks out there crushing Data Science and Software
 
 > Is data science a stressful job?
 
-It definitely can be if you let it.
+It definitely can be if you let it.  Manage expectations and scope creep well and you will be fine.  My most stressful times have probably been when I over commited to something and it was my own fault for setting myself up for stress.
 
 > What type of problems you faced every day as a data scientist?
