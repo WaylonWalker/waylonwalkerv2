@@ -15,19 +15,17 @@ twitter_cover: ''
 ---
 > Please share your professional role as a data scientist? \[Also feel free to share about your personal projects, publications, etc.\]
 
-I graduated with a Mechanical Engineering Degree 8 years ago.  Much of my work [early in my career](https://waylonwalker.com/blog/eight-years-cat) was wrapped around analyzing larger datasets for my group to understand quality and drive changes to improve quality or prove that quality was already good.  
-
+I graduated with a Mechanical Engineering Degree 8 years ago.  Much of my work [early in my career](https://waylonwalker.com/blog/eight-years-cat) was wrapped around analyzing larger datasets for my group to understand quality and drive changes to improve quality or prove that quality was already good.
 
 <p style='text-align: center'>
 <a href='https://waylonwalker.com/notes/eight-years-cat'>
-  <img
-    style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/eight-years-cat.png"
-    alt="My first eight years as a working professional article"
-  />
-  </a>
+<img
+style='width:500px; max-width:80%; margin: auto;'
+src="https://waylonwalker.com/eight-years-cat.png"
+alt="My first eight years as a working professional article"
+/>
+</a>
 </p>
-
 
 Three years ago I made the switch to Data Science and have loved every minute of it.  It is a very dynamic field that is continually changing and there are always a new set of skills to learn and hone in on.  I talk a lot about the mindset of always learning, sharing knowledge, and communicating in my [newsletter](http://waylonwalker.com/newsletter)
 
@@ -67,23 +65,25 @@ Going to production
 * Subject Matter Expertise
 * Python
 
-
-A good understanding of the business problems you are trying to solve.  This requires very good communication between Subject matter experts and the Data Science team.  
+A good understanding of the business problems you are trying to solve.  This requires very good communication between Subject matter experts and the Data Science team.
 
 For the technical side, python is the core skill that I stick with.  As I said before this quickly starts to grow as you start needing to take projects into production.  Learning how to write good python efficiently without needing to look up much really frees up your brain to focus on the harder challenge of solving the problem at hand.
 
-Learn how to frame up your problem ahead of time and be flexible in just the right ways.  Let's make up a ficticious transportation company that is split into a number of divisions for car, train, bus, etc.  All too often I see projects setup as a pilot for the car division, or even a micro subset of the car division.  The proof of concept takes off, and now we need to expand the project from one city to a whole region, but since the city was hard coded in it makes it really hard to expand. After a few months we have a lot of copy and paste code and at some point it becomes nearly imposssible to make any changes without needing to change everything, or expand to new regions or divisions. Understand the inputs to your problem set early on and plan for them to change.
+Learn how to frame up your problem ahead of time and be flexible in just the right ways.
 
+Let's make up a ficticious transportation company that is split into a number of divisions for car, train, bus, etc.  All too often I see projects setup as a pilot for the car division, or even a micro subset of the car division.  The proof of concept takes off, and now we need to expand the project from one city to a whole region, but since the city was hard coded in it makes it really hard to expand. After a few months we have a lot of copy and paste code and at some point it becomes nearly imposssible to make any changes without needing to change everything, or expand to new regions or divisions. Understand the inputs to your problem set early on and plan for them to change.
 
 > How a beginner can create a roadmap to become a successful data scientist in the present scenario?
 
-Someone who is currenlty working in any sort of role that involves manipulating data in excel can get their foot in the door by automating the work their team does in python, or visualizing it in a more powerful tool. 
+Someone who is currenlty working in any sort of role that involves manipulating data in excel can get their foot in the door by automating the work their team does in python, or visualizing it in a more powerful tool.
 
 You will quickly find that you can handle much more data than spreadsheet tools can, you can start expanding projects to utilize more data, or use that extra free time to find new insights you didnt have time for before.
 
 > How much Maths is required to be a good data scientist? \[You can also share which concepts should everyone focus on more\]
 
-I have a lot of math background from my Mechanical Engineering degree that I havn't use in years.  To be clear I am not generally building models in my day to day.  My role kinda sits between Data Engineering and MLOps these days.  I scaffold up new projects for the team, take on more complex data pipelining projects, and own our whole deployment system.  None of this really requires advanced math on a day to day basis.
+I have a lot of math background from my Mechanical Engineering degree that I havn't use in years.
+
+To be clear I am not generally building models in my day to day.  My role kind of sits between Data Engineering and MLOps these days.  I scaffold up new projects for the team, take on more complex data pipelining projects, and own our whole deployment system.  None of this really requires advanced math on a day to day basis.
 
 > What are some concepts that everyone should know more
 
@@ -104,6 +104,8 @@ You can do it, there are more folks out there crushing Data Science and Software
 * Be kind to others
 
 > Tell us about your journey towards becoming a successful data scientist?
+
+see Q1
 
 > Which tools you use for Data Science and which one do you recommend for beginners?
 
