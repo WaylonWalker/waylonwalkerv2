@@ -129,6 +129,7 @@ class ExcelLocalDataSet(AbstractDataSet):
 
 ## Execution order is take care of
 
+As you build up complex pipelines containing 10's or 100's of nodes
 
 ## Easily slice up a pipeline
 
