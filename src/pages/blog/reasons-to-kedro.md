@@ -21,12 +21,11 @@ devto-url: ''
 devto-id: ''
 
 ---
-There are many reasons that you should be using kedro.  If you are on a team of Data Scientists/Data Engineers processing dataframes from many data sources should should be considering a pipeline framework.  Kedro is a great option that provides many benefits for teams to collaborate, develop, and deploy data pipelines
-
+There are many reasons that you should be using kedro.  If you are on a team of Data Scientists/Data Engineers processing DataFrames from many data sources should be considering a pipeline framework.  Kedro is a great option that provides many benefits for teams to collaborate, develop, and deploy data pipelines
 
 ## Collaboration
 
-Kedro provides many tools that help teams collaborate on a single codebase.  While writing monolithic scripts it can be easy to pin yourself in a corner where it is difficult to have multiple poeple making change to the notebook/script at the same time.  Kedro helps guide your team to break your project down into small pieces that different members of the team can work on in parallel.
+Kedro provides many tools that help teams collaborate on a single codebase.  While writing monolithic scripts it can be easy to pin yourself in a corner where it is difficult to have multiple people making change to the notebook/script at the same time.  Kedro helps guide your team to break your project down into small pieces that different members of the team can work on in parallel.
 
 ### sharable catalog
 
@@ -42,7 +41,7 @@ catalog.load('main_table')
 
 **for non-python users**
 
-For those who may not be using python we can easily kick out a csv version of that `main_table` that they can get from s3 or your cloud storage solution of choice.
+For those who may not be using python, we can easily kick out a CSV version of that `main_table` that they can get from s3 or your cloud storage solution of choice.
 
 ``` yaml
 master_table:
@@ -51,9 +50,9 @@ master_table:
   layer: primary
 ```
 
-**for the sql folks**
+**for the SQL folks**
 
-We aren't even contrained to those who only use python or excel, we can kick out any kind of dataset that python can output.  Kedro even comes with many DataSet types out of the box so that we dont have to write any read/write code.
+We aren't even constrained to those who only use python or excel, we can kick out any kind of dataset that python can output.  Kedro even comes with many DataSet types out of the box so that we don't have to write any read/write code.
 
 ``` yaml
 master_table:
@@ -70,7 +69,7 @@ Kedro encourages the use of git version control and storing all node functions i
 
 ## No More read and write code
 
-As I said earlier kedro come with datasets for most popular output formats.  It is also backed by a really amazing library called `fsspec`, this library makes the filesytem that you are storing to agnostic to how you write to it.  This means that the kedro library utilizes `fsspec` under the hood and writes to the file as if it was to disk, but based on the prefix to the file it may actually be writing to the local filesystem, gcp, azure blob, or s3.
+As I said earlier kedro comes with datasets for the most popular output formats.  It is also backed by a really amazing library called `fsspec`, this library makes the filesystem that you are storing agnostic to how you write to it.  This means that the kedro library utilizes `fsspec` under the hood and writes to the file as if it was to disk, but based on the prefix to the file it may actually be writing to the local filesystem, gcp, azure blob, or s3.
 
 **custom DataSets**
 
@@ -78,8 +77,7 @@ If kedro does not have a `DataSet` for the format that you need to read or write
 
 Check out this example from their docs.  I removed the docstrings for brevity, you can see the entire `DataSet` in their [docs](https://kedro.readthedocs.io/en/0.15.2/03_tutorial/03_set_up_data.html?highlight=custom%20dataset#creating-custom-datasets).
 
-> The complete example all in one was only available in an older version, more up to date [docs] (https://kedro.readthedocs.io/en/0.16.6/07_extend_kedro/01_custom_datasets.html?highlight=custom%20dataset) have a good writeup that walks through everything separately.
-
+> The complete example all in one was only available in an older version, more up to date \[docs\] (https://kedro.readthedocs.io/en/0.16.6/07_extend_kedro/01_custom_datasets.html?highlight=custom%20dataset) have a good writeup that walks through everything separately.
 
 ``` python
 from os.path import isfile
@@ -127,8 +125,11 @@ class ExcelLocalDataSet(AbstractDataSet):
         return isfile(self._filepath)
 ```
 
-## Execution order is take care of
+## Execution order is taken care of
 
+As you build up complex pipelines containing 10's or 100's of nodes it becomes difficult to splice in new nodes / steps without messing up or a framework to help.  Kedro simply needs a set of nodes that each takes in catalog entries as input and output to catalog entries and it will figure out the order for you.
+
+These nodes can be 
 
 ## Easily slice up a pipeline
 
