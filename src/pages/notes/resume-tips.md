@@ -32,3 +32,4 @@ twitter_cover: ''
   * Deployed 12 data pipelines with over 500 nodes to process 200GB of data at a Fortune 100 company
   * vs
   * Knowledge of Data Engineering methodology with python EC2
+* Dont be so fluffy
