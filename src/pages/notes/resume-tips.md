@@ -4,7 +4,7 @@ related_post_label: Check out this related post
 tags: []
 path: resume-tips
 title: Resume Tips
-date: 2020-11-06T06:00:00Z
+date: 2020-11-06T06:00:00.000+00:00
 status: published
 description: ''
 related_post_body: ''
@@ -26,3 +26,5 @@ twitter_cover: ''
 * if you link to LinkedIn
   * Provide some benefit that is not on your resume
 * Have a logical flow of experience (dont make me hunt for past experience)
+* Keep it under 2 pages
+* Who you know
