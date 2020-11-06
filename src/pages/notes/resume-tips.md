@@ -27,4 +27,8 @@ twitter_cover: ''
   * Provide some benefit that is not on your resume
 * Have a logical flow of experience (dont make me hunt for past experience)
 * Keep it under 2 pages
-* Who you know
+* Who you know.
+* Reference real experience
+  * Deployed 12 data pipelines with over 500 nodes to process 200GB of data at a Fortune 100 company
+  * vs
+  * Knowledge of Data Engineering methodology with python EC2
