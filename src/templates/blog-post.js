@@ -52,7 +52,8 @@ color: whitesmoke;
   margin-bottom: 2rem;
 }
 
-@media (max-width: 700px) {
+
+@media (max-width: 1200px) {
   h1 {
     font-size: 2.5rem;
   }
