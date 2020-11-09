@@ -144,10 +144,7 @@ be ready for it to change and move with it.
 
 > Words of advice for people without a Computer Science background?
 
-You can do it, there are more folks out there crushing Data Science and Software
-Engineering in general without a Computer Science background than you realize.
-Dont let the imposter syndrome get to you.  Keep honing your skills and be
-confident.
+You can do it, there are more folks out there crushing Data Science and Software Engineering in general without a Computer Science background than you realize. Don't let the imposter syndrome get to you.  Keep honing your skills and be confident.
 
 * Be flexible
 * Always be open and ready for change
@@ -164,15 +161,13 @@ see Q1
 
 As a beginner definitely focus on a minimal number of things at a time.  As you go through the journey of learning anything you will likely to see articles that tell you that your tech of choice is dead and should never be used because some new hotness it so much better.  Focus on skills that have a real job market and solve real problems don't worry so much about it that you never learn one.
 
-Python is my core skill, it can do so much so quickly and has a very strong community.
+Python is my core skill, it can do so much so quickly and has a very strong ecosystem in data.
 
-A skill I would add in general is put your projects in production early.  Too often we spend months on prototypes that need rewritten for the prod environment, when they could have just been written for prod from the beginning and ci tooling could have kept the project cleaner and easier to work with.  Whether its GitHub actions or Azure Pipelines CI/CD is cheaper and easier to setup than ever.
+A skill I would add in general is to deploy early.  Too often we spend months on prototypes that need rewritten for the prod environment, when they could have just been written for prod from the beginning while ci tooling could have kept the project cleaner and easier to work with.  Whether its GitHub actions or Azure Pipelines CI/CD is cheaper and easier to setup than ever.  There is a fluid movement that happens when you are working with clean code along the way rather than cleaning it up after its all done.  Simplifying your work opens up mental space to put more focus on your problem at hand.
 
 > Is data science a stressful job?
 
-It definitely can be if you let it.  Manage expectations and scope creep well
-and you will be fine.  My most stressful times have probably been when I over
-commited to something and it was my own fault for setting myself up for stress.
+It definitely can be if you let it.  Manage expectations and scope creep well and you will be fine.  My most stressful times have probably been when I over committed to something and it was my own fault for setting myself up for stress.
 
 > What type of problems you faced every day as a data scientist?
 
