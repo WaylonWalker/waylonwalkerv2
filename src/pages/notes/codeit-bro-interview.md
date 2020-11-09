@@ -162,6 +162,12 @@ see Q1
 > Which tools you use for Data Science and which one do you recommend for
 > beginners?
 
+As a beginner definitely focus on a minimal number of things at a time.  As you go through the journey of learning anything you will likely to see articles that tell you that your tech of choice is dead and should never be used because some new hotness it so much better.  Focus on skills that have a real job market and solve real problems don't worry so much about it that you never learn one.
+
+Python is my core skill, it can do so much so quickly and has a very strong community.
+
+A skill I would add in general is put your projects in production early.  Too often we spend months on prototypes that need rewritten for the prod environment, when they could have just been written for prod from the beginning and ci tooling could have kept the project cleaner and easier to work with.  Whether its GitHub actions or Azure Pipelines CI/CD is cheaper and easier to setup than ever.
+
 > Is data science a stressful job?
 
 It definitely can be if you let it.  Manage expectations and scope creep well
@@ -169,3 +175,5 @@ and you will be fine.  My most stressful times have probably been when I over
 commited to something and it was my own fault for setting myself up for stress.
 
 > What type of problems you faced every day as a data scientist?
+
+A lot of what I do is solving business problems with code.  This might be a problem that has been solved by hand for a small focused subset of a population and expanding it to everything.  More and more of my time is being dedicated to coaching.  Whether in the form of code review, pair programming, or general mentoring.
