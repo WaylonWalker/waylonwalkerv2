@@ -13,6 +13,10 @@ cover: ''
 twitter_cover: ''
 
 ---
+![profile image](https://waylonwalker.com/profile.jpg)
+
+> use this profile image
+
 > Please share your professional role as a data scientist? \[Also feel free to
 > share about your personal projects, publications, etc.\]
 
@@ -171,4 +175,4 @@ It definitely can be if you let it.  Manage expectations and scope creep well an
 
 > What type of problems you faced every day as a data scientist?
 
-A lot of what I do is solving business problems with code.  This might be a problem that has been solved by hand for a small focused subset of a population and expanding it to everything.  More and more of my time is being dedicated to coaching.  Whether in the form of code review, pair programming, or general mentoring.
+At a high level the business I support remanufactures ( similar to recycling ) parts for heavy equipment.  I find ways to re-use more core material to save cost and reduce emissions.  A lot of what I do is solving business problems with code.  This might be a problem that has been solved by hand for a small focused subset of a population and expanding it to everything.  More and more of my time is being dedicated to coaching.  Whether in the form of code review, pair programming, or general mentoring.
