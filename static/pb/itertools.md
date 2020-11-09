@@ -6,7 +6,7 @@ twitter_announcement: I just dropped a new post check it out.
 path: itertools
 title: Itertools
 date: 2020-06-11T05:00:00Z
-status: published
+status: draft
 description:
 related_post_body: ''
 related_post: []
