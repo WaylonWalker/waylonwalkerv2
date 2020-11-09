@@ -49,7 +49,7 @@ You must give it a commit message and thats it.  Optionally you can configure a 
 > If you're new to actions check out this article on using actions.
 
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/notes/github-actions-syntax'>
+<a href='https://waylonwalker.com/blog/github-actions-syntax'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/github-actions-syntax-rm.png"
