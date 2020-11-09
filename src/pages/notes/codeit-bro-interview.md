@@ -44,14 +44,7 @@ mindset of always learning, sharing knowledge, and communicating in my
 > What are the most difficult challenges you faced as a data scientist and how
 > you resolved them?
 
-Deployment is a high bar to enter.  Jupyter notebooks provide a suspiciouly
-simple start into Data Science.  Folks with very little coding experience can
-easily get up and running and start bringing value back into their organization,
-but as you want to start sharing these notbooks, re-using components of them,
-and scheduling them to run autonomously the bar is raised very quickly.  Many
-places will have teams dedicated to each piece of the process, but all too often
-if you want your project to be successful you have to step out of your comfort
-zone and do much of it yourself.
+Deployment is a high bar to enter.  Jupyter notebooks provide a suspiciously simple start into Data Science.  Folks with very little coding experience can easily get up and running and start bringing value back into their organization, but as you want to start sharing these notebooks, re-using components of them, and scheduling them to run autonomously the bar is raised very quickly.  Many places will have teams dedicated to each piece of the process, but all too often if you want your project to be successful you have to step out of your comfort zone and do much of it yourself.
 
 Getting started in Data Science
 
@@ -98,32 +91,19 @@ solving the problem at hand.
 Learn how to frame up your problem ahead of time and be flexible in just the
 right ways.
 
-Let's make up a ficticious transportation company that is split into a number of
-divisions for car, train, bus, etc.  All too often I see projects setup as a
-pilot for the car division, or even a micro subset of the car division.  The
-proof of concept takes off, and now we need to expand the project from one city
-to a whole region, but since the city was hard coded in it makes it really hard
-to expand. After a few months we have a lot of copy and paste code and at some
-point it becomes nearly imposssible to make any changes without needing to
-change everything, or expand to new regions or divisions. Understand the inputs
-to your problem set early on and plan for them to change.
+Let's make up a fictitious transportation company that is split into a number of divisions for car, train, bus, etc.  All too often I see projects setup as a pilot for the car division, or even a micro subset of the car division.  The proof of concept takes off, and now we need to expand the project from one city to a whole region, but since the city was hard coded in it makes it really hard to expand. After a few months we have a lot of copy and paste code and at some point it becomes nearly impossible to make any changes without needing to change everything, or expand to new regions or divisions. Understand the inputs to your problem set early on and plan for them to change.
 
 > How a beginner can create a roadmap to become a successful data scientist in
 > the present scenario?
 
-Someone who is currenlty working in any sort of role that involves manipulating
-data in excel can get their foot in the door by automating the work their team
-does in python, or visualizing it in a more powerful tool.
+Someone who is currently working in any sort of role that involves manipulating data in excel can get their foot in the door by automating the work their team does in python, or visualizing it in a more powerful tool.
 
-You will quickly find that you can handle much more data than spreadsheet tools
-can, you can start expanding projects to utilize more data, or use that extra
-free time to find new insights you didnt have time for before.
+You will quickly find that you can handle much more data than spreadsheet tools can, you can start expanding projects to utilize more data, or use that extra free time to find new insights you didn't have time for before.
 
 > How much Maths is required to be a good data scientist? \[You can also share
 > which concepts should everyone focus on more\]
 
-I have a lot of math background from my Mechanical Engineering degree that I
-havn't use in years.
+I have a lot of math background from my Mechanical Engineering degree that I haven't use in years.
 
 To be clear I am not generally building models in my day to day.  My role kind
 of sits between Data Engineering and MLOps these days.  I scaffold up new
@@ -168,6 +148,18 @@ As a beginner definitely focus on a minimal number of things at a time.  As you 
 Python is my core skill, it can do so much so quickly and has a very strong ecosystem in data.
 
 A skill I would add in general is to deploy early.  Too often we spend months on prototypes that need rewritten for the prod environment, when they could have just been written for prod from the beginning while ci tooling could have kept the project cleaner and easier to work with.  Whether its GitHub actions or Azure Pipelines CI/CD is cheaper and easier to setup than ever.  There is a fluid movement that happens when you are working with clean code along the way rather than cleaning it up after its all done.  Simplifying your work opens up mental space to put more focus on your problem at hand.
+
+<p style='text-align: center'>
+<a href='https://waylonwalker.com/notes/what-are-github-actions'>
+<img
+style='width:500px; max-width:80%; margin: auto;'
+src="https://waylonwalker.com/what-are-github-actions.png"
+alt="My first eight years as a working professional article"
+/>
+</a>
+</p>
+
+> check out this article about github actions
 
 > Is data science a stressful job?
 
