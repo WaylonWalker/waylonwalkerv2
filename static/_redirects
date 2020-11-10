@@ -143,6 +143,12 @@
 /blog/what-is-something-that-you-recently-learned-that-you-wish-you-would-have-learned-or-understood-earlier  /blog/learn-early
 /blog/what-is-your-advice-for-new-data-scientists  /blog/data-scientist-advice
 /blog/background-tasks-in-python-for-data-science /blog/background_py
+/blog/strip-trailing-whitespace-from-git-projects /blog/strip-trailing-whitespace
+/blog/rss-feed-for-your-gatsby-site /blog/gatsby-rss-feed
+/blog/personal-url-shortener-with-netlify-redirects /blog/personal-url-shortener
+/blog/list-the-latest-files-to-change-in-a-git-repo /blog/last-n-git-files
+/blog/how-to-get-dev-comments-from-an-article-url /blog/devto-comments-from-url
+/blog/git-diff-feature-main /blog/git-diff-branches
 
 /bash              /notes/bash/
 
