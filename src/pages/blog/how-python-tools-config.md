@@ -3,7 +3,7 @@ templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['python', ]
 twitter_announcement: I just dropped a new post check it out.
-path: how-python-tols-config
+path: how-python-tools-config
 title: Refactoring your blog urls
 date: 2020-07-21T05:00:00Z
 status: published
