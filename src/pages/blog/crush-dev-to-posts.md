@@ -188,7 +188,7 @@ Selfishly this is one of my favorite types of posts to make as I learn the most 
 
 {% post ben/how-do-you-identify-over-engineering-1oad %}
 
-@ben is the king of the [#discuss](dev.to/t/discuss) post.  He is able to get just the right titles that pull people in and generate quite large discussions.
+@ben is the king of the [#discuss](https://dev.to/t/discuss) post.  He is able to get just the right titles that pull people in and generate quite large discussions.
 
 ---
 
