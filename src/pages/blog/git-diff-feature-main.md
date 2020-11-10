@@ -4,7 +4,7 @@ related_post_label: Check out this related post
 tags: []
 twitter_announcement: Today I learned how how to diff between two branches.
 path: git-diff-branches
-title: Today I learned `git diff feature..maino`
+title: Today I learned `git diff feature..main`
 date: 2020-03-03T11:58:00.000+00:00
 status: published
 description: Sometimes we get a little `git add . && git commit -m "WIP"` happy and
