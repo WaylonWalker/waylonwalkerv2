@@ -21,7 +21,7 @@ twitter_month_3: ''
 short_url: ''
 
 ---
-Inspired by Wes Bos's new [uses.tech](uses.tech) I wanted a custom scrollbar on my personal site.  I had tried to do it in the past, but gave up after it was not working.
+Inspired by Wes Bos's new [uses.tech](https://uses.tech) I wanted a custom scrollbar on my personal site.  I had tried to do it in the past, but gave up after it was not working.
 
 ## Looking at the Source
 
