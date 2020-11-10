@@ -129,7 +129,7 @@ If you're new to actions check out these articles on using actions.
 <TABLE>
   <TR>
     <TD>
-      <a href='https://waylonwalker.com/notes/four-github-actions-website'>
+      <a href='https://waylonwalker.com/blog/four-github-actions-website'>
       <img
         style='width:250px; max-width:80%; margin: auto; float: left'
         src="https://waylonwalker.com/four-github-actions-website-rm.png"
@@ -138,7 +138,7 @@ If you're new to actions check out these articles on using actions.
       </a>
     </TD>
     <TD>
-      <a href='https://waylonwalker.com/notes/four-github-actions-python'>
+      <a href='https://waylonwalker.com/blog/four-github-actions-python'>
       <img
         style='width:250px; max-width:80%; margin: auto; float: right;'
         src="https://waylonwalker.com/four-github-actions-python-rm.png"
