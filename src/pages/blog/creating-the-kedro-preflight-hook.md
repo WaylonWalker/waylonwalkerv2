@@ -1,5 +1,5 @@
 ---
-templateKey: notes
+templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
 twitter_announcement: I just dropped a new post check it out.
