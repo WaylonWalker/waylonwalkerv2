@@ -55,7 +55,7 @@ I think this simple package completely changes the ux of your site on mobile.  Y
 
 ![showing it in action on waylonwalker.com](https://www.waylonwalker.com/react-headroom-b.gif)
 
-> Here it is on [waylonwalker.com](waylonwalker.com)
+> Here it is on [waylonwalker.com](https://waylonwalker.com)
 
 ## Configurable
 
