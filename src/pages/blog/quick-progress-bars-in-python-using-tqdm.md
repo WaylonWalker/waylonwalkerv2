@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-path: tqdm-quick-progress-bar-python
+path: quick-progress-bars-in-python-using-tqdm
 title: Quick Progress Bars in python using TQDM
 date: 2019-09-18T05:00:00.000+00:00
 status: published
