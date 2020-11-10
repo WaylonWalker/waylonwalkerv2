@@ -1,6 +1,6 @@
 ---
 templateKey: 'blog-post'
-path: 'no-more-death-by-powerpoint'
+path: death-by-powerpoint
 title: No More Death By PowerPoint
 date: 2017-12-31
 category: Blog
