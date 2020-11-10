@@ -344,6 +344,7 @@ class BlogPostTemplate extends React.Component {
                 {/* <Social /> */}
               </div>
               <img className='u-photo' alt='author profile' src='https://waylonwalker.com/p' />
+          <p>slug is {slug}</p>
             </div>
 
             <div className="share">
@@ -435,7 +436,8 @@ const BlogPost = ({ data }) => {
     <Layout description={post.frontmatter.description} title={post.frontmatter.title} keywords={post.frontmatter.tags} time={post.frontmatter.date} url={`https://waylonwalker.com${post.frontmatter.path}`}>
       <BlogPostTemplate
         content={post.html}
-        url={`https://waylonwalker.com/blog/${post.frontmatter.path}`}
+        // url={`https://waylonwalker.com/blog/${post.frontmatter.path}`}
+        url={`https://waylonwalker.com/${post.fields.slug}`}
         slug={post.fields.slug}
         // contentComponent={HTMLContent}
         description={post.frontmatter.description}
