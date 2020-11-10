@@ -215,7 +215,7 @@ Example ran with a slightly modified default `kedro new` project.
 
 ## ![Versioning](https://waylonwalker.com/find-kedro-release-6.png)
 
-We use [SemVer](https://semver.org/) for versioning. For the versions available, see the [tags on this repository](./tags).
+We use [SemVer](https://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/WaylonWalker/find-kedro/releases).
 
 
 ## ![Authors](https://waylonwalker.com/find-kedro-release-7.png)
