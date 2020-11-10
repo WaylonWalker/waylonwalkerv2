@@ -344,7 +344,6 @@ class BlogPostTemplate extends React.Component {
                 {/* <Social /> */}
               </div>
               <img className='u-photo' alt='author profile' src='https://waylonwalker.com/p' />
-          <p>slug is {slug}</p>
             </div>
 
             <div className="share">
