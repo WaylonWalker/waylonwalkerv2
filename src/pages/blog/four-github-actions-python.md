@@ -72,7 +72,7 @@ I am still using the older, less hipster, setuptools to build my projects.  Prim
 
 ## ![Publishing to pypi](https://waylonwalker.com/gh-actions-python-headers/4.png)
 
-Here I am going to use an amazing action from the GitHub marketplace by @webKnjaZ.  It is super simple.  First you need to log into your [pypi.org](pypi.org) account, go to account settings, enable 2FA, and add a Token, then paste that toke into a secret inside your repos settings.  Next just drop the name of that secret into the password field of the action and you are off.
+Here I am going to use an amazing action from the GitHub marketplace by @webKnjaZ.  It is super simple.  First you need to log into your [pypi.org](https://pypi.org) account, go to account settings, enable 2FA, and add a Token, then paste that toke into a secret inside your repos settings.  Next just drop the name of that secret into the password field of the action and you are off.
 
 **note**: I did put a check in to make sure that push event comes from main.
 
