@@ -3,7 +3,7 @@ templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
 twitter_announcement: "Variables names don't need their type, \U0001F94A fight me\U0001F447 "
-path: variables-names-dont-need-their-type
+path: variable-names-dont-need-their-type
 title: Variables names don't need their type
 date: 2020-04-08T11:03:00Z
 status: published
