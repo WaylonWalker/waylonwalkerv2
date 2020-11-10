@@ -317,6 +317,7 @@ class BlogPostTemplate extends React.Component {
 
         >
           <title>{title}</title>
+          <link rel='canonical' href={url} />
         </Helmet>
         <BlogPostWrapper className='blog-post'>
           <BlogPostStyles className='h-entry'>
