@@ -66,7 +66,7 @@ Today I will be learning about d3 scales, and adding them to the bar chart that 
 ## Recall Example 3 from yesterday
 _maybe a few days ago.... give me a break I have a lot of other priorities_
 
-In [yesterdays](./d3-day3) post we created a working example of a horizontal bar chart that shows grades for a set of 5 students that are all in two classes; 'Math' and 'Science'.  The chart is interactive, and will switch subjects at the press of a button.
+In [yesterdays](https://waylonwalker.com/blog/d3-day3) post we created a working example of a horizontal bar chart that shows grades for a set of 5 students that are all in two classes; 'Math' and 'Science'.  The chart is interactive, and will switch subjects at the press of a button.
 
 
 ![d3 day 3 final result](d3-day3.gif)
