@@ -6,7 +6,7 @@ twitter_announcement: I just dropped a new post check it out.
 path: lambda-functions
 title: Python Basics | Lambda Functions
 date: 2020-06-11T05:00:00Z
-status: false
+status: 'false'
 description:
 related_post_body: ''
 related_post: []
