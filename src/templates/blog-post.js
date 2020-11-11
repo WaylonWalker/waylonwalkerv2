@@ -436,7 +436,7 @@ const BlogPost = ({ data }) => {
       <BlogPostTemplate
         content={post.html}
         // url={`https://waylonwalker.com/blog/${post.frontmatter.path}`}
-        url={`https://waylonwalker.com${post.fields.slug}`}
+        url={`https://waylonwalker.com/${post.fields.slug.replace(/^\/+/, '')}`}
         slug={post.fields.slug}
         // contentComponent={HTMLContent}
         description={post.frontmatter.description}
