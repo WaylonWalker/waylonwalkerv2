@@ -1,4 +1,4 @@
-(limit: 1000)import React from 'react'
+import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
