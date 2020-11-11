@@ -96,6 +96,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const {
       content,
+      url,
       // contentComponent,
       description,
       // tags,
@@ -114,14 +115,18 @@ class BlogPostTemplate extends React.Component {
       <>
         <Helmet
           meta={[
-            { name: 'og:title', content: title },
+            { name: 'title', content: title + ' | Waylon Walker' },
+            { name: 'description', content: description },
+            { name: 'og:title', content: title + ' | Waylon Walker' },
+            { name: 'og:url', content: url },
             { name: 'og:article:published_time', content: date },
             { name: 'og:article:modified_time', content: date },
+            { name: 'og:description', content: description },
+            { name: 'og:image', content: 'https://waylonwalker.com' + twitterImage },
             { name: 'twitter:title', content: title + ' | Waylon Walker' },
-            { name: 'description', content: description },
-            { name: 'twitter:image', content: 'https://www.waylonwalker.com' + twitterImage },
+            { name: 'twitter:card', content: 'summary_large_image' },
+            { name: 'twitter:image', content: 'https://waylonwalker.com' + twitterImage },
             { name: 'twitter:description', content: description },
-            { name: 'og:image', content: cover.src },
           ]}
 
         />
@@ -175,8 +180,9 @@ const BlogPost = ({ data }) => {
     <Layout description={post.frontmatter.description} title={post.frontmatter.title} keywords={post.frontmatter.tags} time={post.frontmatter.date} url={`https://cuttinscrap.com${post.frontmatter.path}`}>
       <BlogPostTemplate
         content={post.html}
+        url={`https://waylonwalker.com/${post.fields.slug.replace(/^\/+/, '')}`}
         // contentComponent={HTMLContent}
-        // description={post.frontmatter.description}
+        description={post.frontmatter.description}
         // helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
@@ -206,6 +212,7 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      fields {slug}
       frontmatter {
         date
         title

@@ -3,7 +3,7 @@ templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
 twitter_announcement: I just dropped a new post check it out.
-path: ascii-boxes
+path: drawing-ascii-boxes
 title: drawing ascii boxes
 date: 2020-05-12T22:05:00Z
 status: published

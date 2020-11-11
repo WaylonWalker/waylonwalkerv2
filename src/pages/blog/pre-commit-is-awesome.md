@@ -3,7 +3,7 @@ templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
 twitter_announcement: I just dropped a new post check it out.
-path: pre-commit
+path: pre-commit-is-awesome
 title: pre-commit is awesome
 date: 2020-06-05T05:00:00.000+00:00
 status: published

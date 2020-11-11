@@ -128,7 +128,7 @@ The above sample is a bit **simplified**.  I ran into some inconsistencies in th
 
 ## test_repos.py
 
-_see the full [testrepos.py](waylonwalker.com/testrepos.py) on GitHub_
+_see the full [testrepos.py](https://github.com/WaylonWalker/waylonwalker-com-tests/blob/main/tests/test_repos.py) on GitHub_
 
 
 I have initially set up 3 different tests for the repo cards.  I set a list of repos that I expect to show up in the cards.  These tests are quite easy to do with TestProject.io as it is using selenium and a headless browser to execute javascript under the hood.

@@ -211,11 +211,11 @@ Example ran with a slightly modified default `kedro new` project.
 ```
 ## ![Contributing](https://waylonwalker.com/find-kedro-release-5.png)
 
-**You're Awesome** for considering a contribution!  Contributions are welcome, please check out the [Contributing Guide](./contributing.md) for more information.  Please be a positive member of the community and embrace feedback
+**You're Awesome** for considering a contribution!  Contributions are welcome, please check out the [Contributing Guide](https://github.com/WaylonWalker/find-kedro/blob/master/contributing.md) for more information.  Please be a positive member of the community and embrace feedback
 
 ## ![Versioning](https://waylonwalker.com/find-kedro-release-6.png)
 
-We use [SemVer](https://semver.org/) for versioning. For the versions available, see the [tags on this repository](./tags).
+We use [SemVer](https://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/WaylonWalker/find-kedro/releases).
 
 
 ## ![Authors](https://waylonwalker.com/find-kedro-release-7.png)

@@ -170,8 +170,6 @@ I will use the following markup throughout the article, each with different css 
 ```
 ## Basic Technique
 
-[basic technique](/img/gif/basic-flexbox-technique.png)
-
 ### 1. Turn on the crossbow
 
 _applied to the flex container_

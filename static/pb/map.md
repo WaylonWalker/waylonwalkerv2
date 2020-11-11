@@ -6,7 +6,7 @@ twitter_announcement: I just dropped a new post check it out.
 path: map
 title: Map
 date: 2020-06-11T05:00:00Z
-status: published
+status: 'false'
 description:
 related_post_body: ''
 related_post: []

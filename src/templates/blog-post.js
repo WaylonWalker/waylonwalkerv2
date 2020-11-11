@@ -52,7 +52,8 @@ color: whitesmoke;
   margin-bottom: 2rem;
 }
 
-@media (max-width: 700px) {
+
+@media (max-width: 1200px) {
   h1 {
     font-size: 2.5rem;
   }
@@ -307,15 +308,17 @@ class BlogPostTemplate extends React.Component {
             { name: 'og:article:published_time', content: date },
             { name: 'og:article:modified_time', content: date },
             { name: 'og:description', content: description },
-            { name: 'og:image', content: 'https://www.waylonwalker.com' + twitterImage },
+            { name: 'og:image', content: 'https://waylonwalker.com' + twitterImage },
+
             { name: 'twitter:title', content: title + ' | Waylon Walker' },
             { name: 'twitter:card', content: 'summary_large_image' },
-            { name: 'twitter:image', content: 'https://www.waylonwalker.com' + twitterImage },
+            { name: 'twitter:image', content: 'https://waylonwalker.com' + twitterImage },
             { name: 'twitter:description', content: description },
           ]}
 
         >
           <title>{title}</title>
+          <link rel='canonical' href={url} />
         </Helmet>
         <BlogPostWrapper className='blog-post'>
           <BlogPostStyles className='h-entry'>
@@ -337,7 +340,7 @@ class BlogPostTemplate extends React.Component {
             </a>
             <div className='h-card p-author' rel='author'>
               <div className='content'>
-                <a className='p-name u-url' href='http://waylonwalker.com/'><span className='p-given-name'>Waylon</span><span className='p-family-name'>Walker</span></a>
+                <a className='p-name u-url' href='https://waylonwalker.com/'><span className='p-given-name'>Waylon</span><span className='p-family-name'>Walker</span></a>
                 <p calss='p-note'>Learning in Public</p>
                 {/* <Social /> */}
               </div>
@@ -433,7 +436,8 @@ const BlogPost = ({ data }) => {
     <Layout description={post.frontmatter.description} title={post.frontmatter.title} keywords={post.frontmatter.tags} time={post.frontmatter.date} url={`https://waylonwalker.com${post.frontmatter.path}`}>
       <BlogPostTemplate
         content={post.html}
-        url={`https://waylonwalker.com/blog/${post.frontmatter.path}`}
+        // url={`https://waylonwalker.com/blog/${post.frontmatter.path}`}
+        url={`https://waylonwalker.com/${post.fields.slug.replace(/^\/+/, '')}`}
         slug={post.fields.slug}
         // contentComponent={HTMLContent}
         description={post.frontmatter.description}

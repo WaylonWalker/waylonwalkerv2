@@ -153,7 +153,7 @@ I find that many times while I can write all of the code necessary in a shell sc
 
 
 
-# ![#discuss](https://waylonwalker.com/gh-actions-header-discuss.png)
+# #Discuss
 
 * What Actions are you excited about?
 * Are you using actions today?

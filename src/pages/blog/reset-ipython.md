@@ -37,7 +37,7 @@ $ free -h
 Mem:           15G        15G       150M         0B        59M       8.7G
 ```
 
-Generally my first go to is a bit more graphical, and not available on a stock stystem, but far more useful.... `htop`.  [`htop`](htop.dev) is a terminal process explorer that shows cpu usage, mem usage, and running processes.
+Generally my first go to is a bit more graphical, and not available on a stock stystem, but far more useful.... `htop`.  [`htop`](https://htop.dev) is a terminal process explorer that shows cpu usage, mem usage, and running processes.
 
 _<small><mark>htop</mark></small>_
 

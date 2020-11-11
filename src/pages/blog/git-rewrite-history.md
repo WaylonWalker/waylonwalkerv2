@@ -8,7 +8,7 @@ description:
 tags:
     - technical
     - git
-cover: /static/neonbrand-618322-unsplash.jpg
+cover: "neonbrand-618322-unsplash.jpg"
 coverCredit: Photo by NeONBRAND on Unsplash
 ---
 
@@ -16,7 +16,7 @@ coverCredit: Photo by NeONBRAND on Unsplash
 * rebase
 * git commit --amend
 
-## Unstage learning-python-debugger
+## Unstage
 
 ``` bash
 git reset -- <file>

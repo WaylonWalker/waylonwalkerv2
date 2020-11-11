@@ -44,7 +44,7 @@ Kedro viz is a fantastic kedro plugin that allows you to visualize your data pip
 
 ## Check out a live running example
 
-Using the power of GitHub actions the I have built a kedro iris pipeline visualization that can be found on [http://kedro-static-viz.waylonwalker.com/](http://kedro-static-viz.waylonwalker.com/)
+Using the power of GitHub actions the I have built a kedro iris pipeline visualization that can be found on [http://static-viz.kedro.dev/](http://static-viz.kedro.dev/)
 
 ## Itching to get started with kedro
 
@@ -102,4 +102,4 @@ Check out some of my other articles on building kedro hooks.
 
 [![creating the kedro preflight hook](https://waylonwalker.com/kedro-hooks.png)](https://waylonwalker.com/blog/creating-the-kedro-preflight-hook/)
 
-Check out the example 👉 [http://kedro-static-viz.waylonwalker.com/](http://kedro-static-viz.waylonwalker.com/)
+Check out the example 👉 [http://static-viz.kedro.dev/](http://static-viz.kedro.dev/)

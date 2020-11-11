@@ -7,7 +7,7 @@ path: create-new-kedro-project
 title: Create New Kedro Project
 date: 2020-03-02T12:09:00.000+00:00
 status: published
-description: Getting up and going with a brand new [kedro](kedro.readthedocs.io) project
+description: Getting up and going with a brand new [kedro](https://kedro.readthedocs.io) project
   is super simple, thanks to the help of the `kedro new` command.  The ability to
   add an example pipeline from the start makes it that much easier to get going and
   have a template to follow for your own projects.
@@ -24,9 +24,9 @@ devto-url: ''
 devto-id: ''
 
 ---
-This is a quickstart to getting a new [kedro](kedro.readthedocs.io) pipeline up and running.  After this article you should be able to understand how to get started with [kedro](kedro.readthedocs.io).  You can learn more about this [Hello World Example](https://kedro.readthedocs.io/en/stable/02_getting_started/04_hello_world.html) in the [docs](https://kedro.readthedocs.io/en/stable/02_getting_started/04_hello_world.html)
+This is a quickstart to getting a new [kedro](https://kedro.readthedocs.io) pipeline up and running.  After this article you should be able to understand how to get started with [kedro](https://kedro.readthedocs.io).  You can learn more about this [Hello World Example](https://kedro.readthedocs.io/en/stable/02_getting_started/04_hello_world.html) in the [docs](https://kedro.readthedocs.io/en/stable/02_getting_started/04_hello_world.html)
 
-🧹 Install [Kedro](kedro.readthedocs.io)
+🧹 Install [Kedro](https://kedro.readthedocs.io)
 
 🛢 Create the Example Pipeline
 
@@ -56,7 +56,7 @@ I try to keep my base environment as clean as possible.  I have ran into too man
 source activate kedro_iris
 ```
 
-## Install [Kedro](kedro.readthedocs.io)
+## Install [Kedro](https://kedro.readthedocs.io)
 
 Currently `kedro==0.15.5` is available on pypi and can be pip installed.
 
@@ -72,7 +72,7 @@ pip install kedro
 cd /mnt/c/temp
 ```
 
-## Create a new [Kedro](kedro.readthedocs.io) project
+## Create a new [Kedro](https://kedro.readthedocs.io) project
 
 ``` bash
 kedro new
@@ -85,7 +85,7 @@ kedro install
 
 ## Run the pipeline
 
-This will tell kedro to run your pipeline.  It will look at all of your nodes and determine the correct execution order for you, then run each one of them.  You can do this from a python script, python terminal session, or from the [kedro](kedro.readthedocs.io) cli.
+This will tell kedro to run your pipeline.  It will look at all of your nodes and determine the correct execution order for you, then run each one of them.  You can do this from a python script, python terminal session, or from the [kedro](https://kedro.readthedocs.io) cli.
 
 > ✨ It will look at all of your nodes and determine the correct execution order for you
 
@@ -99,7 +99,7 @@ kedro run
 
 ## Viz
 
-[kedro-viz](https://github.com/quantumblacklabs/kedro-viz) is a priceless feature of [kedro](kedro.readthedocs.io).  It's like x-ray vision into your pipeline.  I can't imagine working without it after having it over the past year.  Unlike traditional documentation [kedro-viz](https://github.com/quantumblacklabs/kedro-viz) cannot lie to you.  It will help guarantee your changes line up properly, plan out adding nodes, and identify dependencies of deprecating nodes.
+[kedro-viz](https://github.com/quantumblacklabs/kedro-viz) is a priceless feature of [kedro](https://kedro.readthedocs.io).  It's like x-ray vision into your pipeline.  I can't imagine working without it after having it over the past year.  Unlike traditional documentation [kedro-viz](https://github.com/quantumblacklabs/kedro-viz) cannot lie to you.  It will help guarantee your changes line up properly, plan out adding nodes, and identify dependencies of deprecating nodes.
 
 > Unlike traditional documentation [kedro-viz](https://github.com/quantumblacklabs/kedro-viz) cannot lie to you.
 
@@ -147,7 +147,7 @@ kedro docker run
 
 ## Simple Huh
 
-Getting up and going with a brand new [kedro](kedro.readthedocs.io) project is super simple, thanks to the help of the `kedro new` command.  The ability to add an example pipeline from the start makes it that much easier to get going and have a template to follow for your own projects.
+Getting up and going with a brand new [kedro](https://kedro.readthedocs.io) project is super simple, thanks to the help of the `kedro new` command.  The ability to add an example pipeline from the start makes it that much easier to get going and have a template to follow for your own projects.
 
 ## Recap
 
@@ -178,7 +178,7 @@ kedro docker run
 
 The [kedro docs](https://kedro.readthedocs.io/) have a ton of great resources.  They are searchable, but can be a bit of an overwhelming amount of data.
 
-I keep adding to my [kedro notes](https://waylonwalker.com/n/kedro/) as I find new and interesting things.
+I keep adding to my [kedro notes](https://waylonwalker.com/notes/kedro/) as I find new and interesting things.
 
 I tweet out most of those snippets as I add them, you can find them all here [#kedrotips](https://twitter.com/search?q=%23kedrotips).
 

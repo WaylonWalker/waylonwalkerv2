@@ -8,7 +8,12 @@ path: four-github-actions-python
 title: Four Github Actions for Python
 date: 2020-04-13T06:23:00.000+00:00
 status: published
-description: ''
+description: 
+  If you are developing python packages and using GitHub here are four actions
+  that you can use today to automate your release workflow.  Since python tools
+  generally have such a simple cli I have opted to use the cli for most of
+  these, that way I know exactly what is happening and have more control over
+  it if I need.
 related_post_body: ''
 related_post: []
 cover: "/static/four-github-actions-python.png"
@@ -72,7 +77,7 @@ I am still using the older, less hipster, setuptools to build my projects.  Prim
 
 ## ![Publishing to pypi](https://waylonwalker.com/gh-actions-python-headers/4.png)
 
-Here I am going to use an amazing action from the GitHub marketplace by @webKnjaZ.  It is super simple.  First you need to log into your [pypi.org](pypi.org) account, go to account settings, enable 2FA, and add a Token, then paste that toke into a secret inside your repos settings.  Next just drop the name of that secret into the password field of the action and you are off.
+Here I am going to use an amazing action from the GitHub marketplace by @webKnjaZ.  It is super simple.  First you need to log into your [pypi.org](https://pypi.org) account, go to account settings, enable 2FA, and add a Token, then paste that toke into a secret inside your repos settings.  Next just drop the name of that secret into the password field of the action and you are off.
 
 **note**: I did put a check in to make sure that push event comes from main.
 

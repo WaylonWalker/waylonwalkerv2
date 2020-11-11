@@ -6,8 +6,8 @@ twitter_announcement: I just dropped a new post check it out.
 path: thank-you
 title: Thanks For Subscribing
 date: 2020-05-20T10:00:00Z
-status: published
-description: ''
+status: draft
+description: You're awesome! Thanks for subscribing to my newsletter.
 related_post_body: ''
 related_post: []
 cover: /static/thank-you.png

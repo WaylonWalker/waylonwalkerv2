@@ -3,7 +3,7 @@ templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
 twitter_announcement: I just dropped a new post check it out.
-path: my-chrome-extensions
+path: my-chrome-extensions-i-use
 title: Chrome Extensions I use
 date: 2020-09-13T05:00:00Z
 status: published

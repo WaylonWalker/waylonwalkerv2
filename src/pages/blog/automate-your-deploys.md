@@ -3,10 +3,10 @@ templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
 twitter_announcement: 'Automate your frontend deploys with the #JAMstack'
-path: Automate your deploys
+path: automate-your-deploys
 title: automate your deploys
 date: 2020-02-07T12:08:00Z
-status: draft
+status: 'false'
 description: ''
 related_post_body: ''
 related_post: []

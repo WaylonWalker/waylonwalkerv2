@@ -3,7 +3,7 @@ templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
 twitter_announcement: I just dropped a new post check it out.
-path: avoid-nesting-loops
+path: avoid-nesting-loops-in-python
 title: Avoid Nesting Loops in Python
 date: 2020-10-11T05:00:00.000+00:00
 status: draft

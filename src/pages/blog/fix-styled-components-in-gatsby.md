@@ -3,7 +3,7 @@ templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
 twitter_announcement: I finally fixed my Styled-Components in gatsby.js
-path: fix-styled-components
+path: fix-styled-components-in-gatsby
 title: I finally fixed my Styled-Components in gatsby.js
 date: 2020-02-08T15:07:00.000+00:00
 status: published
@@ -19,7 +19,7 @@ twitter_month_3: ''
 short_url: waylonwalker.com/b/styf
 
 ---
-I am starting a redesign of my website.  I have started cross posting to [dev.to](dev.to) more regularly.  With that I have been making more detailed cover images at the recommended `1000x420`.  These images get cut off on my own site, which is a bit ridiculous to have my own content not look right on my own site.  But before we start a heavy redesign I have a small issue that has plagued the site for at least a year!
+I am starting a redesign of my website.  I have started cross posting to [dev.to](https://dev.to) more regularly.  With that I have been making more detailed cover images at the recommended `1000x420`.  These images get cut off on my own site, which is a bit ridiculous to have my own content not look right on my own site.  But before we start a heavy redesign I have a small issue that has plagued the site for at least a year!
 
 > I have a small issue that has plagued the site for at least a year!
 

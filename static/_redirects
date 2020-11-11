@@ -17,7 +17,7 @@
 /latest            /blog/whats-new-in-kedro-0166
 /latest.png        /whats-new-in-kedro-0166.png
 
-/latest-story.png        /stories/kedro-0_16_6-released.png
+/latest-story.png        /stories/get-python-help-without-google.png
 
 # Short-Blog
 /k166              /blog/whats-new-in-kedro-0166
@@ -98,7 +98,7 @@
 /blog/supz         /blog/supercharge-zsh-startup/
 /blog/tqdm         /blog/quick-progress-bars-in-python-using-tqdm/
 /blog/namt         /blog/named-tuples-data-science/
-/blog/ipau         /blog/autoreload_ipython/
+/blog/ipau         /blog/autoreload-ipython/
 /blog/kdvs         /blog/keyboard-driven-vscode/
 /blog/rgit         /blog/realistic-git-workflow/
 /blog/frio         /blog/forestry-io/
@@ -142,6 +142,17 @@
 /blog/interrogate-is-a-pretty-awesome-brand-new-cli-for-python-packages  /blog/interrogate
 /blog/what-is-something-that-you-recently-learned-that-you-wish-you-would-have-learned-or-understood-earlier  /blog/learn-early
 /blog/what-is-your-advice-for-new-data-scientists  /blog/data-scientist-advice
+/blog/background-tasks-in-python-for-data-science /blog/background_py
+/blog/strip-trailing-whitespace-from-git-projects /blog/strip-trailing-whitespace
+/blog/rss-feed-for-your-gatsby-site /blog/gatsby-rss-feed
+/blog/personal-url-shortener-with-netlify-redirects /blog/personal-url-shortener
+/blog/list-the-latest-files-to-change-in-a-git-repo /blog/last-n-git-files
+/blog/how-to-get-dev-comments-from-an-article-url /blog/devto-comments-from-url
+/blog/git-diff-feature-main /blog/git-diff-branches
+/blog/variables-names-dont-need-thier-type /blog/variable-names-dont-need-their-type
+/blog/background-tasks-in-python-for-data-science /blog/python-data-science-background
+/blog/building-kedro.dev/ /blog/building-kedro-dev
+/blog/building-kedro.dev /blog/building-kedro-dev
 
 /bash              /notes/bash/
 

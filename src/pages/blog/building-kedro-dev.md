@@ -21,7 +21,7 @@ devto-url: ''
 devto-id: ''
 
 ---
-Follow along the Journey as I build out [kedro.dev](kedro.dev).
+Follow along the Journey as I build out [kedro.dev](https://kedro.dev).
 
 ## Building a Community
 

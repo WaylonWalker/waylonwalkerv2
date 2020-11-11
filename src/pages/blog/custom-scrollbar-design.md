@@ -21,11 +21,11 @@ twitter_month_3: ''
 short_url: ''
 
 ---
-Inspired by Wes Bos's new [uses.tech](uses.tech) I wanted a custom scrollbar on my personal site.  I had tried to do it in the past, but gave up after it was not working.
+Inspired by Wes Bos's new [uses.tech](https://uses.tech) I wanted a custom scrollbar on my personal site.  I had tried to do it in the past, but gave up after it was not working.
 
 ## Looking at the Source
 
-Since [uses.tech](uses.tech) is open source I jumped on github, searched for scroll and found this [layout.js](https://github.com/wesbos/awesome-uses/blob/124bdd64345bc64eb84879929f0e57cbb8752e34/src/components/layout.js#L74).
+Since [uses.tech](https://uses.tech) is open source I jumped on github, searched for scroll and found this [layout.js](https://github.com/wesbos/awesome-uses/blob/124bdd64345bc64eb84879929f0e57cbb8752e34/src/components/layout.js#L74).
 
 ## Copy it to my own component
 
