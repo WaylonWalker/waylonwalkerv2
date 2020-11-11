@@ -209,7 +209,7 @@ plot_data.plot(title='Rolling annual sum of Categorical Random Data');
 ```
 
 
-![png](output_6_0.png)
+< !-- ![png](output_6_0.png) -->
 
 
 ## For the Visual Learners
