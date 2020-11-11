@@ -18,23 +18,23 @@ cover: "./sql-wide.png"
 <title>Stepping Up My SQL Game</title>
 <!-- Search Engine -->
 <meta name="description" content="I decided it was time to put away the cheat sheets, step away from Stack Overflow, and improve my speed.">
-<meta name="image" content="http://www.waylonwalker.com/static/blog/sql.png">
+<meta name="image" content="https://waylonwalker.com/static/blog/sql.png">
 <!-- Schema.org for Google -->
 <meta itemprop="name" content="Stepping Up My SQL Game">
 <meta itemprop="description" content="I decided it was time to put away the cheat sheets, step away from Stack Overflow, and improve my speed.">
-<meta itemprop="image" content="http://www.waylonwalker.com/static/blog/sql.png">
+<meta itemprop="image" content="https://waylonwalker.com/static/blog/sql.png">
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stepping Up My SQL Game">
 <meta name="twitter:description" content="I decided it was time to put away the cheat sheets, step away from Stack Overflow, and improve my speed.">
 <meta name="twitter:site" content="@_waylonwalker">
 <meta name="twitter:creator" content="@_waylonwalker">
-<meta name="twitter:image:src" content="http://www.waylonwalker.com/static/blog/sql.png">
+<meta name="twitter:image:src" content="https://waylonwalker.com/static/blog/sql.png">
 <!-- Open Graph general (Facebook, Pinterest & Google+) -->
 <meta name="og:title" content="Stepping Up My SQL Game">
 <meta name="og:description" content="I decided it was time to put away the cheat sheets, step away from Stack Overflow, and improve my speed.">
-<meta name="og:image" content="http://www.waylonwalker.com/static/blog/sql.png">
-<meta name="og:url" content="http://www.waylonwalker.com/blog/stepping-up-my-sql.html">
+<meta name="og:image" content="https://waylonwalker.com/static/blog/sql.png">
+<meta name="og:url" content="https://waylonwalker.com/blog/stepping-up-my-sql.html">
 <meta name="og:site_name" content="waylonwalker.com">
 <meta name="og:type" content="website">
 
@@ -225,4 +225,3 @@ ORDER BY
     c.name asc;
 ```
 
-Check out more content from me at [my blog](http://waylonwalker.com/blog)
