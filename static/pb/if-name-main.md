@@ -6,7 +6,7 @@ twitter_announcement: I just dropped a new post check it out.
 path: if-name-main
 title: If Name Main
 date: 2020-06-11T05:00:00Z
-status: false
+status: draft
 description:
 related_post_body: ''
 related_post: []
