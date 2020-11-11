@@ -96,6 +96,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const {
       content,
+      url,
       // contentComponent,
       description,
       // tags,
