@@ -176,10 +176,10 @@ class Tip extends React.Component {
             { name: 'og:description', content: content },
             { name: 'description', content: content },
             { name: 'twitter:title', content: content.slice(0, 65) + ' | Waylon Walker' },
-            { name: 'twitter:image', content: `https://www.waylonwalker.com/ww-hot-tip-${file}.jpg` },
+            { name: 'twitter:image', content: `https://waylonwalker.com/ww-hot-tip-${file}.jpg` },
             { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:description', content: content },
-            { name: 'og:image', content: `https://www.waylonwalker.com/ww-hot-tip-${file}.jpg` },
+            { name: 'og:image', content: `https://waylonwalker.com/ww-hot-tip-${file}.jpg` },
             { name: 'og:image:width', content: '1024' },
             { name: 'og:image:height', content: '512' },
           ]}
