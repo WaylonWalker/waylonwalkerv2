@@ -6,7 +6,7 @@ twitter_announcement: I just dropped a new post check it out.
 path: last-n-git-files
 title: List the latest files to change in a git repo
 date: 2020-10-08T05:00:00Z
-status: draft
+status: 'false'
 description: ''
 related_post_body: ''
 related_post: []

@@ -6,7 +6,7 @@ twitter_announcement: I just dropped a new post check it out.
 path: long-variable-names-are-good
 title: Long variable names are good
 date: 2020-02-24T06:00:00Z
-status: draft
+status: 'false'
 description: ''
 related_post_body: ''
 related_post: []
