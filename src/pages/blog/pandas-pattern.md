@@ -214,9 +214,7 @@ plot_data.plot(title='Rolling annual sum of Categorical Random Data');
 
 ## For the Visual Learners
 
-I will break down the pattern here
-
-### Groupby
+I will break down the pattern her![#discuss](https://waylonwalker.com/gh-actions-header-discuss.png)### Groupby
 
 
 ```python
