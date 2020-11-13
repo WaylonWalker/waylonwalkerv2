@@ -11,7 +11,6 @@ description: You're awesome! Thanks for subscribing to my newsletter.
 related_post_body: ''
 related_post: []
 cover: /static/thank-you.png
-twitter_cover: /static/thank-you.png
 
 ---
 

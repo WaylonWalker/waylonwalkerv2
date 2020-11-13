@@ -10,7 +10,6 @@ description: Out of Space! How to remove 65 conda environments in one command.
 related_post_body: ''
 related_post: []
 cover: "/static/photo-1464802686167-b939a6910659.jpg"
-twitter_cover: "/static/photo-1464802686167-b939a6910659.jpg"
 
 ---
 This morning I logged into my machine and was nearly out of space

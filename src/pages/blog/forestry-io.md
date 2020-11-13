@@ -6,7 +6,6 @@ date: 2019-04-23T08:02:00.000+00:00
 status: published
 description: Creating Posts from forestry.io.
 cover: "/static/forest.jpg"
-twitter_cover: "/static/forest_twitter.jpg"
 related_post:
 # - src/pages/blog/flexbox-zombies.md
 tags:

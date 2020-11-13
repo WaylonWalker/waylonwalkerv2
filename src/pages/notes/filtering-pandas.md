@@ -13,7 +13,6 @@ description: Filtering pandas DataFrames many different ways.
 related_post_body: ''
 related_post: []
 cover: "/static/nathan-dumlao-eksqjXTLpak-unsplash.jpg"
-twitter_cover: "/static/nathan-dumlao-eksqjXTLpak-unsplash.jpg"
 
 ---
 ## query

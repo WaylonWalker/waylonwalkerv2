@@ -10,7 +10,6 @@ description: Notes about my reader idea
 related_post_body: ''
 related_post: []
 cover: ""
-twitter_cover: ''
 
 ---
 

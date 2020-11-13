@@ -10,6 +10,5 @@ description: What DataScientists Should Know About S3
 related_post_body: ''
 related_post: []
 cover: "/static/cobro-mEr7U5yfYt8-unsplash.jpg"
-twitter_cover: ''
 
 ---

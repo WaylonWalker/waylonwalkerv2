@@ -11,7 +11,6 @@ description: ''
 related_post_body: ''
 related_post: []
 cover: "/static/automate-deploy-frontend.png"
-twitter_cover: "/static/automate-deploy-frontend.png"
   with the #JAMstack'
   to automate your deploys.
 

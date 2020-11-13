@@ -11,7 +11,6 @@ description: This is my journey to building up the community page.
 related_post_body: ''
 related_post: []
 cover: ''
-twitter_cover: ''
 
 ---
 Follow along the Journey as I build out [kedro.dev](https://kedro.dev).

@@ -12,7 +12,6 @@ description: This version of kedro releases a new set of supported deployment
 related_post_body: ''
 related_post: []
 cover: '/static/whats-new-in-kedro-0166.png'
-twitter_cover: '/static/whats-new-in-kedro-0166.png'
 
 ---
 

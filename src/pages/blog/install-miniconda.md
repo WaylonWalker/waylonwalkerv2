@@ -12,7 +12,6 @@ description: Installing miniconda from only the command line can be a bit of
 related_post_body: ''
 related_post: []
 cover: '/static/install-miniconda.png'
-twitter_cover: '/static/install-miniconda.png'
 
 ---
 

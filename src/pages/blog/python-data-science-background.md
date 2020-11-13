@@ -13,7 +13,6 @@ description:
     today, I wanted to put a better data science example in here to help folks
     get started.
 cover: "/static/erwan-hesry-elayN_YscVg-unsplash.jpg"
-twitter_cover: "/static/erwan-hesry-elayN_YscVg-unsplash.jpg"
 related_post:
 # - src/pages/blog/quick-progress-bars-in-python-using-tqdm.md
 tags:

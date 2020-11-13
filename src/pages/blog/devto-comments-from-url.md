@@ -16,7 +16,6 @@ description: "I want to incorporate some of the wonderful comments, \U0001F495, 
 related_post_body: ''
 related_post: []
 cover: "/static/dev-to-comments-from-url.png"
-twitter_cover: ''
 
 ---
 I want to incorporate some of the wonderful comments, 💕, 🦄, and 🔖's that I have been getting on **dev.to** on my website.  I have dabbled once or twice with no avail this time I am taking notes on my journey, so follow along and let's get there together.  By the end of this post, I will have a way to get comments from posts on the client-side thanks to the wonderfully open dev.to API.

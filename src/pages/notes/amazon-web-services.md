@@ -10,7 +10,6 @@ description: ''
 related_post_body: ''
 related_post: []
 cover: "/static/steve-richey-enTun1g_5b4-unsplash.jpg"
-twitter_cover: "/static/steve-richey-enTun1g_5b4-unsplash.jpg"
 
 ---
 I started using aws in March 2019.  Here are some of my notes.

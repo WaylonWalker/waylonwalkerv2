@@ -15,7 +15,6 @@ description: When learning a new skill it's important to practice along the
 related_post_body: ''
 related_post: []
 cover: '/static/practice-python-online.png'
-twitter_cover: '/static/practice-python-online.png'
 
 ---
 

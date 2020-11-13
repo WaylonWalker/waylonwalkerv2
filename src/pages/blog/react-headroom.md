@@ -12,7 +12,6 @@ description: It was so easy to get a professional looking navbar with just 3 lin
 related_post_body: ''
 related_post: []
 cover: "/static/react-headroom.png"
-twitter_cover: "/static/react-headroom.png"
   of code. '
 
 ---

@@ -11,7 +11,6 @@ description: I recently added a button to my blog, and subsequently my posts on 
 related_post_body: ''
 related_post: []
 cover: '/static/edit-on-github.png'
-twitter_cover: '/static/edit-on-github.png'
 
 ---
 

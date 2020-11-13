@@ -10,7 +10,6 @@ description: ''
 related_post_body: ''
 related_post: []
 cover: "/static/jonny-hayes-W1r5FAraSA0-unsplash.jpg"
-twitter_cover: "/static/jonny-hayes-W1r5FAraSA0-unsplash.jpg"
 
 ---
 # Tools

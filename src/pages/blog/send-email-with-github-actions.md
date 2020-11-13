@@ -13,7 +13,6 @@ description: One useful action that you can utilize no matter what content your 
 related_post_body: ''
 related_post: []
 cover: "/static/send-email-with-github-actions.png"
-twitter_cover: ''
 
 ---
 Here is one useful thing that you can do with GitHub actions no matter what language you use, send email.  You might want to know right away when your ci passes.  You might want to give your team a nice pat on the back when a new release is deployed.  There might be subscribers wanting to see the latest release notes in their inbox as soon as the latest version is deployed.  Whatever it is, its pretty easy to do with an action right out of the actions marketplace.

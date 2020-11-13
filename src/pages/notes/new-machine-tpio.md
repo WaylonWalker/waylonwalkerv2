@@ -11,7 +11,6 @@ description: Today I setup a new machine on Digital Ocean to use with
 related_post_body: ''
 related_post: []
 cover: /static/new-machine-tpio.png
-twitter_cover: /static/new-machine-tpio.png
 
 ---
 Today I setup a new machine on Digital Ocean to use with TestProject.io,  Here are my installation notes.

@@ -11,7 +11,6 @@ description:  Here are a few of my top tips to help make dev.to posts more reada
 related_post_body: ''
 related_post: []
 cover: '/static/crush-dev-to-posts.png'
-twitter_cover: '/static/crush-dev-to-posts.png'
 
 ---
 

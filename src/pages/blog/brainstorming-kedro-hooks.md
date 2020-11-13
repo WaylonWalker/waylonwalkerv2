@@ -12,7 +12,6 @@ description: "This post is a \U0001F9E0 branstorming work in progress, I will li
 related_post_body: ''
 related_post: []
 cover: "/static/brainstorming-kedro-hooks.png"
-twitter_cover: ''
 
 ---
 This post is a 🧠 branstorming work in progress.

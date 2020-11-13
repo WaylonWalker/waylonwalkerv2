@@ -11,7 +11,6 @@ description:
 related_post_body: ''
 related_post: []
 cover: '/static/my-github-profile.png'
-twitter_cover: '/static/my-github-profile.png'
 
 
 ---

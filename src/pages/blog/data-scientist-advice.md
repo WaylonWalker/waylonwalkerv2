@@ -11,7 +11,6 @@ description: What is YOUR Advice for New Data Scientists
 related_post_body: ''
 related_post: []
 cover: "/static/16.png"
-twitter_cover: "/static/16.png"
 
 ---
 * Learn the business

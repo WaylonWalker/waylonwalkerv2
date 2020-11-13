@@ -10,7 +10,6 @@ description: I am exploring a kedro catalog meta data hook
 related_post_body: ''
 related_post: []
 cover: ''
-twitter_cover: ''
 
 ---
 I am exploring a kedro catalog meta data hook, these are some notes about what I am thinking.

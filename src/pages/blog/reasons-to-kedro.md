@@ -11,7 +11,6 @@ description: ''
 related_post_body: ''
 related_post: []
 cover: "/static/reasons-to-kedro.png"
-twitter_cover: "/static/reasons-to-kedro.png"
 
 ---
 There are many reasons that you should be using kedro.  If you are on a team of Data Scientists/Data Engineers processing DataFrames from many data sources should be considering a pipeline framework.  Kedro is a great option that provides many benefits for teams to collaborate, develop, and deploy data pipelines

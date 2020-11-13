@@ -11,7 +11,6 @@ description: In my upcoming free kedro course, you can learn how to start buildi
 related_post_body: ''
 related_post: []
 cover: ''
-twitter_cover: ''
 
 ---
 Learn Kedro in 5 days

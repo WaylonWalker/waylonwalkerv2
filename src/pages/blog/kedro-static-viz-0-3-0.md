@@ -14,7 +14,6 @@ description: kedro-static-viz is out with support for the newly released hooks
 related_post_body: ''
 related_post: []
 cover: "/static/kedro-static-viz-0-3-0.png"
-twitter_cover: ''
 
 ---
 [kedro-static-viz](https://github.com/WaylonWalker/kedro-static-viz) is out with support for the newly released hooks feature.  This means that you can have `kedro-static-viz` automatically deploy a full gatsby site `before_pipeline_run` keeping your visualization always up to date.

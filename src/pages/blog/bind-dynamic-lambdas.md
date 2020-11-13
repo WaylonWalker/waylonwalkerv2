@@ -15,7 +15,6 @@ description: This past week I had a really weird bug in my [kedro](http://kedro.
 related_post_body: ''
 related_post: []
 cover: "/static/bind-dynamic-lambdas.png"
-twitter_cover: "/static/bind-dynamic-lambdas.png"
 
 ---
 This past week I had a really weird bug in my [kedro](http://kedro.readthedocs.io/) pipeline.  For some reason data running through my pipeline was coming out completely made no sense, but if I manually request raw data outside of the pipeline it matched expectations.

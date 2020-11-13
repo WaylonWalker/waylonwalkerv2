@@ -14,7 +14,6 @@ description: Bash is a language that is quite useful for automation no matter
 related_post_body: ''
 related_post: []
 cover: '/static/reusable-bash.png'
-twitter_cover: '/static/reusable-bash.png'
 
 ---
 

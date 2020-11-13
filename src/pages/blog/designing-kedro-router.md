@@ -13,7 +13,6 @@ description: I released a router-like plugin for kedro back in April 2020.
 related_post_body: ''
 related_post: []
 cover: "/static/designing-kedro-router.png"
-twitter_cover: "/static/designing-kedro-router.png"
 
 ---
 
