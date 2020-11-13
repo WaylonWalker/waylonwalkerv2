@@ -16,7 +16,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/bind-dynamic-lambdas.png"
 twitter_cover: "/static/bind-dynamic-lambdas.png"
-devto-url: ''
 devto-id: ''
 
 ---

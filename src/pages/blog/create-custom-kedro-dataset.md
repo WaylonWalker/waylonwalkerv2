@@ -16,7 +16,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/create-custom-kedro-dataset.png"
 twitter_cover: ''
-devto-url: ''
 devto-id: ''
 
 ---

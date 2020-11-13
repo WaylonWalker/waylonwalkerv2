@@ -13,7 +13,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/fix-git-commit-author.png"
 twitter_cover: "/static/fix-git-commit-author.ong"
-devto-url: ''
 devto-id: ''
 
 ---

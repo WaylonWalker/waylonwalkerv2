@@ -18,7 +18,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/four-github-actions-python.png"
 twitter_cover: ''
-devto-url: ''
 devto-id: ''
 
 ---

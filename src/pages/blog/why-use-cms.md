@@ -15,7 +15,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/why-use-cms.png'
 twitter_cover: '/static/why-use-cms.png'
-devto-url: ''
 devto-id: ''
 
 ---

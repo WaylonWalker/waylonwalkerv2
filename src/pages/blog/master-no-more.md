@@ -15,7 +15,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/master-no-more.png'
 twitter_cover: '/static/master-no-more.png'
-devto-url: ''
 devto-id: ''
 
 ---

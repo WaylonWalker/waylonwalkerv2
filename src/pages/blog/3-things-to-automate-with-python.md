@@ -12,7 +12,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/3-things-to-automate-with-python.png"
 twitter_cover: ''
-devto-url: ''
 devto-id: ''
 
 ---
