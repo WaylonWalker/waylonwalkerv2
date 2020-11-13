@@ -12,10 +12,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/fix-styled-components.png"
 twitter_cover: "/static/fix-styled-components.png"
-twitter_week_1: ''
-twitter_week_2: ''
-twitter_month_1: ''
-twitter_month_3: ''
 short_url: waylonwalker.com/b/styf
 
 ---

@@ -14,10 +14,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/custom-scrollbar-wtih-gatsbyjs.jpg"
 twitter_cover: "/static/custom-scrollbar-wtih-gatsbyjs.jpg"
-twitter_week_1: ''
-twitter_week_2: ''
-twitter_month_1: ''
-twitter_month_3: ''
 short_url: ''
 
 ---

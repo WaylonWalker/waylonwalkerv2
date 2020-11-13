@@ -14,10 +14,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/designing-kedro-router.png"
 twitter_cover: "/static/designing-kedro-router.png"
-twitter_week_1: ''
-twitter_week_2: ''
-twitter_month_1: ''
-twitter_month_3: ''
 short_url: ''
 devto-url: ''
 devto-id: ''

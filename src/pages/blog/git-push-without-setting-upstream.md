@@ -16,10 +16,6 @@ twitter_cover: "/static/ship-faster.png"
 twitter_announcement: "Ship Code Faster with this one git config.\n\ngit config --global
   push.default current          "
 path: git-push-without-setting-upstream
-twitter_week_1: ''
-twitter_week_2: ''
-twitter_month_1: ''
-twitter_month_3: ''
 short_url: waylonwalker.com/b/gitp
 
 ---
