@@ -1,5 +1,5 @@
 ---
-templateKey: notes
+templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
 path: codeit-bro-interview
