@@ -54,7 +54,13 @@ export default class BlogPage extends React.Component {
 
 export const pageQuery = graphql`
 query BlogQuery {
-  allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, filter: { frontmatter: { templateKey: { eq: "blog-post" } } }) {
+  allMarkdownRemark(
+    sort: { order: DESC, fields: [frontmatter___date] },
+    filter: { 
+      frontmatter: { templateKey: { eq: "blog-post" }} 
+      fields: {slug:{regex: "^/blog/"}} 
+    }
+  ) {
     edges {
       node {
         excerpt(pruneLength: 400)
