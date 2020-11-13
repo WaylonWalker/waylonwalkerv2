@@ -3,7 +3,6 @@ templateKey: blog-post
 related_post_label: Check out this related post
 tags:
 - actions
-twitter_announcement: I just dropped a new post check it out.
 path: what-are-github-actions
 title: What Are GitHub Actions
 date: 2020-03-16T05:00:00.000+00:00

@@ -3,7 +3,6 @@ templateKey: blog-post
 related_post_label: Check out this related post
 tags:
 - actions
-twitter_announcement: I just dropped a new post check it out.
 path: four-github-actions-website
 title: Four github actions for your website
 date: 2020-05-18T13:02:00.000+00:00

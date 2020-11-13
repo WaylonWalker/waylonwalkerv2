@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-twitter_announcement: I just dropped a new post check it out.
 path: brainstorming-kedro-hooks
 title: Brainstorming Kedro Hooks
 date: 2020-05-22T22:02:00.000+00:00

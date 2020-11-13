@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['python', 'LearnInPublic']
-twitter_announcement: I just dropped a new post check it out.
 path: practice-python-online
 title: 🐍 Practice Python Online
 date: 2020-07-25T05:00:00Z

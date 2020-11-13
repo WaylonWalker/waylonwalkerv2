@@ -10,8 +10,5 @@ status: 'false'
 description: ''
 related_post:
 cover: "/static/2020-02-02 09-40-45_Start.png"
-twitter_announcement: |
-  I just dropped my second post on building beautiful cli's
-  in #python.'
 
 ---

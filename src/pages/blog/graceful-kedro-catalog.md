@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['blog', 'JAMStack', 'netlify']
-twitter_announcement: I just dropped a new post check it out.
 path: graceful-kedro-catalog
 title: Gracefully adopt kedro, the catalog
 date: 2020-06-29T03:00:00Z

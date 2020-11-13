@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-twitter_announcement: Should I switch to Zeit Now?
 path: should-i-switch-to-zeit-now
 title: Should I switch to Zeit Now
 date: 2020-02-06T22:38:00Z

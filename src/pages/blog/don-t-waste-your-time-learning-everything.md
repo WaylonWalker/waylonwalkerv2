@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-twitter_announcement: Don't Waste Your time Learning Everything!
 path: don-t-waste-your-time-learning-everything
 title: Don’t waste your time learning everything
 date: 2020-02-19T06:00:00Z

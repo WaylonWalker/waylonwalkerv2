@@ -9,10 +9,7 @@ date: 2020-02-04T12:18:00Z
 status: published
 description: git config --global push.default current
 related_post:
-# - src/pages/blog/realistic-git-workflow.md
 cover: "/static/ship-faster.png"
-twitter_announcement: "Ship Code Faster with this one git config.\n\ngit config --global
-  push.default current          "
 path: git-push-without-setting-upstream
 
 ---

@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-twitter_announcement: I just dropped a new post check it out.
 path: what-is-refactoring
 title: What is Refactoring
 date: 2020-02-20T22:06:00Z

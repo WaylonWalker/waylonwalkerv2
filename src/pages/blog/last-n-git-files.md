@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-twitter_announcement: I just dropped a new post check it out.
 path: last-n-git-files
 title: List the latest files to change in a git repo
 date: 2020-10-08T05:00:00Z

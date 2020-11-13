@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['actions']
-twitter_announcement: I just dropped a new post check it out.
 path: git-auto-commit-action-review
 title: Review of the git-auto-commit-action
 date: 2020-08-03T05:00:00Z

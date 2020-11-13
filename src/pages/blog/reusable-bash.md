@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['bash', 'linux']
-twitter_announcement: I just dropped a new post check it out.
 path: reusable-bash
 title: Creating Reusable Bash Scripts
 date: 2020-08-13T05:00:00Z

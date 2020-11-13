@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-twitter_announcement: Do you have any use cases that you use hoising?  Why?  It seems
   like a really cool feature in any language that uses it, but I dont really notice
   it in use.
 path: do-you-hoist

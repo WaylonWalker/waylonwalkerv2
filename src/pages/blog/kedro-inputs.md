@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['blog', 'JAMStack', 'netlify']
-twitter_announcement: I just dropped a new post check it out.
 path: kedro-inputs
 title: How Kedro handles your inputs
 date: 2020-06-19T03:00:00Z

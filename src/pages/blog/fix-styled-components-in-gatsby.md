@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-twitter_announcement: I finally fixed my Styled-Components in gatsby.js
 path: fix-styled-components-in-gatsby
 title: I finally fixed my Styled-Components in gatsby.js
 date: 2020-02-08T15:07:00.000+00:00

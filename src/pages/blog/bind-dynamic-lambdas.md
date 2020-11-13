@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-twitter_announcement: Bind arguments to lambdas in python.  A story about a bug that
   recently bit me.
 path: bind-dynamic-lambdas
 title: 'TIL: Bind arguments to dynamically generated lambdas in python'
