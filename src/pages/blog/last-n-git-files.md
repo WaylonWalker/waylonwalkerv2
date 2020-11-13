@@ -12,7 +12,6 @@ related_post_body: ''
 related_post: []
 cover: ''
 twitter_cover: ''
-devto-id: ''
 
 ---
 

@@ -15,7 +15,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/github-actions-syntax.png"
 twitter_cover: ''
-devto-id: ''
 
 ---
 <style>

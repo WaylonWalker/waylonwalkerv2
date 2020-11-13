@@ -13,7 +13,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/reset-ipython.png"
 twitter_cover: "/static/reset-ipython.png"
-devto-id: ''
 
 ---
 Today we ran into an issue where we had a one-off script that just needed to work, but it was just chewing threw memory like nothing.

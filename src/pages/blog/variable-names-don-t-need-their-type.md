@@ -13,7 +13,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/career questions for data folks (2).png"
 twitter_cover: ''
-devto-id: ''
 
 ---
 So often I see a variables `type()` inside of its name and it hurts me a little inside.  Tell me I'm right or prove me wrong below.

@@ -12,7 +12,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/strip-trailing-whitespace-from-git-projects.png'
 twitter_cover: '/static/strip-trailing-whitespace-from-git-projects.png'
-devto-id: ''
 
 ---
 A common linting error thrown by various linters is for trailing whitespace.  I most often use flake8.  I generally have \[pre-commit\]([https://waylonwalker.com/blog/pre-commit-is-awesome](https://waylonwalker.com/blog/pre-commit-is-awesome "https://waylonwalker.com/blog/pre-commit-is-awesome")) hooks setup to strip this, but sometimes I run into situations where I jump into a project without it, and my editor lights up with errors.  A simple fix is to run this one-liner.

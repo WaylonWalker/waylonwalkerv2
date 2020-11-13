@@ -15,7 +15,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/git-diff-branches.png"
 twitter_cover: "/static/git-diff-branches.png"
-devto-id: ''
 
 ---
 Today I learned how to diff between two branches.

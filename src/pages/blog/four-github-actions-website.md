@@ -16,7 +16,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/four-github-actions-website.png"
 twitter_cover: ''
-devto-id: ''
 
 ---
 GitHub's actions are a new GitHub feature that will trigger GitHub to spin up a virtual machine and run some tasks with some special access to your repo. It can interact with comments/issues, it can clone your repo, You can explicitly pass in secrets so that it can commit back to the repo or deploy to another service. The environment may be a Linux, windows, or even a mac machine. I believe this is wildly incredible for the open-source community, putting these tools in the same place that we are already collaborating is so convenient.

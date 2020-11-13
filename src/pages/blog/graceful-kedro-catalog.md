@@ -12,7 +12,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/graceful-kedro-catalog.png'
 twitter_cover: '/static/graceful-kedro-catalog.png'
-devto-id: ''
 
 ---
 

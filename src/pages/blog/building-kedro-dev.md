@@ -12,7 +12,6 @@ related_post_body: ''
 related_post: []
 cover: ''
 twitter_cover: ''
-devto-id: ''
 
 ---
 Follow along the Journey as I build out [kedro.dev](https://kedro.dev).
