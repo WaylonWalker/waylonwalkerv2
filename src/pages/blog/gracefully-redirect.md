@@ -16,7 +16,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/gracefully-redirect.png'
 twitter_cover: '/static/gracefully-redirect.png'
-devto-id: ''
 
 ---
 

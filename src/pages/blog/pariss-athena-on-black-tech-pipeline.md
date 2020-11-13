@@ -18,7 +18,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/pariss-athena-on-black-tech-pipeline.png'
 twitter_cover: '/static/pariss-athena-on-black-tech-pipeline.png'
-devto-id: ''
 
 ---
 

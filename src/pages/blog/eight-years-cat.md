@@ -14,7 +14,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/eight-years-cat.png'
 twitter_cover: '/static/eight-years-cat.png'
-devto-id: ''
 
 ---
 

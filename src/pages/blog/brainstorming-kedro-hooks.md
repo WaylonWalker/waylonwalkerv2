@@ -13,7 +13,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/brainstorming-kedro-hooks.png"
 twitter_cover: ''
-devto-id: ''
 
 ---
 This post is a 🧠 branstorming work in progress.

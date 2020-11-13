@@ -13,7 +13,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/my-chrome-extensions.png"
 twitter_cover: "/static/my-chrome-extensions.png"
-devto-id: ''
 
 ---
 There are many useful chrome extensions out there.  I probably have way too many installed, here are four that I am currently using.
