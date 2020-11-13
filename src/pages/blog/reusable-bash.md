@@ -15,7 +15,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/reusable-bash.png'
 twitter_cover: '/static/reusable-bash.png'
-short_url: ''
 devto-url: ''
 devto-id: ''
 

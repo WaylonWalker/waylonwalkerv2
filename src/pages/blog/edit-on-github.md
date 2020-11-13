@@ -12,7 +12,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/edit-on-github.png'
 twitter_cover: '/static/edit-on-github.png'
-short_url: ''
 devto-url: ''
 devto-id: ''
 

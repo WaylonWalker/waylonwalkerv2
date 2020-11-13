@@ -16,7 +16,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/python-args-kwargs.png'
 twitter_cover: '/static/python-args-kwargs.png'
-short_url: ''
 devto-url: ''
 devto-id: ''
 

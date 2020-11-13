@@ -12,7 +12,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/crush-dev-to-posts.png'
 twitter_cover: '/static/crush-dev-to-posts.png'
-short_url: ''
 devto-url: ''
 devto-id: ''
 

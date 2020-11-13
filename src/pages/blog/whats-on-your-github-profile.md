@@ -12,7 +12,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/whats-on-your-github-profile.png'
 twitter_cover: '/static/whats-on-your-github-profile.png'
-short_url: ''
 devto-url: ''
 devto-id: ''
 

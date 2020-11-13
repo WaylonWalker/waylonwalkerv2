@@ -12,7 +12,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/strip-trailing-whitespace-from-git-projects.png'
 twitter_cover: '/static/strip-trailing-whitespace-from-git-projects.png'
-short_url: ''
 devto-url: ''
 devto-id: ''
 

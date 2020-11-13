@@ -13,7 +13,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/install-miniconda.png'
 twitter_cover: '/static/install-miniconda.png'
-short_url: ''
 devto-url: ''
 devto-id: ''
 

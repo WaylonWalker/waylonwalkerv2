@@ -16,7 +16,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/what-are-github-actions.png"
 twitter_cover: ''
-short_url: ''
 devto-url: ''
 devto-id: ''
 

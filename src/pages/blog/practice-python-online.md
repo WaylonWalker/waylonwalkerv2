@@ -16,7 +16,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/practice-python-online.png'
 twitter_cover: '/static/practice-python-online.png'
-short_url: ''
 devto-url: ''
 devto-id: ''
 

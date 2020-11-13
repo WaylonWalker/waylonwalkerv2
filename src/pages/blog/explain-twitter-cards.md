@@ -14,7 +14,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/explain-twitter-cards.png'
 twitter_cover: '/static/explain-twitter-cards.png'
-short_url: ''
 devto-url: ''
 devto-id: ''
 

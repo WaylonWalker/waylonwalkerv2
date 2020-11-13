@@ -15,7 +15,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/git-diff-branches.png"
 twitter_cover: "/static/git-diff-branches.png"
-short_url: ''
 devto-url: ''
 devto-id: ''
 

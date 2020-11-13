@@ -13,7 +13,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/reset-ipython.png"
 twitter_cover: "/static/reset-ipython.png"
-short_url: ''
 devto-url: ''
 devto-id: ''
 

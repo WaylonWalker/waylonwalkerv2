@@ -12,7 +12,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/16.png"
 twitter_cover: "/static/16.png"
-short_url: ''
 
 ---
 * Learn the business

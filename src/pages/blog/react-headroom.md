@@ -14,7 +14,6 @@ related_post: []
 cover: "/static/react-headroom.png"
 twitter_cover: "/static/react-headroom.png"
   of code. '
-short_url: waylonwalker.com/hdrm
 
 ---
 It was so easy to get a professional looking navbar with just 3 lines of code.  This package seriously is so usable on mobile it is rediculous.  I found this package from [day 4](https://www.gatsbyjs.org/blog/100days/react-component/?utm_campaign=100%20Days%20of%20Gatsby&utm_source=hs_email&utm_medium=email&utm_content=82376619&_hsenc=p2ANqtz-_DBh1A1A-GEy2TujddXq_H1de5wGZ_X6jIqB2wv_PE7QgUk40pfi64jbSVHv-S3bfzKZOQywtoTuup2aeO0o_KpeiF8w&_hsmi=82376619) of the 100 days of gatsby challenge.  It is by the wonderful man who brought us gatsbyjs Kyle Mathews, so you know its gotta be good.

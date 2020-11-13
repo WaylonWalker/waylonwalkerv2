@@ -15,7 +15,6 @@ related_post_body: ''
 related_post: []
 cover: /static/testproject-io-py-actions.png
 twitter_cover: /static/testproject-io-py-actions.png
-short_url: ''
 devto-url: ''
 devto-id: ''
 

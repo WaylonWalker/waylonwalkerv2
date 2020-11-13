@@ -12,7 +12,6 @@ related_post_body: ''
 related_post: []
 cover: ''
 twitter_cover: ''
-short_url: ''
 
 ---
 🏷️ Long variable names are a good thing.  Self documenting code is more important than poorly documented code.  Simply adding a few characters to your variable names can go a long ways.

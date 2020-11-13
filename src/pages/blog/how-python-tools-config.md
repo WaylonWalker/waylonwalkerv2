@@ -12,7 +12,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/how-python-tools-config.png'
 twitter_cover: '/static/how-python-tools-config.png'
-short_url: ''
 devto-url: ''
 devto-id: ''
 
