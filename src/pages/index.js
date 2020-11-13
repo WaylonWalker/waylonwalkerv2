@@ -143,7 +143,10 @@ export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+      filter: { 
+        frontmatter: { templateKey: { eq: "blog-post" }} 
+        fields: {slug:{regex: "^/blog/"}} 
+      }
     ) {
       edges {
         node {
