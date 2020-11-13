@@ -233,7 +233,6 @@ module.exports = {
                     }
                   }
                 }
-              }
             `,
             output: "/blog/rss.xml",
             title: "Waylon Walker's Blog Feed",
