@@ -9,15 +9,17 @@ import BlogPosts from '../components/BlogPosts'
 // import chroma from 'chroma-js'
 
 const BlogPageStyles = styled.div`
-/* max-width: 800px; */
+width: calc(min(1000px, 95vw));
 display: flex;
 justify-content: center;
 flex-direction: column;
 margin: auto;
+color: #e6ddeb;
+
 h1 {
+  /* color: #f9f7fa; */
   text-align: center;
 }
-
 p {
   color: whitesmoke;
   padding: 1rem;
@@ -39,9 +41,9 @@ export default class BlogPage extends React.Component {
     return (
       <Layout>
         <BlogPageStyles>
-          <h1>Notes</h1>
+          <h1>Blog Posts</h1>
           <p>
-            These are less developed ideas of larger topics that may eventually lead to a fully fledged blog post.  This gives me a dumping ground to put ideas and continually develop them.
+            These are less developed ideas of larger topics that may eventually lead to a fully fledged blog post. This gives me a dumping ground to put ideas and continually develop them.
           </p>
           <BlogPosts posts={posts} />
         </BlogPageStyles>
@@ -52,7 +54,13 @@ export default class BlogPage extends React.Component {
 
 export const pageQuery = graphql`
 query NotesQuery {
-  allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, filter: { frontmatter: { templateKey: { eq: "notes" } } }) {
+  allMarkdownRemark(
+    sort: { order: DESC, fields: [frontmatter___date] },
+    filter: { 
+      frontmatter: { templateKey: { eq: "blog-post" }} 
+      fields: {slug:{regex: "^/notes/"}} 
+    }
+  ) {
     edges {
       node {
         excerpt(pruneLength: 400)
