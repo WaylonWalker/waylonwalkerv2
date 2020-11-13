@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-  recently bit me.
 path: bind-dynamic-lambdas
 title: 'TIL: Bind arguments to dynamically generated lambdas in python'
 date: 2020-04-27T12:13:00.000+00:00

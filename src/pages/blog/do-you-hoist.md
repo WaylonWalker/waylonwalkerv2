@@ -2,8 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-  like a really cool feature in any language that uses it, but I dont really notice
-  it in use.
 path: do-you-hoist
 title: Do You Hoist
 date: 2020-02-25T12:52:00Z
