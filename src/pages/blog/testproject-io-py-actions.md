@@ -11,8 +11,6 @@ description: As I continue to build out
     https://waylonwalker.com/ I sometimes run into some
     errors that are not caught becuase I do not have good testing implemented. I
     want to explore some integration testing options using GitHub actions.
-related_post_body: ''
-related_post: []
 cover: /static/testproject-io-py-actions.png
 
 ---

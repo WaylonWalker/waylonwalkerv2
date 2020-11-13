@@ -7,8 +7,6 @@ title: Gatsby Scripts with onload
 date: 2020-05-22T05:00:00Z
 status: published
 description: ''
-related_post_body: ''
-related_post: []
 cover: ''
 
 ---

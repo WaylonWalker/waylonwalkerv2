@@ -9,8 +9,6 @@ date: 2020-05-22T22:02:00.000+00:00
 status: published
 description: "This post is a \U0001F9E0 branstorming work in progress, I will likely
   use it as a storage location/brain dump of hook ideas."
-related_post_body: ''
-related_post: []
 cover: "/static/brainstorming-kedro-hooks.png"
 
 ---

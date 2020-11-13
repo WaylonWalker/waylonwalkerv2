@@ -9,8 +9,6 @@ date: 2020-02-11T12:57:00.000+00:00
 status: published
 description: It was so easy to get a professional looking navbar with just 3 lines
   of code.  This thing is so usable on mobile.
-related_post_body: ''
-related_post: []
 cover: "/static/react-headroom.png"
   of code. '
 

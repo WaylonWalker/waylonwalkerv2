@@ -7,8 +7,6 @@ title: Reader
 date: 2020-07-12T05:00:00.000+00:00
 status: published
 description: Notes about my reader idea
-related_post_body: ''
-related_post: []
 cover: ""
 
 ---

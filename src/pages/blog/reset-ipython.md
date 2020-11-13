@@ -9,8 +9,6 @@ date: 2020-10-01T05:00:00Z
 status: published
 description: Today we ran into an issue where we had a one-off script that just needed
   to work, but it was just chewing threw memory like nothing.
-related_post_body: ''
-related_post: []
 cover: "/static/reset-ipython.png"
 
 ---

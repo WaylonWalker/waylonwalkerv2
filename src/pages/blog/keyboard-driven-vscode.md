@@ -12,7 +12,6 @@ tags:
 - vscode
 related_post:
 related_post_label: ''
-related_post_body: ''
 
 ---
 > Throw that mouse Away its time to setup some keyboard shortcuts.

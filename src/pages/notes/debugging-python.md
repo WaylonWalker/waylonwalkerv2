@@ -7,8 +7,6 @@ title: Debugging Python
 date: 2019-10-01T05:00:00Z
 status: published
 description: Debugging Python
-related_post_body: ''
-related_post: []
 cover: "/static/jayden-yoon-19DxK0IG-hQ-unsplash.jpg"
 
 ---

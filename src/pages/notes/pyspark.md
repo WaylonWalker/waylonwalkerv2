@@ -7,8 +7,6 @@ title: Pyspark
 date: 2019-09-22T05:00:00Z
 status: ''
 description: ''
-related_post_body: ''
-related_post: []
 cover: "/static/joshua-newton-RPUI6gtn49g-unsplash.jpg"
 
 ---

@@ -9,8 +9,6 @@ date: 2020-08-10T05:00:00Z
 status: published
 description: Installing miniconda from only the command line can be a bit of
     an intimidating task your first time. Lets walk through how to do it.
-related_post_body: ''
-related_post: []
 cover: '/static/install-miniconda.png'
 
 ---

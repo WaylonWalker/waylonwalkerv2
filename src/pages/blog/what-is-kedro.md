@@ -13,8 +13,6 @@ description: Kedro is an open source data pipeline framework.  It provides
   includes really great ways to manipulate `catalogs` and `pipelines`.  This
   article will cover the 10K view of kedro, future articles will dive deper
   into each one.
-related_post_body: ''
-related_post: []
 cover: "/static/what-is-kedro.png"
 
 ---

@@ -14,8 +14,6 @@ description: Often when reading through javascript examples you will find some
     important to understand the difference between them because it is likely
     that you will find code examples of both and trying to edit code written
     differently than you're used to may have unintended consequences.
-related_post_body: ''
-related_post: []
 cover: "/static/explicit-vs-implicit-returns-in-javascript.png"
 
 ---

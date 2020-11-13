@@ -8,8 +8,6 @@ title: Long variable names are good
 date: 2020-02-24T06:00:00Z
 status: 'false'
 description: ''
-related_post_body: ''
-related_post: []
 cover: ''
 
 ---

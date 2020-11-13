@@ -8,8 +8,6 @@ date: 2020-08-08T05:00:00Z
 status: published
 description: In my upcoming free kedro course, you can learn how to start building
   pipelines in 5 days.
-related_post_body: ''
-related_post: []
 cover: ''
 
 ---

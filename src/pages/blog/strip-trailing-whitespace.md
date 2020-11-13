@@ -8,8 +8,6 @@ title: Strip Trailing Whitespace from Git projects
 date: 2020-09-30T05:00:00Z
 status: published
 description: 'A common linting error thrown by various linters is for trailing whitespace. I most often use flake8.  Having an automated way to fix linting errors such as trailing whitespace is invaluable.'
-related_post_body: ''
-related_post: []
 cover: '/static/strip-trailing-whitespace-from-git-projects.png'
 
 ---

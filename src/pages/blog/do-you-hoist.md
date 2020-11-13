@@ -12,8 +12,6 @@ status: published
 description: Do you have any use cases that you use hoising?  Why?  It seems like
   a really cool feature in any language that uses it, but I dont really notice it
   in use.
-related_post_body: ''
-related_post: []
 cover: "/static/do-you-hoist.png"
 
 ---

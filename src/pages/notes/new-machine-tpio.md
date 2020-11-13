@@ -8,8 +8,6 @@ date: 2020-07-25T05:00:00.000+00:00
 status: published
 description: Today I setup a new machine on Digital Ocean to use with
   TestProject.io, Here are my installation notes.
-related_post_body: ''
-related_post: []
 cover: /static/new-machine-tpio.png
 
 ---

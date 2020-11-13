@@ -14,8 +14,6 @@ description:
   generally have such a simple cli I have opted to use the cli for most of
   these, that way I know exactly what is happening and have more control over
   it if I need.
-related_post_body: ''
-related_post: []
 cover: "/static/four-github-actions-python.png"
 
 ---

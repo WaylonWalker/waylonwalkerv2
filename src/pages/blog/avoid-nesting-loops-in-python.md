@@ -8,8 +8,6 @@ title: Avoid Nesting Loops in Python
 date: 2020-10-11T05:00:00.000+00:00
 status: draft
 description: ''
-related_post_body: ''
-related_post: []
 cover: ''
 
 ---

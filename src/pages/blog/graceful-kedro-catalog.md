@@ -8,8 +8,6 @@ title: Gracefully adopt kedro, the catalog
 date: 2020-06-29T03:00:00Z
 status: published
 description:
-related_post_body: ''
-related_post: []
 cover: '/static/graceful-kedro-catalog.png'
 
 ---

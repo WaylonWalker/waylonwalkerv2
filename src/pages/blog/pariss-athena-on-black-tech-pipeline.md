@@ -14,8 +14,6 @@ description: I was particularly inspired by @chantastic episode 103 of the
     not only is she helping them get jobs but acting as a mentor for their first
     few months on the job to make sure that they are able to find their place and
     fit in.
-related_post_body: ''
-related_post: []
 cover: '/static/pariss-athena-on-black-tech-pipeline.png'
 
 ---

@@ -8,8 +8,6 @@ title: What is Refactoring
 date: 2020-02-20T22:06:00Z
 status: 'false'
 description: ''
-related_post_body: ''
-related_post: []
 cover: ''
 
 ---

@@ -12,8 +12,6 @@ description: I am looking into a way to replace my google reader experience
     learning how to parse feeds with python, and without much previous knowledge
     it proved to be much easier than anticipated thanks to the `feedparser`
     library.
-related_post_body: ''
-related_post: []
 cover: '/static/parsing-rss-python.png'
 
 ---

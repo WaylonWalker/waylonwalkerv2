@@ -12,8 +12,6 @@ description: GitHub actions are an amazing tool that allows us to run code based
   on triggers inside of our repo.  Their is a large and growing community of actions
   inside the marketplace to use with very little effort.  Best of all they are free
   for public repositories, and private repos have a very generous free tier.
-related_post_body: ''
-related_post: []
 cover: "/static/what-are-github-actions.png"
 
 ---

@@ -7,8 +7,6 @@ title: cmd.exe tips
 date: 2020-01-23T15:18:45.000+00:00
 status: published
 description: cmd.exe tips
-related_post_body: ''
-related_post: []
 cover: "/static/2020-01-26 16-43-59_Start.png"
 
 ---

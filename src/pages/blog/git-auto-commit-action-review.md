@@ -10,8 +10,6 @@ status: published
 description: It's a really cool GitHub action that will automatically commit
     files changed during the action. I was using this to render a new readme
     based on a template.
-related_post_body: ''
-related_post: []
 cover: '/static/git-auto-commit-action-review.png'
 read_more_cover: /static/git-auto-commit-action-review-rm.png
 

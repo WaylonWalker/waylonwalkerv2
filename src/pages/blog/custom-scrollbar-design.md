@@ -10,8 +10,6 @@ status: published
 description: Getting a custom scrollbar on your site makes it stand out a bit compared
   to the very plain stock one that are on most sites.  This is how I set mine up on
   my gatsby site.
-related_post_body: ''
-related_post: []
 cover: "/static/custom-scrollbar-wtih-gatsbyjs.jpg"
 
 ---

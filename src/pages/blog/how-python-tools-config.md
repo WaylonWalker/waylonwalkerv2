@@ -8,8 +8,6 @@ title: Refactoring your blog urls
 date: 2020-07-21T05:00:00Z
 status: published
 description:
-related_post_body: ''
-related_post: []
 cover: '/static/how-python-tools-config.png'
 
 ---

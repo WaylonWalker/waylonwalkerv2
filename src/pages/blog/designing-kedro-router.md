@@ -10,8 +10,6 @@ status: published
 description: I released a router-like plugin for kedro back in April 2020.
     This was not the first design, the idea actually came from one of the QB
     folks who taught me kedro nearly a year before.
-related_post_body: ''
-related_post: []
 cover: "/static/designing-kedro-router.png"
 
 ---

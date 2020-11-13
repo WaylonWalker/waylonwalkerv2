@@ -12,8 +12,6 @@ description: I just did a quick refactoring of my JAMStack blog urls.  Some
    others were rediculously long.  I've been using forestry as my CMS, I write
    many of my posts there, and sometimes it picks some crazy file names
    (based on my titles).  It was time to refactor.
-related_post_body: ''
-related_post: []
 cover: '/static/gracefully-redirect.png'
 
 ---

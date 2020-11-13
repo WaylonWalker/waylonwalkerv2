@@ -12,8 +12,6 @@ description: GitHub actions can give you confidence that your site is up and run
   with the latests JavaScript packages, does not have broken links, and can even take
   screenshots of what your website looks like on different screen sizes and operating
   systems.
-related_post_body: ''
-related_post: []
 cover: "/static/four-github-actions-website.png"
 
 ---

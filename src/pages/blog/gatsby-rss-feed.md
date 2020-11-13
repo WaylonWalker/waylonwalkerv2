@@ -7,8 +7,6 @@ title: RSS feed for your Gatsby Site
 date: 2020-01-21T13:58:59Z
 status: draft
 description: Add an rss feed to your Gatsby Site
-related_post_body: ''
-related_post: []
 cover: ''
 
 ---

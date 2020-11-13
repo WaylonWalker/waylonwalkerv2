@@ -7,8 +7,6 @@ title: Digital Ocean
 date: 2019-09-22T05:00:00Z
 status: published
 description: ''
-related_post_body: ''
-related_post: []
 cover: "/static/steve-halama-kfwQvL6niR8-unsplash.jpg"
 
 ---

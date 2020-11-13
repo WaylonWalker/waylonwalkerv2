@@ -12,8 +12,6 @@ description: When learning a new skill it's important to practice along the
     up. An easy way to show up to practice with python is to use an online repl.
     With these you can try out something quick. Sometimes I see snippets from
     blogs or tweets and I need to try the out for myself to really understand.
-related_post_body: ''
-related_post: []
 cover: '/static/practice-python-online.png'
 
 ---

@@ -7,7 +7,6 @@ title: Personal URL shortener with Netlify Redirects
 date: 2020-01-29T06:00:00.000+00:00
 status: published
 description: Personal URL shortener with Netlify Redirects
-related_post_body: ''
 related_post:
 # cover: "/static/ozark-drones-oS8E1274cpY-unsplash.jpg"
 cover: "/static/URL shortener.png"

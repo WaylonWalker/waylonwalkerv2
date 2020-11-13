@@ -12,8 +12,6 @@ date: 2020-02-17T13:02:00Z
 status: published
 description: I documented the story of my 2020 waylonwalker.com redesign on my blog.  This
   post walks through the tools and inspiration for the card design.
-related_post_body: ''
-related_post: []
 cover: "/static/2020-rebrand.png"
 
 ---
