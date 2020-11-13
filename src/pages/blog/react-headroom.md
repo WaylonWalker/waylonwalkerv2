@@ -13,11 +13,7 @@ related_post_body: ''
 related_post: []
 cover: "/static/react-headroom.png"
 twitter_cover: "/static/react-headroom.png"
-twitter_week_1: 'It was so easy to get a professional looking navbar with just 3 lines
   of code. '
-twitter_week_2: react-headroom makes navbars so pleasant  to use on a mobile device
-twitter_month_1: ''
-twitter_month_3: ''
 short_url: waylonwalker.com/hdrm
 
 ---

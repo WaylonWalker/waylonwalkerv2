@@ -14,10 +14,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/send-email-with-github-actions.png"
 twitter_cover: ''
-twitter_week_1: ''
-twitter_week_2: ''
-twitter_month_1: ''
-twitter_month_3: ''
 short_url: ''
 devto-url: ''
 devto-id: ''

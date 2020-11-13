@@ -13,10 +13,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/reset-ipython.png"
 twitter_cover: "/static/reset-ipython.png"
-twitter_week_1: ''
-twitter_week_2: ''
-twitter_month_1: ''
-twitter_month_3: ''
 short_url: ''
 devto-url: ''
 devto-id: ''

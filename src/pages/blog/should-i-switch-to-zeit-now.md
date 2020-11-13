@@ -13,10 +13,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/should-i-switch-to-zeit-now.png"
 twitter_cover: "/static/should-i-switch-to-zeit-now.png"
-twitter_week_1: Where do you host your personal site?
-twitter_week_2: Is anyone using Zeit Now to how their personal site?
-twitter_month_1: ''
-twitter_month_3: ''
 short_url: ''
 
 ---

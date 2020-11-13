@@ -17,10 +17,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/what-is-kedro.png"
 twitter_cover: "/static/what-is-kedro.png"
-twitter_week_1: ''
-twitter_week_2: ''
-twitter_month_1: ''
-twitter_month_3: ''
 short_url: ''
 devto-url: https://dev.to/waylonwalker/what-is-kedro-lob
 devto-id: "267197"
