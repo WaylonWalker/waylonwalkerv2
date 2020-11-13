@@ -1,5 +1,5 @@
 ---
-templateKey: notes
+templateKey: blog-post
 path: bash
 title: Bash
 date: 2020-11-12T05:00:00.000+00:00
