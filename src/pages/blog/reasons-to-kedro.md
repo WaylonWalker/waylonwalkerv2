@@ -12,7 +12,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/reasons-to-kedro.png"
 twitter_cover: "/static/reasons-to-kedro.png"
-devto-url: ''
 devto-id: ''
 
 ---

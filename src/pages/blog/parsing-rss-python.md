@@ -16,7 +16,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/parsing-rss-python.png'
 twitter_cover: '/static/parsing-rss-python.png'
-devto-url: ''
 devto-id: ''
 
 ---

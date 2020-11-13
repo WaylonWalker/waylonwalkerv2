@@ -17,7 +17,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/dev-to-comments-from-url.png"
 twitter_cover: ''
-devto-url: ''
 devto-id: ''
 
 ---

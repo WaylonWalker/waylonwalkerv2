@@ -12,7 +12,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/interrogate-python.png"
 twitter_cover: ''
-devto-url: ''
 devto-id: ''
 
 ---

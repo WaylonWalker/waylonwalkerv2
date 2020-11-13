@@ -14,7 +14,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/send-email-with-github-actions.png"
 twitter_cover: ''
-devto-url: ''
 devto-id: ''
 
 ---

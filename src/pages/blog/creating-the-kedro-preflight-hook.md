@@ -17,7 +17,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/kedro-hooks.png"
 twitter_cover: ''
-devto-url: ''
 devto-id: ''
 
 ---

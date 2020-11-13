@@ -17,7 +17,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/pre-commit-is-awesome.png"
 twitter_cover: "/static/pre-commit-is-awesome.png"
-devto-url: ''
 devto-id: ''
 
 ---

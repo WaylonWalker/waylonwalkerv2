@@ -15,7 +15,6 @@ category: ''
 slug: ''
 summary: ''
 twitter_announcement: ''
-devto-url: ''
 devto-id: ''
 
 ---

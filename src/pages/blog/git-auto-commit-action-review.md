@@ -15,7 +15,6 @@ related_post: []
 cover: '/static/git-auto-commit-action-review.png'
 twitter_cover: '/static/git-auto-commit-action-review.png'
 read_more_cover: /static/git-auto-commit-action-review-rm.png
-devto-url: ''
 devto-id: ''
 
 ---

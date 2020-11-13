@@ -13,7 +13,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/whats-new-in-kedro-0164.png'
 twitter_cover: '/static/whats-new-in-kedro-0164.png'
-devto-url: ''
 devto-id: ''
 
 ---
