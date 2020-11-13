@@ -9,8 +9,6 @@ date: 2020-08-01T05:00:00Z
 status: published
 description: If we take a look at the release notes I see one **major**
     feature improvement on the list, auto-discovery of hooks.
-related_post_body: ''
-related_post: []
 cover: '/static/whats-new-in-kedro-0164.png'
 
 ---

@@ -10,8 +10,6 @@ status: published
 description: This day 8 years ago I started my first day as a Mechanical
   Engineer. I am so grateful for this journey that I have been able to have.
   There is no way that I could have planned this journey from the beginning.
-related_post_body: ''
-related_post: []
 cover: '/static/eight-years-cat.png'
 
 ---

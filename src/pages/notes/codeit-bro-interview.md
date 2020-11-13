@@ -7,8 +7,6 @@ title: Codeit Bro Interview
 date: 2020-11-02T06:00:00.000+00:00
 status: published
 description: ''
-related_post_body: ''
-related_post: []
 cover: ''
 
 ---

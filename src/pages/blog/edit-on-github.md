@@ -8,8 +8,6 @@ title: Edit On GitHub
 date: 2020-07-18T05:00:00Z
 status: published
 description: I recently added a button to my blog, and subsequently my posts on [DEV.to](https://dev.to/waylonwalker).  It's the best thing that I have done for it in a while.  
-related_post_body: ''
-related_post: []
 cover: '/static/edit-on-github.png'
 
 ---

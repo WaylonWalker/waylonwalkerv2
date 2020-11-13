@@ -13,8 +13,6 @@ description: Kedro Hooks Intro - kedro hooks are an exciting upcoming feature of
   hooks, that let you hook into various state of react web components.  This is going
   to make kedro so extendable by the community.  I am super pumped to see what the
   community is able to do with this ability.
-related_post_body: ''
-related_post: []
 cover: "/static/kedro-hooks.png"
 
 ---

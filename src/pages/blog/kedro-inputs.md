@@ -11,8 +11,6 @@ description: Passing inputs into kedro is a key concept. Understanding how it
     accepts a single catalog key as input is quite trivial that easily makes
     sense, but passing a list or dictionary of catalog entries can be a bit
     confusing.
-related_post_body: ''
-related_post: []
 cover: '/static/kedro-inputs.png'
 
 ---

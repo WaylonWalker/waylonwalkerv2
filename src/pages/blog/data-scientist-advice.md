@@ -8,8 +8,6 @@ title: What is YOUR Advice for New Data Scientists
 date: 2020-02-26T12:55:00Z
 status: published
 description: What is YOUR Advice for New Data Scientists
-related_post_body: ''
-related_post: []
 cover: "/static/16.png"
 
 ---

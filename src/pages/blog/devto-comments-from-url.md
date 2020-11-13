@@ -13,8 +13,6 @@ description: "I want to incorporate some of the wonderful comments, \U0001F495, 
   along and let's get there together.  By the end of this post, I will have a way
   to get comments from posts on the client-side thanks to the wonderfully open dev.to
   API."
-related_post_body: ''
-related_post: []
 cover: "/static/dev-to-comments-from-url.png"
 
 ---

@@ -8,8 +8,6 @@ title: Building kedro.dev
 date: 2020-06-05T05:00:00Z
 status: published
 description: This is my journey to building up the community page.
-related_post_body: ''
-related_post: []
 cover: ''
 
 ---

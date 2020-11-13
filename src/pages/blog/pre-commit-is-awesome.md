@@ -13,8 +13,6 @@ description: I recently discovered the ✨ awesomeness that is pre-commit. I ste
   will even automatically fix them for you. Out of the box, it will do things like
   automatically trim extra whitespace, fix file endings, and ensure file sizes are
   not too large for git.
-related_post_body: ''
-related_post: []
 cover: "/static/pre-commit-is-awesome.png"
 
 ---

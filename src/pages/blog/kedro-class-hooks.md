@@ -11,8 +11,6 @@ description: There are two main ways to create kedro hooks, with modules and cla
   one still uses the same verbiage as the function/method names.  Class hooks seem
   a bit special as they give you a way to configure them so that they are a bit more
   generally useful.
-related_post_body: ''
-related_post: []
 cover: "/static/configurable-kedro-hooks.png"
 
 ---

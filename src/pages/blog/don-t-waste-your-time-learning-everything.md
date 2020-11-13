@@ -9,8 +9,6 @@ date: 2020-02-19T06:00:00Z
 status: published
 description: Stick to what you know, and learn a little bit of something new every
   day.
-related_post_body: ''
-related_post: []
 cover: "/static/dev.to.png"
 
 ---

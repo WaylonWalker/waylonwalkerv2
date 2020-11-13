@@ -7,8 +7,6 @@ title: Kedro Catalog
 date: 2020-07-24T05:00:00Z
 status: published
 description: I am exploring a kedro catalog meta data hook
-related_post_body: ''
-related_post: []
 cover: ''
 
 ---

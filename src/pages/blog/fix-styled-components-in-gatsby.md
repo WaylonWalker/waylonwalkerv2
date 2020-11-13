@@ -8,8 +8,6 @@ title: I finally fixed my Styled-Components in gatsby.js
 date: 2020-02-08T15:07:00.000+00:00
 status: published
 description: I finally fixed my Styled-Components in gatsby.js
-related_post_body: ''
-related_post: []
 cover: "/static/fix-styled-components.png"
 
 ---

@@ -11,8 +11,6 @@ description: Getting up and going with a brand new [kedro](https://kedro.readthe
   is super simple, thanks to the help of the `kedro new` command.  The ability to
   add an example pipeline from the start makes it that much easier to get going and
   have a template to follow for your own projects.
-related_post_body: ''
-related_post: []
 cover: "/static/create-new-kedro-project.png"
 
 ---

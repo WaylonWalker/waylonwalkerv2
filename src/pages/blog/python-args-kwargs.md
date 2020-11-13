@@ -12,8 +12,6 @@ description: Python `*args` and `**kwargs` are super useful tools, that when
   manual conversions from a dataset to function arguments can be packed and
   unpacked into lists or dictionaries. Beware though, this power **can** lead
   to some really unreadable/unusable code if done wrong.
-related_post_body: ''
-related_post: []
 cover: '/static/python-args-kwargs.png'
 
 ---

@@ -20,7 +20,6 @@ tags:
 - code
 - quickie
 - datascience
-related_post_body: Add a progress bar to your tasks using tqdm.
 related_post_label: ''
 
 ---

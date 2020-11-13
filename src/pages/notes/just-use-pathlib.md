@@ -10,8 +10,6 @@ title: Just Use Pathlib
 date: 2019-09-26T05:00:00.000+00:00
 status: published
 description: Pathlib is an amazing cross-platform path tool.
-related_post_body: ''
-related_post: []
 cover: ''
 
 ---

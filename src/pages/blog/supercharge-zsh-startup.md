@@ -13,8 +13,6 @@ description: I have been using oh-my-zsh successfully for about 2 years now.
     benefits from all of the autocompletions, plugins, and shortcuts that
     oh-my-zsh brings.  But to only jump in to run a handful of commands is
     infuriating.
-related_post_body: ''
-related_post: []
 cover: "/static/max-larochelle-uu-Jw5SunYI-unsplash.jpg"
 
 ---

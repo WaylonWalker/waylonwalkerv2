@@ -11,8 +11,6 @@ description: It's been a long time coming.  We use some very harsh language
     within tech so much sometimes that we become numb to it.  It's time to do
     my very small part in this movement and purge this language from my active
     repos starting with this blog right here.
-related_post_body: ''
-related_post: []
 cover: '/static/master-no-more.png'
 
 ---

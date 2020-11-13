@@ -9,8 +9,6 @@ date: 2020-05-12T22:05:00Z
 status: published
 description: I always struggle to find a good reference of ascii characters.  This
   is a compilation of my most wanted ascii characters.
-related_post_body: ''
-related_post: []
 cover: "/static/ascii-boxes.png"
 
 ---

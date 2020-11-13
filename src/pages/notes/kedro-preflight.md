@@ -7,8 +7,6 @@ title: Kedro Preflight
 date: 2020-05-09T15:01:00Z
 status: published
 description: run checks before running the pipeline
-related_post_body: ''
-related_post: []
 cover: ''
 
 ---

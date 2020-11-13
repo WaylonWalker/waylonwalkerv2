@@ -7,8 +7,6 @@ title: simple click
 date: 2020-01-29T06:00:00.000+00:00
 status: published
 description: Add helpful cli to your python libraries... All of them!
-related_post_body: ''
-related_post: []
 cover: "/static/2020-02-02 09-40-45_Start.png"
 category: ''
 slug: ''

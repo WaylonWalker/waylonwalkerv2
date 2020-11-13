@@ -9,8 +9,6 @@ date: 2020-01-10T06:00:00Z
 status: published
 description: What is something that you recently learned that you wish you would have
   learned or understood earlier?
-related_post_body: ''
-related_post: []
 cover: "/static/david-travis-aVvZJC0ynBQ-unsplash.jpg"
 
 ---

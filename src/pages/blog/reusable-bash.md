@@ -11,8 +11,6 @@ description: Bash is a language that is quite useful for automation no matter
     what language you write in. Bash can do so many powerful system-level tasks.
     Even if you are on windows these days you are likely to come across bash
     inside a cloud VM, Continuous Integration, or even inside of docker.
-related_post_body: ''
-related_post: []
 cover: '/static/reusable-bash.png'
 
 ---

@@ -12,8 +12,6 @@ description: Kedro provides an efficient way to build out data catalogs with the
   the most part you just need to tell Kedro what connector to use and its filepath.  When
   running Kedro takes care of all of the read/write, you just reference the catalog
   key.
-related_post_body: ''
-related_post: []
 cover: "/static/create-custom-kedro-dataset.png"
 
 ---

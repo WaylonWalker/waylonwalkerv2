@@ -8,8 +8,6 @@ title: Three things to Automate with Python using Pandas
 date: 2020-08-11T05:00:00.000+00:00
 status: published
 description: Here are three things that I see my non programming counterparts doing every single day.  These really sum up so much of what folks do within an office.
-related_post_body: ''
-related_post: []
 cover: "/static/3-things-to-automate-with-python.png"
 
 ---

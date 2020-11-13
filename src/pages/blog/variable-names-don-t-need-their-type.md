@@ -9,8 +9,6 @@ date: 2020-04-08T11:03:00Z
 status: published
 description: So often I see a variables `type()` inside of its name and it hurts me
   a little inside.  Tell me I'm right or prove me wrong below.
-related_post_body: ''
-related_post: []
 cover: "/static/career questions for data folks (2).png"
 
 ---

@@ -8,8 +8,6 @@ title: How I Built My GitHub Profile
 date: 2020-07-10T03:00:00Z
 status: published
 description:
-related_post_body: ''
-related_post: []
 cover: '/static/my-github-profile.png'
 
 

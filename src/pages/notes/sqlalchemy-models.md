@@ -7,8 +7,6 @@ title: SqlAlchemy Models
 date: 2019-12-21T05:00:00Z
 status: published
 description: My Notes about using sqlalchemy models
-related_post_body: ''
-related_post: []
 cover: "/static/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg"
 ---
 

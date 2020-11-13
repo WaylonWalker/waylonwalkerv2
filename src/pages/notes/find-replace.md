@@ -7,7 +7,6 @@ status: published
 description: notes about find and replace techniques
 cover:
 twitter_cover:
-related_post: 
 tags:
 
 ---

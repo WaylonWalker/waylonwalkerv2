@@ -8,8 +8,6 @@ title: Interrogate is a pretty awesome, brand new, cli for Python packages
 date: 2020-05-15T03:00:00.000+00:00
 status: published
 description: dead simple docstring coverage for your python project
-related_post_body: ''
-related_post: []
 cover: "/static/interrogate-python.png"
 
 ---
