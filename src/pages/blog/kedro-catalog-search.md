@@ -15,7 +15,6 @@ related_post_body: ''
 related_post: []
 cover: '/static/kedro-catalog-search.png'
 twitter_cover: '/static/kedro-catalog-search.png'
-short_url: ''
 devto-url: ''
 devto-id: ''
 

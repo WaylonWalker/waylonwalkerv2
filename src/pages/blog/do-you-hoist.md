@@ -16,7 +16,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/do-you-hoist.png"
 twitter_cover: ''
-short_url: ''
 
 ---
 I am working through Wes Bos's [beginnerjavascript.com/](http://beginnerjavascript.com/) I just hit module 18 on hoisting.  It's something that I always knew was there, Its not something I typically see used or use myself.

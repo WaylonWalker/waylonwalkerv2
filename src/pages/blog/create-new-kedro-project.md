@@ -15,7 +15,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/create-new-kedro-project.png"
 twitter_cover: "/static/create-new-kedro-project.png"
-short_url: ''
 devto-url: ''
 devto-id: ''
 

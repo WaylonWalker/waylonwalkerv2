@@ -18,7 +18,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/explicit-vs-implicit-returns-in-javascript.png"
 twitter_cover: "/static/explicit-vs-implicit-returns-in-javascript.png"
-short_url: ''
 devto-url: ''
 devto-id: ''
 

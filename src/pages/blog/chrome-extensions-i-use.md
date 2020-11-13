@@ -13,7 +13,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/my-chrome-extensions.png"
 twitter_cover: "/static/my-chrome-extensions.png"
-short_url: ''
 devto-url: ''
 devto-id: ''
 

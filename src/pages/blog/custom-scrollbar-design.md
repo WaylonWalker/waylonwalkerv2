@@ -14,7 +14,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/custom-scrollbar-wtih-gatsbyjs.jpg"
 twitter_cover: "/static/custom-scrollbar-wtih-gatsbyjs.jpg"
-short_url: ''
 
 ---
 Inspired by Wes Bos's new [uses.tech](https://uses.tech) I wanted a custom scrollbar on my personal site.  I had tried to do it in the past, but gave up after it was not working.

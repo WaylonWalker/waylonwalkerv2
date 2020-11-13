@@ -13,7 +13,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/should-i-switch-to-zeit-now.png"
 twitter_cover: "/static/should-i-switch-to-zeit-now.png"
-short_url: ''
 
 ---
 # Netlify

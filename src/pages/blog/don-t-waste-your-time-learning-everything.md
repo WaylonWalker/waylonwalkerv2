@@ -13,7 +13,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/dev.to.png"
 twitter_cover: "/static/dev.to.png"
-short_url: ''
 
 ---
 > # "Don’t waste your time learning everything."

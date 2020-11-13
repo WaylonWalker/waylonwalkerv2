@@ -16,7 +16,6 @@ related_post_body: ''
 related_post: []
 cover: "/static/2020-rebrand.png"
 twitter_cover: "/static/2020-rebrand.png"
-short_url: ''
 
 ---
 Moving into 2020 I have been really leaning on using purple as my theme color everywhere more and more.   Its time for an update to my personal site, not just because it feels plain, not just because the cover art I am using for dev.to doesn't fit my current card layout, but because I feel **inspired** and I **want** to.
