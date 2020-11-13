@@ -2,10 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-twitter_announcement: |-
-  Check out find-kedro
-
-  waylonwalker.com/fkre
 path: find-kedro-release
 title: "\U0001F4E2 Announcing find-kedro"
 date: 2020-05-04T11:53:00Z

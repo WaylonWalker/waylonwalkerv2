@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-twitter_announcement: I just dropped a new post check it out.
 path: productive-one-on-one
 title: Productive one on one
 date: 2020-02-24T12:53:00Z

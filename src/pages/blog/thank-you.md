@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-twitter_announcement: I just dropped a new post check it out.
 path: thank-you
 title: Thanks For Subscribing
 date: 2020-05-20T10:00:00Z

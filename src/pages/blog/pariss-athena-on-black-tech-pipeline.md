@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['blog', 'JAMStack', 'netlify']
-twitter_announcement: I just dropped a new post check it out.
 path: pariss-athena-on-black-tech-pipeline
 title: Black Tech Pipeline
 date: 2020-08-03T05:00:00Z

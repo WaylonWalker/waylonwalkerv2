@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-twitter_announcement: I just dropped a new post check it out.
 path: what-is-your-advice-for-new-data-scientists
 title: What is YOUR Advice for New Data Scientists
 date: 2020-02-26T12:55:00Z

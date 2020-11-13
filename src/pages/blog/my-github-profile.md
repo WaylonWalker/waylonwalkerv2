@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['blog', 'JAMStack', 'netlify']
-twitter_announcement: I just dropped a new post check it out.
 path: my-github-profile
 title: How I Built My GitHub Profile
 date: 2020-07-10T03:00:00Z

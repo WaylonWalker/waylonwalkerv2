@@ -11,7 +11,6 @@ cover: "/static/2020-02-02 09-40-45_Start.png"
 category: ''
 slug: ''
 summary: ''
-twitter_announcement: ''
 
 ---
 cli tools are super handy and easy to add to your python libraries to supercharge them. Even if your library is not a cli tool there are a number of things that a cli can do to your library.

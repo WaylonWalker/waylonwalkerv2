@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-twitter_announcement: I just dropped a new post check it out.
 path: fix-git-commit-author
 title: Fix git commit author
 date: 2020-10-17T05:00:00.000+00:00

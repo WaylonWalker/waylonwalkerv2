@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['python', 'kedro',]
-twitter_announcement: I just dropped a new post check it out.
 path: whats-new-in-kedro-0166
 title: What's New in Kedro 0.16.6
 date: 2020-10-25T05:00:00Z

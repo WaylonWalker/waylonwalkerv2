@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['python',]
-twitter_announcement: I just dropped a new post check it out.
 path: testproject-io-py-actions
 title: Integration testing with Python, TestProject.io, and GitHub Actions
 date: 2020-07-27T05:00:00Z

@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['blog', 'twitter']
-twitter_announcement: I just dropped a new post check it out.
 path: whats-on-your-github-profile
 title: 🙋‍♂️ Can Anyone Explain Twitter Cards to me?
 date: 2020-07-11T03:00:00Z
