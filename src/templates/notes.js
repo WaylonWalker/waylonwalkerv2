@@ -105,11 +105,9 @@ class BlogPostTemplate extends React.Component {
       fluidCover,
       date,
       // helmet,
-      twitter_cover,
     } = this.props
     // const PostContent = contentComponent || Content
 
-    const twitterImage = twitter_cover !== undefined ? twitter_cover.src : cover.src
 
     return (
       <>
@@ -122,10 +120,10 @@ class BlogPostTemplate extends React.Component {
             { name: 'og:article:published_time', content: date },
             { name: 'og:article:modified_time', content: date },
             { name: 'og:description', content: description },
-            { name: 'og:image', content: 'https://waylonwalker.com' + twitterImage },
+            { name: 'og:image', content: 'https://waylonwalker.com' + cover.src },
             { name: 'twitter:title', content: title + ' | Waylon Walker' },
             { name: 'twitter:card', content: 'summary_large_image' },
-            { name: 'twitter:image', content: 'https://waylonwalker.com' + twitterImage },
+            { name: 'twitter:image', content: 'https://waylonwalker.com' + cover.src },
             { name: 'twitter:description', content: description },
           ]}
 
@@ -174,7 +172,6 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
-  const twitter_cover = post.frontmatter.twitter_cover !== null ? post.frontmatter.twitter_cover.childImageSharp.fixed : post.frontmatter.cover !== null ? post.frontmatter.cover.childImageSharp.fixed : ''
 
   return (
     <Layout description={post.frontmatter.description} title={post.frontmatter.title} keywords={post.frontmatter.tags} time={post.frontmatter.date} url={`https://cuttinscrap.com${post.frontmatter.path}`}>
@@ -187,7 +184,6 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         cover={post.frontmatter.cover !== null ? post.frontmatter.cover.childImageSharp.fixed : ''}
-        twitter_cover={twitter_cover}
         date={post.frontmatter.date}
       />
     </Layout>
@@ -219,14 +215,6 @@ export const pageQuery = graphql`
         description
         # tags
         path
-        twitter_cover {
-          absolutePath
-          childImageSharp {
-            fixed(width: 800, height: 418) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-         }
         cover {
           absolutePath
           childImageSharp {

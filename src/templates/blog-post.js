@@ -280,13 +280,9 @@ class BlogPostTemplate extends React.Component {
       fluidCover,
       date,
       // helmet,
-      twitter_cover,
-      // devto_url,
-      // devto_id,
     } = this.props
     // const PostContent = contentComponent || Content
 
-    const twitterImage = twitter_cover !== undefined ? twitter_cover.src : cover.src
     const shortTitle = title === null ? '' : encodeURIComponent(title.slice(0, 150))
     const tweetLink = `https://twitter.com/intent/tweet?text=${shortTitle + '%0A%0A@waylonwalker%0A%0A' + url}`
     const hnLink = `https://news.ycombinator.com/submitlink?u=${url}&t=${shortTitle}`
@@ -308,11 +304,11 @@ class BlogPostTemplate extends React.Component {
             { name: 'og:article:published_time', content: date },
             { name: 'og:article:modified_time', content: date },
             { name: 'og:description', content: description },
-            { name: 'og:image', content: 'https://waylonwalker.com' + twitterImage },
+            { name: 'og:image', content: 'https://waylonwalker.com' + cover.src },
 
             { name: 'twitter:title', content: title + ' | Waylon Walker' },
             { name: 'twitter:card', content: 'summary_large_image' },
-            { name: 'twitter:image', content: 'https://waylonwalker.com' + twitterImage },
+            { name: 'twitter:image', content: 'https://waylonwalker.com' + cover.src },
             { name: 'twitter:description', content: description },
           ]}
 
@@ -404,8 +400,6 @@ class BlogPostTemplate extends React.Component {
             </div>
 
           </BlogPostStyles>
-          {/* {devto_id === undefined ? '' : <DevToComments devto_id={devto_id} />}
-          {devto_id === undefined ? '' : <p>devtoid = {devto_id}</p>} */}
           <p className='post-cta-all-posts'>
             Check out my other
           <Link to='/blog' style={{ margin: '.2rem' }} >blogs</Link>
@@ -423,14 +417,11 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  devto_url: PropTypes.string,
-  devto_id: PropTypes.string
   // helmet: PropTypes.instanceOf(Helmet),
 }
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
-  const twitter_cover = post.frontmatter.twitter_cover !== null ? post.frontmatter.twitter_cover.childImageSharp.fixed : post.frontmatter.cover !== null ? post.frontmatter.cover.childImageSharp.fixed : ''
 
   return (
     <Layout description={post.frontmatter.description} title={post.frontmatter.title} keywords={post.frontmatter.tags} time={post.frontmatter.date} url={`https://waylonwalker.com${post.frontmatter.path}`}>
@@ -454,11 +445,7 @@ const BlogPost = ({ data }) => {
             ? post.frontmatter.cover.childImageSharp.fluid
             : ''
         }
-        twitter_cover={twitter_cover}
         date={post.frontmatter.date}
-        devto_url={post.frontmatter.devto_url}
-        devto_id={post.frontmatter.devto_id}
-
       />
 
     </Layout>
@@ -486,20 +473,10 @@ export const pageQuery = graphql`
       fields {slug}
       frontmatter {
         date
-        devto_url
-        devto_id
         title
         description
         # tags
         path
-        twitter_cover {
-                absolutePath
-          childImageSharp {
-                fixed(width: 800, height: 418) {
-                ...GatsbyImageSharpFixed
-              }
-          }
-         }
         cover {
                 absolutePath
           childImageSharp {
