@@ -15,7 +15,6 @@ description: Python `*args` and `**kwargs` are super useful tools, that when
 related_post_body: ''
 related_post: []
 cover: '/static/python-args-kwargs.png'
-twitter_cover: '/static/python-args-kwargs.png'
 
 ---
 

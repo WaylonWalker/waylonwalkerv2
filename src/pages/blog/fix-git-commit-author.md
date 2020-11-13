@@ -12,7 +12,6 @@ description: "I was 20 commits into a hackoberfest PR when I suddenly realized t
 related_post_body: ''
 related_post: []
 cover: "/static/fix-git-commit-author.png"
-twitter_cover: "/static/fix-git-commit-author.ong"
 
 ---
 

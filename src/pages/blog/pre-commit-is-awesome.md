@@ -16,7 +16,6 @@ description: I recently discovered the ✨ awesomeness that is pre-commit. I ste
 related_post_body: ''
 related_post: []
 cover: "/static/pre-commit-is-awesome.png"
-twitter_cover: "/static/pre-commit-is-awesome.png"
 
 ---
 I recently discovered the ✨ awesomeness that is pre-commit. I steered away from it for so long because it seemed like a big daunting thing to set up, but really it's easy. It will automatically run checks for you. In some cases, it will even automatically fix them for you. Out of the box, it will do things like automatically trim extra whitespace, fix file endings, and ensure file sizes are not too large for git.

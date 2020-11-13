@@ -10,7 +10,6 @@ description: run checks before running the pipeline
 related_post_body: ''
 related_post: []
 cover: ''
-twitter_cover: ''
 
 ---
 

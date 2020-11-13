@@ -14,7 +14,6 @@ description: Sometimes we get a little `git add . && git commit -m "WIP"` happy 
 related_post_body: ''
 related_post: []
 cover: "/static/git-diff-branches.png"
-twitter_cover: "/static/git-diff-branches.png"
 
 ---
 Today I learned how to diff between two branches.

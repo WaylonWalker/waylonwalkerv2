@@ -16,7 +16,6 @@ description: I have been using oh-my-zsh successfully for about 2 years now.
 related_post_body: ''
 related_post: []
 cover: "/static/max-larochelle-uu-Jw5SunYI-unsplash.jpg"
-twitter_cover: "/static/max-larochelle-uu-Jw5SunYI-unsplash.jpg"
 
 ---
 > Photo by [Max LaRochelle](https://unsplash.com/@maxlarochelle?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/lightning?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

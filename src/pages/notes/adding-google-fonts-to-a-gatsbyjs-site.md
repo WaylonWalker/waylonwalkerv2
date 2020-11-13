@@ -10,7 +10,6 @@ description: https://stackoverflow.com/questions/47488440/how-do-i-add-google-fo
 related_post_body: ''
 related_post: []
 cover: ''
-twitter_cover: ''
 
 ---
 

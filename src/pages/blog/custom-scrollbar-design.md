@@ -13,7 +13,6 @@ description: Getting a custom scrollbar on your site makes it stand out a bit co
 related_post_body: ''
 related_post: []
 cover: "/static/custom-scrollbar-wtih-gatsbyjs.jpg"
-twitter_cover: "/static/custom-scrollbar-wtih-gatsbyjs.jpg"
 
 ---
 Inspired by Wes Bos's new [uses.tech](https://uses.tech) I wanted a custom scrollbar on my personal site.  I had tried to do it in the past, but gave up after it was not working.

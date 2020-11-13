@@ -15,7 +15,6 @@ description: GitHub actions are an amazing tool that allows us to run code based
 related_post_body: ''
 related_post: []
 cover: "/static/what-are-github-actions.png"
-twitter_cover: ''
 
 ---
 <style>

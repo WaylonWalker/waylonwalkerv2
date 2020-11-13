@@ -12,7 +12,6 @@ description: Should I switch to Zeit Now.  Netlify build times are starting to c
 related_post_body: ''
 related_post: []
 cover: "/static/should-i-switch-to-zeit-now.png"
-twitter_cover: "/static/should-i-switch-to-zeit-now.png"
 
 ---
 # Netlify

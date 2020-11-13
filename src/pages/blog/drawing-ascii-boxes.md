@@ -12,7 +12,6 @@ description: I always struggle to find a good reference of ascii characters.  Th
 related_post_body: ''
 related_post: []
 cover: "/static/ascii-boxes.png"
-twitter_cover: ''
 
 ---
 When creating cli's I often want some nice full-width character.  I find it tough to find them, and when I do half the time it is an image or something that cannot be copied 👿.

@@ -14,7 +14,6 @@ description: It's been a long time coming.  We use some very harsh language
 related_post_body: ''
 related_post: []
 cover: '/static/master-no-more.png'
-twitter_cover: '/static/master-no-more.png'
 
 ---
 

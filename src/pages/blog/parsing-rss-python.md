@@ -15,7 +15,6 @@ description: I am looking into a way to replace my google reader experience
 related_post_body: ''
 related_post: []
 cover: '/static/parsing-rss-python.png'
-twitter_cover: '/static/parsing-rss-python.png'
 
 ---
 

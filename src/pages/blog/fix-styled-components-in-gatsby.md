@@ -11,7 +11,6 @@ description: I finally fixed my Styled-Components in gatsby.js
 related_post_body: ''
 related_post: []
 cover: "/static/fix-styled-components.png"
-twitter_cover: "/static/fix-styled-components.png"
 
 ---
 I am starting a redesign of my website.  I have started cross posting to [dev.to](https://dev.to) more regularly.  With that I have been making more detailed cover images at the recommended `1000x420`.  These images get cut off on my own site, which is a bit ridiculous to have my own content not look right on my own site.  But before we start a heavy redesign I have a small issue that has plagued the site for at least a year!

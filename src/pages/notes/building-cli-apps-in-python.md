@@ -10,7 +10,6 @@ description: learning about building cli apps in python
 related_post_body: ''
 related_post: []
 cover: "/static/jp-valery-6W9G5G2WXGY-unsplash.jpg"
-twitter_cover: "/static/jp-valery-6W9G5G2WXGY-unsplash.jpg"
 
 ---
 ## Packages

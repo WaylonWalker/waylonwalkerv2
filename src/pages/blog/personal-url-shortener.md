@@ -11,7 +11,6 @@ related_post_body: ''
 related_post:
 # cover: "/static/ozark-drones-oS8E1274cpY-unsplash.jpg"
 cover: "/static/URL shortener.png"
-twitter_cover: "/static/URL shortener.png"
 
 ---
 Photo by [Ozark Drones](https://unsplash.com/@ozarkdrones?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/uturn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

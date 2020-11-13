@@ -14,7 +14,6 @@ description: There are two main ways to create kedro hooks, with modules and cla
 related_post_body: ''
 related_post: []
 cover: "/static/configurable-kedro-hooks.png"
-twitter_cover: ''
 
 ---
 There are two main ways to create kedro hooks, with modules and classes.  Each one still uses the same verbiage as the function/method names.

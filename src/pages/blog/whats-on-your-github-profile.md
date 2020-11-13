@@ -11,7 +11,6 @@ description: Comment on the DEV.to thread to show off what is on your GitHub pro
 related_post_body: ''
 related_post: []
 cover: '/static/whats-on-your-github-profile.png'
-twitter_cover: '/static/whats-on-your-github-profile.png'
 
 ---
 

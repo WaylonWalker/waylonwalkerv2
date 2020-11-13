@@ -11,7 +11,6 @@ description: ''
 related_post_body: ''
 related_post: []
 cover: ''
-twitter_cover: ''
 
 ---
 Nesting loops inside of each other in python makes for much harder code to understand, it takes more brain power to understand, and is thus more error prone than if its avoidable.  One issue with this complexity is that toy examples may make sense, but most real example will grow and become more deeply nested over time.  Avoiding this complexity from the start can help simplify the project in the future.

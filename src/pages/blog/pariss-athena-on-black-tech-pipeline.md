@@ -17,7 +17,6 @@ description: I was particularly inspired by @chantastic episode 103 of the
 related_post_body: ''
 related_post: []
 cover: '/static/pariss-athena-on-black-tech-pipeline.png'
-twitter_cover: '/static/pariss-athena-on-black-tech-pipeline.png'
 
 ---
 

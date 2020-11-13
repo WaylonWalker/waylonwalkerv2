@@ -17,7 +17,6 @@ description: kedro is an amazing project that allows for super-fast prototyping 
 related_post_body: ''
 related_post: []
 cover: "/static/find-kedro-1.png"
-twitter_cover: "/static/find-kedro-1.png"
 
 ---
 

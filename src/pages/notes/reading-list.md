@@ -10,7 +10,6 @@ description: Things to read later
 related_post_body: ''
 related_post: []
 cover: "/static/reading-list.png"
-twitter_cover: ''
 
 ---
 STOP LEAVING Browser Tabs open and save them here!

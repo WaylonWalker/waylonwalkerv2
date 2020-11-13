@@ -13,7 +13,6 @@ description: This day 8 years ago I started my first day as a Mechanical
 related_post_body: ''
 related_post: []
 cover: '/static/eight-years-cat.png'
-twitter_cover: '/static/eight-years-cat.png'
 
 ---
 

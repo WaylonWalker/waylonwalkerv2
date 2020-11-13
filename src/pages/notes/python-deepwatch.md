@@ -10,7 +10,6 @@ description: ''
 related_post_body: ''
 related_post: []
 cover: ''
-twitter_cover: ''
 
 ---
 Is it possible to deep watch a single python function for changes?

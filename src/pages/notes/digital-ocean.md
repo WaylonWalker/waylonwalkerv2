@@ -10,7 +10,6 @@ description: ''
 related_post_body: ''
 related_post: []
 cover: "/static/steve-halama-kfwQvL6niR8-unsplash.jpg"
-twitter_cover: "/static/steve-halama-kfwQvL6niR8-unsplash.jpg"
 
 ---
 

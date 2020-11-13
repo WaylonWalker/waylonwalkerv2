@@ -11,7 +11,6 @@ description: dead simple docstring coverage for your python project
 related_post_body: ''
 related_post: []
 cover: "/static/interrogate-python.png"
-twitter_cover: ''
 
 ---
 As usual while listening to [python bytes 181](https://pythonbytes.fm/episodes/show/181/it-s-time-to-interrogate-your-python-code) I heard of a tool that I had to try out right away!

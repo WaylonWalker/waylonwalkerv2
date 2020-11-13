@@ -10,7 +10,6 @@ description: My Notes about using kedro
 related_post_body: ''
 related_post: []
 cover: ''
-twitter_cover: ''
 
 ---
 ## Core

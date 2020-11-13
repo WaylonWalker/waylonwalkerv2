@@ -10,7 +10,6 @@ description: ''
 related_post_body: ''
 related_post: []
 cover: ''
-twitter_cover: ''
 
 ---
 Inspired by Chris Achard

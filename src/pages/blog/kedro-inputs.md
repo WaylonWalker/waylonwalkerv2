@@ -14,7 +14,6 @@ description: Passing inputs into kedro is a key concept. Understanding how it
 related_post_body: ''
 related_post: []
 cover: '/static/kedro-inputs.png'
-twitter_cover: '/static/kedro-inputs.png'
 
 ---
 

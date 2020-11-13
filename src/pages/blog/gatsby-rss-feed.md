@@ -10,7 +10,6 @@ description: Add an rss feed to your Gatsby Site
 related_post_body: ''
 related_post: []
 cover: ''
-twitter_cover: ''
 
 ---
 Adding an rss feed to your gatsby js site is super simple.

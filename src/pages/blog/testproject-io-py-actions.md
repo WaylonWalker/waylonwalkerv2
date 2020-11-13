@@ -14,7 +14,6 @@ description: As I continue to build out
 related_post_body: ''
 related_post: []
 cover: /static/testproject-io-py-actions.png
-twitter_cover: /static/testproject-io-py-actions.png
 
 ---
 

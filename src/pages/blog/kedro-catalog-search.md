@@ -14,7 +14,6 @@ description: kedro 0.16.2 just dropped last week with a long-awaited feature...
 related_post_body: ''
 related_post: []
 cover: '/static/kedro-catalog-search.png'
-twitter_cover: '/static/kedro-catalog-search.png'
 
 ---
 

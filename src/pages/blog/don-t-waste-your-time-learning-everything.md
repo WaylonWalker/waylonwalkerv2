@@ -12,7 +12,6 @@ description: Stick to what you know, and learn a little bit of something new eve
 related_post_body: ''
 related_post: []
 cover: "/static/dev.to.png"
-twitter_cover: "/static/dev.to.png"
 
 ---
 > # "Don’t waste your time learning everything."

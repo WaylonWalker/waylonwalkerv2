@@ -13,7 +13,6 @@ description: Can someone explain how or why twitter cards render differently
 related_post_body: ''
 related_post: []
 cover: '/static/explain-twitter-cards.png'
-twitter_cover: '/static/explain-twitter-cards.png'
 
 ---
 

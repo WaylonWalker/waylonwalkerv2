@@ -14,7 +14,6 @@ description: Getting up and going with a brand new [kedro](https://kedro.readthe
 related_post_body: ''
 related_post: []
 cover: "/static/create-new-kedro-project.png"
-twitter_cover: "/static/create-new-kedro-project.png"
 
 ---
 This is a quickstart to getting a new [kedro](https://kedro.readthedocs.io) pipeline up and running.  After this article you should be able to understand how to get started with [kedro](https://kedro.readthedocs.io).  You can learn more about this [Hello World Example](https://kedro.readthedocs.io/en/stable/02_getting_started/04_hello_world.html) in the [docs](https://kedro.readthedocs.io/en/stable/02_getting_started/04_hello_world.html)

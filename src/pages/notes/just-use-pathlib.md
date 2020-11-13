@@ -13,7 +13,6 @@ description: Pathlib is an amazing cross-platform path tool.
 related_post_body: ''
 related_post: []
 cover: ''
-twitter_cover: ''
 
 ---
 Pathlib is an amazing cross-platform path tool.

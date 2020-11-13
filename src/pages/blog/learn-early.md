@@ -12,7 +12,6 @@ description: What is something that you recently learned that you wish you would
 related_post_body: ''
 related_post: []
 cover: "/static/david-travis-aVvZJC0ynBQ-unsplash.jpg"
-twitter_cover: "/static/david-travis-aVvZJC0ynBQ-unsplash.jpg"
 
 ---
 Cover Photo I call **gaining clarity** by [David Travis](https://unsplash.com/@dtravisphd?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/clarity?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

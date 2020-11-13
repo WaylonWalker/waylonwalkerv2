@@ -14,7 +14,6 @@ description: When first learning to code its very common to hard code
 related_post_body: ''
 related_post: []
 cover: '/static/why-use-cms.png'
-twitter_cover: '/static/why-use-cms.png'
 
 ---
 

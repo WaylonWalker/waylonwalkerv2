@@ -16,7 +16,6 @@ description: Kedro is an open source data pipeline framework.  It provides
 related_post_body: ''
 related_post: []
 cover: "/static/what-is-kedro.png"
-twitter_cover: "/static/what-is-kedro.png"
 
 ---
 

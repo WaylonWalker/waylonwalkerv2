@@ -12,7 +12,6 @@ related_post_body: ''
 related_post:
 # - src/pages/blog/realistic-git-workflow.md
 cover: "/static/ship-faster.png"
-twitter_cover: "/static/ship-faster.png"
 twitter_announcement: "Ship Code Faster with this one git config.\n\ngit config --global
   push.default current          "
 path: git-push-without-setting-upstream
