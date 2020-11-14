@@ -3,7 +3,7 @@ templateKey: notes
 tags: []
 path: ''
 title: rebrand
-date: 2020-11-14T06:00:00Z
+date: 2020-11-14T06:00:00.000+00:00
 status: published
 description: ''
 cover: ''
@@ -15,6 +15,7 @@ cover: ''
   * 4x2 grid
 * bookmarks?
 * single post template
+* flat routes no need to /blog /notes
 * post types
   * 🌳  full
   * 🌱 note
@@ -24,4 +25,16 @@ cover: ''
   * charts
   * inlink component
   * [https://joshwcomeau.com/](https://joshwcomeau.com/ "https://joshwcomeau.com/")
-  * 
+
+## TODO
+
+* review package.json
+* update package.json
+
+## Done
+
+* ahrefs
+  * fix canonical urls
+  * fix broken inlinks
+* convert to one post template
+* 
