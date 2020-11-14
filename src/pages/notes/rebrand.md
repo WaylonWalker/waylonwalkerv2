@@ -1,5 +1,5 @@
 ---
-templateKey: notes
+templateKey: blog-post
 tags: 
  - blog
 title: rebrand
@@ -14,13 +14,18 @@ cover: ''
 * More from waylon just above footer
   * 4x2 grid
 * bookmarks?
+* nav style stinks
 * single post template
 * flat routes no need to /blog /notes
 * post types
   * 🌳  full
-  * 🌱 note
+  * 🌱  budding
+  * 🖊  Note
+  * 💻  hot tip
 * usage of tags
 * MDX
+  * stories
+  * slides
   * ⚠
   * ❌
   * ✔
@@ -28,10 +33,12 @@ cover: ''
   * charts
   * inlink component
   * [https://joshwcomeau.com/](https://joshwcomeau.com/ "https://joshwcomeau.com/")
+  * auto-card oneline links
 * meta posts
     * uses
     * how site is built
     * how to search
+* stories
 
 ## TODO
 
