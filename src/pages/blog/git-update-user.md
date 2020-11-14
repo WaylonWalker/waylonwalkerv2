@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: git-update-user
 title: Update Git User
 date: 2019-01-21
 status: published

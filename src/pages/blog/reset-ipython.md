@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['python']
-path: reset-ipython
 title: Reclaim memory usage in Jupyter
 date: 2020-10-01T05:00:00Z
 status: published

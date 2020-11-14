@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: 'pycon-2018-roundup'
 title: Pycon 2018 Roundup
 date: 2018-05-12
 category: Blog

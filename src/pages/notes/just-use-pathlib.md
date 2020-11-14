@@ -5,7 +5,6 @@ tags:
 - Python
 - quickie
 - code
-path: just-use-pathlob
 title: Just Use Pathlib
 date: 2019-09-26T05:00:00.000+00:00
 status: published

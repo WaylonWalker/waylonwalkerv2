@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: 'datacamp-sql'
 title: Stepping Up My SQL Game
 date: 2018-03-25
 category: Blog

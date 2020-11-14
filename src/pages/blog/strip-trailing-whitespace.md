@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: strip-trailing-whitespace
 title: Strip Trailing Whitespace from Git projects
 date: 2020-09-30T05:00:00Z
 status: published

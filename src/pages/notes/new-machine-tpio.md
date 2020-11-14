@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: new-machine-tpio
 title: New Machine for developing Tests with TestProject.io
 date: 2020-07-25T05:00:00.000+00:00
 status: published

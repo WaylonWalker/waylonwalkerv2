@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: 'pug-reveal'
 title: Pug Reveal
 date: 2017-12-31
 category: Blog

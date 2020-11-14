@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['blog', 'JAMStack', 'netlify']
-path: python-args-kwargs
 title: Refactoring your blog urls
 date: 2020-06-11T05:00:00Z
 status: published

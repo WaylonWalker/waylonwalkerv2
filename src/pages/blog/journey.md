@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: 'journey'
 title: It's not all about winning
 date: 2019-02-02
 status: published

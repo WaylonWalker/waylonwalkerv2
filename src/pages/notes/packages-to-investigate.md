@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: python-packages
 title: Packages to Investigate
 date: 2019-10-14T05:00:00.000+00:00
 status: published

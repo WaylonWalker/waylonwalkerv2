@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: devto-comments-from-url
 title: How to get Dev Comments from an article Url
 date: 2020-05-20T10:00:00Z
 status: published

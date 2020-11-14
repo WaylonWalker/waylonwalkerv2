@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: sqlalchemy-models
 title: SqlAlchemy Models
 date: 2019-12-21T05:00:00Z
 status: published

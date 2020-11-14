@@ -1,6 +1,5 @@
 ---
 templateKey: blog-post
-path: autoreload-ipython
 title: Autoreload in Ipython
 date: 2019-09-08T05:00:00.000+00:00
 status: published

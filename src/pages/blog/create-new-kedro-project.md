@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: create-new-kedro-project
 title: Create New Kedro Project
 date: 2020-03-02T12:09:00.000+00:00
 status: published

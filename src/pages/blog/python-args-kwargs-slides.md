@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: python-args-kwargs-slides
 title: SLIDES - understanding python *args and **kwargs
 date: 2020-07-02T05:00:00Z
 status: published

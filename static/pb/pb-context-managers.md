@@ -3,7 +3,6 @@ templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['python', 'beginners', ]
 twitter_announcement: I just dropped a new post check it out.
-path: context-managers
 title: Python Basics | Context Managers
 date: 2020-06-11T05:00:00Z
 status: 'false'

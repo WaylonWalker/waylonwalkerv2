@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: drawing-ascii-boxes
 title: drawing ascii boxes
 date: 2020-05-12T22:05:00Z
 status: published

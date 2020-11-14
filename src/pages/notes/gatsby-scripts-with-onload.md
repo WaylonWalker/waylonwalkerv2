@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: scripts-with-onload
 title: Gatsby Scripts with onload
 date: 2020-05-22T05:00:00Z
 status: published

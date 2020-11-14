@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: git-rm-cruft
 title: remove git cruft
 date: 2019-01-21
 status: draft

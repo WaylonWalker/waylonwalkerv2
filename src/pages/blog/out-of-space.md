@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: out-of-space
 title: Out of Space
 date: 2020-02-01T06:00:00Z
 status: published

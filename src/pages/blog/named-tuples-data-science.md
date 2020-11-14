@@ -1,6 +1,5 @@
 ---
 templateKey: blog-post
-path: named-tuples-data-science
 title: Clean up Your Data Science with Named Tuples
 date: 2019-09-11
 time: T05:00:00Z

@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: codeit-bro-interview
 title: Codeit Bro Interview
 date: 2020-11-02T06:00:00.000+00:00
 status: published

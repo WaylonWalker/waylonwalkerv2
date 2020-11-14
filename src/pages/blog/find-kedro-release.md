@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: find-kedro-release
 title: "\U0001F4E2 Announcing find-kedro"
 date: 2020-05-04T11:53:00Z
 status: published

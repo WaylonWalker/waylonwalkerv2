@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: 'condabuild'
 title: Conda Build
 date: 2020-01-01
 summary: setting up conda build

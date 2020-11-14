@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: 'readme-tables'
 title: Generating Readme Tables From Pandas
 date: 2018-05-16
 category: Blog

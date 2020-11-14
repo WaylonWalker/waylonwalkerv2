@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: eight-years-cat
 title: My first eight years as a working professional.
 date: 2020-06-19T05:00:00Z
 status: published

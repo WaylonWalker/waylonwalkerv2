@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: 'd3-day3'
 title: D3 Day 3
 date: 2018-05-05
 category: Viz

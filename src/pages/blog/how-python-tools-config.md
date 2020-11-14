@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['python', ]
-path: how-python-tools-config
 title: Refactoring your blog urls
 date: 2020-07-21T05:00:00Z
 status: published

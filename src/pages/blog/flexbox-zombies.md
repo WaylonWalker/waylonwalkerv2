@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: 'flexbox-zombies'
 title: FlexBox
 date: 2018-04-22
 category: Blog

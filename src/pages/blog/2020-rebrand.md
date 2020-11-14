@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: 2020-rebrand
 title: 2020 waylonwalker.com rebrand
 date: 2020-02-17T13:02:00Z
 status: published

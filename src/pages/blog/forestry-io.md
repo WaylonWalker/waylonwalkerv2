@@ -1,6 +1,5 @@
 ---
 templateKey: blog-post
-path: forestry-io
 title: Forestry.io
 date: 2019-04-23T08:02:00.000+00:00
 status: published

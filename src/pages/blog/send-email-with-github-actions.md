@@ -3,7 +3,6 @@ templateKey: blog-post
 related_post_label: Check out this related post
 tags:
 - actions
-path: send-email-with-github-actions
 title: Send Emails with GitHub Actions
 date: 2020-03-31T03:39:00Z
 status: published

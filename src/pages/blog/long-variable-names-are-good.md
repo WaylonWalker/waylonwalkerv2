@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: long-variable-names-are-good
 title: Long variable names are good
 date: 2020-02-24T06:00:00Z
 status: 'false'

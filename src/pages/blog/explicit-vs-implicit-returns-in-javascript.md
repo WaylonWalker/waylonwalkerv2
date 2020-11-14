@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: explicit-vs-implicit-returns-in-javascript
 title: Explicit vs Implicit Returns in Javascript
 date: 2020-05-03T11:55:00.000+00:00
 status: published

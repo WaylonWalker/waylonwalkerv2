@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: git-rewrite-history
 title: Rewrite History with Git
 date: 2019-02-05
 status: published

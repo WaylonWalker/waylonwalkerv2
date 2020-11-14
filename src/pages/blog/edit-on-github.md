@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['blog', 'JAMStack', 'GitHub']
-path: python-args-kwargs
 title: Edit On GitHub
 date: 2020-07-18T05:00:00Z
 status: published

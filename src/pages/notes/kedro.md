@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: kedro
 title: Kedro
 date: 2019-11-02T05:00:00.000+00:00
 status: published

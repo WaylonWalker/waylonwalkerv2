@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: reader
 title: Reader
 date: 2020-07-12T05:00:00.000+00:00
 status: published

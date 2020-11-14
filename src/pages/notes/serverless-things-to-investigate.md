@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: Serverless-things
 title: Serverless things to investigate
 date: 2020-02-10T15:00:00Z
 status: published

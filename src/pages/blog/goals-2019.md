@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: goals-2019
 title: 2019 goals
 date: 2019-01-12
 status: published

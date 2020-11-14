@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: kedro-preflight
 title: Kedro Preflight
 date: 2020-05-09T15:01:00Z
 status: published

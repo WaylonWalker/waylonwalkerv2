@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: react-headroom
 title: I just added react-headroom to my site
 date: 2020-02-11T12:57:00.000+00:00
 status: published

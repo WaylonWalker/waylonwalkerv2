@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: '2018-retrospective'
 title: 2018 Retrospective
 date: 2019-01-05
 status: published

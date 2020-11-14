@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: do-you-hoist
 title: Do You Hoist
 date: 2020-02-25T12:52:00Z
 status: published

@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: 'background_1'
 title: background tasks in python
 date: 2017-09-16
 category: python

@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: 'pandas-pattern'
 title: My favorite pandas pattern
 date: 2018-03-01
 status: Draft

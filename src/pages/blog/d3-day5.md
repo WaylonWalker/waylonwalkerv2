@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: 'd3-day5'
 title: D3 Day 5
 slug: d3-day-5
 date: 2018-05-08

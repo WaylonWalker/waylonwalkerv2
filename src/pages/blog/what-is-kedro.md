@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: what-is-kedro
 title: What is Kedro
 date: 2020-02-24T12:48:00Z
 status: published

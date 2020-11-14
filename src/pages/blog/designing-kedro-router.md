@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['python']
-path: designing-kedro-router
 title: Designing a "Router" for kedro
 date: 2020-10-08T05:00:00Z
 status: published

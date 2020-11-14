@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: my-chrome-extensions-i-use
 title: Chrome Extensions I use
 date: 2020-09-13T05:00:00Z
 status: published

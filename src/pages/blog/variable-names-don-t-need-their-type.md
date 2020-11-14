@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: variable-names-dont-need-their-type
 title: Variables names don't need their type
 date: 2020-04-08T11:03:00Z
 status: published

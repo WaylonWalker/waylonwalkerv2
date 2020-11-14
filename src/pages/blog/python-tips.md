@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: 'python_tips'
 title: Python Tips
 date: 2019-01-21
 status: draft

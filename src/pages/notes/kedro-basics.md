@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: kedro-basics-course
 title: Kedro Basics
 date: 2020-08-08T05:00:00Z
 status: published

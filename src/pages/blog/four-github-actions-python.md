@@ -3,7 +3,6 @@ templateKey: blog-post
 related_post_label: Check out this related post
 tags:
 - actions
-path: four-github-actions-python
 title: Four Github Actions for Python
 date: 2020-04-13T06:23:00.000+00:00
 status: published

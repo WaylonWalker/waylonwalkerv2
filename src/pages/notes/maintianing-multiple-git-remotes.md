@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: maintaining-multiple-git-remotes
 title: Maintianing multiple git remotes
 date: 2020-05-07T11:56:00Z
 status: published

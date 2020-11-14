@@ -1,6 +1,5 @@
 ---
 templateKey: blog-post
-path: python-data-science-background
 title: Background Tasks in Python for Data Science
 date: 2019-09-10T05:00:00.000+00:00
 status: published

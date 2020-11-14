@@ -1,6 +1,5 @@
 ---
 templateKey: blog-post
-path: realistic-git-workflow
 title: Realistic Git Workflow
 date: 2019-05-27
 time: T05:00:00Z

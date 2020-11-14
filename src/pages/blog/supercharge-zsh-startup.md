@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: supercharge-zsh-startup
 title: Supercharge Zsh Startup
 date: 2020-01-03T06:00:00.000+00:00
 status: published

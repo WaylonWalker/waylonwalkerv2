@@ -5,7 +5,6 @@ tags:
 - python
 - code
 - pandas
-path: filtering-pandas
 title: Filtering Pandas
 date: 2019-09-24T05:00:00Z
 status: published

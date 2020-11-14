@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: python-cli
 title: Building Cli apps in Python
 date: 2019-11-11T06:00:00.000+00:00
 status: published

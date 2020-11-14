@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: 'vim-notes'
 title: Vim Notes
 date: 2018-02-01
 status: Draft

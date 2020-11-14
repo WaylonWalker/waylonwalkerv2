@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: kedro-class-hooks
 title: Create Configurable Kedro Hooks
 date: 2020-05-23T05:00:00.000+00:00
 status: published

@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: []
-path: reading-list
 title: Reading List
 date: 2020-10-28T05:00:00Z
 status: published

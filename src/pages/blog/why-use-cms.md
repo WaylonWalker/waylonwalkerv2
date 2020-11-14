@@ -2,7 +2,6 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags: ['webdev']
-path: why-use-cms
 title: Why use a cms
 date: 2020-07-14T03:00:00Z
 status: published

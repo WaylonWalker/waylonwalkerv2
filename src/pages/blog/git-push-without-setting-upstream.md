@@ -10,7 +10,6 @@ status: published
 description: git config --global push.default current
 related_post:
 cover: "/static/ship-faster.png"
-path: git-push-without-setting-upstream
 
 ---
 Finally after years of hand typing out a full `git push --upstream my\_really\_long\_and\_descriptive\_branch\_name` I foudn there is a setting to automatcally push to the current branch. More realisitically I just did a `git push` let git yell at me, and copying the suggestion.

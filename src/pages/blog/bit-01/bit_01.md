@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: 'journey'
 title: Minimal Project Structure
 date: 2019-02-10
 status: draft

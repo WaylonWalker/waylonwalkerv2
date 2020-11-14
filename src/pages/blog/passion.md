@@ -1,6 +1,5 @@
 ---
 templateKey: 'blog-post'
-path: 'passion'
 title: Follow Your Passion
 date: 2019-01-01
 status: Draft
