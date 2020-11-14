@@ -13,6 +13,10 @@ cover: ''
   * https://swyx.io
 * More from waylon just above footer
   * 4x2 grid
+* link strategy
+  * latest post
+  * next/prev
+  * similar tags
 * bookmarks?
 * nav style stinks
 * single post template
