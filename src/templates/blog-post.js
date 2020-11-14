@@ -424,15 +424,18 @@ const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
-    <Layout description={post.frontmatter.description} title={post.frontmatter.title} keywords={post.frontmatter.tags} time={post.frontmatter.date} url={`https://waylonwalker.com${post.frontmatter.path}`}>
+    <Layout
+    description={post.frontmatter.description}
+    title={post.frontmatter.title}
+    keywords={post.frontmatter.tags}
+    time={post.frontmatter.date}
+    url={`https://waylonwalker.com/${post.fields.slug.replace(/^\/+/, '')}`}
+    >
       <BlogPostTemplate
         content={post.html}
-        // url={`https://waylonwalker.com/blog/${post.frontmatter.path}`}
         url={`https://waylonwalker.com/${post.fields.slug.replace(/^\/+/, '')}`}
         slug={post.fields.slug}
-        // contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        // helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         cover={
@@ -475,10 +478,8 @@ export const pageQuery = graphql`
         date
         title
         description
-        # tags
-        path
         cover {
-                absolutePath
+          absolutePath
           childImageSharp {
                 fixed(width: 1000, height: 420) {
                 ...GatsbyImageSharpFixed

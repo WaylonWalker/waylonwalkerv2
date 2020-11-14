@@ -98,21 +98,10 @@ export const pageQuery = graphql`
         node {
           id
           html
-          plainText
           frontmatter {
             title
             templateKey
-            path
             date
-            status
-            description
-            category
-            tags
-            summary
-            # slug
-            coverCredits
-            twitterCover
-            coverCredit
           }
         }
       }
