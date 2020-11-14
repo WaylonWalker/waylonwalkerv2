@@ -60,9 +60,6 @@ exports.createPages = ({ actions, graphql }) => {
         })
       }
     })
-
-    // Tag pages:
-
   })
 }
 
