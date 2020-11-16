@@ -10,6 +10,36 @@ const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
+const similar_posts = (node, posts, index) => {
+  // cleanse
+  // sort by date
+  // filter to similar templateKey
+  // slice to current post placing current to back
+  //
+  //
+  const dateSortedPosts = posts
+    .filter(post => post.node.frontmatter !== null)
+    .filter(post => post.node.frontmatter.date !== null)
+    .sort((a, b) => b.node.frontmatter.date - a.node.frontmatter.date)
+  const orderedPosts = [...dateSortedPosts.slice(index+1, posts.length), ...dateSortedPosts.slice(0,index)]
+    .map(post => post.node)
+    .filter(post => post.frontmatter.templateKey == node.frontmatter.templateKey)
+
+  const taggedPosts = (
+    node.frontmatter.tags === null 
+    ? [] 
+    : orderedPosts
+      .filter(post => post.frontmatter.status !== null)
+      .filter(post => post.frontmatter.status.toLowerCase() === 'published')
+      .filter(post => post.frontmatter.tags !== null)
+      .filter(post => node.frontmatter.tags.some(r => post.frontmatter.tags.includes(r)))
+  )
+  const prev = index === 0 ? null : posts[index - 1].node
+  const next = index === (posts.length -1 ) ? null : posts[index + 1].node
+  const similar_posts = [...new Set([prev, next, ...taggedPosts, ...orderedPosts])].filter(p => p !== null)
+  return similar_posts
+}
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
@@ -23,8 +53,23 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
-              # tags
+              tags
+              title
+              description
               templateKey
+              status
+              date
+              cover {
+                childImageSharp {
+                  fixed(width: 200, height: 85) {
+                    base64
+                    width
+                    height
+                    src
+                    srcSet
+                  }
+                }
+              }
             }
           }
         }
@@ -38,24 +83,29 @@ exports.createPages = ({ actions, graphql }) => {
 
     const posts = result.data.allMarkdownRemark.edges
 
-    posts.forEach(edge => {
-      const id = edge.node.id
+    posts.forEach(({node}, index) => {
+      const id = node.id
       if (
-        edge.node.frontmatter.templateKey !== "gratitude"
-        && edge.node.frontmatter.templateKey !== null
-        && edge.node.fields.slug !== false 
-        && edge.node.fields.slug !== 'false'
+        node.frontmatter.templateKey !== "gratitude"
+        && node.frontmatter.templateKey !== null
+        && node.fields.slug !== false 
+        && node.fields.slug !== 'false'
       ) {
 
         createPage({
-          path: edge.node.fields.slug,
-          tags: edge.node.frontmatter.tags,
+          path: node.fields.slug,
+          tags: node.frontmatter.tags,
           component: path.resolve(
-            `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+            `src/templates/${String(node.frontmatter.templateKey)}.js`
           ),
           // additional data can be passed via context
           context: {
             id,
+            prev: index === 0 ? null : posts[index - 1].node,
+            next: index === (posts.length -1 ) ? null : posts[index + 1].node,
+            similarPosts: similar_posts(node, posts, index),
+            allPosts: posts
+
           },
         })
       }

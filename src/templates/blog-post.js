@@ -2,9 +2,10 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import WebMention from '../components/WebMention'
+import PostCards from '../components/PostCards'
 import Img from 'gatsby-image'
 import { FiTwitter, FiGithub, FiFacebook } from "react-icons/fi";
 import { DiHackernews } from "react-icons/di";
@@ -26,6 +27,7 @@ const BlogPostWrapper = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+}
 `
 
 const BlogPostStyles = styled.article`
@@ -251,7 +253,11 @@ h1 {
     }
   }
 }
+
+
+
 `
+// ` fix weird syntax highlighting
 
 class BlogPostTemplate extends React.Component {
   // constructor(props) {
@@ -272,17 +278,17 @@ class BlogPostTemplate extends React.Component {
       content,
       url,
       slug,
-      // contentComponent,
       description,
-      // tags,
       title,
       cover,
       fluidCover,
       date,
-      // helmet,
+      similarPosts,
+      allPosts
     } = this.props
     // const PostContent = contentComponent || Content
 
+    console.log(allPosts)
     const shortTitle = title === null ? '' : encodeURIComponent(title.slice(0, 150))
     const tweetLink = `https://twitter.com/intent/tweet?text=${shortTitle + '%0A%0A@waylonwalker%0A%0A' + url}`
     const hnLink = `https://news.ycombinator.com/submitlink?u=${url}&t=${shortTitle}`
@@ -400,10 +406,14 @@ class BlogPostTemplate extends React.Component {
             </div>
 
           </BlogPostStyles>
-          <p className='post-cta-all-posts'>
-            Check out my other
-          <Link to='/blog' style={{ margin: '.2rem' }} >blogs</Link>
-          </p>
+          {/* <p className='post-cta-all-posts'> */}
+          {/*   Check out my other */}
+          {/* <Link to='/blog' style={{ margin: '.2rem' }} >blogs</Link> */}
+          {/* </p> */}
+          <hr/>
+          <PostCards data={similarPosts} />
+          <hr/>
+
           <WebMention url={url} />
         </BlogPostWrapper >
       </>
@@ -420,8 +430,9 @@ BlogPostTemplate.propTypes = {
   // helmet: PropTypes.instanceOf(Helmet),
 }
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, pageContext }) => {
   const { markdownRemark: post } = data
+  console.log(pageContext)
 
   return (
     <Layout
@@ -449,6 +460,8 @@ const BlogPost = ({ data }) => {
             : ''
         }
         date={post.frontmatter.date}
+        similarPosts={pageContext.similarPosts}
+        allPosts={pageContext.allPosts}
       />
 
     </Layout>
