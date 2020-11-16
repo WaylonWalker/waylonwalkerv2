@@ -14,14 +14,15 @@ cover: ''
   * [joel on software](https://www.joelonsoftware.com/)
       * recent
       * reading lists
-
-
 * More from waylon just above footer
   * 4x2 grid
 * link strategy
   * latest post
   * next/prev
   * similar tags
+* search in nav
+* tag stickers
+* simple cards?
 * bookmarks?
 * nav style stinks
 * single post template
