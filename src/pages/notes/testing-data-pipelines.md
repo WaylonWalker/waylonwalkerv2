@@ -10,6 +10,28 @@ cover: ''
 
 ---
 
+# Lint/Format/Doc
+
+* black
+* flake8
+* interrogate
+* mypy
 
 # Pipeline Assertions
 
+* pipeline constructs
+* pipeline as expected nodes
+* pipeline has minimum nodes
+* test minimum tags
+* test alternate tags
+
+# Catalog Assertions
+
+* test catalog follows naming structure
+* 
+
+# Node Tests
+
+* test function does the correct operations on test data
+
+# Great Expectations
