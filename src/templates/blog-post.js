@@ -10,6 +10,7 @@ import Img from 'gatsby-image'
 import { FiTwitter, FiGithub, FiFacebook } from "react-icons/fi";
 import { DiHackernews } from "react-icons/di";
 import { IoLogoReddit } from "react-icons/io";
+import Headroom from 'react-headroom'
 // import Social from '../components/social'
 // import Icon from '../components/icon'
 
@@ -19,21 +20,60 @@ const AddFiLink = (el) => (
   el.innerHTML = `
   ${el.innerHTML}
   <a href='#${linkify(el)}'>
-  <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+  <svg stroke="currentColor" fill="none" stroke-width="1" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height=".5em" width=".5em" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
   </a>
   `
 )
+
+// `
+//
 const BlogPostWrapper = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+
+.right {
+position: relative;
+}
+.toc {
+align-self: flex-start;
+justify-self: flex-start;
+top: 100px;
+position: sticky;
+}
+.toc h2 {
+font-size: 1rem;
+color: rgba(255, 255, 255, .2) !important;
+font-weight: 100;
+margin: 0;
+padding: 0;
+text-align: center;
+}
+.toc ol {
+list-style-type: none;
+}
+.toc a{
+text-decoration: none;
 }
 `
+
+
+const BlogFlex = styled.div`
+display: flex;
+flex-wrap: wrap;
+// flex-direction: row-reverse;
+.right .toc {
+  @media (max-width: 1500px) {
+    display: none
+    }
+`
+
+
 
 const BlogPostStyles = styled.article`
 background: rgba(51, 0, 38, .13);
 background: hsla(234, 33%, 15%, 0.66);
-overflow: hidden;
+// overflow: hidden;
 display: block;
 margin: .2rem;
 max-width: 1000px;
@@ -254,10 +294,31 @@ h1 {
   }
 }
 
-
+.toc {
+  width: 600px;
+  margin: auto;
+  position:initial;
+  @media (min-width: 1500px) {
+    display: none
+  }
+}
 
 `
 // ` fix weird syntax highlighting
+
+
+const Toc = ({data}) => (
+  <div className='toc'>
+    <a href='#title'><h2 className='no-link'>toc</h2></a>
+    <ol>
+      {data.map(h => <li>
+        <a href={`#${linkify(h)}`} style={{color: `rgba(255, 255, 255, ${(8 - h.nodeName.slice(1)*2)/10 }` }}>{'..'.repeat(h.nodeName.slice(1) - 2)} {h.innerText}</a>
+        {/* <svg stroke="currentColor" fill="none" stroke-width=".4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height=".5em" width=".5em" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg> */}
+      </li> )}
+    </ol>
+    <hr style={{ margin: '1rem 25% ' }} />
+  </div>
+  )
 
 class BlogPostTemplate extends React.Component {
   // constructor(props) {
@@ -284,11 +345,11 @@ class BlogPostTemplate extends React.Component {
       fluidCover,
       date,
       similarPosts,
-      allPosts
+      allPosts,
+      toc
     } = this.props
     // const PostContent = contentComponent || Content
 
-    console.log(allPosts)
     const shortTitle = title === null ? '' : encodeURIComponent(title.slice(0, 150))
     const tweetLink = `https://twitter.com/intent/tweet?text=${shortTitle + '%0A%0A@waylonwalker%0A%0A' + url}`
     const hnLink = `https://news.ycombinator.com/submitlink?u=${url}&t=${shortTitle}`
@@ -323,9 +384,13 @@ class BlogPostTemplate extends React.Component {
           <link rel='canonical' href={url} />
         </Helmet>
         <BlogPostWrapper className='blog-post'>
+          <BlogFlex>
+          <div className='left'>
+          </div>
           <BlogPostStyles className='h-entry'>
             <Img fluid={fluidCover} className='post-cover-image' />
             <h1
+              id='title'
               style={{ textAlign: 'right', zIndex: 2 }}
               className="blog title">
               {title}
@@ -370,6 +435,7 @@ class BlogPostTemplate extends React.Component {
               </ul>
             </div>
             <hr style={{ margin: '1rem 25% ' }} />
+            <Toc data={toc} />
             <div className='post-body' ref={(el) => { this.markdownContainer = el }}
               dangerouslySetInnerHTML={{ __html: content }} />
             <hr style={{ margin: '3rem 25% 0' }} />
@@ -406,6 +472,10 @@ class BlogPostTemplate extends React.Component {
             </div>
 
           </BlogPostStyles>
+          <div className='right'>
+            <Toc data={toc} />
+          </div>
+          </BlogFlex>
           {/* <p className='post-cta-all-posts'> */}
           {/*   Check out my other */}
           {/* <Link to='/blog' style={{ margin: '.2rem' }} >blogs</Link> */}
@@ -432,7 +502,11 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data, pageContext }) => {
   const { markdownRemark: post } = data
-  console.log(pageContext)
+  const doc = new DOMParser().parseFromString(post.html, 'text/html')
+  const headings = [...doc.querySelectorAll('h1, h2, h3, h4')]
+  const toc = headings
+
+  
 
   return (
     <Layout
@@ -462,6 +536,7 @@ const BlogPost = ({ data, pageContext }) => {
         date={post.frontmatter.date}
         similarPosts={pageContext.similarPosts}
         allPosts={pageContext.allPosts}
+        toc={toc}
       />
 
     </Layout>
@@ -478,6 +553,7 @@ export {
   BlogPost,
   BlogPostTemplate
 }
+
 export default BlogPost
 
 
