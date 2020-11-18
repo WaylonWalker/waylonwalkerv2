@@ -1,4 +1,6 @@
 import React from 'react'
+const doc = new DOMParser().parseFromString(post.html, 'text/html')
+const headings = [...doc.querySelectorAll('h1, h2, h3, h4')]
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
@@ -502,9 +504,6 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data, pageContext }) => {
   const { markdownRemark: post } = data
-  const doc = new DOMParser().parseFromString(post.html, 'text/html')
-  const headings = [...doc.querySelectorAll('h1, h2, h3, h4')]
-  const toc = headings
 
   
 
@@ -536,7 +535,7 @@ const BlogPost = ({ data, pageContext }) => {
         date={post.frontmatter.date}
         similarPosts={pageContext.similarPosts}
         allPosts={pageContext.allPosts}
-        toc={toc}
+        toc={pageContext.headings}
       />
 
     </Layout>

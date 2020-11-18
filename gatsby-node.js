@@ -40,6 +40,16 @@ const similar_posts = (node, posts, index) => {
   return similar_posts
 }
 
+const getHeadings = ({node}) => {
+try{
+   const DOMParser = require('xmldom').DOMParser
+   const doc = new DOMParser().parseFromString(node.html, 'text/html')
+   return [...doc.querySelectorAll('h1, h2, h3, h4')]
+} catch (err) {
+  return []
+}
+}
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
@@ -49,6 +59,7 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             id
+            html
             fields {
               slug
             }
@@ -88,9 +99,11 @@ exports.createPages = ({ actions, graphql }) => {
       if (
         node.frontmatter.templateKey !== "gratitude"
         && node.frontmatter.templateKey !== null
-        && node.fields.slug !== false 
-        && node.fields.slug !== 'false'
+        && node.fields.status !== false 
+        && node.fields.status !== 'false'
       ) {
+
+        const headings = getHeadings(node)
 
         createPage({
           path: node.fields.slug,
@@ -104,7 +117,8 @@ exports.createPages = ({ actions, graphql }) => {
             prev: index === 0 ? null : posts[index - 1].node,
             next: index === (posts.length -1 ) ? null : posts[index + 1].node,
             similarPosts: similar_posts(node, posts, index),
-            allPosts: posts
+            allPosts: posts,
+            headings: headings
 
           },
         })
