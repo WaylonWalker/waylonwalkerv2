@@ -1,6 +1,4 @@
 import React from 'react'
-const doc = new DOMParser().parseFromString(post.html, 'text/html')
-const headings = [...doc.querySelectorAll('h1, h2, h3, h4')]
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
