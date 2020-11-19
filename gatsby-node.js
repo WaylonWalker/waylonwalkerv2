@@ -1,11 +1,3 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/do/js/node-apis/
- */
-
-// You can delete this file if you're not using it
-
 const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
@@ -38,16 +30,6 @@ const similar_posts = (node, posts, index) => {
   const next = index === (posts.length -1 ) ? null : posts[index + 1].node
   const similar_posts = [...new Set([prev, next, ...taggedPosts, ...orderedPosts])].filter(p => p !== null)
   return similar_posts
-}
-
-const getHeadings = ({node}) => {
-try{
-   const DOMParser = require('xmldom').DOMParser
-   const doc = new DOMParser().parseFromString(node.html, 'text/html')
-   return [...doc.querySelectorAll('h1, h2, h3, h4')]
-} catch (err) {
-  return []
-}
 }
 
 exports.createPages = ({ actions, graphql }) => {
@@ -103,7 +85,6 @@ exports.createPages = ({ actions, graphql }) => {
         && node.fields.status !== 'false'
       ) {
 
-        const headings = getHeadings(node)
 
         createPage({
           path: node.fields.slug,
@@ -117,8 +98,8 @@ exports.createPages = ({ actions, graphql }) => {
             prev: index === 0 ? null : posts[index - 1].node,
             next: index === (posts.length -1 ) ? null : posts[index + 1].node,
             similarPosts: similar_posts(node, posts, index),
-            allPosts: posts,
-            headings: headings
+            // allPosts: posts,
+            // headings: headings
 
           },
         })

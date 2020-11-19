@@ -10,11 +10,8 @@ import Img from 'gatsby-image'
 import { FiTwitter, FiGithub, FiFacebook } from "react-icons/fi";
 import { DiHackernews } from "react-icons/di";
 import { IoLogoReddit } from "react-icons/io";
-import Headroom from 'react-headroom'
-// import Social from '../components/social'
-// import Icon from '../components/icon'
 
-const linkify = (el) => (el.innerText.toLowerCase().replace(/\s/g, '-'))
+const linkify = (el) => (el.innerText.toLowerCase().trim().replace(/\s/g, '-'))
 
 const AddFiLink = (el) => (
   el.innerHTML = `
@@ -307,18 +304,36 @@ h1 {
 // ` fix weird syntax highlighting
 
 
-const Toc = ({data}) => (
+class Toc extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {headings: undefined}
+  }
+  componentDidMount() {
+  // console.log({headings: [...document.querySelectorAll('h1, h2, h3, h4')]})
+  this.setState({headings: [...document.querySelectorAll('h1:not(.no-link),h2:not(.no-link),h3:not(.no-link),h4:not(.no-link),h5:not(.no-link),h6:not(.no-link)')]})
+  }
+  render() {
+  return(
   <div className='toc'>
     <a href='#title'><h2 className='no-link'>toc</h2></a>
     <ol>
-      {data.map(h => <li>
-        <a href={`#${linkify(h)}`} style={{color: `rgba(255, 255, 255, ${(8 - h.nodeName.slice(1)*2)/10 }` }}>{'..'.repeat(h.nodeName.slice(1) - 2)} {h.innerText}</a>
-        {/* <svg stroke="currentColor" fill="none" stroke-width=".4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height=".5em" width=".5em" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg> */}
-      </li> )}
+      {this.state.headings === undefined
+        ? ''
+        // : this.state.headings.map( h => <li> <a href={`#${linkify(h)}`} style={{color: `rgba(255, 255, 255, ${(8 - h.nodeName.slice(1)*2)/10 }` }}>{'..'.repeat(h.nodeName.slice(1) - 2)} {h.innerText}</a> </li> )
+        : this.state.headings.map( h => 
+          <li>
+            <a href={`#${linkify(h)}`} style={{color: `rgba(255, 255, 255, ${(8 - h.nodeName.slice(1)*2)/10 })` }}>
+              {'..'.repeat(Math.max(h.nodeName.slice(1) - 2, 0))}{h.innerText}
+            </a>
+          </li>
+        )
+      }
     </ol>
     <hr style={{ margin: '1rem 25% ' }} />
   </div>
-  )
+)}
+}
 
 class BlogPostTemplate extends React.Component {
   // constructor(props) {
@@ -345,8 +360,8 @@ class BlogPostTemplate extends React.Component {
       fluidCover,
       date,
       similarPosts,
-      allPosts,
-      toc
+      // allPosts,
+      // toc
     } = this.props
     // const PostContent = contentComponent || Content
 
@@ -435,7 +450,7 @@ class BlogPostTemplate extends React.Component {
               </ul>
             </div>
             <hr style={{ margin: '1rem 25% ' }} />
-            <Toc data={toc} />
+            <Toc />
             <div className='post-body' ref={(el) => { this.markdownContainer = el }}
               dangerouslySetInnerHTML={{ __html: content }} />
             <hr style={{ margin: '3rem 25% 0' }} />
@@ -473,7 +488,7 @@ class BlogPostTemplate extends React.Component {
 
           </BlogPostStyles>
           <div className='right'>
-            <Toc data={toc} />
+            <Toc />
           </div>
           </BlogFlex>
           {/* <p className='post-cta-all-posts'> */}
@@ -533,7 +548,6 @@ const BlogPost = ({ data, pageContext }) => {
         date={post.frontmatter.date}
         similarPosts={pageContext.similarPosts}
         allPosts={pageContext.allPosts}
-        toc={pageContext.headings}
       />
 
     </Layout>
