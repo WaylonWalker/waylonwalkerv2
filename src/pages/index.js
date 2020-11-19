@@ -72,6 +72,7 @@ const About = () => {
   )
 }
 const IndexStyle = styled.div`
+overflow: hidden;
 h1{
   margin: auto;
   max-width: 900px;

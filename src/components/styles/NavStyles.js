@@ -9,7 +9,8 @@ box-shadow: 0rem 0rem 2rem rgba(0,0,0, .4);
 background: rgb(40,44,52);
 background: linear-gradient(81deg, rgba(40,44,52,1) 0%, #332D3A 90%, #392E3D 95%);
 margin-bottom: 2rem;
-overflow: none;
+overflow: hidden;
+max-width: 100vw;
 
 
 .content {

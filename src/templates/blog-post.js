@@ -29,6 +29,12 @@ display: flex;
 flex-direction: column;
 align-items: center;
 
+  @media (max-width: 1500px) {
+  overflow: hidden;
+
+  }
+
+
 .right {
 position: relative;
 }
@@ -37,6 +43,7 @@ align-self: flex-start;
 justify-self: flex-start;
 top: 100px;
 position: sticky;
+
 
 ol {
   padding-top: 0px;
@@ -58,6 +65,7 @@ list-style-type: none;
 .toc a{
 text-decoration: none;
 }
+
 `
 
 
@@ -69,11 +77,13 @@ flex-wrap: wrap;
   @media (max-width: 1500px) {
     display: none
     }
+
 `
 
 
 
 const BlogPostStyles = styled.article`
+overflow: hidden;
 background: rgba(51, 0, 38, .13);
 background: hsla(234, 33%, 15%, 0.66);
 // overflow: hidden;
