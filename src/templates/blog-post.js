@@ -73,7 +73,7 @@ background: hsla(234, 33%, 15%, 0.66);
 // overflow: hidden;
 display: block;
 margin: .2rem;
-max-width: 1000px;
+max-width: min(95vw, 1000px);
 width: 95%;
 position: relative;
 margin: 2rem 0;
