@@ -37,6 +37,12 @@ align-self: flex-start;
 justify-self: flex-start;
 top: 100px;
 position: sticky;
+
+ol {
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
 }
 .toc h2 {
 font-size: 1rem;
@@ -292,9 +298,37 @@ h1 {
 }
 
 .toc {
-  width: 600px;
+  width: min(90vw, 600px);
   margin: auto;
   position:initial;
+
+  li {
+    padding: 0;
+    margin: 0;
+  }
+
+  li.H1, li.H2 {
+    padding-top: .8rem;
+  }
+
+  li.H3 {
+    padding-left: .5rem;
+  }
+
+  li.H4 {
+    padding-left: 1rem;
+  }
+
+  li.H5 {
+    padding-left: 1.25rem;
+  }
+
+  li.H6 {
+    padding-left: 1.5rem;
+  }
+
+  font-size: .8rem;
+  line-height: 1.1rem;
   @media (min-width: 1500px) {
     display: none
   }
@@ -322,9 +356,9 @@ class Toc extends React.Component {
         ? ''
         // : this.state.headings.map( h => <li> <a href={`#${linkify(h)}`} style={{color: `rgba(255, 255, 255, ${(8 - h.nodeName.slice(1)*2)/10 }` }}>{'..'.repeat(h.nodeName.slice(1) - 2)} {h.innerText}</a> </li> )
         : this.state.headings.map( h => 
-          <li>
+          <li className={h.nodeName}>
             <a href={`#${linkify(h)}`} style={{color: `rgba(255, 255, 255, ${(8 - h.nodeName.slice(1)*2)/10 })` }}>
-              {'..'.repeat(Math.max(h.nodeName.slice(1) - 2, 0))}{h.innerText}
+              {h.innerText}
             </a>
           </li>
         )
