@@ -9,6 +9,7 @@ import BlogPosts from '../components/BlogPosts'
 // import chroma from 'chroma-js'
 
 const BlogPageStyles = styled.div`
+overflow: hidden;
 width: calc(min(1000px, 95vw));
 display: flex;
 justify-content: center;
