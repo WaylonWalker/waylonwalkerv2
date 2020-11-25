@@ -408,11 +408,10 @@ class BlogPostTemplate extends React.Component {
       description,
       title,
       cover,
+      sm_img,
       fluidCover,
       date,
       similarPosts,
-      // allPosts,
-      // toc
     } = this.props
     // const PostContent = contentComponent || Content
 
@@ -437,11 +436,12 @@ class BlogPostTemplate extends React.Component {
             { name: 'og:article:published_time', content: date },
             { name: 'og:article:modified_time', content: date },
             { name: 'og:description', content: description },
-            { name: 'og:image', content: 'https://waylonwalker.com' + cover.src },
+            { name: 'og:image', content: 'https://waylonwalker.com' + cover},
+            { name: 'og:sm_image', content: 'https://waylonwalker.com' + sm_img},
 
             { name: 'twitter:title', content: title + ' | Waylon Walker' },
             { name: 'twitter:card', content: 'summary_large_image' },
-            { name: 'twitter:image', content: 'https://waylonwalker.com' + cover.src },
+            { name: 'twitter:image', content: 'https://waylonwalker.com' + cover},
             { name: 'twitter:description', content: description },
           ]}
 
@@ -454,7 +454,7 @@ class BlogPostTemplate extends React.Component {
           <div className='left'>
           </div>
           <BlogPostStyles className='h-entry'>
-            { fluidCover === null
+            { fluidCover !== null
               ? <Img fluid={fluidCover} className='post-cover-image' />
               : ''
             }
@@ -572,7 +572,12 @@ BlogPostTemplate.propTypes = {
 const BlogPost = ({ data, pageContext }) => {
   const { markdownRemark: post } = data
 
-  
+  let covers = post.frontmatter.cover
+  const cover = covers?.full?.fixed?.src
+  const fluidCover = covers?.full.fluid
+  const sm_img = covers?.sm_img?.fixed?.src
+  console.log({fluidCover})
+
 
   return (
     <Layout
@@ -589,16 +594,9 @@ const BlogPost = ({ data, pageContext }) => {
         description={post.frontmatter.description}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
-        cover={
-          post.frontmatter.cover !== null
-            ? post.frontmatter.cover.childImageSharp.fixed
-            : ''
-        }
-        fluidCover={
-          post.frontmatter.cover !== null
-            ? post.frontmatter.cover.childImageSharp.fluid
-            : ''
-        }
+        cover={cover }
+        sm_img={sm_img}
+        fluidCover={ fluidCover }
         date={post.frontmatter.date}
         similarPosts={pageContext.similarPosts}
         allPosts={pageContext.allPosts}
@@ -634,9 +632,27 @@ export const pageQuery = graphql`
         description
         cover {
           absolutePath
-          childImageSharp {
-                fixed(width: 1000, height: 420) {
-                ...GatsbyImageSharpFixed
+          xsm_img: childImageSharp {
+              fixed(width: 50) {
+                src
+                srcWebp
+              }
+          }
+          sm_img: childImageSharp {
+              fixed(width: 300) {
+                src
+                srcWebp
+              }
+          }
+          med_img: childImageSharp {
+              fixed(width: 500) {
+                src
+                srcWebp
+              }
+          }
+          full: childImageSharp {
+              fixed(width: 1000, height: 420) {
+              ...GatsbyImageSharpFixed
               },
             fluid(maxWidth: 1000, maxHeight: 420) {
                 ...GatsbyImageSharpFluid
