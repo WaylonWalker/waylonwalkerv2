@@ -1,5 +1,6 @@
 // google analytics tracking id
 // UA-113148616-1
+//
 
 const CoffeeButton = `
 <table style="border: none;" cellspacing="0" cellpadding="0">
@@ -89,6 +90,7 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-twitter',
     // 'gatsby-remark-copy-linked-files',
     // {
     //   resolve: `gatsby-source-filesystem`,
@@ -140,6 +142,17 @@ module.exports = {
           'gatsby-remark-static-images',
           `gatsby-remark-prismjs`,
           `gatsby-remark-images-zoom`,
+          {
+            resolve: `gatsby-remark-embedder`,
+            options: {
+              customTransformers: [
+                // Your custom transformers
+              ],
+              services: {
+                // The service-specific options by the name of the service
+              },
+            },
+          },
           // 'gatsby-remark-social-cards',
           {
             resolve: 'gatsby-remark-images',

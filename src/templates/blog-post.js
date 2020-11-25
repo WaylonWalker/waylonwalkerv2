@@ -6,6 +6,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import WebMention from '../components/WebMention'
 import PostCards from '../components/PostCards'
+import { oneLineLinks, oneLineLinkCardStyle } from '../components/onelinelink'
 import Img from 'gatsby-image'
 import { FiTwitter, FiGithub, FiFacebook } from "react-icons/fi";
 import { DiHackernews } from "react-icons/di";
@@ -31,7 +32,6 @@ align-items: center;
 
   @media (max-width: 1500px) {
   overflow: hidden;
-
   }
 
 
@@ -86,11 +86,12 @@ const BlogPostStyles = styled.article`
 overflow: hidden;
 background: rgba(51, 0, 38, .13);
 background: hsla(234, 33%, 15%, 0.66);
-// overflow: hidden;
 display: block;
 margin: .2rem;
-max-width: min(95vw, 1000px);
-width: 95%;
+width: min(95vw, 1000px);
+@media (max-width: 650px) {
+  width: min(100vw, 1000px);
+}
 position: relative;
 margin: 2rem 0;
 padding: 1rem;
@@ -112,7 +113,6 @@ color: whitesmoke;
   h1 {
     font-size: 2.5rem;
   }
-  width: 100%;
   margin: 0rem;
   padding: 0rem;
   margin: 0rem;
@@ -344,6 +344,12 @@ h1 {
   }
 }
 
+.twitter-tweet {
+margin: 10px auto;
+}
+
+${oneLineLinkCardStyle}
+
 `
 // ` fix weird syntax highlighting
 
@@ -365,8 +371,8 @@ class Toc extends React.Component {
       {this.state.headings === undefined
         ? ''
         // : this.state.headings.map( h => <li> <a href={`#${linkify(h)}`} style={{color: `rgba(255, 255, 255, ${(8 - h.nodeName.slice(1)*2)/10 }` }}>{'..'.repeat(h.nodeName.slice(1) - 2)} {h.innerText}</a> </li> )
-        : this.state.headings.map( h => 
-          <li className={h.nodeName}>
+        : this.state.headings.map( (h, index) => 
+          <li key={index} className={h.nodeName}>
             <a href={`#${linkify(h)}`} style={{color: `rgba(255, 255, 255, ${(8 - h.nodeName.slice(1)*2)/10 })` }}>
               {h.innerText}
             </a>
@@ -391,6 +397,7 @@ class BlogPostTemplate extends React.Component {
     if (window.location.href.slice(-1) === '/') {
       window.history.pushState({}, null, window.location.href.slice(0, -1))
     }
+    oneLineLinks()
   }
 
   render() {
@@ -447,7 +454,10 @@ class BlogPostTemplate extends React.Component {
           <div className='left'>
           </div>
           <BlogPostStyles className='h-entry'>
-            <Img fluid={fluidCover} className='post-cover-image' />
+            { fluidCover === null
+              ? <Img fluid={fluidCover} className='post-cover-image' />
+              : ''
+            }
             <h1
               id='title'
               style={{ textAlign: 'right', zIndex: 2 }}
