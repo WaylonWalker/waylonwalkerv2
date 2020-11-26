@@ -1,13 +1,10 @@
 const oneLineLinkCardStyle = `
-blockquote + .onelinelink {
-  margin-bottom: 0;
-}
 
 .onelinelink + blockquote {
   position: relative;
   left: 2rem;
   background: rgba(0, 0, 0, .2);
-  margin: -2rem auto;
+  margin: -6rem auto 1rem;
   padding-top: 3rem;
   border: 1px solid goldenrod;
   border-top: 2px solid goldenrod;
@@ -108,20 +105,19 @@ const getDescription = (url) => (
       let meta = doc.querySelectorAll('meta')
       const description = [...meta].filter(m => m.name === 'og:description')[0].content
       const image = [...meta].filter(m => m.name === 'og:image')[0]?.content
+      const sm_image = [...meta].filter(m => m.name === 'og:sm_image')[0]?.content
       const url = [...meta].filter(m => m.name === 'og:url')[0]?.content
       const title = [...meta].filter(m => m.name === 'title')[0]?.content
-      console.log(meta)
-      console.log({description, image, url, title})
-      return {description, image, url, title}
+      return {description, image, url, title, sm_image}
       })
 )
 
 
 const oneLineLinkCard = (url) => {
   return getDescription(url).then( meta => 
-`<a class="onelinelink" href=${url}'>
+`<a class="onelinelink" href=${meta.url}'>
   <img
-    src='${meta.image ? meta.image : ''}'
+    src='${meta.sm_image ? meta.sm_image : meta.image ? meta.image : ''}'
   >
   <div class="right">
     <h2>${meta.title ? meta.title : ''}</h2>
