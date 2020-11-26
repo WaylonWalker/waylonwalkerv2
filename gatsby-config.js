@@ -142,18 +142,7 @@ module.exports = {
           'gatsby-remark-static-images',
           `gatsby-remark-prismjs`,
           `gatsby-remark-images-zoom`,
-          {
-            resolve: `gatsby-remark-embedder`,
-            options: {
-              customTransformers: [
-                // Your custom transformers
-              ],
-              services: {
-                // The service-specific options by the name of the service
-              },
-            },
-          },
-          // 'gatsby-remark-social-cards',
+          `gatsby-remark-embedder`,
           {
             resolve: 'gatsby-remark-images',
             options: {
