@@ -51,6 +51,16 @@ def make_cover(title, path):
     # )
 
 
+@background.task
+def make_theme(path):
+    image = Image.open(f"../../static/{path}.png")
+    overlay = Image.open("../../static/christmas-lights-overlay.png")
+    overlay2 = Image.open("../../static/santa-hat-overlay.png")
+    image.paste(overlay, mask=overlay)
+    image.paste(overlay2, mask=overlay2)
+    image.save(f"../../static/{path}-xmas2020.png")
+
+
 if __name__ == "__main__":
     import sys
 
