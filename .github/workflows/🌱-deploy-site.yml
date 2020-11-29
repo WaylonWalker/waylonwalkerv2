@@ -74,7 +74,8 @@ jobs:
       - name: fill missing covers
         run: |
           cd .github/scripts
-          python -m missiing-covers.py
+          ls
+          python missiing-covers.py
 
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
