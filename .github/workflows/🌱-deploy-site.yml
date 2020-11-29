@@ -20,10 +20,6 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      # - name: Set up Python 3.7
-      #   uses: actions/setup-python@v1
-      #   with:
-      #     python-version: 3.8
       - uses: actions/checkout@v2
 
       # - name: npm cache directory
@@ -68,6 +64,17 @@ jobs:
       #     key: ${{ runner.os }}-gatsby-public-directory
       #     restore-keys: |
       #       ${{ runner.os }}-public-director
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: install python deps
+        run: pip install frontmatter pillow
+      - name: fill missing covers
+        run: |
+          cd .github/scripts
+          python -m missiing_covers.py
 
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
