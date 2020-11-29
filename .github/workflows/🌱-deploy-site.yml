@@ -73,7 +73,9 @@ jobs:
         run: pip install python-frontmatter pillow
       - name: fill missing covers
         run: |
+          pwd
           cd .github/scripts
+          pwd
           python missing-covers.py
           git status # show changes afterwards
 
