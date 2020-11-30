@@ -179,15 +179,55 @@ of.
 
 ## Easily slice up a pipeline
 
-## plugins
+Since kedro is a DAG that takes in a pile of nodes and figures out all of the
+depencies for you it knows a lot about your pipeline.  You can slice it up to
+only the specific pieces that you need.
 
+``` python
+# single nodes
+pipeline.only_nodes("node1")
 
+# single nodes and all of thier dependencies
+pipeline.to_nodes("node1", "node2")
+
+# from a dataset to all of its dependants
+pipeline.from_inputs("dataset1", "dataset2")
+
+# to a an outputs with all of its dependencies
+pipeline.to_outputs("dataset6", "dataset7")
+```
+
+## plugins/hooks
+
+Creating your own modifications to how kedro behaves is made really simple
+through the use of hooks.  There are several hooks that happen at different
+points in the kedro lifecycle.  For instance you can hook in before pipeline
+run or after pipeline run to do whatever your project needs.
 
 https://waylonwalker.com/blog/creating-the-kedro-preflight-hook
 
 ### pip install plugin
 
-### hooks
+There is a growing list of plugins available from pypi that is only a `pip
+install` away.
 
 ## flexible cli
+
+In the end you have a cli for your project that can run your pipeline in all
+sorts of cool ways since it knows about each nodes dependencies.  This makes
+for running and scheduling production a breeze.
+
+``` bash
+# single nodes
+kedro run --node node1
+
+# single nodes and all of thier dependencies
+kedro run --to-nodes node1,node2 
+
+# from a dataset to all of its dependants
+kedro run --from-inputs dataset1,dataset2
+
+# to a an outputs with all of its dependencies
+kedro run --to-outputs dataset6,dataset7
+```
 
