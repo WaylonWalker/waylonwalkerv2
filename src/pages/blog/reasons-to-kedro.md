@@ -1,7 +1,9 @@
 ---
 templateKey: blog-post
 related_post_label: Check out this related post
-tags: []
+tags: 
+  - kedro
+  - python
 title: reasons-to-kedro
 date: 2020-11-01T05:00:00.000+00:00
 status: published
