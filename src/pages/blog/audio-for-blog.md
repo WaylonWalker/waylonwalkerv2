@@ -10,7 +10,7 @@ cover: '/static/audio-for-blog.png'
 ---
 
 This is episode 1 of the Waylon Walker Audio experience, posts from
-[waylonwalker.com](https://www.waylonwalker.com) in audio form.
+[waylonwalker.com](https://waylonwalker.com) in audio form.
 
 So I have had this idea for awhile to add audio to my blog posts.  The idea
 partly comes from the aws blog, if you have ever been on their blog you will
