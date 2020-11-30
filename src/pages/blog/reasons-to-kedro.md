@@ -9,15 +9,46 @@ description: ''
 cover: "/static/reasons-to-kedro.png"
 
 ---
-There are many reasons that you should be using kedro.  If you are on a team of Data Scientists/Data Engineers processing DataFrames from many data sources should be considering a pipeline framework.  Kedro is a great option that provides many benefits for teams to collaborate, develop, and deploy data pipelines
+There are many reasons that you should be using kedro.  If you are on a team of
+Data Scientists/Data Engineers processing DataFrames from many data sources
+should be considering a pipeline framework.  Kedro is a great option that
+provides many benefits for teams to collaborate, develop, and deploy data
+pipelines
+
+https://waylonwalker.com/blog/what-is-kedro
+
+## Starter Template
+
+Kedro makes it super easy to get started with their cli that utilizes
+cookiecutter under the hood.
+
+``` bash
+conda create -n my-new-prjoect -y python=3.8
+kedro new
+kedro install
+kedro run
+```
+
+
+https://waylonwalker.com/blog/create-new-kedro-project
+
+> read more about how to start your first kedro project here
 
 ## Collaboration
 
-Kedro provides many tools that help teams collaborate on a single codebase.  While writing monolithic scripts it can be easy to pin yourself in a corner where it is difficult to have multiple people making change to the notebook/script at the same time.  Kedro helps guide your team to break your project down into small pieces that different members of the team can work on in parallel.
+Kedro provides many tools that help teams collaborate on a single codebase.
+While writing monolithic scripts it can be easy to pin yourself in a corner
+where it is difficult to have multiple people making change to the
+notebook/script at the same time.  Kedro helps guide your team to break your
+project down into small pieces that different members of the team can work on
+in parallel.
 
 ### sharable catalog
 
-Kedro makes it easy to collaborate with members who aren't even working on the pipeline.  I often see team members who want to investigate datasets from different points in the pipeline.  Kedro makes it really easy for them to load it into python.
+Kedro makes it easy to collaborate with members who aren't even working on the
+pipeline.  I often see team members who want to investigate datasets from
+different points in the pipeline.  Kedro makes it really easy for them to load
+it into python.
 
 **for python users**
 
@@ -29,7 +60,9 @@ catalog.load('main_table')
 
 **for non-python users**
 
-For those who may not be using python, we can easily kick out a CSV version of that `main_table` that they can get from s3 or your cloud storage solution of choice.
+For those who may not be using python, we can easily kick out a CSV version of
+that `main_table` that they can get from s3 or your cloud storage solution of
+choice.
 
 ``` yaml
 master_table:
@@ -40,7 +73,10 @@ master_table:
 
 **for the SQL folks**
 
-We aren't even constrained to those who only use python or excel, we can kick out any kind of dataset that python can output.  Kedro even comes with many DataSet types out of the box so that we don't have to write any read/write code.
+We aren't even constrained to those who only use python or excel, we can kick
+out any kind of dataset that python can output.  Kedro even comes with many
+DataSet types out of the box so that we don't have to write any read/write
+code.
 
 ``` yaml
 master_table:
@@ -51,19 +87,35 @@ master_table:
 
 ### small nodes over monolithic scripts
 
-As I said before single notebooks/scripts are really hard to collaborate on.  I have seen Data Engineers sitting idle waiting to get their changes manually added into the master notebook.  When you find yourself in this situation, find a better solution.  Its time to break things down into individual modules and utilize a version control system that can automatically merge changes in.
+As I said before single notebooks/scripts are really hard to collaborate on.  I
+have seen Data Engineers sitting idle waiting to get their changes manually
+added into the master notebook.  When you find yourself in this situation, find
+a better solution.  Its time to break things down into individual modules and
+utilize a version control system that can automatically merge changes in.
 
-Kedro encourages the use of git version control and storing all node functions inside of modules while still making it really easy to load data into a notebook/shell and start trying out new things.
+Kedro encourages the use of git version control and storing all node functions
+inside of modules while still making it really easy to load data into a
+notebook/shell and start trying out new things.
 
 ## No More read and write code
 
-As I said earlier kedro comes with datasets for the most popular output formats.  It is also backed by a really amazing library called `fsspec`, this library makes the filesystem that you are storing agnostic to how you write to it.  This means that the kedro library utilizes `fsspec` under the hood and writes to the file as if it was to disk, but based on the prefix to the file it may actually be writing to the local filesystem, gcp, azure blob, or s3.
+As I said earlier kedro comes with datasets for the most popular output
+formats.  It is also backed by a really amazing library called `fsspec`, this
+library makes the filesystem that you are storing agnostic to how you write to
+it.  This means that the kedro library utilizes `fsspec` under the hood and
+writes to the file as if it was to disk, but based on the prefix to the file it
+may actually be writing to the local filesystem, gcp, azure blob, or s3.
 
 **custom DataSets**
 
-If kedro does not have a `DataSet` for the format that you need to read or write you can easily create your own custom `DataSet`  all you need to do is inherit from `kedro.io.AbstractDataSet` and create methods for `__init__`, `_load`, `_save`, `_exists`, and `_describe`.
+If kedro does not have a `DataSet` for the format that you need to read or
+write you can easily create your own custom `DataSet`  all you need to do is
+inherit from `kedro.io.AbstractDataSet` and create methods for `__init__`,
+`_load`, `_save`, `_exists`, and `_describe`.
 
-Check out this example from their docs.  I removed the docstrings for brevity, you can see the entire `DataSet` in their [docs](https://kedro.readthedocs.io/en/0.15.2/03_tutorial/03_set_up_data.html?highlight=custom%20dataset#creating-custom-datasets).
+Check out this example from their docs.  I removed the docstrings for brevity,
+you can see the entire `DataSet` in their
+[docs](https://kedro.readthedocs.io/en/0.15.2/03_tutorial/03_set_up_data.html?highlight=custom%20dataset#creating-custom-datasets).
 
 > The complete example all in one was only available in an older version, more up to date \[docs\] (https://kedro.readthedocs.io/en/0.16.6/07_extend_kedro/01_custom_datasets.html?highlight=custom%20dataset) have a good writeup that walks through everything separately.
 
@@ -115,13 +167,23 @@ class ExcelLocalDataSet(AbstractDataSet):
 
 ## Execution order is taken care of
 
-As you build up complex pipelines containing 10's or 100's of nodes it becomes difficult to splice in new nodes / steps without messing up or a framework to help.  Kedro simply needs a set of nodes that each takes in catalog entries as input and output to catalog entries and it will figure out the order for you.
+As you build up complex pipelines containing 10's or 100's of nodes it becomes
+difficult to splice in new nodes / steps without messing up or a framework to
+help.  Kedro simply needs a set of nodes that each takes in catalog entries as
+input and output to catalog entries and it will figure out the order for you.
 
-These nodes can be 
+These nodes can be made for one off purposes, take in functions from reusable
+libraries, and even be dynamically genereated from a configuration.  There is
+no need to worry about hand curating the execution order, thats all taken care
+of.
 
 ## Easily slice up a pipeline
 
 ## plugins
+
+
+
+https://waylonwalker.com/blog/creating-the-kedro-preflight-hook
 
 ### pip install plugin
 
@@ -129,4 +191,3 @@ These nodes can be
 
 ## flexible cli
 
-![](/static/reasons-to-kedro-1.png)
