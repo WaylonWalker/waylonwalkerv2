@@ -108,6 +108,12 @@ for article in pages.glob("**/*.md"):
             changed = True
             post.content = expanded_content
 
+        if "xmas2020" not in post.metadata["cover"]:
+            changed = True
+            post.metadata["cover"] = post.metadata["cover"].replace(
+                ".png", "-xmas2020.png"
+            )
+
         if changed:
             with open(article, "w+") as f:
                 f.write(frontmatter.dumps(post))
