@@ -71,11 +71,11 @@ jobs:
           python-version: 3.8
       - name: install python deps
         run: pip install python-frontmatter pillow python-twitter markdown beautifulsoup4
-      - name: fill missing covers
-        run: |
-          cd .github/scripts
-          python missing-covers.py
-          git status # show changes afterwards
+      # - name: fill missing covers
+      #   run: |
+      #     cd .github/scripts
+      #     python missing-covers.py
+      #     git status # show changes afterwards
 
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
@@ -88,7 +88,11 @@ jobs:
         # if: steps.filter.outputs.npm == 'true'
         run: npm install --production
       - name: 🔨 gatsby build
-        run: npm run build
+        run: |
+          cd .github/scripts
+          python missing-covers.py
+          git status # show changes afterwards
+          npm run build
         env:
           GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
           NODE_ENV: production
