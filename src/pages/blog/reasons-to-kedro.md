@@ -1,7 +1,9 @@
 ---
 templateKey: blog-post
 related_post_label: Check out this related post
-tags: []
+tags: 
+  - kedro
+  - python
 title: reasons-to-kedro
 date: 2020-11-01T05:00:00.000+00:00
 status: published
@@ -23,7 +25,7 @@ Kedro makes it super easy to get started with their cli that utilizes
 cookiecutter under the hood.
 
 ``` bash
-conda create -n my-new-prjoect -y python=3.8
+conda create -n my-new-project -y python=3.8
 kedro new
 kedro install
 kedro run
@@ -38,7 +40,7 @@ https://waylonwalker.com/blog/create-new-kedro-project
 
 Kedro provides many tools that help teams collaborate on a single codebase.
 While writing monolithic scripts it can be easy to pin yourself in a corner
-where it is difficult to have multiple people making change to the
+where it is difficult to have multiple people making changes to the
 notebook/script at the same time.  Kedro helps guide your team to break your
 project down into small pieces that different members of the team can work on
 in parallel.
@@ -90,7 +92,7 @@ master_table:
 As I said before single notebooks/scripts are really hard to collaborate on.  I
 have seen Data Engineers sitting idle waiting to get their changes manually
 added into the master notebook.  When you find yourself in this situation, find
-a better solution.  Its time to break things down into individual modules and
+a better solution.  It's time to break things down into individual modules and
 utilize a version control system that can automatically merge changes in.
 
 Kedro encourages the use of git version control and storing all node functions
@@ -168,19 +170,19 @@ class ExcelLocalDataSet(AbstractDataSet):
 ## Execution order is taken care of
 
 As you build up complex pipelines containing 10's or 100's of nodes it becomes
-difficult to splice in new nodes / steps without messing up or a framework to
+difficult to splice in new nodes/steps without messing up or a framework to
 help.  Kedro simply needs a set of nodes that each takes in catalog entries as
 input and output to catalog entries and it will figure out the order for you.
 
-These nodes can be made for one off purposes, take in functions from reusable
-libraries, and even be dynamically genereated from a configuration.  There is
-no need to worry about hand curating the execution order, thats all taken care
+These nodes can be made for one-off purposes, take in functions from reusable
+libraries, and even be dynamically generated from a configuration.  There is
+no need to worry about hand curating the execution order, that's all taken care
 of.
 
 ## Easily slice up a pipeline
 
 Since kedro is a DAG that takes in a pile of nodes and figures out all of the
-depencies for you it knows a lot about your pipeline.  You can slice it up to
+dependencies for you it knows a lot about your pipeline.  You can slice it up to
 only the specific pieces that you need.
 
 ``` python
@@ -201,7 +203,7 @@ pipeline.to_outputs("dataset6", "dataset7")
 
 Creating your own modifications to how kedro behaves is made really simple
 through the use of hooks.  There are several hooks that happen at different
-points in the kedro lifecycle.  For instance you can hook in before pipeline
+points in the kedro lifecycle.  For instance, you can hook in before pipeline
 run or after pipeline run to do whatever your project needs.
 
 https://waylonwalker.com/blog/creating-the-kedro-preflight-hook
@@ -215,21 +217,21 @@ install` away.  Most of them are on
 
 ## flexible cli
 
-In the end you have a cli for your project that can run your pipeline in all
-sorts of cool ways since it knows about each nodes dependencies.  This makes
-for running and scheduling production a breeze.
+In the end, you have a cli for your project that can run your pipeline in all
+sorts of cool ways since it knows about each node's dependencies.  This makes
+running and scheduling production a breeze.
 
 ``` bash
 # single nodes
 kedro run --node node1
 
-# single nodes and all of thier dependencies
+# single nodes and all of their dependencies
 kedro run --to-nodes node1,node2 
 
-# from a dataset to all of its dependants
+# from a dataset to all of its dependents
 kedro run --from-inputs dataset1,dataset2
 
-# to a an outputs with all of its dependencies
+# to outputs with all of their dependencies
 kedro run --to-outputs dataset6,dataset7
 ```
 
