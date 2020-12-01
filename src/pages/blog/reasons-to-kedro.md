@@ -11,6 +11,9 @@ description: ''
 cover: "/static/reasons-to-kedro.png"
 
 ---
+
+<iframe src="https://anchor.fm/waylon-walker/embed/episodes/reasons-to-kedro-en6kr3" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
+
 There are many reasons that you should be using kedro.  If you are on a team of
 Data Scientists/Data Engineers processing DataFrames from many data sources
 should be considering a pipeline framework.  Kedro is a great option that
