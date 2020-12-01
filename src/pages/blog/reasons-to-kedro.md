@@ -117,7 +117,7 @@ Check out this example from their docs.  I removed the docstrings for brevity,
 you can see the entire `DataSet` in their
 [docs](https://kedro.readthedocs.io/en/0.15.2/03_tutorial/03_set_up_data.html?highlight=custom%20dataset#creating-custom-datasets).
 
-> The complete example all in one was only available in an older version, more up to date \[docs\] (https://kedro.readthedocs.io/en/0.16.6/07_extend_kedro/01_custom_datasets.html?highlight=custom%20dataset) have a good writeup that walks through everything separately.
+> The complete example all in one was only available in an older version, more up to date [docs](https://kedro.readthedocs.io/en/0.16.6/07_extend_kedro/01_custom_datasets.html?highlight=custom%20dataset) have a good writeup that walks through everything separately.
 
 ``` python
 from os.path import isfile
@@ -209,7 +209,9 @@ https://waylonwalker.com/blog/creating-the-kedro-preflight-hook
 ### pip install plugin
 
 There is a growing list of plugins available from pypi that is only a `pip
-install` away.
+install` away.  Most of them are on
+[GitHub](https://github.com/topics/kedro-plugin) and tagged as a
+[kedro-plugin](https://github.com/topics/kedro-plugin) topic.
 
 ## flexible cli
 
@@ -231,3 +233,6 @@ kedro run --from-inputs dataset1,dataset2
 kedro run --to-outputs dataset6,dataset7
 ```
 
+## Try it out
+
+Hopefully this post gave you the inspiration to get started today, if it did `pip install kedro` and run `kedro new` to try it out.
