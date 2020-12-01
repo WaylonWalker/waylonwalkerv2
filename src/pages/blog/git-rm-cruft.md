@@ -15,7 +15,7 @@ cover: "./rawpixel-1055774-unsplash.jpg"
 
 ## inspiration
 
-https://blog.ostermiller.org/git-remove-from-history
+https://blog.ostermiller.org/removing-and-purging-files-from-git-history/
 
 ``` bash
 git log --all --pretty=format: --name-only --diff-filter=D | sed -r 's|[^/]+$||g' | sort -u
