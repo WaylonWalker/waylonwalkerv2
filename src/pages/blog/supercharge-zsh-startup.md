@@ -88,7 +88,7 @@ _Semi-lazy loading_
 
 ![](/static/jeppe-hove-jensen-b3eaH1hguOA-unsplash.jpg)
 
-> Photo by [Jeppe Hove](https://unsplash.com/@haywire?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) Jensen on [Unsplash](https://unsplash.com/s/photos/balance?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+> Photo by Jeppe Hove Jensen on [Unsplash](https://unsplash.com/s/photos/balance?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 After struggling to get all of the features I wanted with a fast load time, I decided to only load what I needed upon startup.  Next I created a simple alias that loads in zgen and all of the plugins I want. By doing this I get two main benefits.  Obviously I get a faster starup time by loading less.  I got my startup time down to about 0.25s.
 
