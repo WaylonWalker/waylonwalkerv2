@@ -8,6 +8,7 @@ description: ''
 cover: '/static/audio-for-blog.png'
 
 ---
+
 <iframe src="https://anchor.fm/waylon-walker/embed/episodes/Launching-Audio-for-the-Blog-en6kof" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
 
 This is episode 1 of the Waylon Walker Audio experience, posts from
@@ -53,3 +54,8 @@ If you like this idea give the posts a listen, share them with your friends,
 give me a shout out on twitter
 [@_waylonwalker](https://twitter.com/_WaylonWalker).
 
+---
+
+https://waylonwalker.com/blog/crush-dev-to-posts
+
+> If you enjoyed this post you may enjoy another "meta" post
