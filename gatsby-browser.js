@@ -8,3 +8,4 @@
 // import React from 'react'
 import './static/fonts.css'
 import './static/scroll.css'
+exports.onServiceWorkerUpdateReady= () => window.location.reload(true);
