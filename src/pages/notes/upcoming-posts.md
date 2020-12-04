@@ -9,6 +9,12 @@ description: My Notes about using kedro
 cover: ''
 
 ---
+
+## 🧠
+
+* How I manage Environments
+* My Data Workflow.
+
 ## Core
 
 * gracefully adopt kedro
