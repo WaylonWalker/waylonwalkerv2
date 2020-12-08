@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FiTwitter, FiGithub, FiInstagram, FiRss } from "react-icons/fi";
+import { IoMdGitNetwork } from 'react-icons/io'
 
 const SocialStyle = styled.div`
 
@@ -45,6 +46,11 @@ const Social = () => (
             <li>
                 <a href='https://waylonwalker.com/blog/rss.xml'>
                     <FiRss />
+                </a>
+            </li>
+            <li>
+                <a href='https://waylonwalker.com/sitemap.xml'>
+                    <IoMdGitNetwork />
                 </a>
             </li>
         </ul>
