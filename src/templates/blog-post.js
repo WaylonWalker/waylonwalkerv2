@@ -429,20 +429,20 @@ class BlogPostTemplate extends React.Component {
       <>
         <Helmet
           meta={[
-            { name: 'title', content: title + ' | Waylon Walker' },
-            { name: 'description', content: description },
-            { name: 'og:title', content: title + ' | Waylon Walker' },
-            { name: 'og:url', content: url },
-            { name: 'og:article:published_time', content: date },
-            { name: 'og:article:modified_time', content: date },
-            { name: 'og:description', content: description },
-            { name: 'og:image', content: 'https://waylonwalker.com' + cover},
-            { name: 'og:sm_image', content: 'https://waylonwalker.com' + sm_img},
+            { property: 'title', name: 'title', content: title + ' | Waylon Walker' },
+            { property: 'description', name: 'description', content: description },
+            { property: 'og:title', name: 'og:title', content: title + ' | Waylon Walker' },
+            { property: 'og:url', name: 'og:url', content: url },
+            { property: 'og:article:published_time', name: 'og:article:published_time', content: date },
+            { property: 'og:article:modified_time', name: 'og:article:modified_time', content: date },
+            { property: 'og:description', name: 'og:description', content: description },
+            { property: 'og:image', name: 'og:image', content: 'https://waylonwalker.com' + cover},
+            { property: 'og:sm_image', name: 'og:sm_image', content: 'https://waylonwalker.com' + sm_img},
 
-            { name: 'twitter:title', content: title + ' | Waylon Walker' },
-            { name: 'twitter:card', content: 'summary_large_image' },
-            { name: 'twitter:image', content: 'https://waylonwalker.com' + cover},
-            { name: 'twitter:description', content: description },
+            { property: 'twitter:title', name: 'twitter:title', content: title + ' | Waylon Walker' },
+            { property: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+            { property: 'twitter:image', name: 'twitter:image', content: 'https://waylonwalker.com' + cover},
+            { property: 'twitter:description', name: 'twitter:description', content: description },
           ]}
 
         >

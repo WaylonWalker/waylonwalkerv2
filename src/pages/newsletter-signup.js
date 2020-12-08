@@ -8,10 +8,10 @@ export default function TestPage() {
         <Layout include_subscribe={false}>
             <Helmet
                 meta={[
-                    { name: 'og:title', content: "Waylon Walker's Newsletter" },
-                    { name: 'og:image', content: 'https://waylonwalker.com/waylon-walker-newsletter.png' },
-                    { name: 'twitter:image', content: 'https://waylonwalker.com/waylon-walker-newsletter.png' },
-                    { name: 'twitter:title', content: "Waylon Walker's Newsletter" },
+                    { property: 'og:title', name: 'og:title', content: "Waylon Walker's Newsletter" },
+                    { property: 'og:image', name: 'og:image', content: 'https://waylonwalker.com/waylon-walker-newsletter.png' },
+                    { property: 'twitter:image', name: 'twitter:image', content: 'https://waylonwalker.com/waylon-walker-newsletter.png' },
+                    { property: 'twitter:title', name: 'twitter:title', content: "Waylon Walker's Newsletter" },
                 ]}
             />
 

@@ -170,18 +170,18 @@ class Tip extends React.Component {
       <>
         <Helmet
           meta={[
-            { name: 'og:title', content: content.slice(0, 65) + ' | Waylon Walker' },
-            { name: 'og:article:published_time', content: date },
-            { name: 'og:article:modified_time', content: date },
-            { name: 'og:description', content: content },
-            { name: 'description', content: content },
-            { name: 'twitter:title', content: content.slice(0, 65) + ' | Waylon Walker' },
-            { name: 'twitter:image', content: `https://waylonwalker.com/ww-hot-tip-${file}.jpg` },
-            { name: 'twitter:card', content: 'summary_large_image' },
-            { name: 'twitter:description', content: content },
-            { name: 'og:image', content: `https://waylonwalker.com/ww-hot-tip-${file}.jpg` },
-            { name: 'og:image:width', content: '1024' },
-            { name: 'og:image:height', content: '512' },
+            { property: 'og:title', name: 'og:title', content: content.slice(0, 65) + ' | Waylon Walker' },
+            { property: 'og:article:published_time', name: 'og:article:published_time', content: date },
+            { property: 'og:article:modified_time', name: 'og:article:modified_time', content: date },
+            { property: 'og:description', name: 'og:description', content: content },
+            { property: 'description', name: 'description', content: content },
+            { property: 'twitter:title', name: 'twitter:title', content: content.slice(0, 65) + ' | Waylon Walker' },
+            { property: 'twitter:image', name: 'twitter:image', content: `https://waylonwalker.com/ww-hot-tip-${file}.jpg` },
+            { property: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+            { property: 'twitter:description', name: 'twitter:description', content: content },
+            { property: 'og:image', name: 'og:image', content: `https://waylonwalker.com/ww-hot-tip-${file}.jpg` },
+            { property: 'og:image:width', name: 'og:image:width', content: '1024' },
+            { property: 'og:image:height', name: 'og:image:height', content: '512' },
           ]}
 
         >

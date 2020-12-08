@@ -29,25 +29,25 @@ const Layout = ({ children, include_subscribe = true }) => (
           title={data.site.siteMetadata.title}
           htmlAttributes={{ lang: 'en' }}
           meta={[
-            { name: 'og:type', content: 'article' },
-            { name: 'og:title', content: "Waylon Walker's Digital Garden" },
-            { name: 'og:article:author', content: 'Waylon Walker' },
-            { name: 'og:image', content: 'https://waylonwalker.com/waylon-walker.png' },
-            { name: 'og:image:width', content: '1000' },
-            { name: 'og:image:height', content: '420' },
-            { name: 'og:locale', content: 'en_US' },
-            { name: 'og:site_name', content: 'Waylon Walker' },
-            { name: 'og:url', content: 'https://waylonwalker.com' },
-            { name: 'description', content: data.site.siteMetadata.description },
-            { name: 'og:description', content: data.site.siteMetadata.description },
-            { name: 'twitter:description', content: data.site.siteMetadata.description },
-            { name: 'keywords', content: 'python, kedro, datascience, bash, command line, javascript, gatsby' },
-            { name: 'twitter:title', content: "Waylon Walker's Digital Garden" },
-            { name: 'twitter:card', content: 'summary_large_image' },
-            { name: 'twitter:site', content: '@_waylonwalker' },
-            { name: 'twitter:creator', content: '@_waylonwalker' },
-            { name: 'twitter:image', content: 'https://waylonwalker.com/waylon-walker.png' },
-            { name: 'monetization', content: '$ilp.uphold.com/MGN2ni2YMXaQ' }
+            { property: 'og:type', name: 'og:type', content: 'article' },
+            { property: 'og:title', name: 'og:title', content: "Waylon Walker's Digital Garden" },
+            { property: 'og:article:author', name: 'og:article:author', content: 'Waylon Walker' },
+            { property: 'og:image', name: 'og:image', content: 'https://waylonwalker.com/waylon-walker.png' },
+            { property: 'og:image:width', name: 'og:image:width', content: '1000' },
+            { property: 'og:image:height', name: 'og:image:height', content: '420' },
+            { property: 'og:locale', name: 'og:locale', content: 'en_US' },
+            { property: 'og:site_name', name: 'og:site_name', content: 'Waylon Walker' },
+            { property: 'og:url', name: 'og:url', content: 'https://waylonwalker.com' },
+            { property: 'description', name: 'description', content: data.site.siteMetadata.description },
+            { property: 'og:description', name: 'og:description', content: data.site.siteMetadata.description },
+            { property: 'twitter:description', name: 'twitter:description', content: data.site.siteMetadata.description },
+            { property: 'keywords', name: 'keywords', content: 'python, kedro, datascience, bash, command line, javascript, gatsby' },
+            { property: 'twitter:title', name: 'twitter:title', content: "Waylon Walker's Digital Garden" },
+            { property: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+            { property: 'twitter:site', name: 'twitter:site', content: '@_waylonwalker' },
+            { property: 'twitter:creator', name: 'twitter:creator', content: '@_waylonwalker' },
+            { property: 'twitter:image', name: 'twitter:image', content: 'https://waylonwalker.com/waylon-walker.png' },
+            { property: 'monetization', name: 'monetization', content: '$ilp.uphold.com/MGN2ni2YMXaQ' }
           ]}
         >
 
