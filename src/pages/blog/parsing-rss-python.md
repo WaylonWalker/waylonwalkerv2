@@ -129,3 +129,11 @@ feed.sort(key=lambda x: dateutil.parser.parse(x['published']), reverse=True)
 I think the idea of RSS is super cool, and the idea that I can potentially create my own custom platform-agnostic decentralized feed is pretty cool.  I would love to have a google reader like experience back.
 
 This post was super fun to explore.  I used an external library (`feedparser`) to pull in the feeds, but other than that It was all vanilla python 3.8.  In DataScience we tend to get very `DataFrame` heavy and I miss working with vanilla datatypes sometimes.
+
+## Trying to step up your python game
+
+While trying to step up your skills you will need lots of practice.  Its good to have several options to try out ideas quickly.  I often use repl.it, check out this post to see how I use it.
+
+https://waylonwalker.com/blog/practice-python-online
+
+> Not a sponsor REPL.it is a great way to practice.

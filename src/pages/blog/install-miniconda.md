@@ -60,6 +60,12 @@ rm -rf ~/miniconda3/miniconda.sh
 ~/miniconda3/bin/conda init zsh
 }
 ```
+
+**normal**
+```
+install_miniconda
+```
+
 **silent**
 ```
 install_miniconda > /dev/null 2>&1
@@ -69,6 +75,10 @@ install_miniconda > /dev/null 2>&1
 ```
 install_miniconda > miniconda_install.log 2>&1
 ```
+
+https://waylonwalker.com/blog/reusable-bash/
+
+> This posts covers more ways to write reuable bash scripts
 
 ## Cross posted to DEV
 
