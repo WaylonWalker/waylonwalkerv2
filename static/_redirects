@@ -192,3 +192,14 @@
 # nesting issue in blog post
 /testrepos.py https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/tests/test_repos.py
 /waitforagent.sh https://github.com/WaylonWalker/waylonwalker-com-tests/blob/main/.github/ci/wait_for_agent.sh
+
+
+# Fix 404's
+# These are mystery links that I cannot find, but are dinging my ahrefs report
+# They have zero inlinks so they are likely external
+/whats-on-your-github-profile/ /blog/whats-on-your-github-profile/
+/blog/what-is-something-that-you-recently-learned-that-you-wish-you-would-have-learned-or-understood-earlier-1/ /blog/learn-early
+/blog/test-project-io-py-actions/ /blog/testproject-io-py-actions
+/gratitude/good-morning/ /gratitude
+/blog/background_py /blog/python-data-science-background
+/stories/README/ https://github.com/WaylonWalker/waylonwalkerv2/blob/main/static/stories/README.md
