@@ -47,7 +47,6 @@ export default class BlogPage extends React.Component {
             { property: 'og:type', name: 'og:type', content: 'website' },
             { property: 'og:title', name: 'og:title', content: "Waylon Walker's Notes Feed" },
             { property: 'twitter:title', name: 'twitter:title', content: "Waylon Walker's Notes Feed" },
-            { property: 'og:article:author', name: 'og:article:author', content: 'Waylon Walker' },
             { property: 'og:image', name: 'og:image', content: 'https://waylonwalker.com/waylon-walker.png' },
             { property: 'og:image:width', name: 'og:image:width', content: '1000' },
             { property: 'og:image:height', name: 'og:image:height', content: '420' },
