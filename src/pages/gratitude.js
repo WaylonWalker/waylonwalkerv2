@@ -74,6 +74,22 @@ export default class gratitude extends Component {
 
     return (
       <Layout>
+        <Helmet
+          meta={[
+            { property: 'og:type', name: 'og:type', content: 'article' },
+            { property: 'og:title', name: 'og:title', content: "Waylon Walker's gratitude journal" },
+            { property: 'twitter:title', name: 'twitter:title', content: "Waylon Walker's gratitude journal" },
+            { property: 'og:image', name: 'og:image', content: 'https://waylonwalker.com/waylon-walker.png' },
+            { property: 'og:image:width', name: 'og:image:width', content: '1000' },
+            { property: 'og:image:height', name: 'og:image:height', content: '420' },
+            { property: 'og:url', name: 'og:url', content: 'https://waylonwalker.com/gratitude' },
+            { property: 'description', name: 'description', content: 'A series of quick journal entries depicting my gratitude for the day.'},
+            { property: 'og:description', name: 'og:description', content: 'A series of quick journal entries depicting my gratitude for the day.'},
+            { property: 'twitter:description', name: 'twitter:description', content: 'A series of quick journal entries depicting my gratitude for the day.'},
+            { property: 'keywords', name: 'keywords', content: 'gratitude, journal' },
+            { property: 'twitter:image', name: 'twitter:image', content: 'https://waylonwalker.com/waylon-walker.png' },
+          ]}
+          />
         <h1 style={{ textAlign: 'center' }}>Gratitude</h1>
         <div style={{ maxWidth: '800px', margin: 'auto', padding: '1rem' }}>
           {posts.map((post, i) => (
