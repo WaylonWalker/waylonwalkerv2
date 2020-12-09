@@ -30,7 +30,7 @@ Generally my first go to is a bit more graphical, and not available on a stock s
 _<small><mark>htop</mark></small>_
 
 
-``` htop
+``` bash
 sudo apt-get install htop # install it from your package repo
 htop
 ```

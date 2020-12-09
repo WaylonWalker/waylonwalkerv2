@@ -35,12 +35,14 @@ I am hosted on netlify, which automatically puts very ⚡ performant redirects
 on the edge based on a `/_redirects` route on your site.  So I added a redirect
 from the old route to the new route there.
 
-``` bash # rename long posts
+## rename long posts
 
+``` bash 
 /blog/i-finally-fixed-my-styled-components-in-gatsby-js
 /blog/fix-styled-components-in-gatsby
 /blog/interrogate-is-a-pretty-awesome-brand-new-cli-for-python-packages
-/blog/interrogate ```
+/blog/interrogate
+```
 
 ## pedantic 🤔 _probably_
 
