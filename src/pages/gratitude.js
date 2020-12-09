@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import styled from 'styled-components'
+import Helmet from 'react-helmet'
 
 
 const DateStyle = styled.div`
