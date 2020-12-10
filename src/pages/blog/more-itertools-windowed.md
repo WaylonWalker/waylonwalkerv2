@@ -82,6 +82,7 @@ inside of it that ends up on its own line
 `more-itertools` comes with a windowing function that will slide over an iterable with a width of n.
 
 ``` python
+>>> from more_itertools import windowed
 >>> all_windows = windowed([1, 2, 3, 4, 5], 3)
 >>> list(all_windows)
 [(1, 2, 3), (2, 3, 4), (3, 4, 5)])]
