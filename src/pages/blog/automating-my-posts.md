@@ -1,8 +1,8 @@
 ---
 templateKey: blog-post
-tags: []
-title: Automating my posts
-date: 2020-12-10T00:00:00
+tags: ['python']
+title: Automating my Posts
+date: 2020-12-11T09:08
 status: draft
 description: ''
 cover: "/static/automating-my-posts.png"
@@ -59,7 +59,7 @@ _<small><mark>set the title</mark></small>_
 ``` python
 import sys
 
-title = sys.argv[1]
+title = sys.argv[1].title()
 ```
 
 >! sys.argv is a list of each argument passed into the script split by spaces.
@@ -209,6 +209,25 @@ nvim = subprocess.Popen(
 nvim.wait()
 ```
 
+## Alias
+
+Now I want this script to be available everywhere.  I am going to simply add
+the following entry to shorten the script and eliminate the need to use the
+full path.  I added this to my `~/.alias`, for you it may be `~/.bashrc`, or
+`~/.zshrc`.
+
+``` bash
+alias np=~/git/waylonwalkerv2/new-post
+```
+
+## Starting a new post
+
+Lets start a new post about automating my posts in python.
+
+``` bash
+np "automating my posts" python
+```
+
 ## This is my workflow
 
 Ad hoc scripts like this can be a bit of a hot mess, partly due to the just get
@@ -234,7 +253,7 @@ import pathlib
 import subprocess
 
 
-title = sys.argv[1]
+title = sys.argv[1].titlecase()
 args = "".join(sys.argv[1:])
 tags = []
 
@@ -291,3 +310,7 @@ nvim = subprocess.Popen(
 )
 nvim.wait()
 ```
+
+https://waylonwalker.com/blog/quickly-edit-posts
+
+> check out the next article in this series where I setup a bash function to quickly edit these posts
