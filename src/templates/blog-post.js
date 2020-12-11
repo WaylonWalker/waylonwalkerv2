@@ -7,6 +7,7 @@ import Layout from '../components/layout'
 import WebMention from '../components/WebMention'
 import PostCards from '../components/PostCards'
 import { oneLineLinks, oneLineLinkCardStyle } from '../components/onelinelink'
+import PostStatus from '../components/PostStatus'
 import Img from 'gatsby-image'
 import { FiTwitter, FiGithub, FiFacebook } from "react-icons/fi";
 import { DiHackernews } from "react-icons/di";
@@ -406,6 +407,7 @@ class BlogPostTemplate extends React.Component {
       url,
       slug,
       description,
+      status,
       title,
       cover,
       sm_img,
@@ -431,6 +433,7 @@ class BlogPostTemplate extends React.Component {
           meta={[
             { property: 'title', name: 'title', content: title + ' | Waylon Walker' },
             { property: 'description', name: 'description', content: description },
+            { property: 'status', name: 'status', content: status },
             { property: 'og:title', name: 'og:title', content: title + ' | Waylon Walker' },
             { property: 'og:url', name: 'og:url', content: url },
             { property: 'og:article:published_time', name: 'og:article:published_time', content: date },
@@ -458,12 +461,24 @@ class BlogPostTemplate extends React.Component {
               ? <Img fluid={fluidCover} className='post-cover-image' />
               : ''
             }
+            <div style={{display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end'}}>
             <h1
               id='title'
-              style={{ textAlign: 'right', zIndex: 2 }}
-              className="blog title">
+              style={{ textAlign: 'right', zIndex: 2, paddingRight: '.2rem'}}
+              className="blog title no-link">
               {title}
             </h1>
+              <p style={{textAlign: 'right', marginBottom: '2.2rem', paddingLeft: 0}}>
+              <a 
+                style={{color: 'goldenrod', textDecoration: 'none', }}
+                href={`https://github.com/WaylonWalker/waylonwalkerv2/edit/main/src/pages${slug.slice(0, -1)}.md`} alt='edit post url' title='edit this post'
+              >
+                edit 
+                <span role='img' aria-label=''>✏️</span> 
+              </a>
+            </p>
+            </div>
+            <PostStatus status={status}/>
             <a className='u-url' href={url}>
               <p>
                 <time
@@ -565,6 +580,7 @@ BlogPostTemplate.propTypes = {
   slug: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
+  // status: PropTypes.string,
   title: PropTypes.string,
   // helmet: PropTypes.instanceOf(Helmet),
 }
@@ -576,12 +592,13 @@ const BlogPost = ({ data, pageContext }) => {
   const cover = covers?.full?.fixed?.src
   const fluidCover = covers?.full.fluid
   const sm_img = covers?.sm_img?.fixed?.src
-  console.log({fluidCover})
+  // console.log({fluidCover})
 
 
   return (
     <Layout
     description={post.frontmatter.description}
+    status={post.frontmatter.status}
     title={post.frontmatter.title}
     keywords={post.frontmatter.tags}
     time={post.frontmatter.date}
@@ -592,6 +609,7 @@ const BlogPost = ({ data, pageContext }) => {
         url={`https://waylonwalker.com/${post.fields.slug.replace(/^\/+/, '')}`}
         slug={post.fields.slug}
         description={post.frontmatter.description}
+        status={post.frontmatter.status}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         cover={cover }
@@ -630,6 +648,7 @@ export const pageQuery = graphql`
         date
         title
         description
+        status
         cover {
           absolutePath
           xsm_img: childImageSharp {
