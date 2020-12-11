@@ -36,7 +36,7 @@ only user, I have limited time, so this is going to be a bit hot and fast.
 Let's create a file called new-post.
 
 _<small><mark>start the script new-post</mark></small>_
-```
+``` python
 !#python
 # new-post
 ```
@@ -185,6 +185,7 @@ that it will run the task in the background so be sure that you wait on it.
 The `Popen` is great if you have several task that are not dependent on each
 other.
 
+_<small><mark>git add <new-post></mark></small>_
 ``` python
 gadd = subprocess.Popen(
     f'cd {directory} && git add {str(path).replace(str(directory) + "/", "")} ',
@@ -199,6 +200,7 @@ Last step of the script is to start writing, I want to be open in my blogs
 directory (hence the cd), with the file open, to the right line (+11), and in
 insert mode (+star).
 
+_<small><mark>open post in neovim</mark></small>_
 ``` python
 nvim = subprocess.Popen(
     f'cd {directory} && nvim +12 +star {str(path).replace(str(directory) + "/", "")} ',
@@ -221,7 +223,8 @@ inspecting it.
 
 ## Final Script
 
-```
+_<small><mark>final script</mark></small>_
+``` python
 #!python
 # new-post
 
