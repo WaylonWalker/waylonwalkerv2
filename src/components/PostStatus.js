@@ -23,6 +23,8 @@ const PostStatus = ({status}) => {
     let statusMessage
     status === undefined
       ? statusMessage = ''
+      : status === null
+      ? statusMessage = ''
       : status.includes('published')
       ? statusMessage = '🎄 This post has fully grown'
       : status.includes('draft')
