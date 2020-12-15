@@ -7,34 +7,61 @@ const PostStatusStyle = styled.div`
 border-radius: 5px;
 display: flex;
 justify-content: flex-end;
-p {
-  color: #232136;
+span.emoji {
+  font-size: 1rem;
+}
+span.message {
+  display: none !important;
+}
+p.status-message {
+  background: none;
+  color: #FF66C4;
+  font-size: .6rem;
   padding: 0;
   margin: 0;
   margin-right: .5rem;
   border-radius: 5px;
-  background: #FF66C4;
   display: inline-block;
+span.message {
+  display: none;
+}
 }
 
+p.status-message:hover {
+span.message {
+  display: block; 
+}
+}
+
+p.status-message.bright {
+  background: #FF66C4;
+  color: #232136;
+}
 
 `
-const PostStatus = ({status}) => {
+const PostStatus = ({status, tags=[], bright=true}) => {
+    console.log(tags)
     let statusMessage
     status === undefined
-      ? statusMessage = ''
-      : status.includes('published')
-      ? statusMessage = '🎄 This post has fully grown'
-      : status.includes('draft')
+      ? statusMessage = 'undefined'
+    : status === null
+      ? statusMessage = 'null'
+    : tags.join().includes('tip')
+      ? statusMessage = '🔥 Hot Tip'
+    : status.includes('published')
+      ? statusMessage = '<span class="emoji">🎄</span><span class="message">This post has fully grown</span>'
+    : status.includes('draft')
       ? statusMessage = '🌱 This post is still growing'
-      : statusMessage = ''
+    : statusMessage = 'none'
   return (
-  <PostStatusStyle className='post-status'>
-    <p>
-      {statusMessage}
-    </p>
+    <PostStatusStyle className={`post-status ${bright ? 'bright' : ''}`}>
+    <p
+      className='status-message'
+      dangerouslySetInnerHTML={{__html: statusMessage}}
+    />
   </PostStatusStyle>
 )
 }
+
 
 export default PostStatus
