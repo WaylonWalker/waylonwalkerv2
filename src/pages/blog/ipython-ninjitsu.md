@@ -21,7 +21,53 @@ cover: "/static/ipython-ninjitsu.png"
 * !shell commands
 
 ## ?docstring
-## ?sourcecode
+
+Stop going to google everytime your stuck and stay in your workflow.  The
+ipython `?` is a superhero for productivity and staying on task.
+
+``` python
+from kedro.pipeline import Pipeline
+Pipeline?
+
+Init signature:
+Pipeline(
+    nodes: Iterable[Union[kedro.pipeline.node.Node, ForwardRef('Pipeline')]],
+    *,
+    tags: Union[str, Iterable[str]] = None,
+)
+Docstring:
+A ``Pipeline`` defined as a collection of ``Node`` objects. This class
+treats nodes as part of a graph representation and provides inputs,
+outputs and execution order.
+Init docstring:
+Initialise ``Pipeline`` with a list of ``Node`` instances.
+
+Args:
+    nodes: The iterable of nodes the ``Pipeline`` will be made of. If you
+        provide pipelines among the list of nodes, those pipelines will
+        be expanded and all their nodes will become part of this
+        new pipeline.
+    tags: Optional set of tags to be applied to all the pipeline nodes.
+
+Raises:
+    ValueError:
+        When an empty list of nodes is provided, or when not all
+        nodes have unique names.
+    CircularDependencyError:
+        When visiting all the nodes is not
+        possible due to the existence of a circular dependency.
+:
+```
+
+**Note** This does jump you into a pager, a j,k or up, down to navigate, q to quit.
+
+
+## ??sourcecode
+
+Docstring not enough for you use case.  I often run into cases where the
+docstring is not clear enough and I need to see the implementation for myself
+to see what a function does.
+
 ## %run
 
 ## %debug
