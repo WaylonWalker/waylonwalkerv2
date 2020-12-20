@@ -70,6 +70,13 @@ to see what a function does.
 
 ## %run
 
+I turned my nose up at this one, prior to seeing the famous [I don't like
+notebooks](https://www.youtube.com/watch?v=7jiPeIFXb6U) by 
+[Joel Grus](https://joelgrus.com/).  My first snobby reaction was that
+developing modules and using autoreload was superior.  I have since realized
+there is a place for `%run`, and it can cut down on some keystrokes to import,
+setup, and run even when developing in modules.
+
 ## %debug
 
 ipython comes with a post-mortem debugger, and it can be a lifesaver.  If we
@@ -101,8 +108,24 @@ c.InteractiveShellApp.exec_lines.append(
     'print("Warning: disable autoreload in ipython_config.py to improve performance.")'
 )
 ```
+
+> place this in your ~/.ipython/profile_default/ipython_config.py to auto reload without needing to run the magic every time
+
 ## autoformat
+
+This is a relatively new feature to ipython.  I really enjoy it, as the time
+that I need the most help autoformatting my code is riffing on an ad hoc
+analysis at the command line.
 
 ``` python
 c.TerminalInteractiveShell.autoformatter = "black"
 ```
+
+> place this in your ~/.ipython/profile_default/ipython_config.py to autoformat with black by default
+
+## new prompt
+
+## reverse history search
+
+_Control R_
+
