@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 tags: ['python']
-title: Custom
+title: Custom Ipython Prompt
 date: 2020-12-20T00:00:00
 status: draft
 description: ''
@@ -143,7 +143,9 @@ def in_prompt_tokens(self, cli=None):
 ## Git Branch
 
 Git branch was a bit tricky.  There might be a better way to get it,
-but I was sticking with things I knew, the git cli and python.  I did need to do a bit of googling to figure out that git has a `--show-current` option.
+but I was sticking with things I knew, the git cli and python.  I
+did need to do a bit of googling to figure out that git has a
+`--show-current` option.
 
 ``` python
 def get_branch():
