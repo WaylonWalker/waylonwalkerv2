@@ -25,7 +25,8 @@ I see this one all the time.  One team gets a spreadsheet from another team once
 import pandas as pd
 from pathlib import Path
 
-csvs = Path.glob('raw/*.csv')
+files = Path.glob('raw/*.csv')
+csvs = [pd.read_csv(file) for file in files]
 csvs_combined = pd.concat(csvs)
 csvs_combined.to_csv('processed/combined.csv')
 ```
