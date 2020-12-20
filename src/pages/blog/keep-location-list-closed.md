@@ -15,6 +15,9 @@ checking errors with fairly little config.  Generally it sits nicely at the
 bottom of the screen and barely effects me.  Other times, especially while
 zoomed way in during a presentation, it just gets in the way.
 
+![location list eats the screen](https://waylonwalker.com/location-list-eats-screen.png)
+
+> Location List eating up the screen while I am zoomed in and trying to live code
 
 ## Toggling the location list
 
