@@ -141,7 +141,7 @@ module.exports = {
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-static-images',
           `gatsby-remark-prismjs`,
-          `gatsby-remark-images-zoom`,
+          // `gatsby-remark-images-zoom`,
           `gatsby-remark-embedder`,
           {
             resolve: 'gatsby-remark-images',
