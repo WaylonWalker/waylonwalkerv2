@@ -58,6 +58,7 @@ Inside the profile there will be a startup directory
 in this directory on startup.  This is particularly handy to create custom
 prompts, search, or import packages automatically for certian profiles.
 
+
 https://waylonwalker.com/blog/custom-ipython-prompt
 
 > This post creates a custom ipython prompt by creating a
