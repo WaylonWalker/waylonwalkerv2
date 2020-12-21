@@ -147,6 +147,7 @@ but I was sticking with things I knew, the git cli and python.  I
 did need to do a bit of googling to figure out that git has a
 `--show-current` option.
 
+_<small><mark>getting the current git branch</mark></small>_
 ``` python
 def get_branch():
     try:
@@ -161,7 +162,74 @@ def get_branch():
         return ""
 ```
 
+**NOTE**  If this is run form a non-git directory you will quickly find git
+errors after every command as this function tries to ask for the git branch.
+Sending stderr to devnull will avoid this inconvenience.
+
+_<small><mark>add git branch to prompt</mark></small>_
+``` python
+def in_prompt_tokens(self, cli=None):
+    return [
+        (
+            (Token.Generic.Subheading, "↪"),
+            (Token.Generic.Subheading, get_branch()),
+            (Token, " "),
+            (Token.Prompt, "©"),
+            (Token.Prompt, os.environ["CONDA_DEFAULT_ENV"]),
+            (Token, " "),
+            (Token.Name.Class, "v" + python_version()),
+            (Token, " "),
+            Token.Prompt
+            if self.shell.last_execution_succeeded
+            else Token.Generic.Error,
+            "❯ ",
+        ),
+    ]
+```
+
+## Add current directory name
+
+I am a big fan of pathlib so that is what I will use to get the path. If I
+planned on using python `<3.6` I would probably use something else, but this is
+what I know and I can't think of the last time I used `<3.6>` for anything.
+
+_<small><mark>update imports</mark></small>_
+``` python
+from pathlib import Path
+```
+
+
+_<small><mark>add git branch to prompt</mark></small>_
+``` python
+def in_prompt_tokens(self, cli=None):
+    return [
+        (
+            (Token, ""),
+            (Token.OutPrompt, Path().absolute().stem),
+            (Token, ""),
+            (Token.Generic.Subheading, "↪"),
+            (Token.Generic.Subheading, get_branch()),
+            (Token, " "),
+            (Token.Prompt, "©"),
+            (Token.Prompt, os.environ["CONDA_DEFAULT_ENV"]),
+            (Token, " "),
+            (Token.Name.Class, "v" + python_version()),
+            (Token, " "),
+            Token.Prompt
+            if self.shell.last_execution_succeeded
+            else Token.Generic.Error,
+            "❯ ",
+        ),
+    ]
+```
+
 ## Final Script
+
+That's it for my prompt at the moment.  I have been using it for about a week.
+It seems to have everything I need so far, and skips on things I don't need.
+
+
+Enjoy the full script.
 
 _<small><mark>my final prompt</mark></small>_
 ``` python
