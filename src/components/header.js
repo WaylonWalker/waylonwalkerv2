@@ -12,11 +12,8 @@ const Header = ({ siteTitle }) => (
       display: 'flex',
       // flexDirection: 'column'
       justifyContent: 'center',
-
     }}
-  >
-
-  </div>
+  ></div>
 )
 
 Header.propTypes = {

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components'
 import fontFiles from './fonts/fonts'
 
 export default createGlobalStyle`

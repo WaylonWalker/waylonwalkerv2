@@ -11,7 +11,6 @@ import Tip from '../components/Tip'
 // import pdfmake from 'pdfmake'
 // import Img from 'gatsby-image'
 
-
 const TipTemplate = ({ data }) => {
   const html = data.markdownRemark.html
   const plainText = data.markdownRemark.plainText
@@ -36,11 +35,8 @@ const TipTemplate = ({ data }) => {
 //   }),
 // }
 
-export {
-  TipTemplate
-}
+export { TipTemplate }
 export default TipTemplate
-
 
 export const pageQuery = graphql`
   query TipByID($id: String!) {
@@ -53,7 +49,6 @@ export const pageQuery = graphql`
         date
         tags
         afterImage
-
       }
     }
   }

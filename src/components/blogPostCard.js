@@ -113,33 +113,46 @@ const BlogPostCard = ({ post, ...props }) => {
   const day = dt.getDate()
   const cover = post.frontmatter.cover
   return (
-
     <BlogPostCardStyles>
-      <Link to={post['fields']['slug']} aria-label={`${post['frontmatter']['title']} cover image`} title={`${post['frontmatter']['title']}`}>
-        {
-          (cover === undefined || cover === null)
-            ? ''
-            : <Img fluid={cover.childImageSharp.fluid} />
-        }
+      <Link
+        to={post['fields']['slug']}
+        aria-label={`${post['frontmatter']['title']} cover image`}
+        title={`${post['frontmatter']['title']}`}
+      >
+        {cover === undefined || cover === null ? (
+          ''
+        ) : (
+          <Img fluid={cover.childImageSharp.fluid} />
+        )}
       </Link>
       <div className="date">
-        <Link to={post['fields']['slug']} aria-label={`${post['frontmatter']['title']} cover image`} title={`${post['frontmatter']['title']}`}>
+        <Link
+          to={post['fields']['slug']}
+          aria-label={`${post['frontmatter']['title']} cover image`}
+          title={`${post['frontmatter']['title']}`}
+        >
           <div className="year">{year}</div>
-          <div className="month">{month} {day}</div>
+          <div className="month">
+            {month} {day}
+          </div>
         </Link>
       </div>
 
-      <Link to={post['fields']['slug']} aria-label={`${post['frontmatter']['title']} cover image`} title={`${post['frontmatter']['title']}`}>
-        <h3 id={post['frontmatter']['title']}>{post['frontmatter']['title']}</h3>
+      <Link
+        to={post['fields']['slug']}
+        aria-label={`${post['frontmatter']['title']} cover image`}
+        title={`${post['frontmatter']['title']}`}
+      >
+        <h3 id={post['frontmatter']['title']}>
+          {post['frontmatter']['title']}
+        </h3>
       </Link>
 
       {/* <div className="excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} /> */}
       <div className="bottom">
         <p>{post.frontmatter.description}</p>
-
       </div>
-    </BlogPostCardStyles >
-
+    </BlogPostCardStyles>
   )
 }
 

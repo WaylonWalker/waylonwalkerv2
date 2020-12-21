@@ -15,43 +15,43 @@ import styled from 'styled-components'
  */
 
 const ProfileImageStyle = styled.div`
-/* padding: 1rem; */
-margin: -3rem auto 2rem;
-width: 150px;
-border-radius: 50%;
-box-shadow:
-  -1rem -1rem 2rem -1.2rem rgba(253, 221, 88, .1),
-  2rem 0 4rem rgba(88, 82, 185, .08),
-  0rem 0rem 1rem rgba(0, 0, 0, .4),
-  0rem 0rem 2.5rem rgba(0, 0, 0, .1);
-img {
-width: 150px;
-border-radius: 50%;
-margin: auto;
-}
-img:hover {
-  transform: rotate(1deg) scale(1.02);
-
-}
+  /* padding: 1rem; */
+  margin: -3rem auto 2rem;
+  width: 150px;
+  border-radius: 50%;
+  box-shadow: -1rem -1rem 2rem -1.2rem rgba(253, 221, 88, 0.1),
+    2rem 0 4rem rgba(88, 82, 185, 0.08), 0rem 0rem 1rem rgba(0, 0, 0, 0.4),
+    0rem 0rem 2.5rem rgba(0, 0, 0, 0.1);
+  img {
+    width: 150px;
+    border-radius: 50%;
+    margin: auto;
+  }
+  img:hover {
+    transform: rotate(1deg) scale(1.02);
+  }
 `
 const Image = () => (
   <ProfileImageStyle>
     <StaticQuery
       query={graphql`
-      query {
-        placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 150) {
-              ...GatsbyImageSharpFluid
+        query {
+          placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
+            childImageSharp {
+              fluid(maxWidth: 150) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
-      }
-    `}
-      render={data => <Img
-        style={{ width: '150px' }}
-        fluid={data.placeholderImage.childImageSharp.fluid} />}
-      alt='Profile picture of Waylon Walker looking into the distance in front of a red brick building'
+      `}
+      render={(data) => (
+        <Img
+          style={{ width: '150px' }}
+          fluid={data.placeholderImage.childImageSharp.fluid}
+        />
+      )}
+      alt="Profile picture of Waylon Walker looking into the distance in front of a red brick building"
     />
   </ProfileImageStyle>
 )
