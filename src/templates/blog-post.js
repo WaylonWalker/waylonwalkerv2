@@ -91,6 +91,7 @@ display: block;
 margin: .2rem;
 width: min(95vw, 1000px);
 @media (max-width: 650px) {
+  width: 100vw;
   width: min(100vw, 1000px);
 }
 position: relative;
