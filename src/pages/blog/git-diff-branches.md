@@ -15,7 +15,7 @@ cover: "/static/git-diff-branches.png"
 Today I learned how to diff between two branches.
 
 ```
-git diff feature..master
+git diff feature..main
 ```
 
 Sometimes we get a little `git add . && git commit -m "WIP"` happy and mistakenly commit something that we just can't figure out. This is a good way to figure out what the heck has changed on the current branch compared to any other branch.
@@ -54,7 +54,7 @@ git diff
 + hello waylon
 ```
 
-At this point we have one commit.  Things are really straightforward, and our diff will be the same between the last commit and the master branch since.  Let's make another commit by adding the date.
+At this point we have one commit.  Things are really straightforward, and our diff will be the same between the last commit and the main branch since.  Let's make another commit by adding the date.
 
 ``` bash
 echo "hello waylon\n\n$(date)" > readme.md
@@ -67,11 +67,11 @@ hello Waylon
 +
 + Fri 13 Mar 2020 04:23:21 PM DST
 ```
-👆 At this point, our diff doesn't tell us the whole story between our current state and master, only between our current state and our last commit.  Let's commit our changes and compare our branch to master.
+👆 At this point, our diff doesn't tell us the whole story between our current state and main, only between our current state and our last commit.  Let's commit our changes and compare our branch to main.
 
 ``` bash
 git add . && git commit -m "add date"
-git diff master..waylon
+git diff main..waylon
 ```
 
 ``` diff

@@ -5,98 +5,96 @@ import Img from 'gatsby-image'
 // import { useSpring, animated } from 'react-spring'
 
 const PostCardStyle = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-width: 500px;
-max-width: 500px;
-background: rgba(0,0,0,.1);
-padding: .2rem;
-border-radius: 5px;
-margin: 1rem;
-h2 {
-
-  display: block;
-  font-size: 1.2rem;
-  margin: auto .2rem;
-  width: 100%
-}
-p {
-  font-size: 1rem;
-}
-.post-cover-image {
-width: 200px;
-min-width: 200px;
-height: 85px;
-min-height: 85px;
-max-height: 85px;
-}
-.description {
-}
-
-transition: width 1500ms;
-transition: max-width 1500ms;
-
-
-.postcard-content {
-  perspective: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 500px;
-  height: 85px;
-}
-
-.description {
-  overflow: hidden;
-  height: 85px;
-  max-height: 85px;
-}
-.flip {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  transition: transform 300ms;
-  transition-delay: 500ms;
-  transform-style: preserve-3d;
-  transform-origin: top center;
-}
-
-.flip-front, .flip-back {
-  position: absolute;
-  height: 85px;
-  width: 500px;
-  backface-visibility: hidden;
-  z-index: 5;
-}
-
-.postcard-content:hover {
-.flip{
-transform: rotateX(180deg) translateY(-85px);
+  max-width: 500px;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.2rem;
+  border-radius: 5px;
+  margin: 1rem;
+  h2 {
+    display: block;
+    font-size: 1.2rem;
+    margin: auto 0.2rem;
+    width: 100%;
   }
-}
-.flip-front {
-display: flex;
-}
+  p {
+    font-size: 1rem;
+  }
+  .post-cover-image {
+    width: 200px;
+    min-width: 200px;
+    height: 85px;
+    min-height: 85px;
+    max-height: 85px;
+  }
+  .description {
+  }
 
-.flip-back {
-transform: rotateX(180deg);
-background: #2A2832;
+  transition: width 1500ms;
+  transition: max-width 1500ms;
 
-}
-.kedro {
-color: black;
-padding: 0 .2rem;
-border: 1px dotted goldenrod;
-border-radius: 5px;
-}
+  .postcard-content {
+    perspective: 600px;
+    width: 500px;
+    height: 85px;
+  }
 
-.python {
-color: #FCD242;
-border-bottom: 1px solid #3772A4;
-}
-.pandas {
-color: #FCD242;
-}
+  .description {
+    overflow: hidden;
+    height: 85px;
+    max-height: 85px;
+  }
+  .flip {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transition: transform 300ms;
+    transition-delay: 500ms;
+    transform-style: preserve-3d;
+    transform-origin: top center;
+  }
 
+  .flip-front,
+  .flip-back {
+    position: absolute;
+    height: 85px;
+    width: 500px;
+    backface-visibility: hidden;
+    z-index: 5;
+  }
+
+  .postcard-content:hover {
+    .flip {
+      transform: rotateX(180deg) translateY(-85px);
+    }
+  }
+  .flip-front {
+    display: flex;
+  }
+
+  .flip-back {
+    transform: rotateX(180deg);
+    background: #2a2832;
+  }
+  .kedro {
+    color: black;
+    padding: 0 0.2rem;
+    border: 1px dotted goldenrod;
+    border-radius: 5px;
+  }
+
+  .python {
+    color: #fcd242;
+    border-bottom: 1px solid #3772a4;
+  }
+  .pandas {
+    color: #fcd242;
+  }
 `
+
 const PostCard = ({ slug, cover, description, title }) => (
 
   <Link to={slug} style={{textDecoration: 'none'}}>
@@ -114,7 +112,7 @@ const PostCard = ({ slug, cover, description, title }) => (
                 ? ''
                 : <h2 
                 className='no-link'
-              dangerouslySetInnerHTML={{
+                dangerouslySetInnerHTML={{
                 __html: title
                   .replace('kedro', 'Kedro')
                   .replace('Kedro', '<span class="kedro">Kedro</span>')
@@ -138,13 +136,9 @@ const PostCard = ({ slug, cover, description, title }) => (
             </div>
           </div>
         </div>
-
-
-
-
-
-      </PostCardStyle>
-        </Link>
-    )
+      </div>
+    </PostCardStyle>
+  </Link>
+)
 
 export default PostCard

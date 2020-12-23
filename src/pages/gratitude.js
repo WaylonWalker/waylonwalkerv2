@@ -4,7 +4,6 @@ import Layout from '../components/layout'
 import styled from 'styled-components'
 import Helmet from 'react-helmet'
 
-
 const DateStyle = styled.div`
   position: absolute;
   top: 1.5rem
@@ -51,9 +50,10 @@ function GratitudePost({ node, ...props }) {
     >
       <h3>{node.frontmatter.title}</h3>
       <DateStyle>
-        <div className='year'>{node.date.year} </div>
-        <div className='month'>{node.date.month} {node.date.day}</div>
-
+        <div className="year">{node.date.year} </div>
+        <div className="month">
+          {node.date.month} {node.date.day}
+        </div>
       </DateStyle>
       <div dangerouslySetInnerHTML={{ __html: node.html }} />
     </div>
@@ -68,8 +68,10 @@ export default class gratitude extends Component {
       const dt = new Date(post.node.frontmatter.date)
       posts[i]['node']['date'] = {}
       posts[i]['node']['date']['year'] = dt.getYear() + 1900
-      posts[i]['node']['date']['month'] = dt.toLocaleString('en-us', { month: 'long' })
-      posts[i]['node']['date']['day'] = ("00" + dt.getDay()).slice(-2)
+      posts[i]['node']['date']['month'] = dt.toLocaleString('en-us', {
+        month: 'long',
+      })
+      posts[i]['node']['date']['day'] = ('00' + dt.getDay()).slice(-2)
       return posts
     })
 
@@ -78,19 +80,66 @@ export default class gratitude extends Component {
         <Helmet
           meta={[
             { property: 'og:type', name: 'og:type', content: 'article' },
-            { property: 'og:title', name: 'og:title', content: "Waylon Walker's gratitude journal" },
-            { property: 'twitter:title', name: 'twitter:title', content: "Waylon Walker's gratitude journal" },
-            { property: 'og:image', name: 'og:image', content: 'https://waylonwalker.com/waylon-walker.png' },
-            { property: 'og:image:width', name: 'og:image:width', content: '1000' },
-            { property: 'og:image:height', name: 'og:image:height', content: '420' },
-            { property: 'og:url', name: 'og:url', content: 'https://waylonwalker.com/gratitude' },
-            { property: 'description', name: 'description', content: 'A series of quick journal entries depicting my gratitude for the day.'},
-            { property: 'og:description', name: 'og:description', content: 'A series of quick journal entries depicting my gratitude for the day.'},
-            { property: 'twitter:description', name: 'twitter:description', content: 'A series of quick journal entries depicting my gratitude for the day.'},
-            { property: 'keywords', name: 'keywords', content: 'gratitude, journal' },
-            { property: 'twitter:image', name: 'twitter:image', content: 'https://waylonwalker.com/waylon-walker.png' },
+            {
+              property: 'og:title',
+              name: 'og:title',
+              content: "Waylon Walker's gratitude journal",
+            },
+            {
+              property: 'twitter:title',
+              name: 'twitter:title',
+              content: "Waylon Walker's gratitude journal",
+            },
+            {
+              property: 'og:image',
+              name: 'og:image',
+              content: 'https://waylonwalker.com/waylon-walker.png',
+            },
+            {
+              property: 'og:image:width',
+              name: 'og:image:width',
+              content: '1000',
+            },
+            {
+              property: 'og:image:height',
+              name: 'og:image:height',
+              content: '420',
+            },
+            {
+              property: 'og:url',
+              name: 'og:url',
+              content: 'https://waylonwalker.com/gratitude',
+            },
+            {
+              property: 'description',
+              name: 'description',
+              content:
+                'A series of quick journal entries depicting my gratitude for the day.',
+            },
+            {
+              property: 'og:description',
+              name: 'og:description',
+              content:
+                'A series of quick journal entries depicting my gratitude for the day.',
+            },
+            {
+              property: 'twitter:description',
+              name: 'twitter:description',
+              content:
+                'A series of quick journal entries depicting my gratitude for the day.',
+            },
+            {
+              property: 'keywords',
+              name: 'keywords',
+              content: 'gratitude, journal',
+            },
+            {
+              property: 'twitter:image',
+              name: 'twitter:image',
+              content: 'https://waylonwalker.com/waylon-walker.png',
+            },
           ]}
-          />
+        />
         <h1 style={{ textAlign: 'center' }}>Gratitude</h1>
         <div style={{ maxWidth: '800px', margin: 'auto', padding: '1rem' }}>
           {posts.map((post, i) => (
@@ -105,7 +154,7 @@ export default class gratitude extends Component {
 export const pageQuery = graphql`
   query gratitudeQuery {
     allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { in: ["gratitude", ] } } }
+      filter: { frontmatter: { templateKey: { in: ["gratitude"] } } }
       sort: {
         fields: [frontmatter___date, fileAbsolutePath]
         order: [DESC, DESC]

@@ -12,26 +12,28 @@ const Nav = () => (
       <div className="content">
         <ul>
           <li>
-            <Link to='/'  aria-label='home'>
+            <Link to="/" aria-label="home">
               <Icon />
             </Link>
           </li>
-          <li className='btn'>
-            <Link to='/blog' >Blog</Link>
+          <li className="btn">
+            <Link to="/blog">Blog</Link>
           </li>
-          <li className='btn'>
-            <Link to='/notes'>Notes</Link>
+          <li className="btn">
+            <Link to="/notes">Notes</Link>
           </li>
-          <li className='btn'>
-            <Link to='/gratitude' >gratitude</Link>
+          <li className="btn">
+            <Link to="/gratitude">gratitude</Link>
           </li>
-          <li className='btn'>
-            <a href='https://emailoctopus.com/lists/b194a4af-9875-11ea-a3d0-06b4694bee2a/forms/subscribe' >Newsletter</a>
+          <li className="btn">
+            <a href="https://emailoctopus.com/lists/b194a4af-9875-11ea-a3d0-06b4694bee2a/forms/subscribe">
+              Newsletter
+            </a>
           </li>
         </ul>
         <Social />
       </div>
-    </NavStyles >
+    </NavStyles>
   </Headroom>
 )
 

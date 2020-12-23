@@ -3,22 +3,16 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 // import { useSpring, animated } from 'react-spring'
 
-const TemplateStyle = styled.div`
-`
+const TemplateStyle = styled.div``
 class Template extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-    }
+    this.state = {}
   }
-  componentDidMount() {
-  }
+  componentDidMount() {}
 
   render() {
-    return (
-      <TemplateStyle className='repo'>
-      </TemplateStyle>
-    )
+    return <TemplateStyle className="repo"></TemplateStyle>
   }
 }
 

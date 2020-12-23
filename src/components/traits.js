@@ -2,6 +2,4 @@
 
 const traitList = ['Husband', 'Father']
 
-const Traits = () => (
-
-)
+const Traits = () => ''

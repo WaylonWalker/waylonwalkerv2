@@ -15,40 +15,41 @@ import styled from 'styled-components'
  */
 
 const ProfileImageStyle = styled.div`
-/* padding: 1rem; */
-margin: 3rem;
-width: 300px;
-border-radius: 50%;
-box-shadow:
-  -15rem -2rem 8rem -6rem rgba(253, 221, 88, .09),
-  12rem 0 8rem rgba(88, 82, 185, .14),
-  0rem 0rem 2rem rgba(0, 0, 0, .4),
-  0rem 0rem 5rem rgba(0, 0, 0, .1);
-img {
-width: 300px;
-border-radius: 50%;
-margin: auto;
-}
+  /* padding: 1rem; */
+  margin: 3rem;
+  width: 300px;
+  border-radius: 50%;
+  box-shadow: -15rem -2rem 8rem -6rem rgba(253, 221, 88, 0.09),
+    12rem 0 8rem rgba(88, 82, 185, 0.14), 0rem 0rem 2rem rgba(0, 0, 0, 0.4),
+    0rem 0rem 5rem rgba(0, 0, 0, 0.1);
+  img {
+    width: 300px;
+    border-radius: 50%;
+    margin: auto;
+  }
 `
 
 const Image = () => (
   <ProfileImageStyle>
     <StaticQuery
       query={graphql`
-      query {
-        placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
+        query {
+          placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
+            childImageSharp {
+              fluid(maxWidth: 300) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
-      }
-    `}
-      render={data => <Img
-        style={{ width: '300px' }}
-        fluid={data.placeholderImage.childImageSharp.fluid} />}
-      alt='Profile picture of Waylon Walker looking into the distance in front of a red brick building'
+      `}
+      render={(data) => (
+        <Img
+          style={{ width: '300px' }}
+          fluid={data.placeholderImage.childImageSharp.fluid}
+        />
+      )}
+      alt="Profile picture of Waylon Walker looking into the distance in front of a red brick building"
     />
   </ProfileImageStyle>
 )

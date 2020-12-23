@@ -4,7 +4,6 @@ import BlogPostCard from '../components/blogPostCard'
 import FlipMove from 'react-flip-move'
 import Fuse from 'fuse.js'
 
-
 const BlogPostsStyle = styled.div`
   display: flex;
   margin: auto;
@@ -24,24 +23,23 @@ const BlogPostsStyle = styled.div`
 
   img {
     margin: auto;
-}
+  }
 
-.post-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+  .post-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-.post-wrapper: {
-  display: inline-flex;
-}
+  .post-wrapper: {
+    display: inline-flex;
+  }
 
-.robots {
-  display: None;
-  opacity: 0;
-  visibility: hidden;
-}
-
+  .robots {
+    display: None;
+    opacity: 0;
+    visibility: hidden;
+  }
 `
 
 class BlogPosts extends Component {
@@ -62,69 +60,74 @@ class BlogPosts extends Component {
     const url = new URL(window.location.href)
     const search = url.searchParams.get('search')
     if (search !== null) {
-      this.setState({search }, () => this.SearchWithFuse())
+      this.setState({ search }, () => this.SearchWithFuse())
       const el = document.getElementById('blog')
       // console.log('scrolling')
       el.scrollIntoView()
-
     }
     // console.log(`base search ${search}`)
-
   }
 
   fuseSortFn = (a, b) => {
-    return a.score = b.score
-
+    return (a.score = b.score)
   }
 
   incrementMaxEntries = () => {
     this.setState({ numPosts: this.state.numPosts + this.state.incrementBy })
   }
   handleScroll = () => {
-    const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
-    const body = document.body;
-    const html = document.documentElement;
-    const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight) - this.state.incrementOffset;
-    const windowBottom = windowHeight + window.pageYOffset;
+    const windowHeight =
+      'innerHeight' in window
+        ? window.innerHeight
+        : document.documentElement.offsetHeight
+    const body = document.body
+    const html = document.documentElement
+    const docHeight =
+      Math.max(
+        body.scrollHeight,
+        body.offsetHeight,
+        html.clientHeight,
+        html.scrollHeight,
+        html.offsetHeight
+      ) - this.state.incrementOffset
+    const windowBottom = windowHeight + window.pageYOffset
     if (windowBottom >= docHeight) {
       this.incrementMaxEntries()
     }
   }
 
-  setSearch = search => this.setState({ search }, () => this.SearchWithFuse())
+  setSearch = (search) => this.setState({ search }, () => this.SearchWithFuse())
 
   SearchWithFuse = () => {
     // console.log("fusing with plainText\n\n")
     // console.log(`searching for ${this.state.search}`)
 
     // console.log(this.state.posts)
-    const fuse = new Fuse(
-      this.state.posts,
-      {
-        ignoreLocation: true,
-        ignoreFieldNorm: true,
-        ingludeScore: true,
-        threshold: 0.4,
-        sortFn: this.fuseSortFn,
-        keys: [
-
-          'node.plainText',
-          {
-            name: 'node.frontmatter.tags',
-            weight: 1.2
-          },
-          {
-            name: 'node.frontmatter.title',
-            weight: 1.5
-          }
-        ],
-        useExtendedSearch: true
-      }
-    )
-    if (this.state.search === "") {
+    const fuse = new Fuse(this.state.posts, {
+      ignoreLocation: true,
+      ignoreFieldNorm: true,
+      ingludeScore: true,
+      threshold: 0.4,
+      sortFn: this.fuseSortFn,
+      keys: [
+        'node.plainText',
+        {
+          name: 'node.frontmatter.tags',
+          weight: 1.2,
+        },
+        {
+          name: 'node.frontmatter.title',
+          weight: 1.5,
+        },
+      ],
+      useExtendedSearch: true,
+    })
+    if (this.state.search === '') {
       this.setState({ filteredPosts: this.state.posts })
     } else {
-      this.setState({ filteredPosts: fuse.search(this.state.search).map(i => i.item) })
+      this.setState({
+        filteredPosts: fuse.search(this.state.search).map((i) => i.item),
+      })
       // console.log('fuse search')
       // const result = fuse.search(this.state.search)
       // console.log(result)
@@ -136,49 +139,67 @@ class BlogPosts extends Component {
 
   render() {
     return (
-
-      < BlogPostsStyle >
+      <BlogPostsStyle>
         <form action="">
-          <label htmlFor="search">Search:
-            <input type="text" aria-label='search' name="search" value={this.state.search} id="search" onChange={e => this.setSearch(e.target.value)} />
+          <label htmlFor="search">
+            Search:
+            <input
+              type="text"
+              aria-label="search"
+              name="search"
+              value={this.state.search}
+              id="search"
+              onChange={(e) => this.setSearch(e.target.value)}
+            />
           </label>
         </form>
-        <FlipMove className='post-cards'>
-          {
-            this.state.filteredPosts
-              .slice(0, this.state.numPosts)
-              .map((post, i) => {
-                let status = true
-                try {
-                  status = post['node']['frontmatter']['status'].toLowerCase() !== 'draft'
-                } catch (error) {
-                }
-                if (post && status) {
-                  return <div key={post.node.id} className='post-wrapper' style={{ display: 'inline-flex' }}>< BlogPostCard key={post.node.id} post={post['node']} /></div>
-                }
-                return false
+        <FlipMove className="post-cards">
+          {this.state.filteredPosts
+            .slice(0, this.state.numPosts)
+            .map((post, i) => {
+              let status = true
+              try {
+                status =
+                  post['node']['frontmatter']['status'].toLowerCase() !==
+                  'draft'
+              } catch (error) {}
+              if (post && status) {
+                return (
+                  <div
+                    key={post.node.id}
+                    className="post-wrapper"
+                    style={{ display: 'inline-flex' }}
+                  >
+                    <BlogPostCard key={post.node.id} post={post['node']} />
+                  </div>
+                )
               }
-              )
-          }
-          < div className="robots">
-            {
-              this.state.posts.map((post, i) =>
-                <li key={post.node.id} >
-                  <h3 id={`${post.node.frontmatter.title}-robot`}>{post.node.frontmatter.title}</h3>
-                  <div className="description">{post.node.frontmatter.description}</div>
-                  {
-                    post.node.fields.slug === null
-                      ? ''
-                      : <a href={post.node['fields']['slug']} title={post.node.frontmatter.title}>
-                        {post.node.frontmatter.title}
-                      </a>
-                  }
-                </li>)
-            }
+              return false
+            })}
+          <div className="robots">
+            {this.state.posts.map((post, i) => (
+              <li key={post.node.id}>
+                <h3 id={`${post.node.frontmatter.title}-robot`}>
+                  {post.node.frontmatter.title}
+                </h3>
+                <div className="description">
+                  {post.node.frontmatter.description}
+                </div>
+                {post.node.fields.slug === null ? (
+                  ''
+                ) : (
+                  <a
+                    href={post.node['fields']['slug']}
+                    title={post.node.frontmatter.title}
+                  >
+                    {post.node.frontmatter.title}
+                  </a>
+                )}
+              </li>
+            ))}
           </div>
         </FlipMove>
-      </ BlogPostsStyle >
-
+      </BlogPostsStyle>
     )
   }
 }

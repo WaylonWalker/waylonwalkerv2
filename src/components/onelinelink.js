@@ -96,29 +96,29 @@ const oneLineLinkCardStyle = `
   }
 }
 `
-const getDescription = (url) => (
+const getDescription = (url) =>
   fetch(url)
-    .then(r => r.text())
-    .then(html => {
+    .then((r) => r.text())
+    .then((html) => {
       let parser = new DOMParser()
       let doc = parser.parseFromString(html, 'text/html')
       let meta = doc.querySelectorAll('meta')
-      const description = [...meta].filter(m => m.name === 'og:description')[0].content
-      const image = [...meta].filter(m => m.name === 'og:image')[0]?.content
-      const sm_image = [...meta].filter(m => m.name === 'og:sm_image')[0]?.content
-      const url = [...meta].filter(m => m.name === 'og:url')[0]?.content
-      const title = [...meta].filter(m => m.name === 'title')[0]?.content
-      return {description, image, url, title, sm_image}
-      })
-)
-
+      const description = [...meta].filter(
+        (m) => m.name === 'og:description'
+      )[0].content
+      const image = [...meta].filter((m) => m.name === 'og:image')[0]?.content
+      const sm_image = [...meta].filter((m) => m.name === 'og:sm_image')[0]
+        ?.content
+      const url = [...meta].filter((m) => m.name === 'og:url')[0]?.content
+      const title = [...meta].filter((m) => m.name === 'title')[0]?.content
+      return { description, image, url, title, sm_image }
+    })
 
 const oneLineLinkCard = (url) => {
-  return getDescription(url).then( meta => 
-`<a class="onelinelink" href=${meta.url}>
-  <img
-    src='${meta.sm_image ? meta.sm_image : meta.image ? meta.image : ''}'
-  >
+  return getDescription(url).then(
+    (meta) =>
+      `<a class="onelinelink" href=${meta.url}>
+  <img src='${meta.sm_image ? meta.sm_image : meta.image ? meta.image : ''}' >
   <div class="right">
     <h2>${meta.title ? meta.title : ''}</h2>
     <p class='description'>
@@ -135,19 +135,24 @@ const oneLineLinkCard = (url) => {
 }
 
 const oneLineLinks = () => {
-  const linkText = [...document.querySelectorAll('.post-body p a')].map(p => p.innerText)
+  const linkText = [...document.querySelectorAll('.post-body p a')].map(
+    (p) => p.innerText
+  )
   const paragraphs = document.querySelectorAll('.post-body p') //
 
-  const regex = /^https?:\/\/waylonwalker\.com\//;
-  const shouldTransform = (url) => regex.test(url);
+  const regex = /^https?:\/\/waylonwalker\.com\//
+  const shouldTransform = (url) => regex.test(url)
 
-
-  const anchorOnly = [...paragraphs].filter(p => linkText.includes(p.innerText) && p.childElementCount === 1)//.map(p => p.firstElementChild)
+  const anchorOnly = [...paragraphs].filter(
+    (p) => linkText.includes(p.innerText) && p.childElementCount === 1
+  ) //.map(p => p.firstElementChild)
 
   anchorOnly
-    .filter( p => shouldTransform(p.firstElementChild.href))
-    .map(async p => p.outerHTML = await oneLineLinkCard(p.firstElementChild.href))
-
+    .filter((p) => shouldTransform(p.firstElementChild.href))
+    .map(
+      async (p) =>
+        (p.outerHTML = await oneLineLinkCard(p.firstElementChild.href))
+    )
 }
 
 export { oneLineLinks, oneLineLinkCardStyle }
