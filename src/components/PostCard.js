@@ -109,7 +109,10 @@ const PostCard = ({ slug, cover, description, title }) => (
                 ? ''
                 : <Img fixed={cover} className='post-cover-image' />
               }
-              <h2 
+              {
+                title === undefined
+                ? ''
+                : <h2 
                 className='no-link'
               dangerouslySetInnerHTML={{
                 __html: title
@@ -121,10 +124,13 @@ const PostCard = ({ slug, cover, description, title }) => (
                   .replace('Pandas', '<span class="pandas">Pandas</span>')
                 }}
               />
+              }
             </div>
             <div className='flip-back'>
               <p className='description'>
                 {description === null
+                  ? ''
+                  : description === undefined
                   ? ''
                   : description.slice(0, 150)
                 }
