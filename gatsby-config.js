@@ -83,6 +83,7 @@ module.exports = {
     siteUrl: 'https://waylonwalker.com',
     description: "Practicing my craft in public, sharing my experience along the way.  Python, Kedro, JamStack, Gatsby, Data, Automation"
   },
+  flags: {FAST_DEV: true, FAST_REFRESH: true},
   plugins: [
     // `gatsby-plugin-sass`,
     // `gatsby-plugin-preact`, <-- seemed buggy in prod
