@@ -97,22 +97,22 @@ color: #FCD242;
 }
 
 `
-const PostCard = ({ to }) => (
+const PostCard = ({ slug, cover, description, title }) => (
 
-  <Link to={to.fields.slug} style={{textDecoration: 'none'}}>
+  <Link to={slug} style={{textDecoration: 'none'}}>
       <PostCardStyle className='postcard'>
          
         <div className='postcard-content'>
           <div className='flip'>
             <div className='flip-front'>
-              { to.frontmatter.cover === null
+              { cover === null
                 ? ''
-                : <Img fixed={to.frontmatter.cover.childImageSharp.fixed} className='post-cover-image' />
+                : <Img fixed={cover} className='post-cover-image' />
               }
               <h2 
                 className='no-link'
               dangerouslySetInnerHTML={{
-                __html: to.frontmatter.title
+                __html: title
                   .replace('kedro', 'Kedro')
                   .replace('Kedro', '<span class="kedro">Kedro</span>')
                   .replace('python', 'Python')
@@ -124,9 +124,9 @@ const PostCard = ({ to }) => (
             </div>
             <div className='flip-back'>
               <p className='description'>
-                {to.frontmatter.description === null
+                {description === null
                   ? ''
-                  : to.frontmatter.description.slice(0, 150)
+                  : description.slice(0, 150)
                 }
               </p>
             </div>
