@@ -40,7 +40,7 @@ p.status-message.bright {
 
 `
 const PostStatus = ({status, tags=[], bright=true}) => {
-    console.log(tags)
+    // console.log(tags)
     let statusMessage
     status === undefined
       ? statusMessage = 'undefined'
