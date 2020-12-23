@@ -135,7 +135,6 @@ const PostCard = ({ slug, cover, description, title }) => (
               </p>
             </div>
           </div>
-        </div>
       </div>
     </PostCardStyle>
   </Link>
