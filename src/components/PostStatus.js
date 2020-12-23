@@ -38,11 +38,12 @@ const PostStatusStyle = styled.div`
     color: #232136;
   }
 `
-const PostStatus = ({ status, tags = [], bright = true }) => {
-  console.log(tags)
-  let statusMessage
-  status === undefined
-    ? (statusMessage = 'undefined')
+
+const PostStatus = ({status, tags=[], bright=true}) => {
+    // console.log(tags)
+    let statusMessage
+    status === undefined
+      ? statusMessage = 'undefined'
     : status === null
     ? (statusMessage = 'null')
     : tags.join().includes('tip')

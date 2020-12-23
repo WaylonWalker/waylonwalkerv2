@@ -29,7 +29,17 @@ const similar_posts = (node, posts, index) => {
   const prev = index === 0 ? null : posts[index - 1].node
   const next = index === (posts.length -1 ) ? null : posts[index + 1].node
   const similar_posts = [...new Set([prev, next, ...taggedPosts, ...orderedPosts])].filter(p => p !== null)
-  return similar_posts
+  const slim_similar_posts = similar_posts.map(post => {
+    const slim_post = {
+      slug: post.fields.slug,
+      title: post.frontmatter.title,
+      description: post.frontmatter.description === null ? '' : post.frontmatter.description,
+      cover: post.frontmatter.cover === null ? '' : post.frontmatter.cover.childImageSharp.fixed
+    }
+  }
+  )
+
+  return slim_similar_posts
 }
 
 exports.createPages = ({ actions, graphql }) => {
@@ -98,11 +108,49 @@ exports.createPages = ({ actions, graphql }) => {
             prev: index === 0 ? null : posts[index - 1].node,
             next: index === (posts.length -1 ) ? null : posts[index + 1].node,
             similarPosts: similar_posts(node, posts, index),
-            // allPosts: posts,
-            // headings: headings
-
           },
         })
+        
+        const slimPath = node.fields.slug
+
+        // createPage({
+        //   path: node.fileds.slug.replace('blog/', ''),
+        //   tags: node.frontmatter.tags,
+        //   component: path.resolve(
+        //     `src/templates/${String(node.frontmatter.templateKey)}.js`
+        //   ),
+        //   // additional data can be passed via context
+        //   context: {
+        //     id,
+        //     prev: index === 0 ? null : posts[index - 1].node,
+        //     next: index === (posts.length -1 ) ? null : posts[index + 1].node,
+        //     similarPosts: similar_posts(node, posts, index),
+        //   },
+        // })
+
+      }
+
+      if (
+        node.frontmatter.templateKey === "blog-post"
+        && node.frontmatter.templateKey !== null
+        && node.fields.status !== false 
+        && node.fields.status !== 'false'
+      ) {
+
+        // createPage({
+        //   path: `${node.fields.slug}/amp`,
+        //   tags: node.frontmatter.tags,
+        //   component: path.resolve(
+        //     `src/templates/${String(node.frontmatter.templateKey)}.amp.js`
+        //   ),
+        //   // additional data can be passed via context
+        //   context: {
+        //     id,
+        //     prev: index === 0 ? null : posts[index - 1].node,
+        //     next: index === (posts.length -1 ) ? null : posts[index + 1].node,
+        //     similarPosts: similar_posts(node, posts, index),
+        //   },
+        // })
       }
     })
   })
