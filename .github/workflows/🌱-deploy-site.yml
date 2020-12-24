@@ -87,11 +87,14 @@ jobs:
       - name: install npm
         # if: steps.filter.outputs.npm == 'true'
         run: npm install --production
+      - name: flatten
+        run: |
+          mv src/pages/blog/* src/pages/
+          mv src/pages/notes/* src/pages/
       - name: 🔨 gatsby build
         run: |
           cd .github/scripts
           python missing-covers.py
-          git status # show changes afterwards
           npm run build
         env:
           GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
