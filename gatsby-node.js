@@ -111,7 +111,6 @@ exports.createPages = ({ actions, graphql }) => {
           },
         })
         
-        const slimPath = node.fields.slug
 
         // createPage({
         //   path: node.fileds.slug.replace('blog/', ''),
