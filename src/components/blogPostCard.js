@@ -112,6 +112,24 @@ const BlogPostCard = ({ post, ...props }) => {
   const month = dt.toLocaleString('en-us', { month: 'long' })
   const day = dt.getDate()
   const cover = post.frontmatter.cover
+  // const cover = post?.frontmatter?.cover?.childImageSharp !== undefined
+  //   ? post?.frontmatter?.cover?.childImageSharp
+  //   : post?.frontmatter?.cover?.med_img !== undefined
+  //   ? post?.frontmatter?.cover?.med_img
+  //   : null
+
+  // console.log(post.frontmatter)
+  // console.log(post?.frontmatter?.cover?.childImageSharp?.fluid)
+  // console.log(post?.frontmatter?.cover?.med_img?.fixed)
+  let fixed = undefined
+
+  if (cover?.med_img !== null && cover?.med_img !== undefined ) {
+    fixed = cover.med_img?.fixed
+  } else if (cover?.childImageSharp !== null && cover?.childImageSharp !== undefined) {
+    fixed = cover.childImageSharp?.fixed
+  }
+
+  
   return (
     <BlogPostCardStyles>
       <Link
@@ -119,11 +137,10 @@ const BlogPostCard = ({ post, ...props }) => {
         aria-label={`${post['frontmatter']['title']} cover image`}
         title={`${post['frontmatter']['title']}`}
       >
-        {cover === undefined || cover === null ? (
-          ''
-        ) : (
-          <Img fluid={cover.childImageSharp.fluid} />
-        )}
+        {fixed === undefined 
+          ? ''
+          : <Img fixed={fixed} alt='this is the cover'/>
+        }
       </Link>
       <div className="date">
         <Link

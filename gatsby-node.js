@@ -47,7 +47,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(limit: 1000) {
+      allMarkdownRemark {
         edges {
           node {
             id
@@ -63,6 +63,15 @@ exports.createPages = ({ actions, graphql }) => {
               status
               date
               cover {
+              med_img: childImageSharp {
+                fixed(width: 500) {
+                    base64
+                    width
+                    height
+                    src
+                    srcSet
+                }
+              }
                 childImageSharp {
                   fixed(width: 200, height: 85) {
                     base64
@@ -85,6 +94,51 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const posts = result.data.allMarkdownRemark.edges
+      .filter(post => post?.node?.frontmatter?.frontmatter?.templateKey !== 'gratitude')
+      .filter(post => post?.node?.frontmatter?.frontmatter?.templateKey !== null)
+      .filter(post => post?.node?.fields?.status !== false)
+      .filter(post => post?.node?.fields?.status !== 'false')
+      .filter(post => post?.node?.fields?.date !== null)
+
+        // node.frontmatter.templateKey !== "gratitude"
+        // && node.frontmatter.templateKey !== null
+        // && node.fields.status !== false 
+        // && node.fields.status !== 'false'
+
+        const allTags = posts.map(post => post?.node?.frontmatter?.tags).flat()
+        const tags = [...new Set(allTags)]
+        tags.pop('')
+        tags.pop(null)
+        const tagCounts = Object.fromEntries(tags.map( tag => [tag, allTags.flat().filter(t => t === tag).length]))
+        tags.sort((a,b) => tagCounts[b] - tagCounts[a])
+
+        
+        tags.forEach((tag, index) => {
+
+          if (tag !== null) {
+          createPage({
+            path: `tag/${tag}`,
+            component: path.resolve(
+              `src/templates/tag-page.js`
+            ),
+            // additional data can be passed via context
+            context: {
+              tag: tag,
+              tags: tags,
+              tagCounts: tagCounts,
+              posts: posts
+              .filter(post => post?.node?.frontmatter?.tags?.includes(tag))
+              .filter(post => post?.node?.frontmatter.status !== null)
+              .filter(post => post?.node?.frontmatter.status !== 'draft')
+              .filter(post => post?.node?.frontmatter.status !== 'false')
+              .filter(post => post?.node?.frontmatter.status !== false)
+              .sort((a, b) => a?.node?.frontmatter?.date - b?.node?.frontmatter?.date)
+              // .filter(post => post.frontmatter.status.toLowerCase() === 'published')
+            },
+          })
+        }
+        }
+      )
 
     posts.forEach(({node}, index) => {
       const id = node.id
@@ -110,47 +164,9 @@ exports.createPages = ({ actions, graphql }) => {
             similarPosts: similar_posts(node, posts, index),
           },
         })
-        
-
-        // createPage({
-        //   path: node.fileds.slug.replace('blog/', ''),
-        //   tags: node.frontmatter.tags,
-        //   component: path.resolve(
-        //     `src/templates/${String(node.frontmatter.templateKey)}.js`
-        //   ),
-        //   // additional data can be passed via context
-        //   context: {
-        //     id,
-        //     prev: index === 0 ? null : posts[index - 1].node,
-        //     next: index === (posts.length -1 ) ? null : posts[index + 1].node,
-        //     similarPosts: similar_posts(node, posts, index),
-        //   },
-        // })
 
       }
 
-      if (
-        node.frontmatter.templateKey === "blog-post"
-        && node.frontmatter.templateKey !== null
-        && node.fields.status !== false 
-        && node.fields.status !== 'false'
-      ) {
-
-        // createPage({
-        //   path: `${node.fields.slug}/amp`,
-        //   tags: node.frontmatter.tags,
-        //   component: path.resolve(
-        //     `src/templates/${String(node.frontmatter.templateKey)}.amp.js`
-        //   ),
-        //   // additional data can be passed via context
-        //   context: {
-        //     id,
-        //     prev: index === 0 ? null : posts[index - 1].node,
-        //     next: index === (posts.length -1 ) ? null : posts[index + 1].node,
-        //     similarPosts: similar_posts(node, posts, index),
-        //   },
-        // })
-      }
     })
   })
 }
