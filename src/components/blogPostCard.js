@@ -123,13 +123,15 @@ const BlogPostCard = ({ post, ...props }) => {
   // console.log(post?.frontmatter?.cover?.med_img?.fixed)
   let fixed = undefined
 
-  if (cover?.med_img !== null && cover?.med_img !== undefined ) {
+  if (cover?.med_img !== null && cover?.med_img !== undefined) {
     fixed = cover.med_img?.fixed
-  } else if (cover?.childImageSharp !== null && cover?.childImageSharp !== undefined) {
+  } else if (
+    cover?.childImageSharp !== null &&
+    cover?.childImageSharp !== undefined
+  ) {
     fixed = cover.childImageSharp?.fixed
   }
 
-  
   return (
     <BlogPostCardStyles>
       <Link
@@ -137,10 +139,11 @@ const BlogPostCard = ({ post, ...props }) => {
         aria-label={`${post['frontmatter']['title']} cover image`}
         title={`${post['frontmatter']['title']}`}
       >
-        {fixed === undefined 
-          ? ''
-          : <Img fixed={fixed} alt='this is the cover'/>
-        }
+        {fixed === undefined ? (
+          ''
+        ) : (
+          <Img fixed={fixed} alt="this is the cover" />
+        )}
       </Link>
       <div className="date">
         <Link

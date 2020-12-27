@@ -96,45 +96,43 @@ const PostCardStyle = styled.div`
 `
 
 const PostCard = ({ slug, cover, description, title }) => (
-
-  <Link to={slug} style={{textDecoration: 'none'}}>
-      <PostCardStyle className='postcard'>
-         
-        <div className='postcard-content'>
-          <div className='flip'>
-            <div className='flip-front'>
-              { cover === null
-                ? ''
-                : <Img fixed={cover} className='post-cover-image' />
-              }
-              {
-                title === undefined
-                ? ''
-                : <h2 
-                className='no-link'
+  <Link to={slug} style={{ textDecoration: 'none' }}>
+    <PostCardStyle className="postcard">
+      <div className="postcard-content">
+        <div className="flip">
+          <div className="flip-front">
+            {cover === null ? (
+              ''
+            ) : (
+              <Img fixed={cover} className="post-cover-image" />
+            )}
+            {title === undefined ? (
+              ''
+            ) : (
+              <h2
+                className="no-link"
                 dangerouslySetInnerHTML={{
-                __html: title
-                  .replace('kedro', 'Kedro')
-                  .replace('Kedro', '<span class="kedro">Kedro</span>')
-                  .replace('python', 'Python')
-                  .replace('Python', '<span class="python">Python</span>')
-                  .replace('pandas', 'Pandas')
-                  .replace('Pandas', '<span class="pandas">Pandas</span>')
+                  __html: title
+                    .replace('kedro', 'Kedro')
+                    .replace('Kedro', '<span class="kedro">Kedro</span>')
+                    .replace('python', 'Python')
+                    .replace('Python', '<span class="python">Python</span>')
+                    .replace('pandas', 'Pandas')
+                    .replace('Pandas', '<span class="pandas">Pandas</span>'),
                 }}
               />
-              }
-            </div>
-            <div className='flip-back'>
-              <p className='description'>
-                {description === null
-                  ? ''
-                  : description === undefined
-                  ? ''
-                  : description.slice(0, 150)
-                }
-              </p>
-            </div>
+            )}
           </div>
+          <div className="flip-back">
+            <p className="description">
+              {description === null
+                ? ''
+                : description === undefined
+                ? ''
+                : description.slice(0, 150)}
+            </p>
+          </div>
+        </div>
       </div>
     </PostCardStyle>
   </Link>

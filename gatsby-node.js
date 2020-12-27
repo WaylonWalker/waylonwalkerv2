@@ -96,23 +96,32 @@ exports.createPages = ({ actions, graphql }) => {
     const posts = result.data.allMarkdownRemark.edges
       .filter(post => post?.node?.frontmatter?.frontmatter?.templateKey !== 'gratitude')
       .filter(post => post?.node?.frontmatter?.frontmatter?.templateKey !== null)
+      .filter(post => post?.node?.frontmatter.status !== 'draft')
       .filter(post => post?.node?.fields?.status !== false)
+      .filter(post => post?.node?.fields?.status !== null)
       .filter(post => post?.node?.fields?.status !== 'false')
       .filter(post => post?.node?.fields?.date !== null)
 
-        // node.frontmatter.templateKey !== "gratitude"
-        // && node.frontmatter.templateKey !== null
-        // && node.fields.status !== false 
-        // && node.fields.status !== 'false'
+    const allTags = posts.map(post => post?.node?.frontmatter?.tags).flat()
+    const tags = [...new Set(allTags)]
+    tags.pop('')
+    tags.pop(null)
+    const tagCounts = Object.fromEntries(tags.map( tag => [tag, allTags.flat().filter(t => t === tag).length]))
+    tags.sort((a,b) => tagCounts[b] - tagCounts[a])
+    
+    // create meta page
+    createPage({
+      path: 'meta',
+      component: path.resolve(`src/templates/meta.js`),
+      context: {
+        allPosts: posts,
+        tags: tags,
+        tagCounts: tagCounts,
+      }
+    }
+    )
 
-        const allTags = posts.map(post => post?.node?.frontmatter?.tags).flat()
-        const tags = [...new Set(allTags)]
-        tags.pop('')
-        tags.pop(null)
-        const tagCounts = Object.fromEntries(tags.map( tag => [tag, allTags.flat().filter(t => t === tag).length]))
-        tags.sort((a,b) => tagCounts[b] - tagCounts[a])
-
-        
+    // create tag pages
         tags.forEach((tag, index) => {
 
           if (tag !== null) {
@@ -128,18 +137,14 @@ exports.createPages = ({ actions, graphql }) => {
               tagCounts: tagCounts,
               posts: posts
               .filter(post => post?.node?.frontmatter?.tags?.includes(tag))
-              .filter(post => post?.node?.frontmatter.status !== null)
-              .filter(post => post?.node?.frontmatter.status !== 'draft')
-              .filter(post => post?.node?.frontmatter.status !== 'false')
-              .filter(post => post?.node?.frontmatter.status !== false)
               .sort((a, b) => a?.node?.frontmatter?.date - b?.node?.frontmatter?.date)
-              // .filter(post => post.frontmatter.status.toLowerCase() === 'published')
             },
           })
         }
         }
       )
 
+    // create posts
     posts.forEach(({node}, index) => {
       const id = node.id
       if (
