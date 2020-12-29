@@ -101,6 +101,7 @@ exports.createPages = ({ actions, graphql }) => {
       .filter(post => post?.node?.fields?.status !== null)
       .filter(post => post?.node?.fields?.status !== 'false')
       .filter(post => post?.node?.fields?.date !== null)
+      
 
     const allTags = posts.map(post => post?.node?.frontmatter?.tags).flat()
     const tags = [...new Set(allTags)]
@@ -113,6 +114,18 @@ exports.createPages = ({ actions, graphql }) => {
     createPage({
       path: 'meta',
       component: path.resolve(`src/templates/meta.js`),
+      context: {
+        allPosts: posts,
+        tags: tags,
+        tagCounts: tagCounts,
+      }
+    }
+    )
+
+    // create tags page
+    createPage({
+      path: 'tags',
+      component: path.resolve(`src/templates/tags.js`),
       context: {
         allPosts: posts,
         tags: tags,
@@ -137,7 +150,7 @@ exports.createPages = ({ actions, graphql }) => {
               tagCounts: tagCounts,
               posts: posts
               .filter(post => post?.node?.frontmatter?.tags?.includes(tag))
-              .sort((a, b) => a?.node?.frontmatter?.date - b?.node?.frontmatter?.date)
+              .sort((a, b) => new Date(b?.node?.frontmatter?.date) - new Date(a?.node?.frontmatter?.date))
             },
           })
         }
