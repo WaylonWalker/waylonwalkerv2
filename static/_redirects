@@ -21,6 +21,10 @@
 
 /latest-story.png        /stories/get-python-help-without-google.png
 
+# refactor routes
+/blog/*             /:splat
+/notes/*             /:splat
+
 # Short-Blog
 /k166              /blog/whats-new-in-kedro-0166
 /k166              /blog/whats-new-in-kedro-0166
@@ -161,9 +165,9 @@
 /bash              /notes/bash/
 
 # more encompassing
-/b/*             /blog/:splat
+/b/*             /:splat
 
-/n/*             /notes/:splat
+/n/*             /:splat
 
 /rss            /blog/rss.xml
 /md-rss         /blog/markdown-rss.xml
