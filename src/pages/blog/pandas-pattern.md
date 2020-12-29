@@ -207,13 +207,9 @@ plot_data.head()
 plot_data.plot(title='Rolling annual sum of Categorical Random Data');
 ```
 
-
-< !-- ![png](output_6_0.png) -->
-
-
 ## For the Visual Learners
 
-I will break down the pattern her![#discuss](https://waylonwalker.com/gh-actions-header-discuss.png)### Groupby
+### Groupby
 
 
 ```python
