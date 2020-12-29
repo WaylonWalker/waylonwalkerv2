@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 // import PropTypes from 'prop-types'
 // import { Link, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import BlogPosts from '../components/BlogPosts'
@@ -112,6 +113,20 @@ export default class BlogPage extends React.Component {
             try to share my experiences here. Much of it is random things form
             my career.
           </p>
+          <ul className="tags">
+            <li>
+              {' '}
+              <Link to="/tag/python">python</Link>{' '}
+            </li>
+            <li>
+              {' '}
+              <Link to="/tag/git">git</Link>{' '}
+            </li>
+            <li>
+              {' '}
+              <Link to="/tag/kedro">kedro</Link>{' '}
+            </li>
+          </ul>
           <BlogPosts posts={posts} />
         </BlogPageStyles>
       </Layout>
@@ -125,8 +140,8 @@ export const pageQuery = graphql`
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: {
         frontmatter: { templateKey: { eq: "blog-post" } }
-        fields: { slug: { regex: "^/blog/" } }
       }
+        // fields: { slug: { regex: "^/blog/" } }
     ) {
       edges {
         node {
