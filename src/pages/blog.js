@@ -134,6 +134,8 @@ export default class BlogPage extends React.Component {
   }
 }
 
+// previously filtered by this after frontmatter
+// fields: { slug: { regex: "^/blog/" } }
 export const pageQuery = graphql`
   query BlogQuery {
     allMarkdownRemark(
@@ -141,7 +143,6 @@ export const pageQuery = graphql`
       filter: {
         frontmatter: { templateKey: { eq: "blog-post" } }
       }
-        // fields: { slug: { regex: "^/blog/" } }
     ) {
       edges {
         node {
