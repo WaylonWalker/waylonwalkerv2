@@ -14,6 +14,26 @@ cover: ''
 
 * How I manage Environments
 * My Data Workflow.
+* Daily Schedule
+* desk
+* keeb
+* Material Shell
+* Why blog
+* search with fuse.js
+
+* Think like a Senior Dev
+* 
+
+
+## Editor
+
+* tmux
+* vim
+* shortcuts
+* gitui
+* fzf
+
+
 
 ## Core
 
