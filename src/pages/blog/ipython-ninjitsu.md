@@ -95,11 +95,11 @@ long_func()
 
 ## %reset
 
-https://waylonwalker.com/blog/reset-ipython
+https://waylonwalker.com/reset-ipython
 
 ## %autoreload
 
-https://waylonwalker.com/blog/autoreload-ipython
+https://waylonwalker.com/autoreload-ipython
 
 ``` python
 c.InteractiveShellApp.extensions = ["autoreload"]

@@ -71,7 +71,7 @@ https://waylonwalker.com/notes/eight-years-cat
 My first attempt was to make my own transformer for `gatsby-remark-embedder`.
 I previously set this up on my site for twitter and YouTube.
 
-https://waylonwalker.com/blog/gatsby-remark-embedder
+https://waylonwalker.com/gatsby-remark-embedder
 
 > using gatsby-remark-embedder to expand twitter/YouTube
 

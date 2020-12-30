@@ -93,25 +93,25 @@ feed.sort(key=lambda x: dateutil.parser.parse(x['published']), reverse=True)
 >>>
 [{'title': '🙋\u200d♂️ Can Anyone Explain Twitter Cards to me?',
   'date': 'Sat, 11 Jul 2020 03:00:00 GMT',
-  'link': 'https://waylonwalker.com/blog/explain-twitter-cards/'},
+  'link': 'https://waylonwalker.com/explain-twitter-cards/'},
  {'title': 'How I Built My GitHub Profile',
   'date': 'Fri, 10 Jul 2020 03:00:00 GMT',
-  'link': 'https://waylonwalker.com/blog/my-github-profile/'},
+  'link': 'https://waylonwalker.com/my-github-profile/'},
  {'title': 'Lessons and Regrets from My $25000 Launch',
   'date': 'Fri, 03 Jul 2020 04:06:47 GMT',
   'link': 'https://swyx.io/writing/coding-career-launch'},
  {'title': 'SLIDES - understanding python *args and **kwargs',
   'date': 'Thu, 02 Jul 2020 05:00:00 GMT',
-  'link': 'https://waylonwalker.com/blog/python-args-kwargs-slides/'},
+  'link': 'https://waylonwalker.com/python-args-kwargs-slides/'},
  {'title': 'Launching the Coding Career Handbook!',
   'date': 'Wed, 01 Jul 2020 13:08:37 GMT',
   'link': 'https://swyx.io/writing/launching-coding-career'},
  {'title': 'Gracefully adopt kedro, the catalog',
   'date': 'Mon, 29 Jun 2020 03:00:00 GMT',
-  'link': 'https://waylonwalker.com/blog/graceful-kedro-catalog/'},
+  'link': 'https://waylonwalker.com/graceful-kedro-catalog/'},
  {'title': "🤓 What's on your GitHub Profile",
   'date': 'Mon, 29 Jun 2020 03:00:00 GMT',
-  'link': 'https://waylonwalker.com/blog/whats-on-your-github-profile/'},
+  'link': 'https://waylonwalker.com/whats-on-your-github-profile/'},
  {'title': "Versioned Docs in 30 Seconds with Amplify Console's Branch Subdomains",
   'date': 'Fri, 26 Jun 2020 16:34:09 GMT',
   'link': 'https://swyx.io/writing/amplify-console-branch-subdomains'},
@@ -134,6 +134,6 @@ This post was super fun to explore.  I used an external library (`feedparser`) t
 
 While trying to step up your skills you will need lots of practice.  Its good to have several options to try out ideas quickly.  I often use repl.it, check out this post to see how I use it.
 
-https://waylonwalker.com/blog/practice-python-online
+https://waylonwalker.com/practice-python-online
 
 > Not a sponsor REPL.it is a great way to practice.

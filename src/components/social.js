@@ -46,7 +46,7 @@ const Social = () => (
         </a>
       </li>
       <li>
-        <a href="https://waylonwalker.com/blog/rss.xml">
+        <a href="https://waylonwalker.com/rss.xml">
           <FiRss />
         </a>
       </li>

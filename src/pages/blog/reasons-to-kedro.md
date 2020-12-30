@@ -20,7 +20,7 @@ should be considering a pipeline framework.  Kedro is a great option that
 provides many benefits for teams to collaborate, develop, and deploy data
 pipelines
 
-https://waylonwalker.com/blog/what-is-kedro
+https://waylonwalker.com/what-is-kedro
 
 ## Starter Template
 
@@ -35,7 +35,7 @@ kedro run
 ```
 
 
-https://waylonwalker.com/blog/create-new-kedro-project
+https://waylonwalker.com/create-new-kedro-project
 
 > read more about how to start your first kedro project here
 
@@ -209,7 +209,7 @@ through the use of hooks.  There are several hooks that happen at different
 points in the kedro lifecycle.  For instance, you can hook in before pipeline
 run or after pipeline run to do whatever your project needs.
 
-https://waylonwalker.com/blog/creating-the-kedro-preflight-hook
+https://waylonwalker.com/creating-the-kedro-preflight-hook
 
 ### pip install plugin
 

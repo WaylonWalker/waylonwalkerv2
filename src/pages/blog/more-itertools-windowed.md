@@ -104,7 +104,7 @@ expanded_content = "\n".join(
 
 **meta**: 👇  This is an example of a one line link card that we are trying to achieve.
 
-https://waylonwalker.com/blog/python-args-kwargs
+https://waylonwalker.com/python-args-kwargs
 
 > Not sure what *line is, check out this article.
 

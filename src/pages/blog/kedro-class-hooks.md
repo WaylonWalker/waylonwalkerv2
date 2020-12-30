@@ -314,4 +314,4 @@ class ProjectContext(KedroContext):
 
 ## Final thoughts
 
-Hooks are an amazing addition to the kedro framework that will allow the community to make big changes to how their kedro project gets ran without needing to change kedro itself.  Using a hook class with self can make them so much more configurable, and reusable across different projects without a lot of extra code. Personally I still really like the module method that we used in [kedro-preflight](https://waylonwalker.com/blog/creating-the-kedro-preflight-hook/).
+Hooks are an amazing addition to the kedro framework that will allow the community to make big changes to how their kedro project gets ran without needing to change kedro itself.  Using a hook class with self can make them so much more configurable, and reusable across different projects without a lot of extra code. Personally I still really like the module method that we used in [kedro-preflight](https://waylonwalker.com/creating-the-kedro-preflight-hook/).

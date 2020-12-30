@@ -195,7 +195,7 @@ GitHub actions are a continuous integration, continuous delivery service by GitH
 ---
 
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/github-actions-syntax'>
+<a href='https://waylonwalker.com/github-actions-syntax'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/github-actions-syntax-rm.png"
@@ -359,7 +359,7 @@ If you're new to actions check out this article on using actions.
 <TABLE>
 <TR>
    <TD>
-      <a href='https://waylonwalker.com/blog/four-github-actions-website'>
+      <a href='https://waylonwalker.com/four-github-actions-website'>
       <img
          style='margin: auto; float: left'
          src="https://waylonwalker.com/four-github-actions-website-rm.png"
@@ -368,7 +368,7 @@ If you're new to actions check out this article on using actions.
       </a>
    </TD>
    <TD>
-      <a href='https://waylonwalker.com/blog/four-github-actions-python'>
+      <a href='https://waylonwalker.com/four-github-actions-python'>
       <img
          style='margin: auto; float: right;'
          src="https://waylonwalker.com/four-github-actions-python-rm.png"

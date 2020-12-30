@@ -13,7 +13,7 @@ cover: '/static/pb/toolz.png'
 
 <!--
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/toolz'>
+<a href='https://waylonwalker.com/toolz'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/toolz.png"

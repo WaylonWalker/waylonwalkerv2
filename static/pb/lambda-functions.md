@@ -13,7 +13,7 @@ cover: '/static/pb/lambda-functions.png'
 
 <!--
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/lambda-functions'>
+<a href='https://waylonwalker.com/lambda-functions'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/lambda-functions.png"

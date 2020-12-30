@@ -76,7 +76,7 @@ install_miniconda > /dev/null 2>&1
 install_miniconda > miniconda_install.log 2>&1
 ```
 
-https://waylonwalker.com/blog/reusable-bash/
+https://waylonwalker.com/reusable-bash/
 
 > This posts covers more ways to write reuable bash scripts
 

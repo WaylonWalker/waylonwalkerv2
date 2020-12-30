@@ -55,6 +55,6 @@ for i in tqdm(range(10)):
 	sleep(1)
 ```
 
-https://waylonwalker.com/blog/autoreload-ipython
+https://waylonwalker.com/autoreload-ipython
 
 > If you are using notebooks you should enable ipython autoreload 👆

@@ -13,7 +13,7 @@ cover: '/static/pb/inline-if-statement.png'
 
 <!--
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/inline-if-statement'>
+<a href='https://waylonwalker.com/inline-if-statement'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/inline-if-statement.png"

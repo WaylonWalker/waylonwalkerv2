@@ -86,8 +86,8 @@ kedro run
 
 Check out some of my other articles on building kedro hooks.
 
-[![creating customizable kedro hooks](https://waylonwalker.com/configurable-kedro-hooks.png)](https://waylonwalker.com/blog/kedro-class-hooks/)
+[![creating customizable kedro hooks](https://waylonwalker.com/configurable-kedro-hooks.png)](https://waylonwalker.com/kedro-class-hooks/)
 
-[![creating the kedro preflight hook](https://waylonwalker.com/kedro-hooks.png)](https://waylonwalker.com/blog/creating-the-kedro-preflight-hook/)
+[![creating the kedro preflight hook](https://waylonwalker.com/kedro-hooks.png)](https://waylonwalker.com/creating-the-kedro-preflight-hook/)
 
 Check out the example 👉 [http://static-viz.kedro.dev/](http://static-viz.kedro.dev/)

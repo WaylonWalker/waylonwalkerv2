@@ -19,8 +19,8 @@ Passing inputs into kedro is a key concept.  Understanding how it accepts a sing
 
 Check out this post for a review of how `*args` `**kwargs` work in python.
 
-[![python args and kwargs](https://waylonwalker.com/python-args-kwargs.png)](https://waylonwalker.com/blog/python-args-kwargs)
-> [python args and kwargs](https://waylonwalker.com/blog/python-args-kwargs) article by [@_waylonwalker](https://twitter.com/_WaylonWalker)
+[![python args and kwargs](https://waylonwalker.com/python-args-kwargs.png)](https://waylonwalker.com/python-args-kwargs)
+> [python args and kwargs](https://waylonwalker.com/python-args-kwargs) article by [@_waylonwalker](https://twitter.com/_WaylonWalker)
 
 ## All Kedro inputs are catalog Entries
 

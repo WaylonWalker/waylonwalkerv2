@@ -56,6 +56,6 @@ give me a shout out on twitter
 
 ---
 
-https://waylonwalker.com/blog/crush-dev-to-posts
+https://waylonwalker.com/crush-dev-to-posts
 
 > If you enjoyed this post you may enjoy another "meta" post

@@ -13,7 +13,7 @@ cover: '/static/pb/f-strings.png'
 
 <!--
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/f-strings'>
+<a href='https://waylonwalker.com/f-strings'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/f-strings.png"

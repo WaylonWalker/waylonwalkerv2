@@ -13,7 +13,7 @@ cover: '/static/pb/template-strings.png'
 
 <!--
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/template-strings'>
+<a href='https://waylonwalker.com/template-strings'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/template-strings.png"

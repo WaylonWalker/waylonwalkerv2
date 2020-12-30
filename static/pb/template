@@ -13,7 +13,7 @@ cover: '/static/pb/${slug}.png'
 
 <!--
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/${slug}'>
+<a href='https://waylonwalker.com/${slug}'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/${slug}.png"

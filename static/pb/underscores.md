@@ -13,7 +13,7 @@ cover: '/static/pb/underscores.png'
 
 <!--
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/underscores'>
+<a href='https://waylonwalker.com/underscores'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/underscores.png"

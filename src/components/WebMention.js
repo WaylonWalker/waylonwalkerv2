@@ -67,7 +67,7 @@ const WebMentionList = styled.ol`
 export default class WebMention extends React.Component {
   constructor(props) {
     super(props)
-    // url: 'https://waylonwalker.com/blog/reusable-bash',
+    // url: 'https://waylonwalker.com/reusable-bash',
     this.state = {
       url: props.url,
       loading: true,

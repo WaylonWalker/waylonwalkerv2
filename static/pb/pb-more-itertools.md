@@ -13,7 +13,7 @@ cover: '/static/pb/more-itertools.png'
 
 <!--
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/more-itertools'>
+<a href='https://waylonwalker.com/more-itertools'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/more-itertools.png"

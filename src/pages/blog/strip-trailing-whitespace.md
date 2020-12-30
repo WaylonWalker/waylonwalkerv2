@@ -9,7 +9,7 @@ description: 'A common linting error thrown by various linters is for trailing w
 cover: '/static/strip-trailing-whitespace-from-git-projects.png'
 
 ---
-A common linting error thrown by various linters is for trailing whitespace.  I most often use flake8.  I generally have \[pre-commit\]([https://waylonwalker.com/blog/pre-commit-is-awesome](https://waylonwalker.com/blog/pre-commit-is-awesome "https://waylonwalker.com/blog/pre-commit-is-awesome")) hooks setup to strip this, but sometimes I run into situations where I jump into a project without it, and my editor lights up with errors.  A simple fix is to run this one-liner.
+A common linting error thrown by various linters is for trailing whitespace.  I most often use flake8.  I generally have \[pre-commit\]([https://waylonwalker.com/pre-commit-is-awesome](https://waylonwalker.com/pre-commit-is-awesome "https://waylonwalker.com/pre-commit-is-awesome")) hooks setup to strip this, but sometimes I run into situations where I jump into a project without it, and my editor lights up with errors.  A simple fix is to run this one-liner.
 
 ## One-Liner to strip whitespace
 
@@ -21,7 +21,7 @@ git grep -I --name-only -z -e '' | xargs -0 sed -i -e 's/[ \t]\+\(\r\?\)$/\1/'
 
 
 <p style='text-align: center' align='center'>
-<a href='https://waylonwalker.com/blog/pre-commit-is-awesome'>
+<a href='https://waylonwalker.com/pre-commit-is-awesome'>
   <img
     style='width:400px; max-width:80%; margin: auto;'
     width='400'
@@ -31,4 +31,4 @@ git grep -I --name-only -z -e '' | xargs -0 sed -i -e 's/[ \t]\+\(\r\?\)$/\1/'
   </a>
 </p>
 
-read more about pre-commit [here](https://waylonwalker.com/blog/pre-commit-is-awesome).
+read more about pre-commit [here](https://waylonwalker.com/pre-commit-is-awesome).

@@ -5,7 +5,7 @@ date: 2019-09-10T05:00:00.000+00:00
 status: published
 description: 
     This post is intended as an extension/update from 
-    [background tasks in python](https://waylonwalker.com/blog/background-1/).
+    [background tasks in python](https://waylonwalker.com/background-1/).
     I started using `background` the week that Kenneth Reitz released it.  It
     takes away so much boilerplate from running background tasks that I use it
     in more places than I probably should. After taking a look at that post
@@ -22,7 +22,7 @@ tags:
 related_post_label: ''
 
 ---
-This post is intended as an extension/update from [background tasks in python](https://waylonwalker.com/blog/background-1/).  I started using `background` the week that Kenneth Reitz released it.  It takes away so much boilerplate from running background tasks that I use it in more places than I probably should. After taking a look at that post today, I wanted to put a better data science example in here to help folks get started.
+This post is intended as an extension/update from [background tasks in python](https://waylonwalker.com/background-1/).  I started using `background` the week that Kenneth Reitz released it.  It takes away so much boilerplate from running background tasks that I use it in more places than I probably should. After taking a look at that post today, I wanted to put a better data science example in here to help folks get started.
 
 > I use it in more places than I probably should
 

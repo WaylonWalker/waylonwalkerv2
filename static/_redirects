@@ -169,7 +169,7 @@
 
 /n/*             /:splat
 
-/rss            /blog/rss.xml
+/rss            /rss.xml
 /md-rss         /blog/markdown-rss.xml
 /sitemap        /sitemap.xml
 

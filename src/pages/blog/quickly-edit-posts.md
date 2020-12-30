@@ -12,7 +12,7 @@ cover: "/static/quickly-edit-posts.png"
 Yesterday I automated starting new posts with a python script.  Today I want to
 work on the next part that is editing those posts quickly.
 
-https://waylonwalker.com/blog/automating-my-posts
+https://waylonwalker.com/automating-my-posts
 
 > Check out yesterdays post about setting up my posts with python 🐍
 
@@ -49,7 +49,7 @@ ep () {
 }
 ```
 
-https://waylonwalker.com/blog/reusable-bash
+https://waylonwalker.com/reusable-bash
 
 > check out this post for more information about writing reusable bash scripts.
 

@@ -13,7 +13,7 @@ cover: '/static/pb/if-name-main.png'
 
 <!--
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/if-name-main'>
+<a href='https://waylonwalker.com/if-name-main'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/if-name-main.png"

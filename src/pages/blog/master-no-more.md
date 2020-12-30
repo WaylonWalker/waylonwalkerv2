@@ -61,7 +61,7 @@ Following yesterdays post, I am going to rename my markdown files
 
 More info on refactoring your blog routes with netlify here.
 
-[![gracefully redirect cover image](https://waylonwalker.com/gracefully-redirect.png)](https://waylonwalker.com/blog/gracefully-redirect/)
+[![gracefully redirect cover image](https://waylonwalker.com/gracefully-redirect.png)](https://waylonwalker.com/gracefully-redirect/)
 
 
 ## _"Edit This post"_ Links

@@ -17,12 +17,12 @@ cover: ''
 > share about your personal projects, publications, etc.\]
 
 I graduated with a Mechanical Engineering Degree 8 years ago.  Much of my work
-[early in my career](https://waylonwalker.com/blog/eight-years-cat) was wrapped
+[early in my career](https://waylonwalker.com/eight-years-cat) was wrapped
 around analyzing larger datasets for my group to understand quality, drive
 changes to improve quality or prove that quality was already good.
 
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/eight-years-cat'>
+<a href='https://waylonwalker.com/eight-years-cat'>
 <img
 style='width:500px; max-width:80%; margin: auto;'
 src="https://waylonwalker.com/eight-years-cat.png"
@@ -146,7 +146,7 @@ Python is my core skill, it can do so much so quickly and has a very strong ecos
 A skill I would add in general is to deploy early.  Too often we spend months on prototypes that need rewritten for the prod environment, when they could have just been written for prod from the beginning while ci tooling could have kept the project cleaner and easier to work with.  Whether its GitHub actions or Azure Pipelines CI/CD is cheaper and easier to setup than ever.  There is a fluid movement that happens when you are working with clean code along the way rather than cleaning it up after its all done.  Simplifying your work opens up mental space to put more focus on your problem at hand.
 
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/what-are-github-actions'>
+<a href='https://waylonwalker.com/what-are-github-actions'>
 <img
 style='width:500px; max-width:80%; margin: auto;'
 src="https://waylonwalker.com/what-are-github-actions.png"

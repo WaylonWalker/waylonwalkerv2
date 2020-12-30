@@ -13,7 +13,7 @@ cover: '/static/pb/list-methods.png'
 
 <!--
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/list-methods'>
+<a href='https://waylonwalker.com/list-methods'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/list-methods.png"

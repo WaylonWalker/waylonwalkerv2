@@ -13,7 +13,7 @@ cover: '/static/pb/list-comprehensions.png'
 
 <!--
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/list-comprehensions'>
+<a href='https://waylonwalker.com/list-comprehensions'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/list-comprehensions.png"

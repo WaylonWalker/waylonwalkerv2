@@ -163,7 +163,7 @@ Out[11]: ['a']
 The above tips will help you reclaim used memory in ipython, but the following tip is one that single handedly is the reason I use Ipython for faster development over anything else.
 
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/autoreload-ipython'>
+<a href='https://waylonwalker.com/autoreload-ipython'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/autoreload-ipython-rm.png"
@@ -172,4 +172,4 @@ The above tips will help you reclaim used memory in ipython, but the following t
   </a>
 </p>
 
-[autoreload-ipython](https://waylonwalker.com/blog/autoreload-ipython) one of my biggest productivity boosts.
+[autoreload-ipython](https://waylonwalker.com/autoreload-ipython) one of my biggest productivity boosts.

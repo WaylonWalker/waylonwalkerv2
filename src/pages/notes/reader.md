@@ -40,7 +40,7 @@ html:
 items:
     Waylon Walker:
     weight: 5
-    url: https://waylonwalker.com/blog/rss.xml
+    url: https://waylonwalker.com/rss.xml
     @_WaylonWalker:
     weight: 3
     twitter: https://twitter.com/_waylonwalker

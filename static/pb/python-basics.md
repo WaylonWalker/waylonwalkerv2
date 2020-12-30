@@ -13,7 +13,7 @@ cover: '/static/pb/python-basics.png'
 
 <!--
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/python-basics'>
+<a href='https://waylonwalker.com/python-basics'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/python-basics.png"

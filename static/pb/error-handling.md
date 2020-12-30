@@ -13,7 +13,7 @@ cover: '/static/pb/error-handling.png'
 
 <!--
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/error-handling'>
+<a href='https://waylonwalker.com/error-handling'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/error-handling.png"

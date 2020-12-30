@@ -13,7 +13,7 @@ cover: '/static/pb/custom-errors.png'
 
 <!--
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/custom-errors'>
+<a href='https://waylonwalker.com/custom-errors'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/custom-errors.png"

@@ -13,7 +13,7 @@ cover: '/static/pb/merging-lists.png'
 
 <!--
 <p style='text-align: center'>
-<a href='https://waylonwalker.com/blog/merging-lists'>
+<a href='https://waylonwalker.com/merging-lists'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
     src="https://waylonwalker.com/merging-lists.png"
