@@ -237,7 +237,7 @@ module.exports = {
                   }
                 }
             `,
-            output: "/blog/rss.xml",
+            output: "/rss.xml",
             title: "Waylon Walker's Blog Feed",
             // optional configuration to insert feed reference in pages:
             // if `string` is used, it will be used to create RegExp and then test if pathname of
