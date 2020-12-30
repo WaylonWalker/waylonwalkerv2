@@ -20,6 +20,8 @@ cover: ''
 * Material Shell
 * Why blog
 * search with fuse.js
+* Testing a blog with ahrefs
+
 
 * Think like a Senior Dev
 * 
@@ -48,6 +50,7 @@ cover: ''
   * Why framework
   * How I write pipelines
   * when I write pipelines
+  * pipeline node templates
   * Convert a notebooks to pipelines
   * Testing Pipelines
 * professional python
