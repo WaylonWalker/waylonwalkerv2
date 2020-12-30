@@ -5,22 +5,22 @@ tags: []
 title: 'TIL: Bind arguments to dynamically generated lambdas in python'
 date: 2020-04-27T12:13:00.000+00:00
 status: published
-description: This past week I had a really weird bug in my [kedro](http://kedro.readthedocs.io/)
+description: This past week I had a really weird bug in my [kedro](https://kedro.readthedocs.io/)
   pipeline.  For some reason data running through my pipeline was coming out completely
   made no sense, but if I manually request raw data outside of the pipeline it matched
   expectations.
 cover: "/static/bind-dynamic-lambdas.png"
 
 ---
-This past week I had a really weird bug in my [kedro](http://kedro.readthedocs.io/) pipeline.  For some reason data running through my pipeline was coming out completely made no sense, but if I manually request raw data outside of the pipeline it matched expectations.
+This past week I had a really weird bug in my [kedro](https://kedro.readthedocs.io/) pipeline.  For some reason data running through my pipeline was coming out completely made no sense, but if I manually request raw data outside of the pipeline it matched expectations.
 
 **NOTE** While this story is about a kedro pipeline, it can be applied anywhere closures are put into an iterable.
 
 ## ![Debugger to the rescue](https://waylonwalker.com/bind-dynamic-lambdas-1.png)
 
-After a few days of looking at it off and on, I pinpointed that it was all the way down in the raw layer. Right as data is coming off of the database.  For this I already had existing `sql` files stored and a `read_sql` function to get the data so I opted to just set up the pipeline to utilize the existing code as much as possible, leaning on the [kedro](http://kedro.readthedocs.io/) framework a bit less.
+After a few days of looking at it off and on, I pinpointed that it was all the way down in the raw layer. Right as data is coming off of the database.  For this I already had existing `sql` files stored and a `read_sql` function to get the data so I opted to just set up the pipeline to utilize the existing code as much as possible, leaning on the [kedro](https://kedro.readthedocs.io/) framework a bit less.
 
-I have dynamically created lists of pipeline nodes many times in the past, but typically I take data from [kedro](http://kedro.readthedocs.io/) input and use it in the lambda.  I prefer the simplicity of using lambdas over `functools.partial`.  It typically looks something like this.
+I have dynamically created lists of pipeline nodes many times in the past, but typically I take data from [kedro](https://kedro.readthedocs.io/) input and use it in the lambda.  I prefer the simplicity of using lambdas over `functools.partial`.  It typically looks something like this.
 
 ``` python
 # 👍  I do this all the time

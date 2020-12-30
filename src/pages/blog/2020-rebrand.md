@@ -28,7 +28,7 @@ I have been really into using a deep purple lately.  It is a neutral color that 
 
 ### How I pick colors
 
-I am really bad at picking colors that go well together so for this I punt to utilizing others who have a better eye for this.  I commonly used the [instant-eyedropper](http://instant-eyedropper.com/ "instant-eyedropper website") desktop app to pick colors out of my text editor theme or colors that [canva](https://canva.com "Canva") recommends.  Really just find soemthing that seems to match up with your taste, goes well with a color that you want to highlight or anything that inspires you.
+I am really bad at picking colors that go well together so for this I punt to utilizing others who have a better eye for this.  I commonly used the [instant-eyedropper](https://instant-eyedropper.com/ "instant-eyedropper website") desktop app to pick colors out of my text editor theme or colors that [canva](https://canva.com "Canva") recommends.  Really just find soemthing that seems to match up with your taste, goes well with a color that you want to highlight or anything that inspires you.
 
 ![](/how-i-pick-colors.gif)
 
@@ -89,7 +89,7 @@ A few days later I saw this thread of tweets by [@sarah_edo](https://twitter.com
 
 Links to all of the tools referenced in this article.
 
-[http://instant-eyedropper.com/](http://instant-eyedropper.com/ "instant-eyedropper")
+[https://instant-eyedropper.com/](https://instant-eyedropper.com/ "instant-eyedropper")
 
 [cssgradient.io/](https://cssgradient.io/ "https://cssgradient.io/")
 

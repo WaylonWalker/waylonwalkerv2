@@ -11,7 +11,7 @@ description: Do you have any use cases that you use hoising?  Why?  It seems lik
 cover: "/static/do-you-hoist.png"
 
 ---
-I am working through Wes Bos's [beginnerjavascript.com/](http://beginnerjavascript.com/) I just hit module 18 on hoisting.  It's something that I always knew was there, Its not something I typically see used or use myself.
+I am working through Wes Bos's [beginnerjavascript.com/](https://beginnerjavascript.com/) I just hit module 18 on hoisting.  It's something that I always knew was there, Its not something I typically see used or use myself.
 
 # Do you Hoist?
 

@@ -107,7 +107,7 @@ data.head()
 
 ## The pattern
 
-Here I am going to take my groupby date and item, this will take care of duplicate entries with the same time stamp.  Select the value I want to sum on. unstack the items index into columns.  Resample the data by month.  I could easily use any of the [available rules](http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases). Fill any missing months with 0, since there wasnt a transaction during that month. Apply a rolling window to get the annual sum.  I find that this helps to ground values in values that my stakeholders are used to seeing on a regular basis and reduces the need for them to recalculate in their head.  Then I am going to drop the nulls created by the rolling window for the first 11 rows.
+Here I am going to take my groupby date and item, this will take care of duplicate entries with the same time stamp.  Select the value I want to sum on. unstack the items index into columns.  Resample the data by month.  I could easily use any of the [available rules](https://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases). Fill any missing months with 0, since there wasnt a transaction during that month. Apply a rolling window to get the annual sum.  I find that this helps to ground values in values that my stakeholders are used to seeing on a regular basis and reduces the need for them to recalculate in their head.  Then I am going to drop the nulls created by the rolling window for the first 11 rows.
 
 
 ```python
