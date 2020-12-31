@@ -77,7 +77,6 @@ grepr() {grep -iRl "$1" | xargs sed -i "s|$1|$2|g"}
 grepr "https://waylonwalker.com/blog/" "https://waylonwalker.com/"
 ```
 
-## agr
 
 ## git diff
 
@@ -101,6 +100,10 @@ git commit -m "moved routes from /blog to /"
 
 Working in small steps gives us an easy way to undo steps that may have been a
 mistake before its too late.
+
+https://waylonwalker.com/master-no-more
+
+> I used the technique from this post to switch master to main on my blog.
 
 ## git reset
 _be careful, work from a branch, make sure you started clean_
@@ -131,6 +134,17 @@ git reset --hard origin/main
 _<small><mark>match our last commit</mark></small>_
 ``` bash
 git reset --hard HEAD
+```
+
+## agr
+
+I have an alternative version that I occasionally use as well that utilizes the
+silver searcher `ag`.  It does a great job at following your .gitignore rules
+with no fuss, and can filter down to file extensions simply with flags like
+`--md`
+
+```bash
+agr() {ag -l "$1" | xargs sed -i "s/$1/$2/g"}
 ```
 
 ## git clean
