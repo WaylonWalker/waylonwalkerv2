@@ -89,8 +89,6 @@ jobs:
         run: npm install --production
       - name: flatten
         run: |
-          cp src/pages/blog/*.md static/
-          cp src/pages/notes/*.md static/
           mv src/pages/blog/* src/pages/
           mv src/pages/notes/* src/pages/
       - name: 🔨 gatsby build
@@ -102,6 +100,12 @@ jobs:
           GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
           NODE_ENV: production
           ENVIRONMENT: ${{ contains(github.ref, 'master') && 'production' || 'staging'}}
+
+      - name: expose raw markdown in public
+        # I use this to easily cross post articles
+        run: |
+          cp src/pages/blog/*.md public/
+          cp src/pages/notes/*.md public/
       - name: Deploy to gh-pages
         uses: crazy-max/ghaction-github-pages@v1.3.0
         with:
