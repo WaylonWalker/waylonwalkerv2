@@ -66,6 +66,8 @@ def get_one_line_link(link):
     except KeyError:
         description = soup.text[:120]
 
+    description = description.replace("\n", " ").replace("\r", "")
+
     return textwrap.dedent(
         f"""
     <a class="onelinelink" href="{url}">
