@@ -550,7 +550,7 @@ class BlogPostTemplate extends React.Component {
                 >
                   <a
                     style={{ color: 'goldenrod', textDecoration: 'none' }}
-                    href={`https://github.com/WaylonWalker/waylonwalkerv2/edit/main/src/pages${slug.slice(
+                    href={`https://github.com/WaylonWalker/waylonwalkerv2/edit/main/src/pages/blog${slug.slice(
                       0,
                       -1
                     )}.md`}
