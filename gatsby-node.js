@@ -93,6 +93,11 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
 
+    // create pages for draft posts, but dont advertise them
+    const allPosts = result.data.allMarkdownRemark.edges
+      .filter(post => post?.node?.frontmatter?.frontmatter?.templateKey !== 'gratitude')
+      .filter(post => post?.node?.frontmatter?.frontmatter?.templateKey !== null)
+
     const posts = result.data.allMarkdownRemark.edges
       .filter(post => post?.node?.frontmatter?.frontmatter?.templateKey !== 'gratitude')
       .filter(post => post?.node?.frontmatter?.frontmatter?.templateKey !== null)
@@ -158,7 +163,7 @@ exports.createPages = ({ actions, graphql }) => {
       )
 
     // create posts
-    posts.forEach(({node}, index) => {
+    allPosts.forEach(({node}, index) => {
       const id = node.id
       if (
         node.frontmatter.templateKey !== "gratitude"
@@ -177,9 +182,9 @@ exports.createPages = ({ actions, graphql }) => {
           // additional data can be passed via context
           context: {
             id,
-            prev: index === 0 ? null : posts[index - 1].node,
-            next: index === (posts.length -1 ) ? null : posts[index + 1].node,
-            similarPosts: similar_posts(node, posts, index),
+            prev: index === 0 ? null : allPosts[index - 1].node,
+            next: index === (allPosts.length -1 ) ? null : allPosts[index + 1].node,
+            similarPosts: similar_posts(node, allPosts, index),
           },
         })
 
