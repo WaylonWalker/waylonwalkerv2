@@ -106,7 +106,9 @@ https://waylonwalker.com/master-no-more
 > I used the technique from this post to switch master to main on my blog.
 
 ## git reset
-_be careful, work from a branch, make sure you started clean_
+_How I do Mass Undo_
+
+**be careful** work from a branch, make sure you started clean
 
 Let's say I wanted to change every occurance of one variable name to another.
 Lets try to replace replace `pandas.CSVDataSet` with `pandas.ParquetDataSet`.
@@ -177,6 +179,7 @@ git clean -x
 by wiping out a `node_modules`, `venv`, or credentials.
 
 ## git  checkout
+_How I undo single files_
 
 If our command was mostly successful, but just a few extra files were touched I
 will manually revert them with `git checkout <filename>`
