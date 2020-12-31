@@ -153,6 +153,11 @@ find . -n "*.md" | xargs grepr python python3
 
 _++Vanilla Bonus_
 
+
+https://waylonwalker.com/refactor-in-cli
+
+> I use these replace commands heavily when doing large refactorings.
+
 ### conditionally configure
 
 I like this one when there is not a good cli into config files and I need to replace something like a true to false if the value is in the config and append to the config if its not.
