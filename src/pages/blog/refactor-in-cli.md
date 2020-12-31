@@ -63,7 +63,7 @@ grepr() {grep -iRl "$1" | xargs sed -i "s|$1|$2|g"}
 
 You can find this function and more of my bash notes.
 
-https://waylonwalker.com/bash
+https://waylonwalker.com/bash#recursively-replace-text
 
 ## Example
 
@@ -79,12 +79,101 @@ grepr "https://waylonwalker.com/blog/" "https://waylonwalker.com/"
 
 ## agr
 
+## git diff
+
+After running the replace command the first thing I want to see is everything
+that changed.  Looking at git diff will highlight exactly what changed since
+our last commit.
+
+``` bash
+git diff
+```
+
+## Work in small steps
+
+If your happy with the results commit them now.  It's  best to do these
+commands that have a large effect of the entire project in small steps.
+
+``` bash
+git add .
+git commit -m "moved routes from /blog to /"
+```
+
+Working in small steps gives us an easy way to undo steps that may have been a
+mistake before its too late.
+
 ## git reset
+_be careful, work from a branch, make sure you started clean_
+
+Let's say I wanted to change every occurance of one variable name to another.
+Lets try to replace replace `pandas.CSVDataSet` with `pandas.ParquetDataSet`.
+
+``` bash
+grepr() {grep -iRl "$1" | xargs sed -i "s|$1|$2|g"}
+
+
+grepr "pandas.CSVDataSet" "pandas.ParquetDataSet"
+```
+
+Upon inspection of the `git diff` we notice that there was an unintentional
+change to the `docs/standard-storage.md` file. To revert the entire change we
+can run.
+
+**note** These resets are irreversible.  Make sure that you started with a clean `git
+status` and you are confident that you didn't have any work on your machine not
+in the remote repo.
+
+_<small><mark>match the remote and wipe out any changes</mark></small>_
+``` bash
+git reset --hard origin/main
+```
+
+_<small><mark>match our last commit</mark></small>_
+``` bash
+git reset --hard HEAD
+```
 
 ## git clean
+_how I remove untracked files_
+
+Sometimes our refactoring requires moving files around. If we want to undo
+steps like this git will not clean up untracked files.
+
+``` bash
+mv conf/base/sales-catalog.yml conf/base/sales/catalg.yml
+```
+
+_<small><mark>clean up untracked files</mark></small>_
+``` bash
+git clean -f
+```
+
+_<small><mark>clean up untracked directories</mark></small>_
+``` bash
+git clean -d
+```
+
+
+_<small><mark>clean up ignored files</mark></small>_
+``` bash
+git clean -x
+```
+
+`-x` can be a bit dangerous be careful with it.  You can loose significant time
+by wiping out a `node_modules`, `venv`, or credentials.
 
 ## git  checkout
 
-## git diff
+If our command was mostly successful, but just a few extra files were touched I
+will manually revert them with `git checkout <filename>`
+
+``` bash
+git checkout conf/base/supply-catalog.yml
+```
 
 ## gitui
+
+I really love using `gitui` as a handy terminal interface to browse logs,
+diffs, and commit a few files at a time.  It starts up crazy fast and is very
+intuitive to navigate through diffs of chnages like this one file at a time if
+the `git diff` gets too overwhelming.
