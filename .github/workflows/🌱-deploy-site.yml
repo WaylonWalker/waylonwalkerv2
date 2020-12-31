@@ -89,6 +89,8 @@ jobs:
         run: npm install --production
       - name: flatten
         run: |
+          cp src/pages/blog/**/*.md static/pages/
+          cp src/pages/notes/**/*.md static/pages/
           mv src/pages/blog/* src/pages/
           mv src/pages/notes/* src/pages/
       - name: 🔨 gatsby build
