@@ -20,6 +20,12 @@ rediculously long.  I've been using forestry as my CMS, I write many of my
 posts there, and sometimes it picks some crazy file names (based on my titles).
 It was time to refactor.
 
+
+https://waylonwalker.com/refactor-in-cli
+
+> When refactorings similar to this get really big I often need to do some
+> project wide find an replace, I usually do this right from the command line.
+
 ## 🖊 Rename posts _change the filename_
 
 My post urls are based on the file name of my markdown file, so I can simply go
