@@ -12,7 +12,7 @@ const Nav = () => (
       <div className="content">
         <ul>
           <li>
-            <Link to="/" aria-label="home">
+            <Link to="https://waylonwalker.com/" aria-label="home">
               <Icon />
             </Link>
           </li>
