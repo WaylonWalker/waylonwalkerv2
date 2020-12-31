@@ -61,6 +61,10 @@ If your pattern contatains `/` characters such as for urls you can swap the
 grepr() {grep -iRl "$1" | xargs sed -i "s|$1|$2|g"}
 ```
 
+You can find this function and more of my bash notes.
+
+https://waylonwalker.com/bash
+
 ## Example
 
 I recently flattened this blog so blogs are under the top level rather than
