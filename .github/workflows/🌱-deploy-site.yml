@@ -104,8 +104,8 @@ jobs:
       - name: expose raw markdown in public
         # I use this to easily cross post articles
         run: |
-          cp src/pages/blog/*.md public/
-          cp src/pages/notes/*.md public/
+          cp -r src/pages/blog/*.md public/
+          cp -r src/pages/notes/*.md public/
       - name: Deploy to gh-pages
         uses: crazy-max/ghaction-github-pages@v1.3.0
         with:
