@@ -15,6 +15,11 @@ cover: '/static/master-no-more.png'
 
 It's been a long time coming.  We use some very harsh language within tech so much sometimes that we become numb to it.  It's time to do my very small part in this movement and purge this language from my active repos starting with this blog right here.
 
+https://waylonwalker.com/refactor-in-cli
+
+> this post follows my method of refactoring code bases from the command line,
+> read more about that in this article.
+
 ## c-s-f
 
 First off browsing through the content of my blog I found many references to master.  I cannot completely whole-sale find and replace each one of them, because some of them are links that I do not own.  Any set of instructions got upgraded from `master` to `main`
@@ -111,3 +116,6 @@ git config --global alias.new '!git init && git symbolic-ref HEAD refs/heads/mai
 ## See the Full Diff
 
 If you happen to want to see the full diff of my change you can see it [here](https://github.com/WaylonWalker/waylonwalkerv2/commit/4bd26ba8faaf7c72e01cc4946d989e3284302cd0).
+
+
+
