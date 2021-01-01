@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 related_post_label: Check out this related post
-tags: ['kedro', 'python', 'datascience', 'dataengineering']
+tags: ['kedro', 'python', 'data']
 title: How to find things in your kedro catalog
 date: 2020-06-22T03:00:00Z
 status: published
