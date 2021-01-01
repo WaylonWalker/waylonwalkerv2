@@ -3,7 +3,6 @@ templateKey: blog-post
 related_post_label: Check out this related post
 tags:
 - git
-- " productivity"
 title: git push without setting upstream
 date: 2020-02-04T12:18:00Z
 status: published
