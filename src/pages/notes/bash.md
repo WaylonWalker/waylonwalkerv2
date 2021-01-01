@@ -156,6 +156,7 @@ _++Vanilla Bonus_
 
 https://waylonwalker.com/refactor-in-cli
 
+
 > I use these replace commands heavily when doing large refactorings.
 
 ### conditionally configure
