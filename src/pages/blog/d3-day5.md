@@ -7,7 +7,7 @@ category: Viz
 tags:
     - D3
     - Viz
-    - FrontEnd
+    - webdev
 status: draft
 summary: Today we are adding Axes to the horizontal bar chart that we have worked on throughout the past few days.
 description: none

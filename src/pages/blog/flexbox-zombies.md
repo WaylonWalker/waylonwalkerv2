@@ -4,8 +4,7 @@ title: FlexBox
 date: 2018-04-22
 category: Blog
 tags:
-    - CSS
-    - FrontEnd
+    - webdev
 status: published
 description: none
 cover: "./flex.png"
