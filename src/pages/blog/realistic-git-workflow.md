@@ -7,9 +7,7 @@ status: published
 description: My git workflow based on real life.  Its  not always clean and simple.
 cover: "/static/yousef-al-nasser-261164-unsplash.jpg"
 tags:
-- code
 - git
-- lengthly
 
 ---
 # Realistic Git Workflow
