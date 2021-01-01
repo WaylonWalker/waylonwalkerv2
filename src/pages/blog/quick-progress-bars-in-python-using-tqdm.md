@@ -9,8 +9,6 @@ related_post:
 # - src/pages/blog/autoreload_ipython.md
 tags:
 - python
-- code
-- quickie
 related_post_label: ''
 
 ---
