@@ -41,7 +41,7 @@ Let's create a file called new-post.
 
 _<small><mark>start the script new-post</mark></small>_
 ``` python
-!#python
+#!python
 # new-post
 ```
 
