@@ -1,18 +1,21 @@
 ---
 templateKey: blog-post
-tags: ['python']
-title: Automating my Posts
+tags: ['blog', 'python']
+title: Automating my Post Starter
 date: 2020-12-11T09:08
-status: draft
+status: published
 description: ''
-cover: "/static/automating-my-posts.png"
+cover: "/static/automating-my-post-starter.png"
 
 ---
 
-One thing I dread about writing blog posts is getting started.  I need to cd
-into my blog directory, start neovim in a markdown file with a clever name,
-copy some frontmatter boilerplate, update the post date, add tags, a
-description, and a cover.
+One thing we all dread is mundane work of getting started, and all the hoops it
+takes to get going.  This year I want to post more often and I am taking some
+steps towards making it easier for myself to just get started.
+
+When I start a new post I need to cd into my blog directory, start neovim in a
+markdown file with a clever name, copy some frontmatter boilerplate, update the
+post date, add tags, a description, and a cover.
 
 ## Todo List for starting a post
 
@@ -30,9 +33,10 @@ description, and a cover.
 ## Lets Automate this
 
 ### This aint no proper cli
+_hot and fast_
 
 As with many thing running behind the scenes on this site, I am the one and
-only user, I have limited time, so this is going to be a bit hot and fast.
+only user, I have limited time, so this is going to be a bit **hot and fast**.
 Let's create a file called new-post.
 
 _<small><mark>start the script new-post</mark></small>_
