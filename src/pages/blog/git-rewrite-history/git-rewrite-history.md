@@ -5,7 +5,6 @@ date: 2019-02-05
 status: published
 description:
 tags:
-    - technical
     - git
 cover: /static/neonbrand-618322-unsplash.jpg
 coverCredit: Photo by NeONBRAND on Unsplash

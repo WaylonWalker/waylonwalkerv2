@@ -5,7 +5,6 @@ date: 2019-01-21
 status: published
 description:
 tags:
-    - technical
     - git
 cover: "./rawpixel-1055774-unsplash.jpg"
 ---
