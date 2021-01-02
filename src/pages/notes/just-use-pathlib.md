@@ -2,9 +2,7 @@
 templateKey: blog-post
 related_post_label: Check out this related post
 tags:
-- Python
-- quickie
-- code
+- python
 title: Just Use Pathlib
 date: 2019-09-26T05:00:00.000+00:00
 status: published

@@ -4,9 +4,7 @@ title: Pycon 2018 Roundup
 date: 2018-05-12
 category: Blog
 tags:
-    - Python
-    - Pycon
-    - Youtube
+    - python
 summary: These are my notes from pycon 2018 videos.  I love the python community and especially the conference talks.  This year I am going to take some notes from my favorite talks and post them here.
 description: none
 cover: "./pycon2018.f76001445fbb.png"

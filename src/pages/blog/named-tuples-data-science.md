@@ -10,8 +10,7 @@ related_post:
 # - src/pages/blog/background-tasks-in-python-for-data-science.md
 tags:
 - python
-- code
-- datascience
+- data
 
 ---
 If you are a regular listener of [TalkPython](https://talkpython.fm) or PythonBytes you have hear Michael Kennedy talk about Named Tuples many times, but what are they and how do they fit into my data science workflow.

@@ -16,9 +16,7 @@ related_post:
 # - src/pages/blog/quick-progress-bars-in-python-using-tqdm.md
 tags:
 - python
-- code
-- quickie
-- datascience
+- data
 related_post_label: ''
 
 ---

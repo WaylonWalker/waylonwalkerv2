@@ -9,8 +9,6 @@ related_post:
 # - src/pages/blog/readme_tables.md
 tags:
 - python
-- code
-- quickie
 
 ---
 # Autoreload in Ipython

@@ -8,9 +8,7 @@ cover: "/static/forest.jpg"
 related_post:
 # - src/pages/blog/flexbox-zombies.md
 tags:
-- code
-- quickie
-- CMS
+- webdev
 
 ---
 # Testing out forestry.io

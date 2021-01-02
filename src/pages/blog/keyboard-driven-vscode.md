@@ -6,8 +6,6 @@ status: published
 description: Reimagining my tmux configuration inside of vscode.
 cover: "/static/alt b.png"
 tags:
-- code
-- editor
 - vscode
 related_post:
 related_post_label: ''

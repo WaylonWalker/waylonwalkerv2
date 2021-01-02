@@ -4,8 +4,6 @@ title: D3 Day 3
 date: 2018-05-05
 category: Viz
 tags:
-    - D3
-    - Viz
     - webdev
 summary: Creating my First d3.js viz by following along with Ben Clinkinbeard's d3 in 5 days email.
 description: none

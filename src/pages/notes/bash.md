@@ -7,8 +7,7 @@ description: Waylon Walker's Bash Notes
 cover: "/static/hannah-gibbs-BINLgyrG_fI-unsplash.jpg"
 tags:
 - python
-- code
-- quickie
+- cli
 
 ---
 # Bash Notes
