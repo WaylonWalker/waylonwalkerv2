@@ -18,7 +18,9 @@ quickly walk through a git project.
 
 ## installation
 
-https://github.com/extrawurst/gitui/releases
+Go to their [releases](https://github.com/extrawurst/gitui/releases) page,
+download the latest build, and pop it on your PATH.  I have the following
+stuffed away in some install scripts to get the latest version.
 
 
 _<small>install latest release</small>_
