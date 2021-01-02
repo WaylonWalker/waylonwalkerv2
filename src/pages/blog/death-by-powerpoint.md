@@ -4,9 +4,8 @@ title: No More Death By PowerPoint
 date: 2017-12-31
 category: Blog
 tags:
-    - Pug
-    - Jade
-    - Reveal
+- webdev
+- softskills
 description: none
 cover: "./gemma-evans-64661-unsplash.jpg"
 ---

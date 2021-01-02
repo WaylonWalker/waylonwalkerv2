@@ -4,9 +4,7 @@ title: Pug Reveal
 date: 2017-12-31
 category: Blog
 tags:
-    - Pug
-    - Jade
-    - Reveal
+    - webdev
 status: draft
 description: none
 cover: "./flex.png"
