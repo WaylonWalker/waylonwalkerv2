@@ -5,7 +5,7 @@ date: 2017-12-31
 category: Blog
 tags:
 - webdev
-- softskills
+- catalytic
 description: none
 cover: "./gemma-evans-64661-unsplash.jpg"
 ---

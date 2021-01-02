@@ -4,9 +4,8 @@ title: Stepping Up My SQL Game
 date: 2018-03-25
 category: Blog
 tags:
-    - Data
-    - SQL
-    - Learning
+    - data
+    - sql
 summary: I decided it was time to put away the cheat sheets, step away from Stack Overflow, and improve my speed.
 description: none
 cover: "./sql-wide.png"

@@ -1,6 +1,8 @@
 ---
 templateKey: blog-post
-tags: ['blog', 'webdev', 'podcast']
+tags:
+  - webdev
+  - blog
 title: Adding Audio to my blog posts
 date: 2020-11-25T20:52:22
 status: published

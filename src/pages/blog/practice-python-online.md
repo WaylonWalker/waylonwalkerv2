@@ -1,7 +1,8 @@
 ---
 templateKey: blog-post
 related_post_label: Check out this related post
-tags: ['python', 'LearnInPublic']
+tags:
+  - python
 title: 🐍 Practice Python Online
 date: 2020-07-25T05:00:00Z
 status: published

@@ -4,8 +4,8 @@ title: background tasks in python
 date: 2017-09-16
 category: python
 tags:
-    - Python
-    - Data Science
+    - python
+    - data
 description: none
 cover: "./gabriele-diwald-199200-unsplash.jpg"
 ---
