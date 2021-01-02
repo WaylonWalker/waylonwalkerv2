@@ -16,7 +16,13 @@ def get_data():
     articles = {}
     pages = Path("../../src/pages")
     for article in pages.glob("**/*.md"):
-        default = {"cover": "", "title": "", "tags": []}
+        default = {
+            "cover": "",
+            "title": "",
+            "tags": [],
+            "status": "",
+            "templateKey": "",
+        }
         try:
             fm = {**default, **frontmatter.load(article).to_dict()}
         except ParserError:
@@ -54,5 +60,14 @@ if __name__ == "__main__":
         tags = set(sys.argv[sys.argv.index("--tag") + 1 :])
         print("\n".join([str(post) for post in data if set(data[post]["tags"]) & tags]))
 
-    else:
-        print(len(data))
+    if "--drafts" in sys.argv:
+        print(
+            "\n".join(
+                [
+                    str(post)
+                    for post in data
+                    if data[post]["status"] in ["draft", "ready"]
+                    and data[post]["templateKey"] in ["blog-post", "post"]
+                ]
+            )
+        )
