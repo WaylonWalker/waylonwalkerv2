@@ -1,7 +1,9 @@
 ---
 templateKey: blog-post
 related_post_label: Check out this related post
-tags: ['blog', 'JAMStack', 'netlify']
+tags: 
+  - catalytic
+  - blog
 title: How to crush amazing posts on DEV
 date: 2020-08-07T05:00:00Z
 status: published

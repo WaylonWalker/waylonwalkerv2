@@ -1,7 +1,8 @@
 ---
 templateKey: blog-post
 related_post_label: Check out this related post
-tags: ['blog', 'JAMStack', 'netlify']
+tags: 
+  - discuss
 title: 🤓 What's on your GitHub Profile
 date: 2020-07-11T03:00:00Z
 status: published

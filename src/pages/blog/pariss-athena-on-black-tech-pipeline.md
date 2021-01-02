@@ -1,7 +1,8 @@
 ---
 templateKey: blog-post
 related_post_label: Check out this related post
-tags: ['blog', 'JAMStack', 'netlify']
+tags: 
+  - catalytic
 title: Black Tech Pipeline
 date: 2020-08-03T05:00:00Z
 status: published
