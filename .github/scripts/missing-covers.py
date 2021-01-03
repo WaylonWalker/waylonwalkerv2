@@ -22,18 +22,25 @@ api = twitter.Api()
 
 
 def expand_line(line):
-    r = re_one_line.match(line)
-    if r and " " not in line:
-        return get_one_line_link(line)
-    r = re_tweet.match(line)
-    if r and " " not in line:
-        html = api.GetStatusOembed(url=line)["html"]
-        print("twitter returned")
-        print(line)
-        print(html)
-        return html
+    """
+    Todo: better error message over base exception
+    Todo: try except decorator?
+    """
+    try:
+        r = re_one_line.match(line)
+        if r and " " not in line:
+            return get_one_line_link(line)
+        r = re_tweet.match(line)
+        if r and " " not in line:
+            html = api.GetStatusOembed(url=line)["html"]
+            print("twitter returned")
+            print(line)
+            print(html)
+            return html
 
-    return line
+        return line
+    except BaseException:
+        return line
 
 
 def get_one_line_link(link):
