@@ -5,7 +5,7 @@ tags:
   - vim
 title: Live Substitution In Neovim
 date: 2021-01-04T00:00:00
-status: draft
+status: published
 description: ''
 cover: "/static/neovim-live-substitution.png"
 
