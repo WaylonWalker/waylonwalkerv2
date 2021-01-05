@@ -60,7 +60,7 @@ what you have in each register.
 
 ## making a macro into a shortcut
 
- _a little <C-R> magic_
+ _a little \<C-R\> magic_
 
 The magical shortcut that makes it easy is that control + r `<C-R>` followed by
 a register will paste that register wherever you currently are, including the
