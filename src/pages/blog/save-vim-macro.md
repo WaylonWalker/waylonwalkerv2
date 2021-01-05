@@ -9,50 +9,38 @@ cover: "/static/save-vim-macro.png"
 
 ---
 
-If you are like me you have created a macro or two that is pure glory and you
-forget how you made it after a day or so, or you immediately want to store it
-away as a custom keybinding.  As with most thing with vim its easy to do once
-you understand it.
+
+If you are like me, you have created a macro or two that is pure glory, and you forget how you made it after a day or so, or you immediately want to store it away as a custom keybinding. As with most things with vim, it's easy to do once you understand it.
 
 ## Creating a Macro
 
-One of the earlies things we all learn to do in vim is create macros, custom
-sets of functionality that get stored in register and can be replayed later.
+One of the earliest things we all learn to do in vim is to create macros, custom sets of functionality stored in a register that can be replayed later.
 
-To create a macro, get into normal mode, then type `q` followed by a letter that
-you want to store the macro under.
+To create a macro, get into normal mode, then type `q` followed by a letter that you want to store the macro under.
 
-```vim
+``` vim
 qq
 ```
 
-> Note: a common throw away macro register is q because its easy to hit qq from
-> normal mode to start recording.
+> Note: a common throw-away macro register is q because it's easy to hit qq from normal mode to start recording.
 
 ## Replaying a Macro
 
-Macros can be replayed by using `@` followed by the letter that you stored the
-macro under.
+Macros can be replayed using `@` followed by the letter that you stored the macro under.
 
-```vim
+``` vim
 @q
 ```
 
 ## Registers
 
-Registers are nothing more than a single character key mapping to a value of
-some text.  As you `yank`, `delete`, or create macros in vim it is automatically
-storing text into these registers.
+Registers are nothing more than a single character key mapping to a value of some text. As you `yank`, `delete`, or create macros in vim, it automatically stores text into these registers.
 
-When you hit `p` paste its simply pasting in the default register.  You can also
-paste in any other register by hitting `"qp` where q is the register that you
-want to paste in.
+When you hit `p` paste it's simply pasting in the default register. You can also paste in any other register by hitting `"qp` where q is the register that you want to paste in.
 
 ## Listing Registers
 
-To see what you have stored in each register use the `:reg` command.  This is a
-powerful tool that I underutilized for a long time.  It is really great to see
-what you have in each register.
+To see what you have stored in each register, use the `:reg` command. This is a powerful tool that I have underutilized for a long time. It is really great to see what you have in each register.
 
 ``` vim
 :reg
@@ -60,11 +48,9 @@ what you have in each register.
 
 ## making a macro into a shortcut
 
- _a little \<C-R\> magic_
+_a little <c-r> magic</c-r>_
 
-The magical shortcut that makes it easy is that control + r `<C-R>` followed by
-a register will paste that register wherever you currently are, including the
-command mode.
+The magical shortcut that makes it easy is that control + r `<C-R>` followed by a register will paste that register wherever you currently are, including the command mode.
 
 ``` vim
 :nnoremap {binding} <C-R>{register}
@@ -74,11 +60,9 @@ command mode.
 
 _relieve some of that Macro Pressure_
 
-Now that we undertstand that macros are simply strings of text placed into a
-register, it becomes a bit more intuitive to edit them after they have been
-created.
+Now that we understand that macros are simply strings of text placed into a register, it becomes a bit more intuitive to edit them after being created.
 
-First paste the contents of the register into your current working buffer.
+First, paste the contents of the register into your current working buffer.
 
 ``` vim
 <C-R>q
@@ -90,19 +74,16 @@ Then edit the macro and add it back to that buffer and delete it.
 "qdd
 ```
 
-If your macro had multiple lines in it you may need to.
+If your macro had multiple lines in it, you might need to.
 
 ``` vim
 "qdj
 "qd2j
 ```
 
-
 ## Make it recursive
 
-One use case of editing a macro may be making it recursive after you try it out
-a few times.  Macros can become recursive by simply calling themselves after
-running.
+One use case of editing a macro may be making it recursive after trying it out a few times. Macros can become recursive by simply calling themselves after running.
 
 Paste in the macro.
 
@@ -110,7 +91,7 @@ Paste in the macro.
 <C-R>q
 ```
 
-Go to the end of the line and add `@q` so that it will get called again.
+Go to the end of the line and add `@q` to get called again.
 
 ``` vim
 A @q
@@ -122,9 +103,7 @@ Replace the `q` register with the updated macro.
 "qd
 ```
 
-> Note: don't use this in a shortcut as the macro may change.  If you do want to
-> call the keybinding again you will have to use noremap instead of nnoremap,
-> but be careful as recursive remaps can be a bit dangerous.
+> Note: don't use this in a shortcut as the macro may change. If you want to call the keybinding again, you will have to use noremap instead of nnoremap, but be careful as recursive remaps can be dangerous.
 
 ## Recap
 
@@ -148,3 +127,4 @@ q{register}
 " make a macro recursive
 <C-R>{register}A@q<esc>"{register}dd
 ```
+
