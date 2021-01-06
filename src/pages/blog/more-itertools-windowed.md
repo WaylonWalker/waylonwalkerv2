@@ -9,8 +9,13 @@ cover: "/static/more-itertools-windowed.png"
 
 ---
 
+In python data science we often will reach for pandas a bit more than necessary. 
+While pandas can save us so much there are times where there are alternatives 
+that are much simpler.  The `itertools` and `more-itertools` are full of cases 
+of this.
+
 This post is a walkthrough of me solving a problem with `more-itertools` rather
-than reaching for a for loop.
+than reaching for a for loop, or pandas.
 
 I am working on a a one line link expander for my blog.  I ended up doing it,
 just by modifying the markdown with python.  I first split the post into lines
