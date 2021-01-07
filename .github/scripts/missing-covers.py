@@ -137,7 +137,13 @@ for article in pages.glob("**/*.md"):
 
 articles = {}
 for article in pages.glob("**/*.md"):
-    default = {"cover": "", "title": ""}
+    default = {
+        "cover": "",
+        "title": "",
+        "tags": [],
+        "status": "",
+        "templateKey": "",
+    }
     try:
         fm = {**default, **frontmatter.load(article).to_dict()}
     except ParserError:
