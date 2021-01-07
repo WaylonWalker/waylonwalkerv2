@@ -98,8 +98,10 @@ for article in pages.glob("**/*.md"):
         changed = False
         post = frontmatter.load(article)
         if "status" not in post.metadata.keys():
+            changed = True
             post.metadata["status"] = "draft"
         if "published" not in post.metadata.keys():
+            changed = True
             post.metadata["published"] = (
                 True if post.metadata["status"] == "published" else False
             )
@@ -108,6 +110,11 @@ for article in pages.glob("**/*.md"):
         if post.metadata["cover"] == "":
             changed = True
             post.metadata["cover"] = f"{article.stem}.png"
+        if "cover_image" not in post.metadata.keys():
+            changed = True
+            post.metadata["cover_image"] = (
+                "https://waylonwalker.com/" + post.metadata["cover"]
+            )
         if "description" not in post.metadata.keys():
             post.metadata["description"] = ""
         if post.metadata["description"] == "":
