@@ -4,9 +4,8 @@ tags:
  - blog
 title: rebrand
 date: 2020-11-14T06:00:00.000+00:00
-status: published
+status: draft
 description: A few notes for my next refactoring of waylonwalker.com
-cover: ''
 
 ---
 * simple landing page
