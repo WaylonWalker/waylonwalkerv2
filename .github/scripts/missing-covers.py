@@ -97,6 +97,12 @@ for article in pages.glob("**/*.md"):
     try:
         changed = False
         post = frontmatter.load(article)
+        if "status" not in post.metadata.keys():
+            post.metadata["status"] = "draft"
+        if "published" not in post.metadata.keys():
+            post.metadata["published"] = (
+                True if post.metadata["status"] == "published" else False
+            )
         if "cover" not in post.metadata.keys():
             post.metadata["cover"] = ""
         if post.metadata["cover"] == "":
