@@ -4,9 +4,8 @@ tags:
  - blog
 title: Kedro Factory
 date: 2020-11-16T06:00:00.000+00:00
-status: published
+status: draft
 description: Kedro Plugin Idea for creating Dags quickly
-cover: ''
 
 ---
 
