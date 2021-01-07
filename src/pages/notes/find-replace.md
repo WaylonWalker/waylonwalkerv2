@@ -1,11 +1,10 @@
 ---
 templateKey: blog-post
-title: Bash
+title: Find and Replace in the Terminal.
 date: 2020-11-12T05:00:00.000+00:00
 status: published
 description: notes about find and replace techniques
-cover: ''
-tags:
+tags: linux, bash
 
 ---
 
