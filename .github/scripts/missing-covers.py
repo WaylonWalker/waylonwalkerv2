@@ -109,7 +109,7 @@ for article in pages.glob("**/*.md"):
             post.metadata["cover"] = ""
         if post.metadata["cover"] == "":
             changed = True
-            post.metadata["cover"] = f"{article.stem}.png"
+            post.metadata["cover"] = f"/static/{article.stem}.png"
         if "cover_image" not in post.metadata.keys():
             changed = True
             post.metadata["cover_image"] = (
