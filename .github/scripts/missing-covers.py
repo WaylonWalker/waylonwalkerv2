@@ -116,11 +116,20 @@ for article in pages.glob("**/*.md"):
                 "https://waylonwalker.com/" + post.metadata["cover"]
             )
         if "description" not in post.metadata.keys():
+            changed = True
             post.metadata["description"] = ""
         if post.metadata["description"] == "":
             changed = True
             html = markdown(post.content)
-            description = BeautifulSoup(html, "html.parser").text[:120]
+            # sanitize multispaces, line breaks, and carriage returns
+            description = " ".join(
+                BeautifulSoup(html, "html.parser")
+                .text[:120]
+                .replace("\n", "")
+                .replace("\r", "")
+                .split()
+            )
+
             post.metadata["description"] = description
 
         expanded_content = "\n".join(
