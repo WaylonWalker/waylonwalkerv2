@@ -125,8 +125,8 @@ for article in pages.glob("**/*.md"):
             description = " ".join(
                 BeautifulSoup(html, "html.parser")
                 .text[:120]
-                .replace("\n", "")
-                .replace("\r", "")
+                .replace("\n", " ")
+                .replace("\r", " ")
                 .split()
             )
 
