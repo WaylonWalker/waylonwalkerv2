@@ -188,6 +188,15 @@ will manually revert them with `git checkout <filename>`
 git checkout conf/base/supply-catalog.yml
 ```
 
+## git checkout --
+_How I undo an entire directory_
+
+Sometimes we need to undo an entire directory.  This command will undo changes to all of the tracked files in the repo.
+
+``` bash
+git checkout -- /src/pages/blog
+```
+
 ## gitui
 
 I really love using `gitui` as a handy terminal interface to browse logs,
