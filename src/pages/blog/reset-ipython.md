@@ -58,9 +58,16 @@ _<small><mark>make a swap file and activate it</mark></small>_
 SWAPFILE=~/swaps/swap1-50G
 mkdir ~/swaps
 sudo fallocate -l 50G $SWAPFILE
-sudo chmod   $SWAPFILE
+sudo chmod 600 $SWAPFILE
 sudo mkswap $SWAPFILE
 sudo swapon $SWAPFILE
+```
+
+You can see the results with either swapon or free.
+
+``` bash
+sudo swapon --show
+free -h
 ```
 
 <p style='text-align: center'>
