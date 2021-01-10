@@ -18,11 +18,11 @@ and make it work well for you.
 
 ## Replacing text in vim
 
-Vim can often be a bit verbose, but thats ok because we can hack on it, and
-make our own shortcuts and keybindings.  For instance finding and replacing
-text requires using a command at the vim command line `:`.  Replacing foo with
-bar looks like this `:%s/foo/bar/g`, the final g means all of the foos, not
-just the first one on the line.
+Vim can often be a bit verbose, but that's ok because we can hack on it, and 
+make our own shortcuts and keybindings.  For instance, finding and replacing 
+text requires using a command at the vim command-line `:`.  Replacing foo with
+bar looks like this `:%s/foo/bar/g`, the final g means all of the foos, not just 
+the first one on the line.
 
 ## making it better
 
