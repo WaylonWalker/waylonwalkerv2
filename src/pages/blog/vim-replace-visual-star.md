@@ -8,7 +8,7 @@ status: published
 ---
 
 Replacing text based on whats in the current search register is a quite handy
-tool that I use often.  I believe I picked this tip up from Nic Janetakis,
+tool that I use often.  I believe I picked this tip up from Nick Janetakis,
 check out his YouTube channel for some amazing vim tips.
 
 https://www.youtube.com/watch?v=fP_ckZ30gbs
