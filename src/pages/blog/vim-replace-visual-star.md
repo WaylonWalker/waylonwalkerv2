@@ -2,10 +2,8 @@
 templateKey: blog-post
 tags: ["vim"]
 title: Vim Replace Visual Star
-date: 2020-12-27T00:00:00
-status: draft
-description: ''
-cover: "/static/vim-replace-visual-star.png"
+date: 2021-01-10T00:00:00
+status: published
 
 ---
 
@@ -46,3 +44,7 @@ register into the command.
 `<C-R>` in command mode can paste text from any register, you can see what
 registers are in use with the `:reg` command.  There are a lot of them and many
 get populated automatically as you yank text or create macros.
+
+https://waylonwalker.com/save-vim-macro
+
+> Also see how to use <C-R> to save macros to key bindings easily
