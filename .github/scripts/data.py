@@ -1,4 +1,4 @@
-#!python3
+#!python
 """
 
 example usage, edit posts that have a tag
