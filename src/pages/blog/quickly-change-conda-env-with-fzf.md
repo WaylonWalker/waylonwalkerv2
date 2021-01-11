@@ -137,6 +137,11 @@ a () {
 }
 ```
 
+https://waylonwalker.com/reusable-bash
+
+> for more information on writing reusable bash scripts check out one of my
+> favorite articles
+
 I am always on the lookout for cool new use cases for `fzf`, if you have one please share it with me.
 
 
