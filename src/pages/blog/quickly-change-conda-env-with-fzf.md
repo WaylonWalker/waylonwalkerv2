@@ -14,7 +14,7 @@ both lists environments and selects the one I want in one go.
 
 I have used conda as a virtual environment tool for years now.  I started using
 conda for its simplicity to install packages on windows, but now that has
-gotten so much better and its been years since I have ran a `conda install`
+gotten so much better and it's been years since I have run a `conda install`
 command.  I'm sure that I could use a different environment manager, but it
 works for me and makes sense.
 
@@ -26,8 +26,8 @@ interpreter and packages for that env.
 
 ## Conda create
 
-Conda environments are created with the `conda create` command.  At this point
-you will need to name your env and select python version.
+Conda environments are created with the `conda create` command.  At this point,
+you will need to name your env and select the python version.
 
 ``` bash
 conda create -n my_env python=3.8
@@ -39,7 +39,8 @@ with a base python install.  It will not be active yet.
 ## List environments
 
 Before activating an environment I often want to list the environments that I
-have installed which is often upwards of 70, so it's hard to remember them all.
+have installed which are often upwards of 70, so it's hard to remember them
+all.
 
 ``` bash
 conda info --envs
@@ -80,7 +81,7 @@ _a bit less verbose_
 [fzf](https://github.com/junegunn/fzf) is an amazing tool for the terminal that
 is a generic fuzzy matcher.  It is super performant and can handle insane
 amounts of text and is brilliant at figuring out what you mean with just a few
-characters.  We can use is here to list out all of our conda environments and
+characters.  We can use it here to list out all of our conda environments and
 select the one we want to activate with just a few keystrokes.
 
 ### Selecting the environment.
@@ -114,7 +115,7 @@ conda info --envs | fzf | awk '{print $1}'
 
 Functions that use `fzf` can be a bit odd, running them in a subshell with the
 $() syntax generally makes it super simple to utilize the output.  No matter
-how many times I have tried without running it in a subshell its alawys buggy
+how many times I have tried without running it in a subshell it's always buggy
 without it.
 
 ``` bash
@@ -125,9 +126,9 @@ This will now run conda activate on the environment that we select with fzf.
 
 ### Make it a function
 
-We don't want to type that out every time we want to activate an environment.
-I keep a function called `a` in my `~/.bashrc` and `~/.zshrc` so that I can
-activate an environment with a single character.  Yes I switch environments
+We don't want to type that out every time we want to activate an environment. I
+keep a function called `a` in my `~/.bashrc` and `~/.zshrc` so that I can
+activate an environment with a single character.  Yes, I switch environments
 often enough to justify the valuable namespace of a single character.
 
 ``` bash
@@ -136,6 +137,6 @@ a () {
 }
 ```
 
-I am always on the lookout for cool new use cases for `fzf`, if you have one
-please share it with me.
+I am always on the lookout for cool new use cases for `fzf`, if you have one please share it with me.
+
 
