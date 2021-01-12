@@ -21,7 +21,6 @@ that you have a super clean git status. We may make some mistakes and need a
 way to undo 100's of files and git makes it really easy if you start with a
 clean history.
 
-
 ```bash
 git status
 ```
@@ -76,7 +75,6 @@ grepr() {grep -iRl "$1" | xargs sed -i "s|$1|$2|g"}
 
 grepr "https://waylonwalker.com/blog/" "https://waylonwalker.com/"
 ```
-
 
 ## git diff
 
@@ -191,7 +189,8 @@ git checkout conf/base/supply-catalog.yml
 ## git checkout --
 _How I undo an entire directory_
 
-Sometimes we need to undo an entire directory.  This command will undo changes to all of the tracked files in the repo.
+Sometimes we need to undo an entire directory.  This command will undo changes
+to all of the tracked files in the repo.
 
 ``` bash
 git checkout -- /src/pages/blog
@@ -203,3 +202,9 @@ I really love using `gitui` as a handy terminal interface to browse logs,
 diffs, and commit a few files at a time.  It starts up crazy fast and is very
 intuitive to navigate through diffs of chnages like this one file at a time if
 the `git diff` gets too overwhelming.
+
+## What refactoring magic do you use?
+
+I am always looking to improve myself and would love to hear what you use to do
+complex refactoring tasks, whether its an IDE, a terminal command or something
+completely different share it along.
