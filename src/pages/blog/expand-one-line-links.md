@@ -124,6 +124,121 @@ const oneLineLinks = () => {
 }
 ```
 
+## Styles
+
+CSS is not my strong suit, but I can generally hammer something into a shape
+that I am happy with.  For this one I did struggle a bit with how it looked on
+various screens, particularly because I was holding the cover image size to a
+hard 300px.  I ended up with more media queries than I needed, but it works.
+
+``` css
+.onelinelink + blockquote {
+  position: relative;
+  left: 2rem;
+  background: rgba(0, 0, 0, .2);
+  margin: -6rem auto 1rem;
+  padding-top: 3rem;
+  border: 1px solid goldenrod;
+  border-top: 2px solid goldenrod;
+
+  max-width: 300px;
+  @media (max-width: 350px) {
+  left: 0rem;
+  margin-left: .4rem;
+  margin-right: .4rem;
+  }
+  @media (min-width: 800px) {
+    max-width: 600px;
+  }
+  @media (min-width: 900px) {
+    max-width: 700px;
+  }
+  @media (min-width: 1000px) {
+    max-width: 800px;
+  }
+  border-radius: 15px/45px;
+  display: block;
+  }
+
+}
+
+.onelinelink {
+  position: relative;
+  z-index: 2;
+  margin: 4rem;
+  overflow: hidden;
+  display: flex;
+  border: 2px solid rgba(255, 50, 50, .1);
+  background: rgba(255, 50, 50, .015);
+  background: #262236;
+  text-decoration: none;
+  border-radius: 8px;
+  max-height: 126px;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    max-height: 800px;
+    max-width: 300px;
+    margin: 4rem auto;
+
+  }
+
+  h2 {
+    top: -1.2rem;
+    postition: relative;
+    margin: 0;
+    padding: 0;
+    font-size: .8rem;
+    font-weight: 400;
+
+  }
+
+  .right {
+  width: 100%;
+    padding: 5px 15px;
+  }
+  .description {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    height: calc(100% - 31px - 1rem);
+    padding: 0;
+    padding-bottom: 1rem;
+    padding-top: .1rem;
+    margin: 0;
+  }
+  .url {
+    padding-right: 30px;
+    color: rgba(255, 255, 255, .1);
+    text-align: right;
+    position: relative;
+    z-index: 2;
+    background: #262236;
+  }
+  
+  img {
+    max-width: 300px;
+    max-height: 126px;
+    padding: 0;
+    margin: 0;
+    border-radius: 8px 0 0 8px;
+  }
+  .read-more {
+    font-size: .6rem;
+    color: rgba(255, 255, 255, .08);
+  }
+}
+```
+
+### Final Look
+
+On mobile it renders vertically.
+
+![mobile](https://waylonwalker.com/one-line-link-horizontal.png)
+
+On desktop it renders horizontally.
+
+![desktop](https://waylonwalker.com/one-line-link-horizontal.png)
+
 ## Expansion
 
 I'm sure that all of this can be better, my js skills are still forming.  It's
@@ -202,3 +317,21 @@ lines that contain only a link, then render this same markup right in the
 markdown.  For this I am going to use a language I am more familiar with,
 python, and do this inside of github actions just before build time so that the
 markdown I write stays the same, the cards will only be rendered in prod.
+
+## Why Python 🐍
+
+Python is my every day what I know, I work much more efficiently and cleanly
+with it.  Also the more I blog the more abstractions I am seeing and the lazier
+I am getting.  Things like description, SEO, cover images are all getting
+automated. Gatsby really doesn't like to run when some of those things are
+missing, probably due to my lack of JS error handling skills.  I find it much
+easier to load up all the pages and patch up the frontmatter in python before
+build time.
+
+I am kinda curious if eventually I can re-create everything I need in python
+because I am honestly not using react for much more than a glorfied templating
+system, besides search.  If I can pre-render everything in python
+
+## What do you think??
+
+Do they look good?  Could they be better?
