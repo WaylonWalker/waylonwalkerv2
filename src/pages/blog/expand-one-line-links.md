@@ -186,4 +186,19 @@ image sized for the card, the title, and description of the post.
 * does not work well with cross posting
 
 For every link I do this with the client will pull the full page just to get a
-bit of metadata.  I have already made the jump to the next step and am 
+bit of metadata.  I am already doing a bit more than I want to do client side
+for a blog, so I would prefer to do it ahead of time.
+
+Additionally since it is done client side it does not translate well when I
+copy my markdown to various other blogging platforms.  If it were rendered
+right into the markdown cross posting would be much easier.
+
+## Future State
+
+_actually already implemented at this point_
+
+The direction I am going to try is to use python to load each post, look for
+lines that contain only a link, then render this same markup right in the
+markdown.  For this I am going to use a language I am more familiar with,
+python, and do this inside of github actions just before build time so that the
+markdown I write stays the same, the cards will only be rendered in prod.
