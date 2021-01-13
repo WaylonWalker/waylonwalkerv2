@@ -69,33 +69,121 @@ https://waylonwalker.com/notes/eight-years-cat
 ## First step
 
 My first attempt was to make my own transformer for `gatsby-remark-embedder`.
-I previously set this up on my site for twitter and YouTube.
+I previously set this up on my site for twitter and YouTube.  I tried to get
+some custom transformers going, to do what I wanted for my own website, but
+failed.  I really struggled to understand what data was coming in and out of
+the transformer.  My lack of js/node debugging skills were really showing.
 
 https://waylonwalker.com/gatsby-remark-embedder
 
 > using gatsby-remark-embedder to expand twitter/YouTube
 
-> This post covers my stories
+## Redirects
+
+It also works with redirects. I have a redirect to my "latest" post.  Its
+something that I don't do the best job at keeping up to date, but when I feel
+really proud of a post I make it the latest.
 
 
 https://waylonwalker.com/latest
 
 > this post is a redirect to my "latest post"
 
-## Markown link on one line
+## Client Side
 
-[waylonwalker](https://waylonwalker.com)
+I started out by running this card expansion client side. This was the strategy
+that I used to find the list of elements that should be transformed.
 
-## links in paragraphs
+* get all anchors
+* get all paragraphs
+* filter paragraphs where the content is one of the links
+* filter paragraphs where there is only one element in the paragraph
+* filter to paragraphs with links that `shouldTransform`
+* These elements should have the `oneLineLinkCard` applied.
 
-Check out [waylonwalker](https://waylonwalker.com) for more details.
+``` javascript
+const oneLineLinks = () => {
+  const linkText = [...document.querySelectorAll('.post-body p a')].map(
+    (p) => p.innerText
+  )
+  const paragraphs = document.querySelectorAll('.post-body p') //
 
-## Twitter
+  const regex = /^https?:\/\/waylonwalker\.com\//
+  const shouldTransform = (url) => regex.test(url)
+
+  const anchorOnly = [...paragraphs].filter(
+    (p) => linkText.includes(p.innerText) && p.childElementCount === 1
+  )
+
+  anchorOnly
+    .filter((p) => shouldTransform(p.firstElementChild.href))
+    .map(
+      async (p) =>
+        (p.outerHTML = await oneLineLinkCard(p.firstElementChild.href))
+    )
+}
+```
+
+## Expansion
+
+I'm sure that all of this can be better, my js skills are still forming.  It's
+quite humbling to see how hard it is to think in an unfamiliar language.  The
+following `oneLineLineCard` renders a string template literal from a paragraph
+with a single anchor to a card that contains some of that pages meta
+information.  The `getDescription` function uses a fetch to get the metadata
+right from the content of the page.
+
+``` javascript
+const getDescription = (url) =>
+  fetch(url)
+    .then((r) => r.text())
+    .then((html) => {
+      let parser = new DOMParser()
+      let doc = parser.parseFromString(html, 'text/html')
+      let meta = doc.querySelectorAll('meta')
+      const description = [...meta].filter(
+        (m) => m.name === 'og:description'
+      )[0].content
+      const image = [...meta].filter((m) => m.name === 'og:image')[0]?.content
+      const sm_image = [...meta].filter((m) => m.name === 'og:sm_image')[0]
+        ?.content
+      const url = [...meta].filter((m) => m.name === 'og:url')[0]?.content
+      const title = [...meta].filter((m) => m.name === 'title')[0]?.content
+      return { description, image, url, title, sm_image }
+    })
+
+const oneLineLinkCard = (url) => {
+  return getDescription(url).then(
+    (meta) =>
+      `<a class="onelinelink" href=${meta.url}>
+  <img src='${meta.sm_image ? meta.sm_image : meta.image ? meta.image : ''}' >
+  <div class="right">
+    <h2>${meta.title ? meta.title : ''}</h2>
+    <p class='description'>
+      ${meta.description ? meta.description : ''}
+    </p>
+    <p class="url">
+       <span class='read-more'>read more</span>  waylonwalker.com
+    </p>
+  </div>
+
+</a>
+  `
+  )
+}
+```
+
+## It works...
+
+And it works.  Whenever I reference my own blog with just a single link on a
+line in markdown I get a nice card link out to the other post, with a small
+image sized for the card, the title, and description of the post.
 
 
+## But
 
-## YouTube
+* too much client side
+* does not work well with cross posting
 
-https://www.YouTube.com/watch?v=K-hP727tv6E
-
-<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Is there an <a href="https://twitter.com/GatsbyJS?ref_src=twsrc%5Etfw">@GatsbyJS</a> plugin to expand urls on one line to a card like discord does?</p>&mdash; 𝚆𝚊𝚢𝚕𝚘𝚗 𝚆𝚊𝚕𝚔𝚎𝚛 (@_WaylonWalker) <a href="https://twitter.com/_WaylonWalker/status/1329817340737941505?ref_src=twsrc%5Etfw">November 20, 2020</a></blockquote>
+For every link I do this with the client will pull the full page just to get a
+bit of metadata.  I have already made the jump to the next step and am 
