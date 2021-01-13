@@ -585,11 +585,11 @@ class BlogPostTemplate extends React.Component {
                   <p calss="p-note">Learning in Public</p>
                   {/* <Social /> */}
                 </div>
-                <img
-                  className="u-photo"
-                  alt="author profile"
-                  src="https://waylonwalker.com/8bitc.png"
-                />
+                {/* <img */}
+                {/*   className="u-photo" */}
+                {/*   alt="author profile" */}
+                {/*   src="https://waylonwalker.com/8bitc.png" */}
+                {/* /> */}
               </div>
 
               <div className="share">
