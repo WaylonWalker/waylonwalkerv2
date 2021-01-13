@@ -1,6 +1,5 @@
 import React from 'react'
 import NavStyles from './styles/NavStyles'
-import Icon from '../components/icon'
 import Social from '../components/social'
 import { Link } from 'gatsby'
 import Headroom from 'react-headroom'
@@ -13,7 +12,7 @@ const Nav = () => (
         <ul>
           <li>
             <Link to="https://waylonwalker.com/" aria-label="home">
-              <Icon />
+              <img src='https://waylonwalker.com/8bitc_30.png' />
             </Link>
           </li>
           <li className="btn">
