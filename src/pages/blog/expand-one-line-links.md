@@ -3,23 +3,8 @@ templateKey: blog-post
 tags: [webdev]
 title: Expand One Line Links
 date: 2020-11-18T05:00:00.000+00:00
-status: draft
-description: ''
-cover: "/static/expand-one-line-links.png"
+status: published
 
----
----
-cover: /static/expand-one-line-links-xmas2020.png
-cover_image: https://waylonwalker.com//static/expand-one-line-links.png
-date: 2020-11-18 05:00:00+00:00
-description: I wanted a super simple way to cross link blog posts that requires as
-  little effort as possible, yet still looks good in
-published: false
-status: draft
-tags:
-- webdev
-templateKey: blog-post
-title: Expand One Line Links
 ---
 
 I wanted a super simple way to cross-link blog posts that require as little effort as possible, yet still looks good in vanilla markdown in GitHub.  I have been using a snippet that puts HTML into the markdown.  While this works, it's more manual/difficult for me does not look the best, and does not read well as
