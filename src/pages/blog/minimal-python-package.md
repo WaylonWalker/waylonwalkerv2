@@ -7,6 +7,7 @@ status: draft
 
 ---
 
+What does it take to create an installable python package that can be hosted on pypi?
 
 
 ## What is the minimal python package
@@ -15,7 +16,16 @@ status: draft
 * my_module.py
 
 
-This post is somewhat inspired by the bottle framework.
+This post is somewhat inspired by the bottle framework, which is famously
+created as a single python module.  Yes a whole web framework written in one
+file.
+
+## Directory structure
+
+``` bash
+setup.py
+my_pipeline.py
+```
 
 
 ## setup.py
@@ -24,17 +34,54 @@ This post is somewhat inspired by the bottle framework.
 from setuptools import setup
 
 setup(
-    name="MiniKedroPipeline",
+    name="",
     version="0.1.0",
-    py_modules=["mini_kedro_pipeline", "mini_kedro_pipeline.settings"],
+    py_modules=["my_pipeline", ],
     install_requires=["kedro"],
 )
 ```
 
 ## name
 
+The name of the package, this can contain any letters, numbers, "_", or "-".
+Even if its for internal/personal consumption only I usually check for
+discprepency with pypi so that you dont run into conflicts. Note that pypi
+treats "-" and "_" as the same thing.
+
 ## version
+
+This is the version number of your package.  Most packages follow
+[semver](semver.org).  At a high level its three numbers separated by a `.`
+that follow the format `major.minor.patch`.  Its common courtesy to only break
+apis on major changes, new releases on minor, and fixes on patch.  This can
+become much more blurry in practice so checkout
+[semver.org](https://semver.org/).
 
 ## py_modules
 
+Typically most packages use the `packages` argument combined with
+`find_packages`, but for this minimal package we are only creating one `.py`
+file.
+
+
+## Using packages instead
+
+``` python
+from setuptools import setup, find_packages
+
+setup(
+    name="",
+    version="0.1.0",
+    packages=find_packages(),
+    install_requires=["kedro"],
+)
+```
+
 ## install_requires
+
+These are your your external dependencies that come from pypi.  They go in this
+list, but are often pulled in from a file called `requirements.txt`.  Other
+developers may look for this file and want to do a `pip install -r
+requirements.txt`.
+
+
