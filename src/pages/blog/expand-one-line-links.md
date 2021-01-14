@@ -8,11 +8,21 @@ description: ''
 cover: "/static/expand-one-line-links.png"
 
 ---
+---
+cover: /static/expand-one-line-links-xmas2020.png
+cover_image: https://waylonwalker.com//static/expand-one-line-links.png
+date: 2020-11-18 05:00:00+00:00
+description: I wanted a super simple way to cross link blog posts that requires as
+  little effort as possible, yet still looks good in
+published: false
+status: draft
+tags:
+- webdev
+templateKey: blog-post
+title: Expand One Line Links
+---
 
-I wanted a super simple way to cross link blog posts that requires as little
-effort as possible, yet still looks good in vanilla markdown in GitHub.  I have
-been using a snippet that puts html into the markdown.  While this works, its
-more manual/difficult for me, does not look the best, and does not read well as
+I wanted a super simple way to cross-link blog posts that require as little effort as possible, yet still looks good in vanilla markdown in GitHub.  I have been using a snippet that puts HTML into the markdown.  While this works, it's more manual/difficult for me does not look the best, and does not read well as
 
 ## Goals for new card
 
@@ -27,9 +37,7 @@ cover image.  Bonus if I am able to attach a comment behind it.
 
 ## Old Card
 
-If you can call it a card 🤣.  This card was just an image wrapped in a an
-anchor tag and a paragraph tag.  I found this was the most consistent way to
-get an image narrower and centered in both GitHub and dev.to.
+If you can call it a card 🤣.  This card was just an image wrapped in an anchor tag and a paragraph tag.  I found this was the most consistent way to get an image narrower and centered in both GitHub and dev.to.
 
 ``` html
 <p style='text-align: center'>
@@ -53,46 +61,51 @@ get an image narrower and centered in both GitHub and dev.to.
   </a>
 </p>
 
-The key here is that I have to put the html into the markdown.  It looks a bit
-dirty while editing and quite frankly its a pain to deal with.
+The key here is that I have to put the HTML into the markdown.  It looks a bit dirty while editing and quite frankly it's a pain to deal with.
 
 ---
 
 ## New Card
 
 ``` markdown
-https://waylonwalker.com/notes/eight-years-cat
+
+<a class="onelinelink" href="https://waylonwalker.com/eight-years-cat/">
+<img style="float: right;" align='right' src="https://waylonwalker.com/static/29cdf6fcfb17d7fd766fc438144fb3e4/630fb/eight-years-cat-xmas2020.png" alt="article cover for My first eight years as a working professional.">
+<div class="right">
+    <h2>My first eight years as a working professional.</h2>
+    <p class="description">
+    This day 8 years ago I started my first day as a Mechanical Engineer. I am so grateful for this journey that I have been able to have. There is no way that I could have planned this journey from the beginning.
+    </p>
+    <p class="url">
+    <span class="read-more">read more</span>  waylonwalker.com
+    </p>
+</div>
+</a>
+
 ```
 
-https://waylonwalker.com/notes/eight-years-cat
+https://waylonwalker.com/eight-years-cat/
 
 ## First step
 
-My first attempt was to make my own transformer for `gatsby-remark-embedder`.
-I previously set this up on my site for twitter and YouTube.  I tried to get
-some custom transformers going, to do what I wanted for my own website, but
-failed.  I really struggled to understand what data was coming in and out of
-the transformer.  My lack of js/node debugging skills were really showing.
+My first attempt was to make my own transformer for `gatsby-remark-embedder`. I previously set this up on my site for Twitter and YouTube.  I tried to get some custom transformers going, to do what I wanted for my own website, but failed.  I really struggled to understand what data was coming in and out of the transformer.  My lack of js/node debugging skills was really showing.
 
-https://waylonwalker.com/gatsby-remark-embedder
+https://waylonwalker.com/gatsby-remark-embedder/
 
-> using gatsby-remark-embedder to expand twitter/YouTube
+
+> using gatsby-remark-embedder to expand Twitter/YouTube
 
 ## Redirects
 
-It also works with redirects. I have a redirect to my "latest" post.  Its
-something that I don't do the best job at keeping up to date, but when I feel
-really proud of a post I make it the latest.
+It also works with redirects. I have a redirect to my "latest" post.  It's something that I don't do the best job at keeping up to date, but when I feel really proud of a post I make it the latest.
 
-
-https://waylonwalker.com/latest
+https://waylonwalker.com/latest/
 
 > this post is a redirect to my "latest post"
 
 ## Client Side
 
-I started out by running this card expansion client side. This was the strategy
-that I used to find the list of elements that should be transformed.
+I started out by running this card expansion client side. This was the strategy that I used to find the list of elements that should be transformed.
 
 * get all anchors
 * get all paragraphs
@@ -126,10 +139,7 @@ const oneLineLinks = () => {
 
 ## Styles
 
-CSS is not my strong suit, but I can generally hammer something into a shape
-that I am happy with.  For this one I did struggle a bit with how it looked on
-various screens, particularly because I was holding the cover image size to a
-hard 300px.  I ended up with more media queries than I needed, but it works.
+CSS is not my strong suit, but I can generally hammer something into a shape that I am happy with.  For this one, I did struggle a bit with how it looked on various screens, particularly because I was holding the cover image size to a hard 300px.  I ended up with more media queries than I needed, but it works.
 
 ``` css
 .onelinelink + blockquote {
@@ -231,22 +241,18 @@ hard 300px.  I ended up with more media queries than I needed, but it works.
 
 ### Final Look
 
-On mobile it renders vertically.
+On mobile, it renders vertically.
 
 ![mobile](https://waylonwalker.com/one-line-link-vertical.png)
 
-On desktop it renders horizontally.
+On desktop, it renders horizontally.
 
 ![desktop](https://waylonwalker.com/one-line-link-horizontal.png)
 
 ## Expansion
 
-I'm sure that all of this can be better, my js skills are still forming.  It's
-quite humbling to see how hard it is to think in an unfamiliar language.  The
-following `oneLineLineCard` renders a string template literal from a paragraph
-with a single anchor to a card that contains some of that pages meta
-information.  The `getDescription` function uses a fetch to get the metadata
-right from the content of the page.
+I'm sure that all of this can be better, my js skills are still forming.  It's quite humbling to see how hard it is to think in an unfamiliar language.  The following `oneLineLineCard` renders a string template literal from a paragraph with a single anchor to a card that contains some of that pages meta information.  The 
+ getDescription` function uses a fetch to get the metadata right from the content of the page.
 
 ``` javascript
 const getDescription = (url) =>
@@ -290,47 +296,30 @@ const oneLineLinkCard = (url) => {
 
 ## It works...
 
-And it works.  Whenever I reference my own blog with just a single link on a
-line in markdown I get a nice card link out to the other post, with a small
-image sized for the card, the title, and description of the post.
+And it works.  Whenever I reference my own blog with just a single link on a line in markdown I get a nice card link out to the other post, with a small image sized for the card, the title, and the description of the post.
 
 
 ## But
 
-* too much client side
-* does not work well with cross posting
+* too much client-side
+* does not work well with cross-posting
 
-For every link I do this with the client will pull the full page just to get a
-bit of metadata.  I am already doing a bit more than I want to do client side
-for a blog, so I would prefer to do it ahead of time.
+For every link I do this with the client will pull the full page just to get a bit of metadata.  I am already doing a bit more than I want to do client-side for a blog, so I would prefer to do it ahead of time.
 
-Additionally since it is done client side it does not translate well when I
-copy my markdown to various other blogging platforms.  If it were rendered
-right into the markdown cross posting would be much easier.
+Additionally, since it is done client-side it does not translate well when I copy my markdown to various other blogging platforms.  If it were rendered right into the markdown cross-posting would be much easier.
 
 ## Future State
 
 _actually already implemented at this point_
 
-The direction I am going to try is to use python to load each post, look for
-lines that contain only a link, then render this same markup right in the
-markdown.  For this I am going to use a language I am more familiar with,
-python, and do this inside of github actions just before build time so that the
-markdown I write stays the same, the cards will only be rendered in prod.
+The direction I am going to try is to use python to load each post, look for lines that contain only a link, then render this same markup right in the markdown.  For this I am going to use a language I am more familiar with, python, and do this inside of GitHub actions just before build time so that the markdown I write stays the same, the cards will only be rendered in prod.
 
 ## Why Python 🐍
 
-Python is my every day what I know, I work much more efficiently and cleanly
-with it.  Also the more I blog the more abstractions I am seeing and the lazier
-I am getting.  Things like description, SEO, cover images are all getting
-automated. Gatsby really doesn't like to run when some of those things are
-missing, probably due to my lack of JS error handling skills.  I find it much
-easier to load up all the pages and patch up the frontmatter in python before
+Python is my every day what I know, I work much more efficiently and cleanly with it.  Also the more I blog the more abstractions I am seeing and the lazier I am getting.  Things like description, SEO, cover images are all getting automated. Gatsby really doesn't like to run when some of those things are missing, probably due to my lack of JS error handling skills.  I find it much easier to load up all the pages and patch up the frontmatter in python before
 build time.
 
-I am kinda curious if eventually I can re-create everything I need in python
-because I am honestly not using react for much more than a glorfied templating
-system, besides search.  If I can pre-render everything in python
+I am kinda curious if eventually, I can re-create everything I need in python because I am honestly not using react for much more than a glorified templating system, besides search.  If I can pre-render everything in python
 
 ## What do you think??
 
