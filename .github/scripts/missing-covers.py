@@ -113,8 +113,13 @@ for article in pages.glob("**/*.md"):
         if "cover_image" not in post.metadata.keys():
             changed = True
             post.metadata["cover_image"] = (
-                "https://waylonwalker.com/" + post.metadata["cover"]
+                ("https://waylonwalker.com/" + post.metadata["cover"])
+                .replace("static", "")
+                .replace("//", "")
+                .replace("//", "")
             )
+        if "canonical_url" not in post.metadata.keys():
+            post.metadata["canonical_url"] = f"https://waylonwalker.com/{article.stem}"
         if "description" not in post.metadata.keys():
             changed = True
             post.metadata["description"] = ""
