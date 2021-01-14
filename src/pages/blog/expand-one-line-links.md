@@ -13,9 +13,6 @@ I wanted a super simple way to cross link blog posts that requires as little
 effort as possible, yet still looks good in vanilla markdown in GitHub.  I have
 been using a snippet that puts html into the markdown.  While this works, its
 more manual/difficult for me, does not look the best, and does not read well as
-plain markdown.
-
-
 
 ## Goals for new card
 
@@ -55,6 +52,9 @@ get an image narrower and centered in both GitHub and dev.to.
     />
   </a>
 </p>
+
+The key here is that I have to put the html into the markdown.  It looks a bit
+dirty while editing and quite frankly its a pain to deal with.
 
 ---
 
