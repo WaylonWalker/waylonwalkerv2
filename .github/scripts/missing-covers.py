@@ -78,7 +78,7 @@ def get_one_line_link(link):
     return textwrap.dedent(
         f"""
     <a class="onelinelink" href="{url}">
-    <img style="float: right;" align='right' src="{sm_img}" alt="article cover">
+    <img style="float: right;" align='right' src="{sm_img}" alt="article cover for {title}">
     <div class="right">
         <h2>{title}</h2>
         <p class="description">

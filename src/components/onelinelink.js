@@ -118,7 +118,7 @@ const oneLineLinkCard = (url) => {
   return getDescription(url).then(
     (meta) =>
       `<a class="onelinelink" href=${meta.url}>
-  <img src='${meta.sm_image ? meta.sm_image : meta.image ? meta.image : ''}' >
+  <img src='${meta.sm_image ? meta.sm_image : meta.image ? meta.image : ''}' alt='cover image for ${meta.title ? meta.title : ''}>
   <div class="right">
     <h2>${meta.title ? meta.title : ''}</h2>
     <p class='description'>
