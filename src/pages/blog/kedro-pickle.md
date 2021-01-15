@@ -3,9 +3,8 @@ templateKey: blog-post
 tags: ['kedro', 'python', 'data']
 title: Kedro - My Data Is Not A Table
 date: 2021-01-14T00:00:00
-status: draft
+status: published
 description: ''
-cover: "/static/kedro---my-data-is-not-a-table.png"
 
 ---
 
@@ -18,13 +17,13 @@ These containers for data contain many convenient methods to manipulate table
 like data structures.  Sometimes we leverage other data types, namely vanilla
 types like lists and dicts, or even numpy data types.
 
-## Sometimes they are not
+## Sometimes datasets are not tables
 
-There are times when our data doesn't fit nicely into a DataFrame. For these
-cases we can use a pickle file.  Pickle is a way to store any python object to
-disk.  Beware that pickle files coming from an unknown source can run malicous
-code and are considered unsafe.  For the most part though when you read and
-write your own pickle files they are a good tool to consider.
+There are times when our data doesn't fit nicely into a DataFrame. Lucky for us
+Kedro has pickle support out of the box.  Pickle is a way to store any python
+object to disk.  Beware that pickle files coming from an unknown source can run
+malicous code and are considered unsafe.  For the most part though when you
+read and write your own pickle files they are a good tool to consider.
 
 > See more about [pickle](https://docs.python.org/3/library/pickle.html) from python.org.
 
@@ -51,13 +50,14 @@ cars:
   type: pickle.PickleDataSet
 ```
 
+> This filepath does not have to be on the local filesystem it can be on the
+> cloud thanks to how kedro utilizes fsspec for each of its datasets.
+
 ## Loading the dataset
 
 The benefit of cataloging this dataset compared to leaving it as a
 `MemoryDataSet` is that you can easily load this data back into memory for
 further development or debugging without running any of the pipeline.
-
-
 
 ``` python
 catalog.load('cars')
