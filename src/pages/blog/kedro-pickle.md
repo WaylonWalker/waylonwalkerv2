@@ -17,6 +17,10 @@ These containers for data contain many convenient methods to manipulate table
 like data structures.  Sometimes we leverage other data types, namely vanilla
 types like lists and dicts, or even numpy data types.
 
+https://waylonwalker.com/what-is-kedro
+
+> unfamiliar with kedro, check out this post
+
 ## Sometimes datasets are not tables
 
 There are times when our data doesn't fit nicely into a DataFrame. Lucky for us
