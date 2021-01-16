@@ -141,6 +141,11 @@ const Layout = ({ children, include_subscribe = true }) => (
         <Nav />
         {children}
         {include_subscribe === true ? <Subscribe /> : ''}
+        <section className='webring'>
+          <a href="https://xn--sr8hvo.ws/%F0%9F%93%B7%F0%9F%94%8F%F0%9F%8D%8C/previous">←</a>
+          An IndieWeb Webring 🕸💍
+          <a href="https://xn--sr8hvo.ws/%F0%9F%93%B7%F0%9F%94%8F%F0%9F%8D%8C/next">→</a>
+        </section>
         <p style={{ margin: '0' }}>.</p>
       </LayoutStyles>
     )}
