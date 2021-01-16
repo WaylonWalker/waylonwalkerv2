@@ -141,23 +141,15 @@ const Layout = ({ children, include_subscribe = true }) => (
         <Nav />
         {children}
         {include_subscribe === true ? <Subscribe /> : ''}
-        <section className="h-card">
-              <div className="h-card p-author" rel="author">
-                <div className="content">
-                  <a className="p-name u-url" href="https://waylonwalker.com/">
-                    <span className="p-given-name">Waylon</span>
-                    <span className="p-family-name">Walker</span>
-                  </a>
-                  <p calss="p-note">Learning in Public</p>
-                  {/* <Social /> */}
-                </div>
-                <img
-                  className="u-photo"
-                  alt="author profile"
-                  src="https://waylonwalker.com/8bitc.png"
-                />
-              </div>
-        </section>
+        <div className="h-card" style={{display: 'none'}}>
+          <img className="u-photo" alt="author profile" src="https://waylonwalker.com/8bitc.png" />
+            <a className="p-name u-url" href="https://waylonwalker.com/">
+              <span className="p-given-name">Waylon</span>
+              <span className="p-family-name">Walker</span>
+            </a>
+            <span class='p-country-name'>United States</span>
+            <p calss="p-note">Learning in Public</p>
+        </div>
         <section className='webring'>
           <a href="https://xn--sr8hvo.ws/%F0%9F%93%B7%F0%9F%94%8F%F0%9F%8D%8C/previous">←</a>
           An IndieWeb Webring 🕸💍
