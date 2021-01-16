@@ -1,11 +1,9 @@
----
 templateKey: blog-post
+---
 tags: ["vim"]
 title: Keep Location List Closed
 date: 2020-12-18T00:00:00
-status: draft
-description: ''
-cover: "/static/keep-location-list-closed.png"
+status: published
 
 ---
 
