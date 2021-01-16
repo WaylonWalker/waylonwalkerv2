@@ -11,6 +11,9 @@ import frontmatter
 from pathlib import Path
 from yaml.parser import ParserError
 
+import datetime
+import pytz
+
 
 def get_posts():
     articles = []
@@ -22,7 +25,7 @@ def get_posts():
             "tags": [],
             "status": "draft",
             "templateKey": "",
-            "path": article,
+            "path": str(article),
         }
         try:
             post = {**default, **frontmatter.load(article).to_dict()}
@@ -54,7 +57,27 @@ def get_posts():
         if "description" not in post.keys():
             post["description"] = ""
         if "date" not in post.keys():
-            post["date"] = ""
+            post["date"] = datetime.datetime(2000, 1, 1, 0, 0)
+        if type(post["date"]) == str:
+            post["date"] = datetime.datetime.strptime(post["date"], "%Y-%m-%dT%H:%M")
+        if type(post["date"]) == datetime.date:
+            post["date"] = datetime.datetime(
+                year=post["date"].year,
+                month=post["date"].month,
+                day=post["date"].day,
+                tzinfo=pytz.UTC,
+            )
+        else:
+            post["date"] = datetime.datetime(
+                year=post["date"].year,
+                month=post["date"].month,
+                day=post["date"].day,
+                hour=post["date"].hour,
+                minute=post["date"].minute,
+                second=post["date"].second,
+                tzinfo=pytz.UTC,
+            )
+
         # if post["description"] == "":
         #     html = markdown(post['content'])
         #     # sanitize multispaces, line breaks, and carriage returns
@@ -79,6 +102,8 @@ def get_posts():
 
         articles.append(post)
 
+    articles.sort(key=lambda post: int(post["date"].strftime("%Y%m%d")))
+    sorted(articles, key=lambda x: x["date"])
     return articles
 
 
@@ -86,15 +111,16 @@ def create_card(post):
     return f"""
 <li class='post'>
   <a href="{post['canonical_url']}">
-  <h2>{post['title']}</h2></a>
-  <p>{post['description']}</p>
-  <p class='date'>{post['date']}</p>
+    <h2>{post['title']}</h2>
+    <p>{post['description']}</p>
+    <p class='date'>{post['date']}</p>
+  </a>
 </li>
 """
 
 
 def create_index(status=None):
-    posts = [post for post in get_posts()]
+    posts = reversed(get_posts())
     if status is not None:
         posts = [post for post in posts if post["status"] == status]
     return [create_card(post) for post in posts]
@@ -104,9 +130,17 @@ if __name__ == "__main__":
     data = get_posts()
     import sys
     import itertools
+    from string import Template
+    import json
+
+    if "--create-json" in sys.argv:
+        print(json.dumps(get_posts(), indent=4, default=str))
 
     if "--create-index" in sys.argv:
-        print("".join(create_index()))
+        with open("template.html") as f:
+            template = Template(f.read())
+
+        print(template.substitute(body="".join(create_index(status="published"))))
 
     if "--tags" in sys.argv:
         print(
