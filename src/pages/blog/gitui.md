@@ -2,7 +2,7 @@
 templateKey: blog-post
 tags: ['git']
 title: Gitui
-date: 2020-01-17T00:00:00
+date: 2021-01-17T00:00:00
 status: published
 description: ''
 cover: "/static/gitui.png"
