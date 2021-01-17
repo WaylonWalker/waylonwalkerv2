@@ -7,6 +7,8 @@ alias blog=~/.git/waylonwalkerv2/.github/scripts/data.py
 nvim $(blog --tag $(blog --tags | fzf) | fzf)
 
 """
+from typing import List, Union
+
 import frontmatter
 from pathlib import Path
 from yaml.parser import ParserError
@@ -132,11 +134,29 @@ def create_card(post):
 """
 
 
-def create_index(status=None):
+def create_index(status: str = None, tags: Union[str, List[str]] = None):
     posts = reversed(get_posts())
+
+    if type(tags) == str:
+        tags = [tags]
     if status is not None:
         posts = [post for post in posts if post["status"] == status]
+    if tags is not None:
+        posts = [post for post in posts if set(post["tags"]) & set(tags)]
     return [create_card(post) for post in posts]
+
+
+def list_tags():
+    posts = get_posts()
+    return [
+        tag
+        for tag in set(
+            itertools.chain.from_iterable(
+                [post["tags"] for post in posts if post["tags"]]
+            )
+        )
+        if tag
+    ]
 
 
 if __name__ == "__main__":
@@ -149,31 +169,45 @@ if __name__ == "__main__":
     if "--create-json" in sys.argv:
         print(json.dumps(get_posts(), indent=4, default=str))
 
-    if "--create-index" in sys.argv:
+    elif "--create-indexes" in sys.argv:
+        tags = list_tags()
         with open("template.html") as f:
             template = Template(f.read())
 
-        print(template.substitute(body="".join(create_index(status="published"))))
-
-    if "--tags" in sys.argv:
-        print(
-            "\n".join(
-                [
-                    tag
-                    for tag in set(
-                        itertools.chain.from_iterable(
-                            [post["tags"] for post in data if post["tags"]]
-                        )
+        p = Path("./archive/index.html")
+        p.parent.mkdir(parents=True, exist_ok=True)
+        with open(p, "w+") as f:
+            f.write(template.substitute(body="".join(create_index(status="published"))))
+        for tag in tags:
+            p = Path(f"./archive/{tag}/index.html")
+            p.parent.mkdir(parents=True, exist_ok=True)
+            with open(p, "w+") as f:
+                f.write(
+                    template.substitute(
+                        body="".join(create_index(status="published", tags=tag))
                     )
-                    if tag
-                ]
+                )
+
+    elif "--create-index" in sys.argv:
+        tags = None
+        if "--tag" in sys.argv:
+            tags = set(sys.argv[sys.argv.index("--tag") + 1 :])
+        with open("template.html") as f:
+            template = Template(f.read())
+
+        print(
+            template.substitute(
+                body="".join(create_index(status="published", tags=tags))
             )
         )
-    if "--tag" in sys.argv:
+
+    elif "--tags" in sys.argv:
+        print("\n".join(list_tags()))
+    elif "--tag" in sys.argv:
         tags = set(sys.argv[sys.argv.index("--tag") + 1 :])
         print("\n".join([post for post in data if set(post["tags"]) & tags]))
 
-    if "--drafts" in sys.argv:
+    elif "--drafts" in sys.argv:
         print(
             "\n".join(
                 [
