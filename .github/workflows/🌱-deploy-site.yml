@@ -70,7 +70,7 @@ jobs:
         with:
           python-version: 3.8
       - name: install python deps
-        run: pip install python-frontmatter pillow python-twitter markdown beautifulsoup4
+        run: pip install python-frontmatter pillow python-twitter markdown beautifulsoup4 pytz
       # - name: fill missing covers
       #   run: |
       #     cd .github/scripts
