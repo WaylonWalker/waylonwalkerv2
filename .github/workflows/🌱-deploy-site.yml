@@ -95,7 +95,9 @@ jobs:
         run: |
           cd .github/scripts
           python missing-covers.py
-          python data.py --create-index > ../../static/posts.json
+          mkdir ../../static/archive
+          python data.py --create-index > ../../static/archive/index.html
+          python data.py --create-json > ../../static/posts.json
           npm run build
         env:
           GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
