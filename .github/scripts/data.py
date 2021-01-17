@@ -11,6 +11,9 @@ import frontmatter
 from pathlib import Path
 from yaml.parser import ParserError
 
+from markdown import markdown
+from bs4 import BeautifulSoup
+
 import datetime
 import pytz
 
@@ -58,6 +61,8 @@ def get_posts():
             post["description"] = ""
         if "date" not in post.keys():
             post["date"] = datetime.datetime(2000, 1, 1, 0, 0)
+        if "content" not in post.keys():
+            post["content"] = ""
         if type(post["date"]) == str:
             post["date"] = datetime.datetime.strptime(post["date"], "%Y-%m-%dT%H:%M")
         if type(post["date"]) == datetime.date:
@@ -78,18 +83,26 @@ def get_posts():
                 tzinfo=pytz.UTC,
             )
 
-        # if post["description"] == "":
-        #     html = markdown(post['content'])
-        #     # sanitize multispaces, line breaks, and carriage returns
-        #     description = " ".join(
-        #         BeautifulSoup(html, "html.parser")
-        #         .text[:120]
-        #         .replace("\n", " ")
-        #         .replace("\r", " ")
-        #         .split()
-        #     )
+        html = markdown(post["content"])
+        if post["description"] == "":
+            # sanitize multispaces, line breaks, and carriage returns
+            description = " ".join(
+                BeautifulSoup(html, "html.parser")
+                .text[:120]
+                .replace("\n", " ")
+                .replace("\r", " ")
+                .split()
+            )
+            post["description"] = description
+        long_description = " ".join(
+            BeautifulSoup(html, "html.parser")
+            .text[:250]
+            .replace("\n", " ")
+            .replace("\r", " ")
+            .split()
+        )
 
-        #     post["description"] = description
+        post["long_description"] = long_description + "..."
 
         # expanded_content = "\n".join(
         #     [expand_line(line) for line in post['content']split("\n")]
@@ -112,8 +125,8 @@ def create_card(post):
 <li class='post'>
   <a href="{post['canonical_url']}">
     <h2>{post['title']}</h2>
-    <p>{post['description']}</p>
-    <p class='date'>{post['date']}</p>
+    <p>{post['long_description']}</p>
+    <p class='date'>{post['date'].year}-{post['date'].month}-{post['date'].day}</p>
   </a>
 </li>
 """
