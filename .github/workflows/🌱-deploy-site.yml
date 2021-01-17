@@ -95,7 +95,7 @@ jobs:
         run: |
           cd .github/scripts
           python missing-covers.py
-          python data.py --create-indexs
+          python data.py --create-indexes
           python data.py --create-json > ../../static/posts.json
           cp -r archive ../../static/
           npm run build
