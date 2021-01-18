@@ -79,15 +79,21 @@
     li.post {
       margin: 0;
       width: 100%;
-      border-top: 1px solid #ff66c4;
+      /* border-top: 1px solid #ff66c4; */
       list-style-type: none;
+      border-width: 1px;
+      border-style: solid;
+      /* border-image: linear-gradient( to right, #ff66c4, rgba(255,102,196,.2)) 1 0 100%; */
+      border-image: linear-gradient( to right, #ff66c4, rgba(255,102,196,.2)) 1 0 0 0;
 
     }
     li.post:nth-child(2n-1) {
       background-color: rgba(255, 255, 255,.01);
+      background-image: linear-gradient(22deg, rgba(255, 255, 255,.0), rgba(255, 255, 255,.03));
     }
     li.post:nth-child(2n) {
       background-color: rgba(0,0,0,.02);
+      background-image: linear-gradient(22deg, rgba(0, 0, 0,.0), rgba(0, 0, 0,.03));
     }
     li.post a {
       color: #fafafa;
