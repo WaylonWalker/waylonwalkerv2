@@ -169,7 +169,7 @@ exports.createPages = ({ actions, graphql }) => {
       const id = node.id
       if (
         node.frontmatter.templateKey !== "gratitude"
-        node.frontmatter.templateKey !== "slides"
+        && node.frontmatter.templateKey !== "slides"
         && node.frontmatter.templateKey !== null
         && node.fields.status !== false 
         && node.fields.status !== 'false'
