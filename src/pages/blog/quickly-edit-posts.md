@@ -2,19 +2,17 @@
 templateKey: blog-post
 tags: ['bash']
 title: Quickly Edit Posts
-date: 2020-12-11T00:00:00
-status: draft
-description: ''
-cover: "/static/quickly-edit-posts.png"
+date: 2020-01-18T00:00:00
+status: published
 
 ---
 
-Yesterday I automated starting new posts with a python script.  Today I want to
+Recently I automated starting new posts with a python script.  Today I want to
 work on the next part that is editing those posts quickly.
 
 https://waylonwalker.com/automating-my-posts
 
-> Check out yesterdays post about setting up my posts with python 🐍
+> Check out this post about setting up my posts with python 🐍
 
 ## Enter Bash
 
@@ -79,7 +77,7 @@ substitution that is called with neovim.
 
 _<small><mark>putting together the edit command</mark></small>_
 ``` bash
-nvim $(find ~/git/waylonwalkerv2/src/pages/ | grep .md$ | fzf)
+$EDITOR $(find ~/git/waylonwalkerv2/src/pages/ | grep .md$ | fzf)
 ```
 
 ## Final Script
@@ -90,7 +88,7 @@ ep () {
     _dir=$(pwd)
     _ep () {
         cd ~/git/waylonwalkerv2/
-        nvim $(find ~/git/waylonwalkerv2/src/pages/ | grep .md$ | fzf)
+        $EDITOR $(find ~/git/waylonwalkerv2/src/pages/ | grep .md$ | fzf)
     }
     _ep && cd $_dir || cd $_dir
 }
