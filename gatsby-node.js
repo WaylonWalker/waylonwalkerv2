@@ -96,10 +96,12 @@ exports.createPages = ({ actions, graphql }) => {
     // create pages for draft posts, but dont advertise them
     const allPosts = result.data.allMarkdownRemark.edges
       .filter(post => post?.node?.frontmatter?.frontmatter?.templateKey !== 'gratitude')
+      .filter(post => post?.node?.frontmatter?.frontmatter?.templateKey !== 'slides')
       .filter(post => post?.node?.frontmatter?.frontmatter?.templateKey !== null)
 
     const posts = result.data.allMarkdownRemark.edges
       .filter(post => post?.node?.frontmatter?.frontmatter?.templateKey !== 'gratitude')
+      .filter(post => post?.node?.frontmatter?.frontmatter?.templateKey !== 'slides')
       .filter(post => post?.node?.frontmatter?.frontmatter?.templateKey !== null)
       .filter(post => post?.node?.frontmatter.status !== 'draft')
       .filter(post => post?.node?.fields?.status !== false)
@@ -167,6 +169,7 @@ exports.createPages = ({ actions, graphql }) => {
       const id = node.id
       if (
         node.frontmatter.templateKey !== "gratitude"
+        node.frontmatter.templateKey !== "slides"
         && node.frontmatter.templateKey !== null
         && node.fields.status !== false 
         && node.fields.status !== 'false'
