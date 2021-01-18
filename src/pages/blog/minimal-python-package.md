@@ -5,7 +5,9 @@ title: Minimal Python Package
 date: 2021-01-10T00:00:00
 status: published
 
----What does it take to create an installable python package that can be hosted on pypi?
+---
+
+What does it take to create an installable python package that can be hosted on pypi?
 
 
 ## What is the minimal python package
