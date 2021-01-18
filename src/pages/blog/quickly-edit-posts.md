@@ -10,7 +10,7 @@ status: published
 Recently I automated starting new posts with a python script.  Today I want to
 work on the next part that is editing those posts quickly.
 
-https://waylonwalker.com/automating-my-posts
+https://waylonwalker.com/automating-my-post-starter
 
 > Check out this post about setting up my posts with python 🐍
 
