@@ -2,8 +2,8 @@
 templateKey: blog-post
 tags: ['blog']
 title: My Content Strategy For 2021
-date: 2021-01-18T00:00:00
-status: draft
+date: 2021-01-19T00:00:00
+status: published
 description: ''
 cover: "/static/content-strategy-for-2021.png"
 
@@ -21,6 +21,7 @@ users where they are.  See how I plan to execute.
 * hashnode
 * Medium
 * LinkedIn
+* Anchor
 
 ## Markdown
 
@@ -91,3 +92,22 @@ the article itself.
 
 I have come cli tooling in place to simplify my process. Expect more of that to
 come.
+
+## Audio
+
+I have setup a podcast where I read out my posts, but the time that I have
+available to read them is very contstraining to the process.  It may be
+something that I figure out how to work out or something that I drop.  Its
+soemthign that I think would be really nice, but still trying to figure out how
+to do it.
+
+https://waylonwalker.com/audio-for-blog
+
+
+I personally really like this as I often find a cool blog article that I want
+to read, but its time to cook dinner or drive somewhere.  Articles with audio
+make it super convenient to consume while doing a task requiring eye contact.
+
+## TLDR
+
+Meet Users Where They are.
