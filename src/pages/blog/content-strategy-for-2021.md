@@ -1,3 +1,11 @@
+---
+templateKey: blog-post
+tags: ['blog']
+title: My Content Strategy For 2021
+date: 2021-01-19T00:00:00
+status: published
+
+---
 
 I am making another push in 2021 to get my content out in the world and meeting users where they are.  See how I plan to execute.
 
