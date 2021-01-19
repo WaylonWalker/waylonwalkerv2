@@ -12,7 +12,6 @@ cover: "/static/content-strategy-for-2021.png"
 I am making another push in 2021 to get my content out in the world and meeting
 users where they are.  See how I plan to execute.
 
-
 ## Platforms
 
 * waylonwalker.com
