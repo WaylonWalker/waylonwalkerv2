@@ -1,22 +1,17 @@
 ---
 templateKey: blog-post
-tags: []
+tags: ['python', 'kedro', 'data']
 title: Minimal Kedro Pipeline
 date: 2021-01-20T00:00:00
 status: published
 
 ---
 
-How small can a the minimum kedro pipeline ready to package be?  I made one
-within 4 files that you can pip install.  It's only a total of 35 lines of
-python, 8 in `setup.py` and 27 in `mini_kedro_pipeline.py`.
+How small can a minimum kedro pipeline ready to package be?  I made one within 4 files that you can pip install.  It's only a total of 35 lines of python, 8 in `setup.py` and 27 in `mini_kedro_pipeline.py`.
 
 # Minimal Kedro Pipeline
 
-I have everything for this post hosted in this [gihub
-repo](https://github.com/WaylonWalker/mini-kedro-pipeline), you can fork it,
-clone it, or just follow along.
-
+I have everything for this post hosted in this [gihub repo](https://github.com/WaylonWalker/mini-kedro-pipeline), you can fork it, clone it, or just follow along.
 
 ## Installation
 
@@ -26,12 +21,11 @@ pip install git+https://github.com/WaylonWalker/mini-kedro-pipeline
 
 ## Caveats
 
-This repo represents the minimal amount of structure to build a kedro pipeline
-that can be shared accross projects.  Its installabe, and drops right into your
-`hooks.py` or `run.py` modules.  It is not a runnable pipeline.  At this point
+This repo represents the minimal amount of structure to build a kedro pipeline that can be shared across projects.  Its installable, and drops right into your `hooks.py` or `run.py` modules.  It is not a runnable pipeline.  At this point
 I think the config loader requires to have a logging config file.
 
-This is a sharable pipeline that can be used accross many different projects.
+This is a sharable pipeline that can be used across many different projects.
+
 ## Usage
 
 ``` python
@@ -54,9 +48,7 @@ class ProjectHooks:
 
 ## Implemantation
 
-This builds on another post that I made about creating the minimal python
-package.  I am not sure if it should be called a package, its a module, but
-what do you call it after you build it and host it on pypi?
+This builds on another post that I made about creating the minimal python package.  I am not sure if it should be called a package, it's a module, but what do you call it after you build it and host it on pypi?
 
 https://waylonwalker.com/minimal-python-package/
 
@@ -72,9 +64,7 @@ https://waylonwalker.com/minimal-python-package/
 
 ## setup.py
 
-This is a very minimal `setup.py`.  This is enough to get you started with a
-package that you can share accross your team.  In practice there is a bit more
-that you might want to include as your project grows.
+This is a very minimal `setup.py`.  This is enough to get you started with a package that you can share across your team.  In practice, there is a bit more that you might want to include as your project grows.
 
 ``` python
 from setuptools import setup
@@ -89,15 +79,9 @@ setup(
 
 ## mini_kedro_pipeline.py
 
-The mini kedro pipeline looks like any set of nodes in your project.  Many
-projects will separate nodes and functions, I prefer to keep them close
-together.  The default reccomendation is also to have a `create_pipelines`
-function that returns the pipeline.
+The mini kedro pipeline looks like any set of nodes in your project.  Many projects will separate nodes and functions, I prefer to keep them close together.  The default recommendation is also to have a `create_pipelines` function that returns the pipeline.
 
-This pattern creates a singleton, if you were to reference the same pipeline in
-multilple places within the same running interpreter, and modify one you would
-run into issues.  I don't forsee myself running into this issue, but maybe as
-more features become available I will change my mind.
+This pattern creates a singleton, if you were to reference the same pipeline in multiple places within the same running interpreter and modify the one you would run into issues.  I don't foresee myself running into this issue, but maybe as more features become available I will change my mind.
 
 ``` python
 """
@@ -131,6 +115,4 @@ pipeline = Pipeline(nodes)
 
 ## Share your pipelines
 
-Go fourth and share your pipelines accross projects.  Let me know, do you share
-pipelines or catalogs accross projects?
-
+Go forth and share your pipelines across projects.  Let me know, do you share pipelines or catalogs across projects?
