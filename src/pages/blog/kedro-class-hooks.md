@@ -94,7 +94,7 @@ kedro run
 
 ## class hook without `self`
 
-A kedro class-based hook is a class with methods using the kedro lifecycle names, decorated with `@hook_impll`, If we create a class-based kedro hook without `self` in the method calls, we simply pass the hook class itself into the hooks list. And we are off.  Kedro will call each method as it hits that point in its lifecycle.  It will pass any of the possible arguments, see arguments below.  Each method has a different set of possible arguments.  You don't need to ask for all of them, but I did here so that you could see them.
+A kedro class-based hook is a class with methods using the kedro lifecycle names, decorated with `@hook_impl`, If we create a class-based kedro hook without `self` in the method calls, we simply pass the hook class itself into the hooks list. And we are off.  Kedro will call each method as it hits that point in its lifecycle.  It will pass any of the possible arguments, see arguments below.  Each method has a different set of possible arguments.  You don't need to ask for all of them, but I did here so that you could see them.
 
 ``` python
 from kedro.framework.hooks import hook_impl
