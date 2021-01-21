@@ -3,9 +3,7 @@ templateKey: blog-post
 tags: []
 title: Large Refactor At The Command Line
 date: 2020-12-30T00:00:00
-status: draft
-description: ''
-cover: "/static/refactor-in-cli.png"
+status: published
 
 ---
 
