@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+    <meta name="viewport" content="width=device-width" />
+    <meta name='og:type' content='website' />
+    <meta name='og:title' name='og:title' content="Waylon Walker's Blog Feed" />
+    <meta name='twitter:title' name='twitter:title' content="Waylon Walker's Blog Feed" />
+    <meta name='og:image' name='og:image' content='https://waylonwalker.com/waylon-walker.png' />
+    <meta name='og:image:width' name='og:image:width' content='1000' />
+    <meta name='og:image:height' name='og:image:height' content='420' />
+    <meta name='og:url' name='og:url' content='https://waylonwalker.com/archive' />
+    <meta name='description' name='description' content='A cronological feed of my posts about software development and data science.' />
+    <meta name='og:description' name='og:description' content='A cronological feed of my posts about software development and data science.' />
+    <meta name='twitter:description' name='twitter:description' content='A cronological feed of my posts about software development and data science.' />
+    <meta name='keywords' name='keywords' content='python kedro datascience bash command line javascript gatsby' />
+    <meta name='twitter:image' name='twitter:image' content='https://waylonwalker.com/waylon-walker.png' />
+    <link rel="icon" href="https://waylonwalker.com/favicon-32x32.png?v=578a43a3499952cfaa0d646f3d5c9ba9" type="image/png">
+    <meta property="monetization" name="monetization" content="$ilp.uphold.com/MGN2ni2YMXaQ">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    
+    <title>archive</title>
+  <style type="text/css">
+    * { box-sizing: border-box; }
+    * {font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;}
+
+
+    div,
+    html,
+    body,
+    nav,
+    header,
+    hgroup,
+    footer,
+
+    section,
+    article {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-shrink: 0;
+    }
+    ul, li, p {margin: 0; padding: 0;}
+    p { margin-bottom: 1rem;}
+  html, body {
+    min-height: 100vh;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 2rem;
+    overflow-x: hidden;
+    color: #fafafa;
+    display: flex;
+    padding: 0;
+    background-size: 800px;
+    min-height: 100vh;
+    background: rgb(40, 44, 52);
+    background: linear-gradient(
+      81deg,
+      rgba(40, 44, 52, 1) 0%,
+      rgba(58, 46, 61, 1) 100%
+    );
+      }
+    section {
+      margin-bottom: 5rem;
+    }
+    h1 {
+      color: #ff66c4;
+    }
+    ul.archive-list {
+      box-shadow: 0 0 2rem rgba(  0, 0, 0, .3),
+        -8rem -6rem 8rem -6rem rgba(253, 221, 88, 0.2),
+        4rem 0 8rem rgba(88, 82, 185, 0.3),
+        0rem 0rem 2rem -1.6rem rgba(255, 215, 70, 0.8);
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    li.post {
+      margin: 0;
+      width: 100%;
+      /* border-top: 1px solid #ff66c4; */
+      list-style-type: none;
+      border-width: 1px;
+      border-style: solid;
+      /* border-image: linear-gradient( to right, #ff66c4, rgba(255,102,196,.2)) 1 0 100%; */
+      border-image: linear-gradient( to right, #ff66c4, rgba(255,102,196,.2)) 1 0 0 0;
+
+    }
+    li.post:nth-child(2n-1) {
+      background-color: rgba(255, 255, 255,.01);
+      background-image: linear-gradient(22deg, rgba(255, 255, 255,.0), rgba(255, 255, 255,.03));
+    }
+    li.post:nth-child(2n) {
+      background-color: rgba(0,0,0,.02);
+      background-image: linear-gradient(22deg, rgba(0, 0, 0,.0), rgba(0, 0, 0,.03));
+    }
+    li.post a {
+      color: #fafafa;
+      text-decoration: none;
+    }
+    li.post h2, li.post p {
+      max-width: 800px;
+      width: calc(100vw - 100px);
+      <!-- overflow-wrap: break-word; -->
+    }
+    li.post h2, li.post p {
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+    li.post:hover h2,
+    li.post a:focus-visible h2 {
+      color: #ff66c4;
+    }
+    p {
+      color: lightgrey;
+    }
+    li.post:hover p,
+    li.post a:focus-visible p {
+      color: #fafafa;
+    }
+    nav {
+      align-items: flex-end;
+      max-width: 1000px;
+      width: 100%;
+    }
+    nav ul {
+      list-style-type: none;
+      display: flex;
+    }
+    nav ul li a {
+      text-align: center;
+      color: gainsboro;
+      text-decoration: none;
+      padding: .5rem!important;
+      margin-left: .1rem;
+      margin-right: .1rem;
+      align-items: flex-end;
+    }
+    ul.archive-tags li:hover a,
+    ul.archive-tags li a:focus-visible,
+    nav ul li a:focus-visible,
+    nav ul li:hover a {
+      color: #ff66c4;
+    }
+    ul.archive-tags {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      color: gainsboro;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+    ul.archive-tags li {
+      padding: .2rem 1rem;
+    }
+    ul.archive-tags li a {
+      text-decoration: none;
+      color: #fafafa;
+    }
+  </style>
+  </head>
+  <body>
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script>
+      window.excludeGAPaths=[/^(?:\/admin\/(?:(?!(?:\/|^)\.).)*?)$/];
+      if(true) {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      }
+      if (typeof ga === "function") {
+        ga('create', 'UA-113148616-1', 'auto', {});
+          }
+    </script>
+    <nav>
+      <ul>
+        <li><a href='https://waylonwalker.com'>Home</a></li>
+        <li><a href='https://waylonwalker.com/archive'>Archive</a></li>
+        <li>
+          <a href='https://waylonwalker.com/rss' aria-label='RSS'>
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="16" width="16">
+            <path fill="currentColor" d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64"></path>
+          </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <h1>Post Archive</h1>
+    <ul class='archive-tags'>
+      <li>
+        <a href='/archive/python'>
+          python
+        </a>
+      </li>
+      <li>
+        <a href='/archive/linux'>
+          linux
+        </a>
+      </li>
+      <li>
+        <a href='/archive/vim'>
+          vim
+        </a>
+      </li>
+      <li>
+        <a href='/archive/kedro'>
+          kedro
+        </a>
+      </li>
+    </ul>
+    <ul class='archive-list'>
+    
+<li class='post'>
+  <a href="https://waylonwalker.com/minimal-kedro-pipeline">
+    <h2>Minimal Kedro Pipeline</h2>
+    <p>How small can a minimum kedro pipeline ready to package be? I made one within 4 files that you can pip install. It's only a total of 35 lines of python, 8 in setup.py and 27 in mini_kedro_pipeline.py. Minimal Kedro Pipeline I have everything for th...</p>
+    <p class='date'>2021-1-20</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/markdown-cli">
+    <h2>Markdown Cli</h2>
+    <p>This is a post that may be a work in progress for awhile, Its a collections of thoughts on managing my blog, but could be translated into anythiung that is just a collection of markdown. Listing things posts tags draft posts data frontmatter filep...</p>
+    <p class='date'>2021-1-20</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/kedro-pickle">
+    <h2>Kedro - My Data Is Not A Table</h2>
+    <p>In python data science/engineering most of our data is in the form of some sort of table, typically a DataFrame from a library like pandas, spark, or dask. DataFrames are the heart of most pipelines These containers for data contain many convenient m...</p>
+    <p class='date'>2021-1-14</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/quickly-change-conda-env-with-fzf">
+    <h2>Quickly Change Conda Env With Fzf</h2>
+    <p>Changing conda environments is a bit verbose, I use a function with fzf that both lists environments and selects the one I want in one go. Conda I have used conda as a virtual environment tool for years now. I started using conda for its simplicity...</p>
+    <p class='date'>2021-1-11</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/minimal-python-package">
+    <h2>Minimal Python Package</h2>
+    <p>What does it take to create an installable python package that can be hosted on pypi? What is the minimal python package setup.py my_module.py This post is somewhat inspired by the bottle framework, which is famously created as a single python modu...</p>
+    <p class='date'>2021-1-10</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/custom-ipython-prompt">
+    <h2>Custom Ipython Prompt</h2>
+    <p>I've grown tired of the standard ipython prompt as it doesn't do much to give me any useful information. The default one gives out a line number that only seems to add anxiety as I am working on a simple problem and see that number grow to several h...</p>
+    <p class='date'>2020-12-20</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/ipython-config">
+    <h2>Ipython-Config</h2>
+    <p>I use my ipython terminal daily. It's my go to way of running python most of the time. After you use it for a little bit you will probably want to setup a bit of your own configuration. install ipython Activate your virtual environment of choice an...</p>
+    <p class='date'>2020-12-20</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/automating-my-post-starter">
+    <h2>Automating my Post Starter</h2>
+    <p>One thing we all dread is mundane work of getting started, and all the hoops it takes to get going. This year I want to post more often and I am taking some steps towards making it easier for myself to just get started. When I start a new post I nee...</p>
+    <p class='date'>2020-12-11</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/more-itertools-windowed">
+    <h2>Windowing Python Lists</h2>
+    <p>In python data science we often will reach for pandas a bit more than necessary. While pandas can save us so much there are times where there are alternatives that are much simpler. The itertoolsandmore-itertools` are full of cases of this. This pos...</p>
+    <p class='date'>2020-12-10</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/reasons-to-kedro">
+    <h2>reasons-to-kedro</h2>
+    <p>There are many reasons that you should be using kedro. If you are on a team of Data Scientists/Data Engineers processing DataFrames from many data sources should be considering a pipeline framework. Kedro is a great option that provides many benef...</p>
+    <p class='date'>2020-11-1</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/whats-new-in-kedro-0166">
+    <h2>What's New in Kedro 0.16.6</h2>
+    <p>Kedro 0.16.6 is out! Let's take a look through the release notes Deployment Docs This is really exciting to see more deployment options coming from the kedro team. It really shows the power of the framework. The power of some of these orchestrations...</p>
+    <p class='date'>2020-10-25</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/designing-kedro-router">
+    <h2>Designing a "Router" for kedro</h2>
+    <p>nodes_global I released a router-like plugin for kedro back in April 2020. This was not the first design, the idea actually came from one of the QB folks who taught me kedro nearly a year before. We were assembling our pipelines with something call...</p>
+    <p class='date'>2020-10-8</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/reset-ipython">
+    <h2>Reclaim memory usage in Jupyter</h2>
+    <p>Today we ran into an issue where we had a one-off script that just needed to work, but it was just chewing threw memory like nothing. Pre check the status of memory. There are a number of ways that you can check the amount of memory on your system....</p>
+    <p class='date'>2020-10-1</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/3-things-to-automate-with-python">
+    <h2>Three things to Automate with Python using Pandas</h2>
+    <p>Here are three things that I see my non programming counterparts doing every single day. These really sum up so much of what folks do within an office. So many of us dabble in or become power users of spreadsheets without knowing there is an altern...</p>
+    <p class='date'>2020-8-11</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/install-miniconda">
+    <h2>How to Install miniconda on linux (from the command line only)</h2>
+    <p>miniconda is a python distribution from continuum. It's a slimmed-down version of their very popular anaconda distribution. It comes with its own environment manager and has eased the install process for many that do not have a way to compile c-exten...</p>
+    <p class='date'>2020-8-10</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/whats-new-in-kedro-0164">
+    <h2>What's New in Kedro 0.16.4</h2>
+    <p>If we take a look at the release notes I see one major feature improvement on the list, auto-discovery of hooks. ``` markdown Major features and improvements Enabled auto-discovery of hooks implementations coming from installed plugins. ``` This on...</p>
+    <p class='date'>2020-8-1</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/testproject-io-py-actions">
+    <h2>Integration testing with Python, TestProject.io, and GitHub Actions</h2>
+    <p>As I continue to build out waylonwalker.com I sometimes run into some errors that are not caught because I do not have good testing implemented. I want to explore some integration testing options using GitHub's actions. Running integration tests wil...</p>
+    <p class='date'>2020-7-27</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/practice-python-online">
+    <h2>🐍 Practice Python Online</h2>
+    <p>When learning a new skill it's important to practice along the way. In order for me to show up to practice I need to make it easy to show up. An easy way to show up to practice with python is to use an online repl. With these, you can try out somethi...</p>
+    <p class='date'>2020-7-25</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/how-python-tools-config">
+    <h2>Refactoring your blog urls</h2>
+    <p>mypy Mypy's config parser seems to be one of the most complex. This is likely in part to it having the largest backwards compatability of all projects that I looked at. mypy/config_parser flake8 options/config.py black black portray only uses pypro...</p>
+    <p class='date'>2020-7-21</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/parsing-rss-python">
+    <h2>🐍 Parsing RSS feeds with Python</h2>
+    <p>I am looking into a way to replace my google reader experience that I had back in 2013 before google took it from us. I am starting by learning how to parse feeds with python, and without much previous knowledge, it proved to be much easier than ant...</p>
+    <p class='date'>2020-7-13</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/graceful-kedro-catalog">
+    <h2>Gracefully adopt kedro, the catalog</h2>
+    <p>Why use kedro catalog? While using the catalog alone will not reap all of the benefits of the framework, it does get you and your project ready for the full framework eventually. For me the full benefit of the catalog comes when you combine it with...</p>
+    <p class='date'>2020-6-29</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/kedro-catalog-search">
+    <h2>How to find things in your kedro catalog</h2>
+    <p>kedro 0.16.2 just dropped last week with a long-awaited feature... catalog search! I went as far as monkey patching this into each of my projects. I work jump between a few really big projects that have tons of datasets. Being able to quickly sear...</p>
+    <p class='date'>2020-6-22</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/kedro-inputs">
+    <h2>How Kedro handles your inputs</h2>
+    <p>Passing inputs into kedro is a key concept. Understanding how it accepts a single catalog key as input is quite trivial that easily makes sense, but passing a list or dictionary of catalog entries can be a bit confusing. args/*args review Check out...</p>
+    <p class='date'>2020-6-19</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/just-use-pathlib">
+    <h2>Just Use Pathlib</h2>
+    <p>Pathlib is an amazing cross-platform path tool. Import python from pathlib import Path Create path object Current Directory python cwd = Path('.').absolute() Users Home Directory python home = Path.home() module directory python module_path = Path(__...</p>
+    <p class='date'>2019-9-26</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/filtering-pandas">
+    <h2>Filtering Pandas</h2>
+    <p>query Good for method chaining, i.e. adding more methods or filters without assigning a new variable. ```python is skus.query('AVAILABILITY == " AVAILABLE"') is not skus.query('AVAILABILITY != " AVAILABLE"') ``` masking general purpose, this is proba...</p>
+    <p class='date'>2019-9-24</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/quick-progress-bars-in-python-using-tqdm">
+    <h2>Quick Progress Bars in python using TQDM</h2>
+    <p>tqdm is one of my favorite general purpose utility libraries in python. It allows me to see progress of multipart processes as they happen. I really like this for when I am developing something that takes some amount of time and I am unsure of perf...</p>
+    <p class='date'>2019-9-18</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/named-tuples-data-science">
+    <h2>Clean up Your Data Science with Named Tuples</h2>
+    <p>If you are a regular listener of TalkPython or PythonBytes you have hear Michael Kennedy talk about Named Tuples many times, but what are they and how do they fit into my data science workflow. Example As you graduate your scripts into modules and li...</p>
+    <p class='date'>2019-9-11</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/python-data-science-background">
+    <h2>Background Tasks in Python for Data Science</h2>
+    <p>This post is intended as an extension/update from background tasks in python. I started using background the week that Kenneth Reitz released it. It takes away so much boilerplate from running background tasks that I use it in more places than I pr...</p>
+    <p class='date'>2019-9-10</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/autoreload-ipython">
+    <h2>Autoreload in Ipython</h2>
+    <p>Autoreload in Ipython I have used %autoreload for several years now with great success and 🔥 rapid reloads. It allows me to move super fast when developing libraries and modules. They have made some great updates this year that allows class modules...</p>
+    <p class='date'>2019-9-8</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/bash">
+    <h2>Bash</h2>
+    <p>Bash Notes Bash is super powerful. File System Full Show Remaining Space on Drives bash df -h show largest files in current directory bash du . -h --max-depth=1 Move files then symlink them bash mkdir /mnt/mounted_drive mv ~/bigdir /mnt/mounted_drive...</p>
+    <p class='date'>2019-9-8</p>
+  </a>
+</li>
+
+    </ul>
+  </body>
+</html>

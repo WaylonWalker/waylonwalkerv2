@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+    <meta name="viewport" content="width=device-width" />
+    <meta name='og:type' content='website' />
+    <meta name='og:title' name='og:title' content="Waylon Walker's Blog Feed" />
+    <meta name='twitter:title' name='twitter:title' content="Waylon Walker's Blog Feed" />
+    <meta name='og:image' name='og:image' content='https://waylonwalker.com/waylon-walker.png' />
+    <meta name='og:image:width' name='og:image:width' content='1000' />
+    <meta name='og:image:height' name='og:image:height' content='420' />
+    <meta name='og:url' name='og:url' content='https://waylonwalker.com/archive' />
+    <meta name='description' name='description' content='A cronological feed of my posts about software development and data science.' />
+    <meta name='og:description' name='og:description' content='A cronological feed of my posts about software development and data science.' />
+    <meta name='twitter:description' name='twitter:description' content='A cronological feed of my posts about software development and data science.' />
+    <meta name='keywords' name='keywords' content='python kedro datascience bash command line javascript gatsby' />
+    <meta name='twitter:image' name='twitter:image' content='https://waylonwalker.com/waylon-walker.png' />
+    <link rel="icon" href="https://waylonwalker.com/favicon-32x32.png?v=578a43a3499952cfaa0d646f3d5c9ba9" type="image/png">
+    <meta property="monetization" name="monetization" content="$ilp.uphold.com/MGN2ni2YMXaQ">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    
+    <title>archive</title>
+  <style type="text/css">
+    * { box-sizing: border-box; }
+    * {font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;}
+
+
+    div,
+    html,
+    body,
+    nav,
+    header,
+    hgroup,
+    footer,
+
+    section,
+    article {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-shrink: 0;
+    }
+    ul, li, p {margin: 0; padding: 0;}
+    p { margin-bottom: 1rem;}
+  html, body {
+    min-height: 100vh;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 2rem;
+    overflow-x: hidden;
+    color: #fafafa;
+    display: flex;
+    padding: 0;
+    background-size: 800px;
+    min-height: 100vh;
+    background: rgb(40, 44, 52);
+    background: linear-gradient(
+      81deg,
+      rgba(40, 44, 52, 1) 0%,
+      rgba(58, 46, 61, 1) 100%
+    );
+      }
+    section {
+      margin-bottom: 5rem;
+    }
+    h1 {
+      color: #ff66c4;
+    }
+    ul.archive-list {
+      box-shadow: 0 0 2rem rgba(  0, 0, 0, .3),
+        -8rem -6rem 8rem -6rem rgba(253, 221, 88, 0.2),
+        4rem 0 8rem rgba(88, 82, 185, 0.3),
+        0rem 0rem 2rem -1.6rem rgba(255, 215, 70, 0.8);
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    li.post {
+      margin: 0;
+      width: 100%;
+      /* border-top: 1px solid #ff66c4; */
+      list-style-type: none;
+      border-width: 1px;
+      border-style: solid;
+      /* border-image: linear-gradient( to right, #ff66c4, rgba(255,102,196,.2)) 1 0 100%; */
+      border-image: linear-gradient( to right, #ff66c4, rgba(255,102,196,.2)) 1 0 0 0;
+
+    }
+    li.post:nth-child(2n-1) {
+      background-color: rgba(255, 255, 255,.01);
+      background-image: linear-gradient(22deg, rgba(255, 255, 255,.0), rgba(255, 255, 255,.03));
+    }
+    li.post:nth-child(2n) {
+      background-color: rgba(0,0,0,.02);
+      background-image: linear-gradient(22deg, rgba(0, 0, 0,.0), rgba(0, 0, 0,.03));
+    }
+    li.post a {
+      color: #fafafa;
+      text-decoration: none;
+    }
+    li.post h2, li.post p {
+      max-width: 800px;
+      width: calc(100vw - 100px);
+      <!-- overflow-wrap: break-word; -->
+    }
+    li.post h2, li.post p {
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+    li.post:hover h2,
+    li.post a:focus-visible h2 {
+      color: #ff66c4;
+    }
+    p {
+      color: lightgrey;
+    }
+    li.post:hover p,
+    li.post a:focus-visible p {
+      color: #fafafa;
+    }
+    nav {
+      align-items: flex-end;
+      max-width: 1000px;
+      width: 100%;
+    }
+    nav ul {
+      list-style-type: none;
+      display: flex;
+    }
+    nav ul li a {
+      text-align: center;
+      color: gainsboro;
+      text-decoration: none;
+      padding: .5rem!important;
+      margin-left: .1rem;
+      margin-right: .1rem;
+      align-items: flex-end;
+    }
+    ul.archive-tags li:hover a,
+    ul.archive-tags li a:focus-visible,
+    nav ul li a:focus-visible,
+    nav ul li:hover a {
+      color: #ff66c4;
+    }
+    ul.archive-tags {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      color: gainsboro;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+    ul.archive-tags li {
+      padding: .2rem 1rem;
+    }
+    ul.archive-tags li a {
+      text-decoration: none;
+      color: #fafafa;
+    }
+  </style>
+  </head>
+  <body>
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script>
+      window.excludeGAPaths=[/^(?:\/admin\/(?:(?!(?:\/|^)\.).)*?)$/];
+      if(true) {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      }
+      if (typeof ga === "function") {
+        ga('create', 'UA-113148616-1', 'auto', {});
+          }
+    </script>
+    <nav>
+      <ul>
+        <li><a href='https://waylonwalker.com'>Home</a></li>
+        <li><a href='https://waylonwalker.com/archive'>Archive</a></li>
+        <li>
+          <a href='https://waylonwalker.com/rss' aria-label='RSS'>
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="16" width="16">
+            <path fill="currentColor" d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64"></path>
+          </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <h1>Post Archive</h1>
+    <ul class='archive-tags'>
+      <li>
+        <a href='/archive/python'>
+          python
+        </a>
+      </li>
+      <li>
+        <a href='/archive/linux'>
+          linux
+        </a>
+      </li>
+      <li>
+        <a href='/archive/vim'>
+          vim
+        </a>
+      </li>
+      <li>
+        <a href='/archive/kedro'>
+          kedro
+        </a>
+      </li>
+    </ul>
+    <ul class='archive-list'>
+    
+<li class='post'>
+  <a href="https://waylonwalker.com/stand-with-your-team">
+    <h2>Stand With Your Team</h2>
+    <p>People who are quick to toss team members under a bus are not well trusted or highly thought of and it will lead to some toxic team dynamics. Building Steam While collaborating on any project there are going to be decisions made that aren't necessari...</p>
+    <p class='date'>2021-1-22</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/blogging-for-me">
+    <h2>Blogging For Me</h2>
+    <p>I create this blog with one person in mind, me. There are others like me This is not completely selfish, as there are likely many others out there that think similarly to me. Everyone comes from different backgrounds and varying levels of experience...</p>
+    <p class='date'>2021-1-21</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/minimal-kedro-pipeline">
+    <h2>Minimal Kedro Pipeline</h2>
+    <p>How small can a minimum kedro pipeline ready to package be? I made one within 4 files that you can pip install. It's only a total of 35 lines of python, 8 in setup.py and 27 in mini_kedro_pipeline.py. Minimal Kedro Pipeline I have everything for th...</p>
+    <p class='date'>2021-1-20</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/markdown-cli">
+    <h2>Markdown Cli</h2>
+    <p>This is a post that may be a work in progress for awhile, Its a collections of thoughts on managing my blog, but could be translated into anythiung that is just a collection of markdown. Listing things posts tags draft posts data frontmatter filep...</p>
+    <p class='date'>2021-1-20</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/2021-content-strategy">
+    <h2>My Content Strategy For 2021</h2>
+    <p>I am making another push in 2021 to get my content out in the world and meeting users where they are. See how I plan to execute. Platforms waylonwalker.com Twitter DEV hashnode Medium LinkedIn Anchor Markdown My content is written in markdown, all...</p>
+    <p class='date'>2021-1-19</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/quickly-edit-posts">
+    <h2>Quickly Edit Posts</h2>
+    <p>Recently I automated starting new posts with a python script. Today I want to work on the next part that is editing those posts quickly. Automating my Post Starter One thing we all dread is mundane work of getting started, and all the hoops...</p>
+    <p class='date'>2021-1-18</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/gitui">
+    <h2>Gitui is a blazing fast terminal git interface</h2>
+    <p>Gitui is a terminal-based git user interface (TUI) that will change the way that you work with git. I have been a long-time user of the git cli, and it's been hard to beat, mostly because there is nothing that keeps my fingers on the keyboard quite l...</p>
+    <p class='date'>2021-1-17</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/gitui.slides">
+    <h2>Gitui is a blazing fast terminal git interface</h2>
+    <p>GitUI Gitui is a terminal-based git user interface (TUI) that will change the way that you work with git. Works alongside the cli I have been a long-time user of the git cli, and it's been hard to beat, mostly because there is nothing that keeps my...</p>
+    <p class='date'>2021-1-17</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/kedro-pickle">
+    <h2>Kedro - My Data Is Not A Table</h2>
+    <p>In python data science/engineering most of our data is in the form of some sort of table, typically a DataFrame from a library like pandas, spark, or dask. DataFrames are the heart of most pipelines These containers for data contain many convenient m...</p>
+    <p class='date'>2021-1-14</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/quickly-change-conda-env-with-fzf">
+    <h2>Quickly Change Conda Env With Fzf</h2>
+    <p>Changing conda environments is a bit verbose, I use a function with fzf that both lists environments and selects the one I want in one go. Conda I have used conda as a virtual environment tool for years now. I started using conda for its simplicity...</p>
+    <p class='date'>2021-1-11</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/vim-replace-visual-star">
+    <h2>Vim Replace Visual Star</h2>
+    <p>Replacing text based on whats in the current search register is a quite handy tool that I use often. I believe I picked this tip up from Nick Janetakis, check out his YouTube channel for some amazing vim tips. https://www.youtube.com/watch?v=fP_ckZ3...</p>
+    <p class='date'>2021-1-10</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/minimal-python-package">
+    <h2>Minimal Python Package</h2>
+    <p>What does it take to create an installable python package that can be hosted on pypi? What is the minimal python package setup.py my_module.py This post is somewhat inspired by the bottle framework, which is famously created as a single python modu...</p>
+    <p class='date'>2021-1-10</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/if-tmux">
+    <h2>If Tmux</h2>
+    <p>I do much of my work from tmux, I love it so much that I want to setup some functionality that puts me in tmux even if I didnt ask for it. Bash Function Bash function to check if the shell is in a tmux session. bash in_tmux () { if [ -n "$TMUX" ];...</p>
+    <p class='date'>2021-1-9</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/neovim-live-substitution">
+    <h2>Live Substitution In Neovim</h2>
+    <p>Replacing text in vim can be quite frustrating especially since it doesn't have live feedback to what is changing. Today I was watching Josh Branchaud's Vim-Unalphabet series on Youtuve and realized that his vim was doing this and I had to have it. n...</p>
+    <p class='date'>2021-1-4</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/save-vim-macro">
+    <h2>Save Vim Macro</h2>
+    <p>If you are like me, you have created a macro or two that is pure glory, and you forget how you made it after a day or so, or you immediately want to store it away as a custom keybinding. As with most things with vim, it's easy to do once you understa...</p>
+    <p class='date'>2021-1-4</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/newsboat">
+    <h2>Newsboat</h2>
+    <p>Web browsers are a black hole of productivity. I try to use them as little as possible when it is time to focus. I try to use help, ?, or ?? with ipython, or --help at the command line as much as possible. What about that time I am trying to see w...</p>
+    <p class='date'>2021-1-2</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/refactor-in-cli">
+    <h2>Large Refactor At The Command Line</h2>
+    <p>As projects grow patterns that worked early on break and we need to change things to make the project easier to work with, and more welcoming to new developers. git Before you start mucking up a project with wild commands at the terminal check that y...</p>
+    <p class='date'>2020-12-30</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/custom-ipython-prompt">
+    <h2>Custom Ipython Prompt</h2>
+    <p>I've grown tired of the standard ipython prompt as it doesn't do much to give me any useful information. The default one gives out a line number that only seems to add anxiety as I am working on a simple problem and see that number grow to several h...</p>
+    <p class='date'>2020-12-20</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/ipython-config">
+    <h2>Ipython-Config</h2>
+    <p>I use my ipython terminal daily. It's my go to way of running python most of the time. After you use it for a little bit you will probably want to setup a bit of your own configuration. install ipython Activate your virtual environment of choice an...</p>
+    <p class='date'>2020-12-20</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/automating-my-post-starter">
+    <h2>Automating my Post Starter</h2>
+    <p>One thing we all dread is mundane work of getting started, and all the hoops it takes to get going. This year I want to post more often and I am taking some steps towards making it easier for myself to just get started. When I start a new post I nee...</p>
+    <p class='date'>2020-12-11</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/more-itertools-windowed">
+    <h2>Windowing Python Lists</h2>
+    <p>In python data science we often will reach for pandas a bit more than necessary. While pandas can save us so much there are times where there are alternatives that are much simpler. The itertoolsandmore-itertools` are full of cases of this. This pos...</p>
+    <p class='date'>2020-12-10</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/audio-for-blog">
+    <h2>Adding Audio to my blog posts</h2>
+    <p>This is episode 1 of the Waylon Walker Audio experience, posts from waylonwalker.com in audio form. So I have had this idea for awhile to add audio to my blog posts. The idea partly comes from the aws blog, if you have ever been on their blog you w...</p>
+    <p class='date'>2020-11-25</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/gatsby-remark-embedder">
+    <h2>gatsby-remark-embedder</h2>
+    <p>Inspired by discourse's link expansion I am rolling out expansions for one line links on the blog waylonwalker. I was able to find a gatsby plugin gatsby-remark-embedder that expands one line links for social cards for popular platforms like twitte...</p>
+    <p class='date'>2020-11-18</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/expand-one-line-links">
+    <h2>Expand One Line Links</h2>
+    <p>I wanted a super simple way to cross-link blog posts that require as little effort as possible, yet still looks good in vanilla markdown in GitHub. I have been using a snippet that puts HTML into the markdown. While this works, it's more manual/dif...</p>
+    <p class='date'>2020-11-18</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/find-replace">
+    <h2>Find and Replace in the Terminal.</h2>
+    <p>grepr ```bash grepr() {grep -iRl "$1" | xargs sed -i "s/$1/$2/g"} bash grepr() {grep -iRl "$1" | xargs sed -i "s/$1/$2/g"} grepd python grepd() {grep -iRl "$1" | xargs sed -i "/^$1/d"} CocSearch bash :CocSearch status: 'false' -g *.md...</p>
+    <p class='date'>2020-11-12</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/resume-tips">
+    <h2>Resume Tips</h2>
+    <p>customize for the job Why are you a good fit? What will you bring to the role? Give real outcomes give real experience Stop tech vomiting if you link to GitHub Make a profile readme Guide me to your best work have some activity if you link to Linked...</p>
+    <p class='date'>2020-11-6</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/codeit-bro-interview">
+    <h2>Codeit Bro Interview</h2>
+    <p>use this profile image Please share your professional role as a data scientist? [Also feel free to share about your personal projects, publications, etc.] I graduated with a Mechanical Engineering Degree 8 years ago. Much of my work early in my c...</p>
+    <p class='date'>2020-11-2</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/reasons-to-kedro">
+    <h2>reasons-to-kedro</h2>
+    <p>There are many reasons that you should be using kedro. If you are on a team of Data Scientists/Data Engineers processing DataFrames from many data sources should be considering a pipeline framework. Kedro is a great option that provides many benef...</p>
+    <p class='date'>2020-11-1</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/reasons-to-kedro-notes">
+    <h2>Reasons to Kedro</h2>
+    <p>Reasons to Kedro collaboration Sharable catalog small nodes over monolithic notebooks catalog easily load anything without needing to run No need to write read/write code pipeline No need to keep execution order in your head easily run a slice of a...</p>
+    <p class='date'>2020-10-31</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/reading-list">
+    <h2>Reading List</h2>
+    <p>STOP LEAVING Browser Tabs open and save them here! Jungle Scout - Kedro Case Study Kedro Sessions Julia Evans - A few things I've learned about email marketing git course - katacoda...</p>
+    <p class='date'>2020-10-28</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/whats-new-in-kedro-0166">
+    <h2>What's New in Kedro 0.16.6</h2>
+    <p>Kedro 0.16.6 is out! Let's take a look through the release notes Deployment Docs This is really exciting to see more deployment options coming from the kedro team. It really shows the power of the framework. The power of some of these orchestrations...</p>
+    <p class='date'>2020-10-25</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/stories_10-10-2020_10-21-2020">
+    <h2>A brain dump of stories</h2>
+    <p>I started making stories as kind of a brain dump a few times per day and posting them to [LinkedIn](https://www.linkedin.com/in/waylonwalker/(https://www.linkedin.com/in/waylonwalker/). Here are the last 11 days of stories. I store all the stories o...</p>
+    <p class='date'>2020-10-21</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/fix-git-commit-author">
+    <h2>Fix git commit author</h2>
+    <p>I was 20 commits into a hackoberfest PR when I suddenly realized they they all had my work email on them instead of my personal email 😱. This is the story of how I corrected my email address on 19 individual commits after already submitting for a PR...</p>
+    <p class='date'>2020-10-17</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/designing-kedro-router">
+    <h2>Designing a "Router" for kedro</h2>
+    <p>nodes_global I released a router-like plugin for kedro back in April 2020. This was not the first design, the idea actually came from one of the QB folks who taught me kedro nearly a year before. We were assembling our pipelines with something call...</p>
+    <p class='date'>2020-10-8</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/reset-ipython">
+    <h2>Reclaim memory usage in Jupyter</h2>
+    <p>Today we ran into an issue where we had a one-off script that just needed to work, but it was just chewing threw memory like nothing. Pre check the status of memory. There are a number of ways that you can check the amount of memory on your system....</p>
+    <p class='date'>2020-10-1</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/strip-trailing-whitespace">
+    <h2>Strip Trailing Whitespace from Git projects</h2>
+    <p>A common linting error thrown by various linters is for trailing whitespace. I most often use flake8. I generally have [pre-commit](https://waylonwalker.com/pre-commit-is-awesome) hooks setup to strip this, but sometimes I run into situations where...</p>
+    <p class='date'>2020-9-30</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/chrome-extensions-i-use">
+    <h2>Chrome Extensions I use</h2>
+    <p>There are many useful chrome extensions out there. I probably have way too many installed, here are four that I am currently using. This post was inspired from Chris over at daily-dev-tips LastPass Stylus Vimium hypothesis LastPass Love it or hat...</p>
+    <p class='date'>2020-9-13</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/reusable-bash">
+    <h2>Creating Reusable Bash Scripts</h2>
+    <p>Bash is a language that is quite useful for automation no matter what language you write in. Bash can do so many powerful system-level tasks. Even if you are on windows these days you are likely to come across bash inside a cloud VM, Continuous Integ...</p>
+    <p class='date'>2020-8-13</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/3-things-to-automate-with-python">
+    <h2>Three things to Automate with Python using Pandas</h2>
+    <p>Here are three things that I see my non programming counterparts doing every single day. These really sum up so much of what folks do within an office. So many of us dabble in or become power users of spreadsheets without knowing there is an altern...</p>
+    <p class='date'>2020-8-11</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/install-miniconda">
+    <h2>How to Install miniconda on linux (from the command line only)</h2>
+    <p>miniconda is a python distribution from continuum. It's a slimmed-down version of their very popular anaconda distribution. It comes with its own environment manager and has eased the install process for many that do not have a way to compile c-exten...</p>
+    <p class='date'>2020-8-10</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/kedro-basics">
+    <h2>Kedro Basics</h2>
+    <p>Learn Kedro in 5 days Day 0 Setup vm install python editor Day 1 kedro new kedro viz Day 2 catalog filter catalog load data fsspec Day 3 pipeline nodes Day 4 filter pipeline run partial pipeline Day 5 kedro docker GitHub Actions Advanced...</p>
+    <p class='date'>2020-8-8</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/crush-dev-to-posts">
+    <h2>How to crush amazing posts on DEV</h2>
+    <p>This post was inspired by a comment I left on @dsteenman's post. {% post dsteenman/how-long-should-a-blogpost-be-2k6n %} Most of the time I prefer short as I am more likely to read the whole thing. If its setup as a series I am more likely to work...</p>
+    <p class='date'>2020-8-7</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/pariss-athena-on-black-tech-pipeline">
+    <h2>Black Tech Pipeline</h2>
+    <p>Based on an episode of react podcast. 🎙 Listen to the full episode. So Inspirational I was particularly inspired by @chantastic episode 103 of the react podcast with @ParissAthena. They spoke about the black tech pipeline as well as Diversity, Equit...</p>
+    <p class='date'>2020-8-3</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/git-auto-commit-action-review">
+    <h2>Review of the git-auto-commit-action</h2>
+    <p>Check out the repo for git-auto-commit-action. It's a really cool GitHub action that will automatically commit files changed during the action. I was using this to render a new readme based on a template. This has been by far the easiest way to comm...</p>
+    <p class='date'>2020-8-3</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/whats-new-in-kedro-0164">
+    <h2>What's New in Kedro 0.16.4</h2>
+    <p>If we take a look at the release notes I see one major feature improvement on the list, auto-discovery of hooks. ``` markdown Major features and improvements Enabled auto-discovery of hooks implementations coming from installed plugins. ``` This on...</p>
+    <p class='date'>2020-8-1</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/testproject-io-py-actions">
+    <h2>Integration testing with Python, TestProject.io, and GitHub Actions</h2>
+    <p>As I continue to build out waylonwalker.com I sometimes run into some errors that are not caught because I do not have good testing implemented. I want to explore some integration testing options using GitHub's actions. Running integration tests wil...</p>
+    <p class='date'>2020-7-27</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/new-machine-tpio">
+    <h2>New Machine for developing Tests with TestProject.io</h2>
+    <p>Today I setup a new machine on Digital Ocean to use with TestProject.io, Here are my installation notes. ``` bash apt update && apt upgrade -y apt install zsh chsh zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tool...</p>
+    <p class='date'>2020-7-25</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/practice-python-online">
+    <h2>🐍 Practice Python Online</h2>
+    <p>When learning a new skill it's important to practice along the way. In order for me to show up to practice I need to make it easy to show up. An easy way to show up to practice with python is to use an online repl. With these, you can try out somethi...</p>
+    <p class='date'>2020-7-25</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/kedro-catalog">
+    <h2>Kedro Catalog</h2>
+    <p>I am exploring a kedro catalog meta data hook, these are some notes about what I am thinking. Process metadata will be attached to the dataset object under a .metadata attribute metadata will be updated after_node_run metadata will be empty until a...</p>
+    <p class='date'>2020-7-24</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/how-python-tools-config">
+    <h2>Refactoring your blog urls</h2>
+    <p>mypy Mypy's config parser seems to be one of the most complex. This is likely in part to it having the largest backwards compatability of all projects that I looked at. mypy/config_parser flake8 options/config.py black black portray only uses pypro...</p>
+    <p class='date'>2020-7-21</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/edit-on-github">
+    <h2>Edit On GitHub</h2>
+    <p>I recently added a button to my blog, and subsequently my posts on DEV.to. It's the best thing that I have done for it in a while. It makes it so easy to do quick edits. finding errors I refer back to my old posts quite a bit, sometimes I find er...</p>
+    <p class='date'>2020-7-18</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/why-use-cms">
+    <h2>Why use a cms</h2>
+    <p>When first learning to code its very common to hard code everything right into the code. This happens with most folks in just about any language. Whether its HTML or markdown for front end content, or even hardcoding parameters in our backend languag...</p>
+    <p class='date'>2020-7-14</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/parsing-rss-python">
+    <h2>🐍 Parsing RSS feeds with Python</h2>
+    <p>I am looking into a way to replace my google reader experience that I had back in 2013 before google took it from us. I am starting by learning how to parse feeds with python, and without much previous knowledge, it proved to be much easier than ant...</p>
+    <p class='date'>2020-7-13</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/reader">
+    <h2>Reader</h2>
+    <p>Inputs The input will be a yaml file containing a list of Items you want to stay up to date with. Inside each item will be a url, and weight. ``` yaml email: max-entries: 10 recipients: - waylon@waylonwalker.com markdown: max-entri...</p>
+    <p class='date'>2020-7-12</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/whats-on-your-github-profile">
+    <h2>🤓 What's on your GitHub Profile</h2>
+    <p>I ran this post on dev.to and got a great response of great examples, check it out. The GitHub profile feature just went live for a subset of users. Simply creating a repo named after your username, and clicking share to Profile on the sidebar will...</p>
+    <p class='date'>2020-7-11</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/explain-twitter-cards">
+    <h2>🙋‍♂️ Can Anyone Explain Twitter Cards to me?</h2>
+    <p>Can someone explain how or why twitter cards render differently from device to device? I do understand that twitter cards a built from meta tags, the full list can be found in their docs Rendered on Mobile Mobile Looks fine. Not Rendered on Desktop...</p>
+    <p class='date'>2020-7-11</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/my-github-profile">
+    <h2>How I Built My GitHub Profile</h2>
+    <p>I ran a discussion on dev that collected quite a list of examples in the comment section. So many great calls to action, animations, memes, and weird tricks. My current profile social icons Upload all of your icons to the repo in a directory such...</p>
+    <p class='date'>2020-7-10</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/python-args-kwargs-slides">
+    <h2>SLIDES - understanding python *args and **kwargs</h2>
+    <p>I generally post these as a carousel on LinkedIn based on a full article. Let mw know what you think of it shown inside of a blog @_waylonwalker. See the full article here Slides...</p>
+    <p class='date'>2020-7-2</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/graceful-kedro-catalog">
+    <h2>Gracefully adopt kedro, the catalog</h2>
+    <p>Why use kedro catalog? While using the catalog alone will not reap all of the benefits of the framework, it does get you and your project ready for the full framework eventually. For me the full benefit of the catalog comes when you combine it with...</p>
+    <p class='date'>2020-6-29</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/upcoming-posts">
+    <h2>Upcoming Posts</h2>
+    <p>🧠 How I manage Environments My Data Workflow. Daily Schedule desk keeb Material Shell Why blog search with fuse.js Testing a blog with ahrefs Think like a Senior Dev Editor tmux vim shortcuts gitui fzf Core gracefully adopt kedro catalog -...</p>
+    <p class='date'>2020-6-27</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/kedro-catalog-search">
+    <h2>How to find things in your kedro catalog</h2>
+    <p>kedro 0.16.2 just dropped last week with a long-awaited feature... catalog search! I went as far as monkey patching this into each of my projects. I work jump between a few really big projects that have tons of datasets. Being able to quickly sear...</p>
+    <p class='date'>2020-6-22</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/kedro-inputs">
+    <h2>How Kedro handles your inputs</h2>
+    <p>Passing inputs into kedro is a key concept. Understanding how it accepts a single catalog key as input is quite trivial that easily makes sense, but passing a list or dictionary of catalog entries can be a bit confusing. args/*args review Check out...</p>
+    <p class='date'>2020-6-19</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/eight-years-cat">
+    <h2>My first eight years as a working professional.</h2>
+    <p>This day 8 years ago I started my first day as a Mechanical Engineer. I am so grateful for this journey that I have been able to have. There is no way that I could have planned this journey from the beginning. Keep Learning My initial career plans we...</p>
+    <p class='date'>2020-6-19</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/master-no-more">
+    <h2>Master No More</h2>
+    <p>It's been a long time coming. We use some very harsh language within tech so much sometimes that we become numb to it. It's time to do my very small part in this movement and purge this language from my active repos starting with this blog right he...</p>
+    <p class='date'>2020-6-11</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/gracefully-redirect">
+    <h2>Refactoring your blog urls</h2>
+    <p>I just did a quick refactoring of my JAMStack blog urls. Some didn't fit with my style, some had _ that I wanted to switch to -, and others were rediculously long. I've been using forestry as my CMS, I write many of my posts there, and sometimes it...</p>
+    <p class='date'>2020-6-11</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/python-args-kwargs">
+    <h2>understanding python *args and **kwargs</h2>
+    <p>Python *args and **kwargs are super useful tools, that when used properly can make you code much simpler and easier to maintain. Large manual conversions from a dataset to function arguments can be packed and unpacked into lists or dictionaries. Be...</p>
+    <p class='date'>2020-6-10</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/pre-commit-is-awesome">
+    <h2>pre-commit is awesome</h2>
+    <p>I recently discovered the ✨ awesomeness that is pre-commit. I steered away from it for so long because it seemed like a big daunting thing to set up, but really it's easy. It will automatically run checks for you. In some cases, it will even automati...</p>
+    <p class='date'>2020-6-5</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/building-kedro-dev">
+    <h2>Building kedro.dev</h2>
+    <p>Follow along the Journey as I build out kedro.dev. Building a Community I have really enjoyed my own personal journey as I have started to build all of my data pipeline projects with the kedro framework. I want to start building a place to share res...</p>
+    <p class='date'>2020-6-5</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/kedro-static-viz-0-3-0">
+    <h2>Kedro Static Viz 0.3.0 is out with Hooks Support</h2>
+    <p>kedro-static-viz is out with support for the newly released hooks feature. This means that you can have kedro-static-viz automatically deploy a full gatsby site before_pipeline_run keeping your visualization always up to date. Even though it is a st...</p>
+    <p class='date'>2020-5-28</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/kedro-class-hooks">
+    <h2>Create Configurable Kedro Hooks</h2>
+    <p>There are two main ways to create kedro hooks, with modules and classes. Each one still uses the same verbiage as the function/method names. Class hooks seem a bit special as they give you a way to configure them so that they are a bit more generall...</p>
+    <p class='date'>2020-5-23</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/gatsby-scripts-with-onload">
+    <h2>Gatsby Scripts with onload</h2>
+    <p>This might be useful https://github.com/nfl/react-helmet/issues/146 https://github.com/gatsbyjs/gatsby/issues/13136...</p>
+    <p class='date'>2020-5-22</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/brainstorming-kedro-hooks">
+    <h2>Brainstorming Kedro Hooks</h2>
+    <p>This post is a 🧠 branstorming work in progress. What is Kedro 🤔 If you are completely unsure what kedro is be sure to check out my what is kedro post after_catalog_created filepath replacer bucket replacer before_pipeline_run preflight check tha...</p>
+    <p class='date'>2020-5-22</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/devto-comments-from-url">
+    <h2>How to get Dev Comments from an article Url</h2>
+    <p>I want to incorporate some of the wonderful comments, 💕, 🦄, and 🔖's that I have been getting on dev.to on my website. I have dabbled once or twice with no avail this time I am taking notes on my journey, so follow along and let's get there together....</p>
+    <p class='date'>2020-5-20</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/four-github-actions-website">
+    <h2>Four github actions for your website</h2>
+    <p>GitHub's actions are a new GitHub feature that will trigger GitHub to spin up a virtual machine and run some tasks with some special access to your repo. It can interact with comments/issues, it can clone your repo, You can explicitly pass in secrets...</p>
+    <p class='date'>2020-5-18</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/adding-google-fonts-to-a-gatsbyjs-site">
+    <h2>Adding google fonts to a gatsbyjs site</h2>
+    <p>stack overflow link...</p>
+    <p class='date'>2020-5-17</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/create-custom-kedro-dataset">
+    <h2>Create Custom Kedro Dataset</h2>
+    <p>Kedro provides an efficient way to build out data catalogs with their yaml api. It allows you to be very declaritive about loading and saving your data. For the most part you just need to tell Kedro what connector to use and its filepath. When run...</p>
+    <p class='date'>2020-5-15</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/interrogate">
+    <h2>Interrogate is a pretty awesome, brand new, cli for Python packages</h2>
+    <p>As usual while listening to python bytes 181 I heard of a tool that I had to try out right away! This thing is 🔥 hot off the press folks, we're talking the first release only 3 weeks ago. Its something that the python community needed years ago, and...</p>
+    <p class='date'>2020-5-15</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/drawing-ascii-boxes">
+    <h2>drawing ascii boxes</h2>
+    <p>When creating cli's I often want some nice full-width character. I find it tough to find them, and when I do half the time it is an image or something that cannot be copied 👿. I rarely get very complex with my semi-manual ASCII art. I can do 98% of...</p>
+    <p class='date'>2020-5-12</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/creating-the-kedro-preflight-hook">
+    <h2>creating the kedro-preflight hook</h2>
+    <p>kedro hooks are an exciting upcoming feature of kedro 0.16.0. They allow you to hook into catalog_created,pipeline_run, and node_run(nouns). With a before, or after (adjective). This really reminds me of reacts lifecycle hooks, that let you hook in...</p>
+    <p class='date'>2020-5-10</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/kedro-preflight">
+    <h2>Kedro Preflight</h2>
+    <p>This is a very rough idea for a kedro package to prevent time lost to get partway through a pipeline run only to realize that you dont have access to data or resources. Must Haves check that inputs exist or are of a type to skip (sql) Good to haves...</p>
+    <p class='date'>2020-5-9</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/maintianing-multiple-git-remotes">
+    <h2>Maintianing multiple git remotes</h2>
+    <p>bash git remote -v git remote add gitlab <url> git push gitlab main...</p>
+    <p class='date'>2020-5-7</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/find-kedro-release">
+    <h2>📢 Announcing find-kedro</h2>
+    <p>find-kedro is a small library to enhance your kedro experience. It looks through your modules to find kedro pipelines, nodes, and iterables (lists, sets, tuples) of nodes. It then assembles them into a dictionary of pipelines, each module will crea...</p>
+    <p class='date'>2020-5-4</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/explicit-vs-implicit-returns-in-javascript">
+    <h2>Explicit vs Implicit Returns in Javascript</h2>
+    <p>Often when reading through javascript examples you will find some arrow functions use parentheses () while others use braces {}. This key difference is that parentheses will implicitly return the last statement while braces require an explicit retur...</p>
+    <p class='date'>2020-5-3</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/twitter-deepdives">
+    <h2>Twitter deepdives</h2>
+    <p>Inspired by Chris Achard My ideas Python List comps Classes Inheritance Background Click Lambdas Kedro Cataloging Custom datasets Reusable pipelines find-kedro Learn kedro in 5 days Email course inspired by learn d3 in 5 days Mail Share your kno...</p>
+    <p class='date'>2020-5-1</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/bind-dynamic-lambdas">
+    <h2>TIL: Bind arguments to dynamically generated lambdas in python</h2>
+    <p>This past week I had a really weird bug in my kedro pipeline. For some reason data running through my pipeline was coming out completely made no sense, but if I manually request raw data outside of the pipeline it matched expectations. NOTE While th...</p>
+    <p class='date'>2020-4-27</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/python-deepwatch">
+    <h2>python-deepwatch</h2>
+    <p>Is it possible to deep watch a single python function for changes? Shallow Watch keeping track of a python functions hash is quite simple. There is a__hash__ method attached to every python function. Calling it will return a hash of the function. I...</p>
+    <p class='date'>2020-4-27</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/four-github-actions-python">
+    <h2>Four Github Actions for Python</h2>
+    <p>If you are developing python packages and using GitHub here are four actions that you can use today to automate your release workflow. Since python tools generally have such a simple cli I have opted to use the cli for most of these, that way I kno...</p>
+    <p class='date'>2020-4-13</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/variable-names-don-t-need-their-type">
+    <h2>Variables names don't need their type</h2>
+    <p>So often I see a variables type() inside of its name and it hurts me a little inside. Tell me I'm right or prove me wrong below. Examples Pandas DataFrames are probably the worst offender that I see ``` python bad sales_df = get_sales() good sales =...</p>
+    <p class='date'>2020-4-8</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/send-email-with-github-actions">
+    <h2>Send Emails with GitHub Actions</h2>
+    <p>Here is one useful thing that you can do with GitHub actions no matter what language you use, send email. You might want to know right away when your ci passes. You might want to give your team a nice pat on the back when a new release is deployed....</p>
+    <p class='date'>2020-3-31</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/github-actions-syntax">
+    <h2>GitHub Actions Syntax</h2>
+    <p>Github actions are written in configuration files using the YAML syntax. YAML is a superset of JSON. Most YAML can be expressed inline with JSON syntax. Similar to python YAML is whitespace driven by whitespace rather than brackets tags. The arg...</p>
+    <p class='date'>2020-3-16</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/what-are-github-actions">
+    <h2>What Are GitHub Actions</h2>
+    <p>I have been diving deep into Github actions for about a month now and they are wicked good! They allow you to run any sort of arbitrary code based on events in your repo, webhooks, or schedules. They are very reasonably priced. The interface that...</p>
+    <p class='date'>2020-3-16</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/git-diff-branches">
+    <h2>Today I learned `git diff feature..main`</h2>
+    <p>Today I learned how to diff between two branches. git diff feature..main Sometimes we get a little git add . && git commit -m "WIP" happy and mistakenly commit something that we just can't figure out. This is a good way to figure out what the heck ha...</p>
+    <p class='date'>2020-3-3</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/create-new-kedro-project">
+    <h2>Create New Kedro Project</h2>
+    <p>This is a quickstart to getting a new kedro pipeline up and running. After this article you should be able to understand how to get started with kedro. You can learn more about this Hello World Example in the docs 🧹 Install Kedro 🛢 Create the Examp...</p>
+    <p class='date'>2020-3-2</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/data-scientist-advice">
+    <h2>What is YOUR Advice for New Data Scientists</h2>
+    <p>Learn the business Learn Git Your code does not need to be amazing Keep Learning Learn Git You dont have to start out as a git wizard with the cleanest possible commit history. At first dont let yourself get too wrapped up in it, the most importan...</p>
+    <p class='date'>2020-2-26</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/do-you-hoist">
+    <h2>Do You Hoist</h2>
+    <p>I am working through Wes Bos's beginnerjavascript.com/ I just hit module 18 on hoisting. It's something that I always knew was there, Its not something I typically see used or use myself. Do you Hoist? Do you have any use cases that you use hoising?...</p>
+    <p class='date'>2020-2-25</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/what-is-kedro">
+    <h2>What is Kedro</h2>
+    <p>kedro is an open-source data pipeline framework. It provides guardrails to set your project up right from the start without needing to know deeply how to set up your own python library for data pipelining. It includes great ways to manipulate catal...</p>
+    <p class='date'>2020-2-24</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/custom-scrollbar-design">
+    <h2>Custom Scrollbar Design</h2>
+    <p>Inspired by Wes Bos's new uses.tech I wanted a custom scrollbar on my personal site. I had tried to do it in the past, but gave up after it was not working. Looking at the Source Since uses.tech is open source I jumped on github, searched for scroll...</p>
+    <p class='date'>2020-2-21</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/don-t-waste-your-time-learning-everything">
+    <h2>Don’t waste your time learning everything</h2>
+    <p>"Don’t waste your time learning everything." Inspired by this linkedIn post I felt that this comment was very powerful. Here are my 2 cents. Be Productive Stick to what you know, and learn a little bit of something new every day. If what you kno...</p>
+    <p class='date'>2020-2-19</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/2020-rebrand">
+    <h2>2020 waylonwalker.com rebrand</h2>
+    <p>Moving into 2020 I have been really leaning on using purple as my theme color everywhere more and more. Its time for an update to my personal site, not just because it feels plain, not just because the cover art I am using for dev.to doesn't fit my...</p>
+    <p class='date'>2020-2-17</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/react-headroom">
+    <h2>I just added react-headroom to my site</h2>
+    <p>It was so easy to get a professional looking navbar with just 3 lines of code. This package seriously is so usable on mobile it is rediculous. I found this package from day 4 of the 100 days of gatsby challenge. It is by the wonderful man who brou...</p>
+    <p class='date'>2020-2-11</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/serverless-things-to-investigate">
+    <h2>Serverless things to investigate</h2>
+    <p>Social Automation Zappier Free only one step is free can take rss to social Automate.io * Form submission https://getform.io/forms Free to get started https://formkeep.com/pricing Free 7 day trial $4.99 cheapest after...</p>
+    <p class='date'>2020-2-10</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/fix-styled-components-in-gatsby">
+    <h2>I finally fixed my Styled-Components in gatsby.js</h2>
+    <p>I am starting a redesign of my website. I have started cross posting to dev.to more regularly. With that I have been making more detailed cover images at the recommended 1000x420. These images get cut off on my own site, which is a bit ridiculous...</p>
+    <p class='date'>2020-2-8</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/should-i-switch-to-zeit-now">
+    <h2>Should I switch to Zeit Now</h2>
+    <p>Netlify I have happily had my personal site waylonwalker.com hosted on netlify for nearly 2 years now. In fact I have hosted about a dozen different toy projects to play with on there, 4 of which have gone far enough to get a custom domain name. Th...</p>
+    <p class='date'>2020-2-6</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/git-push-without-setting-upstream">
+    <h2>git push without setting upstream</h2>
+    <p>Finally after years of hand typing out a full git push --upstream my\_really\_long\_and\_descriptive\_branch\_name I foudn there is a setting to automatcally push to the current branch. More realisitically I just did a git push let git yell at me, an...</p>
+    <p class='date'>2020-2-4</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/out-of-space">
+    <h2>Out of Space</h2>
+    <p>This morning I logged into my machine and was nearly out of space 64GB miniconda3! 5GB conda cache 4GM pip cache 34GB docker Find it Photo by Simon Migaj on Unsplash These are the commands that I often use to reclaim space. Its so easy to fill...</p>
+    <p class='date'>2020-2-1</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/simple-click">
+    <h2>simple click</h2>
+    <p>cli tools are super handy and easy to add to your python libraries to supercharge them. Even if your library is not a cli tool there are a number of things that a cli can do to your library. Example Ideas Things a cli can do to enhance your library....</p>
+    <p class='date'>2020-1-29</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/personal-url-shortener">
+    <h2>Personal URL shortener with Netlify Redirects</h2>
+    <p>Photo by Ozark Drones on Unsplash I love using URL shorteners to easily share links without hitting character limits, but they loose their meaning. Services like bit.ly will save my links for me so that I can find them, but I would rather them to be...</p>
+    <p class='date'>2020-1-29</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/cmd-exe-tips">
+    <h2>cmd.exe tips</h2>
+    <p>I spend a lot of my time at the terminal for my daily work, mostly in Linux or wsl. One big reason for using wsl over cmd.exe is the ease of walking through history that fzf provides. This week we had a windows bug in a cli and I was stuck in vanil...</p>
+    <p class='date'>2020-1-23</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/learn-early">
+    <h2>What is something that you recently learned that you wish you would have learned or understood earlier?</h2>
+    <p>Cover Photo I call gaining clarity by David Travis on Unsplash Mine is the python debugger. I was a long holdout thinking that print statements were sufficient. That was untill I started having errors crop up in functions that took minutes to run. T...</p>
+    <p class='date'>2020-1-10</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/supercharge-zsh-startup">
+    <h2>Supercharge Zsh Startup</h2>
+    <p>Photo by Max LaRochelle on Unsplash I have been using oh-my-zsh successfully for about 2 years now. But lately my startup time has been really bothersome. It has grown to the point where it was taking about 5.5s to startup a shell! This is ok if I...</p>
+    <p class='date'>2020-1-3</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/keep-location-list-closed">
+    <h2>Keep Location List Closed</h2>
+    <p>Vim's (neovim in my case) location list can provide some very useful information while developing. Mine gives me information about linting and type checking errors with fairly little config. Generally, it sits nicely at the bottom of the screen and...</p>
+    <p class='date'>2020-1-1</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/sqlalchemy-models">
+    <h2>SqlAlchemy Models</h2>
+    <p>Make a connection python from sqlalchemy import create_engine def get_engine(): return create_engine("sqlite:///mode_examples.sqlite") Make a session python from sqlalchemy.orm import sessionmaker def get_session(): con = get_engine() Bas...</p>
+    <p class='date'>2019-12-21</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/building-cli-apps-in-python">
+    <h2>Building Cli apps in Python</h2>
+    <p>Packages Click Inputs Click primarily takes two forms of inputs Options and arguments. I think of options as keyword argument and arguments as regular positional arguments. Option typically aliased with a shorthand ('-v', '--verbose') **From the...</p>
+    <p class='date'>2019-11-11</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/kedro">
+    <h2>Kedro</h2>
+    <p>#kedrotips I am tweeting out most of these snippets as I add them, you can find them all here #kedrotips. 🗣 Heads up Below are some quick snippets/notes for when using kedro to build data pipelines. So far I am just compiling snippets. Eventually I w...</p>
+    <p class='date'>2019-11-2</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/packages-to-investigate">
+    <h2>Packages to Investigate</h2>
+    <p>jmespath Tabnine Bulwark |-|-| |github: |https://github.com/zaxr/bulwark| I definitely want to try this out with kedro. Bulwark is a package for convenient property-based testing of pandas dataframes, supported for Python 3.5+. Example import b...</p>
+    <p class='date'>2019-10-14</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/debugging-python">
+    <h2>Debugging Python</h2>
+    <p>Using pdb...</p>
+    <p class='date'>2019-10-1</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/just-use-pathlib">
+    <h2>Just Use Pathlib</h2>
+    <p>Pathlib is an amazing cross-platform path tool. Import python from pathlib import Path Create path object Current Directory python cwd = Path('.').absolute() Users Home Directory python home = Path.home() module directory python module_path = Path(__...</p>
+    <p class='date'>2019-9-26</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/custom-python-exceptions">
+    <h2>Custom Python Exceptions</h2>
+    <p>Custom Exceptions ``` class ProjectNameError(NameError): pass class UserNameError(NameError): pass class CondaEnvironmentError(RuntimeError): pass class BucketNotDefinedError(NameError): pass ```...</p>
+    <p class='date'>2019-9-25</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/filtering-pandas">
+    <h2>Filtering Pandas</h2>
+    <p>query Good for method chaining, i.e. adding more methods or filters without assigning a new variable. ```python is skus.query('AVAILABILITY == " AVAILABLE"') is not skus.query('AVAILABILITY != " AVAILABLE"') ``` masking general purpose, this is proba...</p>
+    <p class='date'>2019-9-24</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/digital-ocean">
+    <h2>Digital Ocean</h2>
+    <p>I love digital ocean for it's simplicity and its commitment to open source....</p>
+    <p class='date'>2019-9-22</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/amazon-web-services">
+    <h2>Amazon Web Services</h2>
+    <p>I started using aws in March 2019. Here are some of my notes. aws-cli ec-2 SageMaker S3...</p>
+    <p class='date'>2019-9-22</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/quick-progress-bars-in-python-using-tqdm">
+    <h2>Quick Progress Bars in python using TQDM</h2>
+    <p>tqdm is one of my favorite general purpose utility libraries in python. It allows me to see progress of multipart processes as they happen. I really like this for when I am developing something that takes some amount of time and I am unsure of perf...</p>
+    <p class='date'>2019-9-18</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/named-tuples-data-science">
+    <h2>Clean up Your Data Science with Named Tuples</h2>
+    <p>If you are a regular listener of TalkPython or PythonBytes you have hear Michael Kennedy talk about Named Tuples many times, but what are they and how do they fit into my data science workflow. Example As you graduate your scripts into modules and li...</p>
+    <p class='date'>2019-9-11</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/python-data-science-background">
+    <h2>Background Tasks in Python for Data Science</h2>
+    <p>This post is intended as an extension/update from background tasks in python. I started using background the week that Kenneth Reitz released it. It takes away so much boilerplate from running background tasks that I use it in more places than I pr...</p>
+    <p class='date'>2019-9-10</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/autoreload-ipython">
+    <h2>Autoreload in Ipython</h2>
+    <p>Autoreload in Ipython I have used %autoreload for several years now with great success and 🔥 rapid reloads. It allows me to move super fast when developing libraries and modules. They have made some great updates this year that allows class modules...</p>
+    <p class='date'>2019-9-8</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/bash">
+    <h2>Bash</h2>
+    <p>Bash Notes Bash is super powerful. File System Full Show Remaining Space on Drives bash df -h show largest files in current directory bash du . -h --max-depth=1 Move files then symlink them bash mkdir /mnt/mounted_drive mv ~/bigdir /mnt/mounted_drive...</p>
+    <p class='date'>2019-9-8</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/keyboard-driven-vscode">
+    <h2>Keyboard Driven VSCode</h2>
+    <p>Throw that mouse Away its time to setup some keyboard shortcuts. These sortcuts were the baseline for switching from tmux/vim to vscode. Most folks posts I was able to find gave great tips on replacing vim, but very few have focused on the hackabi...</p>
+    <p class='date'>2019-7-7</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/realistic-git-workflow">
+    <h2>Realistic Git Workflow</h2>
+    <p>Realistic Git Workflow sometimes things get messy The Clean Path pull 👉 branch 👉 format 👉 work👉 add 👉 commit 👉 pull 👉 rebase 👉 push ### Pull As complicated as that seems it is pretty straight forward. When you sit down to work the first thing yo...</p>
+    <p class='date'>2019-5-27</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/forestry-io">
+    <h2>Forestry.io</h2>
+    <p>Testing out forestry.io Sorry Netlify CMS I still ♥️ your product dont be forestry is simple I have been playing with the netlify cms for a while now, and it has been a decent experience, but I really struggle configuring it. Forestry is so simple...</p>
+    <p class='date'>2019-4-23</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/git-rewrite-history">
+    <h2>Rewrite History with Git</h2>
+    <p>rebase git commit --amend Unstage learning-python-debugger bash git reset -- <file> rage unstage to wipte out history of staged commit bash git reset --hard <file> Undo file rage quit git reset HEAD~n removes modifications keeps hitsory of change...</p>
+    <p class='date'>2019-2-5</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/git-rewrite-history">
+    <h2>Rewrite History with Git</h2>
+    <p>rebase git commit --amend Unstage bash git reset -- <file> rage unstage to wipte out history of staged commit bash git reset --hard <file> Undo file rage quit git reset HEAD~n removes modifications keeps hitsory of changes and undoes them git...</p>
+    <p class='date'>2019-2-5</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/journey">
+    <h2>It's not all about winning</h2>
+    <p>This is my story into data science. The Journey Begins I am addicted to the process of learning and improving my skills nearly to a fault. The reason I say nearly is because my addiction is fueled with results. I crave the output of my work enhance t...</p>
+    <p class='date'>2019-2-2</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/git-update-user">
+    <h2>Update Git User</h2>
+    <p>This morning I log into my VCS and check activity on my projects to find that someone else has been very active on my projects fo the last few weeks. I quicklyhover over the missing avatar to find that It's Me. What's wrong here, why do I look like...</p>
+    <p class='date'>2019-1-21</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/goals-2019">
+    <h2>2019 goals</h2>
+    <p>The year of intenionality This is a follow up to my previous post 2018-retrospective professional This year I will become more productive, by intensionally working on a well thought out plan, learning the right technologies, and leave behind a posi...</p>
+    <p class='date'>2019-1-12</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/2018-retrospective">
+    <h2>2018 Retrospective</h2>
+    <p>2018 was a year of many ups and downs, and learning to deal with a whole new set of problems professionally and at home. In 2018 I logged in to my first Linux system, setup my own webserver, data pipelines, database. I learned to use react and d3. S...</p>
+    <p class='date'>2019-1-5</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/happy">
+    <h2>Do More of What Brings You Joy</h2>
+    <p>Today I want to take some time to talk about the things that make me happy in my work environment. This is completely free-flow off the cuff, but are things that I do that make me happy, not having them would definitely be a deal breaker for me . At...</p>
+    <p class='date'>2019-1-1</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/flexbox-zombies">
+    <h2>FlexBox</h2>
+    <p>Flexbox-zombies I recently finished up the flexbox-zombies course to learn more about flexbox, and to become proficient with it. I can truly say that this course has changed the way that I create layouts. Flexbox is very intuitive now. What this...</p>
+    <p class='date'>2018-4-22</p>
+  </a>
+</li>
+
+    </ul>
+  </body>
+</html>

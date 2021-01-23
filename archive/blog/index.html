@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+    <meta name="viewport" content="width=device-width" />
+    <meta name='og:type' content='website' />
+    <meta name='og:title' name='og:title' content="Waylon Walker's Blog Feed" />
+    <meta name='twitter:title' name='twitter:title' content="Waylon Walker's Blog Feed" />
+    <meta name='og:image' name='og:image' content='https://waylonwalker.com/waylon-walker.png' />
+    <meta name='og:image:width' name='og:image:width' content='1000' />
+    <meta name='og:image:height' name='og:image:height' content='420' />
+    <meta name='og:url' name='og:url' content='https://waylonwalker.com/archive' />
+    <meta name='description' name='description' content='A cronological feed of my posts about software development and data science.' />
+    <meta name='og:description' name='og:description' content='A cronological feed of my posts about software development and data science.' />
+    <meta name='twitter:description' name='twitter:description' content='A cronological feed of my posts about software development and data science.' />
+    <meta name='keywords' name='keywords' content='python kedro datascience bash command line javascript gatsby' />
+    <meta name='twitter:image' name='twitter:image' content='https://waylonwalker.com/waylon-walker.png' />
+    <link rel="icon" href="https://waylonwalker.com/favicon-32x32.png?v=578a43a3499952cfaa0d646f3d5c9ba9" type="image/png">
+    <meta property="monetization" name="monetization" content="$ilp.uphold.com/MGN2ni2YMXaQ">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    
+    <title>archive</title>
+  <style type="text/css">
+    * { box-sizing: border-box; }
+    * {font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;}
+
+
+    div,
+    html,
+    body,
+    nav,
+    header,
+    hgroup,
+    footer,
+
+    section,
+    article {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-shrink: 0;
+    }
+    ul, li, p {margin: 0; padding: 0;}
+    p { margin-bottom: 1rem;}
+  html, body {
+    min-height: 100vh;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 2rem;
+    overflow-x: hidden;
+    color: #fafafa;
+    display: flex;
+    padding: 0;
+    background-size: 800px;
+    min-height: 100vh;
+    background: rgb(40, 44, 52);
+    background: linear-gradient(
+      81deg,
+      rgba(40, 44, 52, 1) 0%,
+      rgba(58, 46, 61, 1) 100%
+    );
+      }
+    section {
+      margin-bottom: 5rem;
+    }
+    h1 {
+      color: #ff66c4;
+    }
+    ul.archive-list {
+      box-shadow: 0 0 2rem rgba(  0, 0, 0, .3),
+        -8rem -6rem 8rem -6rem rgba(253, 221, 88, 0.2),
+        4rem 0 8rem rgba(88, 82, 185, 0.3),
+        0rem 0rem 2rem -1.6rem rgba(255, 215, 70, 0.8);
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    li.post {
+      margin: 0;
+      width: 100%;
+      /* border-top: 1px solid #ff66c4; */
+      list-style-type: none;
+      border-width: 1px;
+      border-style: solid;
+      /* border-image: linear-gradient( to right, #ff66c4, rgba(255,102,196,.2)) 1 0 100%; */
+      border-image: linear-gradient( to right, #ff66c4, rgba(255,102,196,.2)) 1 0 0 0;
+
+    }
+    li.post:nth-child(2n-1) {
+      background-color: rgba(255, 255, 255,.01);
+      background-image: linear-gradient(22deg, rgba(255, 255, 255,.0), rgba(255, 255, 255,.03));
+    }
+    li.post:nth-child(2n) {
+      background-color: rgba(0,0,0,.02);
+      background-image: linear-gradient(22deg, rgba(0, 0, 0,.0), rgba(0, 0, 0,.03));
+    }
+    li.post a {
+      color: #fafafa;
+      text-decoration: none;
+    }
+    li.post h2, li.post p {
+      max-width: 800px;
+      width: calc(100vw - 100px);
+      <!-- overflow-wrap: break-word; -->
+    }
+    li.post h2, li.post p {
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+    li.post:hover h2,
+    li.post a:focus-visible h2 {
+      color: #ff66c4;
+    }
+    p {
+      color: lightgrey;
+    }
+    li.post:hover p,
+    li.post a:focus-visible p {
+      color: #fafafa;
+    }
+    nav {
+      align-items: flex-end;
+      max-width: 1000px;
+      width: 100%;
+    }
+    nav ul {
+      list-style-type: none;
+      display: flex;
+    }
+    nav ul li a {
+      text-align: center;
+      color: gainsboro;
+      text-decoration: none;
+      padding: .5rem!important;
+      margin-left: .1rem;
+      margin-right: .1rem;
+      align-items: flex-end;
+    }
+    ul.archive-tags li:hover a,
+    ul.archive-tags li a:focus-visible,
+    nav ul li a:focus-visible,
+    nav ul li:hover a {
+      color: #ff66c4;
+    }
+    ul.archive-tags {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      color: gainsboro;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+    ul.archive-tags li {
+      padding: .2rem 1rem;
+    }
+    ul.archive-tags li a {
+      text-decoration: none;
+      color: #fafafa;
+    }
+  </style>
+  </head>
+  <body>
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script>
+      window.excludeGAPaths=[/^(?:\/admin\/(?:(?!(?:\/|^)\.).)*?)$/];
+      if(true) {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      }
+      if (typeof ga === "function") {
+        ga('create', 'UA-113148616-1', 'auto', {});
+          }
+    </script>
+    <nav>
+      <ul>
+        <li><a href='https://waylonwalker.com'>Home</a></li>
+        <li><a href='https://waylonwalker.com/archive'>Archive</a></li>
+        <li>
+          <a href='https://waylonwalker.com/rss' aria-label='RSS'>
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="16" width="16">
+            <path fill="currentColor" d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64"></path>
+          </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <h1>Post Archive</h1>
+    <ul class='archive-tags'>
+      <li>
+        <a href='/archive/python'>
+          python
+        </a>
+      </li>
+      <li>
+        <a href='/archive/linux'>
+          linux
+        </a>
+      </li>
+      <li>
+        <a href='/archive/vim'>
+          vim
+        </a>
+      </li>
+      <li>
+        <a href='/archive/kedro'>
+          kedro
+        </a>
+      </li>
+    </ul>
+    <ul class='archive-list'>
+    
+<li class='post'>
+  <a href="https://waylonwalker.com/blogging-for-me">
+    <h2>Blogging For Me</h2>
+    <p>I create this blog with one person in mind, me. There are others like me This is not completely selfish, as there are likely many others out there that think similarly to me. Everyone comes from different backgrounds and varying levels of experience...</p>
+    <p class='date'>2021-1-21</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/markdown-cli">
+    <h2>Markdown Cli</h2>
+    <p>This is a post that may be a work in progress for awhile, Its a collections of thoughts on managing my blog, but could be translated into anythiung that is just a collection of markdown. Listing things posts tags draft posts data frontmatter filep...</p>
+    <p class='date'>2021-1-20</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/2021-content-strategy">
+    <h2>My Content Strategy For 2021</h2>
+    <p>I am making another push in 2021 to get my content out in the world and meeting users where they are. See how I plan to execute. Platforms waylonwalker.com Twitter DEV hashnode Medium LinkedIn Anchor Markdown My content is written in markdown, all...</p>
+    <p class='date'>2021-1-19</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/automating-my-post-starter">
+    <h2>Automating my Post Starter</h2>
+    <p>One thing we all dread is mundane work of getting started, and all the hoops it takes to get going. This year I want to post more often and I am taking some steps towards making it easier for myself to just get started. When I start a new post I nee...</p>
+    <p class='date'>2020-12-11</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/audio-for-blog">
+    <h2>Adding Audio to my blog posts</h2>
+    <p>This is episode 1 of the Waylon Walker Audio experience, posts from waylonwalker.com in audio form. So I have had this idea for awhile to add audio to my blog posts. The idea partly comes from the aws blog, if you have ever been on their blog you w...</p>
+    <p class='date'>2020-11-25</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/crush-dev-to-posts">
+    <h2>How to crush amazing posts on DEV</h2>
+    <p>This post was inspired by a comment I left on @dsteenman's post. {% post dsteenman/how-long-should-a-blogpost-be-2k6n %} Most of the time I prefer short as I am more likely to read the whole thing. If its setup as a series I am more likely to work...</p>
+    <p class='date'>2020-8-7</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/edit-on-github">
+    <h2>Edit On GitHub</h2>
+    <p>I recently added a button to my blog, and subsequently my posts on DEV.to. It's the best thing that I have done for it in a while. It makes it so easy to do quick edits. finding errors I refer back to my old posts quite a bit, sometimes I find er...</p>
+    <p class='date'>2020-7-18</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/explain-twitter-cards">
+    <h2>🙋‍♂️ Can Anyone Explain Twitter Cards to me?</h2>
+    <p>Can someone explain how or why twitter cards render differently from device to device? I do understand that twitter cards a built from meta tags, the full list can be found in their docs Rendered on Mobile Mobile Looks fine. Not Rendered on Desktop...</p>
+    <p class='date'>2020-7-11</p>
+  </a>
+</li>
+
+<li class='post'>
+  <a href="https://waylonwalker.com/gracefully-redirect">
+    <h2>Refactoring your blog urls</h2>
+    <p>I just did a quick refactoring of my JAMStack blog urls. Some didn't fit with my style, some had _ that I wanted to switch to -, and others were rediculously long. I've been using forestry as my CMS, I write many of my posts there, and sometimes it...</p>
+    <p class='date'>2020-6-11</p>
+  </a>
+</li>
+
+    </ul>
+  </body>
+</html>

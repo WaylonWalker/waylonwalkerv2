@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[21],{gt11:function(t,e,a){"use strict";a.r(e),a.d(e,"TipTemplate",(function(){return l}));var n=a("q1tI"),r=a.n(n),o=a("Bl7J"),m=a("UyA5"),l=function(t){var e=t.data,a=e.markdownRemark.html,n=e.markdownRemark.plainText,l=e.markdownRemark.frontmatter,i=e.markdownRemark.fileAbsolutePath;return r.a.createElement(o.a,{include_subscribe:!1},r.a.createElement(m.a,{frontmatter:l,html:a,content:n,fileAbsolutePath:i}))};e.default=l}}]);
+//# sourceMappingURL=component---src-templates-hot-tip-js-703812fe70c4b675bc1a.js.map
