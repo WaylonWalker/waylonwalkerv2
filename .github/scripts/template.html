@@ -20,149 +20,11 @@
     <meta property="monetization" name="monetization" content="$ilp.uphold.com/MGN2ni2YMXaQ">
     <link rel="preconnect" href="https://www.google-analytics.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
-    
     <title>archive</title>
-  <style type="text/css">
-    * { box-sizing: border-box; }
-    * {font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;}
+    <link rel='stylesheet' href='/archive-styles.css' />
+    <title>archive</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
 
-
-    div,
-    html,
-    body,
-    nav,
-    header,
-    hgroup,
-    footer,
-
-    section,
-    article {
-        position: relative;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        flex-shrink: 0;
-    }
-    ul, li, p {margin: 0; padding: 0;}
-    p { margin-bottom: 1rem;}
-  html, body {
-    min-height: 100vh;
-    max-width: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 2rem;
-    overflow-x: hidden;
-    color: #fafafa;
-    display: flex;
-    padding: 0;
-    background-size: 800px;
-    min-height: 100vh;
-    background: rgb(40, 44, 52);
-    background: linear-gradient(
-      81deg,
-      rgba(40, 44, 52, 1) 0%,
-      rgba(58, 46, 61, 1) 100%
-    );
-      }
-    section {
-      margin-bottom: 5rem;
-    }
-    h1 {
-      color: #ff66c4;
-    }
-    ul.archive-list {
-      box-shadow: 0 0 2rem rgba(  0, 0, 0, .3),
-        -8rem -6rem 8rem -6rem rgba(253, 221, 88, 0.2),
-        4rem 0 8rem rgba(88, 82, 185, 0.3),
-        0rem 0rem 2rem -1.6rem rgba(255, 215, 70, 0.8);
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-    }
-    li.post {
-      margin: 0;
-      width: 100%;
-      /* border-top: 1px solid #ff66c4; */
-      list-style-type: none;
-      border-width: 1px;
-      border-style: solid;
-      /* border-image: linear-gradient( to right, #ff66c4, rgba(255,102,196,.2)) 1 0 100%; */
-      border-image: linear-gradient( to right, #ff66c4, rgba(255,102,196,.2)) 1 0 0 0;
-
-    }
-    li.post:nth-child(2n-1) {
-      background-color: rgba(255, 255, 255,.01);
-      background-image: linear-gradient(22deg, rgba(255, 255, 255,.0), rgba(255, 255, 255,.03));
-    }
-    li.post:nth-child(2n) {
-      background-color: rgba(0,0,0,.02);
-      background-image: linear-gradient(22deg, rgba(0, 0, 0,.0), rgba(0, 0, 0,.03));
-    }
-    li.post a {
-      color: #fafafa;
-      text-decoration: none;
-    }
-    li.post h2, li.post p {
-      max-width: 800px;
-      width: calc(100vw - 100px);
-      <!-- overflow-wrap: break-word; -->
-    }
-    li.post h2, li.post p {
-      margin-left: 2rem;
-      margin-right: 2rem;
-    }
-    li.post:hover h2,
-    li.post a:focus-visible h2 {
-      color: #ff66c4;
-    }
-    p {
-      color: lightgrey;
-    }
-    li.post:hover p,
-    li.post a:focus-visible p {
-      color: #fafafa;
-    }
-    nav {
-      align-items: flex-end;
-      max-width: 1000px;
-      width: 100%;
-    }
-    nav ul {
-      list-style-type: none;
-      display: flex;
-    }
-    nav ul li a {
-      text-align: center;
-      color: gainsboro;
-      text-decoration: none;
-      padding: .5rem!important;
-      margin-left: .1rem;
-      margin-right: .1rem;
-      align-items: flex-end;
-    }
-    ul.archive-tags li:hover a,
-    ul.archive-tags li a:focus-visible,
-    nav ul li a:focus-visible,
-    nav ul li:hover a {
-      color: #ff66c4;
-    }
-    ul.archive-tags {
-      display: flex;
-      justify-content: center;
-      list-style-type: none;
-      color: gainsboro;
-      border-bottom: 1px solid rgba(255, 255, 255, .1);
-      margin-bottom: 1rem;
-      width: 100%;
-    }
-    ul.archive-tags li {
-      padding: .2rem 1rem;
-    }
-    ul.archive-tags li a {
-      text-decoration: none;
-      color: #fafafa;
-    }
-  </style>
   </head>
   <body>
     <script async="" src="https://www.google-analytics.com/analytics.js"></script>
@@ -214,8 +76,14 @@
         </a>
       </li>
     </ul>
-    <ul class='archive-list'>
+    <div id='posts'>
+    <input type="search" class="fuzzy-search" placeholder="fuzzy search!">
+    <ul class='list'>
     $body
     </ul>
+    </div>
   </body>
+      <script>
+        var postList = new List('posts', {valueNames: ['title', 'description']})
+      </script>
 </html>

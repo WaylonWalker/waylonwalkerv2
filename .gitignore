@@ -3,6 +3,8 @@ public/
 *.stg
 *.xcf
 *reduxcache
+.github/scripts/archive
+index.html
 
 # Created by https://www.gitignore.io/api/vim,node,sublimetext,visualstudio,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=vim,node,sublimetext,visualstudio,visualstudiocode
@@ -492,3 +494,4 @@ ASALocalRun/
 healthchecksdb
 
 # End of https://www.gitignore.io/api/vim,node,sublimetext,visualstudio,visualstudiocode
+disabled
