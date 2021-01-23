@@ -261,8 +261,6 @@ This is quite beneficial as catalogs can become incredebly repetative.
 {% endfor %}
 ```
 
-## flask
-
 ## pytest
 
 Currently pytest is configured 
