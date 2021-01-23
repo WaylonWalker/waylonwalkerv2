@@ -64,6 +64,34 @@ but it is unclear who owns each piece from the example.  The whole point of
 pluggy is to pass ownership of  implementation from the library author to the
 plugin author.
 
+## Floris Bruynooghe
+
+https://www.youtube.com/watch?v=zZsNPDfOoHU
+
+Floris Bruynooghe has a great talk from [EuroPython
+2015](https://www.youtube.com/watch?v=zZsNPDfOoHU) where he shows how to build
+a project thats plugins all the way down.  His [slides](http://devork.be/talks/pluggy) are also available.
+
+## Kedro
+
+Kedro is a data pipelining framekwork that includes a hooks based architecture
+that allows users to modify the behavior of the framework at different points
+through the lifecycle.  There is a
+[hooks](https://github.com/quantumblacklabs/kedro/tree/dc1ee8e06b255d4d5a4348ad8a2e78048c547279/kedro/framework/hooks)
+module that implements everything, and a
+[test_plugin](https://github.com/quantumblacklabs/kedro/blob/dc1ee8e06b255d4d5a4348ad8a2e78048c547279/features/steps/test_plugin/plugin.py)
+that is used for testing, but also serves as a good example.
+
+## palantir/python-language-server
+
+Another example is the palantir python language server.  Check out their
+[hookspec](https://github.com/palantir/python-language-server/blob/91a13687dbd5247374253b245124befb8d9c60c9/pyls/hookspecs.py)
+module.
+
+
+## Tutorial
+
+
 ## Plugin Components
 
 * project_name
@@ -78,13 +106,179 @@ plugin author.
     * implementation of plugins in the library
 
 ## hookspec
-_empty hooks created by the 
+
+_empty hooks created by the library author 
+
+
+``` python
+# hookspec.py
+import pluggy
+
+hookspec = pluggy.HookspecMarker("printer")
+
+class PrinterHooks:
+    @hookspec
+    def pre_print(msg):
+        "pre print hook"
+        pass
+
+    @hookspec
+    def post_print(msg):
+        "pre print hook"
+        pass
+```
 
 
 ## hookimpl
+_used by the plugin author_
 
+Implementations of plugins much match the name of the spec exactly.
+They can include some or all of the arguments listed in the spec,
+but no others.  They can be implemented as a module with functions
+that match the name of the spec or as a class with methods that
+match the name of the spec.
+
+
+### Class Style Plugin
+
+``` python
+# plug.py
+# would be imported from the library authors hookspec
+from hookspec import hookimpl
+
+
+class Pre:
+    @hookimpl
+    def pre_print(msg):
+        msg = msg.upper()
+        return "BEFORE"
+
+
+class Post:
+    @hookimpl
+    def post_print(msg):
+        print(f"\033[A\033[2Knot today")
+```
+
+### Module Style Plugin
+
+``` python
+# plug/Pre.py
+from hookspec import hookimpl
+
+
+@hookimpl
+def pre_print(msg):
+    msg = msg.upper()
+
+
+# plug/Post.py
+class Post:
+    @hookimpl
+    def post_print(msg):
+        print(f"\033[A\033[2Knot today")
+```
+
+**note** These plugins only implement one hook.  Each plugin may
+implement one or more hooks, a plugin is not required to only
+implement on hook.
 
 ## Plugin Manager
+_implementing the hooks into the library_
+
+### Simple Example
+
+``` python
+import pluggy
+import importlib
+
+from hookspec import PrinterHooks
+from plug import Pre
+
+pm = pluggy.PluginManager("printer")
+pm.add_hookspecs(PrinterHooks)
+pm.register(Pre)
+
+def printer(msg):
+    pm.hook.pre_print(msg=msg)
+    print(msg)
+    pm.hook.post_print(msg=msg)
+```
+
+## Running the library
+
+Now if we run the printer function as a user we will see this
+output.
+
+``` pycon
+>>> printer('hello world')
+HELLO WORLD
+```
+
+## Adding Post
+
+Now if we register the Post plugin we will see the following output.
+
+``` python
+
+from plug import Pre, Post
+
+pm.register(Pre)
+pm.register(Post)
+```
+
+``` pycon
+>>> printer('hello world')
+not today
+```
+
+The `Post` plugin wipes away the last line from the console and
+prints out `"not today"`
+
+## Plugin Manager - with dynamic imports
+
+In a real library we might want to allow the user to configure their
+plugins through a config file.  If we do this we will need to reach
+for `importlib` to handle the imports based on a string.
+
+``` python
+
+import pluggy
+import importlib
+
+# from hookspec import hookspec
+from hookspec import PrinterHooks
+
+# from hookspec import hookimpl
+
+plugins = ["plug.Pre", "plug.Post"]
+pm = pluggy.PluginManager("printer")
+pm.add_hookspecs(PrinterHooks)
+
+for plug in plugins:
+    if isinstance(plug, str):
+        # plug is a str representing a module to import
+        try:
+            # module style plugins
+            plugin = importlib.import_module(plug)
+        except ModuleNotFoundError as e:
+            # class style plugins
+            if "." in plug:
+                mod = importlib.import_module(".".join(plug.split(".")[:-1]))
+                plugin = getattr(mod, plug.split(".")[-1])
+            else:
+                raise e
+    else:
+        # plug is a module that is already imported
+        plugin = plug
+
+    pm.register(plugin)
 
 
+def printer(msg):
+    pm.hook.pre_print(msg=msg)
+    print(msg)
+    pm.hook.post_print(msg=msg)
+```
 
+## EntryPoint plugins
