@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 tags: ['python']
-title: ⚙ How Python Packages Are Configured
+title: ⚙ How Python Tools Are Configured
 date: 2021-01-21T00:00:00
 status: draft
 
