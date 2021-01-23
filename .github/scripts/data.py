@@ -177,13 +177,13 @@ if __name__ == "__main__":
         p = Path("./archive/index.html")
         p.parent.mkdir(parents=True, exist_ok=True)
         with open(p, "w+") as f:
-            f.write(template.substitute(body="".join(create_index(status="published"))))
+            f.write(template.safe_substitute(body="".join(create_index(status="published"))))
         for tag in tags:
             p = Path(f"./archive/{tag}/index.html")
             p.parent.mkdir(parents=True, exist_ok=True)
             with open(p, "w+") as f:
                 f.write(
-                    template.substitute(
+                    template.safe_substitute(
                         body="".join(create_index(status="published", tags=tag))
                     )
                 )
@@ -196,7 +196,7 @@ if __name__ == "__main__":
             template = Template(f.read())
 
         print(
-            template.substitute(
+            template.safe_substitute(
                 body="".join(create_index(status="published", tags=tags))
             )
         )
