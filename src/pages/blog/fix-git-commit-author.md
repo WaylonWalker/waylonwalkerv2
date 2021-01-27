@@ -62,6 +62,14 @@ Now I start the rebase 20 commits back from HEAD.  THis will pop you into a text
 git rebase -i HEAD~20
 ```
 
+## Note for the first commit
+
+If you want to rebase back to the start of the repo use the `--root` flag.
+
+``` bash
+git rebase -i --root
+```
+
 Run git log to see where we ended up.
 
 ``` bash
