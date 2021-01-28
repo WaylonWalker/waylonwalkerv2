@@ -27,7 +27,8 @@ jobs:
         uses: nwtgck/actions-netlify@v1.0
         with:
           publish-dir: "./markout"
-          production-branch: master
+          production-branch: markout
+          production-deploy: true
           deploy-message: "Deploy markout from GitHub Actions"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}

@@ -8,7 +8,6 @@ status: published
 description: Add helpful cli to your python libraries... All of them!
 cover: "/static/2020-02-02 09-40-45_Start.png"
 category: ''
-slug: ''
 summary: ''
 
 ---
