@@ -1,0 +1,34 @@
+name: 🌱 Deploy site
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - markata
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: install markata
+        run: pip install git+https://github.com/WaylonWalker/markata.git@develop
+
+      - name: run markata
+        run: markata
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.0
+        with:
+          publish-dir: "./markout"
+          production-branch: master
+          deploy-message: "Deploy markout from GitHub Actions"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

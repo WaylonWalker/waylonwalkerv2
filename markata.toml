@@ -1,0 +1,38 @@
+[markata]
+glob_patterns = "pages/**/*.md"
+output_dir = "markout"
+assets_dir = "static"
+hooks = ["default", "markata.plugins.publish_source"]
+cover_template = "static/cover-template.png"
+cover_font = "./.github/scripts/waterlilly-script.ttf"
+cover_font_color = "rgb(255,255,255)"
+url = "https://waylonwalker.com"
+title = "Waylon Walkers Digital Garden"
+description = "Waylon Walkers Digital Garden"
+rss_description = "Waylon Walkers posts"
+author_name = "Waylon Walker"
+author_email = "waylon@waylonwlaker.com"
+icon = "8bitcc.png"
+lang = "en"
+post_template = "pages/templates/post_template.html"
+theme_color = "#322D39"
+background_color = "#B73CF6"
+start_url = "/sample"
+site_name = "Waylon Walker"
+short_name = "ww"
+display = "minimal-ui"
+
+[[markata.seo]]
+name = "og:type"
+property = "og:type"
+content = "article"
+
+[[markata.seo]]
+name = "og:author"
+property = "og:author"
+content = "Waylon Walker"
+
+[[markata.seo]]
+name = "og:site_name"
+property = "og:site_name"
+content = "Waylon Walker"

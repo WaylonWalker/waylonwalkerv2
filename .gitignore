@@ -5,6 +5,7 @@ public/
 *reduxcache
 .github/scripts/archive
 index.html
+markout/
 
 # Created by https://www.gitignore.io/api/vim,node,sublimetext,visualstudio,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=vim,node,sublimetext,visualstudio,visualstudiocode
