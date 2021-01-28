@@ -7,7 +7,7 @@ tags:
 - webdev
 - catalytic
 description: none
-cover: "./gemma-evans-64661-unsplash.jpg"
+
 ---
 
 

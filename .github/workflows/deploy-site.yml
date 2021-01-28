@@ -18,13 +18,30 @@ jobs:
           python-version: 3.8
 
       - name: install markata
-        run: pip install git+https://github.com/WaylonWalker/markata.git@develop
+        run: pip install git+https://github.com/WaylonWalker/markata.git@develop checksumdir
+
+      - name: install dependencies
+        run: pip install python-twitter
 
       - name: run markata
         run: markata
 
+      # - name: Compress Images
+      #   id: calibre
+      #   uses: calibreapp/image-actions@main
+      #   with:
+      #     ignorePaths: "static/**,src/**"
+      #     githubToken: ${{ secrets.GITHUB_PAT }}
+      #     compressOnly: true
+
+      - name: create root
+        run: cp markout/archive/index.html markout/index.html
+
+      - name: sw-version
+        run: export checksum=$(checksumdir markout ) && cat static/sw.js | envsubst > markout/sw.js
+
       - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v1.0
+        uses: nwtgck/actions-netlify@v1.1.12
         with:
           publish-dir: "./markout"
           production-branch: markout

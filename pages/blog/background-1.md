@@ -7,7 +7,7 @@ tags:
     - python
     - data
 description: none
-cover: "./gabriele-diwald-199200-unsplash.jpg"
+
 ---
 
 # background tasks in python

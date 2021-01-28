@@ -34,6 +34,7 @@ cover: ''
 * shortcuts
 * gitui
 * fzf
+    * [devinsideyou](https://www.youtube.com/watch?v=tB-AgxzBmH8)
 
 
 

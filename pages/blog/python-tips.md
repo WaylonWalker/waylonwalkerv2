@@ -4,7 +4,7 @@ title: Python Tips
 date: 2019-01-21
 status: draft
 description:
-cover: "./brett-patzke-725745-unsplash-cropped.jpg"
+
 ---
 
 ## Dictionaries

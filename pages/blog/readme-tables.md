@@ -7,7 +7,7 @@ tags:
     - data
     - python
 description: none
-cover: "./nordwood-themes-162462-unsplash_cropped2.jpg"
+
 ---
 
 ## Generating Readme Tables From Pandas

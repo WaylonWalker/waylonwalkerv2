@@ -6,11 +6,8 @@ status: draft
 description:
 tags:
     - git
-cover: "./nathan-dumlao-523529-unsplash-crop.jpg"
 ---
 
-cover: "./nathan-dumlao-523529-unsplash-crop.jpg"
-cover: "./rawpixel-1055774-unsplash.jpg"
 
 ## inspiration
 

@@ -4,7 +4,7 @@ title: 2018 Retrospective
 date: 2019-01-05
 status: published
 description:
-cover: "./namroud-gorguis-253765-unsplash.jpg"
+
 ---
 
 2018 was a year of many ups and downs, and learning to deal with a whole new set of problems professionally and at home.  In 2018 I logged in to my first Linux system, setup my own webserver, data pipelines, database. I learned to use react and d3. Stepped up my python, javascript, and sql.

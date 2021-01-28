@@ -8,7 +8,6 @@ title: Filtering Pandas
 date: 2019-09-24T05:00:00Z
 status: published
 description: Filtering pandas DataFrames many different ways.
-cover: "/static/nathan-dumlao-eksqjXTLpak-unsplash.jpg"
 
 ---
 ## query

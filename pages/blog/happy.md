@@ -4,7 +4,7 @@ title: Do More of What Brings You Joy
 date: 2019-01-01
 status: published
 description: happiness in the workplace
-cover: "./ross-van-der-wal-224852-unsplash.jpg"
+
 ---
 
 

@@ -14,7 +14,7 @@
 // Names of the two caches used in this version of the service worker.
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
-const PRECACHE = 'precache-v2';
+const PRECACHE = '$checksum';
 const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
@@ -22,9 +22,9 @@ const PRECACHE_URLS = [
   'index.html',
   './',
   '/sample/',
-  '/8bitc_48x.png',
+  '/8bitc_48x48.png',
   '/archive-styles.css',
-  '/furo.css',
+  '/furo-purge.css',
 ];
 
 // The install handler takes care of precaching the resources we always need.

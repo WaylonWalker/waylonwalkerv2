@@ -4,7 +4,7 @@ title: My favorite pandas pattern
 date: 2018-03-01
 status: Draft
 description: none
-cover: "./crown-royal-bag-quilt.jpg"
+
 ---
 
 # My favorite pandas pattern

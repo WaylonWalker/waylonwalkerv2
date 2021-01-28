@@ -4,9 +4,7 @@ title: Minimal Project Structure
 date: 2019-02-10
 status: draft
 description: How to setup a data science project in python.
-cover: "verstappen-photography-532656-unsplash.jpg"
-coverCredits: Photo by Verstappen Photography on Unsplash
-twitterCover: "./bit-01-twitter-card.jpg"
+
 ---
 
 # TLDR

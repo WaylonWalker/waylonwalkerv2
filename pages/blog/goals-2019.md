@@ -4,10 +4,8 @@ title: 2019 goals
 date: 2019-01-12
 status: published
 description: 2019 goals
-cover: "./steve-halama-1275997-unsplash.jpg"
----
 
-<!-- cover: "./namroud-gorguis-253765-unsplash.jpg" -->
+---
 
 <style>
 strong {
