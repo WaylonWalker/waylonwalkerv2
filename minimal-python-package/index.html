@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Minimal Python Package
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="What does it take to create an installable python package that can be hosted on pypi? This post is somewhat inspired by the bottle framework, which is famously created as a single python module.  Yes, a whole web framework is written in one file. The" name="description" property="description"/>
+  <meta content="What does it take to create an installable python package that can be hosted on pypi? This post is somewhat inspired by the bottle framework, which is famously created as a single python module.  Yes, a whole web framework is written in one file. The" name="og:description" property="og:description"/>
+  <meta content="What does it take to create an installable python package that can be hosted on pypi? This post is somewhat inspired by the bottle framework, which is famously created as a single python module.  Yes, a whole web framework is written in one file. The" name="twitter:description" property="twitter:description"/>
+  <meta content="Minimal Python Package" name="og:title" property="og:title"/>
+  <meta content="Minimal Python Package" name="twitter:title" property="twitter:title"/>
+  <meta content="Minimal Python Package" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    What does it take to create an installable python package that can be hosted on pypi?
+   </p>
+   <h2>
+    What is the minimal python package
+   </h2>
+   <ul>
+    <li>
+     setup.py
+    </li>
+    <li>
+     my_module.py
+    </li>
+   </ul>
+   <p>
+    This post is somewhat inspired by the bottle framework, which is famously created as a single python module.  Yes, a whole web framework is written in one file.
+   </p>
+   <h2>
+    Directory structure
+   </h2>
+   <pre class="highlight"><code class="language-bash">
+.
+├── setup.py
+└── my_pipeline.py</code></pre>
+   <h2>
+    setup.py
+   </h2>
+   <pre class="highlight"><code class="language-python">from setuptools import setup
+
+setup(
+    name="",
+    version="0.1.0",
+    py_modules=["my_pipeline", ],
+    install_requires=["kedro"],
+)</code></pre>
+   <h2>
+    name
+   </h2>
+   <p>
+    The name of the package can contain any letters, numbers, "_", or "-".  Even if it's for internal/personal consumption only I usually check for discrepancy with pypi so that you don't run into conflicts.
+   </p>
+   <blockquote>
+    <p>
+     Note that pypi treats "-" and "_" as the same thing, beware of name clashes
+    </p>
+   </blockquote>
+   <h2>
+    version
+   </h2>
+   <p>
+    This is the version number of your package.  Most packages follow
+    <a href="semver.org">
+     semver
+    </a>
+    .  At a high level its three numbers separated by a
+    <code>
+     .
+    </code>
+    that follow the format
+    <code>
+     major.minor.patch
+    </code>
+    .  It's a common courtesy to only break APIs on major changes, new releases on minor, and fixes on patch.  This can become much more blurry in practice so checkout
+    <a href="https://semver.org/">
+     semver.org
+    </a>
+    .
+   </p>
+   <h2>
+    py_modules
+   </h2>
+   <p>
+    Typically most packages use the
+    <code>
+     packages
+    </code>
+    argument combined with
+    <code>
+     find_packages
+    </code>
+    , but for this minimal package, we are only creating one
+    <code>
+     .py
+    </code>
+    file.
+   </p>
+   <h2>
+    Using packages instead
+   </h2>
+   <pre class="highlight"><code class="language-python">from setuptools import setup, find_packages
+
+setup(
+    name="",
+    version="0.1.0",
+    packages=find_packages(),
+    install_requires=["kedro"],
+)</code></pre>
+   <h2>
+    install_requires
+   </h2>
+   <p>
+    These are your external dependencies that come from pypi.  They go in this list but are often pulled in from a file called
+    <code>
+     requirements.txt
+    </code>
+    .  Other developers may look for this file and want to do a
+    <code>
+     pip install -r
+requirements.txt
+    </code>
+    .
+   </p>
+   <h2>
+    Clean?
+   </h2>
+   <p>
+    One thing to be careful of here is that everything sits at the top level API, when you users import your module and hit tab they are going to see a lot of stuff unless you hide all of your internal functions behind an
+    <code>
+     _
+    </code>
+    .
+   </p>
+   <h2>
+    Minimal
+   </h2>
+   <p>
+    Can you create a python package with less than two files and less than 8 lines? Should you?  I really like a minimal point to get started from for quick and simple prototypes.  You can always pull a more complicated
+    <code>
+     cookiecutter
+    </code>
+    template later if the project is successful.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

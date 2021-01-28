@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Reader
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="Notes about my reader idea" name="description" property="description"/>
+  <meta content="Notes about my reader idea" name="og:description" property="og:description"/>
+  <meta content="Notes about my reader idea" name="twitter:description" property="twitter:description"/>
+  <meta content="Reader" name="og:title" property="og:title"/>
+  <meta content="Reader" name="twitter:title" property="twitter:title"/>
+  <meta content="Reader" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <h1>
+    Inputs
+   </h1>
+   <p>
+    The input will be a yaml file containing a list of
+    <code>
+     Items
+    </code>
+    you want to stay up to date with.  Inside each item will be a url, and weight.
+   </p>
+   <pre class="highlight"><code class="language-yaml">email:
+    max-entries: 10
+    recipients:
+      - waylon@waylonwalker.com
+markdown:
+    max-entries: 100
+    output:
+        - README.md
+json:
+    max-entries: 1000
+    output:
+        - feeds/feed.json
+rss:
+    max-entries: 1000
+    output:
+        - feeds/feed.xml
+html:
+    max-entries: 100
+    output:
+        index.html
+
+items:
+    Waylon Walker:
+    weight: 5
+    url: https://waylonwalker.com/rss.xml
+    @_WaylonWalker:
+    weight: 3
+    twitter: https://twitter.com/_waylonwalker
+    DEV Waylon Walker:
+    weight: 8
+    url: https://dev.to/waylonwalker
+    Stack Overflow Kedro:
+    weight: 5
+    url: https://stackoverflow.com/questions/tagged/kedro
+    Kedro GitHub:
+    weight: 4
+    url: https://github.com/quantumblacklabs/kedro
+    Kedro Pypi
+        weight: 10
+        url: https://pypi.org/project/kedro/</code></pre>
+   <h1>
+    Types
+   </h1>
+   <ul>
+    <li>
+     rss feed (primary source)
+    </li>
+    <li>
+     youtube feed
+    </li>
+    <li>
+     Stack Overflow tags
+    </li>
+    <li>
+     GitHub repo activity
+    </li>
+    <li>
+     pypi release
+    </li>
+    <li>
+     dev.to post
+    </li>
+    <li>
+     Twitter Search # user will need an api key
+    </li>
+   </ul>
+   <h1>
+    Methodology
+   </h1>
+   <p>
+    Each url will be pulled in and parsed into a standard data scructure.  Some items may yield special feaures, a schemaless/nosql datastructure may be best.  Pipeline will decide to how to weight posts based on users weight, recent position on feed, .
+   </p>
+   <pre class="highlight"><code>a_raw (raw plain text / json items) -&gt; b_int (cleaned items) -&gt; c_pri (single feed of items) -&gt; d_fea (weighted feed of items) -&gt; e_out (requested output formats)</code></pre>
+   <h2>
+    output
+   </h2>
+   <p>
+    Pipeline outputs will be email, json, markdown, xml, html.  Each will be able to be configured by the config file (max-entries, output location).
+   </p>
+   <h2>
+    Running
+   </h2>
+   <p>
+    Users will be able to create their own reader.  Here is a list of possiblilites.  Users will not have the pipeline inside their repo. It will pull the pipeline from a package repo, pypi, dockerhub, GitHub.
+   </p>
+   <ul>
+    <li>
+     fork a template repo (might be cumbersome to update)
+    </li>
+    <li>
+     use a GitHub action from the Marketplace (easier to update)
+    </li>
+    <li>
+     GH actions will run the pipeline on a schedule
+    </li>
+   </ul>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

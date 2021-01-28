@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   cmd.exe tips
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="cmd.exe tips" name="description" property="description"/>
+  <meta content="cmd.exe tips" name="og:description" property="og:description"/>
+  <meta content="cmd.exe tips" name="twitter:description" property="twitter:description"/>
+  <meta content="cmd.exe tips" name="og:title" property="og:title"/>
+  <meta content="cmd.exe tips" name="twitter:title" property="twitter:title"/>
+  <meta content="cmd.exe tips" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    I spend a lot of my time at the terminal for my daily work, mostly in Linux or wsl.  One big reason for using wsl over cmd.exe is the ease of walking through history that fzf provides.  This week we had a windows bug in a cli and I was stuck in vanilla cmd.exe 😭
+   </p>
+   <h2>
+    &gt; Cmder
+   </h2>
+   <p>
+    <img alt="" src="/main.png"/>
+   </p>
+   <p>
+    First off if you are stuck using cmd.exe, do yourself a favor and get cmder.  It makes life just a bit easier.  It is super confugurable and comes with several power ups that make it a bit more enjoyable than cmd.exe.
+   </p>
+   <h2>
+    History
+   </h2>
+   <p>
+    <strong>
+     F7
+    </strong>
+    - Scroll through history
+   </p>
+   <p>
+    <strong>
+     F8
+    </strong>
+    - Search history based
+   </p>
+   <h2>
+    Example
+   </h2>
+   <p>
+    <img alt="" src="/cmd_exe_history_2.gif"/>
+   </p>
+   <h2>
+    .bat
+   </h2>
+   <p>
+    The next simple technique is to save your commands into a .bat file. Any valid command ran with cmd.exe can be saved into a bat file and called again later by running it in the terminal.
+   </p>
+   <p>
+    <strong>
+     save your command
+    </strong>
+   </p>
+   <p>
+    use f7/f8 to get your command back add
+    <code>
+     &gt; filename.bat
+    </code>
+    at the end, hit the home key and add echo to the front.
+    <strong>
+     Do not
+    </strong>
+    wrap with quotes.  This is not bash.
+   </p>
+   <pre class="highlight"><code class="language-bash">echo python cmd_example.py &gt; cmd_example.bat</code></pre>
+   <p>
+    <strong>
+     &gt;&gt; append
+    </strong>
+   </p>
+   <pre class="highlight"><code class="language-bash">echo python cmd_example2.py &gt;&gt; cmd_example.bat</code></pre>
+   <h2>
+    type not cat
+   </h2>
+   <p>
+    To ensure that you got the command right... and didn't forget that you were in cmd.exe instead of bash and add quotes. you will want to see the file contents. For this reach for
+    <strong>
+     type
+    </strong>
+    not
+    <strong>
+     cat
+    </strong>
+    .
+   </p>
+   <pre class="highlight"><code class="language-bash">type cmd_example.bat</code></pre>
+   <p>
+    <strong>
+     results
+    </strong>
+   </p>
+   <pre class="highlight"><code class="language-bash">python cmd_example.py
+python cmd_example2.py</code></pre>
+   <h2>
+    Your quick tips
+   </h2>
+   <p>
+    let me know what quick cmd.exe tips you have.
+   </p>
+   <p>
+    <a href="https://twitter.com/intent/tweet?text=@waylonwalker%20my%20favorite%20cmd.exe%20tip%20is%20...%20https%3A//waylonwalker.com/blog/cmd-exe-tips/" title="tweet your tip">
+     <img alt="tweet your tip" src="/2020-01-27 06-32-34_Microsoft Text Input Application.png" title="tweet your tip"/>
+    </a>
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

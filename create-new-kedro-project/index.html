@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Create New Kedro Project
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="Getting up and going with a brand new [kedro](https://kedro.readthedocs.io) project is super simple, thanks to the help of the `kedro new` command.  The ability to add an example pipeline from the start makes it that much easier to get going and have a template to follow for your own projects." name="description" property="description"/>
+  <meta content="Getting up and going with a brand new [kedro](https://kedro.readthedocs.io) project is super simple, thanks to the help of the `kedro new` command.  The ability to add an example pipeline from the start makes it that much easier to get going and have a template to follow for your own projects." name="og:description" property="og:description"/>
+  <meta content="Getting up and going with a brand new [kedro](https://kedro.readthedocs.io) project is super simple, thanks to the help of the `kedro new` command.  The ability to add an example pipeline from the start makes it that much easier to get going and have a template to follow for your own projects." name="twitter:description" property="twitter:description"/>
+  <meta content="Create New Kedro Project" name="og:title" property="og:title"/>
+  <meta content="Create New Kedro Project" name="twitter:title" property="twitter:title"/>
+  <meta content="Create New Kedro Project" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    This is a quickstart to getting a new
+    <a href="https://kedro.readthedocs.io">
+     kedro
+    </a>
+    pipeline up and running.  After this article you should be able to understand how to get started with
+    <a href="https://kedro.readthedocs.io">
+     kedro
+    </a>
+    .  You can learn more about this
+    <a href="https://kedro.readthedocs.io/en/stable/02_getting_started/04_hello_world.html">
+     Hello World Example
+    </a>
+    in the
+    <a href="https://kedro.readthedocs.io/en/stable/02_getting_started/04_hello_world.html">
+     docs
+    </a>
+   </p>
+   <p>
+    🧹 Install
+    <a href="https://kedro.readthedocs.io">
+     Kedro
+    </a>
+   </p>
+   <p>
+    🛢 Create the Example Pipeline
+   </p>
+   <p>
+    💨 Run the example
+   </p>
+   <p>
+    📉 Show the pipeline visualization
+   </p>
+   <h2>
+    Create a Virtual Environment
+   </h2>
+   <p>
+    I use conda to control my virtual environments and will create a new environment called
+    <code>
+     kedro_iris
+    </code>
+    with the following command.
+    <strong>
+     note
+    </strong>
+    the latest compatible version of python is 3.7.
+   </p>
+   <p>
+    <strong>
+     EDIT
+    </strong>
+    : as of kedro 0.16.0 kedro supports up to 3.8
+   </p>
+   <pre class="highlight"><code class="language-bash">conda create -n kedro_iris python=3.8 -y</code></pre>
+   <p>
+    <img alt="" src="https://waylonwalker.com/conda-create-kedro-iris.gif"/>
+   </p>
+   <p>
+    Options
+   </p>
+   <h2>
+    Activate your conda environment
+   </h2>
+   <p>
+    I try to keep my base environment as clean as possible.  I have ran into too many issues installing things in the base environment.  Almost always its some dependency that starts causing issues making it even harder to realize where its coming from as I never even installed it in base.
+   </p>
+   <pre class="highlight"><code class="language-bash">source activate kedro_iris</code></pre>
+   <h2>
+    Install
+    <a href="https://kedro.readthedocs.io">
+     Kedro
+    </a>
+   </h2>
+   <p>
+    Currently
+    <code>
+     kedro==0.15.5
+    </code>
+    is available on pypi and can be pip installed.
+   </p>
+   <p>
+    <strong>
+     EDIT
+    </strong>
+    kedro is up to
+    <a href="https://pypi.org/project/kedro/">
+     <img alt="PyPI version" src="https://badge.fury.io/py/kedro.svg"/>
+    </a>
+   </p>
+   <pre class="highlight"><code class="language-bash">pip install kedro</code></pre>
+   <h2>
+    Make sure you are in the directory that you want your project in
+   </h2>
+   <pre class="highlight"><code class="language-bash">cd /mnt/c/temp</code></pre>
+   <h2>
+    Create a new
+    <a href="https://kedro.readthedocs.io">
+     Kedro
+    </a>
+    project
+   </h2>
+   <pre class="highlight"><code class="language-bash">kedro new
+cd kedro-iris
+git init
+kedro install</code></pre>
+   <p>
+    <img alt="" src="https://waylonwalker.com/kedro-new-iris.gif"/>
+   </p>
+   <h2>
+    Run the pipeline
+   </h2>
+   <p>
+    This will tell kedro to run your pipeline.  It will look at all of your nodes and determine the correct execution order for you, then run each one of them.  You can do this from a python script, python terminal session, or from the
+    <a href="https://kedro.readthedocs.io">
+     kedro
+    </a>
+    cli.
+   </p>
+   <blockquote>
+    <p>
+     ✨ It will look at all of your nodes and determine the correct execution order for you
+    </p>
+   </blockquote>
+   <p>
+    Lets run from the cli while in the same directory as kedro-iris
+   </p>
+   <pre class="highlight"><code class="language-bash">kedro run</code></pre>
+   <p>
+    <img alt="" src="https://waylonwalker.com/kedro-new-iris.gif"/>
+   </p>
+   <h2>
+    Viz
+   </h2>
+   <p>
+    <a href="https://github.com/quantumblacklabs/kedro-viz">
+     kedro-viz
+    </a>
+    is a priceless feature of
+    <a href="https://kedro.readthedocs.io">
+     kedro
+    </a>
+    .  It's like x-ray vision into your pipeline.  I can't imagine working without it after having it over the past year.  Unlike traditional documentation
+    <a href="https://github.com/quantumblacklabs/kedro-viz">
+     kedro-viz
+    </a>
+    cannot lie to you.  It will help guarantee your changes line up properly, plan out adding nodes, and identify dependencies of deprecating nodes.
+   </p>
+   <blockquote>
+    <p>
+     Unlike traditional documentation
+     <a href="https://github.com/quantumblacklabs/kedro-viz">
+      kedro-viz
+     </a>
+     cannot lie to you.
+    </p>
+   </blockquote>
+   <h2>
+    Install
+    <a href="https://github.com/quantumblacklabs/kedro-viz">
+     kedro-viz
+    </a>
+   </h2>
+   <p>
+    <a href="https://github.com/quantumblacklabs/kedro-viz">
+     kedro-viz
+    </a>
+    is also on pypi and can be installed just like any other python package with
+    <code>
+     pip
+    </code>
+    .
+   </p>
+   <pre class="highlight"><code class="language-bash">pip install kedro-viz</code></pre>
+   <h2>
+    Visualize the pipeline
+   </h2>
+   <p>
+    <a href="https://github.com/quantumblacklabs/kedro-viz">
+     kedro-viz
+    </a>
+    is ran from the command line in the same directory as your kedro project.  There are ways to store your pipeline data as json, then load them from outside your project, but we will follow the standard practice for now.
+   </p>
+   <pre class="highlight"><code class="language-bash">kedro viz</code></pre>
+   <p>
+    <img alt="" src="https://waylonwalker.com/kedro-viz-iris.gif"/>
+   </p>
+   <h2>
+    🏗 Docker
+   </h2>
+   <p>
+    There is another package that makes creating docker images from kedro projects super simple
+    <a href="https://github.com/quantumblacklabs/kedro-docker">
+     kedro-docker
+    </a>
+    .
+   </p>
+   <p>
+    If you dont already have docker installed on your machine, feel free to skip this section.
+   </p>
+   <h3>
+    install
+    <a href="https://github.com/quantumblacklabs/kedro-docker">
+     kedro-docker
+    </a>
+   </h3>
+   <pre class="highlight"><code class="language-bash">pip install kedro-docker</code></pre>
+   <h3>
+    build the image
+   </h3>
+   <pre class="highlight"><code class="language-bash">kedro docker build</code></pre>
+   <h3>
+    run the image
+   </h3>
+   <pre class="highlight"><code class="language-bash">kedro docker run</code></pre>
+   <h2>
+    Simple Huh
+   </h2>
+   <p>
+    Getting up and going with a brand new
+    <a href="https://kedro.readthedocs.io">
+     kedro
+    </a>
+    project is super simple, thanks to the help of the
+    <code>
+     kedro new
+    </code>
+    command.  The ability to add an example pipeline from the start makes it that much easier to get going and have a template to follow for your own projects.
+   </p>
+   <h2>
+    Recap
+   </h2>
+   <pre class="highlight"><code class="language-bash">conda create -n kedro_iris python=3.7 -y
+source activate kedro_iris
+pip install kedro
+cd /mnt/c/temp
+kedro new
+# give it a project name Kedro Iris
+# accept default package name kedro_iris
+# addept default directory name kedro-iris
+# yes for an example pipeline
+cd kedro-iris
+git init
+git add .
+git commit -m "initialized new kedro project"
+kedro install
+kedro run
+pip install kedro-viz
+kedro viz
+pip install kedro-docker
+kedro docker build
+kedro docker run</code></pre>
+   <h2>
+    Other resources
+   </h2>
+   <p>
+    The
+    <a href="https://kedro.readthedocs.io/">
+     kedro docs
+    </a>
+    have a ton of great resources.  They are searchable, but can be a bit of an overwhelming amount of data.
+   </p>
+   <p>
+    I keep adding to my
+    <a href="https://waylonwalker.com/notes/kedro/">
+     kedro notes
+    </a>
+    as I find new and interesting things.
+   </p>
+   <p>
+    I tweet out most of those snippets as I add them, you can find them all here
+    <a href="https://twitter.com/search?q=%23kedrotips">
+     #kedrotips
+    </a>
+    .
+   </p>
+   <h2>
+    More to come
+   </h2>
+   <p>
+    I am planning to do more articles like this, you can stay up to date with them by following me on
+    <a href="https://dev.to/waylonwalker">
+     dev.to
+    </a>
+    , subscribing to my
+    <a href="https://waylonwalker.com/rss.xml">
+     rss feed
+    </a>
+    , or subscribe to my
+    <a href="https://waylonwalker.com/newsletter">
+     newsletter
+    </a>
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

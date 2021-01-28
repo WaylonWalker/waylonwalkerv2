@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Brainstorming Kedro Hooks
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="This post is a 🧠 branstorming work in progress, I will likely use it as a storage location/brain dump of hook ideas." name="description" property="description"/>
+  <meta content="This post is a 🧠 branstorming work in progress, I will likely use it as a storage location/brain dump of hook ideas." name="og:description" property="og:description"/>
+  <meta content="This post is a 🧠 branstorming work in progress, I will likely use it as a storage location/brain dump of hook ideas." name="twitter:description" property="twitter:description"/>
+  <meta content="Brainstorming Kedro Hooks" name="og:title" property="og:title"/>
+  <meta content="Brainstorming Kedro Hooks" name="twitter:title" property="twitter:title"/>
+  <meta content="Brainstorming Kedro Hooks" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    This post is a 🧠 branstorming work in progress.
+   </p>
+   <blockquote>
+    <h3>
+     What is Kedro 🤔
+    </h3>
+    <p>
+     If you are completely unsure what kedro is be sure to check out my
+     <a href="https://waylonwalker.com/wike">
+      what is kedro
+     </a>
+     post
+    </p>
+   </blockquote>
+   <h2>
+    after_catalog_created
+   </h2>
+   <ul>
+    <li>
+     filepath replacer
+    </li>
+    <li>
+     bucket replacer
+    </li>
+   </ul>
+   <h2>
+    before_pipeline_run
+   </h2>
+   <ul>
+    <li>
+     preflight
+    </li>
+    <li>
+     check that data exists
+    </li>
+    <li>
+     run
+     <code>
+      kedro_static_viz
+     </code>
+    </li>
+    <li>
+     run mypy
+    </li>
+    <li>
+     run interrogate
+    </li>
+    <li>
+     run flake8
+    </li>
+   </ul>
+   <h2>
+    after_pipeline_run
+   </h2>
+   <ul>
+    <li>
+     Great Expectations
+    </li>
+    <li>
+     send email
+    </li>
+    <li>
+     send slack
+    </li>
+   </ul>
+   <h2>
+    before_node_run
+   </h2>
+   <h2>
+    after_node_run
+   </h2>
+   <ul>
+    <li>
+     Great Expectations
+    </li>
+    <li>
+     save stats/meta data
+*
+    </li>
+   </ul>
+   <h2>
+    Execution Order
+   </h2>
+   <p>
+    hooks are executed in reverse order of the hooks list.
+   </p>
+   <p>
+    hooks with
+    <code>
+     tryfirst
+    </code>
+    will be moved to the end of the list
+hooks with
+    <code>
+     trylast
+    </code>
+    will be moved to the end of the list
+   </p>
+   <ol>
+    <li>
+     after_catalog_created
+    </li>
+    <li>
+     <p>
+      before_pipeline_run
+     </p>
+    </li>
+    <li>
+     <p>
+      args
+     </p>
+    </li>
+    <li>
+     run_params = run_params = {'run_id': '2020-05-23T15.24.23.958Z', 'project_path': '/mnt/c/temp/kedro0160', 'env': 'local', 'kedro_version': '0.15.9', 'tags': (), 'from_nodes': [], 'to_nodes': [], 'node_names': (), 'from_inputs': [], 'load_versions': {}, 'pipeline_name': None, 'extra_params': {}, 'git_sha': None}
+    </li>
+    <li>
+     pipeline
+    </li>
+    <li>
+     <p>
+      catalog
+     </p>
+    </li>
+    <li>
+     <p>
+      before_node_run
+     </p>
+    </li>
+    <li>
+     after_node_run
+3.
+    </li>
+   </ol>
+   <h2>
+    When does data get saved???
+   </h2>
+   <ul>
+    <li>
+     before or after node hook?
+    </li>
+   </ul>
+   <h2>
+    ??Unsure??
+   </h2>
+   <ul>
+    <li>
+     does before  catalog load have access to parameters?
+    </li>
+    <li>
+     Yes
+*
+    </li>
+   </ul>
+   <h3>
+    [steel toes](
+    <a href="https://github.com/waylonwalker/steel-toes/)6">
+     https://github.com/waylonwalker/steel-toes/)6
+    </a>
+   </h3>
+   <p>
+    <em>
+     I was way too excited about this one and already created it
+    </em>
+   </p>
+   <p>
+    <em>
+     prevents pain from stepping on your teammates toes
+    </em>
+   </p>
+   <p>
+    Kedro is so amazing at promoting collaboration between team members.  Each team member can check out the code, branch, and start work on their own section of the pipeline.  Issues can arrise if the team members section of the pipeline happen to cross.  Breaking changes happen, BREAKS during development happen and can completely kill a teammates workflow.
+   </p>
+   <ul>
+    <li>
+     is there a way to prevent toe stepping?
+    </li>
+    <li>
+     try to load
+     <code>
+      filepath_&lt;branch&gt;
+     </code>
+    </li>
+    <li>
+     if load fails try
+     <code>
+      filepath
+     </code>
+    </li>
+    <li>
+     save data to
+     <code>
+      filepath_&lt;branch&gt;
+     </code>
+    </li>
+   </ul>
+   <p>
+    <strong>
+     how
+    </strong>
+   </p>
+   <ul>
+    <li>
+     on after_catalog_load check for existing "branch" data
+    </li>
+    <li>
+     if "branch" data exists load that
+    </li>
+    <li>
+     otherwise keep default
+*
+    </li>
+   </ul>
+   <h3>
+    Run only nodes that have changed
+   </h3>
+   <ul>
+    <li>
+     store a deephash of functions code
+    </li>
+    <li>
+     store a hash of the inputs
+    </li>
+    <li>
+     if neither code or inputs changed run function, otherwise skip.
+    </li>
+    <li>
+     How could a hook choose to skip the node?
+    </li>
+   </ul>
+   <h2>
+    Static viz hook
+   </h2>
+   <p>
+    Before pipeline run
+   </p>
+   <ul>
+    <li>
+     make site
+    </li>
+    <li>
+     Set node status to queued
+    </li>
+   </ul>
+   <p>
+    Before node run
+   </p>
+   <ul>
+    <li>
+     Set running status
+    </li>
+   </ul>
+   <p>
+    After node run
+   </p>
+   <ul>
+    <li>
+     Set running status
+    </li>
+   </ul>
+   <p>
+    On pipeline error
+   </p>
+   <ul>
+    <li>
+     Set run status
+    </li>
+   </ul>
+   <p>
+    On node error
+   </p>
+   <ul>
+    <li>
+     Set error status
+    </li>
+   </ul>
+   <p>
+    After pipeline run
+   </p>
+   <ul>
+    <li>
+     Set complete status
+    </li>
+   </ul>
+   <p>
+    After node run
+   </p>
+   <ul>
+    <li>
+     set complete
+    </li>
+   </ul>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

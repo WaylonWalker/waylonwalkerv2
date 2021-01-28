@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   What is Kedro
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="Kedro is an open source data pipeline framework.  It provides guardrails to set your project up right from the start without needing to know deeply how to setup your own python library for data pipelining.  It includes really great ways to manipulate `catalogs` and `pipelines`.  This article will cover the 10K view of kedro, future articles will dive deper into each one." name="description" property="description"/>
+  <meta content="Kedro is an open source data pipeline framework.  It provides guardrails to set your project up right from the start without needing to know deeply how to setup your own python library for data pipelining.  It includes really great ways to manipulate `catalogs` and `pipelines`.  This article will cover the 10K view of kedro, future articles will dive deper into each one." name="og:description" property="og:description"/>
+  <meta content="Kedro is an open source data pipeline framework.  It provides guardrails to set your project up right from the start without needing to know deeply how to setup your own python library for data pipelining.  It includes really great ways to manipulate `catalogs` and `pipelines`.  This article will cover the 10K view of kedro, future articles will dive deper into each one." name="twitter:description" property="twitter:description"/>
+  <meta content="What is Kedro" name="og:title" property="og:title"/>
+  <meta content="What is Kedro" name="twitter:title" property="twitter:title"/>
+  <meta content="What is Kedro" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    <a href="https://kedro.readthedocs.io">
+     kedro
+    </a>
+    is an open-source data pipeline framework.  It provides guardrails to set your project up right from the start without needing to know deeply how to set up your own python library for data pipelining.  It includes great ways to manipulate
+    <code>
+     catalogs
+    </code>
+    and
+    <code>
+     pipelines
+    </code>
+    .  This article will cover the 10K view of
+    <a href="https://kedro.readthedocs.io">
+     kedro
+    </a>
+    , future articles will dive deeper into each one.
+   </p>
+   <!-- {% slideshare DAZrqvJmuUUfFF %} -->
+   <h2>
+    Libraries
+   </h2>
+   <p>
+    Currently,
+    <a href="https://kedro.readthedocs.io">
+     kedro
+    </a>
+    is broken down into 3 different libraries.
+   </p>
+   <p>
+    💎
+    <a href="https://kedro.readthedocs.io">
+     kedro
+    </a>
+   </p>
+   <p>
+    📉
+    <a href="https://github.com/quantumblacklabs/kedro-viz">
+     kedro-viz
+    </a>
+   </p>
+   <p>
+    🏗
+    <a href="https://github.com/quantumblacklabs/kedro-docker">
+     kedro-docker
+    </a>
+   </p>
+   <h2>
+    <a href="https://kedro.readthedocs.io">
+     kedro
+    </a>
+   </h2>
+   <p>
+    <img alt="kedro logo" src="https://waylonwalker.com/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7175616e74756d626c61636b6c6162732f6b6564726f2f6d61737465722f696d672f6b6564726f5f62616e6e65722e6a7067.jpg"/>
+   </p>
+   <p>
+    <a href="https://kedro.readthedocs.io">
+     kedro
+    </a>
+    is the core of the ecosystem.  It provides the docs, getting started,
+    <code>
+     kedro new
+    </code>
+    templates, and the core library including the catalog and pipeline.
+   </p>
+   <h3>
+    Catalog
+   </h3>
+   <p>
+    <img alt="catalogs" src="https://dev-to-uploads.s3.amazonaws.com/i/trzfj86dbq0ronis26x1.jpg"/>
+   </p>
+   <p>
+    Inside this core library is a data catalog object.  This allows you to specify attributes about your data, then load and save it without ever writing a single line of read/write code, which can become very cumbersome.  Older versions would load this into the io variable, currently it loads into the catalog.  The power of the catalog is that it allows you to read and write data by just referencing its name.  Typically this is done inside of a YAML file, but can be done in python.
+   </p>
+   <p>
+    Here is an example of a CSV dataset stored locally
+   </p>
+   <pre class="highlight"><code class="language-yaml"># Example 1: Loads a local csv file
+bikes:
+  type: CSVLocalDataSet
+  filepath: "data/01_raw/bikes.csv"</code></pre>
+   <p>
+    This dataset can be loaded by name
+   </p>
+   <pre class="highlight"><code class="language-python">catalog.load('bikes')</code></pre>
+   <p>
+    Though it's not typical practice it is possible to save data to a catalog entry ad-hoc.  Typically the pipeline is used to run functions and save data for you.
+   </p>
+   <pre class="highlight"><code class="language-python">import pandas as pd
+bikes_df = pd.DataFrame({...&lt;bikes_data&gt;...})
+catalog.datasets.bikes.save(bikes_df)</code></pre>
+   <h3>
+    Pipeline
+   </h3>
+   <p>
+    <img alt="building pipelines" src="https://waylonwalker.com/roman-pentin-T5QT2bmiD4E-unsplash.jpg"/>
+   </p>
+   <p>
+    The pipeline object is the brains of
+    <a href="https://kedro.readthedocs.io">
+     kedro
+    </a>
+    .  When working with
+    <a href="https://kedro.readthedocs.io">
+     kedro
+    </a>
+    you simply define functions that take in data as arguments, manipulate it, and return a new dataset.  The pipeline will decide what order to execute these functions ini based on their dependencies.  It will then work with the catalog to load the data from the catalog pass it to your function, the save the returned data in the catalog.
+   </p>
+   <p>
+    Here is an example pipeline from the docs.
+   </p>
+   <pre class="highlight"><code class="language-python">import pandas as pd
+import numpy as np
+from kedro.pipeline import Pipeline
+from kedro.pipeline import node
+
+def clean_data(cars: pd.DataFrame,
+               boats: pd.DataFrame) -&gt; Dict[str, pd.DataFrame]:
+    return dict(cars_df=cars.dropna(), boats_df=boats.dropna())
+
+def halve_dataframe(data: pd.DataFrame) -&gt; List[pd.DataFrame]:
+    return np.array_split(data, 2)
+
+nodes = [
+    node(clean_data,
+         inputs=['cars2017', 'boats2017'],
+         outputs=dict(cars_df='clean_cars2017',
+                      boats_df='clean_boats2017')),
+    node(halve_dataframe,
+         'clean_cars2017',
+         ['train_cars2017', 'test_cars2017']),
+    node(halve_dataframe,
+         dict(data='clean_boats2017'),
+         ['train_boats2017', 'test_boats2017'])
+]
+
+pipeline = Pipeline(nodes)</code></pre>
+   <h2>
+    <a href="https://github.com/quantumblacklabs/kedro-viz">
+     kedro-viz
+    </a>
+   </h2>
+   <p>
+    <a href="https://github.com/quantumblacklabs/kedro-viz">
+     kedro-viz
+    </a>
+    is a priceless component to the
+    <a href="https://kedro.readthedocs.io">
+     kedro
+    </a>
+    ecosystem.  It gives you x-ray vision into your project.  You can see exactly how data flows through your pipeline.  Since it is fully automated it is always up to date and never lies to you.
+    <a href="https://github.com/quantumblacklabs/kedro-viz">
+     kedro-viz
+    </a>
+    is an integral part of my daily debugging and refactoring toolbelt.
+   </p>
+   <p>
+    Starting the viz from the command line is super easy
+   </p>
+   <pre class="highlight"><code class="language-bash">cd my-kedro-project
+kedro viz</code></pre>
+   <p>
+    <img alt="" src="https://waylonwalker.com/pipeline_visualisation.png"/>
+   </p>
+   <h2>
+    <a href="https://github.com/quantumblacklabs/kedro-docker">
+     kedro-docker
+    </a>
+   </h2>
+   <p>
+    <a href="https://github.com/quantumblacklabs/kedro-docker">
+     kedro-docker
+    </a>
+    is a simple way to set up your project for production.  It provides a few simple cli commands
+   </p>
+   <pre class="highlight"><code class="language-bash">cd my-kedro-project
+kedro docker build
+kedro docker run</code></pre>
+   <h2>
+    Other resources
+   </h2>
+   <p>
+    The
+    <a href="https://kedro.readthedocs.io/">
+     kedro docs
+    </a>
+    have a ton of great resources.  They are searchable, but can be a bit of an overwhelming amount of data.
+   </p>
+   <p>
+    I keep adding to my
+    <a href="https://waylonwalker.com/notes/kedro/">
+     kedro notes
+    </a>
+    as I find new and interesting things.
+   </p>
+   <p>
+    I tweet out most of those snippets as I add them, you can find them all here
+    <a href="https://twitter.com/search?q=%23kedrotips">
+     #kedrotips
+    </a>
+    .
+   </p>
+   <h2>
+    More to come
+   </h2>
+   <p>
+    I am planning to do more articles like this, you can stay up to date with them by following me on
+    <a href="https://dev.to/waylonwalker">
+     dev.to
+    </a>
+    , subscribing to my
+    <a href="https://waylonwalker.com/rss.xml">
+     rss feed
+    </a>
+    , or subscribe to my
+    <a href="https://waylonwalker.com/newsletter">
+     newsletter
+    </a>
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

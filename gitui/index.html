@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Gitui is a blazing fast terminal git interface
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="Gitui is a terminal-based git user interface (TUI) that will change the way
+that you work with git. I have been a long-time user of the git cli, and it's
+been hard to beat, mostly because there is nothing that keeps my fingers on the
+keyboard quite l" name="description" property="description"/>
+  <meta content="Gitui is a terminal-based git user interface (TUI) that will change the way
+that you work with git. I have been a long-time user of the git cli, and it's
+been hard to beat, mostly because there is nothing that keeps my fingers on the
+keyboard quite l" name="og:description" property="og:description"/>
+  <meta content="Gitui is a terminal-based git user interface (TUI) that will change the way
+that you work with git. I have been a long-time user of the git cli, and it's
+been hard to beat, mostly because there is nothing that keeps my fingers on the
+keyboard quite l" name="twitter:description" property="twitter:description"/>
+  <meta content="Gitui is a blazing fast terminal git interface" name="og:title" property="og:title"/>
+  <meta content="Gitui is a blazing fast terminal git interface" name="twitter:title" property="twitter:title"/>
+  <meta content="Gitui is a blazing fast terminal git interface" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    Gitui is a terminal-based git user interface (TUI) that will change the way
+that you work with git. I have been a long-time user of the git cli, and it's
+been hard to beat, mostly because there is nothing that keeps my fingers on the
+keyboard quite like it, except
+    <code>
+     gitui
+    </code>
+    which comes with some great ways to very
+quickly walk through a git project.
+   </p>
+   <h2>
+    installation
+   </h2>
+   <p>
+    Go to their [releases]
+    <a href="https://github.com/extrawurst/gitui/releases">
+     https://github.com/extrawurst/gitui/releases
+    </a>
+    ) page,
+download the latest build, and pop it on your PATH.  I have the following
+stuffed away in some install scripts to get the latest version.
+   </p>
+   <p>
+    <em>
+     <small>
+      install latest release
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">GITUI_VERSION=$(curl --silent https://github.com/extrawurst/gitui/releases/latest | tr -d '"' | sed 's/^.*tag\///g' | sed 's/&gt;.*$//g' | sed 's/^v//')
+wget https://github.com/extrawurst/gitui/releases/download/v${GITUI_VERSION}/gitui-linux-musl.tar.gz -O- -q | sudo tar -zxf - -C /usr/bin/</code></pre>
+   <h2>
+    run
+    <code>
+     gitui
+    </code>
+   </h2>
+   <p>
+    It opens blazing fast.
+   </p>
+   <pre class="highlight"><code class="language-bash">gitui</code></pre>
+   <h2>
+    Quick Commits
+   </h2>
+   <p>
+    Sometimes I edit a number of files and want to commit them one at a time, this
+is painful in the git cli and my main use case for
+    <code>
+     gitui
+    </code>
+    .
+    <code>
+     gitui
+    </code>
+    shows
+unstaged changes at the top, staged changes on the bottom, and a diff on the
+right.
+   </p>
+   <p>
+    <img alt="gitui status" src="https://waylonwalker.com/gitui-status.png"/>
+   </p>
+   <h2>
+    Navigate with hjkl
+   </h2>
+   <p>
+    By default,
+    <code>
+     gitui
+    </code>
+    uses arrow keys, but simply copying
+    <a href="https://github.com/extrawurst/gitui/blob/master/assets/vim_style_key_config.ron">
+     vim_style_key_config.ron
+    </a>
+    to your config directory will get you vim-like keybindings.
+   </p>
+   <h2>
+    workflow
+   </h2>
+   <p>
+    Generally, I pop open
+    <code>
+     gitui
+    </code>
+    , use j/k to get to the file I want to commit,
+glance at the diff to the right, press enter to stage the file, sc to switch
+focus to the saged files and commit, write my commit message hit enter and
+done.
+   </p>
+   <ul>
+    <li>
+     w/s:   to toggle focus between working and staged changes
+    </li>
+    <li>
+     j/k:   to scroll each section
+    </li>
+    <li>
+     h/l:   switch between left and right side
+    </li>
+    <li>
+     enter: toggle file from working or staging
+    </li>
+    <li>
+     c:     start a commit message
+    </li>
+    <li>
+     p:     push
+    </li>
+    <li>
+     <c-c>
+      : quit
+     </c-c>
+    </li>
+   </ul>
+   <h2>
+    Other Panes
+   </h2>
+   <p>
+    I am in the
+    <code>
+     Status [1]
+    </code>
+    pane 90% of the time, but it also has three other
+panes for
+    <code>
+     Log [2]
+    </code>
+    ,
+    <code>
+     Stashing [3]
+    </code>
+    , and
+    <code>
+     Stashes [4]
+    </code>
+    .  I do not really use
+the stashes panes, but the
+    <code>
+     Log [2]
+    </code>
+    pane is quite useful to quickly go through
+the last set of commits and see the diff for each of them.
+   </p>
+   <h2>
+    What UI do you use for git
+   </h2>
+   <p>
+    Let me know what ui you use for git, do you stick to the cli, use a gui, or use
+a similar
+    <code>
+     TUI
+    </code>
+    interface?
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

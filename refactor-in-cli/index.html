@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Large Refactor At The Command Line
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="As projects grow patterns that worked early on break and we need to change things to make the project easier to work with, and more welcoming to new developers. Before you start mucking up a project with wild commands at the terminal check that you h" name="description" property="description"/>
+  <meta content="As projects grow patterns that worked early on break and we need to change things to make the project easier to work with, and more welcoming to new developers. Before you start mucking up a project with wild commands at the terminal check that you h" name="og:description" property="og:description"/>
+  <meta content="As projects grow patterns that worked early on break and we need to change things to make the project easier to work with, and more welcoming to new developers. Before you start mucking up a project with wild commands at the terminal check that you h" name="twitter:description" property="twitter:description"/>
+  <meta content="Large Refactor At The Command Line" name="og:title" property="og:title"/>
+  <meta content="Large Refactor At The Command Line" name="twitter:title" property="twitter:title"/>
+  <meta content="Large Refactor At The Command Line" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    As projects grow patterns that worked early on break and we need to change things to make the project easier to work with, and more welcoming to new developers.
+   </p>
+   <h2>
+    git
+   </h2>
+   <p>
+    Before you start mucking up a project with wild commands at the terminal check that you have a super clean git status. We may make some mistakes and need a way to undo 100's files and git makes it really easy if you start with a clean history.
+   </p>
+   <pre class="highlight"><code class="language-bash">git status</code></pre>
+   <p>
+    If we are ready to begin work we should see a response like this.
+   </p>
+   <pre class="highlight"><code class="language-bash">On branch main
+nothing to commit, working tree clean</code></pre>
+   <p>
+    It would also be wise to do this inside of a branch.  The minute you try to do something wild in your working branch someone will walk by and ask you to do a five-minute task, but your deep in refactoring and haven't left yourself a clean way back.
+   </p>
+   <pre class="highlight"><code class="language-bash">git branch my-big-refactor</code></pre>
+   <h2>
+    grepr
+   </h2>
+   <p>
+    Time for the meat of this refactor replacing text across our project.  I often will pop this bash function into my terminal session and tweak it as needed. This function is called
+    <code>
+     grepr
+    </code>
+    for
+    <code>
+     grep
+    </code>
+    then
+    <code>
+     replace
+    </code>
+    .  It will recursively search for a given pattern inside your working directory, then use
+    <code>
+     sed
+    </code>
+    to replace that pattern with another.
+   </p>
+   <pre class="highlight"><code class="language-bash">grepr() {grep -iRl "$1" | xargs sed -i "s/$1/$2/g"}</code></pre>
+   <p>
+    If your pattern contains
+    <code>
+     /
+    </code>
+    characters such as for URLs you can swap the
+    <code>
+     /
+    </code>
+    's in the
+    <code>
+     sed
+    </code>
+    command for
+    <code>
+     |
+    </code>
+    's.
+   </p>
+   <pre class="highlight"><code class="language-bash">grepr() {grep -iRl "$1" | xargs sed -i "s|$1|$2|g"}</code></pre>
+   <p>
+    You can find this function and more of my bash notes.
+   </p>
+   <p>
+    <a href="https://waylonwalker.com/bash/">
+     https://waylonwalker.com/bash/
+    </a>
+   </p>
+   <h2>
+    Example
+   </h2>
+   <p>
+    I recently flattened this blog so blogs are under the top-level rather than under
+    <code>
+     /blog
+    </code>
+    and I used this technique to swap internal links to the new format.
+   </p>
+   <pre class="highlight"><code class="language-bash">grepr() {grep -iRl "$1" | xargs sed -i "s|$1|$2|g"}
+
+
+grepr "https://waylonwalker.com/blog/" "https://waylonwalker.com/"</code></pre>
+   <h2>
+    git diff
+   </h2>
+   <p>
+    After running the replace command the first thing I want to see is everything that changed.  Looking at git diff will highlight exactly what changed since our last commit.
+   </p>
+   <pre class="highlight"><code class="language-bash">git diff</code></pre>
+   <h2>
+    Work in small steps
+   </h2>
+   <p>
+    If you're happy with the results commit them now.  It's best to do these commands that have a large effect on the entire project in small steps.
+   </p>
+   <pre class="highlight"><code class="language-bash">git add .
+git commit -m "moved routes from /blog to /"</code></pre>
+   <p>
+    Working in small steps gives us an easy way to undo steps that may have been a mistake before it's too late.
+   </p>
+   <p>
+    <a href="https://waylonwalker.com/master-no-more/">
+     https://waylonwalker.com/master-no-more/
+    </a>
+   </p>
+   <blockquote>
+    <p>
+     I used the technique from this post to switch master to main on my blog.
+    </p>
+   </blockquote>
+   <h2>
+    git reset
+   </h2>
+   <p>
+    <em>
+     How I do Mass Undo
+    </em>
+   </p>
+   <p>
+    <strong>
+     be careful
+    </strong>
+    work from a branch, make sure you started clean
+   </p>
+   <p>
+    Let's say I wanted to change every occurrence of one variable name to another.
+Lets try to replace replace
+    <code>
+     pandas.CSVDataSet
+    </code>
+    with
+    <code>
+     pandas.ParquetDataSet
+    </code>
+    .
+   </p>
+   <pre class="highlight"><code class="language-bash">grepr() {grep -iRl "$1" | xargs sed -i "s|$1|$2|g"}
+
+
+grepr "pandas.CSVDataSet" "pandas.ParquetDataSet"</code></pre>
+   <p>
+    Upon inspection of the
+    <code>
+     git diff
+    </code>
+    we notice that there was an unintentional change to the
+    <code>
+     docs/standard-storage.md
+    </code>
+    file. To revert the entire change we can run.
+   </p>
+   <p>
+    <strong>
+     note
+    </strong>
+    These resets are irreversible.  Make sure that you started with a clean
+    <code>
+     git status
+    </code>
+    and you are confident that you didn't have any work on your machine, not in the remote repo.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       match the remote and wipe out any changes
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">git reset --hard origin/main</code></pre>
+   <p>
+    <em>
+     <small>
+      <mark>
+       match our last commit
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">git reset --hard HEAD</code></pre>
+   <h2>
+    agr
+   </h2>
+   <p>
+    I have an alternative version that I occasionally use as well that utilizes the silver searcher
+    <code>
+     ag
+    </code>
+    .  It does a great job at following your .gitignore rules with no fuss, and can filter down to file extensions simply with flags like
+    <code>
+     --md
+    </code>
+   </p>
+   <pre class="highlight"><code class="language-bash">agr() {ag -l "$1" | xargs sed -i "s/$1/$2/g"}</code></pre>
+   <h2>
+    git clean
+   </h2>
+   <p>
+    <em>
+     how I remove untracked files
+    </em>
+   </p>
+   <p>
+    Sometimes our refactoring requires moving files around. If we want to undo steps like this git will not clean up untracked files.
+   </p>
+   <pre class="highlight"><code class="language-bash">mv conf/base/sales-catalog.yml conf/base/sales/catalg.yml</code></pre>
+   <p>
+    <em>
+     <small>
+      <mark>
+       clean up untracked files
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">git clean -f</code></pre>
+   <p>
+    <em>
+     <small>
+      <mark>
+       clean up untracked directories
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">git clean -d</code></pre>
+   <p>
+    <em>
+     <small>
+      <mark>
+       clean up ignored files
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">git clean -x</code></pre>
+   <p>
+    <code>
+     -x
+    </code>
+    can be a bit dangerous, be careful with it.  You can lose significant time by wiping out a
+    <code>
+     node_modules
+    </code>
+    ,
+    <code>
+     venv
+    </code>
+    , or credentials.
+   </p>
+   <h2>
+    git  checkout
+   </h2>
+   <p>
+    <em>
+     How I undo single files
+    </em>
+   </p>
+   <p>
+    If our command was mostly successful, but just a few extra files were touched I will manually revert them with
+    <code>
+     git checkout &lt;filename&gt;
+    </code>
+   </p>
+   <pre class="highlight"><code class="language-bash">git checkout conf/base/supply-catalog.yml</code></pre>
+   <h2>
+    git checkout --
+   </h2>
+   <p>
+    <em>
+     How I undo an entire directory
+    </em>
+   </p>
+   <p>
+    Sometimes we need to undo an entire directory.  This command will undo changes
+to all of the tracked files in the repo.
+   </p>
+   <pre class="highlight"><code class="language-bash">git checkout -- /src/pages/blog</code></pre>
+   <h2>
+    gitui
+   </h2>
+   <p>
+    I really love using
+    <code>
+     gitui
+    </code>
+    as a handy terminal interface to browse logs, diffs, and commit a few files at a time.  It starts up crazy fast and is very intuitive to navigate through diffs of changes like this one file at a time if the
+    <code>
+     git diff
+    </code>
+    gets too overwhelming.
+   </p>
+   <p>
+    <a href="https://github.com/extrawurst/gitui">
+     https://github.com/extrawurst/gitui
+    </a>
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

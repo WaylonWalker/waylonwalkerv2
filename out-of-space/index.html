@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Out of Space
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="Out of Space! How to remove 65 conda environments in one command." name="description" property="description"/>
+  <meta content="Out of Space! How to remove 65 conda environments in one command." name="og:description" property="og:description"/>
+  <meta content="Out of Space! How to remove 65 conda environments in one command." name="twitter:description" property="twitter:description"/>
+  <meta content="Out of Space" name="og:title" property="og:title"/>
+  <meta content="Out of Space" name="twitter:title" property="twitter:title"/>
+  <meta content="Out of Space" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    This morning I logged into my machine and was nearly out of space
+   </p>
+   <ul>
+    <li>
+     64GB miniconda3!
+    </li>
+    <li>
+     5GB conda cache
+    </li>
+    <li>
+     4GM pip cache
+    </li>
+    <li>
+     34GB docker
+    </li>
+   </ul>
+   <h2>
+    Find it
+   </h2>
+   <p>
+    <a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0LE2KZJW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/je7pxcagfs7m23p98kck.jpg">
+     <img alt="Looking for big files when the weeds are too tall" src="https://res.cloudinary.com/practicaldev/image/fetch/s--0LE2KZJW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/je7pxcagfs7m23p98kck.jpg"/>
+    </a>
+   </p>
+   <blockquote>
+    <p>
+     Photo by
+     <a href="https://unsplash.com/@simonmigaj?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+      Simon Migaj
+     </a>
+     on
+     <a href="https://unsplash.com/s/photos/find?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+      Unsplash
+     </a>
+    </p>
+   </blockquote>
+   <p>
+    These are the commands that I often use to reclaim space.  Its so easy to fill up small vm's in the cloud, or in my case today let your dev machine go way too long without a good cleanup.
+   </p>
+   <h3>
+    Show Remaining Space on Drives
+   </h3>
+   <p>
+    This shows us where to start and gives a baseline of how much space we have reclaimed.
+   </p>
+   <pre class="highlight"><code class="language-bash">df -h</code></pre>
+   <h3>
+    show largest files in current directory
+   </h3>
+   <p>
+    Next keep drilling into directories that are big and running this command to see whats big inside of it.  When you find somethign that you are willing to part with
+    <code>
+     rm -rf &lt;directory&gt;
+    </code>
+    it and check
+    <code>
+     df -h
+    </code>
+    to see if you have enough reclaimed yet.
+   </p>
+   <pre class="highlight"><code class="language-bash">du . -h --max-depth=1</code></pre>
+   <p>
+    Honestly I rarely bother unless the directory is in the GB's of space.  A super simple filter for that is to just grep for G.
+   </p>
+   <pre class="highlight"><code class="language-bash">du . -h --max-depth=1 | grep G</code></pre>
+   <h2>
+    conda
+   </h2>
+   <h3>
+    How Many?
+   </h3>
+   <p>
+    As a first baseline lets see how many enviroments we are starting with. I started with 71. Yeah I have had this machine for 2 years, and dont regularly remove them.
+   </p>
+   <pre class="highlight"><code class="language-bash">conda info --envs | tail -n +2 | wc -l</code></pre>
+   <p>
+    bash
+   </p>
+   <h3>
+    Lets batch it out!
+   </h3>
+   <p>
+    We are devs here surely we can automate this issue! The following four lines will generate a list of existing conda environments, edit them with vim, remove the remaining ones, then remove the text file we created to remove from.
+   </p>
+   <p>
+    Make sure that you only keep names of environments that you want to
+    <strong>
+     remove
+    </strong>
+    in
+    <code>
+     conda_envs_to_remove.txt
+    </code>
+    and delete the environment names you want to keep.
+   </p>
+   <pre class="highlight"><code class="language-bash">conda info --envs | tail -n +2 | cut -d ' ' -f1 &gt; conda_envs_to_remove.txt
+vim conda_envs_to_remove.txt
+cat ~/.conda_envs_remove | tr '\n' '\0' | xargs -l -0 conda remove --all -y -n
+rm conda_envs_to_remove.txt</code></pre>
+   <h3>
+    📝 Side note
+   </h3>
+   <p>
+    When I am creating one of these complicated bash pipelines including xargs I generally print out the command first and make sure that it does what I want. The following command will test the above script before doing dangerous things!
+   </p>
+   <pre class="highlight"><code class="language-bash">cat ~/.conda_envs_remove | tr '\n' '\0' | xargs -l -0 echo "conda remove --all -y -n "</code></pre>
+   <h2>
+    Cache
+   </h2>
+   <p>
+    If your feeling really strained for space, you can
+    <code>
+     rm -rf ~/.cache
+    </code>
+    . Personally I like the improved speed of installing everything... obviously I install a lot of new environments.
+   </p>
+   <h2>
+    Docker
+   </h2>
+   <p>
+    <a href="https://res.cloudinary.com/practicaldev/image/fetch/s--W4NWBxYC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/olcef3lh31dtrwa51u7g.jpg">
+     <img alt="Alt Text" src="https://res.cloudinary.com/practicaldev/image/fetch/s--W4NWBxYC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/olcef3lh31dtrwa51u7g.jpg"/>
+    </a>
+   </p>
+   <blockquote>
+    <p>
+     Photo by
+     <a href="https://unsplash.com/@henry_be?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+      Henry Be
+     </a>
+     on
+     <a href="https://unsplash.com/s/photos/dark-fire?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+      Unsplash
+     </a>
+    </p>
+   </blockquote>
+   <p>
+    For more information read this article,
+    <a href="https://docs.docker.com/config/pruning/" title="https://docs.docker.com/config/pruning/">
+     https://docs.docker.com/config/pruning/
+    </a>
+    . I have all of the images that I want pushed remotely so I just dumped everything with the following command.
+   </p>
+   <pre class="highlight"><code class="language-bash">docker system prune
+docker system prune --volumes</code></pre>
+   <p>
+    Running these two sets of commands cleared up about
+    <strong>
+     70GB
+    </strong>
+    of space for me with very little effort on my behalf. I hope others find the first command helpful to batch remove many conda environments at once.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

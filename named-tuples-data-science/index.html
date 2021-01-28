@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Clean up Your Data Science with Named Tuples
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="" name="description" property="description"/>
+  <meta content="" name="og:description" property="og:description"/>
+  <meta content="" name="twitter:description" property="twitter:description"/>
+  <meta content="Clean up Your Data Science with Named Tuples" name="og:title" property="og:title"/>
+  <meta content="Clean up Your Data Science with Named Tuples" name="twitter:title" property="twitter:title"/>
+  <meta content="Clean up Your Data Science with Named Tuples" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    If you are a regular listener of
+    <a href="https://talkpython.fm">
+     TalkPython
+    </a>
+    or PythonBytes you have hear Michael Kennedy talk about Named Tuples many times, but what are they and how do they fit into my data science workflow.
+   </p>
+   <h2>
+    Example
+   </h2>
+   <p>
+    As you graduate your scripts into modules and libraries you might start to notice that you need to pass a lot of data around to all of the functions that you have created. For example if you are running some analysis utilizing
+    <code>
+     sales
+    </code>
+    ,
+    <code>
+     inventory
+    </code>
+    , and
+    <code>
+     pricing
+    </code>
+    data.  You may need to calculate total revenue, inventory on hand.  You may need to pass these data sets into various models to drive production or pricing based on predicted volumes.
+   </p>
+   <h2>
+    Load data
+   </h2>
+   <p>
+    Here we setup functions that can load data from the sales database.  Assume that we also have similar functions to
+    <code>
+     get_inventory
+    </code>
+    and
+    <code>
+     get_pricing
+    </code>
+    .
+   </p>
+   <pre class="highlight"><code class="language-python">def get_engine():
+    engine = create_engine('postgresql://scott:tiger@localhost:5432/mydatabase')
+
+def get_sales():
+    '''
+    gets sales history from the sales database
+    '''
+    engine = get_engine()
+    with engine.connect() as con:
+        sql = '''select * from sales.history'''
+        df = pd.read_sql(sql, con)
+    engine.dispose()
+    return df
+
+def get_inventory():
+    ...
+
+def get_pricing():
+    ...</code></pre>
+   <h3>
+    Create Metrics
+   </h3>
+   <p>
+    Here we create our first function to calculate some metrics.  There are likely many of these functions that repeat a similar pattern.  They use similar data and have their own custom logic for calculations and joins.
+   </p>
+   <pre class="highlight"><code class="language-python">def calculate_total_revenue(sales, pricing):
+    """calculates the total sales revenue for all of company XYZ"""
+    sales = sales.join(pricing.set_index('sku'), on='sku')
+    sales['revenue'] = sales['qty'] * sales['price']
+    return sales['revenue'].sum()
+
+def calculate_inventory_sale_ratio(sales, inventory, pricing):
+    ...
+
+def calculate_inventory_sale_ratio(inventory, sales):
+    ...</code></pre>
+   <p>
+    Furthermore these functions will need to be called somewhere, this might be in a
+    <code>
+     make_report()
+    </code>
+    function that puts this data into an html template to be sent out to stakeholders, or to be served on a website. Notice how we have the same data showing up time and time again.  And sometimes we even ask for it in a different order 😲.It is important to recognize this early in the project before this gets our of hand.
+   </p>
+   <pre class="highlight"><code class="language-python">def make_report():
+    """Makes stakeholder report for company XYZ"""
+    sales = get_sales()
+    inventory = get_inventory()
+    pricing = get_pricing()
+
+    revenue = calculate_total_revenue(sales, pricing)
+    sales_ratio = inventory_sale_ratio(sales, inventory, pricing)
+    inventory_sale_ratio(inventory, sales)</code></pre>
+   <h3>
+    getting out of hand
+   </h3>
+   <p>
+    Along the way our features, models, and out supervisors have all had their own needs and we have added new datasets, and several flags. This is the point at which anxiety starts creeping in.  We start spending a lot of time double checking the order of each call to make sure that we dont make a mistake.  And when someone else touches this model, we know what it looks like and cant help but think, "Oh God I hope they didn't screw up that horrid module!"
+   </p>
+   <pre class="highlight"><code class="language-python">def calculate_total_revenue(sales, pricing, inventory, stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000'):
+    sales = (sales
+                .join(pricing.set_index('sku'), on='sku')
+                .join(inventory.set_index('sku'), on='sku')
+            )
+    sales['revenue'] = sales['qty'] * sales['price']
+    sales  = sales.query(f'price &gt; {min_price}')
+    sales  = sales.query(f'sale_date &gt; {min_date}')
+    sales  = sales.query(f'sale_date &lt; {end_date}')
+    return sales['revenue'].sum()
+
+def calculate_inventory_sale_ratio(sales, pricing, inventory, stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000'):
+    ...
+
+def calculate_inventory_sale_ratio(sales, pricing, inventory, stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000'):
+    ...
+
+def model_new_prices(sales, pricing, inventory, stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000'):
+    ...
+
+def model_production(sales, pricing, inventory, stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000'):
+    ...
+
+def completely_custom_metric_for_steve(sales, pricing, inventory, stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000'):
+    """Steve has been here 30 years and doesnt trust our metrics unless he can validate against the old metrics"""
+    ...</code></pre>
+   <p>
+    It gets even crazier when you start calling all of these functions! Note that we have a common theme of the same data getting passed into
+   </p>
+   <pre class="highlight"><code class="language-python">def make_report(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000', is_for_steve=False):
+    """Makes stakeholder report for company XYZ"""
+    sales = get_sales()
+    inventory = get_inventory()
+    pricing = get_pricing()
+
+    revenue = calculate_total_revenue(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+    sales_ratio = sales_ratio = inventory_sale_ratio(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+    inventory_sale_ratio = inventory_sale_ratio(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+    predicted_prices = model_new_prices(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+    predicted_production_rates = model_production_rate(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+    completely_custom_metric_for_steve(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000')
+
+    # render report
+    ...</code></pre>
+   <h3>
+    This code Stinks
+   </h3>
+   <p>
+    ⌚
+    <em>
+     Time for refactoring
+    </em>
+   </p>
+   <p>
+    While our code started out good it has grown stinky over time.  It will works fine, but it could be better and more enjoyable to work with.  What we have here is a code smell called
+    <code>
+     data clump
+    </code>
+    .  This is a group of data that always appears together.  It would be appropriate to formally group this data together.  One way to do this in python is to use nametuples.  It is a very simple technique that allows us to define a data structure that contains a specific set of attributes that we can access using
+    <code>
+     .attribute_name
+    </code>
+    .  Replacing this
+    <code>
+     data clump
+    </code>
+    with a formal group of data will allow us to reduce the number of arguments in all of our functions. Add new attributes easily. And not rely on positional arguments.  This code will be easier to maintain, read, and write.
+   </p>
+   <blockquote>
+    <p>
+     What we have here is a code smell called
+     <code>
+      data clump
+     </code>
+    </p>
+   </blockquote>
+   <p>
+    <strong>
+     create a namedtuple
+    </strong>
+   </p>
+   <pre class="highlight"><code class="language-python">from collections import namedtuple
+
+ModelData = namedtuple('modin_data', 'sales pricing inventory stored_at min_price start_date end_date')</code></pre>
+   <p>
+    <strong>
+     use the namedtuple
+    </strong>
+   </p>
+   <pre class="highlight"><code class="language-python">data = ModelData(
+    sales=get_sales(),
+    pricing=get_pricing(),
+    inventory=get_inventory(),
+    stored_at='LAX'
+    min_price=100
+    start_date = datetime.today() - datetime.timedelta(days=30)
+    end_date = datetime.today()
+    )</code></pre>
+   <p>
+    <strong>
+     refactor functions
+    </strong>
+    Now that we have a clean data object how do we use it.  Simple, we pass in one data object, then access each attribute with the dot operator. These functions are now much cleaner to call and read.  Here I have chosen a poor name for our
+    <code>
+     data
+    </code>
+    , but in a real scenario you may have multple
+    <code>
+     namedtuples
+    </code>
+    .
+   </p>
+   <pre class="highlight"><code class="language-python">def calculate_total_revenue(data):
+    sales = (data.sales
+                .join(data.pricing.set_index('sku'), on='sku')
+                .join(data.inventory.set_index('sku'), on='sku')
+            )
+    sales['revenue'] = sales['qty'] * sales['price']
+    sales  = sales.query(f'price &gt; {data.min_price}')
+    sales  = sales.query(f'sale_date &gt; {data.min_date}')
+    sales  = sales.query(f'sale_date &lt; {data.end_date}')
+    return sales['revenue'].sum()
+
+...</code></pre>
+   <p>
+    <strong>
+     call the function
+    </strong>
+   </p>
+   <p>
+    Now that all of the data is store in a single object it is really easy to call each of our functions using one data instance.
+   </p>
+   <pre class="highlight"><code class="language-python">def make_report(stored_at='LAX', min_price=100, start_date='01-01-1999', end_date='01-01-3000', is_for_steve=False):
+    """Makes stakeholder report for company XYZ"""
+    data = ModelData(stored_at=stored_at, min_price=min_price, start_date=start_date, end_date=end_date)
+
+    revenue = calculate_total_revenue(data)
+    sales_ratio = sales_ratio = inventory_sale_ratio(data)
+    inventory_sale_ratio = inventory_sale_ratio(data)
+    predicted_prices = model_new_prices(data)
+    predicted_production_rates = model_production_rate(data)
+    completely_custom_metric_for_steve(data)
+
+    # render report
+    ...</code></pre>
+   <h3>
+    🧹 Clean up your data science
+   </h3>
+   <p>
+    Named Tuples are a great way to clean up your data science code and reduce
+    <code>
+     Data Clumps
+    </code>
+    .  Anytime you have multiple data sets that almost always get used together
+    <code>
+     namedtuple
+    </code>
+    s are a great way to clean up your code, make it more readable and more maintainable.  If you find that you also have functions that are tightly coupled to this data you might want to consider using a
+    <code>
+     class
+    </code>
+    instead of a
+    <code>
+     namedtuple
+    </code>
+    , but that is for another article.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

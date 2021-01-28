@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Gracefully adopt kedro, the catalog
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="" name="description" property="description"/>
+  <meta content="" name="og:description" property="og:description"/>
+  <meta content="" name="twitter:description" property="twitter:description"/>
+  <meta content="Gracefully adopt kedro, the catalog" name="og:title" property="og:title"/>
+  <meta content="Gracefully adopt kedro, the catalog" name="twitter:title" property="twitter:title"/>
+  <meta content="Gracefully adopt kedro, the catalog" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <h2>
+    Why use kedro catalog?
+   </h2>
+   <p>
+    While using the catalog alone will not reap all of the benefits of the framework, it does get you and your project ready for the full framework eventually.  For me the full benefit of the catalog comes when you combine it with the pipeline and dont even touch read/write steps at all.
+   </p>
+   <p>
+    Taking a step into kedro by adopting the catalog first will give you a way to organize all of your data loads in one place, and stop manually writing read/write code, which can be different for each data and storage type. You just don't need to think about it.
+   </p>
+   <hr/>
+   <ul>
+    <li>
+     iperitive loading style
+    </li>
+    <li>
+     organizes your data
+    </li>
+    <li>
+     all file locations can be quickly identified
+    </li>
+    <li>
+     can be dropped into kedro later
+    </li>
+   </ul>
+   <hr/>
+   <blockquote>
+    <p>
+     "can be dropped into kedro later"
+Let's talk a bit more about that
+    </p>
+   </blockquote>
+   <h2>
+    2 Ways to Gracefully adopt the catalog
+   </h2>
+   <p>
+    <em>
+     How do I get started with the kedro catalog
+    </em>
+   </p>
+   <ul>
+    <li>
+     add with the code api
+    </li>
+    <li>
+     load from yaml (
+     <strong>
+      recommended
+     </strong>
+     )
+    </li>
+   </ul>
+   <h2>
+    1. Adding to the catalog with the code api
+   </h2>
+   <p>
+    <em>
+     how to use the kedro catalog code api
+    </em>
+   </p>
+   <p>
+    It is possible to keep everything inside of one single file if you want by utilizing the code api, which defines the kedro catalog inside of your script with python.  I personally like this method as it is a bit more scriptable to create many layers of datasets with a for loop.  It can still be carried right into a kedro project, but is not the normal way that other kedro users will be used to seeing.  I'll leave it up to you which technique to use.
+   </p>
+   <pre class="highlight"><code class="language-python">from kedro.io import DataCatalog
+from kedro.extras.datasets.pandas import CSVDataSet
+
+io = DataCatalog(
+    {
+        "bikes": CSVDataSet(filepath="../data/01_raw/bikes.csv"),
+    }
+)
+</code></pre>
+   <blockquote>
+    <p>
+     taken right from the kedro
+     <a href="https://kedro.readthedocs.io/en/stable/04_user_guide/04_data_catalog.html">
+      docs
+     </a>
+    </p>
+   </blockquote>
+   <p>
+    👆 This can be done inside of a single Jupyter cell, and pulled out later.
+   </p>
+   <h2>
+    2. Creating a catalog config file
+   </h2>
+   <p>
+    <strong>
+     recommended
+    </strong>
+   </p>
+   <p>
+    This reccommended method it great since it will simply drop right in to a full kedro project if you were ever ready to adopt the framework as a whole.  The downside to gracefully adopting the framework is that you need to have a bit of an understanding of the internals to do it.  When using the framework as a whole it seemlessly takes care of everything for you.
+   </p>
+   <pre class="highlight"><code class="language-yaml"># conf/base/catalog.yml
+# Example 1: Loads / saves a CSV file from / to a local file system
+
+bikes:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/bikes.csv</code></pre>
+   <pre class="highlight"><code class="language-python">from kedro.config import ConfigLoader
+from kedro.io import DataCatalog
+
+conf_loader = ConfLoader(['conf/base'])
+conf_catalog = conf_loader.get('catalog*', 'catalog/**')
+catalog = DataCatalog.from_config(conf_catalog)</code></pre>
+   <blockquote>
+    <p>
+     You can even do this 👆 from a Jupyter notebook
+    </p>
+   </blockquote>
+   <p>
+    If you do happen to be in a module deeper into an existing library I tend to leverage the use of the
+    <code>
+     __file__
+    </code>
+    magic.
+    <code>
+     __file__
+    </code>
+    is a string containing the location of the current file.  You can initiate a
+    <code>
+     Path
+    </code>
+    object from this and roll up the necessary number of directories with the
+    <code>
+     parents
+    </code>
+    attribute then into the
+    <code>
+     conf/base
+    </code>
+    directory.  I find this more
+    <strong>
+     more robust
+    </strong>
+    as it does not depend on your current working directory.
+   </p>
+   <pre class="highlight"><code class="language-python">from pathlib import Path
+conf_loader = ConfLoader([Path(__file__).parents[1] / 'conf/base'])
+conf_catalog = conf_loader.get("catalog*", "catalog/**")
+new_catalog = DataCatalog.from_config(conf_catalog)</code></pre>
+   <blockquote>
+    <p>
+     I find leveraging the
+     <code>
+      __file__
+     </code>
+     magic a bit more robust when possible as it does not depend on your current working directory.
+    </p>
+   </blockquote>
+   <h2>
+    Adhoc adding to an existing kedro catalog
+   </h2>
+   <p>
+    Let's say that you are already using a kedro project, but you are wanting to develop new features entirely in the context of a notebook.  You can easily create a catalog as shown above.  Since the kedro catalog variable is typically
+    <code>
+     catalog
+    </code>
+    , we will call it
+    <code>
+     new_catalog
+    </code>
+    and add it to the existing
+    <code>
+     catalog
+    </code>
+    below.  If you are not quite sure what that
+    <code>
+     **catalog
+    </code>
+    syntax is doing check out my article on
+    <code>
+     **kwargs
+    </code>
+    .
+   </p>
+   <pre class="highlight"><code class="language-python">catalog.add_feed_dict(new_catalog.datasets.__dict__)</code></pre>
+   <p>
+    <a href="https://waylonwalker.com/python-args-kwargs">
+     <img alt="python args and kwargs" src="https://waylonwalker.com/python-args-kwargs.png"/>
+    </a>
+   </p>
+   <blockquote>
+    <p>
+     <a href="https://waylonwalker.com/python-args-kwargs">
+      python args and kwargs
+     </a>
+     article by
+     <a href="https://twitter.com/_WaylonWalker">
+      @_waylonwalker
+     </a>
+    </p>
+   </blockquote>
+   <p>
+    The framework makes appending
+   </p>
+   <p>
+    <code>
+     ` python
+catalog = DataCatalog({**catalog.datasets.__dict__, **new_catalog.datasets.__dict__})
+    </code>
+   </p>
+   <h2>
+    One word of caution
+   </h2>
+   <p>
+    If you have any hooks running
+    <code>
+     after_catalog_created
+    </code>
+    , they will not be run on the appended catalog entries.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

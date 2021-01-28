@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Should I switch to Zeit Now
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="Should I switch to Zeit Now.  Netlify build times are starting to creep in." name="description" property="description"/>
+  <meta content="Should I switch to Zeit Now.  Netlify build times are starting to creep in." name="og:description" property="og:description"/>
+  <meta content="Should I switch to Zeit Now.  Netlify build times are starting to creep in." name="twitter:description" property="twitter:description"/>
+  <meta content="Should I switch to Zeit Now" name="og:title" property="og:title"/>
+  <meta content="Should I switch to Zeit Now" name="twitter:title" property="twitter:title"/>
+  <meta content="Should I switch to Zeit Now" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <h1>
+    Netlify
+   </h1>
+   <p>
+    I have happily had my personal site
+    <a href="https://waylonwalker.com">
+     waylonwalker.com
+    </a>
+    hosted on netlify for nearly 2 years now.  In fact I have hosted about a dozen different toy projects to play with on there, 4 of which have gone far enough to get a custom domain name.  They are fast to deploy and consistently do so on every
+    <code>
+     git push
+    </code>
+    to main.
+   </p>
+   <h2>
+    Zeit
+   </h2>
+   <p>
+    I have recently started playing with zeit again.  I really like their cli tool, its dead simple and makes sense.  I tried the netlify one early on and dont think I really gave it much of a chance. I was able to backup a site we were modifying by saving everything locally (literally control+s) and running
+    <code>
+     now
+    </code>
+    in the command line.
+   </p>
+   <p>
+    While I was on the site I realized that when switching to gatsby v2 I had deployed it to now.sh while testing, before cutting over to the updated one on netlify.  It has been building every version since without issue!
+   </p>
+   <blockquote>
+    <p>
+     It has been building every version since without issue!
+    </p>
+   </blockquote>
+   <h2>
+    What I am using
+   </h2>
+   <ul>
+    <li>
+     gatsby
+    </li>
+    <li>
+     forestry.io
+    </li>
+   </ul>
+   <p>
+    I am using gatsby to build my site, and I do use forestry.io as a cms to be able to edit/manage posts online.  I think forestry is part of my problem in that it has added extra builds.  Every time I upload an image or save a post, even a draft, it pushes to production.
+   </p>
+   <h2>
+    Why Switch
+   </h2>
+   <p>
+    This is just a side hobby for me.  I do not make any $$ off of it, and I do not want to pay for anything I do not have to.  As I am stepping up my blogging I have already hit 50% of my build quota only 1 week into the month on netlify.  I really like what netlify is doing for the JAMstack community, but I would rather build everything locally and push to GHPages for this project than have to pay for it.
+   </p>
+   <h2>
+    What Are your suggestions
+   </h2>
+   <p>
+    Do you use Zeit?
+   </p>
+   <p>
+    Where do you host your gatsby.js site?
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

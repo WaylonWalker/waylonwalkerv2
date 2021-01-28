@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   No More Death By PowerPoint
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="none" name="description" property="description"/>
+  <meta content="none" name="og:description" property="og:description"/>
+  <meta content="none" name="twitter:description" property="twitter:description"/>
+  <meta content="No More Death By PowerPoint" name="og:title" property="og:title"/>
+  <meta content="No More Death By PowerPoint" name="twitter:title" property="twitter:title"/>
+  <meta content="No More Death By PowerPoint" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <h1>
+    No More Death By PowerPoint
+   </h1>
+   <blockquote>
+    <p>
+     I Waylon S. Walker vow that from this point forward I will no longer create powerpoints to be considerec
+     <strong>
+      DEATH BY POWERPOINT
+     </strong>
+    </p>
+   </blockquote>
+   <p>
+    If you have not seen David JP Phillips
+    <a href="https://www.youtube.com/watch?v=Iwpi1Lm6dFo">
+     Death By PowerPoint
+    </a>
+    TEDx, stop now and watch it.  You will never look at slides the same again.  Watching this video ruined me for watching presentations with these issues.  Reveal is a tool that makes it very easy to follow these principles
+   </p>
+   <p>
+    I currently work in a company that employs over 100K employees, and to this day I cannot recall a single presentation given where the slides did not violate the rules stated in David's Talk.  This year I am putting a stop to this starting with myself.  I am starting a new job role in 2018 and there is no better time to make some drastic changes to my workflow than now.  I expect there to be a few followers and many naysayers, but I dont care.  I will employ the directives listed below.
+   </p>
+   <h2>
+    1+1=0
+   </h2>
+   <p>
+    Very few people (
+    <em>
+     if any
+    </em>
+    ) in your will be able to multi-task.  The human brain is just not built to truly multi-task.  Some folks can be good at task switching quickly but very few of us can truly multi-task.  By overwhelming your audience with more than one distinct message, you have successfully overwhelmed your audience and successfully delivered 0 messages to your audiance.
+   </p>
+   <h2>
+    6 items
+   </h2>
+   <p>
+    The human brain is very capable of processing up to 6 items very efficiently, beyond this becomes an exponential rate of processing.  Watch David's video and you will see a remarkable example.
+   </p>
+   <h2>
+    Size and Contrast
+   </h2>
+   <p>
+    The most important points should be the fist thing that your eye goes to on the screen.
+   </p>
+   <h2>
+    More Slides
+   </h2>
+   <p>
+    No one ever said the sheer amount of slides was ever the problem.
+   </p>
+   <h2>
+    Supporting Material
+   </h2>
+   <p>
+    Sentences, Notes, reference material, etc belong in the speaker notes.  This is the part that took the longest for me to realize.  In my company PowerPoint documents as living documents that folks will reference long after the presentation is over.  For this reason we tend to put every point that we want to discuss on the slides, so that they are there weeks, months, even years later when someone goes back to review your slides.  Placing this material in the speaker notes will allow you to utilize your presentation as reference material if you need to, and refrain from placing it on the screen.
+   </p>
+   <h2>
+    Tools
+   </h2>
+   <p>
+    A tool that is becoming very popular outside of the PowerPoind world is
+    <a href="https://github.com/hakimel/reveal.js/">
+     Reveal js
+    </a>
+    .  It is a fantastic framework to build beautiful slides using html.  I find that maintaining html to be a bit cumbersome. And the templating language
+    <a href="https://pugjs.org/">
+     pug
+    </a>
+    to be much more simple.  I will be using my own fork of
+    <a href="https://github.com/jlengstorf/reveal.js-jade">
+     reveal.js-jade
+    </a>
+    in 2018.  It will allow me to have interactive visualizations right in my slides.  Reveal also does a really nice job at making it hard to break the Death By PowerPoint rules.  It tends to be hard to jam a ton of information into them.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

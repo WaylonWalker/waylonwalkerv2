@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   I just added react-headroom to my site
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="It was so easy to get a professional looking navbar with just 3 lines of code.  This thing is so usable on mobile." name="description" property="description"/>
+  <meta content="It was so easy to get a professional looking navbar with just 3 lines of code.  This thing is so usable on mobile." name="og:description" property="og:description"/>
+  <meta content="It was so easy to get a professional looking navbar with just 3 lines of code.  This thing is so usable on mobile." name="twitter:description" property="twitter:description"/>
+  <meta content="I just added react-headroom to my site" name="og:title" property="og:title"/>
+  <meta content="I just added react-headroom to my site" name="twitter:title" property="twitter:title"/>
+  <meta content="I just added react-headroom to my site" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    It was so easy to get a professional looking navbar with just 3 lines of code.  This package seriously is so usable on mobile it is rediculous.  I found this package from
+    <a href="https://www.gatsbyjs.org/blog/100days/react-component/?utm_campaign=100%20Days%20of%20Gatsby&amp;utm_source=hs_email&amp;utm_medium=email&amp;utm_content=82376619&amp;_hsenc=p2ANqtz-_DBh1A1A-GEy2TujddXq_H1de5wGZ_X6jIqB2wv_PE7QgUk40pfi64jbSVHv-S3bfzKZOQywtoTuup2aeO0o_KpeiF8w&amp;_hsmi=82376619">
+     day 4
+    </a>
+    of the 100 days of gatsby challenge.  It is by the wonderful man who brought us gatsbyjs Kyle Mathews, so you know its gotta be good.
+   </p>
+   <h2>
+    install react-headroom
+   </h2>
+   <p>
+    installation is easy
+   </p>
+   <pre class="highlight"><code class="language-bash">npm i react-headroom</code></pre>
+   <h2>
+    Import Headroom
+   </h2>
+   <p>
+    There was no instructions for es6 style imports that are common with gatsbyjs sites like mine, but it was intuitive to figure out.
+   </p>
+   <pre class="highlight"><code class="language-js">import Headroom from 'react-headroom'</code></pre>
+   <h2>
+    Using Headroom
+   </h2>
+   <p>
+    Simply wrap your existing content, Nav in my case, with the
+    <code>
+     &lt;Headroom /&gt;
+    </code>
+    component and your off to the races.  The content will pop back into view when you scroll past then back up.
+   </p>
+   <pre class="highlight"><code class="language-html">&lt;Headroom&gt;
+   &lt;-- Your content goes here --&gt;
+&lt;/Headroom&gt;</code></pre>
+   <h2>
+    See it in action
+   </h2>
+   <p>
+    I think this simple package completely changes the ux of your site on mobile.  You can get that sticky nav out of the way, but its still right there with just a little bit of a scroll up.
+   </p>
+   <p>
+    <img alt="showing it in action on waylonwalker.com" src="https://waylonwalker.com/react-headroom-b.gif"/>
+   </p>
+   <blockquote>
+    <p>
+     Here it is on
+     <a href="https://waylonwalker.com">
+      waylonwalker.com
+     </a>
+    </p>
+   </blockquote>
+   <h2>
+    Configurable
+   </h2>
+   <p>
+    <code>
+     react-headroom
+    </code>
+    is configurable, but I did not find it necessary.  I really like the simplicity that it brought by just adding the
+    <code>
+     &lt;Headroom\&gt;
+    </code>
+    component.
+   </p>
+   <p>
+    <img alt="react-headroom docs" src="https://waylonwalker.com/react-headroom-docs.png"/>
+   </p>
+   <h2>
+    Links
+   </h2>
+   <p>
+    Check out the relavant links for more details.
+   </p>
+   <p>
+    <strong>
+     GitHub
+    </strong>
+    :
+    <a href="https://github.com/KyleAMathews/react-headroom">
+     https://github.com/KyleAMathews/react-headroom
+    </a>
+    <strong>
+     Demo Site
+    </strong>
+    :
+    <a href="https://kyleamathews.github.io/react-headroom/">
+     https://kyleamathews.github.io/react-headroom/
+    </a>
+    <strong>
+     Docs
+    </strong>
+    :
+    <a href="https://kyleamathews.github.io/react-headroom/">
+     https://kyleamathews.github.io/react-headroom/
+    </a>
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

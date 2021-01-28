@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Building kedro.dev
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="This is my journey to building up the community page." name="description" property="description"/>
+  <meta content="This is my journey to building up the community page." name="og:description" property="og:description"/>
+  <meta content="This is my journey to building up the community page." name="twitter:description" property="twitter:description"/>
+  <meta content="Building kedro.dev" name="og:title" property="og:title"/>
+  <meta content="Building kedro.dev" name="twitter:title" property="twitter:title"/>
+  <meta content="Building kedro.dev" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    Follow along the Journey as I build out
+    <a href="https://kedro.dev">
+     kedro.dev
+    </a>
+    .
+   </p>
+   <h2>
+    Building a Community
+   </h2>
+   <p>
+    I have really enjoyed my own personal journey as I have started to build all of my data pipeline projects with the kedro framework.  I want to start building a place to share resources with the community.  I want to see this community grow and flourish.  They say in front end web development if you are not using a framework you end up building one.  That's exactly what I was doing before I started using kedro.  I want to build out a set of resources that this community can learn from and start to use the framework at their own pace without needing to develop their own from scratch.
+   </p>
+   <h2>
+    research
+   </h2>
+   <p>
+    Looking into the front end frameworks to see how they welcome their community.  Much of my inspiration is from them, bringing lessons learned to data.
+   </p>
+   <h3>
+    pages
+   </h3>
+   <ul>
+    <li>
+     banner
+    </li>
+    <li>
+     nav
+     <ul>
+      <li>
+       docs -&gt; readthedocs
+      </li>
+      <li>
+       tutorial -&gt; kedro-examples
+      </li>
+      <li>
+       blog -&gt; medium
+      </li>
+      <li>
+       community
+       <ul>
+        <li>
+         support
+        </li>
+        <li>
+         team
+        </li>
+        <li>
+         courses
+        </li>
+        <li>
+         examples
+        </li>
+        <li>
+         meetups
+        </li>
+        <li>
+         conferences
+        </li>
+        <li>
+         articles
+        </li>
+        <li>
+         podcasts
+        </li>
+        <li>
+         videos
+        </li>
+        <li>
+         external resources
+        </li>
+       </ul>
+      </li>
+      <li>
+       search
+      </li>
+     </ul>
+    </li>
+    <li>
+     examples
+    </li>
+    <li>
+     footer
+    </li>
+    <li>
+     sponsors
+    </li>
+    <li>
+     newsletter
+    </li>
+    <li>
+     copyright
+*
+    </li>
+   </ul>
+   <h3>
+    components
+   </h3>
+   <ul>
+    <li>
+     edit this page
+    </li>
+    <li>
+     scrolling toc
+    </li>
+   </ul>
+   <h2>
+    Stack Overflow Api
+   </h2>
+   <p>
+    fetch last 5 posts.
+   </p>
+   <pre class="highlight"><code>https://api.stackexchange.com/2.2/questions?order=desc&amp;sort=activity&amp;site=stackoverflow&amp;tagged=kedro&amp;pagesize=5</code></pre>
+   <h2>
+    DEV.to api
+   </h2>
+   <p>
+    fetch last 5 posts
+   </p>
+   <pre class="highlight"><code>https://dev.to/api/articles?tag=kedro&amp;per_page=5&amp;page=1</code></pre>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

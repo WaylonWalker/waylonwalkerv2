@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Background Tasks in Python for Data Science
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="This post is intended as an extension/update from [background tasks in python](https://waylonwalker.com/background-1/). I started using `background` the week that Kenneth Reitz released it.  It takes away so much boilerplate from running background tasks that I use it in more places than I probably should. After taking a look at that post today, I wanted to put a better data science example in here to help folks get started." name="description" property="description"/>
+  <meta content="This post is intended as an extension/update from [background tasks in python](https://waylonwalker.com/background-1/). I started using `background` the week that Kenneth Reitz released it.  It takes away so much boilerplate from running background tasks that I use it in more places than I probably should. After taking a look at that post today, I wanted to put a better data science example in here to help folks get started." name="og:description" property="og:description"/>
+  <meta content="This post is intended as an extension/update from [background tasks in python](https://waylonwalker.com/background-1/). I started using `background` the week that Kenneth Reitz released it.  It takes away so much boilerplate from running background tasks that I use it in more places than I probably should. After taking a look at that post today, I wanted to put a better data science example in here to help folks get started." name="twitter:description" property="twitter:description"/>
+  <meta content="Background Tasks in Python for Data Science" name="og:title" property="og:title"/>
+  <meta content="Background Tasks in Python for Data Science" name="twitter:title" property="twitter:title"/>
+  <meta content="Background Tasks in Python for Data Science" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    This post is intended as an extension/update from
+    <a href="https://waylonwalker.com/background-1/">
+     background tasks in python
+    </a>
+    .  I started using
+    <code>
+     background
+    </code>
+    the week that Kenneth Reitz released it.  It takes away so much boilerplate from running background tasks that I use it in more places than I probably should. After taking a look at that post today, I wanted to put a better data science example in here to help folks get started.
+   </p>
+   <blockquote>
+    <p>
+     I use it in more places than I probably should
+    </p>
+   </blockquote>
+   <p>
+    Before we get into it, I want to make a shout out to Kenneth Reitz for making this so easy.  Kenneth is a python God for all that he has given to the community in so many ways, especially with his ideas in building stupid simple api's for very complicated things.
+   </p>
+   <h2>
+    Installation
+   </h2>
+   <h3>
+    install via pip
+   </h3>
+   <pre class="highlight"><code>pip install background
+</code></pre>
+   <h3>
+    install via github
+   </h3>
+   <p>
+    I believe one of the later pr's to the project fixes the way arguments are passed in.  I generally clone the repo or copy the module directly into my project.
+   </p>
+   <p>
+    <strong>
+     clone it
+    </strong>
+   </p>
+   <pre class="highlight"><code>git clone https://github.com/ParthS007/background.git
+cd background
+python setup.py install
+</code></pre>
+   <p>
+    <strong>
+     copy the module
+    </strong>
+   </p>
+   <pre class="highlight"><code>curl https://raw.githubusercontent.com/ParthS007/background/master/background.py &gt; background.py
+</code></pre>
+   <h2>
+    🐌 The Slow Function
+   </h2>
+   <p>
+    Imagine that this function is a big one!  This function is fairly realistic as it takes in some input and returns a DataFrame.  This is what a good half of my fuctions do in data science.  The internals of this function generally will include a sql query, load from s3 or a data catalog, an aggregation from another DataFrame.  In general it should do one simple thing.
+   </p>
+   <p>
+    <strong>
+     Feel Free to copy this "boilerplate"
+    </strong>
+   </p>
+   <pre class="highlight"><code class="language-python">import background
+from time import sleep
+import pandas as pd
+
+@background.task
+def long_func(i):
+    """
+    Simulates fetching data from a service
+    and returning a pandas DataFrame.
+
+    """
+    sleep(10)
+    return pd.DataFrame({'number_squared': [i**2]})</code></pre>
+   <h2>
+    Calling the Slow Function
+   </h2>
+   <p>
+    <em>
+     it's the future calling 🤙
+    </em>
+   </p>
+   <p>
+    If we were to call this function 10 times it would take 100s.  Not bad for a dumb example, but detrimental when this gets scaled up💥.  We want to utilize all of our available resources to reduce our development time and get moving on our project.
+   </p>
+   <p>
+    Calling
+    <code>
+     long_func
+    </code>
+    will return a future object.  This object has a number of methods that you can read about in the
+    <a href="https://docs.python.org/3/library/concurrent.futures.html#future-objects">
+     cpython docs
+    </a>
+    .  The main one we are interested in is
+    <code>
+     result
+    </code>
+    .  I typically call these functions many times and put them into a list object so that I can track their progress and get their results.  If you needed to map inputs back to the result use a dictionary.
+   </p>
+   <pre class="highlight"><code class="language-python">%time futures = [long_func(i) for i in range(10)]
+
+CPU times: user 319 µs, sys: 197 µs, total: 516 µs
+Wall time: 212 µs</code></pre>
+   <h2>
+    Do something with those
+    <code>
+     results()
+    </code>
+   </h2>
+   <p>
+    Simply running the function completes in no time! This is because the future objects that are returned are non blocking and will run in a background task using the
+    <code>
+     ProcessPoolExecutor
+    </code>
+    .  To get the result back out we need to call the
+    <code>
+     result
+    </code>
+    method on the future object.
+    <code>
+     result
+    </code>
+    is a blocking function that will not realease until the function has completed.
+   </p>
+   <pre class="highlight"><code class="language-python">%%time
+futures = [long_func(i) for i in range(10)]
+pd.concat([future.result() for future in futures])
+
+CPU times: user 5.38 ms, sys: 3.53 ms, total: 8.9 ms
+Wall time: 10 s</code></pre>
+   <p>
+    Note that this example completed in
+    <code>
+     10s
+    </code>
+    , the time it took for only one run, not all 10! 😎
+   </p>
+   <h2>
+    n
+   </h2>
+   <p>
+    😫
+    <em>
+     crank it up
+    </em>
+   </p>
+   <p>
+    By default the number of parallel processes wil be equal to the number of cpu threads on your machine. To increase the number of parallel processes (
+    <code>
+     max_workers
+    </code>
+    ) set increase
+    <code>
+     background.n
+    </code>
+    .
+   </p>
+   <pre class="highlight"><code class="language-python">background.n = 100</code></pre>
+   <h1>
+    Is it possible to overruse @background.task?
+   </h1>
+   <p>
+    I use this essentially anywhere that I cannot vectorize a python operation and push the compute down into those fast 💨 c extended libraries like numpy, and the operation takes more than a few minutes.  Nearly every big network request I make gets broken down into chunks and multithreaded.  Let me know... is is possible to overruse
+    <code>
+     @background.task
+    </code>
+    ? Let me know your thoughts
+    <a href="https://twitter.com/_WaylonWalker">
+     @_WaylonWalker
+    </a>
+    .
+   </p>
+   <h1>
+    Repl.It
+   </h1>
+   <p>
+    Play with the code here!  Try different values of background.n and n_runs.
+   </p>
+   <iframe allowfullscreen="true" allowtransparency="true" frameborder="no" height="800px" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals" scrolling="no" src="https://repl.it/@WaylonWalker/TestRepl?lite=true" width="100%">
+   </iframe>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

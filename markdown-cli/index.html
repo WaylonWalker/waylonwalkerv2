@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Markdown Cli
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="This is a post that may be a work in progress for awhile, Its a collections of
+thoughts on managing my blog, but could be translated into anythiung that is
+just a collection of markdown." name="description" property="description"/>
+  <meta content="This is a post that may be a work in progress for awhile, Its a collections of
+thoughts on managing my blog, but could be translated into anythiung that is
+just a collection of markdown." name="og:description" property="og:description"/>
+  <meta content="This is a post that may be a work in progress for awhile, Its a collections of
+thoughts on managing my blog, but could be translated into anythiung that is
+just a collection of markdown." name="twitter:description" property="twitter:description"/>
+  <meta content="Markdown Cli" name="og:title" property="og:title"/>
+  <meta content="Markdown Cli" name="twitter:title" property="twitter:title"/>
+  <meta content="Markdown Cli" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    This is a post that may be a work in progress for awhile, Its a collections of
+thoughts on managing my blog, but could be translated into anythiung that is
+just a collection of markdown.
+   </p>
+   <h2>
+    Listing things
+   </h2>
+   <ul>
+    <li>
+     posts
+    </li>
+    <li>
+     tags
+    </li>
+    <li>
+     draft posts
+    </li>
+   </ul>
+   <h2>
+    data
+   </h2>
+   <ul>
+    <li>
+     frontmatter
+    </li>
+    <li>
+     filepath
+    </li>
+    <li>
+     content
+    </li>
+    <li>
+     template
+    </li>
+    <li>
+     html
+    </li>
+   </ul>
+   <h2>
+    render content
+   </h2>
+   <ul>
+    <li>
+     Markdown.Markdown
+    </li>
+    <li>
+     support extentsions
+    </li>
+   </ul>
+   <h2>
+    frontmatter cleaning.
+   </h2>
+   <ul>
+    <li>
+     provide ways to hook in or clean up the frontmatter
+    </li>
+   </ul>
+   <h2>
+    Markata.Markata methods
+   </h2>
+   <ul>
+    <li>
+     load
+    </li>
+    <li>
+     render
+    </li>
+    <li>
+     save
+    </li>
+   </ul>
+   <h2>
+    Markata.Post methods
+   </h2>
+   <ul>
+    <li>
+     load
+    </li>
+    <li>
+     render
+    </li>
+    <li>
+     save
+    </li>
+   </ul>
+   <h2>
+    Markata plugins
+   </h2>
+   <ul>
+    <li>
+     before_load
+    </li>
+    <li>
+     before_post_load
+    </li>
+    <li>
+     after_load
+    </li>
+    <li>
+     after_post_load
+    </li>
+    <li>
+     before_save
+    </li>
+    <li>
+     before_post_save
+    </li>
+    <li>
+     after_save
+    </li>
+    <li>
+     after_post_save
+    </li>
+   </ul>
+   <h2>
+    Markata plugins
+   </h2>
+   <ul>
+    <li>
+     cleanse_frontmatter
+    </li>
+    <li>
+     html_feed
+    </li>
+    <li>
+     json_feed
+    </li>
+    <li>
+     rss_feed
+    </li>
+    <li>
+     save_posts
+    </li>
+   </ul>
+   <h2>
+    CLI
+   </h2>
+   <pre class="highlight"><code class="language-bash">$ markata list tags
+
+python
+data</code></pre>
+   <pre class="highlight"><code class="language-bash">$ markata
+
+[
+  { 
+    "title": "post title",
+    "description": "this is a post",
+    "filepath": "path_to.md",
+    "content": "the content of the post",
+    "html": "&lt;p&gt;the content of the post&lt;/p&gt;"
+    },
+    ...
+]</code></pre>
+   <pre class="highlight"><code class="language-bash"></code></pre>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

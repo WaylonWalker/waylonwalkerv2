@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Four Github Actions for Python
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="If you are developing python packages and using GitHub here are four actions that you can use today to automate your release workflow.  Since python tools generally have such a simple cli I have opted to use the cli for most of these, that way I know exactly what is happening and have more control over it if I need." name="description" property="description"/>
+  <meta content="If you are developing python packages and using GitHub here are four actions that you can use today to automate your release workflow.  Since python tools generally have such a simple cli I have opted to use the cli for most of these, that way I know exactly what is happening and have more control over it if I need." name="og:description" property="og:description"/>
+  <meta content="If you are developing python packages and using GitHub here are four actions that you can use today to automate your release workflow.  Since python tools generally have such a simple cli I have opted to use the cli for most of these, that way I know exactly what is happening and have more control over it if I need." name="twitter:description" property="twitter:description"/>
+  <meta content="Four Github Actions for Python" name="og:title" property="og:title"/>
+  <meta content="Four Github Actions for Python" name="twitter:title" property="twitter:title"/>
+  <meta content="Four Github Actions for Python" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <style>
+    h2 img { width: 100%; box-shadow: .5rem .5rem 3rem #141F2D, -.5rem -.5rem 3rem rgba(255,255,255,.1);}
+img{ max-width: 100% !important;}
+   </style>
+   <p>
+    If you are developing python packages and using GitHub here are four actions that you can use today to automate your release workflow.  Since python tools generally have such a simple cli I have opted to use the cli for most of these, that way I know exactly what is happening and have more control over it if I need.
+   </p>
+   <ul>
+    <li>
+     Lint
+    </li>
+    <li>
+     Test
+    </li>
+    <li>
+     Package
+    </li>
+    <li>
+     Upload to PyPi
+    </li>
+   </ul>
+   <h2>
+    <img alt="Lint With flake8" src="https://waylonwalker.com/gh-actions-python-headers/1.png"/>
+   </h2>
+   <p>
+    flake8 is pythons quintessential linting tool to ensure that your code is up to the standards that you have set for the project, and to help prevent hidden bugs.  I am a heavy user of
+    <code>
+     black
+    </code>
+    and
+    <code>
+     isort
+    </code>
+    as well, but for ci flake8 is typically considered the gold standard.
+    <code>
+     black
+    </code>
+    and
+    <code>
+     isort
+    </code>
+    will help you automate many fixes suggested by flake8.
+   </p>
+   <pre class="highlight"><code class="language-yaml">    - name: Lint with flake8
+      run: |
+        pip install flake8 isort black
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics</code></pre>
+   <h2>
+    <img alt="Testing with pytest" src="https://waylonwalker.com/gh-actions-python-headers/2.png"/>
+   </h2>
+   <p>
+    pytest is such an amazing project, definitely one to check out and start using if you are not already doing so.
+   </p>
+   <pre class="highlight"><code class="language-yaml">    - name: Test with pytest
+      run: |
+         pip install pytest
+         pytest</code></pre>
+   <h2>
+    <img alt="Building with setuptools" src="https://waylonwalker.com/gh-actions-python-headers/3.png"/>
+   </h2>
+   <p>
+    I am still using the older, less hipster, setuptools to build my projects.  Primarily because I am used to to, partly because things such as editable installs are not possible with the newer build tools, and I am a
+    <strong>
+     HEAVY
+    </strong>
+    user of editable installs.
+   </p>
+   <pre class="highlight"><code>    - name: build
+      run: |
+        pip install wheel
+        python setup.py sdist bdist_wheel</code></pre>
+   <h2>
+    <img alt="Publishing to pypi" src="https://waylonwalker.com/gh-actions-python-headers/4.png"/>
+   </h2>
+   <p>
+    Here I am going to use an amazing action from the GitHub marketplace by @webKnjaZ.  It is super simple.  First you need to log into your
+    <a href="https://pypi.org">
+     pypi.org
+    </a>
+    account, go to account settings, enable 2FA, and add a Token, then paste that toke into a secret inside your repos settings.  Next just drop the name of that secret into the password field of the action and you are off.
+   </p>
+   <p>
+    <strong>
+     note
+    </strong>
+    : I did put a check in to make sure that push event comes from main.
+   </p>
+   <pre class="highlight"><code class="language-yaml">    - name: pypi-publish
+      if: github.ref == 'refs/heads/main'
+      uses: pypa/gh-action-pypi-publish@v1.1.0
+      with:
+        # PyPI user
+        # Password for your PyPI user or an access token
+        password: ${{ secrets.pypi_password }}
+        # The repository URL to use
+        # repository_url: # optional
+        # The target directory for distribution
+        # packages_dir: # optional, default is dist</code></pre>
+   <h2>
+    That's my four top python actions
+   </h2>
+   <p>
+    These are the easiest and most basic four actions that every python project on GitHub should have.  Now that actions are available for free on any public repo there is no reason not to use GitHub Actions for any new project.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

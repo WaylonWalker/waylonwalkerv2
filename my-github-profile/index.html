@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   How I Built My GitHub Profile
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="" name="description" property="description"/>
+  <meta content="" name="og:description" property="og:description"/>
+  <meta content="" name="twitter:description" property="twitter:description"/>
+  <meta content="How I Built My GitHub Profile" name="og:title" property="og:title"/>
+  <meta content="How I Built My GitHub Profile" name="twitter:title" property="twitter:title"/>
+  <meta content="How I Built My GitHub Profile" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    I ran a discussion on dev that collected quite a list of examples in the comment section.  So many great calls to action, animations, memes, and weird tricks.
+   </p>
+   <p>
+    <a href="https://dev.to/waylonwalker/what-s-on-your-github-profile-40p3">
+     <img alt="dev.to whats-on-your-github-profile" src="https://waylonwalker.com/whats-on-your-github-profile.png"/>
+    </a>
+   </p>
+   <h2>
+    My current profile
+   </h2>
+   <p>
+    <a href="https://github.com/waylonwalker/">
+     <img alt="Waylon Walkers GitHub profile" src="https://waylonwalker.com/github-profile.png"/>
+    </a>
+   </p>
+   <h2>
+    social icons
+   </h2>
+   <p>
+    Upload all of your icons to the repo in a directory such as
+    <code>
+     icons
+    </code>
+    or
+    <code>
+     assets
+    </code>
+    , then link them with a
+    <code>
+     height
+    </code>
+    attribute like below.  I used html for mine, not sure if you can set the
+    <code>
+     height
+    </code>
+    in markdown.
+   </p>
+   <pre class="highlight"><code class="language-markdown">&lt;a href="https://dev.to/waylonwalker"&gt;&lt;img height="30" src="https://raw.githubusercontent.com/WaylonWalker/WaylonWalker/main/icon/dev.png"&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;</code></pre>
+   <p>
+    <strong>
+     note
+    </strong>
+    I did add a bit of
+    <code>
+     &amp;nbsp;
+    </code>
+    (non-breaking-whitespace) between my icons.  Without adding css this seemed like the simplest way to do it.
+   </p>
+   <h2>
+    Center
+   </h2>
+   <p>
+    Aligning things in the center of the readme is super simple.  I used this trick to align my social icons in the middle.
+   </p>
+   <pre class="highlight"><code class="language-markdown">&lt;p align='center'&gt;
+ ...html
+&lt;/p&gt;
+</code></pre>
+   <h2>
+    right
+   </h2>
+   <p>
+    For my
+    <a href="https://waylonwalker.com/latest">
+     latest post
+    </a>
+    I floated it to the right with a little bit of
+    <code>
+     align='right'
+    </code>
+    action.
+   </p>
+   <pre class="highlight"><code class="language-markdown">&lt;p&gt;
+  &lt;a href="https://waylonwalker.com/latest"&gt;&lt;img width="400" align='right' src="https://waylonwalker.com/latest.png?raw=true"&gt;&lt;/a&gt;
+&lt;/p&gt;</code></pre>
+   <p>
+    You may need to play with where you put this in the document, and the size of elements to get things to flow right.
+   </p>
+   <h2>
+    redirects
+   </h2>
+   <p>
+    In order to keep my latest post always up to date on my readme I implemented a netlify redirect to always point to my latest post.  As a digital gardener this helps me keep pointed to a the best one in my opinion.  Any automated way would pick up half finished posts.
+   </p>
+   <pre class="highlight"><code># /static/_redirects
+# netlify redirects
+
+# latest post
+/latest            /blog/kedro-catalog-search/
+/latest.png        /kedro-catalog-search.png</code></pre>
+   <p>
+    Now I can reference both the post and the post cover image.
+   </p>
+   <h2>
+    summary/details
+   </h2>
+   <p>
+    I also wanted to list out a few of my favorite posts without taking up a ton of space, so I used
+    <code>
+     details
+    </code>
+    and
+    <code>
+     summary
+    </code>
+    tags so that it would collapse.
+   </p>
+   <pre class="highlight"><code class="language-markdown">&lt;details&gt;
+ &lt;summary&gt;&lt;strong&gt;other favorite posts&lt;/strong&gt;&lt;/summary&gt;
+ &lt;a href="https://waylonwalker.com/eight-years-cat/"&gt;&lt;img width="400" src="https://waylonwalker.com/eight-years-cat.png?raw=true"&gt;&lt;/a&gt;
+ &lt;a href="https://waylonwalker.com/keyboard-driven-vscode/"&gt;&lt;img width="400" src="https://waylonwalker.com/alt%20b.png?raw=true"&gt;&lt;/a&gt;
+ &lt;a href="https://waylonwalker.com/what-are-github-actions/"&gt;&lt;img width="400" src="https://waylonwalker.com/what-are-github-actions.png?raw=true"&gt;&lt;/a&gt;
+
+&lt;/details&gt;</code></pre>
+   <p>
+    Go ham on your profile, its your own slice of GitHub to completely personalize and speak your brand.  Give a powerfule call to action, share a funny meme, record a wicked cool GIF, its your space.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

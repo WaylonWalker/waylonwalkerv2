@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   If Tmux
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="I do much of my work from tmux, I love it so much that I want to setup some functionality that puts me in tmux even if I didnt ask for it. Bash function to check if the shell is in a tmux session. I often open up vim to do some quite edits, but befor" name="description" property="description"/>
+  <meta content="I do much of my work from tmux, I love it so much that I want to setup some functionality that puts me in tmux even if I didnt ask for it. Bash function to check if the shell is in a tmux session. I often open up vim to do some quite edits, but befor" name="og:description" property="og:description"/>
+  <meta content="I do much of my work from tmux, I love it so much that I want to setup some functionality that puts me in tmux even if I didnt ask for it. Bash function to check if the shell is in a tmux session. I often open up vim to do some quite edits, but befor" name="twitter:description" property="twitter:description"/>
+  <meta content="If Tmux" name="og:title" property="og:title"/>
+  <meta content="If Tmux" name="twitter:title" property="twitter:title"/>
+  <meta content="If Tmux" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    I do much of my work from tmux, I love it so much that I want to setup some functionality that puts me in tmux even if I didnt ask for it.
+   </p>
+   <h2>
+    Bash Function
+   </h2>
+   <p>
+    Bash function to check if the shell is in a tmux session.
+   </p>
+   <pre class="highlight"><code class="language-bash">in_tmux () {
+  if [ -n "$TMUX" ]; then
+    return 0
+  else
+    return 1
+  fi
+  }</code></pre>
+   <h2>
+    Using the bash function
+   </h2>
+   <p>
+    I often open up vim to do some quite edits, but before I know it I have several splits open and I need access to another shell utility, but I forgot to start in tmux.  This function makes sure tht I start in tmux everytime.
+   </p>
+   <p>
+    Using
+    <code>
+     if_tmux
+    </code>
+    to ensure vim is opened in tmux.
+   </p>
+   <pre class="highlight"><code class="language-bash">vim () { 
+  in_tmux \
+    &amp;&amp; nvim \
+    || bash -c "\
+    tmux new-session -d;\
+    tmux send-keys nvim Space +GFiles C-m;\
+    tmux -2 attach-session -d;
+    "
+  }</code></pre>
+   <p>
+    I am not quite sure if this is proper use of the
+    <code>
+     &amp;&amp;
+    </code>
+    and
+    <code>
+     ||
+    </code>
+    , let me know if you have a better way to do one thing if
+    <code>
+     in_tmux
+    </code>
+    returns true and another if it returns faslse.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   creating the kedro-preflight hook
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="Kedro Hooks Intro - kedro hooks are an exciting upcoming feature of kedro `0.16.0`.  They allow you to hook into `catalog_created`,`pipeline_run`, and `node_run`(nouns). With a `before`, or `after` (adjective).  This really reminds me of reacts lifecycle hooks, that let you hook into various state of react web components.  This is going to make kedro so extendable by the community.  I am super pumped to see what the community is able to do with this ability." name="description" property="description"/>
+  <meta content="Kedro Hooks Intro - kedro hooks are an exciting upcoming feature of kedro `0.16.0`.  They allow you to hook into `catalog_created`,`pipeline_run`, and `node_run`(nouns). With a `before`, or `after` (adjective).  This really reminds me of reacts lifecycle hooks, that let you hook into various state of react web components.  This is going to make kedro so extendable by the community.  I am super pumped to see what the community is able to do with this ability." name="og:description" property="og:description"/>
+  <meta content="Kedro Hooks Intro - kedro hooks are an exciting upcoming feature of kedro `0.16.0`.  They allow you to hook into `catalog_created`,`pipeline_run`, and `node_run`(nouns). With a `before`, or `after` (adjective).  This really reminds me of reacts lifecycle hooks, that let you hook into various state of react web components.  This is going to make kedro so extendable by the community.  I am super pumped to see what the community is able to do with this ability." name="twitter:description" property="twitter:description"/>
+  <meta content="creating the kedro-preflight hook" name="og:title" property="og:title"/>
+  <meta content="creating the kedro-preflight hook" name="twitter:title" property="twitter:title"/>
+  <meta content="creating the kedro-preflight hook" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    kedro hooks are an exciting upcoming feature of kedro
+    <code>
+     0.16.0
+    </code>
+    .  They allow you to hook into
+    <code>
+     catalog_created
+    </code>
+    ,
+    <code>
+     pipeline_run
+    </code>
+    , and
+    <code>
+     node_run
+    </code>
+    (nouns). With a
+    <code>
+     before
+    </code>
+    , or
+    <code>
+     after
+    </code>
+    (adjective).  This really reminds me of reacts lifecycle hooks, that let you hook into various state of react web components.  This is going to make kedro so extendable by the community.  I am super pumped to see what the community is able to do with this ability.
+   </p>
+   <p>
+    <a href="https://waylonwalker.com/what-is-kedro">
+     https://waylonwalker.com/what-is-kedro
+    </a>
+   </p>
+   <blockquote>
+    <p>
+     If you are completely unsure what kedro is be sure to check out my what is kedro post
+    </p>
+   </blockquote>
+   <h2>
+    Docs
+   </h2>
+   <p>
+    <em>
+     a work in progress
+    </em>
+   </p>
+   <p>
+    As this is a part of an upcoming release you will need to look in the
+    <code>
+     latest
+    </code>
+    docs,
+    <strong>
+     not
+    </strong>
+    <code>
+     stable
+    </code>
+    and you will find a
+    <a href="https://kedro.readthedocs.io/en/latest/04_user_guide/15_hooks.html?highlight=hooks">
+     15_hoooks
+    </a>
+    page.  As these docs are still in development they are not very complete at this point and do require a bit more existing
+    <code>
+     kedro
+    </code>
+    knowledge to understand.  I am sure they will get much better as we approach the realease of hooks.
+   </p>
+   <blockquote>
+    <p>
+     This doesn't mean that we can't still install the latest/unstable version and have some fun learning!
+    </p>
+   </blockquote>
+   <h2>
+    Installation
+   </h2>
+   <p>
+    <em>
+     Straight from GitHub
+    </em>
+   </p>
+   <p>
+    As this is part of an upcoming release you will need to get the library straight from github.  Since this is not a stable release of
+    <code>
+     kedro
+    </code>
+    I cannot express the importance of using a virtual environment enough.  Trying to install this version in the same place that you are trying to develop a pipeline potentially break your existing working development environment.
+   </p>
+   <pre class="highlight"><code class="language-bash">conda create -n kedro0160 -y
+conda activate kedro0160 # may also be source activate kedro0160 or activate kedro0160
+pip install git+https://github.com/quantumblacklabs/kedro.git
+pip install colorama</code></pre>
+   <blockquote>
+    <p>
+     <strong>
+      note
+     </strong>
+     the version is still somewhere between
+     <code>
+      0.15.9
+     </code>
+     and
+     <code>
+      0,16.0
+     </code>
+     .
+     <code>
+      kedro.__version__
+     </code>
+     will still be
+     <code>
+      0.15.9
+     </code>
+     and wiill not roll until the official release.
+    </p>
+   </blockquote>
+   <h2>
+    Create a sample project
+   </h2>
+   <blockquote>
+    <h3>
+     Kedro new
+    </h3>
+    <p>
+     For more details check out my full post on
+     <a href="https://waylonwalker.com/knew">
+      kedro new
+     </a>
+    </p>
+   </blockquote>
+   <p>
+    For this post I really just want a working pipeline as fast as possible.  For this I am going to use iris pipeline that is generated from the
+    <code>
+     kedro new
+    </code>
+    command in the cli.  It's
+    <strong>
+     important
+    </strong>
+    that you answer
+    <code>
+     y
+    </code>
+    to create an example pipeline.
+   </p>
+   <blockquote>
+    <h3>
+     Hold On ✋
+    </h3>
+    <p>
+     Did you create a separate environment for this?  Please do.
+    </p>
+   </blockquote>
+   <pre class="highlight"><code class="language-bash">kedro new</code></pre>
+   <p>
+    After you run the
+    <code>
+     kedro new
+    </code>
+    command it will ask a series of questions.  👇 Here is how I answered them.
+   </p>
+   <pre class="highlight"><code class="language-bash">Project Name:
+=============
+Please enter a human readable name for your new project.
+Spaces and punctuation are allowed.
+ [New Kedro Project]: Kedro Hooks
+Repository Name:
+================
+Please enter a directory name for your new project repository.
+Alphanumeric characters, hyphens and underscores are allowed.
+Lowercase is recommended.
+ [kedro-hooks]:
+Python Package Name:
+====================
+Please enter a valid Python package name for your project package.
+Alphanumeric characters and underscores are allowed.
+Lowercase is recommended. Package name must start with a letter or underscore.
+ [kedro_hooks]:
+Generate Example Pipeline:
+==========================
+Do you want to generate an example pipeline in your project?
+Good for first-time users. (default=N)
+ [y/N]: y
+Change directory to the project generated in /mnt/c/temp/kedro-hooks/
+A best-practice setup includes initialising git and creating a virtual environment before running `kedro install` to install project-specific dependencies. Refer to the Kedro documentation: https://kedro.readthedocs.io/</code></pre>
+   <h3>
+    Install the Project
+   </h3>
+   <p>
+    Next install the project itself and all of its dependencies with the
+    <code>
+     kedro install
+    </code>
+    command.
+   </p>
+   <pre class="highlight"><code class="language-bash">cd kedro-hooks
+kedro install</code></pre>
+   <h3>
+    🏃‍♀️ Run the pipeline
+   </h3>
+   <p>
+    Before we start developing any hooks lets make sure everything is setup correctly by running the pipeline with
+    <code>
+     kedro run
+    </code>
+    .
+   </p>
+   <pre class="highlight"><code class="language-bash">kedro run</code></pre>
+   <h2>
+    Let's make a hook
+   </h2>
+   <p>
+    <em>
+     getting to the meat of the post
+    </em>
+   </p>
+   <p>
+    Now that we have a project scaffolded up and running we can develop a hook for it.  As far as I can tell hooks can be implemented one of
+    <strong>
+     two ways
+    </strong>
+    .  As a
+    <strong>
+     function
+    </strong>
+    inside of a module, then import that module and pass it into the hooks list, or implemented as a method on a
+    <strong>
+     class
+    </strong>
+    , then the class is passed into the hooks list.  Either method must follow the naming convention with the
+    <code>
+     @hook_impl
+    </code>
+    decorator.  Each module/class can implement more than one hook, but not more than one of the same type. One of each kind will be created below.
+   </p>
+   <h3>
+    Full list of hooks available
+   </h3>
+   <blockquote>
+    <p>
+     <code>
+      before_catalog_created
+     </code>
+    </p>
+    <p>
+     <code>
+      after_catalog_created
+     </code>
+    </p>
+    <p>
+     <code>
+      before_pipeline_run
+     </code>
+    </p>
+    <p>
+     <code>
+      after_pipeline_run
+     </code>
+    </p>
+    <p>
+     <code>
+      before_node_run
+     </code>
+    </p>
+    <p>
+     <code>
+      after_node_run
+     </code>
+    </p>
+   </blockquote>
+   <h2>
+    debug_hook (class)
+   </h2>
+   <p>
+    <em>
+     quick and dirty
+    </em>
+   </p>
+   <p>
+    I highly recommend this as your first hook.  It's super easy to make and lets you explore the arguments passed into the hook.  For this one I am going to pop the following class right into
+    <code>
+     kedro-hooks/src/kedro-hooks/run.py
+    </code>
+    , remember that I chose
+    <code>
+     kedro-hooks
+    </code>
+    as my project name.  Your path might be slightly different.  If you wanted to make a real hook it might make sense to put it in its own module, but for simplicity of your first hook you can put it directly in the same module that it gets implemented.
+   </p>
+   <pre class="highlight"><code class="language-python">class debug_hook:
+    @hook_impl
+    def before_pipeline_run(run_params, pipeline, catalog):
+        "pops into a debugger before pipeline run"
+        print('I hooked in right before the pipeline run')
+        breakpoint()</code></pre>
+   <p>
+    It is really that easy to create a kedro hook!  Now lets apply it to our project.  All we need to do is add one line (
+    <code>
+     hooks = [debug_hook]
+    </code>
+    ) to the existing
+    <code>
+     ProjectContext
+    </code>
+    class within
+    <code>
+     kedro-hooks/src/kedro-hooks/run.py
+    </code>
+    .  Once we do that our
+    <code>
+     ProjectContext
+    </code>
+    will look like this.
+   </p>
+   <pre class="highlight"><code class="language-python">class ProjectContext(KedroContext):
+    """Users can override the remaining methods from the parent class here,
+    or create new ones (e.g. as required by plugins)
+    """
+
+    project_name = "kedro-hooks"
+    # `project_version` is the version of kedro used to generate the project
+    project_version = "0.15.9"
+    package_name = "kedro-hooks"
+
+    hooks = [ debug_hook ] # 👈 This is where you implement the hook
+
+    def _get_pipelines(self) -&gt; Dict[str, Pipeline]:
+        return create_pipelines()</code></pre>
+   <p>
+    Run it!  While you are in the debugger, explore what the
+    <code>
+     run_params
+    </code>
+    ,
+    <code>
+     pipeine
+    </code>
+    , and
+    <code>
+     catalog
+    </code>
+    arguments give you.  This will give you some insight to what to expect when creating your next hook.
+   </p>
+   <h2>
+    preflight hook (module)
+   </h2>
+   <p>
+    <em>
+     giving it a bit more flair
+    </em>
+   </p>
+   <p>
+    Create a new file
+    <code>
+     kedro-hooks/src/kedro-hooks/preflight.py
+    </code>
+    and place the following content into the file.  This will raise a
+    <code>
+     DataSetNotFoundError
+    </code>
+    before wasting time running any of the pipeline.  This could be useful to save some developer time for long running pipelines by warning them that they don't have all of the raw data they need before running.
+   </p>
+   <pre class="highlight"><code class="language-python"># kedro-hooks/src/kedro-hooks/preflight.py
+from kedro.hooks import hook_impl
+from kedro.io.core import DataSetNotFoundError
+from colorama import Fore
+import textwrap
+
+
+@hook_impl
+def before_pipeline_run(run_params, pipeline, catalog):
+    missing_input = [i for i in pipeline.inputs() if not getattr(catalog.datasets, i)._exists()]
+    if len(missing_input) != 0:
+        raise DataSetNotFoundError(textwrap.dedent(f'''
+
+    {Fore.LIGHTBLACK_EX}――――――――  {Fore.RED}PREFLIGHT ERROR {Fore.LIGHTBLACK_EX}―――――――――
+    {Fore.RESET} preflight of pipeline failed due to {Fore.YELLOW}missing datasets
+    {Fore.BLUE} {missing_input}{Fore.RESET}
+    '''))</code></pre>
+   <p>
+    Once we are happy with this hook, it can live anywhere.  It can be a module inside our project.  It can be a separate libarary that gets handed out as a back ally wheel, or we can even publish it as its own package to pypi so that anyone can easily pip install it.
+   </p>
+   <h3>
+    One Step Back
+   </h3>
+   <p>
+    <em>
+     a bit of explanation of preflight
+    </em>
+   </p>
+   <p>
+    If you are not familiar,
+    <code>
+     pipeline.inputs()
+    </code>
+    gives us all of the edge inputs into the pipeline.  kedro does also have a
+    <code>
+     pipeline.all_inputs()
+    </code>
+    that tells us all of the edge and internal pipeline inputs that will be called throughout the pipeline run.  For this hook we are just concerned with the edge inputs as internal inputs will be generated during the run.
+   </p>
+   <p>
+    Also each one of the kedro datasets have an
+    <code>
+     _exists()
+    </code>
+    method attached to them to check if the dataset exists or not.  For a more robust implementation of
+    <code>
+     preflight
+    </code>
+    it would probably be best to ignore
+    <code>
+     AttributeError
+    </code>
+    s, i.e the dataset type does not have an implementation of
+    <code>
+     _exists
+    </code>
+    .  It would probably also be a good idea to filter for types such as
+    <code>
+     SQLQueryDataSet
+    </code>
+    s that assume
+    <code>
+     _exists
+    </code>
+    is False by default.
+   </p>
+   <h2>
+    Ideas
+   </h2>
+   <p>
+    Now that the juices are flowing what ideas do you have for
+    <code>
+     kedro
+    </code>
+    hooks?
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

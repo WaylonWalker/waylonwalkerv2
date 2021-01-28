@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Three things to Automate with Python using Pandas
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="Here are three things that I see my non programming counterparts doing every single day.  These really sum up so much of what folks do within an office." name="description" property="description"/>
+  <meta content="Here are three things that I see my non programming counterparts doing every single day.  These really sum up so much of what folks do within an office." name="og:description" property="og:description"/>
+  <meta content="Here are three things that I see my non programming counterparts doing every single day.  These really sum up so much of what folks do within an office." name="twitter:description" property="twitter:description"/>
+  <meta content="Three things to Automate with Python using Pandas" name="og:title" property="og:title"/>
+  <meta content="Three things to Automate with Python using Pandas" name="twitter:title" property="twitter:title"/>
+  <meta content="Three things to Automate with Python using Pandas" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    Here are three things that I see my non programming counterparts doing every single day.  These really sum up so much of what folks do within an office.  So many of us dabble in or become power users of spreadsheets without knowing there is an alternative out there that can save us time, automate boring things, and allow us to open up our minds for the part that we add value, Thinking about the data.
+   </p>
+   <h2>
+    Focus on Value Add Operations
+   </h2>
+   <p>
+    Lets face it, stitching together spreadsheets is zero value add by itself, but if you can see something in the data and take action on it, this can be huge value add to your company. Learning just a bit of python will help focus more of your attention on "value add operations" and leave the mundane stuff to your computer.
+   </p>
+   <h2>
+    Merge a directory full of spreadsheets into one
+   </h2>
+   <p>
+    I see this one all the time.  One team gets a spreadsheet from another team once per month and they need to stich all the pieces together.  Excel really opens the door for some nasty hidden bugs in your manually stiched together data.  It also takes time out of your day that you dont need to spend.
+   </p>
+   <pre class="highlight"><code class="language-python">import pandas as pd
+from pathlib import Path
+
+files = Path.glob('raw/*.csv')
+csvs = [pd.read_csv(file) for file in files]
+csvs_combined = pd.concat(csvs)
+csvs_combined.to_csv('processed/combined.csv')</code></pre>
+   <h2>
+    Fetch data from a url
+   </h2>
+   <p>
+    It might be possible that the other team shares their data on a website.  If you can get access to the data via a url, as in the example below there is no need to go to the website to save the data every week/month, you can have python do that for you.  It's very likely that you will need to combine this with step one in many workflows.  Now your data compiling can be done in one single running of a script.  Your data is still in a format that excel can read and you can stick with a hybrid workflow while you become comfortable in python.
+   </p>
+   <p>
+    There is no shame in opening excel to do something in 5 minutes that would take an hour of research to do in python.  If you stick to it though, piece by piece everything will come together.  You will be able to do more in python than you could imagine in excel and you will wonder how you did it without the help of python.
+   </p>
+   <pre class="highlight"><code class="language-python">import pandas as pd
+
+cars_url = 'https://www.kaggle.com/abineshkumark/carsdata/download/xrvGk4JtQZJZetxwsCCy%2Fversions%2Fl2HR9tTLKz8MzHMAjBcl%2Ffiles%2Fcars.csv?datasetVersionNumber=1'
+cars = pd.read_csv(cars_url)
+
+cars.to_csv('cars.csv')</code></pre>
+   <h2>
+    Fetch data from a database
+   </h2>
+   <p>
+    This one can be a bit trickier, often requires hunting down tables that are undocumented. Getting access, and figuring out the crednetials.  If you can get over that hump though it is likely that you will have access to several data source that you typically use in one place.  From there you can learn how to join them together to create powerful workflows.
+   </p>
+   <p>
+    SQL can be a very daunting language to learn but if you spend an hour with it you will know enough to at least get the data into python or excel.  You can continue to hone your sql skills and move more of your aggregation/analysis into the database for better performance.  If you are asking for 1M rows for a 10 row report the efficiency gains of doing that aggregation in the database and not sending 1M rows over the wire can be immense.
+   </p>
+   <pre class="highlight"><code class="language-python">import pandas as pd
+from sqlalchemy import create engine
+
+engine = create_engine('postgresql://scott:tiger@localhost:5432/mydatabase')
+
+sql = 'select * from inventory'
+
+with engine.connect() as connection:
+    inventory = pd.read_sql(sql, con)
+engine.dispose()
+
+inventory.to_csv('cars')</code></pre>
+   <h2>
+    Learning to automate has value
+   </h2>
+   <p>
+    I often see folks joking that developers will spend 10 minutes to automate a 1 minute task that they will only ever do once.  There is definitely a limit to when your time is more valueable just doing the task and moving on, but as you hone your skills you will get much faster.
+   </p>
+   <p>
+    Things that needed research slowly become intuitive.  Things that used to be brain twisting 50 lines can be an easy to read 12.
+   </p>
+   <p>
+    Slowly you get better.
+   </p>
+   <p>
+    Things that were unfeasible become part of your wheelhouse.
+   </p>
+   <p>
+    Give value to the learning process of automating tasks.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

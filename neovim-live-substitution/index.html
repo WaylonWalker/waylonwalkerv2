@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Live Substitution In Neovim
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="Replacing text in vim can be quite frustrating especially since it doesn't have
+live feedback to what is changing. Today I was watching Josh Branchaud's
+Vim-Unalphabet series on Youtuve and realized that his vim was doing this and I
+had to have it. h" name="description" property="description"/>
+  <meta content="Replacing text in vim can be quite frustrating especially since it doesn't have
+live feedback to what is changing. Today I was watching Josh Branchaud's
+Vim-Unalphabet series on Youtuve and realized that his vim was doing this and I
+had to have it. h" name="og:description" property="og:description"/>
+  <meta content="Replacing text in vim can be quite frustrating especially since it doesn't have
+live feedback to what is changing. Today I was watching Josh Branchaud's
+Vim-Unalphabet series on Youtuve and realized that his vim was doing this and I
+had to have it. h" name="twitter:description" property="twitter:description"/>
+  <meta content="Live Substitution In Neovim" name="og:title" property="og:title"/>
+  <meta content="Live Substitution In Neovim" name="twitter:title" property="twitter:title"/>
+  <meta content="Live Substitution In Neovim" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    Replacing text in vim can be quite frustrating especially since it doesn't have
+live feedback to what is changing. Today I was watching Josh Branchaud's
+Vim-Unalphabet series on Youtuve and realized that his vim was doing this and I
+had to have it.
+   </p>
+   <p>
+    <a href="https://twitter.com/_WaylonWalker/status/1346081617199198210">
+     https://twitter.com/_WaylonWalker/status/1346081617199198210
+    </a>
+   </p>
+   <h2>
+    How to do it.
+   </h2>
+   <p>
+    I had to do a bit of searching and found a great post from
+    <a href="http://vimcasts.org/episodes/neovim-eyecandy/">
+     vimcasts
+    </a>
+    that shows exactly how to get the live search and replace highlighting using
+    <code>
+     inccomand
+    </code>
+   </p>
+   <h2>
+    :h inccommand
+   </h2>
+   <pre class="highlight"><code class="language-vim">'inccommand' 'icm'  string  (default "")
+            global
+
+    "nosplit": Shows the effects of a command incrementally, as you type.
+    "split"  : Also shows partial off-screen results in a preview window.
+
+    Works for |:substitute|, |:smagic|, |:snomagic|. |hl-Substitute|
+
+    If the preview is too slow (exceeds 'redrawtime') then 'inccommand' is
+    automatically disabled until |Command-line-mode| is done.
+</code></pre>
+   <h2>
+    Add this to your config
+   </h2>
+   <p>
+    I believe that this is a neovim only feature, add it into your
+    <code>
+     ~/.config/nvim/init.vim
+    </code>
+    file. You can see it in my
+    <a href="https://github.com/WaylonWalker/devtainer/blob/main/dotfiles/.config/nvim/settings.vim#L155">
+     dotfiles
+    </a>
+    as well.
+   </p>
+   <pre class="highlight"><code class="language-vim">set inccommand=nosplit</code></pre>
+   <h2>
+    See it in Action
+   </h2>
+   <p>
+    <img alt="example live
+substitution" src="https://waylonwalker.com/nvim-live-substitute-inccommand.gif"/>
+   </p>
+   <h2>
+    The Video that inspired this
+   </h2>
+   <p>
+    Check out Josh Branchaud's great series on the Vim-Unalphabet.
+   </p>
+   <p>
+    <a href="https://www.youtube.com/watch?v=5jMiYtXz2QA">
+     https://www.youtube.com/watch?v=5jMiYtXz2QA
+    </a>
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

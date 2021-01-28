@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Avoid Nesting Loops in Python
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="Nesting loops inside of each other in python makes for much harder code to understand, it takes more brain power to understand, and is thus more error prone than if its avoidable.  One issue with this complexity is that toy examples may make sense, b" name="description" property="description"/>
+  <meta content="Nesting loops inside of each other in python makes for much harder code to understand, it takes more brain power to understand, and is thus more error prone than if its avoidable.  One issue with this complexity is that toy examples may make sense, b" name="og:description" property="og:description"/>
+  <meta content="Nesting loops inside of each other in python makes for much harder code to understand, it takes more brain power to understand, and is thus more error prone than if its avoidable.  One issue with this complexity is that toy examples may make sense, b" name="twitter:description" property="twitter:description"/>
+  <meta content="Avoid Nesting Loops in Python" name="og:title" property="og:title"/>
+  <meta content="Avoid Nesting Loops in Python" name="twitter:title" property="twitter:title"/>
+  <meta content="Avoid Nesting Loops in Python" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    Nesting loops inside of each other in python makes for much harder code to understand, it takes more brain power to understand, and is thus more error prone than if its avoidable.  One issue with this complexity is that toy examples may make sense, but most real example will grow and become more deeply nested over time.  Avoiding this complexity from the start can help simplify the project in the future.
+   </p>
+   <h2>
+    setup
+   </h2>
+   <p>
+    Lets take a pretty simple example where we are using a ficticious library to get some sales data for our transportation company.  The api allows us to fetch teh sales data for one class of vehicle and one region at a time.
+   </p>
+   <pre class="highlight"><code class="language-python">import pandas as pd
+
+from datastore import get_sales  # ficticious library
+
+cars = ['sedan', 'coupe', 'hatchback']
+regions = ['US', 'CA', 'MX']</code></pre>
+   <h2>
+    ❌ Nesting Loops
+   </h2>
+   <p>
+    We have setup to fetch our data with two lists that represent the vehicles and regions that we want to analyze.  We know that we need to make a call to
+    <code>
+     get_sales
+    </code>
+    for every vehicle and region so nesting loops is a very common first solution to jump to.
+   </p>
+   <pre class="highlight"><code class="language-python">sales = pd.DataFrame()
+for car in cars:
+   for region in regions:
+      new_sales = get_sales(car, region)
+      sales = pd.concat([sales, new_sales])</code></pre>
+   <h2>
+    itertools.product
+   </h2>
+   <p>
+    Python provides us with the beautiful itertools module that allows us to prepare our inputs for this in a much more susynct manner.  The product function of itertools will give us every combination of any number of iterables
+   </p>
+   <pre class="highlight"><code class="language-python">import itertools
+list(itertools.product(cars, regions))</code></pre>
+   <blockquote>
+    <p>
+     note that itertools returns a generator for most if not all functions, list() will turn that into a list that we can see.  This works great for small datasets, but might not be advisable on larger ones.
+    </p>
+   </blockquote>
+   <p>
+    <strong>
+     output
+    </strong>
+   </p>
+   <pre class="highlight"><code class="language-python">[('sedan', 'US'),
+ ('sedan', 'CA'),
+ ('sedan', 'MX'),
+ ('coupe', 'US'),
+ ('coupe', 'CA'),
+ ('coupe', 'MX'),
+ ('hatchback', 'US'),
+ ('hatchback', 'CA'),
+ ('hatchback', 'MX')]</code></pre>
+   <h2>
+    itertools.procuct for loop
+   </h2>
+   <p>
+    Now that we have every comination of our two sets of inputs in a single list, we can iterate over that list one time.
+   </p>
+   <pre class="highlight"><code class="language-python">sales = pd.DataFrame()
+for car, region in itertools.product(cars, regions):
+   new_sales = get_sales(car, region)
+   sales = pd.concat([sales, new_sales])</code></pre>
+   <h2>
+    itertools.product list comprehension
+   </h2>
+   <p>
+    The above follows a python anti-pattern, initialize then edit.  In some cases it might be a bit more readable to do it that way, you can be the judge, but in our simple case we can simply achieve the same results using a list comprehension.
+   </p>
+   <pre class="highlight"><code class="language-python">pd.concat([get_sales(cars, region) for cars, region in itertools.product(cars, regions)])</code></pre>
+   <h2>
+    dictionaries
+   </h2>
+   <pre class="highlight"><code class="language-python">sales_args = {
+   'cars': ['sedan', 'coupe', 'hatchback'],
+   'regions': ['US', 'CA', 'MX'],
+}
+
+pd.concat([get_sales(*sales_arg) for sales_arg in itertools.product(*sales_args.values())])</code></pre>
+   <pre class="highlight"><code class="language-python">sales_args = {
+   'cars': ['sedan', 'coupe', 'hatchback'],
+   'regions': ['US', 'CA', 'MX'],
+   'month': ['MAR', 'APR', 'MAY']
+}
+
+pd.concat([get_sales(*sales_arg) for sales_arg in product(*sales_args.values())])</code></pre>
+   <hr/>
+   <h2>
+    Chaining
+   </h2>
+   <p>
+    <em>
+     containers of containers
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">vehicles = {
+    'cars': ['sedan', 'coupe', 'hatchback'],
+    'trucks': ['light', 'heavy', 'sport', 'offroad'],
+    'van': ['box', 'mini', 'full', ],
+
+}</code></pre>
+   <pre class="highlight"><code>for vehicle in vehicles:
+    for sub_class in vehicles[vehicle]:
+      new_sales = get_sales(sub_class)
+      new_sales['sub_class'] = sub_class
+      new_sales['vehicle'] = vehicle
+      sales = pd.concat([sales, new_sales])</code></pre>
+   <pre class="highlight"><code> list(itertools.chain(*[list(itertools.product([k], v)) for k, v in vehicles.items()]))</code></pre>
+   <p>
+    output
+    <code>
+     [('cars', 'sedan'),
+ ('cars', 'coupe'),
+ ('cars', 'hatchback'),
+ ('trucks', 'light'),
+ ('trucks', 'heavy'),
+ ('trucks', 'sport'),
+ ('trucks', 'offroad'),
+ ('van', 'box'),
+ ('van', 'mini'),
+ ('van', 'full')]
+    </code>
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Creating Reusable Bash Scripts
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="Bash is a language that is quite useful for automation no matter what language you write in. Bash can do so many powerful system-level tasks. Even if you are on windows these days you are likely to come across bash inside a cloud VM, Continuous Integration, or even inside of docker." name="description" property="description"/>
+  <meta content="Bash is a language that is quite useful for automation no matter what language you write in. Bash can do so many powerful system-level tasks. Even if you are on windows these days you are likely to come across bash inside a cloud VM, Continuous Integration, or even inside of docker." name="og:description" property="og:description"/>
+  <meta content="Bash is a language that is quite useful for automation no matter what language you write in. Bash can do so many powerful system-level tasks. Even if you are on windows these days you are likely to come across bash inside a cloud VM, Continuous Integration, or even inside of docker." name="twitter:description" property="twitter:description"/>
+  <meta content="Creating Reusable Bash Scripts" name="og:title" property="og:title"/>
+  <meta content="Creating Reusable Bash Scripts" name="twitter:title" property="twitter:title"/>
+  <meta content="Creating Reusable Bash Scripts" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    Bash is a language that is quite useful for automation no matter what language you write in. Bash can do so many powerful system-level tasks. Even if you are on windows these days you are likely to come across bash inside a cloud VM, Continuous Integration, or even inside of docker.
+   </p>
+   <p>
+    I have three techniques that help me write more composable bash scripts.
+   </p>
+   <ol>
+    <li>
+     <a href="#functions">
+      functions
+     </a>
+    </li>
+    <li>
+     <a href="#arguments">
+      Arguments
+     </a>
+    </li>
+    <li>
+     <a href="#positional-arguments">
+      positional arguments
+     </a>
+    </li>
+    <li>
+     <a href="#all-arguments">
+      All Arguments
+     </a>
+    </li>
+    <li>
+     <a href="#error-handling">
+      Error Handling
+     </a>
+    </li>
+    <li>
+     <a href="#main-script">
+      main script
+     </a>
+    </li>
+   </ol>
+   <hr/>
+   <h2>
+    Functions
+   </h2>
+   <p>
+    <em>
+     Break scripts down into reusable components
+    </em>
+   </p>
+   <p>
+    Functions in bash are quite simple. They are something that I wish I would have started using long ago. They make your code much more reusable. I often use them in my aliases as well since they can simplify the process and allow more flexibility.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       syntax
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">#!/bin/sh
+# hello_world
+hello_world () {
+    echo "hello world"
+}</code></pre>
+   <p>
+    Source the file to load the function and run it from the terminal.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       run it
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">source hello_world
+hello_world</code></pre>
+   <p>
+    <em>
+     <small>
+      <mark>
+       outputs
+      </mark>
+     </small>
+    </em>
+   </p>
+   <h2>
+    <pre class="highlight"><code class="language-bash">hello world</code></pre>
+   </h2>
+   <h2>
+    Arguments
+   </h2>
+   <p>
+    <em>
+     Make functions a little more flexible
+    </em>
+   </p>
+   <p>
+    Arguments and options are quite a bit more complex in bash. For now, we will focus on the basics which are not all that bad.
+   </p>
+   <h3>
+    positional arguments
+   </h3>
+   <p>
+    <em>
+     easiest and most common to use
+    </em>
+   </p>
+   <p>
+    Positional arguments can be pulled out quite easily using
+    <code>
+     $1
+    </code>
+    for the first one,
+    <code>
+     $2
+    </code>
+    for the second, and so on.
+   </p>
+   <p>
+    <strong>
+     note
+    </strong>
+    <code>
+     $0
+    </code>
+    is the command that was called. You will see this often used to find the command called to open up your current shell.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       syntax
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">#!/bin/sh
+# hello
+hello () {
+    echo "hello $1"
+</code></pre>
+   <p>
+    <em>
+     <small>
+      <mark>
+       run it
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">source hello
+hello Waylon</code></pre>
+   <p>
+    Now we have a function that accepts positional arguments and we can call it by passing things into it.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       outputs
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">hello Waylon</code></pre>
+   <p>
+    More than one argument would be ignored since we are only looking at
+    <code>
+     $1
+    </code>
+    .
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       run it
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">source hello
+hello Waylon Walker</code></pre>
+   <p>
+    <em>
+     <small>
+      <mark>
+       outputs
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">hello Waylon</code></pre>
+   <p>
+    Just the same as before since we do not use the second argument.
+   </p>
+   <h3>
+    All Arguments
+   </h3>
+   <p>
+    Bash has another special variable
+    <code>
+     $@
+    </code>
+    that stores
+    <strong>
+     all arguments
+    </strong>
+    in one.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       syntax
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">#!/bin/sh
+# hello
+hello () {
+    echo "hello $@"
+}</code></pre>
+   <p>
+    Just the same as before.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       run it
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">source hello
+hello Waylon Walker</code></pre>
+   <p>
+    Now the function will output all arguments that are passed into it since we are using the
+    <code>
+     $@
+    </code>
+    variable.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       outputs
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">hello Waylon Walker</code></pre>
+   <hr/>
+   <h2>
+    Error Handling
+   </h2>
+   <p>
+    <em>
+     Super powers in a single line
+    </em>
+   </p>
+   <p>
+    The easiest and most common way to handle an error in bash is through the use of the logical operators
+    <code>
+     &amp;&amp;
+    </code>
+    (and) and
+    <code>
+     ||
+    </code>
+    (or).
+   </p>
+   <p>
+    Here I have a concrete example from earlier today. I was creating a bash script to run a python script from cron. The bash script is there to make sure that we have the python environment, activate it, and run. If it doesn't have it, it should create it.
+   </p>
+   <p>
+    ``` bash{15-19}{numberLines: true}
+   </p>
+   <h1>
+    creates the conda environment
+   </h1>
+   <p>
+    create_env() {
+    conda create -n "$1" python=3.8
+    conda activate "$1"
+    pip install -r requirements.txt
+}
+   </p>
+   <h1>
+    checks if the conda environment exists
+   </h1>
+   <p>
+    env_exists() {
+conda info --envs | awk '{print $1}' | tail -n +3 | grep -w "$1" &gt; /dev/null
+}
+   </p>
+   <h1>
+    creates the conda environment if it doesn't exist
+   </h1>
+   <p>
+    create_if () {
+env_exists "$1" &amp;&amp; echo "environment exists" || create_env "$1"
+}
+   </p>
+   <p>
+    create_if my_env
+   </p>
+   <pre class="highlight"><code>
+If we look at the `create_if` function, it will check if the environment exists if there is a passing status code `0`, then it will run `echo "environment exists"` otherwise it will run `create_env $1`.
+
+**note** Inside of `env_exists` grep will look for whole words if there is a match it will give a status code 0 if it finds a match and not 0 if there is no match.
+
+---
+
+## main script
+
+\_`if __name__ == " __main__"`\_
+
+The last thing I want to discuss is making a bash script both runnable and sourceable. This makes it so that you can `source filename.sh` and run each function individually, or `bash filename.sh` to run the script. This is a similar concept to `if __name__ == " __main__"` from python.
+
+I did try this from bash and zsh with success. The following is an example that would pass all arguments into a main function.
+
+_&lt;small&gt;&lt;mark&gt;syntax&lt;/mark&gt;&lt;/small&gt;_
+
+``` bash
+if [["${BASH_SOURCE[0]}" == "${0}" ]]; then
+    main "$@"
+fi</code></pre>
+   <p>
+    Extending the example above that created a python example if necessary we can create the env if necessary, activate the environment, and run the script.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       syntax
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">if [["${BASH_SOURCE[0]}" == "${0}" ]]; then
+create_if my_env
+conda activate my_env
+python script.py
+fi</code></pre>
+   <p>
+    Using this syntax to run our "main" functions will allow us to both runs the script or source the script to utilize the functions that we created.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

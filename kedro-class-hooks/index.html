@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Create Configurable Kedro Hooks
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="There are two main ways to create kedro hooks, with modules and classes.  Each one still uses the same verbiage as the function/method names.  Class hooks seem a bit special as they give you a way to configure them so that they are a bit more generally useful." name="description" property="description"/>
+  <meta content="There are two main ways to create kedro hooks, with modules and classes.  Each one still uses the same verbiage as the function/method names.  Class hooks seem a bit special as they give you a way to configure them so that they are a bit more generally useful." name="og:description" property="og:description"/>
+  <meta content="There are two main ways to create kedro hooks, with modules and classes.  Each one still uses the same verbiage as the function/method names.  Class hooks seem a bit special as they give you a way to configure them so that they are a bit more generally useful." name="twitter:description" property="twitter:description"/>
+  <meta content="Create Configurable Kedro Hooks" name="og:title" property="og:title"/>
+  <meta content="Create Configurable Kedro Hooks" name="twitter:title" property="twitter:title"/>
+  <meta content="Create Configurable Kedro Hooks" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    There are two main ways to create kedro hooks, with modules and classes.  Each one still uses the same verbiage as the function/method names.
+   </p>
+   <p>
+    Class hooks seem a bit special as they give you a way to configure them so that they are a bit more generally useful.
+   </p>
+   <blockquote>
+    <h3>
+     What is Kedro 🤔
+    </h3>
+    <p>
+     If you are completely unsure what kedro is be sure to check out my
+     <a href="https://waylonwalker.com/wike">
+      what is kedro
+     </a>
+     post
+    </p>
+   </blockquote>
+   <h2>
+    Installation
+   </h2>
+   <p>
+    .create a new environment manager of choice.  Here I will use
+    <code>
+     conda
+    </code>
+    . Then we will install
+    <code>
+     kedro
+    </code>
+    from pypi.
+   </p>
+   <pre class="highlight"><code class="language-bash">conda create -n kedro_class_hooks -y
+conda activate kedro_class_hooks # may also be source activate kedro_class_hooks or activate kedro_class_hooks
+pip install kedro</code></pre>
+   <h2>
+    Create a sample project
+   </h2>
+   <blockquote>
+    <h3>
+     Kedro new
+    </h3>
+    <p>
+     For more details check out my full post on
+     <a href="https://waylonwalker.com/knew">
+      kedro new
+     </a>
+    </p>
+   </blockquote>
+   <p>
+    For this post I really just want a working pipeline as fast as possible.  For this I am going to use iris pipeline that is generated from the
+    <code>
+     kedro new
+    </code>
+    command in the cli.  It's
+    <strong>
+     important
+    </strong>
+    that you answer
+    <code>
+     y
+    </code>
+    to create an example pipeline.
+   </p>
+   <blockquote>
+    <h3>
+     Hold On ✋
+    </h3>
+    <p>
+     Did you create a separate environment for this?  Please do.
+    </p>
+   </blockquote>
+   <pre class="highlight"><code class="language-bash">kedro new</code></pre>
+   <p>
+    After you run the
+    <code>
+     kedro new
+    </code>
+    command it will ask a series of questions.  👇 Here is how I answered them.
+   </p>
+   <pre class="highlight"><code class="language-bash">Project Name:
+=============
+Please enter a human readable name for your new project.
+Spaces and punctuation are allowed.
+ [New Kedro Project]: Kedro Class Hooks
+Repository Name:
+================
+Please enter a directory name for your new project repository.
+Alphanumeric characters, hyphens and underscores are allowed.
+Lowercase is recommended.
+ [kedro-class-hooks]:
+Python Package Name:
+====================
+Please enter a valid Python package name for your project package.
+Alphanumeric characters and underscores are allowed.
+Lowercase is recommended. Package name must start with a letter or underscore.
+ [kedro_class_hooks]:
+Generate Example Pipeline:
+==========================
+Do you want to generate an example pipeline in your project?
+Good for first-time users. (default=N)
+ [y/N]: y
+Change directory to the project generated in /mnt/c/temp/kedro-hooks/
+A best-practice setup includes initialising git and creating a virtual environment before running `kedro install` to install project-specific dependencies. Refer to the Kedro documentation: https://kedro.readthedocs.io/</code></pre>
+   <h3>
+    Install the Project
+   </h3>
+   <p>
+    Next install the project itself and all of its dependencies with the
+    <code>
+     kedro install
+    </code>
+    command.
+   </p>
+   <pre class="highlight"><code class="language-bash">cd kedro-hooks
+kedro install</code></pre>
+   <h3>
+    🏃‍♀️ Run the pipeline
+   </h3>
+   <p>
+    Before we start developing any hooks lets make sure everything is set up correctly by running the pipeline with
+    <code>
+     kedro run
+    </code>
+    .
+   </p>
+   <pre class="highlight"><code class="language-bash">kedro run</code></pre>
+   <h2>
+    class hook without
+    <code>
+     self
+    </code>
+   </h2>
+   <p>
+    A kedro class-based hook is a class with methods using the kedro lifecycle names, decorated with
+    <code>
+     @hook_impl
+    </code>
+    , If we create a class-based kedro hook without
+    <code>
+     self
+    </code>
+    in the method calls, we simply pass the hook class itself into the hooks list. And we are off.  Kedro will call each method as it hits that point in its lifecycle.  It will pass any of the possible arguments, see arguments below.  Each method has a different set of possible arguments.  You don't need to ask for all of them, but I did here so that you could see them.
+   </p>
+   <pre class="highlight"><code class="language-python">from kedro.framework.hooks import hook_impl
+
+class debug_hook:
+    """debugs all kedro hook points"""
+
+    @staticmethod
+    @hook_impl
+    def before_pipeline_run(run_params, pipeline, catalog):
+        "pops into a debugger before pipeline run"
+        print('I hooked in right before the pipeline run')
+        if self.should_before_pipeline_run:
+            breakpoint()
+
+    @staticmethod
+    @hook_impl
+    def after_pipeline_run(run_params, pipeline, catalog):
+        "pops into a debugger after pipeline run"
+        print('I hooked in right after the pipeline run')
+        breakpoint()
+
+    @staticmethod
+    @hook_impl
+    def on_pipeline_error(error, run_params, pipeline, catalog):
+        "pops into a debugger on pipeline error"
+        print('I hooked into the pipeline during an error')
+        breakpoint()
+
+    @staticmethod
+    @hook_impl
+    def after_catalog_created(catalog, conf_catalog, conf_creds, feed_dict, save_version, load_versions, run_id):
+        "pops into a debugger after catalog created"
+        print('I hooked in right after the catalog created')
+        breakpoint()
+
+    @staticmethod
+    @hook_impl
+    def before_node_run(node, catalog, inputs, is_async, run_id):
+        "pops into a debugger before node run"
+        print('I hooked in right before the node run')
+        breakpoint()
+
+    @staticmethod
+    @hook_impl
+    def after_node_run(node, catalog, inputs, outputs, is_async, run_id):
+        "pops into a debugger after node run"
+        print('I hooked in right after the node run')
+        breakpoint()
+
+    @staticmethod
+    @hook_impl
+    def on_node_error(error, node, catalog, inputs, is_async, run_id):
+        "pops into a debugger on node error"
+        print('I hooked into the node during an error')
+        breakpoint()</code></pre>
+   <h4>
+    Implement the hook object
+   </h4>
+   <p>
+    With this version of the hook it gets added to the
+    <code>
+     ProjectContext
+    </code>
+    as the class itself, not an instance.
+   </p>
+   <pre class="highlight"><code class="language-python">class ProjectContext(KedroContext):
+    """Users can override the remaining methods from the parent class here,
+    or create new ones (e.g. as required by plugins)
+    """
+
+    project_name = "kedro_class_hooks"
+    # `project_version` is the version of kedro used to generate the project
+    project_version = "0.16.1"
+    package_name = "kedro_class_hooks"
+
+    hooks = [
+        debug_hook
+    ]</code></pre>
+   <h2>
+    Generalizing debug_hook
+   </h2>
+   <p>
+    If we want to generalize the debug hook and make it a bit more re-usable across all of our projects, we can include the
+    <code>
+     self
+    </code>
+    argument, on each method and a
+    <code>
+     __init__
+    </code>
+    method in which we can configure our hook.  This will make the hook configurable.  We can now create an instance of the
+    <code>
+     debug_hook
+    </code>
+    class, and tell it which lifecycle points should trigger the debugger.
+   </p>
+   <pre class="highlight"><code class="language-python">""" Kedro Debug Hook module """
+from kedro.framework.hooks import hook_impl
+
+class debug_hook:
+    """ Kedro Debug Hook
+
+    Opens a debugger at any hook-able point of your kedro projects lifecycle.
+    debug_hook is applied by adding it to the pipeline and setting the desired
+    debug points to true.
+
+    Examples:
+
+        &gt;&gt;&gt; hooks = [debug_hook(should_debug_all=True)]
+        &gt;&gt;&gt; hooks = [debug_hook(should_debug_before_pipeline_run=True)]
+
+    Args:
+        should_debug_all (bool): overrides all points Defaults to False
+        should_debug_before_pipeline_run (bool): opens a debugger
+            before_pipeline_run if True Defaults to False
+        should_debug_after_pipeline_run (bool): opens a debugger
+            after_pipeline_run if True Defaults to False
+        should_debug_on_pipeline_error (bool): opens a debugger
+            on_pipeline_error if True Defaults to False
+        should_debug_before_node_run (bool): opens a debugger
+            before_node_run if True Defaults to False
+        should_debug_after_node_run (bool): opens a debugger
+            after_node_run if True Defaults to False
+        should_debug_on_node_error (bool): opens a debugger
+            on_node_error if True Defaults to False
+        should_debug_after_catalog_created (bool): opens a debugger
+            after_catalog_created if True Defaults to False
+
+    """
+    def __init__(
+        self,
+        should_debug_all=False,
+        should_debug_before_pipeline_run=False,
+        should_debug_after_pipeline_run=False,
+        should_debug_on_pipeline_error=False,
+        should_debug_before_node_run=False,
+        should_debug_after_node_run=False,
+        should_debug_on_node_error=False,
+        should_debug_after_catalog_created=False,
+    ):
+        self.should_debug_before_pipeline_run = (
+            should_debug_before_pipeline_run or should_debug_all
+        )
+        self.should_debug_after_pipeline_run = (
+            should_debug_after_pipeline_run or should_debug_all
+        )
+        self.should_debug_on_pipeline_error = (
+            should_debug_on_pipeline_error or should_debug_all
+        )
+        self.should_debug_before_node_run = (
+            should_debug_before_node_run or should_debug_all
+        )
+        self.should_debug_after_node_run = (
+            should_debug_after_node_run or should_debug_all
+        )
+        self.should_debug_on_node_error = should_debug_on_node_error or should_debug_all
+        self.should_debug_after_catalog_created = (
+            should_debug_after_catalog_created or should_debug_all
+        )
+
+    @hook_impl
+    def before_pipeline_run(self, run_params, pipeline, catalog):
+        "pops into a debugger before pipeline run"
+        if self.should_debug_before_pipeline_run:
+            breakpoint()
+
+    @hook_impl
+    def after_pipeline_run(self, run_params, pipeline, catalog):
+        "pops into a debugger after pipeline run"
+        if self.should_debug_after_pipeline_run:
+            breakpoint()
+
+    @hook_impl
+    def on_pipeline_error(self, error, run_params, pipeline, catalog):
+        "pops into a debugger on pipeline error"
+        if self.should_debug_on_pipeline_error:
+            breakpoint()
+
+    @hook_impl
+    def after_catalog_created(
+        self,
+        catalog,
+        conf_catalog,
+        conf_creds,
+        feed_dict,
+        save_version,
+        load_versions,
+        run_id,
+    ):
+        "pops into a debugger after catalog created"
+        if self.should_debug_after_catalog_created:
+            breakpoint()
+
+    @hook_impl
+    def before_node_run(self, node, catalog, inputs, is_async, run_id):
+        "pops into a debugger before node run"
+        if self.should_debug_before_node_run:
+            breakpoint()
+
+    @hook_impl
+    def after_node_run(self, node, catalog, inputs, outputs, is_async, run_id):
+        "pops into a debugger after node run"
+        if self.should_debug_after_node_run:
+            breakpoint()
+
+    @hook_impl
+    def on_node_error(self, error, node, catalog, inputs, is_async, run_id):
+        "pops into a debugger on node error"
+        if self.should_debug_on_node_error:
+            breakpoint()</code></pre>
+   <h4>
+    implement the hook instance
+   </h4>
+   <p>
+    When
+    <code>
+     self
+    </code>
+    is used in the method calls we must pass an instance of the
+    <code>
+     debug_hook
+    </code>
+    into the hooks list, not the class itself.
+   </p>
+   <pre class="highlight"><code class="language-python">class ProjectContext(KedroContext):
+    """Users can override the remaining methods from the parent class here,
+    or create new ones (e.g. as required by plugins)
+    """
+
+    project_name = "kedro_class_hooks"
+    # `project_version` is the version of kedro used to generate the project
+    project_version = "0.16.1"
+    package_name = "kedro_class_hooks"
+
+    hooks = [debug_hook(should_debug_all=True)]</code></pre>
+   <h2>
+    Final thoughts
+   </h2>
+   <p>
+    Hooks are an amazing addition to the kedro framework that will allow the community to make big changes to how their kedro project gets ran without needing to change kedro itself.  Using a hook class with self can make them so much more configurable, and reusable across different projects without a lot of extra code. Personally I still really like the module method that we used in
+    <a href="https://waylonwalker.com/creating-the-kedro-preflight-hook/">
+     kedro-preflight
+    </a>
+    .
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

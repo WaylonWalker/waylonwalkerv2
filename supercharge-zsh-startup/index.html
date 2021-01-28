@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Supercharge Zsh Startup
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="I have been using oh-my-zsh successfully for about 2 years now. But lately my startup time has been really bothersome. It has grown to the point where it was taking about **5.5s** to startup a shell!  This is ok if I am going to spend some time in here for awhile and do some work that benefits from all of the autocompletions, plugins, and shortcuts that oh-my-zsh brings.  But to only jump in to run a handful of commands is infuriating." name="description" property="description"/>
+  <meta content="I have been using oh-my-zsh successfully for about 2 years now. But lately my startup time has been really bothersome. It has grown to the point where it was taking about **5.5s** to startup a shell!  This is ok if I am going to spend some time in here for awhile and do some work that benefits from all of the autocompletions, plugins, and shortcuts that oh-my-zsh brings.  But to only jump in to run a handful of commands is infuriating." name="og:description" property="og:description"/>
+  <meta content="I have been using oh-my-zsh successfully for about 2 years now. But lately my startup time has been really bothersome. It has grown to the point where it was taking about **5.5s** to startup a shell!  This is ok if I am going to spend some time in here for awhile and do some work that benefits from all of the autocompletions, plugins, and shortcuts that oh-my-zsh brings.  But to only jump in to run a handful of commands is infuriating." name="twitter:description" property="twitter:description"/>
+  <meta content="Supercharge Zsh Startup" name="og:title" property="og:title"/>
+  <meta content="Supercharge Zsh Startup" name="twitter:title" property="twitter:title"/>
+  <meta content="Supercharge Zsh Startup" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <blockquote>
+    <p>
+     Photo by
+     <a href="https://unsplash.com/@maxlarochelle?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+      Max LaRochelle
+     </a>
+     on
+     <a href="https://unsplash.com/s/photos/lightning?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+      Unsplash
+     </a>
+    </p>
+   </blockquote>
+   <p>
+    I have been using oh-my-zsh successfully for about 2 years now. But lately my startup time has been really bothersome. It has grown to the point where it was taking about
+    <strong>
+     5.5s
+    </strong>
+    to startup a shell!  This is ok if I am going to spend some time in here for awhile and do some work that benefits from all of the autocompletions, plugins, and shortcuts that oh-my-zsh brings.  But to only jump in to run a handful of commands is infuriating.
+   </p>
+   <h3>
+    📑 My Setup
+   </h3>
+   <p>
+    I believe the real issue is io speed on wsl.  I have some remote servers with similar configs that are 10x faster or more, loading in 100s of milliseconds rather than seconds.  Sourcing all of the individual plugin files are just too much for it.
+   </p>
+   <h2>
+    💨 How Fast can it be
+   </h2>
+   <blockquote>
+    <p>
+     Quick side note: your zsh config is controled by your ~/.zshrc file.  This file can source other files, load plugins, or run literally anything.
+    </p>
+   </blockquote>
+   <p>
+    Time the
+    <strong>
+     initial
+    </strong>
+    time
+   </p>
+   <pre class="highlight"><code class="language-bash">time zsh -c exit</code></pre>
+   <p>
+    Move your
+    <strong>
+     ~/.zshrc
+    </strong>
+    config file.
+   </p>
+   <pre class="highlight"><code class="language-bash">mv ~/.zshrc ~/.zshrc-back</code></pre>
+   <p>
+    Time the fastest startup possible with nothing in your
+    <strong>
+     ~/.zshrc
+    </strong>
+    config file.
+   </p>
+   <pre class="highlight"><code class="language-bash">time zsh -c exit</code></pre>
+   <p>
+    Move your
+    <strong>
+     ~/.zshrc
+    </strong>
+    back
+   </p>
+   <pre class="highlight"><code class="language-bash">mv ~/.zshrc-back ~/.zshrc</code></pre>
+   <h2>
+    🕵️‍♂️Profile your startup time
+   </h2>
+   <p>
+    It is possible to profile your zsh startup time by adding
+    <code>
+     zmodload zsh/zprof
+    </code>
+    to the start of your
+    <code>
+     ~/.zshrc
+    </code>
+    file and
+    <code>
+     zprof
+    </code>
+    at the end.  This was unsuccessfull for me.  I ended up just backing up
+    <code>
+     ~/.zshrc
+    </code>
+    file, then deleting half of it to see where the hot spots were.  I found that two places that were really hot for me.  One I was inadvertantly setting git and npm settings everytime that didnt need to be set everytime.  That was an easy 2s gain.  Another easy 3s gain was removing oh-my-zsh.
+   </p>
+   <pre class="highlight"><code class="language-bash"># ~/.zshrc
+zmodload zsh/zprof
+...
+..
+.
+zprof</code></pre>
+   <h2>
+    😭But I really like oh-my-zsh
+   </h2>
+   <p>
+    without all the bells and whistle that oh-my-zsh provided zsh became lightning fast to load, but incredibly boring.  It was also very painful to manually type out everything that it autocompleted or aliased all the time.  Next I headed down a path to get all of that functionality back without sacrificing load time.
+   </p>
+   <blockquote>
+    <p>
+     Without oh-my-zsh, zsh became incredibly boring.
+    </p>
+   </blockquote>
+   <h2>
+    🔌 Plugin Managers
+   </h2>
+   <p>
+    <img alt="" src="/static/steve-johnson-ZUabNmumOcA-unsplash.jpg"/>
+   </p>
+   <blockquote>
+    <p>
+     Photo by
+     <a href="https://unsplash.com/@steve_j?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+      Steve Johnson
+     </a>
+     on
+     <a href="https://unsplash.com/s/photos/plug?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+      Unsplash
+     </a>
+    </p>
+   </blockquote>
+   <ul>
+    <li>
+     oh-my-zsh
+    </li>
+    <li>
+     zplugin
+    </li>
+    <li>
+     zgen
+    </li>
+   </ul>
+   <p>
+    There are a number of plugin managers for zsh, I tried each of the ones listed above, but found that as I approached a nice setup that I liked the load time would creep up
+    <strong>
+     above the 2s
+    </strong>
+    <strong>
+     mark
+    </strong>
+    each time. I would turn certain plugins on and off, try different plugin managers, before realizing that I had spent enough time on this problem and it was going to be time to settle on fast startup or functionality.
+   </p>
+   <h2>
+    ⚖ Finding Balance
+   </h2>
+   <p>
+    <em>
+     Semi-lazy loading
+    </em>
+   </p>
+   <p>
+    <img alt="" src="/static/jeppe-hove-jensen-b3eaH1hguOA-unsplash.jpg"/>
+   </p>
+   <blockquote>
+    <p>
+     Photo by Jeppe Hove Jensen on
+     <a href="https://unsplash.com/s/photos/balance?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+      Unsplash
+     </a>
+    </p>
+   </blockquote>
+   <p>
+    After struggling to get all of the features I wanted with a fast load time, I decided to only load what I needed upon startup.  Next I created a simple alias that loads in zgen and all of the plugins I want. By doing this I get two main benefits.  Obviously I get a faster starup time by loading less.  I got my startup time down to about 0.25s.
+   </p>
+   <pre class="highlight"><code class="language-bash"># ~/.zshrc
+p () {
+zgen load zsh-users/zsh-autosuggestions
+....
+..
+.
+}</code></pre>
+   <h3>
+    ⚡ Fast Loading
+   </h3>
+   <p>
+    I really like the fast startup time, because sometimes I am only loading up zsh to run a handful of commands that dont need much in the way of plugins
+   </p>
+   <p>
+    <strong>
+     simple commands that need 💨 blazing start speed
+    </strong>
+   </p>
+   <p>
+    <em>
+     any single easy to type command, these are my common commands that I will open a terminal in my editor and just need to run quick.
+    </em>
+   </p>
+   <ul>
+    <li>
+     vim
+    </li>
+    <li>
+     git add . &amp;&amp; git commit &amp;&amp; git push
+    </li>
+    <li>
+     sh my_script.sh
+    </li>
+    <li>
+     make build
+    </li>
+    <li>
+     bake build
+    </li>
+    <li>
+     pytest
+    </li>
+    <li>
+     gatsby develop
+    </li>
+    <li>
+     npm i
+    </li>
+    <li>
+     npm update
+    </li>
+    <li>
+     pip install
+    </li>
+    <li>
+     ipython
+    </li>
+   </ul>
+   <p>
+    The second benefit was that I can continue typing while plugins are loading.
+   </p>
+   <p>
+    <img alt="" src="/static/type-while-loading-plugins.gif"/>
+   </p>
+   <h2>
+    &gt;Prompt
+   </h2>
+   <p>
+    After removing oh-my-zsh the first thing that I missed was the themes that it provided.  I went through a number of them and the one that seemed to have the smallest effect on performance and everything I needed was
+    <a href="https://starship.rs/">
+     starship
+    </a>
+    .  It's a really fast prompt written in rust.  The biggest thing that I needed to have that other prompts were misssing was conda environments.  I live much of my work life running python from various conda environments and it is crutial that I can see what environment I am in at all times.
+   </p>
+   <p>
+    <img alt="" src="/static/2020-01-04 12-36-31_Cortana.png"/>
+   </p>
+   <h2>
+    💰 Bonus
+   </h2>
+   <p>
+    I applied the same logic to neovim and achieved similar results.  Again it just had too many plugins loading on startup for simple tasks.  I ended up taking a shortcut and load any heavy plugins upon NerdTreeToggle.  I dont really use NERDTree that much, but when I do its for more than just a quick edit.
+   </p>
+   <pre class="highlight"><code class="language-bash"># ~/.config/nvim/init.vim
+...
+Plug 'valloric/youcompleteme', {'do': './install.py', 'on': 'NERDTreeToggle'}
+...</code></pre>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

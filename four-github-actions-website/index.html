@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Four github actions for your website
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="GitHub actions can give you confidence that your site is up and running, with the latests JavaScript packages, does not have broken links, and can even take screenshots of what your website looks like on different screen sizes and operating systems." name="description" property="description"/>
+  <meta content="GitHub actions can give you confidence that your site is up and running, with the latests JavaScript packages, does not have broken links, and can even take screenshots of what your website looks like on different screen sizes and operating systems." name="og:description" property="og:description"/>
+  <meta content="GitHub actions can give you confidence that your site is up and running, with the latests JavaScript packages, does not have broken links, and can even take screenshots of what your website looks like on different screen sizes and operating systems." name="twitter:description" property="twitter:description"/>
+  <meta content="Four github actions for your website" name="og:title" property="og:title"/>
+  <meta content="Four github actions for your website" name="twitter:title" property="twitter:title"/>
+  <meta content="Four github actions for your website" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    GitHub's actions are a new GitHub feature that will trigger GitHub to spin up a virtual machine and run some tasks with some special access to your repo. It can interact with comments/issues, it can clone your repo, You can explicitly pass in secrets so that it can commit back to the repo or deploy to another service. The environment may be a Linux, windows, or even a mac machine. I believe this is wildly incredible for the open-source community, putting these tools in the same place that we are already collaborating is so convenient.
+   </p>
+   <h2>
+    What can they do for my personal website? 🤔
+   </h2>
+   <p>
+    GitHub actions can give you confidence that your site is up and running, with the latest JavaScript packages, does not have broken links, and can even take screenshots of what your website looks like on different screen sizes and operating systems.
+   </p>
+   <ul>
+    <li>
+     periodically check that the website is up
+    </li>
+    <li>
+     update npm
+    </li>
+    <li>
+     url checker
+    </li>
+    <li>
+     screenshot website
+    </li>
+   </ul>
+   <h2>
+    <a href="https://github.com/srt32/uptime">
+     srt32/uptime
+    </a>
+   </h2>
+   <p>
+    <a href="https://github.com/srt32/uptime">
+     srt32/uptime
+    </a>
+    is an action that you can run on any public website. I run this one several times every day and it gives me confidence that my various sites are still up and running. It ensures that my build didn't break something, nothing is wrong with my hosting provider, or my DNS.
+   </p>
+   <pre class="highlight"><code class="language-yaml">name: check if site is up
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  ping_site:
+    runs-on: ubuntu-latest
+    name: Ping the site
+    steps:
+    - name: Check the site
+      id: hello
+      uses: srt32/uptime@master
+      with:
+        url-to-hit: "https://waylonwalker.com/"
+        expected-statuses: "200,301"</code></pre>
+   <h2>
+    <a href="https://github.com/taichi/actions-package-update">
+     taichi/actions-package-update
+    </a>
+   </h2>
+   <p>
+    Here is another one to make sure that your package.json does not get too far out of date, or have any vulnerabilities.
+    <a href="https://github.com/taichi/actions-package-update">
+     taichi/actions-package-update
+    </a>
+    will submit a PR back to your repo with any updated dependencies. Since it submits it as a pr, your tests triggered by PRs should also run. giving you confidence that you are ready to update.
+   </p>
+   <p style="text-align: center">
+    <img alt="image of a PR submitted by actions-package-update" src="https://github.com/taichi/actions-package-update/raw/master/docs/actions-package-update.png" style="width:600px; max-width:80%; margin: auto;"/>
+   </p>
+   <p>
+    Example to update
+    <code>
+     package.json
+    </code>
+    every Wednesday night at midnight.
+   </p>
+   <pre class="highlight"><code class="language-yaml">on:
+  schedule:
+  - cron: 0 0 * * 3
+name: Update
+jobs:
+  package-update:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: set remote url
+      run: git remote set-url --push origin https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+    - name: package-update
+      uses: taichi/actions-package-update@master
+      env:
+        AUTHOR_EMAIL: john@example.com
+        AUTHOR_NAME: john
+        EXECUTE: "true"
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        LOG_LEVEL: debug
+      with:
+        args: -u --packageFile package.json --loglevel verbose</code></pre>
+   <h2>
+    <a href="https://github.com/urlstechie/urlchecker-action">
+     urlstechie/urlchecker-action
+    </a>
+   </h2>
+   <p>
+    <a href="https://github.com/urlstechie/urlchecker-action">
+     urlstechie/urlchecker-action
+    </a>
+    is an action to collect and check URLs in a project and report on broken links. This is another one to give yourself some confidence that you are not linking out to a broken site, and can give you a heads up before you have frustrated users.
+   </p>
+   <pre class="highlight"><code class="language-yaml">name: Check URLs
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: urls-checker
+      uses: urlstechie/urlchecker-action@0.2.1
+      with:
+        # A subfolder or path to navigate to in the present or cloned repository
+        subfolder: docs
+
+        # A comma-separated list of file types to cover in the URL checks
+        file_types: .md,.py,.rst
+
+        # Choose whether to include file with no URLs in the prints.
+        print_all: false
+
+        # The timeout seconds to provide to requests, defaults to 5 seconds
+        timeout: 5
+
+        # How many times to retry a failed request (each is logged, defaults to 1)
+        retry_count: 3
+
+        # A comma separated links to exclude during URL checks
+        white_listed_urls: https://github.com/SuperKogito/URLs-checker/issues/1,https://github.com/SuperKogito/URLs-checker/issues/2
+
+        # A comma separated patterns to exclude during URL checks
+        white_listed_patterns: https://github.com/SuperKogito/Voice-based-gender-recognition/issues
+
+        # choose if the force pass or not
+        force_pass : true</code></pre>
+   <h2>
+    <a href="https://github.com/swinton/screenshot-website">
+     swinton/screenshot-website
+    </a>
+   </h2>
+   <p>
+    <a href="https://github.com/swinton/screenshot-website">
+     swinton/screenshot-website
+    </a>
+    will take a screenshot of your website. It can even run a matrix of sizes and os's to check how your site looks on various systems.
+   </p>
+   <pre class="highlight"><code class="language-yaml">name: screenshot-website
+on:
+  schedule:
+    - cron: '0 0 0 * *'
+
+jobs:
+  screenshot:
+    name: Screenshot
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        width: [1200, 992, 768, 600]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+
+    - name: Screenshot Website
+      uses: swinton/screenshot-website@v1.x
+      with:
+        source: https://waylonwalker.com/
+        destination: screenshot-${{ matrix.os }}-${{ matrix.width }}.png
+        width: ${{ matrix.width }}</code></pre>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

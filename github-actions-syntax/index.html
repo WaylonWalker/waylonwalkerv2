@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   GitHub Actions Syntax
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="GitHub actions use YAML to configure your workflows.  What gets ran, When it runs, What it runs on.  Let's discuss YAML and the structure needed for GitHub actions." name="description" property="description"/>
+  <meta content="GitHub actions use YAML to configure your workflows.  What gets ran, When it runs, What it runs on.  Let's discuss YAML and the structure needed for GitHub actions." name="og:description" property="og:description"/>
+  <meta content="GitHub actions use YAML to configure your workflows.  What gets ran, When it runs, What it runs on.  Let's discuss YAML and the structure needed for GitHub actions." name="twitter:description" property="twitter:description"/>
+  <meta content="GitHub Actions Syntax" name="og:title" property="og:title"/>
+  <meta content="GitHub Actions Syntax" name="twitter:title" property="twitter:title"/>
+  <meta content="GitHub Actions Syntax" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <style>
+    h2 img { width: 100%; box-shadow: .5rem .5rem 3rem #141F2D, -.5rem -.5rem 3rem rgba(255,255,255,.1);}
+img{ max-width: 100% !important;}
+   </style>
+   <p>
+    Github actions are written in configuration files using the YAML syntax.  YAML is a superset of JSON.  Most YAML can be expressed inline with JSON syntax.  Similar to python YAML is whitespace driven by whitespace rather than brackets tags.  The argument for using YAML for configuration files such as actions is that it is more human-readable and editable.  It's much easier to see the whitespace layout than it is to get closing brackets correct.  For actions, I believe this is mostly true.  I don't see any use case to get past 3-5 indents, which is completely manageable.
+   </p>
+   <blockquote>
+    <p>
+     Can I just say that I learned more than I realized about YAML by writing this article
+    </p>
+   </blockquote>
+   <h2>
+    <img alt="Arrays and Objects" src="https://waylonwalker.com/gh-actions-syntax-headers/1.png"/>
+   </h2>
+   <p>
+    In YAML or JSON, the most basic containers for data are
+    <strong>
+     arrays
+    </strong>
+    , a 1D list of things, and
+    <strong>
+     objects
+    </strong>
+    , for key-value pairs.
+   </p>
+   <h3>
+    <img alt="Arrays" src="https://waylonwalker.com/gh-actions-syntax-h3/1.png"/>
+   </h3>
+   <p>
+    The start of an array container is signified with a leading
+    <code>
+     -
+    </code>
+    .  This is probably one of the big things I didn't understand about YAML before writing this post, but hats off to the GitHub actions editor as it took care of a lot of my misunderstanding for me.
+   </p>
+   <pre class="highlight"><code class="language-YAML">- one
+- two
+- three</code></pre>
+   <pre class="highlight"><code class="language-json">['one', 'two', 'three']</code></pre>
+   <h3>
+    <img alt="Objects" src="https://waylonwalker.com/gh-actions-syntax-h3/2.png"/>
+   </h3>
+   <p>
+    Objects are just
+    <code>
+     {key: "value"}
+    </code>
+    pairs without any
+    <code>
+     -
+    </code>
+    before them.  I find that objects make 💯 sense to me.  Unlike arrays, they feel very intuitive.
+   </p>
+   <pre class="highlight"><code class="language-YAML">name: one
+who: me</code></pre>
+   <pre class="highlight"><code class="language-json">{'name': 'one', 'who': 'me'}</code></pre>
+   <h2>
+    <img alt="Example Combining arrays and objects" src="https://waylonwalker.com/gh-actions-syntax-headers/2.png"/>
+   </h2>
+   <p>
+    Let's start writing something that looks a bit more like a GitHub action.  GitHub actions are built from an object containing name, on, jobs.  Where jobs is a list of jobs, that contain a list of steps.  Simple actions will only need a single job, but commonly a list of steps.
+   </p>
+   <h4>
+    <img alt="Shortlist of GitHub action keys" src="https://waylonwalker.com/gh-actions-syntax-h3/4.png"/>
+   </h4>
+   <p>
+    These are the keys, with their parents, that I found most useful.  You can find a complete list on
+    <a href="https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions">
+     workflow-syntax-for-github-actions
+    </a>
+    .
+   </p>
+   <ul>
+    <li>
+     name
+    </li>
+    <li>
+     on
+     <ul>
+      <li>
+       push
+      </li>
+      <li>
+       pull_request
+      </li>
+      <li>
+       schedule
+      </li>
+      <li>
+       watch
+      </li>
+     </ul>
+    </li>
+    <li>
+     env
+    </li>
+    <li>
+     jobs
+     <ul>
+      <li>
+       name
+      </li>
+      <li>
+       needs
+      </li>
+      <li>
+       env
+      </li>
+      <li>
+       if
+      </li>
+      <li>
+       steps
+      </li>
+     </ul>
+    </li>
+   </ul>
+   <h3>
+    <img alt="Combining arrays and objects" src="https://waylonwalker.com/gh-actions-syntax-h3/5.png"/>
+   </h3>
+   <p>
+    Here is a very small example that contains an object with one key,
+    <code>
+     jobs
+    </code>
+    .  That
+    <code>
+     jobs
+    </code>
+    object contains one job called
+    <code>
+     build
+    </code>
+    that contains a list of
+    <code>
+     steps
+    </code>
+    .  Notice the
+    <code>
+     -
+    </code>
+    before each step, and how each
+    <code>
+     step
+    </code>
+    repeats the same object keys.
+   </p>
+   <p>
+   </p>
+   <pre class="highlight"><code class="language-yaml">jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: step-one
+          uses: checkout
+        - name: step-two
+          uses: test
+        - name: step-three
+          uses: package</code></pre>
+   <pre class="highlight"><code class="language-json">{
+  "jobs": {
+    "build": {
+      "runs-on": "ubuntu-latest",
+      "steps": [
+        {
+          "name": "step-one",
+          "uses": "checkout"
+        },
+        {
+          "name": "step-two",
+          "uses": "test"
+        },
+        {
+          "name": "step-three",
+          "uses": "package"
+        }
+      ]
+    }
+  }
+}</code></pre>
+   <h2>
+    <img alt="Multiline Strings" src="https://waylonwalker.com/gh-actions-syntax-headers/3.png"/>
+   </h2>
+   <p>
+    Multiline strings are super important in GitHub actions.  You will likely use the
+    <code>
+     |
+    </code>
+    to preserve newlines for shell scripts most commonly but may also have some raw text fields that need to be concatenated without a newline character using the
+    <code>
+     &gt;
+    </code>
+    operator.
+   </p>
+   <ul>
+    <li>
+     | preserves newlines
+    </li>
+    <li>
+     <blockquote>
+      <p>
+       folds newlines
+      </p>
+     </blockquote>
+    </li>
+   </ul>
+   <pre class="highlight"><code class="language-YAML">preserved: |
+    cd my-dir
+    ls
+    mv public ../
+folded: &gt;
+    This is some long text
+    that I do not want on
+    one line, but it is
+    really a one-liner</code></pre>
+   <pre class="highlight"><code class="language-JSON">{
+    "preserved": "cd my-dir\nls\nmv public ../\n",
+    "folded": "This is some long text that I do not want on one line, but it is  really
+   a one-liner"
+}</code></pre>
+   <h2>
+    <img alt="Anchors are not supported" src="https://waylonwalker.com/gh-actions-syntax-headers/4.png"/>
+   </h2>
+   <p>
+    YAML has this amazing feature for reducing repetative content called anchors.  You can save part of your configuration as a reusable variable in other sections.  I see this being really cool if you had separate jobs that all needed similar steps.  Look for this improvement in the future, for now just be aware that it is part of the YAML syntax.
+   </p>
+   <p>
+    See support ticket 👉
+    <a href="https://github.community/t5/GitHub-Actions/Support-for-YAML-anchors/m-p/30336">
+     Support-for-YAML-anchors
+    </a>
+   </p>
+   <pre class="highlight"><code class="language-YAML">secrets: &amp;secrets
+    github-pat: ${{ gh-pat }}
+    gmail-pass: ${{ gmail-pass }}
+
+jobs:
+    build:
+        - name: step-one
+          uses: checkout
+          &lt;&lt;: *secrets
+        - name: step-two
+          uses: test
+          &lt;&lt;: *secrets
+        - name: step-three
+          uses: package
+          &lt;&lt;: *secrets</code></pre>
+   <p>
+    Notice how the nice clean YAML syntax gets exploded with much more data in the JSON format.
+   </p>
+   <pre class="highlight"><code class="language-json">{
+    "secrets": {
+        "github-pat": "${{ gh-pat }}",
+        "gmail-pass": "${{ gmail-pass }}"
+    },
+    "jobs": {
+        "build": [
+            {
+                "github-pat": "${{ gh-pat }}",
+                "gmail-pass": "${{ gmail-pass }}",
+                "name": "step-one",
+                "uses": "checkout"
+            },
+            {
+                "github-pat": "${{ gh-pat }}",
+                "gmail-pass": "${{ gmail-pass }}",
+                "name": "step-two",
+                "uses": "test"
+            },
+            {
+                "github-pat": "${{ gh-pat }}",
+                "gmail-pass": "${{ gmail-pass }}",
+                "name": "step-three",
+                "uses": "package"
+            }
+        ]
+    }
+}</code></pre>
+   <h2>
+    <img alt="Writing an Action" src="https://waylonwalker.com/gh-actions-syntax-headers/5.png"/>
+   </h2>
+   <p>
+    With a basic understanding of YAML you can probably go to your repo and click actions &gt; new workflow &gt; setup my own workflow right from the ui, and create your own.  Or read through the official syntax docs for deeper information
+    <a href="https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions">
+     workflow-syntax-for-github-actions
+    </a>
+    . Let's finsh off with a really simple action, the default one from GitHub.
+   </p>
+   <h3>
+    <img alt="Important first step" src="https://waylonwalker.com/gh-actions-syntax-h3/6.png"/>
+   </h3>
+   <p>
+    It is important to know that when running an action you will likely need access to your code in order to lint, test, build, package, whatever you want to do with it.  Your first step for any action requiring code from your repo is to
+    <code>
+     checkout
+    </code>
+    your repo.
+   </p>
+   <pre class="highlight"><code class="language-yaml"> steps:
+ # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+ - uses: actions/checkout@v</code></pre>
+   <h3>
+    <img alt="Default example" src="https://waylonwalker.com/gh-actions-syntax-h3/7.png"/>
+   </h3>
+   <p>
+    This example runs a workflow called
+    <code>
+     CI
+    </code>
+    on ubuntu on every push or PR to the main branch.  Within the build job it does a checkout of the repo, then runs two shell steps.
+   </p>
+   <pre class="highlight"><code class="language-YAML"># This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    # Runs a single command using the runners shell
+    - name: Run a one-line script
+      run: echo Hello, world!
+
+    # Runs a set of commands using the runners shell
+    - name: Run a multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
+</code></pre>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

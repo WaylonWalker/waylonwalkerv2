@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   TIL: Bind arguments to dynamically generated lambdas in python
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="This past week I had a really weird bug in my [kedro](https://kedro.readthedocs.io/) pipeline.  For some reason data running through my pipeline was coming out completely made no sense, but if I manually request raw data outside of the pipeline it matched expectations." name="description" property="description"/>
+  <meta content="This past week I had a really weird bug in my [kedro](https://kedro.readthedocs.io/) pipeline.  For some reason data running through my pipeline was coming out completely made no sense, but if I manually request raw data outside of the pipeline it matched expectations." name="og:description" property="og:description"/>
+  <meta content="This past week I had a really weird bug in my [kedro](https://kedro.readthedocs.io/) pipeline.  For some reason data running through my pipeline was coming out completely made no sense, but if I manually request raw data outside of the pipeline it matched expectations." name="twitter:description" property="twitter:description"/>
+  <meta content="TIL: Bind arguments to dynamically generated lambdas in python" name="og:title" property="og:title"/>
+  <meta content="TIL: Bind arguments to dynamically generated lambdas in python" name="twitter:title" property="twitter:title"/>
+  <meta content="TIL: Bind arguments to dynamically generated lambdas in python" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    This past week I had a really weird bug in my
+    <a href="https://kedro.readthedocs.io/">
+     kedro
+    </a>
+    pipeline.  For some reason data running through my pipeline was coming out completely made no sense, but if I manually request raw data outside of the pipeline it matched expectations.
+   </p>
+   <p>
+    <strong>
+     NOTE
+    </strong>
+    While this story is about a kedro pipeline, it can be applied anywhere closures are put into an iterable.
+   </p>
+   <h2>
+    <img alt="Debugger to the rescue" src="https://waylonwalker.com/bind-dynamic-lambdas-1.png"/>
+   </h2>
+   <p>
+    After a few days of looking at it off and on, I pinpointed that it was all the way down in the raw layer. Right as data is coming off of the database.  For this I already had existing
+    <code>
+     sql
+    </code>
+    files stored and a
+    <code>
+     read_sql
+    </code>
+    function to get the data so I opted to just set up the pipeline to utilize the existing code as much as possible, leaning on the
+    <a href="https://kedro.readthedocs.io/">
+     kedro
+    </a>
+    framework a bit less.
+   </p>
+   <p>
+    I have dynamically created lists of pipeline nodes many times in the past, but typically I take data from
+    <a href="https://kedro.readthedocs.io/">
+     kedro
+    </a>
+    input and use it in the lambda.  I prefer the simplicity of using lambdas over
+    <code>
+     functools.partial
+    </code>
+    .  It typically looks something like this.
+   </p>
+   <pre class="highlight"><code class="language-python"># 👍  I do this all the time
+from kedro.pipeline import node
+from my_generic_project_lib import clean
+
+datasets_to_clean = ['sales', 'production', 'inventory']
+nodes = []
+for dataset in datasets_to_clean:
+   nodes.append(
+      node(
+         func=lambda x: clean(x)
+         inputs = f'raw_{dataset}'
+         outputs=f'int_{dataset}'
+         tags=['int', dataset]
+         name=f'create_int_{dataset}'
+      )
+   )</code></pre>
+   <p>
+    What was different this time is that I needed to pass in the name of the dataset to my read_sql function, not the data loaded in the framework.
+   </p>
+   <pre class="highlight"><code class="language-python"># ❌ This does not work
+from kedro.pipeline import node
+from my_generic_project_lib import read_sql
+
+datasets_to_read = ['sales', 'production', 'inventory']
+nodes = []
+for dataset in datasets_to_clean:
+   nodes.append(
+      node(
+         func=lambda: read_sql(dataset) # 💥 The major issue
+         inputs = f'dummy'
+         outputs=f'int_{dataset}'
+         tags=['int', dataset]
+         name=f'create_int_{dataset}'
+      )
+   )</code></pre>
+   <h2>
+    <img alt="Seriously" src="https://waylonwalker.com/bind-dynamic-lambdas-2.png"/>
+   </h2>
+   <p>
+    As I am still oblivious to what has happened I pop in a
+    <code>
+     breakpoint()
+    </code>
+    and quickly see that during the first run the dataset passed into
+    <code>
+     read_sql
+    </code>
+    was
+    <code>
+     'inventory'
+    </code>
+    , in fact, every single one was
+    <code>
+     'inventory'
+    </code>
+    .  The lambda is just using the latest value of dataset from outside and has no
+    <code>
+     local
+    </code>
+    <code>
+     dataset
+    </code>
+    attached to it.
+   </p>
+   <h2>
+    <img alt="The simple fix " src="https://waylonwalker.com/bind-dynamic-lambdas-3.png"/>
+   </h2>
+   <pre class="highlight"><code class="language-python"># 👍 Much Better
+from kedro.pipeline import node
+from my_generic_project_lib import read_sql
+
+datasets_to_read = ['sales', 'production', 'inventory']
+nodes = []
+for dataset in datasets_to_clean:
+   nodes.append(
+      node(
+         func=lambda dataset=dataset: read_sql(dataset) # dataset is now bound to the lambda ✨
+         inputs = f'dummy'
+         outputs=f'int_{dataset}'
+         tags=['int', dataset]
+         name=f'create_int_{dataset}'
+      )
+   )</code></pre>
+   <h2>
+    <img alt="Try it yourself" src="https://waylonwalker.com/bind-dynamic-lambdas-4.png"/>
+   </h2>
+   <p>
+    I made a slightly more simple example so that you can try it and play with it yourself, edit it, share it with your friends, laugh at my mistake, whatever you like.
+   </p>
+   <iframe allowfullscreen="true" allowtransparency="true" frameborder="no" height="400px" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals" scrolling="no" src="https://repl.it/@WaylonWalker/BindDynamicLambdas?lite=true" width="100%">
+   </iframe>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

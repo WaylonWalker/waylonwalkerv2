@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Automating my Post Starter
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="One thing we all dread is mundane work of getting started, and all the hoops it
+takes to get going.  This year I want to post more often and I am taking some
+steps towards making it easier for myself to just get started. When I start a new post I nee" name="description" property="description"/>
+  <meta content="One thing we all dread is mundane work of getting started, and all the hoops it
+takes to get going.  This year I want to post more often and I am taking some
+steps towards making it easier for myself to just get started. When I start a new post I nee" name="og:description" property="og:description"/>
+  <meta content="One thing we all dread is mundane work of getting started, and all the hoops it
+takes to get going.  This year I want to post more often and I am taking some
+steps towards making it easier for myself to just get started. When I start a new post I nee" name="twitter:description" property="twitter:description"/>
+  <meta content="Automating my Post Starter" name="og:title" property="og:title"/>
+  <meta content="Automating my Post Starter" name="twitter:title" property="twitter:title"/>
+  <meta content="Automating my Post Starter" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    One thing we all dread is mundane work of getting started, and all the hoops it
+takes to get going.  This year I want to post more often and I am taking some
+steps towards making it easier for myself to just get started.
+   </p>
+   <p>
+    When I start a new post I need to cd into my blog directory, start neovim in a
+markdown file with a clever name, copy some frontmatter boilerplate, update the
+post date, add tags, a description, and a cover.
+   </p>
+   <h2>
+    Todo List for starting a post
+   </h2>
+   <ul>
+    <li>
+     frontmatter template
+    </li>
+    <li>
+     Title
+    </li>
+    <li>
+     slug
+    </li>
+    <li>
+     tags
+    </li>
+    <li>
+     date
+    </li>
+    <li>
+     cover
+    </li>
+    <li>
+     description
+    </li>
+    <li>
+     create markdown file
+    </li>
+    <li>
+     open in neovim
+    </li>
+   </ul>
+   <h2>
+    Lets Automate this
+   </h2>
+   <h3>
+    This aint no proper cli
+   </h3>
+   <p>
+    <em>
+     hot and fast
+    </em>
+   </p>
+   <p>
+    As with many thing running behind the scenes on this site, I am the one and
+only user, I have limited time, so this is going to be a bit
+    <strong>
+     hot and fast
+    </strong>
+    .
+Let's create a file called new-post.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       start the script new-post
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">#!python
+# new-post</code></pre>
+   <blockquote>
+    <p>
+     👆 Works on my machine
+    </p>
+   </blockquote>
+   <p>
+    If this were something that had more users than me I would probably use
+something like click, but for this I want to get it done quick and avoid any
+need to manage dependencies.  Be careful if you were to share something with a
+    <code>
+     #!python
+    </code>
+    as it requries the end user to have the right version of python
+ready to go.
+   </p>
+   <h3>
+    Title
+   </h3>
+   <p>
+    The title can't really be automated this is the core idea coming out of my 🧠,
+but it will be captured through the cli and put into proper position.  For this
+I'm going super simple and just pulling it out of
+    <code>
+     sys.argv
+    </code>
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       set the title
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">import sys
+
+title = sys.argv[1].title()</code></pre>
+   <blockquote>
+    <p>
+     ! sys.argv is a list of each argument passed into the script split by spaces.
+    </p>
+   </blockquote>
+   <h3>
+    slug
+   </h3>
+   <p>
+    The slug is what I am calling the route and can simply come out of the title
+automatically, if I want to shorten it later by hand that will be simple enough
+to do manually. All that needs to be done is to lowercase and replace a few
+characters with -.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       set the slug
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">slug = title.lower)(.replace(" ", "-".replace()"_", -"")""))</code></pre>
+   <h3>
+    tags
+   </h3>
+   <p>
+    For tags I decided I wanted the parser to be as simple as possible and didnt
+want to dance around any flags.  I am simply just going to look at every
+argument passed into the command and see if any of them contain one of my
+common tags.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       parse the tags
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">args = ''.join(sys.argv[1:])
+tags = []
+
+if 'py' in args:
+    tags.append('python')
+
+if 'web' in args:
+    tags.append('webdev')
+
+if 'blog' in args:
+    tags.append('blog')
+
+if 'data' in args:
+    tags.append('data')</code></pre>
+   <p>
+    🤷‍♂️
+    <strong>
+     antipattern
+    </strong>
+    ?? The above section does an initialize then modify.  I generally try to avoid this
+pattern with something like a list comprehension, but didn't see an obvious
+solution so I just went with it.
+   </p>
+   <h2>
+    Frontmatter Template
+   </h2>
+   <p>
+    Now we have enough information going to assemble the frontmatter I use for my
+posts.  I am going to just insert the values I need into an f-string.  Since
+python 3.6 was released f-strings are my go to templating tool.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       create the markdown
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">import datetime
+
+frontmatter = f"""---
+templateKey: blog-post
+tags: {tags}
+title: {title}
+date: {datetime.date.today().strftime('%Y-%m-%dT%H:%M:%S')}
+status: draft
+description: ''
+cover: "/static/{slug}.png"
+
+---
+
+"""</code></pre>
+   <h3>
+    create markdown file
+   </h3>
+   <p>
+    Now its time to get down to business and make the post.  First I want to throw
+an error if the post already exists, I definitely dont want to blow away an
+existing post if a certain slug is already taken.  I am a big fan of custom
+error messages and I am going to go ahead and make one here, even though this
+is just a quick script.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       custom error
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">class PostExistsError(FileExistsError):
+    pass</code></pre>
+   <p>
+    I am a
+    <code>
+     pathlib
+    </code>
+    superfan.  It's going to make setting up these paths super
+simple.  Note I am going to anchor my directory down with the
+    <code>
+     __file__
+    </code>
+    variable.  I do this all the time to get paths relative to the module that is
+currently running.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       setup paths
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">directory = pathlib.Path(__file__).parent
+path = pathlib.Path(f"{directory}/src/pages/blog/{slug}.md")
+
+if path.exists():
+    raise PostExistsError(f"Post Already exists at {path}")</code></pre>
+   <blockquote>
+    <p>
+     <strong>
+      file
+     </strong>
+     is a string that represents the path to the running module
+    </p>
+   </blockquote>
+   <p>
+    Finally just write the file.  Here we open the file with a context manager so
+that we don't have to worry about closing it when we are done.  Note that we
+open it with the
+    <code>
+     w+
+    </code>
+    flag for write and creation.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       write the file
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">with open(path, "w+") as f:
+    f.write(frontmatter)</code></pre>
+   <h3>
+    git add
+   </h3>
+   <p>
+    I am not quite ready to pull the trigger on doing an auto commit, but this may
+happen in a future version.  For now I want this file easily picked up by vims
+    <code>
+     :GFiles
+    </code>
+    since I have that is one of my most used hot keys.  To do this the
+file at least needs added.  I'm sure there is a better way to do this with a
+Git library, but I am used to the command line so I am going to just run a
+subprocess.
+   </p>
+   <p>
+    I am using the
+    <code>
+     subprocess.Popen
+    </code>
+    command since its what I am used to, note
+that it will run the task in the background so be sure that you wait on it.
+The
+    <code>
+     Popen
+    </code>
+    is great if you have several task that are not dependent on each
+other.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       git add
+       <new-post>
+       </new-post>
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">gadd = subprocess.Popen(
+    f'cd {directory} &amp;&amp; git add {str(path).replace(str(directory) + "/", "")} ',
+    shell=True,
+)
+gadd.wait()</code></pre>
+   <h3>
+    open in neovim
+   </h3>
+   <p>
+    Last step of the script is to start writing, I want to be open in my blogs
+directory (hence the cd), with the file open, to the right line (+11), and in
+insert mode (+star).
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       open post in neovim
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">nvim = subprocess.Popen(
+    f'cd {directory} &amp;&amp; nvim +12 +star {str(path).replace(str(directory) + "/", "")} ',
+    shell=True,
+)
+nvim.wait()</code></pre>
+   <h2>
+    Alias
+   </h2>
+   <p>
+    Now I want this script to be available everywhere.  I am going to simply add
+the following entry to shorten the script and eliminate the need to use the
+full path.  I added this to my
+    <code>
+     ~/.alias
+    </code>
+    , for you it may be
+    <code>
+     ~/.bashrc
+    </code>
+    , or
+    <code>
+     ~/.zshrc
+    </code>
+    .
+   </p>
+   <pre class="highlight"><code class="language-bash">alias np=~/git/waylonwalkerv2/new-post</code></pre>
+   <h2>
+    Starting a new post
+   </h2>
+   <p>
+    Lets start a new post about automating my posts in python.
+   </p>
+   <pre class="highlight"><code class="language-bash">np "automating my posts" python</code></pre>
+   <h2>
+    This is my workflow
+   </h2>
+   <p>
+    Ad hoc scripts like this can be a bit of a hot mess, partly due to the just get
+it done nature, but also due to the fact that I am just riffing off the top of
+my head and utilizing docs as least as possible.
+   </p>
+   <p>
+    While writing the script I would run it after each section or so and print some
+results to make sure they were looking good. If I ever needed access to a live
+variable I would pop open ipython and run
+    <code>
+     %run new-post "my-new-post"
+    </code>
+    and
+inspecting it.
+   </p>
+   <h2>
+    Final Script
+   </h2>
+   <p>
+    <em>
+     <small>
+      <mark>
+       final script
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">#!python
+# new-post
+
+import sys
+import datetime
+import pathlib
+import subprocess
+
+
+title = sys.argv[1].titlecase()
+args = "".join(sys.argv[1:])
+tags = []
+
+if "py" in args:
+    tags.append("python")
+
+if "web" in args:
+    tags.append("webdev")
+
+if "blog" in args:
+    tags.append("blog")
+
+if "data" in args:
+    tags.append("data")
+
+slug = title.lower().replace(" ", "-").replace("_", "-")
+frontmatter = f"""---
+templateKey: blog-post
+tags: {tags}
+title: {title}
+date: {datetime.date.today().strftime('%Y-%m-%dT%H:%M:%S')}
+status: draft
+description: ''
+cover: "/static/{slug}.png"
+
+---
+
+
+"""
+
+
+class PostExistsError(FileExistsError):
+    pass
+
+
+directory = pathlib.Path(__file__).parent
+path = pathlib.Path(f"{directory}/src/pages/blog/{slug}.md")
+
+if path.exists():
+    raise PostExistsError(f"Post Already exists at {path}")
+
+with open(path, "w+") as f:
+    f.write(frontmatter)
+
+gadd = subprocess.Popen(
+    f'cd {directory} &amp;&amp; git add {str(path).replace(str(directory) + "/", "")} ',
+    shell=True,
+)
+gadd.wait()
+
+nvim = subprocess.Popen(
+    f'cd {directory} &amp;&amp; nvim +12 +star {str(path).replace(str(directory) + "/", "")} ',
+    shell=True,
+)
+nvim.wait()</code></pre>
+   <p>
+    <a href="https://waylonwalker.com/quickly-edit-posts">
+     https://waylonwalker.com/quickly-edit-posts
+    </a>
+   </p>
+   <blockquote>
+    <p>
+     check out the next article in this series where I setup a bash function to quickly edit these posts
+    </p>
+   </blockquote>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

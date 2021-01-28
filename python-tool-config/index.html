@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   ⚙ How Python Tools Are Configured
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="There are various ways to configure python tools, config files, code, or
+environment variables.  Let's look at a few projects that allow users to
+configure them through the use of config files and how they do it. This will not include how they are im" name="description" property="description"/>
+  <meta content="There are various ways to configure python tools, config files, code, or
+environment variables.  Let's look at a few projects that allow users to
+configure them through the use of config files and how they do it. This will not include how they are im" name="og:description" property="og:description"/>
+  <meta content="There are various ways to configure python tools, config files, code, or
+environment variables.  Let's look at a few projects that allow users to
+configure them through the use of config files and how they do it. This will not include how they are im" name="twitter:description" property="twitter:description"/>
+  <meta content="⚙ How Python Tools Are Configured" name="og:title" property="og:title"/>
+  <meta content="⚙ How Python Tools Are Configured" name="twitter:title" property="twitter:title"/>
+  <meta content="⚙ How Python Tools Are Configured" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    There are various ways to configure python tools, config files, code, or
+environment variables.  Let's look at a few projects that allow users to
+configure them through the use of config files and how they do it.
+   </p>
+   <h2>
+    Motivation
+   </h2>
+   <p>
+    This will not include how they are implemented, I've looked at a few and its
+not simple.  This will focus on where config is placed and the order in which
+duplicates are resolved.
+   </p>
+   <p>
+    The motivation of this article is to serve as a bit of a reference guide for
+those who may want to create their own package that needs configuration.
+   </p>
+   <h2>
+    Flake8
+   </h2>
+   <h3>
+    Global
+   </h3>
+   <p>
+    User settings can exist in the users
+    <code>
+     ~/.config/flake8
+    </code>
+    file to configure how
+flake8 runs on their machine.
+   </p>
+   <ul>
+    <li>
+     <code>
+      ~/.config/flake8
+     </code>
+    </li>
+   </ul>
+   <h3>
+    Per-Project
+   </h3>
+   <p>
+    Only One project config file will be considered, but allows for several
+options.  These files all use the
+    <code>
+     ini
+    </code>
+    format and must have a
+    <code>
+     [flake8]
+    </code>
+    section  header to be consideered.
+   </p>
+   <p>
+    Selection of the config file can also be overridden by the
+    <code>
+     --config
+    </code>
+    cli option.
+   </p>
+   <p>
+    An extra config file may be selected as
+    <code>
+     --append-config
+    </code>
+    .  It will be read in
+last and take highest precedence.
+   </p>
+   <ul>
+    <li>
+     <code>
+      tox.ini
+     </code>
+    </li>
+    <li>
+     <code>
+      setup.cfg
+     </code>
+    </li>
+    <li>
+     <code>
+      .pep8
+     </code>
+    </li>
+    <li>
+     <code>
+      .flake8
+     </code>
+    </li>
+   </ul>
+   <h2>
+    Example Config
+   </h2>
+   <p>
+    <em>
+     valid in any of the supported files
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-ini">[flake8]
+max-line-length = 88
+extend-ignore = E203, W503</code></pre>
+   <h3>
+    Options
+   </h3>
+   <p>
+    The number of options configured through config files is fairly short for
+    <code>
+     flake8
+    </code>
+    .
+   </p>
+   <ul>
+    <li>
+     exclude
+    </li>
+    <li>
+     filename
+    </li>
+    <li>
+     select
+    </li>
+    <li>
+     ignore
+    </li>
+    <li>
+     max-line-length
+    </li>
+    <li>
+     format
+    </li>
+    <li>
+     max-complexity
+    </li>
+   </ul>
+   <h2>
+    Black
+   </h2>
+   <p>
+    Black only supports
+    <code>
+     TOML
+    </code>
+    file formats for configuration.
+   </p>
+   <h3>
+    Global
+   </h3>
+   <p>
+    Black provides no global config support.  If you really needed one I guess you
+could make a cli alias.
+   </p>
+   <h3>
+    Per-Project
+   </h3>
+   <p>
+    Black states that it includes sane defaults that do not need configured, but if
+you need to do so it only supports
+    <code>
+     pyproject.toml
+    </code>
+    or cli arguments.
+   </p>
+   <p>
+    Personally I believe that a lot of work went into making these sane defaults
+really good.  I personally do not make any configuration changes to black.
+   </p>
+   <ul>
+    <li>
+     pyproject.toml
+    </li>
+   </ul>
+   <h2>
+    Example
+   </h2>
+   <p>
+    <em>
+     pyproject.toml
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-toml">[tool.black]
+line-length = 88
+target-version = ['py37']
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''</code></pre>
+   <h2>
+    Resolution
+   </h2>
+   <p>
+    Black will use teh
+    <code>
+     pyproject.toml
+    </code>
+    file for configuration, then make any
+addional overrides through the use of command line arguments.
+   </p>
+   <h2>
+    MyPy
+   </h2>
+   <p>
+    <code>
+     mypy
+    </code>
+    takes the cake for the most complex configuration.  Primarily because
+you can configure how it treats different modules specifically.  These modules
+may be inside your codebase or installed and imported in.
+   </p>
+   <h3>
+    Per-Project
+   </h3>
+   <ul>
+    <li>
+     --config-file
+    </li>
+    <li>
+     mypy.ini
+    </li>
+    <li>
+     .mypy.ini
+    </li>
+   </ul>
+   <h3>
+    Global
+   </h3>
+   <ul>
+    <li>
+     $XDG_CONFIG_HOME/mypy/config
+    </li>
+    <li>
+     ~/.config/mypy/config
+    </li>
+    <li>
+     ~/.mypy.ini
+    </li>
+   </ul>
+   <h3>
+    Resolution
+   </h3>
+   <ul>
+    <li>
+     --config-file
+    </li>
+    <li>
+     mypy.ini
+    </li>
+    <li>
+     .mypy.ini
+    </li>
+    <li>
+     setup.cfg
+    </li>
+    <li>
+     $XDG_CONFIG_HOME/mypy/config
+    </li>
+    <li>
+     ~/.config/mypy/config
+    </li>
+    <li>
+     ~/.mypy.ini
+    </li>
+   </ul>
+   <h3>
+    Example
+   </h3>
+   <p>
+    <em>
+     mypy.ini
+    </em>
+   </p>
+   <pre class="highlight"><code># Global options:
+
+[mypy]
+python_version = 2.7
+warn_return_any = True
+warn_unused_configs = True
+
+# Per-module options:
+
+[mypy-mycode.foo.*]
+disallow_untyped_defs = True
+
+[mypy-mycode.bar]
+warn_return_any = False
+
+[mypy-somelibrary]
+ignore_missing_imports = True</code></pre>
+   <h2>
+    Kedro - framework
+   </h2>
+   <p>
+    Kedro is a unique one here.  It offers two distinctly different configurations,
+one for how the framework behaves and the other for actual project config.
+   </p>
+   <p>
+    Kedro does utilizes a
+    <code>
+     settings.py
+    </code>
+    and
+    <code>
+     pyproject.toml
+    </code>
+    to define a bit more
+of the framework settings.  These are the outter layer of your project.
+   </p>
+   <p>
+    These files sit at the root of the project.
+   </p>
+   <h3>
+    <a href="https://github.com/quantumblacklabs/kedro/blob/fb88cc2504ddbfc93b9b859ca436130b396b93c4/docs/source/12_faq/02_architecture_overview.md#pyprojecttoml">
+     pyproject.toml
+    </a>
+   </h3>
+   <p>
+    This replaces much of what used to be specified in run.py.
+   </p>
+   <ul>
+    <li>
+     package_name
+    </li>
+    <li>
+     project_name
+    </li>
+    <li>
+     project_version
+    </li>
+    <li>
+     source_dir
+    </li>
+   </ul>
+   <h3>
+    <a href="https://github.com/quantumblacklabs/kedro/blob/fb88cc2504ddbfc93b9b859ca436130b396b93c4/docs/source/12_faq/02_architecture_overview.md#settingspy">
+     Settings.py
+    </a>
+   </h3>
+   <ul>
+    <li>
+     DISABLE_HOOKS_FOR_PLUGINS
+    </li>
+    <li>
+     HOOKS
+    </li>
+    <li>
+     SESSION_STORE_CLASS
+    </li>
+    <li>
+     SESSION_STORE_ARGS
+    </li>
+    <li>
+     CONTEXT_CLASS
+    </li>
+   </ul>
+   <h2>
+    Kedro - project
+   </h2>
+   <p>
+    Within the project generally in the
+    <code>
+     src/conf
+    </code>
+    directory kedro allows you to
+set both local and base configurations.  Local configurations will be git
+ignored and most commonly used for credentials.
+   </p>
+   <ul>
+    <li>
+     catalog
+    </li>
+    <li>
+     logging
+    </li>
+    <li>
+     credentials
+    </li>
+   </ul>
+   <h3>
+    Config Loader
+   </h3>
+   <p>
+    Kedro lets you setup the config loader if you choose to do so.  You can
+configure the directories to look in as well as the glob pattern for files.
+   </p>
+   <pre class="highlight"><code class="language-python">from kedro.config import ConfigLoader
+
+conf_paths = ["conf/base", "conf/local"]
+conf_loader = ConfigLoader(conf_paths)
+conf_catalog = conf_loader.get("catalog*", "catalog*/**")</code></pre>
+   <h3>
+    additional envs
+   </h3>
+   <p>
+    Additional to the
+    <code>
+     base
+    </code>
+    and
+    <code>
+     local
+    </code>
+    config, kedro lets you specify an env at
+runtime through a
+    <code>
+     --env
+    </code>
+    argumet or a
+    <code>
+     KEDRO_ENV
+    </code>
+    variable.  setting this will
+additionally tell kedro to reach into
+    <code>
+     conf/&lt;env-name&gt;
+    </code>
+    for configuration.
+   </p>
+   <h3>
+    Resolution Order
+   </h3>
+   <p>
+    kedro will load each config starting from
+    <code>
+     base
+    </code>
+    ,
+    <code>
+     local
+    </code>
+    , then
+    <code>
+     env
+    </code>
+    and will
+overrite any colllisions along the way.
+   </p>
+   <p>
+    <strong>
+     precedence heirarchy
+    </strong>
+   </p>
+   <ul>
+    <li>
+     env
+    </li>
+    <li>
+     local
+    </li>
+    <li>
+     base
+    </li>
+   </ul>
+   <h3>
+    Jinja Support
+   </h3>
+   <p>
+    As of
+    <code>
+     0.17.0
+    </code>
+    kedro supports jinja2 templates in its yml configuration files.
+This is quite beneficial as catalogs can become incredebly repetative.
+   </p>
+   <pre class="highlight"><code class="language-yaml">{% for speed in ['fast', 'slow'] %}
+{{ speed }}-trains:
+    type: MemoryDataSet
+
+{{ speed }}-cars:
+    type: pandas.CSVDataSet
+    filepath: s3://${bucket_name}/{{ speed }}-cars.csv
+    save_args:
+        index: true
+
+{% endfor %}</code></pre>
+   <h2>
+    pytest
+   </h2>
+   <p>
+    Currently pytest is configured
+   </p>
+   <h2>
+    resolution order
+   </h2>
+   <p>
+    <code>
+     pytest
+    </code>
+    will look for the existence of each of these files, if its a match it
+will stop looking for new files, even if the file is empty.
+   </p>
+   <ul>
+    <li>
+     <code>
+      pytest.ini
+     </code>
+    </li>
+    <li>
+     <code>
+      pyproject.toml
+     </code>
+     with
+     <code>
+      [tool.pytest.ini_options]
+     </code>
+    </li>
+    <li>
+     <code>
+      tox.ini
+     </code>
+     with
+     <code>
+      [pytest]
+     </code>
+    </li>
+    <li>
+     <code>
+      setup.cfg
+     </code>
+     with
+     <code>
+      [tool:pytest]
+     </code>
+    </li>
+   </ul>
+   <h2>
+    Multiple Config
+   </h2>
+   <p>
+    <code>
+     pytest
+    </code>
+    is a bit unique here in that it allows for multiple configs.  There is
+a complex resolution for module specific configuration, but essentially it does
+the resolution highlighted above through a number of directories and returns
+the config closest to the test module.
+   </p>
+   <h2>
+    Example pytest config
+   </h2>
+   <pre class="highlight"><code class="language-ini"># pytest.ini
+[pytest]
+minversion = 6.0
+addopts = -ra -q
+testpaths =
+    tests
+    integration</code></pre>
+   <h2>
+    Command Line Options
+   </h2>
+   <p>
+    As far as I am aware every option specified in a config file can also be
+configured or overridden at the command line.
+   </p>
+   <h2>
+    ipython
+   </h2>
+   <p>
+    <code>
+     Ipython
+    </code>
+    is configured completely at a system level with python scripts within
+the users
+    <code>
+     ~/.ipython/
+    </code>
+    directory.  The user may have multiple profiles that
+can be created by running
+    <code>
+     ipython profile create [profilename]
+    </code>
+    or specified
+by running
+    <code>
+     ipython --profile=[profilename]
+    </code>
+   </p>
+   <h3>
+    Config Directory
+   </h3>
+   <p>
+    By default this is
+    <code>
+     ~/.ipython
+    </code>
+    , but an be configured by setting the
+    <code>
+     IPYTHONDIR
+    </code>
+    environment variable or
+    <code>
+     --ipython-dir=&lt;path&gt;
+    </code>
+    command line
+option.
+   </p>
+   <h3>
+    Example Config
+   </h3>
+   <pre class="highlight"><code class="language-python"># sample ipython_config.py
+c = get_config()
+
+c.TerminalIPythonApp.display_banner = True
+c.InteractiveShellApp.log_level = 20
+c.InteractiveShellApp.extensions = [
+    'myextension'
+]
+c.InteractiveShellApp.exec_lines = [
+    'import numpy',
+    'import scipy'
+]
+c.InteractiveShellApp.exec_files = [
+    'mycode.py',
+    'fancy.ipy'
+]
+c.InteractiveShell.autoindent = True
+c.InteractiveShell.colors = 'LightBG'
+c.InteractiveShell.confirm_exit = False
+c.InteractiveShell.deep_reload = True
+c.InteractiveShell.editor = 'nano'
+c.InteractiveShell.xmode = 'Context'
+
+c.PromptManager.in_template  = 'In [\#]: '
+c.PromptManager.in2_template = '   .\D.: '
+c.PromptManager.out_template = 'Out[\#]: '
+c.PromptManager.justify = True
+
+c.PrefilterManager.multi_line_specials = True
+
+c.AliasManager.user_aliases = [
+ ('la', 'ls -al')
+]</code></pre>
+   <h3>
+    CommandLine Overrides
+   </h3>
+   <p>
+    Every configurable value can be overridden from the command line.
+   </p>
+   <pre class="highlight"><code class="language-bash">ipython --ClassName.attribute=value</code></pre>
+   <h3>
+    Config Magic
+   </h3>
+   <p>
+    Configuration can be overridden at runtime with the
+    <code>
+     %config
+    </code>
+    magic.
+   </p>
+   <pre class="highlight"><code class="language-python">%config IPCompleter.greedy = True</code></pre>
+   <h3>
+    Startup
+   </h3>
+   <p>
+    Every ipython profile has a startup directory where it will execute each
+    <code>
+     .py
+    </code>
+    and
+    <code>
+     .ipy
+    </code>
+    file on startup.  You can make additional configuration here, import
+modules you want readily available, execute literally any python code you want
+to at the startup of that particular profile.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

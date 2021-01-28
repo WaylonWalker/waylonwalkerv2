@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Integration testing with Python, TestProject.io, and GitHub Actions
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="As I continue to build out https://waylonwalker.com/ I sometimes run into some errors that are not caught becuase I do not have good testing implemented. I want to explore some integration testing options using GitHub actions." name="description" property="description"/>
+  <meta content="As I continue to build out https://waylonwalker.com/ I sometimes run into some errors that are not caught becuase I do not have good testing implemented. I want to explore some integration testing options using GitHub actions." name="og:description" property="og:description"/>
+  <meta content="As I continue to build out https://waylonwalker.com/ I sometimes run into some errors that are not caught becuase I do not have good testing implemented. I want to explore some integration testing options using GitHub actions." name="twitter:description" property="twitter:description"/>
+  <meta content="Integration testing with Python, TestProject.io, and GitHub Actions" name="og:title" property="og:title"/>
+  <meta content="Integration testing with Python, TestProject.io, and GitHub Actions" name="twitter:title" property="twitter:title"/>
+  <meta content="Integration testing with Python, TestProject.io, and GitHub Actions" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    As I continue to build out
+    <a href="https://waylonwalker.com/">
+     waylonwalker.com
+    </a>
+    I sometimes run into some errors that are not caught because I do not have good testing implemented.  I want to explore some integration testing options using GitHub's actions.
+   </p>
+   <p>
+    Running integration tests will not prevent bugs from happening completely, but it will allow me to quickly spot them and rollback.
+   </p>
+   <hr/>
+   <h2>
+    🤔 What to test first?
+   </h2>
+   <p>
+    The very first thing that comes to my mind is anything that is loaded or ran client-side.  Two things quickly came to mind here.  I run gatsby so most of my content is statically rendered, and it yells at me if something isn't as expected.  For performance reasons I lazy load cards on my blogroll, loading all of the header images gets heavy and kills lighthouse (if anyone actually cares). I am also loading some information from the top open-source libraries that I have created.  To prevent the need to rebuild the whole site to get the latest information I am just using the GitHub API client-side.
+   </p>
+   <p>
+    things I was looking for from features to test
+   </p>
+   <ul>
+    <li>
+     client-side interactions
+    </li>
+    <li>
+     external API
+    </li>
+   </ul>
+   <p>
+    features on my blog to consider testing
+   </p>
+   <ul>
+    <li>
+     lazy-loaded blog cards
+    </li>
+    <li>
+     GitHub Repos
+    </li>
+   </ul>
+   <h2>
+    Repo Cards
+   </h2>
+   <p>
+    I chose to start with the GitHub repos as they seemed a bit more straight forward, and it's been a while since I have done any selenium.
+   </p>
+   <p style="text-align: center">
+    <img alt="Open Source cards as they look on waylonwalker.com" src="https://waylonwalker.com/open-source-cards.png" style="width:600px; max-width:80%; margin: auto;"/>
+   </p>
+   <blockquote>
+    <p>
+     here is what the GitHub repo cards look like
+    </p>
+   </blockquote>
+   <h2>
+    TestProject.io
+   </h2>
+   <p>
+    I am trying out
+    <a href="https://TestProject.io">
+     TestProject.io
+    </a>
+    for the first time on this project.  My experience so far has been top-notch.  There was an existing suite of docker images/files set up to run the TestProject agent in a docker container alongside headless chrome and firefox drivers.  The first thing that you are going to need is a
+    <a href="https://app.TestProject.io/#/integrations/sdk">
+     TP_DEV_TOKEN
+    </a>
+    and
+    <a href="https://app.TestProject.io/#/integrations/api">
+     TP_API_KEY
+    </a>
+    .  These will give TestProject access to your account so that it can automatically post results to your
+    <a href="https://app.TestProject.io/#/reports">
+     dashboard
+    </a>
+   </p>
+   <ul>
+    <li>
+     <a href="https://app.TestProject.io/#/integrations/sdk">
+      TP_DEV_TOKEN
+     </a>
+    </li>
+    <li>
+     <a href="https://app.TestProject.io/#/integrations/api">
+      TP_API_KEY
+     </a>
+    </li>
+   </ul>
+   <h3>
+    Put these in secrets in your repo
+   </h3>
+   <p>
+    In your GitHub repo go to
+    <code>
+     settings&gt;Secrets
+    </code>
+    , or append
+    <code>
+     settings/secrets
+    </code>
+    to the URL to your repo, and add the tokens.  This will give GitHub safe access to them without them being available to the public, contributors, log files, or anything.
+   </p>
+   <p style="text-align: center">
+    <img alt="Secrets panel in the GitHub Repo" src="https://waylonwalker.com/test-waylonwalker-com-secrets.png" style="width:600px; max-width:80%; margin: auto;"/>
+   </p>
+   <h2>
+    Setup Dev
+   </h2>
+   <p>
+    To expedite development I went ahead and set up development environment that I could log into on Digital Ocean.  This allowed me to get all of my tests working a bit quicker than just running them through GitHub, but being as similar as possible.  This allowed me to learn the ins and outs of setting up TestProject without needing to do a full install every time through Github's actions.
+   </p>
+   <p style="text-align: center">
+    <a href="https://waylonwalker.com/notes/new-machine-tpio">
+     <img alt="Test Project Dev Machine setup notes card" src="https://waylonwalker.com/new-machine-tpio-rm.png" style="width:500px; max-width:80%; margin: auto;"/>
+    </a>
+   </p>
+   <blockquote>
+    <p>
+     I am not going to go into full dev machine setup here, but you can read my
+     <a href="https://waylonwalker.com/notes/new-machine-tpio">
+      setup notes
+     </a>
+     .
+    </p>
+   </blockquote>
+   <h2>
+    🐍 Pytest
+   </h2>
+   <p>
+    <em>
+     you can see all of the tests ran with pytest on
+     <a href="https://github.com/waylonwalker/waylonwalker-com-tests/tree/master/tests">
+      github
+     </a>
+    </em>
+   </p>
+   <p>
+    I chose to go down the route of using pytest.  I really liked the idea of utilizing fixtures, automatically running my test functions, and utilizing a bit of the pytest reporting capabilities.
+   </p>
+   <p>
+    <strong>
+     NOTE
+    </strong>
+    per pytest standard practice I named the directory containing tests
+    <code>
+     tests
+    </code>
+    .  While this works, TestProject.io uses this director as the default name for the project.  If I were to go back I would either rename the directory to what I want to show up on TestProject.io or configure the project name inside of the config.
+   </p>
+   <h2>
+    conftest.py
+   </h2>
+   <p>
+    <em>
+     You can see the
+     <a href="https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/tests/conftest.py">
+      conftest.py
+     </a>
+     live on GitHub.
+    </em>
+   </p>
+   <p>
+    pytest automatically imports
+    <a href="https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/tests/conftest.py">
+     conftest.py
+    </a>
+    modules from the same directory that you are working from.  It's common to place fixtures used across multiple files here.  I placed a driver fixture in this module so that as I create more tests it will be available everywhere by default.
+   </p>
+   <blockquote>
+    <p>
+     conftest.py stores fixtures for all modules in a directory.
+    </p>
+   </blockquote>
+   <pre class="highlight"><code class="language-python"># tests/conftest.py
+
+import time
+import pytest
+from src.TestProject.sdk.drivers import web driver
+
+@pytest.fixture
+def driver():
+    "creates a webdriver and loads the homepage"
+    driver = webdriver.Chrome()
+    driver.get("https://waylonwalker.com/")
+    yield driver
+    driver.quit()</code></pre>
+   <blockquote>
+    <p>
+     Look at the full version of
+     <a href="https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/tests/conftest.py">
+      conftest.py
+     </a>
+    </p>
+   </blockquote>
+   <p>
+    The above sample is a bit
+    <strong>
+     simplified
+    </strong>
+    .  I ran into some inconsistencies in the real version and found that some tests had a better pass rate if I added a wait.  I ended up with a
+    <code>
+     driver
+    </code>
+    and a
+    <code>
+     slow_driver
+    </code>
+    fixture.
+   </p>
+   <h2>
+    test_repos.py
+   </h2>
+   <p>
+    <em>
+     see the full
+     <a href="https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/tests/test_repos.py">
+      testrepos.py
+     </a>
+     on GitHub
+    </em>
+   </p>
+   <p>
+    I have initially set up 3 different tests for the repo cards.  I set a list of repos that I expect to show up in the cards.  These tests are quite easy to do with TestProject.io as it is using selenium and a headless browser to execute javascript under the hood.
+   </p>
+   <p>
+    If you are not familiar a
+    <strong>
+     headless browser
+    </strong>
+    runs the engine as your browser without a graphical user interface.  JavaScript gets fully loaded and parsed, and the dom is completely interactive programmatically.
+   </p>
+   <pre class="highlight"><code class="language-python">"""
+Test that GitHub repo data dynamically loads the client-side.
+"""
+
+REPOS = [
+    "find-kedro",
+    "kedro-static-viz",
+    "kedro-action",
+    "steel-toes",
+]
+
+def test_repos_loaded(slow_driver):
+    """
+    Test that each repo-name exists as a title in one of the repo cards.
+
+    On waylonwalker.com repo cards have a title with a class of "repo-name"
+    """
+    repos = slow_driver.find_elements_by_class_name("repo-name")
+    # get innertext from elements
+    header_text = [
+        header.text for header in repos
+    ]
+    for repo in REPOS:
+        assert repo in header_text
+
+
+def test_repo_description_loaded(slow_driver):
+    """
+    Test that each repo has a description longer than 10 characters
+
+    On waylonwalker.com repo cards have a descriptiion with a class of "repo-description"
+    """
+    repo_elements = slow_driver.find_elements_by_class_name("repo")
+    for el in repo_elements:
+        desc = el.find_element_by_class_name("repo-description")
+        assert len(desc.text) &gt; 10
+
+
+def test_repo_stars_loaded(slow_driver):
+    """
+    Ensure that stars are properly parsed from the API and loaded client-side
+
+    On waylonwalker.com repo cards have a stars element with a class of "repo-stars" and
+    is displayed as "n stars"
+    """
+    repo_elements = slow_driver.find_elements_by_class_name("repo")
+    for el in repo_elements:
+        stars = el.find_element_by_class_name("repo-stars")
+        num_stars, label = stars.text.split()
+        assert int(num_stars) &gt; 0
+        assert label == 'stars'</code></pre>
+   <h2>
+    Forum
+   </h2>
+   <p>
+    <em>
+     <a href="https://forum.TestProject.io/t/install-agent-inside-github-actions/2334/3">
+      forum.TestProject.io
+     </a>
+    </em>
+   </p>
+   <p>
+    Before jumping into the real action.  I quickly wanted to mention the
+    <strong>
+     amazing
+    </strong>
+    ✨  discord server that they have going.
+   </p>
+   <p>
+    I was a bit confused about how to set up TestProject.io inside of actions.  I was with a prompt response linking me to the exact example I needed.  The tests were written in java, but they had set up the docker-compose steps that I needed.
+   </p>
+   <hr/>
+   <h2>
+    GitHub Actions 🎬
+   </h2>
+   <p>
+    <em>
+     <a href="https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/workflows/test-waylonwalker-com.yml">
+      test-waylonwalker-com.yml
+     </a>
+    </em>
+   </p>
+   <h2>
+    GitHub actions are a continuous integration, continuous delivery service by GitHub that will spin up a VM and run a set of steps upon a number of triggers including push, pull request, and schedule.
+   </h2>
+   <p style="text-align: center">
+    <a href="https://waylonwalker.com/github-actions-syntax">
+     <img alt="GitHub Actions Syntax article card" src="https://waylonwalker.com/github-actions-syntax-rm.png" style="width:500px; max-width:80%; margin: auto;"/>
+    </a>
+   </p>
+   <blockquote>
+    <p>
+     If you're new to actions check out this article on using actions.
+    </p>
+   </blockquote>
+   <hr/>
+   <p>
+    Now that I have my GitHub repo setup with my
+    <a href="https://github.com/WaylonWalker/waylonwalker-com-tests/tree/master/tests">
+     tests
+    </a>
+    successfully running in pytest, let's get it running inside of GitHub actions automatically.
+   </p>
+   <pre class="highlight"><code class="language-yaml">name: Test WaylonWalker.com
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '*/10 * * * *'</code></pre>
+   <p>
+    You can see in the section above I have set up to run every time there is a push to or pull request open to main.  I also set a fairly aggressive test schedule to run every
+    <strong>
+     10
+    </strong>
+    <strong>
+     minutes
+    </strong>
+    .  For now, this is just to build confidence in the tests and get more data in the reports to explore.  I will likely turn this down later.
+   </p>
+   <pre class="highlight"><code class="language-yaml">
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@main
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - run: pip install -r requirements.txt
+    - name: Run TestProject Agent
+      env:
+        TP_API_KEY: ${{ secrets.TP_API_KEY }} # &lt; Let Secrets handle your keys
+      run: |
+        envsubst &lt; .github/ci/docker-compose.yml &gt; docker-compose.yml
+        cat docker-compose.yml
+        docker-compose -f docker-compose.yml up -d
+    - name: Wait for Agent to Register
+      run: bash .github/ci/wait_for_agent.sh
+    - run: pytest
+      env:
+        TP_DEV_TOKEN: ${{ secrets.TP_DEV_TOKEN }} # &lt; Let Secrets handle your tokens
+        TP_AGENT_URL: http://localhost:8585</code></pre>
+   <p>
+    In the test job you can see that we have rendered the
+    <a href="https://app.TestProject.io/#/integrations/api">
+     TP_API_KEY
+    </a>
+    into the
+    <a href="https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/ci/docker-compose.yml">
+     docker-compose.yml
+    </a>
+    using
+    <code>
+     envsubst
+    </code>
+    file so that TestProject has access to it.  We have also exposed our
+    <a href="https://app.TestProject.io/#/integrations/sdk">
+     TP_DEV_TOKEN
+    </a>
+    to pytest.
+   </p>
+   <h2>
+    docker-compose.yml
+   </h2>
+   <p>
+    <em>
+     <a href="https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/ci/docker-compose.yml">
+      docker-compose.yml
+     </a>
+    </em>
+   </p>
+   <p>
+    The following
+    <a href="https://github.com/WaylonWalker/waylonwalker-com-tests/blob/master/.github/ci/docker-compose.yml">
+     docker-compose.yml
+    </a>
+    file was graciously contributed by
+    <a href="https://github.com/vitalybu">
+     @vitalybu
+    </a>
+    in the
+    <a href="https://github.com/testproject-io/java-sdk/blob/master/.github/ci/docker-compose.yml">
+     testproject-io/java-sdk
+    </a>
+    repo.  It sets up a template with the
+    <strong>
+     <code>
+      TP_API_KEY
+     </code>
+    </strong>
+    as a variable for envsubst, headless browsers for chrome and firefox, and the TestProject.io agent.
+   </p>
+   <pre class="highlight"><code class="language-yaml">version: "3.1"
+services:
+  testproject-agent:
+    image: testproject/agent:latest
+    container_name: testproject-agent
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      TP_API_KEY: "${TP_API_KEY}"
+      TP_AGENT_TEMP: "true"
+      TP_SDK_PORT: "8686"
+      CHROME: "chrome:4444"
+      CHROME_EXT: "localhost:5555"
+      FIREFOX: "firefox:4444"
+      FIREFOX_EXT: "localhost:6666"
+    ports:
+    - "8585:8585"
+    - "8686:8686"
+  chrome:
+    image: selenium/standalone-chrome
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+    - "5555:4444"
+  firefox:
+    image: selenium/standalone-firefox
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+    - "6666:4444"</code></pre>
+   <h2>
+    ⌚ Waiting for the Agent to register
+   </h2>
+   <p>
+    <em>
+     <a href="https://waylonwalker.com/waitforagent.sh">
+      wait for agent.sh
+     </a>
+    </em>
+   </p>
+   <p>
+    I think the most interesting part of the workflow above is how we wait for the agent to register.  The shell script is a bit terse, but it looks for exceeding the
+    <code>
+     max_attempts
+    </code>
+    allowed or that the agent has started by using its
+    <code>
+     /api/status
+    </code>
+    rest API.  This prevents us from wasting too much time by setting a big wait, or trying to move on too early and running pytest without a running agent.
+   </p>
+   <pre class="highlight"><code class="language-bash">trap 'kill $(jobs -p)' EXIT
+attempt_counter=0
+max_attempts=100
+mkdir -p build/reports/agent
+docker-compose -f docker-compose.yml logs -f | tee build/reports/agent/log.txt&amp;
+until curl -s http://localhost:8585/api/status | jq '.registered' | grep true; do
+    if [ ${attempt_counter} -eq ${max_attempts} ]; then
+    echo "Agent failed to register. Terminating..."
+    exit 1
+    fi
+    attempt_counter=$(($attempt_counter+1))
+    echo
+    sleep 1
+done</code></pre>
+   <h2>
+    TestProject.io Dashboard 〽
+   </h2>
+   <p>
+    One one of the coolest features that you get from TestProject.io are the
+    <a href="https://app.testproject.io/#/reports">
+     reports
+    </a>
+    dashboard.  To me, this felt like a premium feature for
+    <strong>
+     free
+    </strong>
+    .  Here you can see a time-series plot of your tests success rate over time.  It gives you a bit of an ability to slice in, but not a lot.  Some of the filters are pre-canned, like the past 2 days are past 30 days cannot be customized.
+   </p>
+   <p style="text-align: center">
+    <img alt="My Dashboard for test_repos" src="https://waylonwalker.com/tpio-test-repos.png" style="width:800px; max-width:80%; margin: auto;"/>
+   </p>
+   <h2>
+    A single test flow in the dashboard
+   </h2>
+   <p>
+    As you drill in you can see individual tests that have been run, select them, and see individual reports for each test.  Personally I really like the layout on the side.  It converts the steps ran by the driver into a human-readable
+    <em>
+     flowchart
+    </em>
+    , and each step can be opened up to see their values.  It would be nice if it picked up my pytest assertions, but picking up what it did was great.
+   </p>
+   <p style="text-align: center">
+    <img alt="driver flow of test_repo_stars_loaded" src="https://waylonwalker.com/test_repo_stars_loaded.png" style="width:350px; max-width:80%; margin: auto;"/>
+   </p>
+   <h2>
+    Overall 😄
+   </h2>
+   <p>
+    The experience I had setting up TestProject.io to run inside GitHub's actions was great.  It was fairly simple to set up and get running with many of the greatest integration testing tools of today, selenium, chrome, firefox.
+   </p>
+   <p>
+    Now I am going to turn the test frequency down a bit.
+   </p>
+   <hr/>
+   <h2>
+    More Actions
+   </h2>
+   <p>
+    If you're new to actions check out this article on using actions.
+   </p>
+   <table>
+    <tr>
+     <td>
+      <a href="https://waylonwalker.com/four-github-actions-website">
+       <img alt="GitHub Actions Syntax article card" src="https://waylonwalker.com/four-github-actions-website-rm.png" style="margin: auto; float: left"/>
+      </a>
+     </td>
+     <td>
+      <a href="https://waylonwalker.com/four-github-actions-python">
+       <img alt="GitHub Actions Syntax article card" src="https://waylonwalker.com/four-github-actions-python-rm.png" style="margin: auto; float: right;"/>
+      </a>
+     </td>
+    </tr>
+    <div id="show">
+    </div>
+   </table>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

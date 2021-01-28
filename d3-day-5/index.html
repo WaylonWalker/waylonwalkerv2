@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   D3 Day 5
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="none" name="description" property="description"/>
+  <meta content="none" name="og:description" property="og:description"/>
+  <meta content="none" name="twitter:description" property="twitter:description"/>
+  <meta content="D3 Day 5" name="og:title" property="og:title"/>
+  <meta content="D3 Day 5" name="twitter:title" property="twitter:title"/>
+  <meta content="D3 Day 5" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js">
+   </script>
+   <style>
+    #content{
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .chart {
+        display: block;
+        padding: 10px;
+        background: peachpuff;
+    }
+
+    .bar {
+        height: 30px;
+        margin: 5px;
+        background: teal;
+    }
+    .bar:hover{
+        background: #444;
+        }
+    button {
+        background: rgb(240, 196, 211);
+        border: none;
+        font-size: 1.3rem;
+        border-radius: 5px;
+        padding: .2rem 1rem;
+        margin-bottom: 1rem
+    }
+    .on {
+        background: palevioletred;
+    }
+    .big {
+    width: 100%
+    }
+    .small {
+    width: 50%
+    }
+   </style>
+   <h2>
+    Learn D3 in 5 days
+   </h2>
+   <p>
+    For what we are creating in these posts d3 is way overkill and very verbose, but I need to start somewhere!  These are just stepping stones into real custom visualizations that cannot be done in any other tool today.  I still cannot explain how excited I am to say
+    <strong>
+     "I created that in d3!!!"
+    </strong>
+   </p>
+   <h3>
+    Todays Result
+   </h3>
+   <h2>
+    Recall Example 3 from yesterday
+   </h2>
+   <div id="buttons">
+    <h3>
+     Subject
+    </h3>
+    <div id="subjects">
+     <button class="math" onclick="render4('math')">
+      Math
+     </button>
+     <button class="science" onclick="render4('science')">
+      Science
+     </button>
+    </div>
+    <h3>
+     Chart Size
+    </h3>
+    <div id="sizes">
+     <button class="chart4-big-btn" onclick='chart4_size("big")'>
+      Large
+     </button>
+     <button class="chart4-small-btn" onclick='chart4_size("small")'>
+      Small
+     </button>
+    </div>
+   </div>
+   <div class="chart" id="chart4">
+   </div>
+   <script>
+    const data4 = [
+        { name: 'Alice', math: 93, science: 84},
+        { name: 'Bob', math: 73, science: 82 },
+        { name: 'James', math: 92, science: 78},
+        { name: 'Steve', math: 77, science: 93 },
+        { name: 'Jordan', math: 80, science: 68 },
+    ]
+
+    chart4 = document.getElementById('chart4')
+
+
+    let width = function() {
+        return chart4.getBoundingClientRect().width
+        }
+    let height = function() {
+        return chart4.getBoundingClientRect().height
+        }
+    let barHeight = function() {
+        height() /  data4.length + 'px'
+        }
+
+    function chart4_size(size) {
+        d3.select('#sizes')
+            .selectAll('button')
+            .classed('on', false)
+        d3.select('#sizes')
+            .select('.chart4-' + size + '-btn')
+            .classed('on', true)
+        d3.select('#chart4')
+            .attr('class', 'chart ' + size)
+        subject = document
+            .getElementById('subjects')
+            .querySelector('.on')
+            .classList[0]
+        render4(subject)
+    }
+
+    function render4(subject) {
+
+        d3.select('#subjects')
+            .selectAll('button')
+            .classed('on', false);
+
+        d3.select('#subjects')
+            .select('.' + subject)
+            .attr('class', subject + ' on');
+
+        let xScale = d3.scaleLinear()
+            .domain([50, 100])
+            .range([0, width()]);
+
+        const bars5 = d3.select('#chart4')
+            .selectAll('div')
+            .data(data4, function(d) {
+                return d.name
+            })
+        const newBars = bars5.enter()
+            .append('div')
+                .attr('class', 'bar')
+                .style('width', 0)
+
+        newBars.merge(bars5)
+            .transition()
+            .style('width', function(d) {
+                return xScale(d[subject]) + 'px'
+            })
+            .style('height', barHeight())
+    }
+    render4('math')
+    chart4_size('big')
+   </script>
+   <h2>
+    Final Result
+   </h2>
+   <div id="buttons5">
+    <h3>
+     Subject
+    </h3>
+    <div id="subjects5">
+     <button class="math" onclick="render5('math')">
+      Math
+     </button>
+     <button class="science" onclick="render5('science')">
+      Science
+     </button>
+    </div>
+    <h3>
+     Chart Size
+    </h3>
+    <div id="sizes5">
+     <button class="chart5-big-btn" onclick='chart5_size("big")'>
+      Large
+     </button>
+     <button class="chart5-small-btn" onclick='chart5_size("small")'>
+      Small
+     </button>
+    </div>
+   </div>
+   <div class="chart" id="chart5">
+   </div>
+   <script>
+    const data5 = [
+        { name: 'Alice', math: 93, science: 84},
+        { name: 'Bob', math: 73, science: 82 },
+        { name: 'James', math: 92, science: 78},
+        { name: 'Steve', math: 77, science: 93 },
+        { name: 'Jordan', math: 80, science: 68 },
+    ]
+
+    chart5 = document.getElementById('chart5')
+
+
+    let width5 = function() {
+        return chart5.getBoundingClientRect().width
+        }
+    let height5 = function() {
+        return chart5.getBoundingClientRect().height
+        }
+    let barHeight5 = function() {
+        height5() /  data5.length + 'px'
+        }
+
+
+    function chart5_size(size) {
+        d3.select('#sizes5')
+            .selectAll('button')
+            .classed('on', false)
+        d3.select('#sizes5')
+            .select('.chart5-' + size + '-btn')
+            .classed('on', true)
+        d3.select('#chart5')
+            .attr('class', 'chart ' + size)
+        subject = document
+            .getElementById('subjects5')
+            .querySelector('.on')
+            .classList[0]
+        console.log(subject)
+        render5(subject)
+    }
+
+    function render5(subject) {
+
+        d3.select('#subjects5')
+            .selectAll('button')
+            .classed('on', false);
+
+        d3.select('#subjects5')
+            .select('.' + subject)
+            .attr('class', subject + ' on');
+
+        let xScale = d3
+            .scaleLinear()
+            .domain([50, 100])
+            .range([0, width5()]);
+
+
+        const bars5 = d3.select('#chart5')
+            .selectAll('div')
+            .data(data5, function(d) {
+                return d.name
+            })
+        const newBars = bars5
+            .enter()
+            .append('div')
+                .attr('class', 'bar')
+                .style('width', 0)
+
+        newBars.merge(bars5)
+            .transition()
+            .style('width', function(d) {
+                return xScale(d[subject]) + 'px'
+            })
+            .style('height', barHeight5())
+
+        d3
+         .select('#chart5')
+         .select('svg')
+         .remove()
+
+        const svg5 = d3
+            .select('#chart5')
+            .append('svg')
+            .attr('width', width5())
+            .attr('height', height5())
+            .style('position', 'relative')
+            .append('g')
+            .call(d3.axisBottom(xScale))
+    }
+    render5('math')
+    chart5_size('big')
+   </script>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

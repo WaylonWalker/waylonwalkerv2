@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Edit On GitHub
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="I recently added a button to my blog, and subsequently my posts on [DEV.to](https://dev.to/waylonwalker).  It's the best thing that I have done for it in a while." name="description" property="description"/>
+  <meta content="I recently added a button to my blog, and subsequently my posts on [DEV.to](https://dev.to/waylonwalker).  It's the best thing that I have done for it in a while." name="og:description" property="og:description"/>
+  <meta content="I recently added a button to my blog, and subsequently my posts on [DEV.to](https://dev.to/waylonwalker).  It's the best thing that I have done for it in a while." name="twitter:description" property="twitter:description"/>
+  <meta content="Edit On GitHub" name="og:title" property="og:title"/>
+  <meta content="Edit On GitHub" name="twitter:title" property="twitter:title"/>
+  <meta content="Edit On GitHub" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    I recently added a button to my blog, and subsequently my posts on
+    <a href="https://dev.to/waylonwalker">
+     DEV.to
+    </a>
+    .  It's the best thing that I have done for it in a while.  It makes it so easy to do quick edits.
+   </p>
+   <h2>
+    finding errors
+   </h2>
+   <p>
+    I refer back to my old posts quite a bit, sometimes I find errors in them.  Honestly most of the time its too much effort to load up my editor make the change and
+    <code>
+     git add
+    </code>
+    and
+    <code>
+     git commit
+    </code>
+    .  It's not much, but when I am referring to my own post generally I am just trying to get something done and don't have time for that.
+   </p>
+   <h2>
+    The slug
+   </h2>
+   <p>
+    The slug that I am getting from gatsby is formatted as
+    <code>
+     /blog/this-post/
+    </code>
+    .  Note the trailing slash and missing file extension, thats where the
+    <code>
+     ${slug.slice(0, -1)}.md
+    </code>
+    comes in.
+   </p>
+   <h2>
+    The Full Link
+   </h2>
+   <p>
+    GitHub makes it super easy to form a URL that puts you right into edit mode on the exact post you are looking for.  This is format for the URL... you can always figure it out easily by clicking edit on one.
+   </p>
+   <pre class="highlight"><code>https://github.com/&lt;user&gt;/&lt;repo&gt;/edit/&lt;branch&gt;/&lt;filepath&gt;</code></pre>
+   <h2>
+    The Final Result
+   </h2>
+   <p>
+    Wrapping that URL up in a short snippet gave me the following result.
+   </p>
+   <p>
+   </p>
+   <pre class="highlight"><code class="language-jsx">&lt;p style={{ display: 'flex', justify: 'center', textAlign: 'center', margin: '3rem auto' }}&gt;
+  &lt;span role='img' aria-label=''&gt;👀&lt;/span&gt;
+  see an issue, edit this post on 
+  &lt;a 
+    href={`https://github.com/WaylonWalker/waylonwalkerv2/edit/main/src/pages${slug.slice(0, -1)}.md`} 
+    alt='edit post url' 
+    title='edit this post'
+   &gt;
+  &lt;FiGithub /&gt; 
+  GitHub
+  &lt;/a&gt;
+&lt;/p&gt;</code></pre>
+   <img alt="Edit on GitHub" src="https://dev-to-uploads.s3.amazonaws.com/i/sgqd23rbbusjpfxqr7bl.PNG"/>
+   <p>
+    I know better than hard coding the GitHub url in, but I did it anyway, my personal site gets to be a bit of a rats nest of hotfixes over time.
+   </p>
+   <p>
+    This was a super quick change that brought me a lot of value without much effort.  I will probably change up the styling/layout of it in the future. For now I have something that functions, and I can get back to creating content.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

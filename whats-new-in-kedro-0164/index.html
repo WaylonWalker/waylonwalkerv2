@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   What's New in Kedro 0.16.4
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="If we take a look at the release notes I see one **major** feature improvement on the list, auto-discovery of hooks." name="description" property="description"/>
+  <meta content="If we take a look at the release notes I see one **major** feature improvement on the list, auto-discovery of hooks." name="og:description" property="og:description"/>
+  <meta content="If we take a look at the release notes I see one **major** feature improvement on the list, auto-discovery of hooks." name="twitter:description" property="twitter:description"/>
+  <meta content="What's New in Kedro 0.16.4" name="og:title" property="og:title"/>
+  <meta content="What's New in Kedro 0.16.4" name="twitter:title" property="twitter:title"/>
+  <meta content="What's New in Kedro 0.16.4" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    If we take a look at the
+    <a href="https://github.com/quantumblacklabs/kedro/blob/master/RELEASE.md">
+     release notes
+    </a>
+    I see one
+    <strong>
+     major
+    </strong>
+    feature improvement on the list, auto-discovery of hooks.
+   </p>
+   <pre class="highlight"><code class="language-markdown">## Major features and improvements
+
+* Enabled auto-discovery of hooks implementations coming from installed plugins.</code></pre>
+   <p>
+    This one comes a bit surprising as it was just casually mentioned in
+    <a href="https://github.com/quantumblacklabs/kedro/issues/435">
+     #435
+    </a>
+   </p>
+   <p>
+    <a href="https://github.com/quantumblacklabs/kedro/issues/435">
+     <img alt="auto enabled plugins mentioned in issue 435" src="https://waylonwalker.com/kedro-435.png"/>
+    </a>
+   </p>
+   <h2>
+    Think pytest
+   </h2>
+   <p>
+    As mentioned in
+    <a href="https://github.com/quantumblacklabs/kedro/issues/435">
+     #435
+    </a>
+    this is the model that pytest uses. Not all plugins automatically start doing things right out of the box but require a CLI argument.
+   </p>
+   <h2>
+    simplicity
+   </h2>
+   <p>
+    It feels a bit crazy that simply installing a package will change the way that your pipeline gets executed. I do like that it requires just a bit less reaching into the framework stuff for the average user. Most folks will be able to write in the catalog and nodes without much change to the rest of the project.
+   </p>
+   <h2>
+    Implementation
+   </h2>
+   <p>
+    Reading through the
+    <a href="https://kedro.readthedocs.io/en/stable/07_extend_kedro/05_plugins.html#hooks">
+     docs
+    </a>
+    , they show us that we can make our hooks automatically register by adding a
+    <code>
+     kedro.hooks
+    </code>
+    endpoint that points to a
+    <em>
+     singleton
+    </em>
+    instance of our hook.
+   </p>
+   <p>
+    <em>
+     from the docs
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">setup(
+    ...
+    entry_points={"kedro.hooks": ["plugin_name = plugin_name.plugin:hooks"]},
+)
+
+import logging
+
+from kedro.framework.hooks import hook_impl
+
+class MyHooks:
+    @hook_impl
+    def after_catalog_created(self, catalog): # pylint: disable=unused-argument
+        logging.info("Reached after_catalog_created hook")
+
+hooks = MyHooks()</code></pre>
+   <h2>
+    Careful with the singletons
+   </h2>
+   <p>
+    <em>
+     hook authors beware
+    </em>
+   </p>
+   <p>
+    I will be a bit cautious before installing a plugin that is automatically registered. I know its not a common pattern, but if you were to leverage any part of two kedro projects at the same time, and project-specific data was stored in the instance of the hook it will likely be broken.
+   </p>
+   <p>
+    As long as the hook doesn't store data on the instance you will be ok. Hooks like what they have in the examples will be ok. They generally just take some information from the lifecycle arguments and do something at their prescribed lifecycle point.
+   </p>
+   <p>
+    Many of the hooks I am seeing in the wild are already more complicated and require the hooks author to utilize an
+    <code>
+     __init__
+    </code>
+    method and store data on the instance. If you were to do this on two pipelines simultaneously it would break.
+   </p>
+   <h2>
+    Can my hook be auto-discovered
+   </h2>
+   <p>
+    If your hook doesn't include a
+    <code>
+     __init__
+    </code>
+    method its a fairly easy yes, otherwise be aware of the potential dangers of passing singleton on to your users.
+   </p>
+   <h2>
+    Use Virtual environments
+   </h2>
+   <p>
+    Whatever virtual environment manager you use, it is more important than ever to make sure you
+    <strong>
+     DO NOT
+    </strong>
+    install plugins in your global environment. Generally, you should always run projects
+    <em>
+     even toys or tests
+    </em>
+    in a
+    <strong>
+     virtual
+    </strong>
+    <strong>
+     environemnt
+    </strong>
+    .
+   </p>
+   <p>
+    <em>
+     I use conda
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">conda create -n my-sample-env python=3.8 -y</code></pre>
+   <h2>
+    Overall
+   </h2>
+   <p>
+    I think this is a really interesting direction for the project to go to. Hooks are still really early. The implementation is good, but I foresee us getting some more functionality that may require us to rely on the
+    <code>
+     __init__
+    </code>
+    method a little less.  I think there are going to be some really cool hooks that can leverage the simplicity of auto-discoverability.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Master No More
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="It's been a long time coming.  We use some very harsh language within tech so much sometimes that we become numb to it.  It's time to do my very small part in this movement and purge this language from my active repos starting with this blog right here." name="description" property="description"/>
+  <meta content="It's been a long time coming.  We use some very harsh language within tech so much sometimes that we become numb to it.  It's time to do my very small part in this movement and purge this language from my active repos starting with this blog right here." name="og:description" property="og:description"/>
+  <meta content="It's been a long time coming.  We use some very harsh language within tech so much sometimes that we become numb to it.  It's time to do my very small part in this movement and purge this language from my active repos starting with this blog right here." name="twitter:description" property="twitter:description"/>
+  <meta content="Master No More" name="og:title" property="og:title"/>
+  <meta content="Master No More" name="twitter:title" property="twitter:title"/>
+  <meta content="Master No More" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    It's been a long time coming.  We use some very harsh language within tech so much sometimes that we become numb to it.  It's time to do my very small part in this movement and purge this language from my active repos starting with this blog right here.
+   </p>
+   <p>
+    <a href="https://waylonwalker.com/refactor-in-cli">
+     https://waylonwalker.com/refactor-in-cli
+    </a>
+   </p>
+   <blockquote>
+    <p>
+     this post follows my method of refactoring code bases from the command line,
+read more about that in this article.
+    </p>
+   </blockquote>
+   <h2>
+    c-s-f
+   </h2>
+   <p>
+    First off browsing through the content of my blog I found many references to master.  I cannot completely whole-sale find and replace each one of them, because some of them are links that I do not own.  Any set of instructions got upgraded from
+    <code>
+     master
+    </code>
+    to
+    <code>
+     main
+    </code>
+   </p>
+   <pre class="highlight"><code class="language-diff">-  git checkout master
++  git checkout main</code></pre>
+   <p>
+    There were countless cases of examples like this to comb through, but it feels good to have them purged of old language.
+   </p>
+   <h2>
+    rename routes
+   </h2>
+   <p>
+    Following yesterdays post, I am going to rename my markdown files
+   </p>
+   <blockquote>
+    <p>
+     /static/_redirects
+    </p>
+   </blockquote>
+   <h3>
+    shorteners
+   </h3>
+   <pre class="highlight"><code class="language-diff">- /gdfm              /blog/today-i-learned-git-diff-feature-master/
+- /blog/gdfm         /blog/today-i-learned-git-diff-feature-master/
++ /gdfm              /blog/today-i-learned-git-diff-feature-main/
++ /blog/gdfm         /blog/today-i-learned-git-diff-feature-main/</code></pre>
+   <h3>
+    redirect posts
+   </h3>
+   <pre class="highlight"><code class="language-diff">+ # master -&gt; main
++
++ /blog/today-i-learned-git-diff-feature-master/   /blog/git-diff-feature-main/</code></pre>
+   <h3>
+    redirect external links to repo
+   </h3>
+   <pre class="highlight"><code class="language-diff">- /redirects      https://github.com/WaylonWalker/waylonwalkerv2/edit/master/static/_redirects
++ /redirects      https://github.com/WaylonWalker/waylonwalkerv2/edit/main/static/_redirects</code></pre>
+   <p>
+    More info on refactoring your blog routes with netlify here.
+   </p>
+   <p>
+    <a href="https://waylonwalker.com/gracefully-redirect/">
+     <img alt="gracefully redirect cover image" src="https://waylonwalker.com/gracefully-redirect.png"/>
+    </a>
+   </p>
+   <h2>
+    <em>
+     "Edit This post"
+    </em>
+    Links
+   </h2>
+   <p>
+    I literally just added
+    <em>
+     "edit this post"
+    </em>
+    links to my rss feed and my blog feed.  This was a simple find and replace inside of my blog template and
+    <code>
+     gatsby-config.js
+    </code>
+   </p>
+   <h2>
+    Don't Forget about CI
+   </h2>
+   <p>
+    If you have build/deploy processes that specifically run on master or not on master dont forget to change those to main.  I did everything in a single commit and as soon as I pushed to main it started deploying gloriously.
+   </p>
+   <pre class="highlight"><code class="language-diff">name: 🌱 Deploy site
+
+on:
+  push:
+    branches:
+-      - master
++      - main</code></pre>
+   <h2>
+    Now the fun part
+   </h2>
+   <p>
+    <em>
+     removing
+     <strong>
+      master
+     </strong>
+     completely
+    </em>
+   </p>
+   <p>
+    I mostly just followed this
+    <a href="https://www.hanselman.com/blog/EasilyRenameYourGitDefaultBranchFromMasterToMain.aspx">
+     post by Scott Hanselman
+    </a>
+    .
+   </p>
+   <pre class="highlight"><code class="language-bash">git branch -m master main
+git push -u origin main</code></pre>
+   <p>
+    Then from GitHub go to settings&gt;default branch&gt; select main and accept the risk involved.
+   </p>
+   <p>
+    After your default is set to main, you have no use for master in your life anymore, time to purge it completely once and for all.  Go to
+    <repo>
+     /branches and trash it.
+    </repo>
+   </p>
+   <p>
+    <img alt="delete master" src="https://waylonwalker.com/delete-master.png"/>
+   </p>
+   <h2>
+    Stop the Bleeding
+   </h2>
+   <p>
+    I like how Scott included this nice alias for starting from main from the beginning.
+   </p>
+   <pre class="highlight"><code class="language-bash">git config --global alias.new '!git init &amp;&amp; git symbolic-ref HEAD refs/heads/main'</code></pre>
+   <h2>
+    See the Full Diff
+   </h2>
+   <p>
+    If you happen to want to see the full diff of my change you can see it
+    <a href="https://github.com/WaylonWalker/waylonwalkerv2/commit/4bd26ba8faaf7c72e01cc4946d989e3284302cd0">
+     here
+    </a>
+    .
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

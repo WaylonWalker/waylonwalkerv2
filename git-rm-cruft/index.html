@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   remove git cruft
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="" name="description" property="description"/>
+  <meta content="" name="og:description" property="og:description"/>
+  <meta content="" name="twitter:description" property="twitter:description"/>
+  <meta content="remove git cruft" name="og:title" property="og:title"/>
+  <meta content="remove git cruft" name="twitter:title" property="twitter:title"/>
+  <meta content="remove git cruft" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    cover: "./nathan-dumlao-523529-unsplash-crop.jpg"
+cover: "./rawpixel-1055774-unsplash.jpg"
+   </p>
+   <h2>
+    inspiration
+   </h2>
+   <p>
+    <a href="https://blog.ostermiller.org/removing-and-purging-files-from-git-history/">
+     https://blog.ostermiller.org/removing-and-purging-files-from-git-history/
+    </a>
+   </p>
+   <p>
+   </p>
+   <pre class="highlight"><code class="language-bash">git log --all --pretty=format: --name-only --diff-filter=D | sed -r 's|[^/]+$||g' | sort -u</code></pre>
+   <pre class="highlight"><code class="language-bash">git filter-branch --tag-name-filter cat --index-filter 'git rm -r --cached --ignore-unmatch FILE_LIST' --prune-empty -f -- --all</code></pre>
+   <pre class="highlight"><code class="language-bash">rm -rf .git/refs/original/
+git reflog expire --expire=now --all
+git gc --aggressive --prune=now</code></pre>
+   <pre class="highlight"><code class="language-bash">git push origin --force --all
+git push origin --force --tags</code></pre>
+   <pre class="highlight"><code class="language-bash">cd MY_LOCAL_GIT_REPO
+git fetch origin
+git rebase
+git reflog expire --expire=now --all
+git gc --aggressive --prune=now</code></pre>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

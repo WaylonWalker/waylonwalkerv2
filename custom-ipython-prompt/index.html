@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Custom Ipython Prompt
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="I've grown tired of the standard ipython prompt as it doesn't do much to give
+me any useful information.  The default one gives out a line number that only
+seems to add anxiety as I am working on a simple problem and see that number
+grow to several h" name="description" property="description"/>
+  <meta content="I've grown tired of the standard ipython prompt as it doesn't do much to give
+me any useful information.  The default one gives out a line number that only
+seems to add anxiety as I am working on a simple problem and see that number
+grow to several h" name="og:description" property="og:description"/>
+  <meta content="I've grown tired of the standard ipython prompt as it doesn't do much to give
+me any useful information.  The default one gives out a line number that only
+seems to add anxiety as I am working on a simple problem and see that number
+grow to several h" name="twitter:description" property="twitter:description"/>
+  <meta content="Custom Ipython Prompt" name="og:title" property="og:title"/>
+  <meta content="Custom Ipython Prompt" name="twitter:title" property="twitter:title"/>
+  <meta content="Custom Ipython Prompt" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    I've grown tired of the standard ipython prompt as it doesn't do much to give
+me any useful information.  The default one gives out a line number that only
+seems to add anxiety as I am working on a simple problem and see that number
+grow to several hundred.  I start to question my ability 🤦‍♂️.
+   </p>
+   <h2>
+    Configuration
+   </h2>
+   <p>
+    If you already have an ipython config you can move on otherwise check out this
+post on creating an ipython config.
+   </p>
+   <p>
+    <a href="https://waylonwalker.com/ipython-config">
+     https://waylonwalker.com/ipython-config
+    </a>
+   </p>
+   <h2>
+    The Dream Prompt
+   </h2>
+   <p>
+    I want something similar to the starship prompt I am using in the
+shell.  I want to be able to quickly see my python version,
+environment name, and git branch.
+   </p>
+   <ul>
+    <li>
+     python version
+    </li>
+    <li>
+     active environment
+    </li>
+    <li>
+     git branch
+    </li>
+   </ul>
+   <p>
+    <img alt="my zsh prompt" src="https://waylonwalker.com/my-zsh-prompt.png"/>
+   </p>
+   <blockquote>
+    <p>
+     This is my zsh prompt I am using for inspiration
+    </p>
+   </blockquote>
+   <h2>
+    Basic Prompt
+   </h2>
+   <p>
+    This is mostly boilerplate that I found from various google
+searches, but this gets me a basic green chevron as my prompt.
+   </p>
+   <pre class="highlight"><code class="language-python">from IPython.terminal.prompts import Prompts, Token
+
+class MyPrompt(Prompts):
+    def in_prompt_tokens(self, cli=None):
+        return [ ( Token.Prompt, "❯ ",), ]
+
+    def out_prompt_tokens(self, cli=None):
+        return []
+
+ip = get_ipython()
+ip.prompts = MyPrompt(ip)
+</code></pre>
+   <blockquote>
+    <p>
+     The rest of this post will build off of this boilerplate and add
+to the
+     <code>
+      in_prompt_tokens
+     </code>
+     method of MyPrompt
+    </p>
+   </blockquote>
+   <h2>
+    Colors
+   </h2>
+   <p>
+    I mostly set the colors of my prompt throughout this post by guessing and
+trying different attributes under the Token.
+   </p>
+   <h2>
+    Red If Error
+   </h2>
+   <p>
+    I found that the
+    <code>
+     Prompts
+    </code>
+    subclass has many of the same methods as the ipython
+object, so I would often use that for inspection.  Looking through the ipython
+class I found a boolean under
+    <code>
+     shell.last_execution_succeeded
+    </code>
+    that would give
+me if the last execution was successful or not.  I did an inline if statemetn
+to set the color to a
+    <code>
+     Token.Generic.Error
+    </code>
+    if this was false.
+   </p>
+   <pre class="highlight"><code class="language-python">def in_prompt_tokens(self, cli=None):
+    return [
+        (
+            Token.Prompt
+            if self.shell.last_execution_succeeded
+            else Token.Generic.Error,
+            "❯ ",
+        ),
+    ]</code></pre>
+   <h2>
+    Python Version
+   </h2>
+   <p>
+    Next up to list out the python version that is running.  I grabbed the version
+from
+    <code>
+     platform.python_version
+    </code>
+    , this seemed to get me the most concise version
+that I was looking for to match the starship prompt.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       update imports
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">from platform import python_version</code></pre>
+   <p>
+    <em>
+     <small>
+      <mark>
+       update prompt
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">def in_prompt_tokens(self, cli=None):
+    return [
+        (
+            (Token.Name.Class, "v" + python_version()),
+            (Token, " "),
+            Token.Prompt
+            if self.shell.last_execution_succeeded
+            else Token.Generic.Error,
+            "❯ ",
+        ),
+    ]</code></pre>
+   <h2>
+    Python environment
+   </h2>
+   <p>
+    Since I use conda for my environments I chose to pull the name of the
+environment from the
+    <code>
+     CONDA_DEFAULT_ENV
+    </code>
+    environment variable that is set by
+conda when you change your environment.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       update imports
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">from platform import python_version
+import os</code></pre>
+   <p>
+    <em>
+     <small>
+      <mark>
+       update prompt
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">def in_prompt_tokens(self, cli=None):
+    return [
+        (
+            (Token.Prompt, "©"),
+            (Token.Prompt, os.environ["CONDA_DEFAULT_ENV"]),
+            (Token, " "),
+            (Token.Name.Class, "v" + python_version()),
+            (Token, " "),
+            Token.Prompt
+            if self.shell.last_execution_succeeded
+            else Token.Generic.Error,
+            "❯ ",
+        ),
+    ]</code></pre>
+   <h2>
+    Git Branch
+   </h2>
+   <p>
+    Git branch was a bit tricky.  There might be a better way to get it,
+but I was sticking with things I knew, the git cli and python.  I
+did need to do a bit of googling to figure out that git has a
+    <code>
+     --show-current
+    </code>
+    option.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       getting the current git branch
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">def get_branch():
+    try:
+        return (
+            subprocess.check_output(
+                "git branch --show-current", shell=True, stderr=subprocess.DEVNULL
+            )
+            .decode("utf-8")
+            .replace("\n", "")
+        )
+    except BaseException:
+        return ""</code></pre>
+   <p>
+    <strong>
+     NOTE
+    </strong>
+    If this is run form a non-git directory you will quickly find git
+errors after every command as this function tries to ask for the git branch.
+Sending stderr to devnull will avoid this inconvenience.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       add git branch to prompt
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">def in_prompt_tokens(self, cli=None):
+    return [
+        (
+            (Token.Generic.Subheading, "↪"),
+            (Token.Generic.Subheading, get_branch()),
+            (Token, " "),
+            (Token.Prompt, "©"),
+            (Token.Prompt, os.environ["CONDA_DEFAULT_ENV"]),
+            (Token, " "),
+            (Token.Name.Class, "v" + python_version()),
+            (Token, " "),
+            Token.Prompt
+            if self.shell.last_execution_succeeded
+            else Token.Generic.Error,
+            "❯ ",
+        ),
+    ]</code></pre>
+   <h2>
+    Add current directory name
+   </h2>
+   <p>
+    I am a big fan of pathlib so that is what I will use to get the path. If I
+planned on using python
+    <code>
+     &lt;3.6
+    </code>
+    I would probably use something else, but this is
+what I know and I can't think of the last time I used
+    <code>
+     &lt;3.6&gt;
+    </code>
+    for anything.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       update imports
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">from pathlib import Path</code></pre>
+   <p>
+    <em>
+     <small>
+      <mark>
+       add git branch to prompt
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">def in_prompt_tokens(self, cli=None):
+    return [
+        (
+            (Token, ""),
+            (Token.OutPrompt, Path().absolute().stem),
+            (Token, ""),
+            (Token.Generic.Subheading, "↪"),
+            (Token.Generic.Subheading, get_branch()),
+            (Token, " "),
+            (Token.Prompt, "©"),
+            (Token.Prompt, os.environ["CONDA_DEFAULT_ENV"]),
+            (Token, " "),
+            (Token.Name.Class, "v" + python_version()),
+            (Token, " "),
+            Token.Prompt
+            if self.shell.last_execution_succeeded
+            else Token.Generic.Error,
+            "❯ ",
+        ),
+    ]</code></pre>
+   <h2>
+    Final Script
+   </h2>
+   <p>
+    That's it for my prompt at the moment.  I have been using it for about a week.
+It seems to have everything I need so far, and skips on things I don't need.
+   </p>
+   <p>
+    Enjoy the full script.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       my final prompt
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">from IPython.terminal.prompts import Prompts, Token
+from pathlib import Path
+import os
+from platform import python_version
+import subprocess
+
+def get_branch():
+    try:
+        return (
+            subprocess.check_output(
+                "git branch --show-current", shell=True, stderr=subprocess.DEVNULL
+            )
+            .decode("utf-8")
+            .replace("\n", "")
+        )
+    except BaseException:
+        return ""
+
+
+class MyPrompt(Prompts):
+    def in_prompt_tokens(self, cli=None):
+        return [
+            (Token, ""),
+            (Token.OutPrompt, Path().absolute().stem),
+            (Token, " "),
+            (Token.Generic.Subheading, "↪"),
+            (Token.Generic.Subheading, get_branch()),
+            (Token, " "),
+            (Token.Prompt, "©"),
+            (Token.Prompt, os.environ["CONDA_DEFAULT_ENV"]),
+            (Token, " "),
+            (Token.Name.Class, "v" + python_version()),
+            (Token, " "),
+            (Token.Name.Entity, "ipython"),
+            (Token, "\n"),
+            (
+                Token.Prompt
+                if self.shell.last_execution_succeeded
+                else Token.Generic.Error,
+                "❯ ",
+            ),
+        ]
+
+    def out_prompt_tokens(self, cli=None):
+        return []
+
+
+ip = get_ipython()
+ip.prompts = MyPrompt(ip)</code></pre>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

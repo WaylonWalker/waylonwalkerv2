@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Update Git User
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="" name="description" property="description"/>
+  <meta content="" name="og:description" property="og:description"/>
+  <meta content="" name="twitter:description" property="twitter:description"/>
+  <meta content="Update Git User" name="og:title" property="og:title"/>
+  <meta content="Update Git User" name="twitter:title" property="twitter:title"/>
+  <meta content="Update Git User" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    This morning I log into my VCS and check activity on my projects to find that
+    <strong>
+     someone else
+    </strong>
+    has been
+    <em>
+     very
+    </em>
+    active on my projects fo the last few weeks. I quicklyhover over the missing avatar to find that
+    <strong>
+     It's Me
+    </strong>
+    .  What's wrong here, why do I look like two different people throughout the day!  upon further investigation I see the issue.  while setting up a new terminal environment I mistyped my email address by
+    <strong>
+     one character
+    </strong>
+    .  After much searching and a few failed attempts I was able to fix it by following this article
+    <a href="https://help.github.com/articles/changing-author-info/">
+     https://help.github.com/articles/changing-author-info/
+    </a>
+    .
+   </p>
+   <h2>
+    Bare Clone
+   </h2>
+   <p>
+    Clone the repo, note it must be a
+    <code>
+     --bare
+    </code>
+    clone.
+   </p>
+   <pre class="highlight"><code class="language-bash">git clone --bare https://github.com/user/repo.git
+cd repo.git</code></pre>
+   <h2>
+    git-author-rewrite
+   </h2>
+   <p>
+    Curl down the
+    <code>
+     git-author-rewrite
+    </code>
+    script and edit the following variables
+    <code>
+     OLD_EMAIL
+    </code>
+    <code>
+     CORECT_NAME
+    </code>
+    <code>
+     CORRECT_EMAIL
+    </code>
+   </p>
+   <pre class="highlight"><code class="language-bash">curl https://gist.githubusercontent.com/octocat/0831f3fbd83ac4d46451/raw/c197afe3e9ea2e4218f9fccbc0f36d2b8fd3c1e3/git-author-rewrite.sh &gt; git-author-rewrite.sh</code></pre>
+   <p>
+    Run the script, and push the updates.
+   </p>
+   <pre class="highlight"><code class="language-bash">bash git-author-rewrite.sh
+git push --force --tags origin 'refs/heads/**'</code></pre>
+   <h2>
+    Cleanup
+   </h2>
+   <p>
+    Delete the
+    <code>
+     --bare
+    </code>
+    repo from your local machine.
+   </p>
+   <pre class="highlight"><code class="language-bash">cd ..
+rm -rf repo.git</code></pre>
+   <p>
+    I hope this helps someone, or future me who needs to fix their information in git.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

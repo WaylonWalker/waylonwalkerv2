@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Stepping Up My SQL Game
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="none" name="description" property="description"/>
+  <meta content="none" name="og:description" property="og:description"/>
+  <meta content="none" name="twitter:description" property="twitter:description"/>
+  <meta content="Stepping Up My SQL Game" name="og:title" property="og:title"/>
+  <meta content="Stepping Up My SQL Game" name="twitter:title" property="twitter:title"/>
+  <meta content="Stepping Up My SQL Game" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    In 2018 I transitioned from a Product Engineering (Mechanical) role to a Data Scientist Role.  I entered this space with strong subject matter expertise with our products, our data, munging through data in pyhon, and data visualization in python.  My sql skills were lacking to say the least.  I had learned what I needed to know to get data from our relational databases, then use pandas to do any further analysis.    Just run something like the following and you have data.
+   </p>
+   <pre class="highlight"><code class="language-sql">SELECT
+    *
+FROM
+    Table
+Where
+    col_1 = 'col_1_filter'</code></pre>
+   <p>
+    This technique works great for small data sets that you only need to run once.  There is no shame to pull in a big dataset and start munging with it in pandas to get some results, and make decisions.  The problem becomes when your dataset becomes too big or you need to run the query on a frequent basis.  Doing the aggregations on the server run much quicker, as it reduces the time spent in io.  My longest running steps are currently io related.  Reducing these steps have improved my workflow.  At the point that I was getting server timeout errors, or using the same long running query in many places I would be searching for examples online, because I just did not have the experience with many more techniques.  I decided it was time to put away the cheat sheets, step away from Stack Overflow, and improve my speed.
+   </p>
+   <h2>
+    Why Learn SQL in 2018??
+   </h2>
+   <p>
+    SQL is far from the hot topic in 2018, AI, Deep Learning, BIG data, Machine Learning, Natural Language Processing take the win here.  SQL is so simple why would anyone want to spend time learning SQL?  The reason... all of those hot topics in 2018 require data.  My data mostly comes from relational databases which require sql to get data from them.  Without the ability to efficiently get the data I need to do an aanlysis I cannot even start.  Sure I could use an ORM, but I found that to be a bit unwieldy with the thousands of tables  we have in formats that were determined many years ago. Plus raw SQL is more transportable.  I commonly collaborate with other folks who do not use python.  I am proud that I am able to point them to the SQL I use rather than telling them to suck it up an learn python.  I truly believe that people are the most effective when they are able to choose their own stack of tools.  Taking some time to focus on the basics of Data Science will help be build a strong foundation for my career.
+   </p>
+   <h2>
+    <a href="https://campus.datacamp.com/courses/joining-data-in-postgresql">
+     Joining Data in Posgres
+    </a>
+   </h2>
+   <p>
+    Below are my notes from the
+    <a href="https://campus.datacamp.com/courses/joining-data-in-postgresql">
+     Joining Data in Posgres
+    </a>
+    course on DataCamp.  I will use these notes as a refresher when I need a quick reference.
+   </p>
+   <h3>
+    Using()
+   </h3>
+   <p>
+    When joining two tables on the same column the
+    <code>
+     USING
+    </code>
+    clause can be used as a shorthand.
+   </p>
+   <p>
+    <strong>
+     without using
+    </strong>
+   </p>
+   <pre class="highlight"><code class="language-sql">SELECT *
+
+FROM
+    Table1 as t1
+
+LEFT JOIN
+    Table2 as t2
+    ON t1.id = t2.id</code></pre>
+   <p>
+    <strong>
+     with using
+    </strong>
+   </p>
+   <pre class="highlight"><code class="language-sql">SELECT
+    *
+
+FROM
+    Table1 as t1
+
+LEFT JOIN
+    Table2 as t2
+    USING (id)</code></pre>
+   <h3>
+    Join Types
+   </h3>
+   <p>
+    <em>
+     for joining columns of data together into a single table
+    </em>
+   </p>
+   <p>
+    <code>
+     INNER
+    </code>
+    : Includes only records contained in
+    <strong>
+     both
+    </strong>
+    tables.
+   </p>
+   <p>
+    <code>
+     RIGHT
+    </code>
+    : Inlcudes all records from the
+    <strong>
+     right
+    </strong>
+    , droping values from the left if non-existent in the right, or leaving nulls if non-existant in the left.
+   </p>
+   <p>
+    <code>
+     LEFT
+    </code>
+    : Inlcudes all records from the
+    <strong>
+     left
+    </strong>
+    , droping values from the right if non-existent in the left, or leaving nulls if non-existant in the right.
+   </p>
+   <p>
+    <code>
+     FULL
+    </code>
+    : Combination of
+    <code>
+     Left
+    </code>
+    and
+    <code>
+     Right
+    </code>
+    Join, leaving nulls where data is missing in one table, and not droping any data.
+   </p>
+   <p>
+    <code>
+     CROSS
+    </code>
+    : returns all
+    <strong>
+     pairs
+    </strong>
+    from two tables, does not have an on or using clause.
+   </p>
+   <h3>
+    Union
+   </h3>
+   <p>
+    <em>
+     for concatenating rows of data with the same columns
+    </em>
+   </p>
+   <p>
+    <code>
+     Union
+    </code>
+    : returns only unique records, does not include duplicates.
+   </p>
+   <p>
+    <code>
+     Union All
+    </code>
+    : returns all records(including duplicates)
+   </p>
+   <h3>
+    Intersect
+   </h3>
+   <p>
+    <code>
+     Intersect
+    </code>
+    : returns only records appearing in both tables
+   </p>
+   <h3>
+    Execpt
+   </h3>
+   <p>
+    <code>
+     Except
+    </code>
+    : returns only records not in the second table
+   </p>
+   <h3>
+    Self-Joins
+   </h3>
+   <p>
+    <code>
+     Semi-Join
+    </code>
+    : Filters based on results of a subquery.  Does not have direct sql syntax.  This type of join is achieved through a subquery in the where statement.
+   </p>
+   <p>
+    <code>
+     Anti-Join
+    </code>
+    : Similar to the Semi-join, but using a
+    <code>
+     not
+    </code>
+    modifier.  This is particularly useful for debugging situations.
+   </p>
+   <h3>
+    Subqueries
+   </h3>
+   <p>
+    This is where I have really stepped up my sql game.  I was able to get practice writing more complex queries. I also learned about different methods of joining tables together.
+   </p>
+   <h4>
+    WHERE
+   </h4>
+   <p>
+    Subqueries are commonly found in the where clause to filter data.  Below is an example given in the course to select only the Asian countries with below average fertility rate from the states table.
+   </p>
+   <pre class="highlight"><code class="language-sql">SELECT
+   name,
+   fert_rate
+FROM
+    states
+WHERE
+    continent = 'Asia'
+AND fert_rate &lt;
+        (SELECT AVG(fert_rate)
+         FROM states;)</code></pre>
+   <h4>
+    SELECT
+   </h4>
+   <p>
+    Subqueries can be found in the
+    <code>
+     SELECT
+    </code>
+    clause to create new columns of data.  This is a different technique than I have used in the past.  Previously I have only used
+    <code>
+     GROUPBY
+    </code>
+    statements to get this effect.  I can see where this can be really useful because it is not constrained by aggregations any data point can be pulled in with this tecnhique.
+   </p>
+   <pre class="highlight"><code class="language-sql">SELECT DISTINCT
+    continent,
+    (SELECT
+        COUNT(*)
+     FROM
+        states
+     WHERE
+        prime_ministers.continent = states.continent
+    ) AS countries_num
+
+From Prime Ministers</code></pre>
+   <h4>
+    FROM
+   </h4>
+   <p>
+    subqueries found in the
+    <code>
+     FROM
+    </code>
+    clause can be very helpful to create a new dataset from an existing table.  I find these the easiest to read as it is not much different than creating a new table.  Again this can be very powerful in creating new columns that were not easily available otherwise.
+   </p>
+   <pre class="highlight"><code class="language-sql">SELECT DISTINCT
+    monarchs.continent,
+    subquery.max_perc
+
+FROM
+    monarchs,
+    (SELECT
+        continent,
+        MAX(women_parli_perc) AS max_perc
+
+    FROM
+        states
+
+    GROUP BY
+        continent
+    ) as subquery
+
+WHERE
+    monarchs.continent = subquery.continent
+
+ORDER BY
+    continent;</code></pre>
+   <h4>
+    ON
+   </h4>
+   <p>
+    <strong>
+     Challenge Problem 1
+    </strong>
+    This problem was the one that had me more stumped than any other problem in the course.  I found the subquery inside the on statement very confusing to understand.  In this question we are joining the countries table to a subquery what yields country codes of countries with offial languages from the languages table.
+   </p>
+   <pre class="highlight"><code class="language-sql">SELECT DISTINCT
+    c.name,
+    e.total_investment,
+    e.imports
+
+FROM
+    countries as c
+LEFT JOIN
+    economies as e
+    ON c.code = e.code
+
+    AND c.code in (
+    SELECT
+        l.code
+    FROM
+        languages as l
+    WHERE
+        official = true
+    )
+
+WHERE
+    c.region = 'Central America'
+AND e.year = 2015
+
+ORDER BY
+    c.name asc;</code></pre>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

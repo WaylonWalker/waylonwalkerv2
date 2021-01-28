@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Refactoring your blog urls
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="I just did a quick refactoring of my JAMStack blog urls.  Some didn't fit with my style, some had `_` that I wanted to switch to `-`, and others were rediculously long.  I've been using forestry as my CMS, I write many of my posts there, and sometimes it picks some crazy file names (based on my titles).  It was time to refactor." name="description" property="description"/>
+  <meta content="I just did a quick refactoring of my JAMStack blog urls.  Some didn't fit with my style, some had `_` that I wanted to switch to `-`, and others were rediculously long.  I've been using forestry as my CMS, I write many of my posts there, and sometimes it picks some crazy file names (based on my titles).  It was time to refactor." name="og:description" property="og:description"/>
+  <meta content="I just did a quick refactoring of my JAMStack blog urls.  Some didn't fit with my style, some had `_` that I wanted to switch to `-`, and others were rediculously long.  I've been using forestry as my CMS, I write many of my posts there, and sometimes it picks some crazy file names (based on my titles).  It was time to refactor." name="twitter:description" property="twitter:description"/>
+  <meta content="Refactoring your blog urls" name="og:title" property="og:title"/>
+  <meta content="Refactoring your blog urls" name="twitter:title" property="twitter:title"/>
+  <meta content="Refactoring your blog urls" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    I just did a quick refactoring of my JAMStack blog urls.  Some didn't fit with
+my style, some had
+    <code>
+     _
+    </code>
+    that I wanted to switch to
+    <code>
+     -
+    </code>
+    , and others were
+rediculously long.  I've been using forestry as my CMS, I write many of my
+posts there, and sometimes it picks some crazy file names (based on my titles).
+It was time to refactor.
+   </p>
+   <p>
+    <a href="https://waylonwalker.com/refactor-in-cli">
+     https://waylonwalker.com/refactor-in-cli
+    </a>
+   </p>
+   <blockquote>
+    <p>
+     When refactorings similar to this get really big I often need to do some
+project wide find an replace, I usually do this right from the command line.
+    </p>
+   </blockquote>
+   <h2>
+    🖊 Rename posts
+    <em>
+     change the filename
+    </em>
+   </h2>
+   <p>
+    My post urls are based on the file name of my markdown file, so I can simply go
+through my filesystem and rename anything I want.  From here its probably best
+to only commit the addition of the new file name, until the redirects clear,
+but these are all low traffic posts for me so I just commited both at once.
+   </p>
+   <blockquote>
+    <p>
+     Safely redirect without breaking links
+    </p>
+   </blockquote>
+   <h2>
+    <em>
+     redirects ⤴ _/redirects
+    </em>
+   </h2>
+   <p>
+    I am hosted on netlify, which automatically puts very ⚡ performant redirects
+on the edge based on a
+    <code>
+     /_redirects
+    </code>
+    route on your site.  So I added a redirect
+from the old route to the new route there.
+   </p>
+   <h2>
+    rename long posts
+   </h2>
+   <pre class="highlight"><code class="language-bash">/blog/i-finally-fixed-my-styled-components-in-gatsby-js
+/blog/fix-styled-components-in-gatsby
+/blog/interrogate-is-a-pretty-awesome-brand-new-cli-for-python-packages
+/blog/interrogate</code></pre>
+   <h2>
+    pedantic 🤔
+    <em>
+     probably
+    </em>
+   </h2>
+   <p>
+    This is probably being a bit pedantic.  Realistically my urls were probably ok.
+These posts probably aren't going to be topping the google search charts
+anyways, but I wanted to do it without killing off any links that I may have
+happened to post somewhere.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

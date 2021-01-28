@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Kedro Static Viz 0.3.0 is out with Hooks Support
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="kedro-static-viz is out with support for the newly released hooks feature.  This means that you can have `kedro-static-viz` automatically deploy a full gatsby site `before_pipeline_run` keeping your visualization always up to date." name="description" property="description"/>
+  <meta content="kedro-static-viz is out with support for the newly released hooks feature.  This means that you can have `kedro-static-viz` automatically deploy a full gatsby site `before_pipeline_run` keeping your visualization always up to date." name="og:description" property="og:description"/>
+  <meta content="kedro-static-viz is out with support for the newly released hooks feature.  This means that you can have `kedro-static-viz` automatically deploy a full gatsby site `before_pipeline_run` keeping your visualization always up to date." name="twitter:description" property="twitter:description"/>
+  <meta content="Kedro Static Viz 0.3.0 is out with Hooks Support" name="og:title" property="og:title"/>
+  <meta content="Kedro Static Viz 0.3.0 is out with Hooks Support" name="twitter:title" property="twitter:title"/>
+  <meta content="Kedro Static Viz 0.3.0 is out with Hooks Support" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    <a href="https://github.com/WaylonWalker/kedro-static-viz">
+     kedro-static-viz
+    </a>
+    is out with support for the newly released hooks feature.  This means that you can have
+    <code>
+     kedro-static-viz
+    </code>
+    automatically deploy a full gatsby site
+    <code>
+     before_pipeline_run
+    </code>
+    keeping your visualization always up to date.
+   </p>
+   <p>
+    Even though it is a static site there is no functionality lost.  The only thing that's missing is the flask server.  With
+    <a href="https://github.com/WaylonWalker/kedro-static-viz">
+     kedro-static-viz
+    </a>
+    you can deploy your visualization to a number of static hosting providers such as GitHub pages free of charge with wicked fast performance
+   </p>
+   <h2>
+    ⚡ It's Fast
+   </h2>
+   <p>
+    Even though it's built on gatsbyjs the full site builds in under 2s even on slower hardware.  This is because the site is already pre-rendered and stripped of any excess.  It's zipped up right into the python package and is typically used with the cli, but now can be used with python, or as a hook as well.
+   </p>
+   <blockquote>
+    <h3>
+     What is
+     <a href="https://github.com/quantumblacklabs/kedro-viz">
+      kedro-viz
+     </a>
+     🤔
+    </h3>
+   </blockquote>
+   <p>
+    Kedro viz is a fantastic kedro plugin that allows you to visualize your data pipeline.  Kedro allows you to quickly build production-ready pipelines where you just configure a catalog, then toss python functions into a big pile.  Kedro figures out the order everything needs ran in for you, allows you to run a datasets dependencies or dependents only.
+    <a href="https://github.com/quantumblacklabs/kedro-viz">
+     kedro-viz
+    </a>
+    gives you a great way to see this ordering visually.
+   </p>
+   <p>
+    <img alt="a visualization of a kedro data pipeline featuring data and functions flowing together." src="https://waylonwalker.com/pipeline_visualisation-1.png" title="kedro visualization"/>
+   </p>
+   <blockquote>
+    <p>
+     kedro visualization from the projects readme
+    </p>
+   </blockquote>
+   <h2>
+    Check out a live running example
+   </h2>
+   <p>
+    Using the power of GitHub actions the I have built a kedro iris pipeline visualization that can be found on
+    <a href="https://static-viz.kedro.dev/">
+     https://static-viz.kedro.dev/
+    </a>
+   </p>
+   <h2>
+    Itching to get started with kedro
+   </h2>
+   <p>
+    You can be up and running in a matter of minutes if you already have python running on your machine.
+   </p>
+   <p>
+    Make a virtual environment with your environment manager of choice.
+   </p>
+   <pre class="highlight"><code class="language-python">conda create -n kedro-practice python=3.8 -y
+conda activate kedro-practice</code></pre>
+   <p>
+    Install kedro. Then create a new project with their awesome cli template built on cookiecutter. Make sure to answer
+    <code>
+     y
+    </code>
+    to get a prebuilt example pipeline with data.
+   </p>
+   <pre class="highlight"><code>pip install kedro kedro-static-viz
+kedro new
+</code></pre>
+   <h2>
+    Vizualize your pipeline with the cli 〽
+   </h2>
+   <p>
+    For local use when you already have the full project
+    <code>
+     kedro viz
+    </code>
+    is a great tool to use, but this is an article about kedro-static-viz.
+   </p>
+   <pre class="highlight"><code class="language-python">kedro-static-viz static-viz</code></pre>
+   <p>
+    Since we used
+    <code>
+     kedro-static-viz
+    </code>
+    you will have a new directory called
+    <code>
+     public
+    </code>
+    that you can host on any static web hosting service, like GitHub pages or Netlify.
+   </p>
+   <h2>
+    Ready to try out the new hooks feature 🙋‍♀️
+   </h2>
+   <p>
+    Open up your
+    <code>
+     &lt;project&gt;/src/run.py
+    </code>
+    and add the hook to your
+    <code>
+     ProjectContext
+    </code>
+    class.  Next time you run your pipeline you will have an updated pipeline.
+   </p>
+   <pre class="highlight"><code class="language-python">from kedro_static_viz.hooks import StaticViz
+
+class ProjectContext(KedroContext):
+   project_name = "kedro0160"
+   project_version = "0.16.1"
+   package_name = "kedro0160"
+   hooks = [ StaticViz() ]</code></pre>
+   <h2>
+    Now Run that pipeline 🏃‍♀️
+   </h2>
+   <p>
+    Run your pipeline and enjoy that fresh kedro viz each and every time you run your pipeline.
+   </p>
+   <pre class="highlight"><code class="language-bash">kedro run</code></pre>
+   <h2>
+    Want to make your own hooks 🎣
+   </h2>
+   <p>
+    Check out some of my other articles on building kedro hooks.
+   </p>
+   <p>
+    <a href="https://waylonwalker.com/kedro-class-hooks/">
+     <img alt="creating customizable kedro hooks" src="https://waylonwalker.com/configurable-kedro-hooks.png"/>
+    </a>
+   </p>
+   <p>
+    <a href="https://waylonwalker.com/creating-the-kedro-preflight-hook/">
+     <img alt="creating the kedro preflight hook" src="https://waylonwalker.com/kedro-hooks.png"/>
+    </a>
+   </p>
+   <p>
+    Check out the example 👉
+    <a href="https://static-viz.kedro.dev/">
+     https://static-viz.kedro.dev/
+    </a>
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

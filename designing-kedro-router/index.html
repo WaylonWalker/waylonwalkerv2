@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Designing a "Router" for kedro
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="I released a router-like plugin for kedro back in April 2020. This was not the first design, the idea actually came from one of the QB folks who taught me kedro nearly a year before." name="description" property="description"/>
+  <meta content="I released a router-like plugin for kedro back in April 2020. This was not the first design, the idea actually came from one of the QB folks who taught me kedro nearly a year before." name="og:description" property="og:description"/>
+  <meta content="I released a router-like plugin for kedro back in April 2020. This was not the first design, the idea actually came from one of the QB folks who taught me kedro nearly a year before." name="twitter:description" property="twitter:description"/>
+  <meta content='Designing a "Router" for kedro' name="og:title" property="og:title"/>
+  <meta content='Designing a "Router" for kedro' name="twitter:title" property="twitter:title"/>
+  <meta content='Designing a "Router" for kedro' name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <h2>
+    nodes_global
+   </h2>
+   <p>
+    I released a router-like plugin for kedro back in April 2020.  This was not the first design, the idea actually came from one of the QB folks who taught me kedro nearly a year before.  We were assembling our pipelines with something called
+    <code>
+     nodes_global
+    </code>
+    .  It worked fairly well but did have some issues around being set as a global variable.
+   </p>
+   <p>
+    <em>
+     But...
+    </em>
+   </p>
+   <p>
+    One thing in particular that it did not lend itself well to was being able to create a packagable pipeline that I could pip install and append into any of my existing pipelines.  Something I am still trying to work out, maybe I don't need this.  I think I have it working for our internal pipelines and it seems like the way to go, but we don't necessarily end up using it.
+   </p>
+   <p>
+    <em>
+     Also...
+    </em>
+   </p>
+   <p>
+    With this pattern all of the nodes needed to be importable by the module containing nodes_global.  I find that this becomes a big hurdle for new pipelines coming from jupyter to overcome and can be most infuriating when their nodes aren't getting ran after they added them.
+   </p>
+   <p align="center" style="text-align: center">
+    <a href="https://waylonwalker.com/what-is-kedro">
+     <img alt="What is kedro" src="https://waylonwalker.com/what-is-kedro.png" style="width:400px; max-width:80%; margin: auto;" width="400"/>
+    </a>
+   </p>
+   <blockquote>
+    <p>
+     If you are a bit unsure about what kedro is make sure to check out my
+     <a href="https://waylonwalker.com/what-is-kedro">
+      what-is-kedro
+     </a>
+     article.
+    </p>
+   </blockquote>
+   <h2>
+    @node(inputs='a_raw_cars', outputs='b_int_cars')
+   </h2>
+   <p>
+    I set off to design something that was flask-like.  Around November I had something working.  You could simply start creating functions. and decorate these functions with a decorator just like with flask.  I even had it setup to autoname the nodes things like
+    <code>
+     create_b_int_cars
+    </code>
+    .
+   </p>
+   <p>
+    <em>
+     But....
+    </em>
+   </p>
+   <p>
+    This did not lend well to pulling in functions from a library or dynamically creating nodes.  I didn't realize how few nodes I actually make in my pipelines that are a 1:1 relationship between the node and function in real work.  Most examples work this way, but for some reason when I step into a project we end up pulling a lot of functions out of existing libraries, or dynamically creating many datasets from a list of options.
+   </p>
+   <h2>
+    pytest inspired
+   </h2>
+   <p>
+    <em>
+     simplicity
+    </em>
+   </p>
+   <p>
+    The final design ended up being suggested by a colleague of mine who is not using kedro, but is a  brilliant python dev.  The idea was to walk through the project like pytest does looking for modules and variables with a certain pattern (
+    <code>
+     node
+    </code>
+    , or
+    <code>
+     pipeline
+    </code>
+    ).
+   </p>
+   <p>
+    I have been using this since April and am loving it. It has have very little change since first release.  When I create a new module, that automatically becomes a new pipeline in my
+    <code>
+     pipelines
+    </code>
+    dict and all of the variables with the name node get scrapped up and put into a single pipeline.
+   </p>
+   <p>
+    <em>
+     Beginner Friendly
+    </em>
+   </p>
+   <p>
+    Just like with pytest.  You just start hacking in modules ending with
+    <code>
+     _nodes.py
+    </code>
+    with nodes in them and they just appear in your final pipeline.
+   </p>
+   <h2>
+    How to use it
+   </h2>
+   <p>
+    The
+    <a href="https://github.com/WaylonWalker/find-kedro">
+     readme
+    </a>
+    has some great examples.
+   </p>
+   <h2>
+    Install it
+   </h2>
+   <pre class="highlight"><code class="language-python">pip install find-kedro</code></pre>
+   <h2>
+    Enable it
+   </h2>
+   <p>
+    Enable it by changing one line in your run.py
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       run.py
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">from kedro.context import KedroContext
+from find_kedro import find_kedro
+
+class ProjectContext(KedroContext):
+    def _get_pipelines(self) -&gt; Pipeline:
+        return find_kedro()</code></pre>
+   <p>
+    Or if your using the new
+    <code>
+     hooks.py
+    </code>
+    method.  Again no need to import all of your nodes.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       hooks.py
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">class ProjectHooks:
+    @hook_impl
+    def register_pipelines(self) -&gt; Dict[str, Pipeline]:
+        """Register the project's pipeline.
+        Returns:
+            A mapping from a pipeline name to a ``Pipeline`` object.
+        """
+
+        return find_kedro()</code></pre>
+   <h2>
+    Use it
+   </h2>
+   <p>
+    Check out the
+    <a href="https://github.com/WaylonWalker/find-kedro">
+     readme
+    </a>
+    for more examples, but this one is the one that I use and recommend most often.  This method helps keep nodes close to functions that are designed for them.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       my_nodes.py
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python"># my-proj/pipelinies/data_engineering/pipeline
+from kedro.pipeline import node
+from .nodes import split_data
+
+nodes = []
+
+def split_data(df: pd.DataFrame, ratio: float) -&gt; Dict[str, pd.DataFrame]:
+   ...
+
+nodes.append(
+    node(
+        split_data,
+        ["example_iris_data", "params:example_test_data_ratio"],
+        dict(
+            train_x="example_train_x",
+            train_y="example_train_y",
+            test_x="example_test_x",
+            test_y="example_test_y",
+        ),
+    )
+)</code></pre>
+   <h1>
+    Want a simple guide to get started with find kedro
+   </h1>
+   <p align="center" style="text-align: center">
+    <a alt="Find Kedro Iris example" auto="" border-radius:="" href="https://find.kedro.dev/examples/iris/&gt;
+  &lt;img
+    style=" margin:="" max-width:80="" src="https://waylonwalker.com/find-kedro-examples-iris.png" width="400" width:400px="">
+    </a>
+   </p>
+   <p>
+    In
+    <a href="https://find.kedro.dev/examples/iris/">
+     this doc
+    </a>
+    I transform the kedro iris template to find-kedro.
+   </p>
+   <h1>
+    Ready to start using kedro
+   </h1>
+   <p>
+    If you still have not tried out kedro, it's easier than you think. Check out
+    <a href="https://waylonwalker.com/create-new-kedro-project">
+     create-new-kedro-project
+    </a>
+    to get a project started in just a few minutes.
+   </p>
+   <p align="center" style="text-align: center">
+    <a href="https://waylonwalker.com/create-new-kedro-project">
+     <img alt="Create New Kedro Project" src="https://waylonwalker.com/create-new-kedro-project.png" style="width:400px; max-width:80%; margin: auto;" width="400"/>
+    </a>
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

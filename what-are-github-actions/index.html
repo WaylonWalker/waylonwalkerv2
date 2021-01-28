@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   What Are GitHub Actions
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="GitHub actions are an amazing tool that allows us to run code based on triggers inside of our repo.  Their is a large and growing community of actions inside the marketplace to use with very little effort.  Best of all they are free for public repositories, and private repos have a very generous free tier." name="description" property="description"/>
+  <meta content="GitHub actions are an amazing tool that allows us to run code based on triggers inside of our repo.  Their is a large and growing community of actions inside the marketplace to use with very little effort.  Best of all they are free for public repositories, and private repos have a very generous free tier." name="og:description" property="og:description"/>
+  <meta content="GitHub actions are an amazing tool that allows us to run code based on triggers inside of our repo.  Their is a large and growing community of actions inside the marketplace to use with very little effort.  Best of all they are free for public repositories, and private repos have a very generous free tier." name="twitter:description" property="twitter:description"/>
+  <meta content="What Are GitHub Actions" name="og:title" property="og:title"/>
+  <meta content="What Are GitHub Actions" name="twitter:title" property="twitter:title"/>
+  <meta content="What Are GitHub Actions" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <style>
+    h2 img { width: 100%; box-shadow: .5rem .5rem 3rem #141F2D, -.5rem -.5rem 3rem rgba(255,255,255,.1);}
+img{ max-width: 100% !important;}
+   </style>
+   <p>
+    I have been diving deep into Github actions for about a month now and they are wicked good!  They allow you to run any sort of arbitrary code based on events in your repo, webhooks, or schedules.  They are very reasonably priced.  The interface that GitHub hs developed for them is top-notch!  It's so good I have done 90% of my editing of them right from github.com.
+   </p>
+   <h2>
+    TLDR
+   </h2>
+   <blockquote>
+    <p>
+     some interaction to your repository
+     <strong>
+      triggers
+     </strong>
+     code to run.
+    </p>
+   </blockquote>
+   <h2>
+    <img alt="Online Editor" src="https://waylonwalker.com/gh-actions-header-online-editor.png"/>
+   </h2>
+   <p>
+    The online editor for actions is pretty amazing.  When creating a new workflow it automatically sets up a new blank workflow or a workflow from the marketplace for you in your
+    <code>
+     .github/workflows
+    </code>
+    directory.  This is all it takes to get an action running, a
+    <code>
+     yaml
+    </code>
+    or
+    <code>
+     yml
+    </code>
+    file in the
+    <code>
+     .github/workflows
+    </code>
+    directory.
+   </p>
+   <p>
+    <img alt="github actions online editor" src="https://waylonwalker.com/gh-actions-editor.png" title="github actions online editor"/>
+   </p>
+   <p>
+    The editor does a great job of detecting syntax errors, misplaced keys.  It also does a great job at autocompletion.  As you type it will suggest keys that are accepted by the workflow syntax.  There is an embedded side pannel with docs and the marketplace to the right.
+   </p>
+   <h2>
+    <img alt="Event Triggering" src="https://waylonwalker.com/gh-actions-header-event-triggering.png"/>
+   </h2>
+   <p>
+    see this article from GitHub for a full set of details:
+    <a href="https://help.github.com/en/actions/reference/events-that-trigger-workflows" title="https://help.github.com/en/actions/reference/events-that-trigger-workflows">
+     https://help.github.com/en/actions/reference/events-that-trigger-workflows
+    </a>
+   </p>
+   <p>
+    You can trigger actions to run based on about any interaction with the repo that you can imagine, push, PR, webhooks, follows, create a branch, delete a branch, deployment, fork, wiki, issues, comments, labels, milestones, just check out the GitHub article for the full list.
+   </p>
+   <h3>
+    <img alt="push/pr" src="https://waylonwalker.com/gh-actions-header-push-pr.png"/>
+   </h3>
+   <p>
+    The most common and default trigger you will come across is the
+    <code>
+     on push
+    </code>
+    .  This means that on every push/pull_request the given action will run.  This is typically at the start of the file and will trigger the workflow for the whole file.
+   </p>
+   <pre class="highlight"><code class="language-yaml"># Trigger the workflow on push or pull request
+on: [push, pull_request]</code></pre>
+   <p>
+    You can also filter to only run on specific branches.  You probably only want to run your release workflow on the main branch, but want linting and testing on all branches.
+   </p>
+   <pre class="highlight"><code class="language-yaml">push:
+  branches:
+   - main
+pull_request:
+  branches:
+    - main
+</code></pre>
+   <h3>
+    <img alt="schedule" src="https://waylonwalker.com/gh-actions-header-schedule.png"/>
+   </h3>
+   <p>
+    It is also possible to set up your workflows to run on a schedule.  I have set a few of these up myself to do things such as updating/auditing npm dependencies and checking if the site is up.
+   </p>
+   <pre class="highlight"><code class="language-yaml">on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/15 * * * *'</code></pre>
+   <h3>
+    <img alt="watch" src="https://waylonwalker.com/gh-actions-header-watch.png"/>
+   </h3>
+   <p>
+    One issue that I have with GitHub actions is that there really isn't a good way to manually run workflows.  A workaround I found is that you can run a workflow when the repo is starred.
+   </p>
+   <pre class="highlight"><code class="language-yaml">on:
+  watch:
+    types: [ started ]</code></pre>
+   <p>
+    If you have a public repo with some traction, you might want to avoid this hack, but if you did want to use it on a repo that may potentially get some stars randomly make sure that you filter to only your stars.
+   </p>
+   <pre class="highlight"><code class="language-yaml">on:
+  watch:
+    types: [ started ]
+
+jobs:
+  run-on-star:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ✨ you starred your own repo
+        if: github.actor == 'WaylonWalker'</code></pre>
+   <h2>
+    <img alt="Free for public repositories" src="https://waylonwalker.com/gh-actions-header-free.png"/>
+   </h2>
+   <p>
+    GitHub offers quite a generous free tier to get you started.
+   </p>
+   <p>
+    <img alt="gh-actions-free-tier" src="https://waylonwalker.com/gh-actions-free-tier.png" title="github actions free tier"/>
+   </p>
+   <p>
+    I think that GitHub's pricing just shows its commitment to the open-source.  Any public repo has unlimited build minutes!  I believe this goes for not only Linux actions, but  the more expensive windows and mac actions as well.
+   </p>
+   <p>
+    <img alt="github actions free for public repos" src="https://waylonwalker.com/gh-actions-free--for-public.png" title="GitHub actions free for public repos"/>
+   </p>
+   <h2>
+    <img alt="Secrets" src="https://waylonwalker.com/gh-actions-header-secrets.png"/>
+   </h2>
+   <p>
+    You will find that a lot of actions need things such as a GitHub personal access token.  You may even be hitting a third party API such as twitter or Gmail that require an API key.  These are things that need to be kept secret
+    <strong>
+     DO NOT
+    </strong>
+    put these as raw text inside your action.  The first tutorial I followed to deploy to GitHub pages did this 🤦‍♂️ and I followed.
+   </p>
+   <p>
+    <img alt="github built-in secret store" src="https://waylonwalker.com/gh-actions-built-in-secret-store.png" title="GitHub built-in secret store"/>
+   </p>
+   <p>
+    GitHub offers a wonderful secrets manager.  From your repository go to settings &gt; secrets.  You can just add settings/secrets to the URL of your repo to get there as well.  From there add a new secret.  Now your secret is accessible by secret key using
+    <code>
+     ${{ secrets.&lt;your-key&gt; }}
+    </code>
+    from anywhere in your workflows
+    <code>
+     yml
+    </code>
+    file.
+   </p>
+   <p>
+    GitHub has done an amazing job at hiding these secrets.  Anywhere that I have seen try to echo these secrets out into the console or anywhere just shows
+    <em>
+     *
+    </em>
+    .  I am not sure if you can 100% rely on this, but they appear to have done a good job with it.
+   </p>
+   <h2>
+    <img alt="Live Logs" src="https://waylonwalker.com/gh-actions-header-live-logs.png"/>
+   </h2>
+   <p>
+    One great feature of actions is the live logs.  As you are developing them it is likely that you are anxiously watching them with anticipation.  Watching those logs go, and turn green is a great experience.
+   </p>
+   <p>
+    <img alt="github actions live logs" src="https://waylonwalker.com/gh-actions-live-logs.png" title="github actions live logs"/>
+   </p>
+   <h2>
+    <img alt="Marketplace" src="https://waylonwalker.com/gh-actions-header-marketplace.png"/>
+   </h2>
+   <p>
+    As with all things open source, much of the power of actions comes through the community and in actions case the marketplace.  Reusable actions can be deployed to the github marketplace.  Here they can be found from search, starred, and example workflows can be copied in one click.
+   </p>
+   <p>
+    <img alt="github actions marketplace" src="https://waylonwalker.com/gh-actions-marketplace.png" title="github actions marketplace"/>
+   </p>
+   <p>
+    I find that many times while I can write all of the code necessary in a shell script to do most of what I need, there is already an action in the marketplace that takes care of everything for me.  In fact there are usually several to choose from.
+   </p>
+   <h1>
+    #Discuss
+   </h1>
+   <ul>
+    <li>
+     What Actions are you excited about?
+    </li>
+    <li>
+     Are you using actions today?
+    </li>
+    <li>
+     What struggles have you encountered with actions?
+    </li>
+    <li>
+     Do you like these silly image headers I used? Do they kill A11y? I attempted to use good alt text to counter.
+    </li>
+   </ul>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

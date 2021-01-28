@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Review of the git-auto-commit-action
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="It's a really cool GitHub action that will automatically commit files changed during the action. I was using this to render a new readme based on a template." name="description" property="description"/>
+  <meta content="It's a really cool GitHub action that will automatically commit files changed during the action. I was using this to render a new readme based on a template." name="og:description" property="og:description"/>
+  <meta content="It's a really cool GitHub action that will automatically commit files changed during the action. I was using this to render a new readme based on a template." name="twitter:description" property="twitter:description"/>
+  <meta content="Review of the git-auto-commit-action" name="og:title" property="og:title"/>
+  <meta content="Review of the git-auto-commit-action" name="twitter:title" property="twitter:title"/>
+  <meta content="Review of the git-auto-commit-action" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    Check out the repo for
+    <a href="https://github.com/stefanzweifel/git-auto-commit-action">
+     git-auto-commit-action
+    </a>
+    .
+   </p>
+   <p>
+    It's a really cool GitHub action that will automatically commit files changed during the action.  I was using this to render a new readme based on a template.
+   </p>
+   <p>
+    This has been by far the easiest way to commit back to a repo that I have seen.  Other patterns often require fully setting up the git user and everything.  While it's not all that hard, this action already has all of that covered.
+   </p>
+   <p>
+    You must give it a commit message and thats it.  Optionally you can configure a number of things.  Its possible to configure the
+    <code>
+     commit_user_name
+    </code>
+    ,
+    <code>
+     commit_user_email
+    </code>
+    , and
+    <code>
+     commit_author
+    </code>
+    .  I often also scope the
+    <code>
+     file_pattern
+    </code>
+    to a certain subset of files.
+   </p>
+   <hr/>
+   <p style="text-align: center">
+    <a href="https://waylonwalker.com/github-actions-syntax">
+     <img alt="GitHub Actions Syntax article card" src="https://waylonwalker.com/github-actions-syntax-rm.png" style="width:500px; max-width:80%; margin: auto;"/>
+    </a>
+   </p>
+   <blockquote>
+    <p>
+     If you're new to actions check out this article on using actions.
+    </p>
+   </blockquote>
+   <p style="text-align: center">
+    <a href="https://waylonwalker.com/github-actions-syntax">
+     <img alt="GitHub Actions Syntax article card" src="https://waylonwalker.com/github-actions-syntax-rm.png" style="width:500px; max-width:80%; margin: auto;"/>
+    </a>
+   </p>
+   <blockquote>
+    <p>
+     If you're new to actions check out this article on using actions.
+    </p>
+   </blockquote>
+   <hr/>
+   <p>
+    You do need to be careful to checkout the repo just a bit different than normal.
+   </p>
+   <h2>
+    Limitations &amp; Gotchas
+   </h2>
+   <p>
+    <em>
+     directly from the repo
+    </em>
+   </p>
+   <h3>
+    Checkout the correct branch
+   </h3>
+   <p>
+    You must use
+    <code>
+     action/checkout@v2
+    </code>
+    or later versions to checkout the repository. In non-push events, such as pull_request, make sure to specify the ref to checkout:
+   </p>
+   <pre class="highlight"><code class="language-yaml">- uses: actions/checkout@v2
+  with:
+    ref: ${{ github.head_ref }}</code></pre>
+   <p>
+    You have to do this do avoid that the
+    <code>
+     checkout
+    </code>
+    -Action clones your repository in a detached state.
+   </p>
+   <h2>
+    Usage
+   </h2>
+   <p>
+    <em>
+     from the repo
+    </em>
+   </p>
+   <p>
+    ``` yaml
+- uses: stefanzweifel/git-auto-commit-action@v4
+  with:
+    # Required
+    commit_message: Apply automatic changes
+   </p>
+   <pre class="highlight"><code># Optional branch to push to, defaults to the current branch
+branch: feature-123
+
+# Optional options appended to `git-commit`
+# See https://git-scm.com/docs/git-commit for a list of available options
+commit_options: '--no-verify --signoff'
+
+# Optional glob pattern of files which should be added to the commit
+# See the `pathspec`-documentation for git
+# - https://git-scm.com/docs/git-add#Documentation/git-add.txt-ltpathspecgt82308203
+# - https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-aiddefpathspecapathspec
+file_pattern: src/*.js tests/*.js
+
+# Optional local file path to the repository
+repository: .
+
+# Optional commit user and author settings
+commit_user_name: My GitHub Actions Bot
+commit_user_email: my-github-actions-bot@example.org
+commit_author: Author &lt;actions@github.com&gt;
+
+# Optional tag message
+# Action will create and push a new tag to the remote repository and the defined branch
+tagging_message: 'v1.0.0'
+
+# Optional options appended to `git-push`
+push_options: '--force'
+
+# Optional: Disable dirty check and always try to create a commit and push
+skip_dirty_check: true
+</code></pre>
+   <p>
+    ```
+   </p>
+   <h2>
+    More Actions
+   </h2>
+   <p>
+    If you're new to actions check out these articles on using actions.
+   </p>
+   <table>
+    <tr>
+     <td>
+      <a href="https://waylonwalker.com/four-github-actions-website">
+       <img alt="GitHub Actions Syntax article card" src="https://waylonwalker.com/four-github-actions-website-rm.png" style="width:250px; max-width:80%; margin: auto; float: left"/>
+      </a>
+     </td>
+     <td>
+      <a href="https://waylonwalker.com/four-github-actions-python">
+       <img alt="GitHub Actions Syntax article card" src="https://waylonwalker.com/four-github-actions-python-rm.png" style="width:250px; max-width:80%; margin: auto; float: right;"/>
+      </a>
+     </td>
+    </tr>
+   </table>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

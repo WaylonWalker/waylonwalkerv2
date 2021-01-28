@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   I finally fixed my Styled-Components in gatsby.js
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="I finally fixed my Styled-Components in gatsby.js" name="description" property="description"/>
+  <meta content="I finally fixed my Styled-Components in gatsby.js" name="og:description" property="og:description"/>
+  <meta content="I finally fixed my Styled-Components in gatsby.js" name="twitter:description" property="twitter:description"/>
+  <meta content="I finally fixed my Styled-Components in gatsby.js" name="og:title" property="og:title"/>
+  <meta content="I finally fixed my Styled-Components in gatsby.js" name="twitter:title" property="twitter:title"/>
+  <meta content="I finally fixed my Styled-Components in gatsby.js" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    I am starting a redesign of my website.  I have started cross posting to
+    <a href="https://dev.to">
+     dev.to
+    </a>
+    more regularly.  With that I have been making more detailed cover images at the recommended
+    <code>
+     1000x420
+    </code>
+    .  These images get cut off on my own site, which is a bit ridiculous to have my own content not look right on my own site.  But before we start a heavy redesign I have a small issue that has plagued the site for at least a year!
+   </p>
+   <blockquote>
+    <p>
+     I have a small issue that has plagued the site for at least a year!
+    </p>
+   </blockquote>
+   <p>
+    I have been using styled components in my gatsby.js site for about a year now.  And it has been plagued by styled-components not being in the ssr causing some jank in the styles being loaded.  You can see it in the lighthouse performance report below.  It generally loads super quick, and is only caused on first load.  Anything using the gatsby
+    <code>
+     &lt;Link/&gt;
+    </code>
+    component typically is fine and unaffected by the issue.
+   </p>
+   <h2>
+    The fix
+   </h2>
+   <p>
+    The fix was so simple it was only 2 lines total. One to install
+    <code>
+     gatsby-plugin-styled-components
+    </code>
+    and one to use it.
+   </p>
+   <pre class="highlight"><code class="language-bash">npm i gatsby-plugin-styled-components</code></pre>
+   <pre class="highlight"><code class="language-json">plugins: [
+   'gatsby-plugin-styled-components',
+]</code></pre>
+   <h2>
+    Before
+   </h2>
+   <p>
+    <img alt="" src="/2020-02-06 15-27-45_Start.png"/>
+   </p>
+   <h2>
+    After
+   </h2>
+   <p>
+    <img alt="" src="/2020-02-07 17-20-31_Start.png"/>
+   </p>
+   <h2>
+    Why did it take so long to Fix?
+   </h2>
+   <p>
+    The real issue here was that I really didn't understand the problem as I described it above until I found the fix. It really did seem random that at odd times the styles would seem to vanish.  Sometimes never fully rehydrating at all.  Well actually I had fixed some production sites at work with it, but had no idea why it worked and therefore could not remember how I had fixed it, and google searched yielded no help.
+   </p>
+   <p>
+    <img alt="" src="/the-moment-i-realized-the-true-problem-1.png"/>
+   </p>
+   <p>
+    After re-watching Wes Bos's Advanced react course where he describes how to fix this issue for
+    <code>
+     next.js
+    </code>
+    sites it became clear that the problem was not random at all.  It was that they do not get statically rendered and are only on the page after react is re-hydrated.  The moment I realized the
+    <strong>
+     true
+    </strong>
+    problem I knew how to google it and quickly found there was a plugin for this.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

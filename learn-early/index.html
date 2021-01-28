@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   What is something that you recently learned that you wish you would have learned or understood earlier?
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="What is something that you recently learned that you wish you would have learned or understood earlier?" name="description" property="description"/>
+  <meta content="What is something that you recently learned that you wish you would have learned or understood earlier?" name="og:description" property="og:description"/>
+  <meta content="What is something that you recently learned that you wish you would have learned or understood earlier?" name="twitter:description" property="twitter:description"/>
+  <meta content="What is something that you recently learned that you wish you would have learned or understood earlier?" name="og:title" property="og:title"/>
+  <meta content="What is something that you recently learned that you wish you would have learned or understood earlier?" name="twitter:title" property="twitter:title"/>
+  <meta content="What is something that you recently learned that you wish you would have learned or understood earlier?" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    Cover Photo I call
+    <strong>
+     gaining clarity
+    </strong>
+    by
+    <a href="https://unsplash.com/@dtravisphd?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+     David Travis
+    </a>
+    on
+    <a href="https://unsplash.com/s/photos/clarity?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+     Unsplash
+    </a>
+   </p>
+   <hr/>
+   <p>
+    Mine is the python debugger. I was a long holdout thinking that print statements were sufficient. That was untill I started having errors crop up in functions that took minutes to run. The thing that I most notably wish I would have known about is post_mortem.
+   </p>
+   <h1>
+    Example
+   </h1>
+   <pre class="highlight"><code>[ins] In [4]: def repeater(msg, repeats=1):
+         ...:     "repeats messages {repeats} number of times"
+         ...:     print(f'{msg}\n' * repeats)
+
+[ins] In [5]: repeater('hi', 3)
+hi
+hi
+hi
+
+[ins] In [6]: repeater('hi', 'a')
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+&lt;ipython-input-6-0ec595774c81&gt; in &lt;module&gt;
+----&gt; 1 repeater('hi', 'a')
+
+&lt;ipython-input-4-530890de75cd&gt; in repeater(msg, repeats)
+      1 def repeater(msg, repeats=1):
+      2     "repeats messages {repeats} number of times"
+----&gt; 3     print(f'{msg}\n' * repeats)
+      4
+</code></pre>
+   <h1>
+    Debug with iPython/Jupyter
+   </h1>
+   <pre class="highlight"><code>%debug
+</code></pre>
+   <h1>
+    Vanilla Debug
+   </h1>
+   <pre class="highlight"><code>import pdb
+import sys
+
+pdb.post_mortem(sys.last_traceback)
+</code></pre>
+   <h1>
+    More
+   </h1>
+   <p>
+    For more information about the debugger checkout the real python article.
+    <a href="https://realpython.com/python-debugging-pdb/" title="https://realpython.com/python-debugging-pdb/">
+     https://realpython.com/python-debugging-pdb/
+    </a>
+   </p>
+   <p>
+    Also keep a bookmark of the table of pdb commands from the article
+    <a href="https://realpython.com/python-debugging-pdb/#essential-pdb-commands" title="https://realpython.com/python-debugging-pdb/#essential-pdb-commands">
+     https://realpython.com/python-debugging-pdb/#essential-pdb-commands
+    </a>
+   </p>
+   <h1>
+    Debug Session
+   </h1>
+   <p>
+    <a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ShQ3NN06--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/1tnri6wdwimwk7i83cvg.png">
+     <img alt="debug session" src="https://res.cloudinary.com/practicaldev/image/fetch/s--ShQ3NN06--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/1tnri6wdwimwk7i83cvg.png"/>
+    </a>
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

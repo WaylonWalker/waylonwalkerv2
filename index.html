@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   simple click
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="Add helpful cli to your python libraries... All of them!" name="description" property="description"/>
+  <meta content="Add helpful cli to your python libraries... All of them!" name="og:description" property="og:description"/>
+  <meta content="Add helpful cli to your python libraries... All of them!" name="twitter:description" property="twitter:description"/>
+  <meta content="simple click" name="og:title" property="og:title"/>
+  <meta content="simple click" name="twitter:title" property="twitter:title"/>
+  <meta content="simple click" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    cli tools are super handy and easy to add to your python libraries to supercharge them. Even if your library is not a cli tool there are a number of things that a cli can do to your library.
+   </p>
+   <h1>
+    Example Ideas
+   </h1>
+   <p>
+    Things a cli can do to enhance your library.
+   </p>
+   <p>
+    🆚 print version
+🕶 print readme
+📝 print changelog
+📃 print config
+✏ change config
+👩‍🎓 run a tutorial
+🏗 scaffold a project with cookiecutter
+   </p>
+   <h1>
+    🖱
+    <a href="https://click.palletsprojects.com/">
+     Click
+    </a>
+   </h1>
+   <p>
+    <a href="https://click.palletsprojects.com/">
+     Click
+    </a>
+    is the most popular python cli tool framework for python. There are others, some old, some new comers that make take the crown. For now
+    <a href="https://click.palletsprojects.com/">
+     Click
+    </a>
+    is the gold standard if you want to make a powerful cli quickly. If you are dependency conscious and dont need a lot of tooling, use
+    <a href="https://docs.python.org/3/library/argparse.html">
+     argparse
+    </a>
+    .
+   </p>
+   <h1>
+    Project Structure
+   </h1>
+   <pre class="highlight"><code>.
+├── setup.py
+└── simple_click
+    ├── cli.py
+    └── __init__.py
+</code></pre>
+   <h1>
+    ❯ cli.py
+   </h1>
+   <pre class="highlight"><code class="language-python">    # simple_click/cli.py
+    import click
+
+    __version__ = "1.0.0"
+
+    @click.group()
+    def cli():
+       pass
+
+    @cli.command()
+    def version():
+        """prints project version"""
+        click.echo(__version__)
+
+
+    if __name__ == '__main__':
+        cli()</code></pre>
+   <h1>
+    ✨
+    <strong>
+     init
+    </strong>
+    .py
+   </h1>
+   <p>
+    For our simple_click library
+    <code>
+     __init__.py__
+    </code>
+    can be left empty. It is here purely to signify that simple_click is a library. It is likely that you will import other modules here that need to reside at the top level of your library api, your cli does not need to be at the top of of your api.
+   </p>
+   <pre class="highlight"><code class="language-python">    # __init__.py</code></pre>
+   <h1>
+    🚪 Entry Points
+   </h1>
+   <p>
+    Entry points are the magic that make python cli tools available as their own command without having python before it or the file extension.
+   </p>
+   <pre class="highlight"><code class="language-python">    # setup.py
+
+    from setuptools import setup, find_packages
+
+    # this is the 🥩 meat of this snippet
+    # simple_click is the command name
+    # = simple_click is the library name
+    # .cli is the cli.py file
+    # :cli is the cli function
+    #
+    # the second item is a shorthand alias to the main command
+
+    entry_points = [
+       "simple_click = simple_click.cli:cli",
+       "scli         = simple_click.cli:cli",
+    ]
+
+
+    setup(
+        name='simple_click',
+        version='1.0.0',
+        url='https://github.com/mypackage.git',
+        packages=find_packages(),
+        entry_points={"console_scripts": entry_points},
+
+    )</code></pre>
+   <h1>
+    🕶 See it in action
+   </h1>
+   <p>
+    <a href="https://res.cloudinary.com/practicaldev/image/fetch/s--RiG3kZsy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/4zrhvj5yjzyk63np91g9.gif">
+     <img alt="See it in action" src="https://res.cloudinary.com/practicaldev/image/fetch/s--RiG3kZsy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/4zrhvj5yjzyk63np91g9.gif" title="See it in action"/>
+    </a>
+   </p>
+   <h1>
+    📢 Discuss
+   </h1>
+   <p>
+    What do You wish more python libraries included in their cli?
+    <a href="https://twitter.com/intent/tweet?text=@_waylonwalker%20More%20libraries%20should%20...%0A%0Awaylonwalker.com/b/scli">
+     Tweet it @_waylonwalker
+    </a>
+   </p>
+   <p>
+    <img alt="Tweet it @_waylonwalker" src="https://twitter.com/intent/tweet?text=@_waylonwalker%20More%20libraries%20should%20...%0A%0Awaylonwalker.com/b/scli"/>
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

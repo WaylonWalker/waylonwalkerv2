@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   How Kedro handles your inputs
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="Passing inputs into kedro is a key concept. Understanding how it accepts a single catalog key as input is quite trivial that easily makes sense, but passing a list or dictionary of catalog entries can be a bit confusing." name="description" property="description"/>
+  <meta content="Passing inputs into kedro is a key concept. Understanding how it accepts a single catalog key as input is quite trivial that easily makes sense, but passing a list or dictionary of catalog entries can be a bit confusing." name="og:description" property="og:description"/>
+  <meta content="Passing inputs into kedro is a key concept. Understanding how it accepts a single catalog key as input is quite trivial that easily makes sense, but passing a list or dictionary of catalog entries can be a bit confusing." name="twitter:description" property="twitter:description"/>
+  <meta content="How Kedro handles your inputs" name="og:title" property="og:title"/>
+  <meta content="How Kedro handles your inputs" name="twitter:title" property="twitter:title"/>
+  <meta content="How Kedro handles your inputs" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    Passing inputs into kedro is a key concept.  Understanding how it accepts a single catalog key as input is quite trivial that easily makes sense, but passing a list or dictionary of catalog entries can be a bit confusing.
+   </p>
+   <h2>
+    <em>
+     args/
+    </em>
+    *args review
+   </h2>
+   <p>
+    Check out this post for a review of how
+    <code>
+     *args
+    </code>
+    <code>
+     **kwargs
+    </code>
+    work in python.
+   </p>
+   <p>
+    <a href="https://waylonwalker.com/python-args-kwargs">
+     <img alt="python args and kwargs" src="https://waylonwalker.com/python-args-kwargs.png"/>
+    </a>
+   </p>
+   <blockquote>
+    <p>
+     <a href="https://waylonwalker.com/python-args-kwargs">
+      python args and kwargs
+     </a>
+     article by
+     <a href="https://twitter.com/_WaylonWalker">
+      @_waylonwalker
+     </a>
+    </p>
+   </blockquote>
+   <h2>
+    All Kedro inputs are catalog Entries
+   </h2>
+   <p>
+    When kedro runs your pipeline it uses the catalog to imperatively load your data, meaning that you don't tell kedro how to load your data, you tell it where your data is and what type it is.  These catalog entries are like a
+    <code>
+     key-value
+    </code>
+    store.  You just need to give the key when setting up a node.
+   </p>
+   <h2>
+    Single Inputs
+   </h2>
+   <p>
+    These are fairly straightforward to understand.  In the example below when
+    <code>
+     kedro
+    </code>
+    runs the pipeline it will load the input from the catalog, then pass that input to the func, then save the returned value to the output catalog entry.
+   </p>
+   <pre class="highlight"><code class="language-python">from kedro.pipeline import node
+
+def create_int_sales(sales):
+    "cleans up raw sales data"
+    ...
+    return cleaned_sales
+
+my_node = node(
+    func=create_int_sales,
+    inputs='raw_sales',
+    output='int_sales',
+    )</code></pre>
+   <hr/>
+   <h2>
+    List of inputs
+   </h2>
+   <p>
+    Let's look at an example node that combines more than one dataset. When kedro has sees a list of catalog entries it will load up each catalog entry sequentially then pass them in order to the
+    <code>
+     create_sales_report
+    </code>
+    function.
+   </p>
+   <pre class="highlight"><code class="language-python">from kedro.pipeline import node
+
+def create_sales_report(sales, products):
+    "adds product metadata to the sales data"
+    ...
+
+
+my_node = node(
+    func=create_sales_report,
+    inputs=['pri_sales', 'pri_products'],
+    output='sales_report',
+    )</code></pre>
+   <h2>
+    simulating pipeline run using 2 inputs
+   </h2>
+   <p>
+    Here We can simulate what kedro does during the pipeline run by using
+    <code>
+     *args
+    </code>
+    .
+   </p>
+   <pre class="highlight"><code class="language-python"># inputs you gave kedro
+inputs=['pri_sales', 'pri_products']
+# load data
+input_data = [catalog.load(entry) for entry in  inputs]
+# run the node
+sales_report = create_sales_report(*input_data)
+# save the data to the output
+catalog.datasets.sales_report.save(sales_report)</code></pre>
+   <h2>
+    More generalizable functions
+   </h2>
+   <p>
+    We can also use
+    <code>
+     *args
+    </code>
+    to make our functions a little bit more generalizable. The first that
+comes to my mind is a unioner. The second
+   </p>
+   <pre class="highlight"><code class="language-python">def unioner(*dfs: pd.DataFrame): -&gt; pd.DataFrame
+    pd.concat(dfs)</code></pre>
+   <p>
+    Now we can pass any number of DataFrames into our kedro node to get unioned together, but
+do we really need a function for a one-liner... No we can use an inline function for this case.
+   </p>
+   <pre class="highlight"><code class="language-python">my_node = node(
+    func=lambda *dfs: pd.concat(dfs),
+    input=['sales_2017', 'sales_2018'],
+    output='sales',
+)</code></pre>
+   <h2>
+    <code>
+     *args
+    </code>
+    scares the crap out of me!
+   </h2>
+   <p>
+    It's great for the
+    <code>
+     unioner
+    </code>
+    example where its a collection of similar things where order
+does not matter.  But for the
+    <code>
+     create_sales_report
+    </code>
+    function.  Those are distinctly different
+inputs.  If someone does some refactoring and changes the order in one place or another it's
+going to turn into a bad day real fast.
+   </p>
+   <h2>
+    **kwargs are a bit better
+   </h2>
+   <p>
+    Let's refactor the
+    <code>
+     create_sales_report
+    </code>
+    before someone tries to ruin our day.  We can easily
+do this by passing a dictionary (keys are the argument name, values are the catalog key)
+of arguments to kedro instead of a list.
+   </p>
+   <pre class="highlight"><code class="language-python">from kedro.pipeline import node
+
+def create_sales_report(sales, products):
+    "adds product metadata to the sales data"
+    ...
+
+my_node = node(
+    func=create_sales_report,
+    inputs={'sales': 'pri_sales', 'products': 'pri_products'},
+    output='sales_report',
+    )</code></pre>
+   <p>
+    Now if someone tries to refactor the order of arguments we are safe!
+   </p>
+   <h2>
+    Simulating the pipeline run with
+    <code>
+     **kwargs
+    </code>
+   </h2>
+   <p>
+    Pretty much the same as before, except with
+    <code>
+     **kwargs
+    </code>
+    and
+    <code>
+     dictionaries
+    </code>
+    keeping us a bit
+safer.
+   </p>
+   <pre class="highlight"><code class="language-python"># inputs you gave kedro
+inputs={'sales': 'pri_sales', 'products': 'pri_products'},
+# load data
+input_data = {arg: catalog.load(entry) for arg, entry in inputs.items()}
+# run the node
+sales_report = create_sales_report(**input_data)
+# save the data to the output
+catalog.datasets.sales_report.save(sales_report)</code></pre>
+   <h2>
+    Stay Safe
+   </h2>
+   <p>
+    Kedro inputs are quite easy to understand if you already have a grasp of
+    <code>
+     *args
+    </code>
+    and
+    <code>
+     **kwargs
+    </code>
+    and if you don't it is still fairly intuitive to pick up.  Stay on the safe side, if your
+collection of inputs are clearly different things, use a dictionary for safety.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

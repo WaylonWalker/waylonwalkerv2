@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   📢 Announcing find-kedro
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="kedro is an amazing project that allows for super-fast prototyping of data pipelines, yet yielding production-ready pipelines. find-kedro enhances this experience by adding a pytest-like node discovery eliminating the need to bubble up pipelines through modules." name="description" property="description"/>
+  <meta content="kedro is an amazing project that allows for super-fast prototyping of data pipelines, yet yielding production-ready pipelines. find-kedro enhances this experience by adding a pytest-like node discovery eliminating the need to bubble up pipelines through modules." name="og:description" property="og:description"/>
+  <meta content="kedro is an amazing project that allows for super-fast prototyping of data pipelines, yet yielding production-ready pipelines. find-kedro enhances this experience by adding a pytest-like node discovery eliminating the need to bubble up pipelines through modules." name="twitter:description" property="twitter:description"/>
+  <meta content="📢 Announcing find-kedro" name="og:title" property="og:title"/>
+  <meta content="📢 Announcing find-kedro" name="twitter:title" property="twitter:title"/>
+  <meta content="📢 Announcing find-kedro" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    <code>
+     find-kedro
+    </code>
+    is a small library to enhance your kedro experience.  It looks through your modules to find kedro pipelines, nodes, and iterables (lists, sets, tuples) of nodes.  It then assembles them into a dictionary of pipelines, each module will create a separate pipeline, and
+    <code>
+     __default__
+    </code>
+    being a combination of all pipelines.  This format is compatible with the kedro
+    <code>
+     _create_pipelines
+    </code>
+    format.
+   </p>
+   <p>
+    <img alt="Python package" src="https://github.com/WaylonWalker/find-kedro/workflows/Python%20package/badge.svg"/>
+   </p>
+   <p>
+    <img alt="Test" src="https://github.com/WaylonWalker/find-kedro/workflows/Test/badge.svg"/>
+   </p>
+   <p>
+    <a href="https://find-kedro.waylonwalker.com">
+     <img alt="Build-Docs" src="https://github.com/WaylonWalker/find-kedro/workflows/Build-Docs/badge.svg?branch=master"/>
+    </a>
+   </p>
+   <h2>
+    <img alt="Motivation" src="https://waylonwalker.com/find-kedro-release-1.png"/>
+   </h2>
+   <p>
+    <code>
+     kedro
+    </code>
+    is a ✨ fantastic project that allows for super-fast prototyping of data pipelines, while yielding production-ready pipelines.
+    <code>
+     find-kedro
+    </code>
+    enhances this experience by adding a pytest like node/pipeline discovery eliminating the need to bubble up pipelines through modules.
+   </p>
+   <p>
+    When working on larger pipeline projects, it is advisable to break your project down into different sub-modules which requires knowledge of building python libraries, and knowing how to import each module correctly.  While this is not too difficult, in some cases, it can trip up even the most senior engineers, losing precious feature development time to debugging a library.
+   </p>
+   <h2>
+    <img alt="Installation" src="https://waylonwalker.com/find-kedro-release-2.png"/>
+   </h2>
+   <p>
+    <code>
+     find-kedro
+    </code>
+    is deployed to pypi and can easily be
+    <code>
+     pip
+    </code>
+    installed.
+   </p>
+   <pre class="highlight"><code class="language-bash">pip install find-kedro</code></pre>
+   <h2>
+    <img alt="Python Usage" src="https://waylonwalker.com/find-kedro-release-3.png"/>
+   </h2>
+   <p>
+    The recommended usage of
+    <code>
+     find-kedro
+    </code>
+    is to implement it directly into your projects
+    <code>
+     run.py
+    </code>
+    module
+   </p>
+   <pre class="highlight"><code class="language-python">from kedro.context import KedroContext
+from find_kedro import find_kedro
+
+class ProjectContext(KedroContext):
+    def _get_pipelines(self) -&gt; Pipeline:
+        return find_kedro()</code></pre>
+   <h3>
+    Creating nodes
+   </h3>
+   <p>
+    <code>
+     find-kedro
+    </code>
+    will not execute any functions.  It will simply look for variables that match the
+    <code>
+     pattern
+    </code>
+    and identify if they are a
+    <code>
+     kedro.pipeline.Pipeline
+    </code>
+    ,
+    <code>
+     kedro.pipeline.nodes.Node
+    </code>
+    , or a list of
+    <code>
+     kedro.pipeline.nodes.  Node
+    </code>
+    's.  If so, it will collect them into the dictionary of pipelines.
+   </p>
+   <p>
+    There are typically
+    <strong>
+     three
+    </strong>
+    ways that pipelines are constructed with
+    <code>
+     find-kedro
+    </code>
+    ;
+    <strong>
+     lists
+    </strong>
+    ,
+    <strong>
+     single-nodes
+    </strong>
+    , and
+    <strong>
+     pipelines
+    </strong>
+    .
+   </p>
+   <h4>
+    Lists
+   </h4>
+   <p>
+    Any pattern matched list will be flattened and collected into the pipeline.  Nodes can be created all at once in the list definition.
+   </p>
+   <pre class="highlight"><code class="language-python"># my-proj/pipelinies/data_engineering/pipeline
+from kedro.pipeline import node
+from .nodes import split_data
+
+pipeline = [
+    node(
+        split_data,
+        ["example_iris_data", "params:example_test_data_ratio"],
+        dict(
+            train_x="example_train_x",
+            train_y="example_train_y",
+            test_x="example_test_x",
+            test_y="example_test_y",
+        ),
+    )
+]</code></pre>
+   <p>
+    It is also convenient many times to keep the node definition close to the function definition.  Many times I define the list at the top of the file, then append to it as I go.
+   </p>
+   <pre class="highlight"><code class="language-python"># my-proj/pipelinies/data_engineering/pipeline
+from kedro.pipeline import node
+from .nodes import split_data
+
+nodes = []
+nodes.append(
+    node(
+        split_data,
+        ["example_iris_data", "params:example_test_data_ratio"],
+        dict(
+            train_x="example_train_x",
+            train_y="example_train_y",
+            test_x="example_test_x",
+            test_y="example_test_y",
+        ),
+    )
+)</code></pre>
+   <h4>
+    Nodes
+   </h4>
+   <p>
+    All pattern matched
+    <code>
+     kedro.pipeline.node.Node
+    </code>
+    objects will get collected into the pipeline.
+   </p>
+   <pre class="highlight"><code class="language-python"># my-proj/pipelinies/data_engineering/pipeline
+from kedro.pipeline import node
+from .nodes import split_data
+
+split_node = node(
+        split_data,
+        ["example_iris_data", "params:example_test_data_ratio"],
+        dict(
+            train_x="example_train_x",
+            train_y="example_train_y",
+            test_x="example_test_x",
+            test_y="example_test_y",
+        ),
+    )</code></pre>
+   <h4>
+    Pipeline
+   </h4>
+   <p>
+    All pattern matched
+    <code>
+     kedro.pipeline.Pipeline
+    </code>
+    objects will get collected into the pipeline.
+   </p>
+   <pre class="highlight"><code class="language-python"># my-project/pipelinies/data_engineering/pipeline
+from kedro.pipeline import node, Pipeline
+from .nodes import split_data
+
+split_node = Pipeline(
+    [
+        node(
+            split_data,
+            ["example_iris_data", "params:example_test_data_ratio"],
+            dict(
+                train_x="example_train_x",
+                train_y="example_train_y",
+                test_x="example_test_x",
+                test_y="example_test_y",
+            ),
+        )
+    ]
+)</code></pre>
+   <h3>
+    Fully Qualified imports
+   </h3>
+   <p>
+    When using fully qualified imports
+    <code>
+     from my_proj.pipelines.data_science.nodes import split_data
+    </code>
+    instead of
+relative imports
+    <code>
+     from .nodes split_data
+    </code>
+    you will need to make sure that your project is installed, in your current path, or you set the directory
+   </p>
+   <h3>
+    <img alt="CLI Usage" src="https://waylonwalker.com/find-kedro-release-4.png"/>
+   </h3>
+   <p>
+    The CLI provides a handy interface to search your project for nodes
+   </p>
+   <pre class="highlight"><code>Usage: find-kedro [OPTIONS]
+
+Options:
+  --file-patterns TEXT       glob-style file patterns for Python node module
+                             discovery
+
+  --patterns TEXT            prefixes or glob names for Python pipeline, node,
+                             or list object discovery
+
+  -d, --directory DIRECTORY  Path to save the static site to
+  --version                  Prints version and exits
+  -v, --verbose              Prints extra information for debugging
+  --help                     Show this message and exit.</code></pre>
+   <p>
+    Example ran with a slightly modified default
+    <code>
+     kedro new
+    </code>
+    project.
+   </p>
+   <pre class="highlight"><code class="language-bash">❯ find-kedro
+{
+  "__default__": [
+    "split_data([example_iris_data,params:example_test_data_ratio]) -&gt; [example_test_x,example_test_y,example_train_x,example_train_y]",
+    "train_model([example_train_x,example_train_y,parameters]) -&gt; [example_model]",
+    "predict([example_model,example_test_x]) -&gt; [example_predictions]",
+    "report_accuracy([example_predictions,example_test_y]) -&gt; None"
+  ],
+  "src.default_kedro_159.pipelines.data_engineering.pipeline": [
+    "split_data([example_iris_data,params:example_test_data_ratio]) -&gt; [example_test_x,example_test_y,example_train_x,example_train_y]"
+  ],
+  "src.default_kedro_159.pipelines.data_science.pipeline": [
+    "train_model([example_train_x,example_train_y,parameters]) -&gt; [example_model]",
+    "predict([example_model,example_test_x]) -&gt; [example_predictions]",
+    "report_accuracy([example_predictions,example_test_y]) -&gt; None"
+  ]
+}</code></pre>
+   <h2>
+    <img alt="Contributing" src="https://waylonwalker.com/find-kedro-release-5.png"/>
+   </h2>
+   <p>
+    <strong>
+     You're Awesome
+    </strong>
+    for considering a contribution!  Contributions are welcome, please check out the
+    <a href="https://github.com/WaylonWalker/find-kedro/blob/master/contributing.md">
+     Contributing Guide
+    </a>
+    for more information.  Please be a positive member of the community and embrace feedback
+   </p>
+   <h2>
+    <img alt="Versioning" src="https://waylonwalker.com/find-kedro-release-6.png"/>
+   </h2>
+   <p>
+    We use
+    <a href="https://semver.org/">
+     SemVer
+    </a>
+    for versioning. For the versions available, see the
+    <a href="https://github.com/WaylonWalker/find-kedro/releases">
+     tags on this repository
+    </a>
+    .
+   </p>
+   <h2>
+    <img alt="Authors" src="https://waylonwalker.com/find-kedro-release-7.png"/>
+   </h2>
+   <p>
+    <a href="https://github.com/WaylonWalker">
+     <img alt="Waylon Walker" src="https://avatars1.githubusercontent.com/u/22648375?s=120&amp;v=4"/>
+    </a>
+    - Waylon Walker -
+    <em>
+     Original Author
+    </em>
+   </p>
+   <p>
+    <a href="https://github.com/mzjp2">
+     <img alt="Zain Patel" src="https://avatars3.githubusercontent.com/u/30357972?s=120&amp;v=4"/>
+    </a>
+    - Zain Patel
+   </p>
+   <h2>
+    <img alt="License" src="https://waylonwalker.com/find-kedro-release-8.png"/>
+   </h2>
+   <p>
+    This project is licensed under the MIT License - see the LICENSE.md file for details
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

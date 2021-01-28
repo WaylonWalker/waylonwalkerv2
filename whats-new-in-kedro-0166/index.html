@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   What's New in Kedro 0.16.6
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="This version of kedro releases a new set of supported deployment options and the spaceflights pipeline is officially added as a starter alias." name="description" property="description"/>
+  <meta content="This version of kedro releases a new set of supported deployment options and the spaceflights pipeline is officially added as a starter alias." name="og:description" property="og:description"/>
+  <meta content="This version of kedro releases a new set of supported deployment options and the spaceflights pipeline is officially added as a starter alias." name="twitter:description" property="twitter:description"/>
+  <meta content="What's New in Kedro 0.16.6" name="og:title" property="og:title"/>
+  <meta content="What's New in Kedro 0.16.6" name="twitter:title" property="twitter:title"/>
+  <meta content="What's New in Kedro 0.16.6" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    Kedro
+    <a href="https://github.com/quantumblacklabs/kedro/releases">
+     0.16.6
+    </a>
+    is out! Let's take a look through the release notes
+   </p>
+   <h2>
+    Deployment Docs
+   </h2>
+   <p>
+    This is really exciting to see more deployment options coming from the kedro team. It really shows the power of the framework. The power of some of these orchestrations options is incredible.
+   </p>
+   <ul>
+    <li>
+     <a href="https://kedro.readthedocs.io/en/stable/10_deployment/04_argo.html">
+      Argo
+     </a>
+    </li>
+    <li>
+     <a href="https://kedro.readthedocs.io/en/stable/10_deployment/05_prefect.html">
+      Prefect
+     </a>
+    </li>
+    <li>
+     <a href="https://kedro.readthedocs.io/en/stable/10_deployment/06_kubeflow.html">
+      Kubeflow
+     </a>
+    </li>
+    <li>
+     <a href="https://kedro.readthedocs.io/en/stable/10_deployment/07_aws_batch.html">
+      Batch
+     </a>
+    </li>
+    <li>
+     <a href="https://kedro.readthedocs.io/en/stable/10_deployment/08_aws_sagemaker.html">
+      SageMaker
+     </a>
+    </li>
+   </ul>
+   <p>
+    Most of them hinge on a sweet combination of the kedro cli, docker image, and the pipeline knowing your nodes dependencies.
+   </p>
+   <p>
+    Argo, Prefect, and Kubeflow have an interesting technique where they translate the pipeline and its dependencies from kedro to their language.
+   </p>
+   <p>
+    Batch uses the aws cli to submit jobs, one node per job, and listen for them to complete. It will submit all nodes with completed dependencies at once, meaning that we can get some massive parallelization.
+   </p>
+   <p>
+    I did a quick and dirty test of one of these by simulating the technique in a bash script and saw a 40 hr pipeline finish in about 1 hour. I am excited to get this working in my production workflow.
+   </p>
+   <h2>
+    Spaceflight starter
+   </h2>
+   <p>
+    They have officially added the spaceflights pipeline as a starter. I have not yet had a chance to try this out, but I anticipate this will be a great pipeline to teach from as it is a bit more complex than the iris pipeline.
+   </p>
+   <p>
+    I tell folks all the time the best way to learn something new like kedro is to
+    <strong>
+     practice, practice, practice
+    </strong>
+    . Having this at their fingertips will give an easy way to fire up a pipeline that is ok to break try out some new ideas and leave it. I see this helping me testing out plugins on more complex pipelines and writing blog posts with examples that readers can more easily follow along with.
+   </p>
+   <ul>
+    <li>
+     practice
+    </li>
+    <li>
+     testing
+    </li>
+    <li>
+     blog posts
+    </li>
+    <li>
+     tutorials
+    </li>
+   </ul>
+   <h2>
+    Better Error Messages
+   </h2>
+   <p>
+    Shameless pug, my PR landed in kedro, but fell off of the release.md in a merge issue. I was frustrated working on large projects when the wrong arguments were passed into a node and it did not give you any information in the Error to figure out where the error was thrown. Now it will at least give the name of the function that caused the error. This was a simple fix as all of the information was already there.
+   </p>
+   <h2>
+    Overall
+   </h2>
+   <p>
+    Love the progress that the project is seeing and the focus on all of the deployment options.
+   </p>
+   <h2>
+    Thanks for supporting contributions
+   </h2>
+   <p>
+    <a href="https://github.com/deepyaman">
+     Deepyaman Datta
+    </a>
+    ,
+    <a href="https://github.com/bnmerchant">
+     Bhavya Merchant
+    </a>
+    ,
+    <a href="https://github.com/Lovkush-A">
+     Lovkush Agarwal
+    </a>
+    ,
+    <a href="https://github.com/vhawk19">
+     Varun Krishna S
+    </a>
+    ,
+    <a href="https://github.com/sebastianbertoli">
+     Sebastian Bertoli
+    </a>
+    ,
+    <a href="https://github.com/noklam">
+     noklam
+    </a>
+    ,
+    <a href="https://github.com/djpetti">
+     Daniel Petti
+    </a>
+    ,
+    <a href="https://github.com/waylonwalker">
+     Waylon Walker
+    </a>
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

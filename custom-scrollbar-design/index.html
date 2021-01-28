@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Custom Scrollbar Design
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="Getting a custom scrollbar on your site makes it stand out a bit compared to the very plain stock one that are on most sites.  This is how I set mine up on my gatsby site." name="description" property="description"/>
+  <meta content="Getting a custom scrollbar on your site makes it stand out a bit compared to the very plain stock one that are on most sites.  This is how I set mine up on my gatsby site." name="og:description" property="og:description"/>
+  <meta content="Getting a custom scrollbar on your site makes it stand out a bit compared to the very plain stock one that are on most sites.  This is how I set mine up on my gatsby site." name="twitter:description" property="twitter:description"/>
+  <meta content="Custom Scrollbar Design" name="og:title" property="og:title"/>
+  <meta content="Custom Scrollbar Design" name="twitter:title" property="twitter:title"/>
+  <meta content="Custom Scrollbar Design" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    Inspired by Wes Bos's new
+    <a href="https://uses.tech">
+     uses.tech
+    </a>
+    I wanted a custom scrollbar on my personal site.  I had tried to do it in the past, but gave up after it was not working.
+   </p>
+   <h2>
+    Looking at the Source
+   </h2>
+   <p>
+    Since
+    <a href="https://uses.tech">
+     uses.tech
+    </a>
+    is open source I jumped on github, searched for scroll and found this
+    <a href="https://github.com/wesbos/awesome-uses/blob/124bdd64345bc64eb84879929f0e57cbb8752e34/src/components/layout.js#L74">
+     layout.js
+    </a>
+    .
+   </p>
+   <h2>
+    Copy it to my own component
+   </h2>
+   <p>
+    My first step was to take his css and copy it into a styled component for my entire layout, but it failed.  I do not fully understand why.  None of the custom style came through at all.  If you know please leave me a comment.
+   </p>
+   <p>
+    <img alt="" src="https://waylonwalker.com/why-wont-you-work.jpg"/>
+   </p>
+   <p>
+    I suspect for some reason it has to do with attatching to the html element inside of a styled-component.  I think wes was able to get around this by using
+    <code>
+     createGlobalStyle
+    </code>
+    .  But I was still using much of the default gatsby template, so I did not have a
+    <code>
+     createGlobalStyle
+    </code>
+    element, but I did have a layout.css.
+   </p>
+   <h2>
+    scroll.css
+   </h2>
+   <p>
+    I added
+    <code>
+     scroll.css
+    </code>
+    to my static directory, then imported it into
+    <code>
+     gatsby-browser.js
+    </code>
+    in order to get it loaded onto the page.
+   </p>
+   <pre class="highlight"><code class="language-css"> /* static/scroll.css */
+
+body::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #5651B7;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: #392E3D;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: #5651B7 ;
+    border-radius: .5rem;
+    background: rgb(112,107,208);
+    background: linear-gradient(180deg, rgba(112,107,208,1) 0%, rgba(86,81,183,1) 100%);
+    border: 1px solid rgba(86,81,183,.5);
+  }</code></pre>
+   <pre class="highlight"><code class="language-javascript">// gatsby-browser.js
+import './static/scroll.css</code></pre>
+   <h2>
+    It works
+   </h2>
+   <p>
+    It was a bit finicky for me to find the right place to put everything, but this is the final result.  I found out that you can have a gradient on your
+    <code>
+     scrollbar-thumb
+    </code>
+    , but the
+    <code>
+     scrollbar-track
+    </code>
+    cannot, it also cannot be transparent.  I picked a color that matched my background the best for most use cases, but when the screen gets really narrow a line starts to appear.
+   </p>
+   <p>
+    <img alt="My final result" src="/static/custom-scrollbar-with-css.gif" title="my final result, an example give of the final result live on waylonwalker.com"/>
+   </p>
+   <blockquote>
+    <p>
+     My final result
+    </p>
+   </blockquote>
+   <h2>
+    Resources
+   </h2>
+   <p>
+    uses.tech layout.js:
+    <a href="https://github.com/wesbos/awesome-uses/blob/124bdd64345bc64eb84879929f0e57cbb8752e34/src/components/layout.js#L74">
+     layout.js
+    </a>
+   </p>
+   <p>
+    css-trick article:
+    <a href="https://css-tricks.com/almanac/properties/s/scrollbar/" title="css tricks scrollbar article">
+     scrollbar
+    </a>
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

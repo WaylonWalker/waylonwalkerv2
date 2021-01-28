@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   🐍 Pluggable Architecture with Python
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="pytest has open sourced their amazing plugin framework pluggy, it allows
+library authors to give their users a way to modify the libaries behavior
+without needing to submit a change that may not make sense to the entire
+library. My experience so far " name="description" property="description"/>
+  <meta content="pytest has open sourced their amazing plugin framework pluggy, it allows
+library authors to give their users a way to modify the libaries behavior
+without needing to submit a change that may not make sense to the entire
+library. My experience so far " name="og:description" property="og:description"/>
+  <meta content="pytest has open sourced their amazing plugin framework pluggy, it allows
+library authors to give their users a way to modify the libaries behavior
+without needing to submit a change that may not make sense to the entire
+library. My experience so far " name="twitter:description" property="twitter:description"/>
+  <meta content="🐍 Pluggable Architecture with Python" name="og:title" property="og:title"/>
+  <meta content="🐍 Pluggable Architecture with Python" name="twitter:title" property="twitter:title"/>
+  <meta content="🐍 Pluggable Architecture with Python" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    pytest has open sourced their amazing plugin framework
+    <code>
+     pluggy
+    </code>
+    , it allows
+library authors to give their users a way to modify the libaries behavior
+without needing to submit a change that may not make sense to the entire
+library.
+   </p>
+   <h2>
+    Previous Experience
+   </h2>
+   <p>
+    My experience so far as a plugin user, and plugin author has been great.
+Building and using plugins are incredibly intuitive.  I wanted to dive a bit
+deeper and see how they are implemented inside of a library and its a bit of a
+mind bend the first time you try to do it.
+   </p>
+   <h2>
+    Plugins vs. Hooks
+   </h2>
+   <p>
+    A hook is a single function that has a specific place that it is ran by the PluginManager.
+   </p>
+   <p>
+    A Plugin is a collection of one or more hooks.
+   </p>
+   <h2>
+    Layers
+   </h2>
+   <ul>
+    <li>
+     library author
+    </li>
+    <li>
+     plugin author
+    </li>
+    <li>
+     end user
+    </li>
+   </ul>
+   <h2>
+    Using a plugin
+   </h2>
+   <p>
+    For a plugin to be registered is must be registered by the PluginManager which
+is implemented by the library author.  It is the job of the library author to
+determine what plugins are actively registered or disabled.  There are two
+common ways that I have seen that plugins are registered, through entrypoints
+or configuration.
+   </p>
+   <h2>
+    Using a plugin - entrypoints
+   </h2>
+   <p>
+    Plugins that are implemented with entrypoints are the simplest for the user.
+They are simply activated by
+    <code>
+     pip install plugin
+    </code>
+    or deactivated by
+    <code>
+     pip
+uninstall plugin
+    </code>
+    .  The library author will show an entrypoint in their docs
+which tells plugin authors how to setup entrypoints so that they will be loaded
+autommatically.
+   </p>
+   <h2>
+    Using a plugin - config
+   </h2>
+   <p>
+    Another way to configure plugins is through configuration.  This may come in
+the form of a list in a python module or listed in a text file in the config.
+This route requires the user to add the plugin to a list or import it into a
+python module.
+   </p>
+   <h2>
+    Examples
+   </h2>
+   <p>
+    I really stuggled to find a good example of pluggy to get started.  I found the
+best way for me to understand was to create one myself.  the pluggy repo has
+one simple
+    <a href="https://github.com/pytest-dev/pluggy/blob/master/docs/examples/toy-example.py">
+     example
+    </a>
+    ,
+but it is unclear who owns each piece from the example.  The whole point of
+pluggy is to pass ownership of  implementation from the library author to the
+plugin author.
+   </p>
+   <h2>
+    Floris Bruynooghe
+   </h2>
+   <p>
+    <a href="https://www.youtube.com/watch?v=zZsNPDfOoHU">
+     https://www.youtube.com/watch?v=zZsNPDfOoHU
+    </a>
+   </p>
+   <p>
+    Floris Bruynooghe has a great talk from
+    <a href="https://www.youtube.com/watch?v=zZsNPDfOoHU">
+     EuroPython
+2015
+    </a>
+    where he shows how to build
+a project thats plugins all the way down.  His
+    <a href="http://devork.be/talks/pluggy">
+     slides
+    </a>
+    are also available.
+   </p>
+   <h2>
+    Kedro
+   </h2>
+   <p>
+    Kedro is a data pipelining framekwork that includes a hooks based architecture
+that allows users to modify the behavior of the framework at different points
+through the lifecycle.  There is a
+    <a href="https://github.com/quantumblacklabs/kedro/tree/dc1ee8e06b255d4d5a4348ad8a2e78048c547279/kedro/framework/hooks">
+     hooks
+    </a>
+    module that implements everything, and a
+    <a href="https://github.com/quantumblacklabs/kedro/blob/dc1ee8e06b255d4d5a4348ad8a2e78048c547279/features/steps/test_plugin/plugin.py">
+     test_plugin
+    </a>
+    that is used for testing, but also serves as a good example.
+   </p>
+   <h2>
+    palantir/python-language-server
+   </h2>
+   <p>
+    Another example is the palantir python language server.  Check out their
+    <a href="https://github.com/palantir/python-language-server/blob/91a13687dbd5247374253b245124befb8d9c60c9/pyls/hookspecs.py">
+     hookspec
+    </a>
+    module.
+   </p>
+   <h2>
+    Tutorial
+   </h2>
+   <h2>
+    Plugin Components
+   </h2>
+   <ul>
+    <li>
+     project_name
+     <ul>
+      <li>
+       implemented by the library author
+      </li>
+      <li>
+       gives a namespace for pluggy to store hooks
+      </li>
+     </ul>
+    </li>
+    <li>
+     hookspec
+     <ul>
+      <li>
+       created and used by libary author
+      </li>
+     </ul>
+    </li>
+    <li>
+     hookimpl
+     <ul>
+      <li>
+       created by libary author
+      </li>
+      <li>
+       used by plugin author
+      </li>
+     </ul>
+    </li>
+    <li>
+     PluginManager
+     <ul>
+      <li>
+       implementation of plugins in the library
+      </li>
+     </ul>
+    </li>
+   </ul>
+   <h2>
+    hookspec
+   </h2>
+   <p>
+    _empty hooks created by the library author
+   </p>
+   <pre class="highlight"><code class="language-python"># hookspec.py
+import pluggy
+
+hookspec = pluggy.HookspecMarker("printer")
+
+class PrinterHooks:
+    @hookspec
+    def pre_print(msg):
+        "pre print hook"
+        pass
+
+    @hookspec
+    def post_print(msg):
+        "pre print hook"
+        pass</code></pre>
+   <h2>
+    hookimpl
+   </h2>
+   <p>
+    <em>
+     used by the plugin author
+    </em>
+   </p>
+   <p>
+    Implementations of plugins much match the name of the spec exactly.
+They can include some or all of the arguments listed in the spec,
+but no others.  They can be implemented as a module with functions
+that match the name of the spec or as a class with methods that
+match the name of the spec.
+   </p>
+   <h3>
+    Class Style Plugin
+   </h3>
+   <pre class="highlight"><code class="language-python"># plug.py
+# would be imported from the library authors hookspec
+from hookspec import hookimpl
+
+
+class Pre:
+    @hookimpl
+    def pre_print(msg):
+        msg = msg.upper()
+        return "BEFORE"
+
+
+class Post:
+    @hookimpl
+    def post_print(msg):
+        print(f"\033[A\033[2Knot today")</code></pre>
+   <h3>
+    Module Style Plugin
+   </h3>
+   <pre class="highlight"><code class="language-python"># plug/Pre.py
+from hookspec import hookimpl
+
+
+@hookimpl
+def pre_print(msg):
+    msg = msg.upper()
+
+
+# plug/Post.py
+class Post:
+    @hookimpl
+    def post_print(msg):
+        print(f"\033[A\033[2Knot today")</code></pre>
+   <p>
+    <strong>
+     note
+    </strong>
+    These plugins only implement one hook.  Each plugin may
+implement one or more hooks, a plugin is not required to only
+implement on hook.
+   </p>
+   <h2>
+    Plugin Manager
+   </h2>
+   <p>
+    <em>
+     implementing the hooks into the library
+    </em>
+   </p>
+   <h3>
+    Simple Example
+   </h3>
+   <pre class="highlight"><code class="language-python">import pluggy
+import importlib
+
+from hookspec import PrinterHooks
+from plug import Pre
+
+pm = pluggy.PluginManager("printer")
+pm.add_hookspecs(PrinterHooks)
+pm.register(Pre)
+
+def printer(msg):
+    pm.hook.pre_print(msg=msg)
+    print(msg)
+    pm.hook.post_print(msg=msg)</code></pre>
+   <h2>
+    Running the library
+   </h2>
+   <p>
+    Now if we run the printer function as a user we will see this
+output.
+   </p>
+   <pre class="highlight"><code class="language-pycon">&gt;&gt;&gt; printer('hello world')
+HELLO WORLD</code></pre>
+   <h2>
+    Adding Post
+   </h2>
+   <p>
+    Now if we register the Post plugin we will see the following output.
+   </p>
+   <pre class="highlight"><code class="language-python">
+from plug import Pre, Post
+
+pm.register(Pre)
+pm.register(Post)</code></pre>
+   <pre class="highlight"><code class="language-pycon">&gt;&gt;&gt; printer('hello world')
+not today</code></pre>
+   <p>
+    The
+    <code>
+     Post
+    </code>
+    plugin wipes away the last line from the console and
+prints out
+    <code>
+     "not today"
+    </code>
+   </p>
+   <h2>
+    Plugin Manager - with dynamic imports
+   </h2>
+   <p>
+    In a real library we might want to allow the user to configure their
+plugins through a config file.  If we do this we will need to reach
+for
+    <code>
+     importlib
+    </code>
+    to handle the imports based on a string.
+   </p>
+   <pre class="highlight"><code class="language-python">
+import pluggy
+import importlib
+
+# from hookspec import hookspec
+from hookspec import PrinterHooks
+
+# from hookspec import hookimpl
+
+plugins = ["plug.Pre", "plug.Post"]
+pm = pluggy.PluginManager("printer")
+pm.add_hookspecs(PrinterHooks)
+
+for plug in plugins:
+    if isinstance(plug, str):
+        # plug is a str representing a module to import
+        try:
+            # module style plugins
+            plugin = importlib.import_module(plug)
+        except ModuleNotFoundError as e:
+            # class style plugins
+            if "." in plug:
+                mod = importlib.import_module(".".join(plug.split(".")[:-1]))
+                plugin = getattr(mod, plug.split(".")[-1])
+            else:
+                raise e
+    else:
+        # plug is a module that is already imported
+        plugin = plug
+
+    pm.register(plugin)
+
+
+def printer(msg):
+    pm.hook.pre_print(msg=msg)
+    print(msg)
+    pm.hook.post_print(msg=msg)</code></pre>
+   <h2>
+    EntryPoint plugins
+   </h2>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

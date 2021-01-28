@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Vim Replace Visual Star
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="Replacing text based on whats in the current search register is a quite handy
+tool that I use often.  I believe I picked this tip up from Nick Janetakis,
+check out his YouTube channel for some amazing vim tips. https://www.youtube.com/watch?v=fP_ckZ3" name="description" property="description"/>
+  <meta content="Replacing text based on whats in the current search register is a quite handy
+tool that I use often.  I believe I picked this tip up from Nick Janetakis,
+check out his YouTube channel for some amazing vim tips. https://www.youtube.com/watch?v=fP_ckZ3" name="og:description" property="og:description"/>
+  <meta content="Replacing text based on whats in the current search register is a quite handy
+tool that I use often.  I believe I picked this tip up from Nick Janetakis,
+check out his YouTube channel for some amazing vim tips. https://www.youtube.com/watch?v=fP_ckZ3" name="twitter:description" property="twitter:description"/>
+  <meta content="Vim Replace Visual Star" name="og:title" property="og:title"/>
+  <meta content="Vim Replace Visual Star" name="twitter:title" property="twitter:title"/>
+  <meta content="Vim Replace Visual Star" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    Replacing text based on whats in the current search register is a quite handy
+tool that I use often.  I believe I picked this tip up from Nick Janetakis,
+check out his YouTube channel for some amazing vim tips.
+   </p>
+   <p>
+    <a href="https://www.youtube.com/watch?v=fP_ckZ30gbs">
+     https://www.youtube.com/watch?v=fP_ckZ30gbs
+    </a>
+   </p>
+   <p>
+    If there is one thing that I Like most about vim it's the ability to hack on it
+and make it work well for you.
+   </p>
+   <h2>
+    Replacing text in vim
+   </h2>
+   <p>
+    Vim can often be a bit verbose, but that's ok because we can hack on it, and 
+make our own shortcuts and keybindings.  For instance, finding and replacing 
+text requires using a command at the vim command-line
+    <code>
+     :
+    </code>
+    .  Replacing foo with
+bar looks like this
+    <code>
+     :%s/foo/bar/g
+    </code>
+    , the final g means all of the foos, not just 
+the first one on the line.
+   </p>
+   <h2>
+    making it better
+   </h2>
+   <p>
+    I have a keybinding in my
+    <code>
+     init.vim
+    </code>
+    that will allow me to search for a pattern
+with the usual
+    <code>
+     /
+    </code>
+    character, page through them as normal with
+    <code>
+     n
+    </code>
+    and
+    <code>
+     N
+    </code>
+    , but
+when I press
+    <code>
+     &lt;C-R&gt;
+    </code>
+    it will populate the replace command for me so that all I
+need to do is type out the new text.
+   </p>
+   <pre class="highlight"><code class="language-vim">nnoremap &lt;c-r&gt; :%s/&lt;C-R&gt;///g&lt;Left&gt;&lt;Left&gt;</code></pre>
+   <h2>
+    Note on the
+    <code>
+     &lt;C-R&gt;/
+    </code>
+   </h2>
+   <p>
+    In command mode
+    <code>
+     :
+    </code>
+    vim allows you to paste any text from any register into the
+current command.  The
+    <code>
+     &lt;C-R&gt;/
+    </code>
+    will paste the text from the current search
+register into the command.
+   </p>
+   <p>
+    <code>
+     &lt;C-R&gt;
+    </code>
+    in command mode can paste text from any register, you can see what
+registers are in use with the
+    <code>
+     :reg
+    </code>
+    command.  There are a lot of them and many
+get populated automatically as you yank text or create macros.
+   </p>
+   <p>
+    <a href="https://waylonwalker.com/save-vim-macro">
+     https://waylonwalker.com/save-vim-macro
+    </a>
+   </p>
+   <blockquote>
+    <p>
+     Also see how to use
+     <c-r>
+      to save macros to key bindings easily
+     </c-r>
+    </p>
+   </blockquote>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

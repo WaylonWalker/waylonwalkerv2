@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Reclaim memory usage in Jupyter
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="Today we ran into an issue where we had a one-off script that just needed to work, but it was just chewing threw memory like nothing." name="description" property="description"/>
+  <meta content="Today we ran into an issue where we had a one-off script that just needed to work, but it was just chewing threw memory like nothing." name="og:description" property="og:description"/>
+  <meta content="Today we ran into an issue where we had a one-off script that just needed to work, but it was just chewing threw memory like nothing." name="twitter:description" property="twitter:description"/>
+  <meta content="Reclaim memory usage in Jupyter" name="og:title" property="og:title"/>
+  <meta content="Reclaim memory usage in Jupyter" name="twitter:title" property="twitter:title"/>
+  <meta content="Reclaim memory usage in Jupyter" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    Today we ran into an issue where we had a one-off script that just needed to work, but it was just chewing threw memory like nothing.
+   </p>
+   <h2>
+    Pre check the status of memory.
+   </h2>
+   <p>
+    There are a number of ways that you can check the amount of memory on your system.  The easiest is not necessarily my first go to is free... literally
+    <code>
+     free
+    </code>
+    .
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       check for free space
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">$ free -h
+             total       used       free     shared    buffers     cached
+Mem:           15G        15G       150M         0B        59M       8.7G</code></pre>
+   <p>
+    Generally my first go to is a bit more graphical, and not available on a stock stystem, but far more useful....
+    <code>
+     htop
+    </code>
+    .
+    <a href="https://htop.dev">
+     <code>
+      htop
+     </code>
+    </a>
+    is a terminal process explorer that shows cpu usage, mem usage, and running processes.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       htop
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">sudo apt-get install htop # install it from your package repo
+htop</code></pre>
+   <p>
+    <img alt="htop in use" src="https://waylonwalker.com/htop-2.0.png"/>
+   </p>
+   <h2>
+    First step throw more swap at it
+   </h2>
+   <p>
+    Often before going through the process of getting a larger instance underneath the notebook you can hobble home with a bit more swap file.  It may not be pretty or fast, but gets the job done in a pinch.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       Check for free disk
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">$ du
+
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/asdasd        200G   50G  150G   25% /</code></pre>
+   <blockquote>
+    <p>
+     Make sure you check your free disk space first, filling both memory and disk can be bad news
+    </p>
+   </blockquote>
+   <p>
+    <em>
+     <small>
+      <mark>
+       make a swap file and activate it
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">SWAPFILE=~/swaps/swap1-50G
+mkdir ~/swaps
+sudo fallocate -l 50G $SWAPFILE
+sudo chmod 600 $SWAPFILE
+sudo mkswap $SWAPFILE
+sudo swapon $SWAPFILE</code></pre>
+   <p>
+    You can see the results with either swapon or free.
+   </p>
+   <pre class="highlight"><code class="language-bash">sudo swapon --show
+free -h</code></pre>
+   <p style="text-align: center">
+    <a href="https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-20-04/">
+     <img alt="How to Add Swap Space on Ubuntu 20.04" src="https://waylonwalker.com/linuxize-how-to-add-swap-space-on-ubuntu-20-04.jpg" style="width:500px; max-width:80%; margin: auto;"/>
+    </a>
+   </p>
+   <p>
+    <a href="https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-20-04/">
+     linuxize how to add swap space on ubuntu 20.04
+    </a>
+   </p>
+   <p>
+    More details on creating swapfiles checkout
+    <a href="https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-20-04/">
+     linuxize
+    </a>
+    .  It is my favorite linux tutorial site!
+   </p>
+   <h2>
+    Refactor - functions
+   </h2>
+   <p>
+    <em>
+     keep big datasets inside functions returning aggregations
+    </em>
+   </p>
+   <p>
+    Sometimes there is a clear quick and simple way to just let the python garbage collector.  Often we pull in large datasets to create features then aggregate them down into smaller datasets that can be then joined into other datasets.  This pattern of pulling in
+    <code>
+     big_data
+    </code>
+    , processing then aggregating can be a simple one.
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       let the garbage collector take care of big data
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">def process():
+   big_data = get_big_data()
+   smaller_data = &lt;some aggregation&gt;
+   return smaller_data
+data = process()</code></pre>
+   <p>
+    If your notebook is following this type of pattern a simple
+    <code>
+     del
+    </code>
+    won't work because ipython adds extra references to your
+    <code>
+     big_data
+    </code>
+    that you didnt add.  These are things that enable features like
+    <code>
+     _
+    </code>
+    ,
+    <code>
+     __
+    </code>
+    ,
+    <code>
+     ___
+    </code>
+    , umong others.
+   </p>
+   <h2>
+    %reset
+   </h2>
+   <p>
+    <em>
+     check out more on reset from the
+     <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-reset">
+      ipython docs
+     </a>
+    </em>
+   </p>
+   <p>
+    The last resort I would lean on here is an
+    <code>
+     ipython
+    </code>
+    specific feature
+    <code>
+     %reset
+    </code>
+    and
+    <code>
+     %reset_selective
+    </code>
+    .  These will flush out all user define variables or selecive ones based on a regex respectively.
+   </p>
+   <p>
+    Following two example are directly from the
+    <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-reset">
+     ipython docs
+    </a>
+   </p>
+   <p>
+    <em>
+     <small>
+      <mark>
+       %reset
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-python">In [6]: a = 1
+
+In [7]: a
+Out[7]: 1
+
+In [8]: 'a' in get_ipython().user_ns
+Out[8]: True
+
+In [9]: %reset -f
+
+In [1]: 'a' in get_ipython().user_ns
+Out[1]: False
+
+In [2]: %reset -f in
+Flushing input history
+
+In [3]: %reset -f dhist in
+Flushing directory history
+Flushing input history</code></pre>
+   <p>
+    <em>
+     <small>
+      <mark>
+       %reset_selective
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code>In [2]: a=1; b=2; c=3; b1m=4; b2m=5; b3m=6; b4m=7; b2s=8
+
+In [3]: who_ls
+Out[3]: ['a', 'b', 'b1m', 'b2m', 'b2s', 'b3m', 'b4m', 'c']
+
+In [4]: %reset_selective -f b[2-3]m
+
+In [5]: who_ls
+Out[5]: ['a', 'b', 'b1m', 'b2s', 'b4m', 'c']
+
+In [6]: %reset_selective -f d
+
+In [7]: who_ls
+Out[7]: ['a', 'b', 'b1m', 'b2s', 'b4m', 'c']
+
+In [8]: %reset_selective -f c
+
+In [9]: who_ls
+Out[9]: ['a', 'b', 'b1m', 'b2s', 'b4m']
+
+In [10]: %reset_selective -f b
+
+In [11]: who_ls
+Out[11]: ['a']</code></pre>
+   <h2>
+    Develop faster utilizing autoreload in ipython
+   </h2>
+   <p>
+    The above tips will help you reclaim used memory in ipython, but the following tip is one that single handedly is the reason I use Ipython for faster development over anything else.
+   </p>
+   <p style="text-align: center">
+    <a href="https://waylonwalker.com/autoreload-ipython">
+     <img alt="Autoreload in Ipython" src="https://waylonwalker.com/autoreload-ipython-rm.png" style="width:500px; max-width:80%; margin: auto;"/>
+    </a>
+   </p>
+   <p>
+    <a href="https://waylonwalker.com/autoreload-ipython">
+     autoreload-ipython
+    </a>
+    one of my biggest productivity boosts.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

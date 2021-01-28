@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Strip Trailing Whitespace from Git projects
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="A common linting error thrown by various linters is for trailing whitespace. I most often use flake8.  Having an automated way to fix linting errors such as trailing whitespace is invaluable." name="description" property="description"/>
+  <meta content="A common linting error thrown by various linters is for trailing whitespace. I most often use flake8.  Having an automated way to fix linting errors such as trailing whitespace is invaluable." name="og:description" property="og:description"/>
+  <meta content="A common linting error thrown by various linters is for trailing whitespace. I most often use flake8.  Having an automated way to fix linting errors such as trailing whitespace is invaluable." name="twitter:description" property="twitter:description"/>
+  <meta content="Strip Trailing Whitespace from Git projects" name="og:title" property="og:title"/>
+  <meta content="Strip Trailing Whitespace from Git projects" name="twitter:title" property="twitter:title"/>
+  <meta content="Strip Trailing Whitespace from Git projects" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    A common linting error thrown by various linters is for trailing whitespace.  I most often use flake8.  I generally have [pre-commit](
+    <a href="https://waylonwalker.com/pre-commit-is-awesome" title="https://waylonwalker.com/pre-commit-is-awesome">
+     https://waylonwalker.com/pre-commit-is-awesome
+    </a>
+    ) hooks setup to strip this, but sometimes I run into situations where I jump into a project without it, and my editor lights up with errors.  A simple fix is to run this one-liner.
+   </p>
+   <h2>
+    One-Liner to strip whitespace
+   </h2>
+   <p>
+    <em>
+     <small>
+      <mark>
+       bash
+      </mark>
+     </small>
+    </em>
+   </p>
+   <pre class="highlight"><code class="language-bash">git grep -I --name-only -z -e '' | xargs -0 sed -i -e 's/[ \t]\+\(\r\?\)$/\1/'</code></pre>
+   <p align="center" style="text-align: center">
+    <a href="https://waylonwalker.com/pre-commit-is-awesome">
+     <img alt="pre-commit article" src="https://waylonwalker.com/pre-commit-is-awesome.png" style="width:400px; max-width:80%; margin: auto;" width="400"/>
+    </a>
+   </p>
+   <p>
+    read more about pre-commit
+    <a href="https://waylonwalker.com/pre-commit-is-awesome">
+     here
+    </a>
+    .
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>

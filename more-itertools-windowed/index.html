@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+  <meta content="width=device-width" name="viewport"/>
+  <link href="/8bitcc_48x.png" rel="icon" type="image/png"/>
+  <meta content="$ilp.uphold.com/MGN2ni2YMXaQ" name="monetization" property="monetization"/>
+  <link href="/furo-purge.css" rel="stylesheet"/>
+  <link href="/monokai.css" rel="stylesheet"/>
+  <link href="/archive-styles.css" rel="stylesheet"/>
+  <title>
+   Windowing Python Lists
+  </title>
+  <meta content="article" name="og:type" property="og:type"/>
+  <meta content="Waylon Walker" name="og:author" property="og:author"/>
+  <meta content="Waylon Walker" name="og:site_name" property="og:site_name"/>
+  <meta content="In python data science we often will reach for pandas a bit more than necessary. While pandas can save us so much there are times where there are alternatives that are much simpler.  The itertoolsandmore-itertools` are full of cases of this. This pos" name="description" property="description"/>
+  <meta content="In python data science we often will reach for pandas a bit more than necessary. While pandas can save us so much there are times where there are alternatives that are much simpler.  The itertoolsandmore-itertools` are full of cases of this. This pos" name="og:description" property="og:description"/>
+  <meta content="In python data science we often will reach for pandas a bit more than necessary. While pandas can save us so much there are times where there are alternatives that are much simpler.  The itertoolsandmore-itertools` are full of cases of this. This pos" name="twitter:description" property="twitter:description"/>
+  <meta content="Windowing Python Lists" name="og:title" property="og:title"/>
+  <meta content="Windowing Python Lists" name="twitter:title" property="twitter:title"/>
+  <meta content="Windowing Python Lists" name="title" property="title"/>
+  <link href="/manifest.json" rel="manifest"/>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="https://waylonwalker.com">
+      Home
+     </a>
+    </li>
+    <li>
+     <a href="https://waylonwalker.com/archive">
+      Archive
+     </a>
+    </li>
+    <li>
+     <a aria-label="RSS" href="https://waylonwalker.com/rss">
+      <svg class="icon" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+       <path d="M 4 4.44 v 2.83 c 7.03 0 12.73 5.7 12.73 12.73 h 2.83 c 0 -8.59 -6.97 -15.56 -15.56 -15.56 Z m 0 5.66 v 2.83 c 3.9 0 7.07 3.17 7.07 7.07 h 2.83 c 0 -5.47 -4.43 -9.9 -9.9 -9.9 Z M 6.18 15.64 A 2.18 2.18 0 0 1 6.18 20 A 2.18 2.18 0 0 1 6.18 15.64" fill="currentColor">
+       </path>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <article class="blog-post h-entry">
+   <p>
+    In python data science we often will reach for pandas a bit more than necessary. While pandas can save us so much there are times where there are alternatives that are much simpler.  The itertools
+    <code>
+     and
+    </code>
+    more-itertools` are full of cases of this.
+   </p>
+   <p>
+    This post is a walkthrough of me solving a problem with
+    <code>
+     more-itertools
+    </code>
+    rather than reaching for a for loop, or pandas.
+   </p>
+   <p>
+    I am working on a  one-line-link expander for my blog.  I ended up doing it, just by modifying the markdown with python.  I first split the post into lines with
+    <code>
+     content.split('\n')
+    </code>
+    , then look to see if the line appears to be just a link.  One more safety net that I wanted to add was to check if there was whitespace around the line, this could not simply be done in a list comprehension by itself.  I need just a bit of knowledge of the surrounding lines, enter
+    <code>
+     more-itertools
+    </code>
+    .
+   </p>
+   <h2>
+    simplified rendering function
+   </h2>
+   <p>
+    I have a function that will check to see if the line should be expanded, then render the correct template.  Fist step is to check if the line contains no spaces and starts with
+    <code>
+     https
+    </code>
+    , if it
+does render the template.
+   </p>
+   <p>
+    The real expand_line function uses requests to pull some metadata about the post to insert into the card, more on that in another post.
+   </p>
+   <pre class="highlight"><code class="language-python">def expand_line(line):
+   """
+   Check if line should be expanded then render a template
+   """
+
+   if ' ' in line and line.startswith('https'):
+      return line
+
+  return f"&lt;a href='{line}' class='card'&gt;"</code></pre>
+   <h2>
+    initial implementation
+   </h2>
+   <p>
+    My first implementation was to load in the content as a single string and use a list comprehension to expand each line.
+   </p>
+   <pre class="highlight"><code class="language-python">expanded_content = "\n".join(
+    [expand_line(line) for line in content]
+)</code></pre>
+   <h2>
+    The issue.
+   </h2>
+   <p>
+    Sometimes I write my posts in vim without wordwrap on and just use
+    <code>
+     gq
+    </code>
+    to wrap them to the current
+    <code>
+     textwidth
+    </code>
+    .  If I have a link that happens to be really long it ends up on its own line.  I do not want one line links to expand if they are in the middle of a paragraph.
+   </p>
+   <pre class="highlight"><code class="language-markdown">## sample paragraph
+
+This is a paragraph that has a really long link
+https://waylonwalker.com/not-a-real-link-just-a-silly-example-for-this-post
+inside of it that ends up on its own line</code></pre>
+   <blockquote>
+    <p>
+     I need a bit of knowledge about the lines around the link.
+    </p>
+   </blockquote>
+   <h2>
+    windowing
+   </h2>
+   <p>
+    <code>
+     more-itertools
+    </code>
+    comes with a windowing function that will slide over an iterable with a width of n.
+   </p>
+   <pre class="highlight"><code class="language-python">&gt;&gt;&gt; from more_itertools import windowed
+&gt;&gt;&gt; all_windows = windowed([1, 2, 3, 4, 5], 3)
+&gt;&gt;&gt; list(all_windows)
+[(1, 2, 3), (2, 3, 4), (3, 4, 5)])]</code></pre>
+   <blockquote>
+    <p>
+     this example is copied from the
+     <a href="https://more-itertools.readthedocs.io/en/stable/api.html#more_itertools.windowed">
+      more-itertools docs
+     </a>
+    </p>
+   </blockquote>
+   <h2>
+    sliding through my content
+   </h2>
+   <p>
+    The one extra that we need is padding at the front and back of the list so that we ensure that every value ends up in the middle position at least once.
+   </p>
+   <pre class="highlight"><code class="language-python">expanded_content = "\n".join(
+    [expand_line(*line) for line in windowed(f'\n{content}\n', 3)]
+)</code></pre>
+   <p>
+    <strong>
+     meta
+    </strong>
+    : 👇  This is an example of a one-line-link card that we are trying to achieve.
+   </p>
+   <p>
+    <a class="onelinelink" href="https://waylonwalker.com/python-args-kwargs/">
+     <img align="right" alt="article cover" src="https://waylonwalker.com/static/8c73a5e2f384efdcd17762c52faff94f/630fb/python-args-kwargs-xmas2020.png" style="float: right;"/>
+    </a>
+   </p>
+   <div class="right">
+    <h2>
+     understanding python *args and **kwargs
+    </h2>
+    <p class="description">
+     Python `*args` and `**kwargs` are super useful tools, that when used properly can make you code much simpler and easier to maintain.  Large manual conversions from a dataset to function arguments can be packed and unpacked into lists or dictionaries. Beware though, this power **can** lead to some really unreadable/unusable code if done wrong.
+    </p>
+    <p class="url">
+     <span class="read-more">
+      read more
+     </span>
+     waylonwalker.com
+    </p>
+   </div>
+   <p>
+   </p>
+   <blockquote>
+    <p>
+     Not sure what *line is, check out this article.
+    </p>
+   </blockquote>
+   <h2>
+    update expand_line
+   </h2>
+   <p>
+    Now that we are calling
+    <code>
+     expand_line
+    </code>
+    with all three lines.  We need to update the function signature and add a guarding clause to return early if before or after lines are not blank.
+   </p>
+   <pre class="highlight"><code class="language-python">def expand_line(before, line, after):
+   """
+   Check if line should be expanded then render a template
+   """
+    if before != '' and after != '':
+      return line
+
+
+    if ' ' in line and line.startswith('https'):
+      return line
+
+    return f"&lt;a href='{line}' class='card'&gt;"</code></pre>
+   <p>
+    Hope you liked this walk-through of solving a problem I had with
+    <code>
+     more-itertools
+    </code>
+    , If you learned something be sure to share it.
+   </p>
+   <div id="show">
+   </div>
+  </article>
+ </body>
+ <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+ </script>
+</html>
