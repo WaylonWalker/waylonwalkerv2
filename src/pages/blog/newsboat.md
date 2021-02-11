@@ -131,10 +131,11 @@ bind-key I rev-sort
 
 ## GUI Browser
 
-No matter how many different guides I tried I keedp getting `error code 127`
-when trying to `open-in-browser`.  Please let me know if you know how to fix
-this. For now I am just going to roll with it.
+If you're getting `error code 127` (or `126`) when trying to `open-in-browser`, it's likely because the `strict` confinement on the snap is preventing it from accessing files and programs outside its home (i.e., `$HOME/snap/newsboat/...`). However, `xdg-open` is respected, so if you set `browser` as follows, links should open properly in whatever you've set as your default browser.
 
+```
+browser "xdg-open %u"
+```
 
 ## Here's how it looks
 
