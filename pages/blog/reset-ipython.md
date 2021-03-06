@@ -74,7 +74,7 @@ free -h
 <a href='https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-20-04/'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/linuxize-how-to-add-swap-space-on-ubuntu-20-04.jpg"
+    src="https://images.waylonwalker.com/linuxize-how-to-add-swap-space-on-ubuntu-20-04.jpg"
     alt="How to Add Swap Space on Ubuntu 20.04"
   />
   </a>

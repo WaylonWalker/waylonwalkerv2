@@ -21,7 +21,7 @@ Since [uses.tech](https://uses.tech) is open source I jumped on github, searched
 
 My first step was to take his css and copy it into a styled component for my entire layout, but it failed.  I do not fully understand why.  None of the custom style came through at all.  If you know please leave me a comment.
 
-![](https://waylonwalker.com/why-wont-you-work.jpg)
+![](https://images.waylonwalker.com/why-wont-you-work.jpg)
 
 I suspect for some reason it has to do with attatching to the html element inside of a styled-component.  I think wes was able to get around this by using `createGlobalStyle`.  But I was still using much of the default gatsby template, so I did not have a `createGlobalStyle` element, but I did have a layout.css.
 

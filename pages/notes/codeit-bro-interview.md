@@ -9,7 +9,7 @@ description: ''
 cover: "static/codeit-bro-interview.png"
 
 ---
-![profile image](https://waylonwalker.com/profile.jpg)
+![profile image](https://images.waylonwalker.com/profile.jpg)
 
 > use this profile image
 
