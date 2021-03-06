@@ -48,7 +48,7 @@ unstaged changes at the top, staged changes on the bottom, and a diff on the
 right.
 
 
-![gitui status](https://waylonwalker.com/gitui-status.png)
+![gitui status](https://images.waylonwalker.com/gitui-status.png)
 
 
 ## Navigate with hjkl

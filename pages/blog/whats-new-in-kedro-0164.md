@@ -21,7 +21,7 @@ If we take a look at the [release notes](https://github.com/quantumblacklabs/ked
 
 This one comes a bit surprising as it was just casually mentioned in [#435](https://github.com/quantumblacklabs/kedro/issues/435)
 
-[![auto enabled plugins mentioned in issue 435](https://waylonwalker.com/kedro-435.png)](https://github.com/quantumblacklabs/kedro/issues/435)
+[![auto enabled plugins mentioned in issue 435](https://images.waylonwalker.com/kedro-435.png)](https://github.com/quantumblacklabs/kedro/issues/435)
 
 ## Think pytest
 

@@ -16,7 +16,7 @@ cover: '/static/pb/set-operations.png'
 <a href='https://waylonwalker.com/set-operations'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/set-operations.png"
+    src="https://images.waylonwalker.com/set-operations.png"
     alt="Read more from the Python Basics | Set Operations article"
   />
   </a>

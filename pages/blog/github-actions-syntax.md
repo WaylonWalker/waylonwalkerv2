@@ -21,11 +21,11 @@ Github actions are written in configuration files using the YAML syntax.  YAML i
 
 > Can I just say that I learned more than I realized about YAML by writing this article
 
-## ![Arrays and Objects](https://waylonwalker.com/gh-actions-syntax-headers/1.png)
+## ![Arrays and Objects](https://images.waylonwalker.com/gh-actions-syntax-headers/1.png)
 
 In YAML or JSON, the most basic containers for data are **arrays**, a 1D list of things, and **objects**, for key-value pairs.
 
-### ![Arrays](https://waylonwalker.com/gh-actions-syntax-h3/1.png)
+### ![Arrays](https://images.waylonwalker.com/gh-actions-syntax-h3/1.png)
 
 The start of an array container is signified with a leading `-`.  This is probably one of the big things I didn't understand about YAML before writing this post, but hats off to the GitHub actions editor as it took care of a lot of my misunderstanding for me.
 
@@ -40,7 +40,7 @@ The start of an array container is signified with a leading `-`.  This is probab
 ```
 
 
-### ![Objects](https://waylonwalker.com/gh-actions-syntax-h3/2.png)
+### ![Objects](https://images.waylonwalker.com/gh-actions-syntax-h3/2.png)
 
 Objects are just `{key: "value"}` pairs without any `-` before them.  I find that objects make 💯 sense to me.  Unlike arrays, they feel very intuitive.
 
@@ -54,13 +54,13 @@ who: me
 {'name': 'one', 'who': 'me'}
 ```
 
-## ![Example Combining arrays and objects](https://waylonwalker.com/gh-actions-syntax-headers/2.png)
+## ![Example Combining arrays and objects](https://images.waylonwalker.com/gh-actions-syntax-headers/2.png)
 
 
 
 Let's start writing something that looks a bit more like a GitHub action.  GitHub actions are built from an object containing name, on, jobs.  Where jobs is a list of jobs, that contain a list of steps.  Simple actions will only need a single job, but commonly a list of steps.
 
-#### ![Shortlist of GitHub action keys](https://waylonwalker.com/gh-actions-syntax-h3/4.png)
+#### ![Shortlist of GitHub action keys](https://images.waylonwalker.com/gh-actions-syntax-h3/4.png)
 
 These are the keys, with their parents, that I found most useful.  You can find a complete list on [workflow-syntax-for-github-actions](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions).
 
@@ -78,7 +78,7 @@ These are the keys, with their parents, that I found most useful.  You can find 
     * if
     * steps
 
-### ![Combining arrays and objects](https://waylonwalker.com/gh-actions-syntax-h3/5.png)
+### ![Combining arrays and objects](https://images.waylonwalker.com/gh-actions-syntax-h3/5.png)
 
 
 Here is a very small example that contains an object with one key, `jobs`.  That `jobs` object contains one job called `build` that contains a list of `steps`.  Notice the `-` before each step, and how each `step` repeats the same object keys.
@@ -120,7 +120,7 @@ jobs:
 ```
 
 
-## ![Multiline Strings](https://waylonwalker.com/gh-actions-syntax-headers/3.png)
+## ![Multiline Strings](https://images.waylonwalker.com/gh-actions-syntax-headers/3.png)
 
 
 Multiline strings are super important in GitHub actions.  You will likely use the `|` to preserve newlines for shell scripts most commonly but may also have some raw text fields that need to be concatenated without a newline character using the `>` operator.
@@ -147,7 +147,7 @@ folded: >
    a one-liner"
 }
 ```
-## ![Anchors are not supported](https://waylonwalker.com/gh-actions-syntax-headers/4.png)
+## ![Anchors are not supported](https://images.waylonwalker.com/gh-actions-syntax-headers/4.png)
 
 
 YAML has this amazing feature for reducing repetative content called anchors.  You can save part of your configuration as a reusable variable in other sections.  I see this being really cool if you had separate jobs that all needed similar steps.  Look for this improvement in the future, for now just be aware that it is part of the YAML syntax.
@@ -205,12 +205,12 @@ Notice how the nice clean YAML syntax gets exploded with much more data in the J
 }
 ```
 
-## ![Writing an Action](https://waylonwalker.com/gh-actions-syntax-headers/5.png)
+## ![Writing an Action](https://images.waylonwalker.com/gh-actions-syntax-headers/5.png)
 
 
 With a basic understanding of YAML you can probably go to your repo and click actions > new workflow > setup my own workflow right from the ui, and create your own.  Or read through the official syntax docs for deeper information [workflow-syntax-for-github-actions](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions). Let's finsh off with a really simple action, the default one from GitHub.
 
-### ![Important first step](https://waylonwalker.com/gh-actions-syntax-h3/6.png)
+### ![Important first step](https://images.waylonwalker.com/gh-actions-syntax-h3/6.png)
 
 It is important to know that when running an action you will likely need access to your code in order to lint, test, build, package, whatever you want to do with it.  Your first step for any action requiring code from your repo is to `checkout` your repo.
 
@@ -219,7 +219,7 @@ It is important to know that when running an action you will likely need access 
  # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
  - uses: actions/checkout@v
 ```
-### ![Default example](https://waylonwalker.com/gh-actions-syntax-h3/7.png)
+### ![Default example](https://images.waylonwalker.com/gh-actions-syntax-h3/7.png)
 
 This example runs a workflow called `CI` on ubuntu on every push or PR to the main branch.  Within the build job it does a checkout of the repo, then runs two shell steps.
 

@@ -25,7 +25,7 @@ changes to improve quality or prove that quality was already good.
 <a href='https://waylonwalker.com/eight-years-cat'>
 <img
 style='width:500px; max-width:80%; margin: auto;'
-src="https://waylonwalker.com/eight-years-cat.png"
+src="https://images.waylonwalker.com/eight-years-cat.png"
 alt="My first eight years as a working professional article"
 />
 </a>
@@ -149,7 +149,7 @@ A skill I would add in general is to deploy early.  Too often we spend months on
 <a href='https://waylonwalker.com/what-are-github-actions'>
 <img
 style='width:500px; max-width:80%; margin: auto;'
-src="https://waylonwalker.com/what-are-github-actions.png"
+src="https://images.waylonwalker.com/what-are-github-actions.png"
 alt="introductory article to GitHub actions"
 />
 </a>

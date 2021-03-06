@@ -12,7 +12,7 @@ cover: "/static/dev.to.png"
 ---
 > # "Don’t waste your time learning everything."
 
-![](https://waylonwalker.com/dont-waste-your-time-learning-everythign-post.png)
+![](https://images.waylonwalker.com/dont-waste-your-time-learning-everythign-post.png)
 
 > Inspired by this [linkedIn post](https://www.linkedin.com/posts/activity-6633818327070326784--Ksl)
 
@@ -36,6 +36,6 @@ Its important to keep your finger on the state of technology, but dont Overwhelm
 
 ## I'll leave you with this inspirational video by Kitze
 
-[![](https://waylonwalker.com/2020-02-16 09-57-03_Microsoft Text Input Application.png)](https://www.youtube.com/watch?v=_kVxXV0TQ7M)
+[![](https://images.waylonwalker.com/2020-02-16 09-57-03_Microsoft Text Input Application.png)](https://www.youtube.com/watch?v=_kVxXV0TQ7M)
 
 [Navigating the hype-driven frontend development world without going insane - KITZE](https://www.youtube.com/watch?v=_kVxXV0TQ7M)

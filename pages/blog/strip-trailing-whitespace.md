@@ -25,7 +25,7 @@ git grep -I --name-only -z -e '' | xargs -0 sed -i -e 's/[ \t]\+\(\r\?\)$/\1/'
   <img
     style='width:400px; max-width:80%; margin: auto;'
     width='400'
-    src="https://waylonwalker.com/pre-commit-is-awesome.png"
+    src="https://images.waylonwalker.com/pre-commit-is-awesome.png"
     alt="pre-commit article"
   />
   </a>

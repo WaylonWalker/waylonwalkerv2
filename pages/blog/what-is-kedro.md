@@ -114,7 +114,7 @@ cd my-kedro-project
 kedro viz
 ```
 
-![](https://waylonwalker.com/pipeline_visualisation.png)
+![](https://images.waylonwalker.com/pipeline_visualisation.png)
 
 ## [kedro-docker](https://github.com/quantumblacklabs/kedro-docker)
 

@@ -14,12 +14,12 @@ cover: '/static/my-github-profile.png'
 
 I ran a discussion on dev that collected quite a list of examples in the comment section.  So many great calls to action, animations, memes, and weird tricks.
 
-[![dev.to whats-on-your-github-profile](https://waylonwalker.com/whats-on-your-github-profile.png)](https://dev.to/waylonwalker/what-s-on-your-github-profile-40p3)
+[![dev.to whats-on-your-github-profile](https://images.waylonwalker.com/whats-on-your-github-profile.png)](https://dev.to/waylonwalker/what-s-on-your-github-profile-40p3)
 
 
 ## My current profile
 
-[![Waylon Walkers GitHub profile](https://waylonwalker.com/github-profile.png)](https://github.com/waylonwalker/)
+[![Waylon Walkers GitHub profile](https://images.waylonwalker.com/github-profile.png)](https://github.com/waylonwalker/)
 
 ## social icons
 
@@ -48,7 +48,7 @@ For my [latest post](https://waylonwalker.com/latest) I floated it to the right 
 
 ``` markdown
 <p>
-  <a href="https://waylonwalker.com/latest"><img width="400" align='right' src="https://waylonwalker.com/latest.png?raw=true"></a>
+  <a href="https://images.waylonwalker.com/latest"><img width="400" align='right' src="https://waylonwalker.com/latest.png?raw=true"></a>
 </p>
 ```
 
@@ -77,9 +77,9 @@ I also wanted to list out a few of my favorite posts without taking up a ton of 
 ``` markdown
 <details>
  <summary><strong>other favorite posts</strong></summary>
- <a href="https://waylonwalker.com/eight-years-cat/"><img width="400" src="https://waylonwalker.com/eight-years-cat.png?raw=true"></a>
- <a href="https://waylonwalker.com/keyboard-driven-vscode/"><img width="400" src="https://waylonwalker.com/alt%20b.png?raw=true"></a>
- <a href="https://waylonwalker.com/what-are-github-actions/"><img width="400" src="https://waylonwalker.com/what-are-github-actions.png?raw=true"></a>
+ <a href="https://images.waylonwalker.com/eight-years-cat/"><img width="400" src="https://waylonwalker.com/eight-years-cat.png?raw=true"></a>
+ <a href="https://images.waylonwalker.com/keyboard-driven-vscode/"><img width="400" src="https://waylonwalker.com/alt%20b.png?raw=true"></a>
+ <a href="https://images.waylonwalker.com/what-are-github-actions/"><img width="400" src="https://waylonwalker.com/what-are-github-actions.png?raw=true"></a>
 
 </details>
 ```

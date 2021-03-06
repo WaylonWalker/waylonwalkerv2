@@ -16,7 +16,7 @@ cover: '/static/pb/list-methods.png'
 <a href='https://waylonwalker.com/list-methods'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/list-methods.png"
+    src="https://images.waylonwalker.com/list-methods.png"
     alt="Read more from the List Methods article"
   />
   </a>

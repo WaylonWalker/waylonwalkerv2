@@ -16,7 +16,7 @@ cover: '/static/pb/more-itertools.png'
 <a href='https://waylonwalker.com/more-itertools'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/more-itertools.png"
+    src="https://images.waylonwalker.com/more-itertools.png"
     alt="Read more from the Python Basics | More Itertools article"
   />
   </a>

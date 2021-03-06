@@ -16,7 +16,7 @@ cover: '/static/pb/lambda-functions.png'
 <a href='https://waylonwalker.com/lambda-functions'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/lambda-functions.png"
+    src="https://images.waylonwalker.com/lambda-functions.png"
     alt="Read more from the Lambda Functions article"
   />
   </a>

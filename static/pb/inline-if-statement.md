@@ -16,7 +16,7 @@ cover: '/static/pb/inline-if-statement.png'
 <a href='https://waylonwalker.com/inline-if-statement'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/inline-if-statement.png"
+    src="https://images.waylonwalker.com/inline-if-statement.png"
     alt="Read more from the Inline If Statement article"
   />
   </a>

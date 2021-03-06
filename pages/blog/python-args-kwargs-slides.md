@@ -19,7 +19,7 @@ I generally post these as a carousel on LinkedIn based on a full article.  Let m
 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6678285914826911744" height="587" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
 
 
-[![python args and kwargs](https://waylonwalker.com/python-args-kwargs.png)](https://waylonwalker.com/python-args-kwargs)
+[![python args and kwargs](https://images.waylonwalker.com/python-args-kwargs.png)](https://waylonwalker.com/python-args-kwargs)
 > See the full article [here](https://waylonwalker.com/python-args-kwargs)
 
 ## Slides

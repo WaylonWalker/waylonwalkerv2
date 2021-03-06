@@ -17,11 +17,11 @@ cover: "/static/explicit-vs-implicit-returns-in-javascript.png"
 ---
 Often when reading through javascript examples you will find some arrow functions use parentheses `()` while others use braces `{}`.  This key difference is that parentheses will implicitly return the last statement while braces require an explicit return statement.  It is important to understand the difference between them because it is likely that you will find code examples of both and trying to edit code written differently than you're used to may have unintended consequences.
 
-## ![Arrow functions](https://waylonwalker.com/explicit-vs-implicit-returns-in-javascript-1.png)
+## ![Arrow functions](https://images.waylonwalker.com/explicit-vs-implicit-returns-in-javascript-1.png)
 
 Arrow functions are one-liner functions in javascript that have two main syntactical ways to create the code block.  with parentheses and braces.  Let's take a look at both ways of creating arrow functions so that when we come accross them in the wild it will all make sense.
 
-## ![implicit returns](https://waylonwalker.com/explicit-vs-implicit-returns-in-javascript-2.png)
+## ![implicit returns](https://images.waylonwalker.com/explicit-vs-implicit-returns-in-javascript-2.png)
 
 Here is an example of an arrow function that will implicitly return the last
 statement without the return keyword.  I believe that these are a bit more restricted
@@ -46,7 +46,7 @@ implicit('hi')
 "hi"
 ```
 
-## ![explicit returns](https://waylonwalker.com/explicit-vs-implicit-returns-in-javascript-3.png)
+## ![explicit returns](https://images.waylonwalker.com/explicit-vs-implicit-returns-in-javascript-3.png)
 
 In the following example, the curly braces create an arrow function that must
 explicitly return anything that you want to return from the function. Since the
@@ -71,7 +71,7 @@ explicit_return('hi')
 "hi"
 ```
 
-## ![Multiline arrow functions](https://waylonwalker.com/explicit-vs-implicit-returns-in-javascript-4.png)
+## ![Multiline arrow functions](https://images.waylonwalker.com/explicit-vs-implicit-returns-in-javascript-4.png)
 
 Until writing this article I was unaware that you could not have a multiline arrow function with an implicit return statement.  I tried myself and ran into some issues. I also tried to find examples online and could not find one.  If it is possible to write something like below, let me know.
 

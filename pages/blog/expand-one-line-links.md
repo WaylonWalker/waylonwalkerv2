@@ -29,7 +29,7 @@ If you can call it a card 🤣.  This card was just an image wrapped in an ancho
   <a href='https://waylonwalker.com/notes/eight-years-cat'>
     <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/eight-years-cat.png"
+    src="https://images.waylonwalker.com/eight-years-cat.png"
     alt="My first eight years as a working professional article"
     />
   </a>
@@ -40,7 +40,7 @@ If you can call it a card 🤣.  This card was just an image wrapped in an ancho
   <a href='https://waylonwalker.com/notes/eight-years-cat'>
     <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/eight-years-cat.png"
+    src="https://images.waylonwalker.com/eight-years-cat.png"
     alt="My first eight years as a working professional article"
     />
   </a>
@@ -55,7 +55,7 @@ The key here is that I have to put the HTML into the markdown.  It looks a bit d
 ``` markdown
 
 <a class="onelinelink" href="https://waylonwalker.com/eight-years-cat/">
-<img style="float: right;" align='right' src="https://waylonwalker.com/static/29cdf6fcfb17d7fd766fc438144fb3e4/630fb/eight-years-cat-xmas2020.png" alt="article cover for My first eight years as a working professional.">
+<img style="float: right;" align='right' src="https://images.waylonwalker.com/static/29cdf6fcfb17d7fd766fc438144fb3e4/630fb/eight-years-cat-xmas2020.png" alt="article cover for My first eight years as a working professional.">
 <div class="right">
     <h2>My first eight years as a working professional.</h2>
     <p class="description">
@@ -228,11 +228,11 @@ CSS is not my strong suit, but I can generally hammer something into a shape tha
 
 On mobile, it renders vertically.
 
-![mobile](https://waylonwalker.com/one-line-link-vertical.png)
+![mobile](https://images.waylonwalker.com/one-line-link-vertical.png)
 
 On desktop, it renders horizontally.
 
-![desktop](https://waylonwalker.com/one-line-link-horizontal.png)
+![desktop](https://images.waylonwalker.com/one-line-link-horizontal.png)
 
 ## Expansion
 

@@ -16,7 +16,7 @@ cover: '/static/pb/f-strings.png'
 <a href='https://waylonwalker.com/f-strings'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/f-strings.png"
+    src="https://images.waylonwalker.com/f-strings.png"
     alt="Read more from the F Strings article"
   />
   </a>

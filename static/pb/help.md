@@ -16,7 +16,7 @@ cover: '/static/pb/help.png'
 <a href='https://waylonwalker.com/help'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/help.png"
+    src="https://images.waylonwalker.com/help.png"
     alt="Read more from the Help article"
   />
   </a>

@@ -16,7 +16,7 @@ cover: '/static/pb/list-comprehensions.png'
 <a href='https://waylonwalker.com/list-comprehensions'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/list-comprehensions.png"
+    src="https://images.waylonwalker.com/list-comprehensions.png"
     alt="Read more from the Python Basics | List Comprehensions article"
   />
   </a>

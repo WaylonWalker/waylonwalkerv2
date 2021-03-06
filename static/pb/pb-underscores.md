@@ -16,7 +16,7 @@ cover: '/static/pb/underscores.png'
 <a href='https://waylonwalker.com/underscores'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/underscores.png"
+    src="https://images.waylonwalker.com/underscores.png"
     alt="Read more from the Python Basics | Underscores article"
   />
   </a>

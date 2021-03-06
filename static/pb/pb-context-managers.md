@@ -16,7 +16,7 @@ cover: '/static/pb/context-managers.png'
 <a href='https://waylonwalker.com/context-managers'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/context-managers.png"
+    src="https://images.waylonwalker.com/context-managers.png"
     alt="Read more from the Python Basics | Context Managers article"
   />
   </a>

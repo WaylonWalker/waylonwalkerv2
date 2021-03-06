@@ -16,7 +16,7 @@ cover: '/static/pb/dict-methods.png'
 <a href='https://waylonwalker.com/dict-methods'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/dict-methods.png"
+    src="https://images.waylonwalker.com/dict-methods.png"
     alt="Read more from the Dict Methods article"
   />
   </a>

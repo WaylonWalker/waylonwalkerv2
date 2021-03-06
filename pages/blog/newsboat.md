@@ -138,10 +138,10 @@ this. For now I am just going to roll with it.
 
 ## Here's how it looks
 
-![newsboat feed](https://waylonwalker.com/newsboat-feed-waylonwalker-com.png)
+![newsboat feed](https://images.waylonwalker.com/newsboat-feed-waylonwalker-com.png)
 
 > browsing a feed in newsboat
 
-![newsboat article](https://waylonwalker.com/newsboat-article.png)
+![newsboat article](https://images.waylonwalker.com/newsboat-article.png)
 
 > reading an article in newsboat

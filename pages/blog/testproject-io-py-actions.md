@@ -41,7 +41,7 @@ features on my blog to consider testing
 I chose to start with the GitHub repos as they seemed a bit more straight forward, and it's been a while since I have done any selenium.
 
 <p style='text-align: center'>
-<img src='https://waylonwalker.com/open-source-cards.png' style='width:600px; max-width:80%; margin: auto;' alt='Open Source cards as they look on waylonwalker.com'/>
+<img src='https://images.waylonwalker.com/open-source-cards.png' style='width:600px; max-width:80%; margin: auto;' alt='Open Source cards as they look on waylonwalker.com'/>
 </p>
 
 > here is what the GitHub repo cards look like
@@ -59,7 +59,7 @@ In your GitHub repo go to `settings>Secrets`, or append `settings/secrets` to th
 
 
 <p style='text-align: center'>
-<img src='https://waylonwalker.com/test-waylonwalker-com-secrets.png' style='width:600px; max-width:80%; margin: auto;' alt='Secrets panel in the GitHub Repo'/>
+<img src='https://images.waylonwalker.com/test-waylonwalker-com-secrets.png' style='width:600px; max-width:80%; margin: auto;' alt='Secrets panel in the GitHub Repo'/>
 </p>
 
 
@@ -71,7 +71,7 @@ To expedite development I went ahead and set up development environment that I c
 <a href='https://waylonwalker.com/notes/new-machine-tpio'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/new-machine-tpio-rm.png"
+    src="https://images.waylonwalker.com/new-machine-tpio-rm.png"
     alt="Test Project Dev Machine setup notes card"
   />
   </a>
@@ -198,7 +198,7 @@ GitHub actions are a continuous integration, continuous delivery service by GitH
 <a href='https://waylonwalker.com/github-actions-syntax'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/github-actions-syntax-rm.png"
+    src="https://images.waylonwalker.com/github-actions-syntax-rm.png"
     alt="GitHub Actions Syntax article card"
   />
   </a>
@@ -326,7 +326,7 @@ One one of the coolest features that you get from TestProject.io are the [report
 <p style='text-align: center'>
   <img
     style='width:800px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/tpio-test-repos.png"
+    src="https://images.waylonwalker.com/tpio-test-repos.png"
     alt="My Dashboard for test_repos"
   />
 </p>
@@ -339,7 +339,7 @@ As you drill in you can see individual tests that have been run, select them, an
 <p style='text-align: center'>
   <img
     style='width:350px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/test_repo_stars_loaded.png"
+    src="https://images.waylonwalker.com/test_repo_stars_loaded.png"
     alt="driver flow of test_repo_stars_loaded"
   />
 </p>
@@ -362,7 +362,7 @@ If you're new to actions check out this article on using actions.
       <a href='https://waylonwalker.com/four-github-actions-website'>
       <img
          style='margin: auto; float: left'
-         src="https://waylonwalker.com/four-github-actions-website-rm.png"
+         src="https://images.waylonwalker.com/four-github-actions-website-rm.png"
          alt="GitHub Actions Syntax article card"
          />
       </a>
@@ -371,7 +371,7 @@ If you're new to actions check out this article on using actions.
       <a href='https://waylonwalker.com/four-github-actions-python'>
       <img
          style='margin: auto; float: right;'
-         src="https://waylonwalker.com/four-github-actions-python-rm.png"
+         src="https://images.waylonwalker.com/four-github-actions-python-rm.png"
          alt="GitHub Actions Syntax article card"
          />
       </a>

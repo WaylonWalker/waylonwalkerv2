@@ -35,7 +35,7 @@ sudo apt-get install htop # install it from your package repo
 htop
 ```
 
-![htop in use](https://waylonwalker.com/htop-2.0.png)
+![htop in use](https://images.waylonwalker.com/htop-2.0.png)
 
 ## First step throw more swap at it
 
@@ -173,7 +173,7 @@ The above tips will help you reclaim used memory in ipython, but the following t
 <a href='https://waylonwalker.com/autoreload-ipython'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/autoreload-ipython-rm.png"
+    src="https://images.waylonwalker.com/autoreload-ipython-rm.png"
     alt="Autoreload in Ipython"
   />
   </a>

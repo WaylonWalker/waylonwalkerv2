@@ -16,7 +16,7 @@ cover: '/static/pb/merging-dictionaries.png'
 <a href='https://waylonwalker.com/merging-dictionaries'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/merging-dictionaries.png"
+    src="https://images.waylonwalker.com/merging-dictionaries.png"
     alt="Read more from the Python Basics | Merging Dictionaries article"
   />
   </a>

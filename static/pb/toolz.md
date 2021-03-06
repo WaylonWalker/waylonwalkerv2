@@ -16,7 +16,7 @@ cover: '/static/pb/toolz.png'
 <a href='https://waylonwalker.com/toolz'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/toolz.png"
+    src="https://images.waylonwalker.com/toolz.png"
     alt="Read more from the Toolz article"
   />
   </a>

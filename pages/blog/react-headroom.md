@@ -50,7 +50,7 @@ I think this simple package completely changes the ux of your site on mobile.  Y
 
 `react-headroom` is configurable, but I did not find it necessary.  I really like the simplicity that it brought by just adding the `<Headroom\>` component.
 
-![react-headroom docs](https://waylonwalker.com/react-headroom-docs.png)
+![react-headroom docs](https://images.waylonwalker.com/react-headroom-docs.png)
 
 ## Links
 

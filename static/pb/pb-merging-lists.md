@@ -16,7 +16,7 @@ cover: '/static/pb/merging-lists.png'
 <a href='https://waylonwalker.com/merging-lists'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/merging-lists.png"
+    src="https://images.waylonwalker.com/merging-lists.png"
     alt="Read more from the Python Basics | Merging Lists article"
   />
   </a>

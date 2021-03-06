@@ -32,7 +32,7 @@ Even when you are developing for a technical audience there is a layer of polish
 There are times when I want to edit my blog on the go from my phone while on the go. I use [forestry.io](https://forestry.io) to do this for the most part. It gives me an image uploader, and a markdown editor to edit this blog right from my phone.
 
 
-![forestry editor](https://waylonwalker.com/2019-05-09 10-40-11_forestry.io.png)
+![forestry editor](https://images.waylonwalker.com/2019-05-09 10-40-11_forestry.io.png)
 
 > My Blog on forestry.io
 

@@ -20,7 +20,7 @@ I want to incorporate some of the wonderful comments, 💕, 🦄, and 🔖's tha
 
 dev.to has an open API that allows us to easily get comments as HTML.  They have their API hosted at [https://docs.dev.to/api/#tag/comments](https://docs.dev.to/api/#tag/comments), let's take a look at it.
 
-![](https://waylonwalker.com/dev-to-api-comments.png)
+![](https://images.waylonwalker.com/dev-to-api-comments.png)
 
 Here we can see that going to [https://dev.to/api/comments?a_id=270180](https://dev.to/api/comments?a_id=270180) returns us some json, that contains an array of comments.
 
@@ -39,7 +39,7 @@ Here we can see that going to [https://dev.to/api/comments?a_id=270180](https://
 
 That is an `article_id`.  Though a bit of searching I found that it occurs in at least four places on every page as a data attribute.  Using chrome dev tools I found a good place to "query" it from.
 
-![](https://waylonwalker.com/dev-to-article-id.png)
+![](https://images.waylonwalker.com/dev-to-article-id.png)
 
 With this knowledge, we can fetch the contents of an article and pull the `articleId` from it.
 
@@ -79,4 +79,4 @@ The hardest part of this was figuring out what the `a_id` was and how I was goin
 
 **F12** pop open your console right in dev tools of this post and try it out.
 
-![](https://waylonwalker.com/dev-to-comments-in-devtools.png)
+![](https://images.waylonwalker.com/dev-to-comments-in-devtools.png)

@@ -16,7 +16,7 @@ cover: '/static/pb/assertions.png'
 <a href='https://waylonwalker.com/assertions'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/assertions.png"
+    src="https://images.waylonwalker.com/assertions.png"
     alt="Read more from the Python Basics | Assertions article"
   />
   </a>

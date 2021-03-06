@@ -204,4 +204,4 @@ Sometimes you have a CLI tool that you want to run, but there is no plugin. No w
 
 I have been writing short snippets about my mentality breaking into the tech/data industry in my newsletter, 👇 check it out and lets get the conversation started.
 
-[![Sign up for my Newsletter](https://waylonwalker.com/waylon-walker-newsletter.png)](https://waylonwalker.com/newsletter)
+[![Sign up for my Newsletter](https://images.waylonwalker.com/waylon-walker-newsletter.png)](https://waylonwalker.com/newsletter)

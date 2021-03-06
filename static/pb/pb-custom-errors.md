@@ -16,7 +16,7 @@ cover: '/static/pb/custom-errors.png'
 <a href='https://waylonwalker.com/custom-errors'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/custom-errors.png"
+    src="https://images.waylonwalker.com/custom-errors.png"
     alt="Read more from the Python Basics | Custom Errors article"
   />
   </a>

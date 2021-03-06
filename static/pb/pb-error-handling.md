@@ -16,7 +16,7 @@ cover: '/static/pb/error-handling.png'
 <a href='https://waylonwalker.com/error-handling'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/error-handling.png"
+    src="https://images.waylonwalker.com/error-handling.png"
     alt="Read more from the Python Basics | Error Handling article"
   />
   </a>

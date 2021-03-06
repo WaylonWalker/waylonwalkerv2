@@ -18,20 +18,20 @@ Can someone explain how or why twitter cards render differently from device to d
 
 Mobile Looks fine.
 
-![rendered card](https://waylonwalker.com/twitter-card-rendered.png)
+![rendered card](https://images.waylonwalker.com/twitter-card-rendered.png)
 
 ## Not Rendered on Desktop
 
 On Desktop it is not picking up the image.
 
-![not rendered card](https://waylonwalker.com/twitter-card-rendered.png)
+![not rendered card](https://images.waylonwalker.com/twitter-card-rendered.png)
 
 
 ## Twitter Card Validator
 
 The Validator renders the card correctly.  I tried the official [twitter card validator](https://cards-dev.twitter.com/validator), as well as [heymeta.com](https://www.heymeta.com/url/waylonwalker.com/latest), and [metatags.io](https://metatags.io/).  All look good.
 
-![rendered card with validator](https://waylonwalker.com/twitter-card-rendered.png)
+![rendered card with validator](https://images.waylonwalker.com/twitter-card-rendered.png)
 
 ## Can Cards be updated?
 _even with a redirect?_

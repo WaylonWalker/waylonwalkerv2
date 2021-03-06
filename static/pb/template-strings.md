@@ -16,7 +16,7 @@ cover: '/static/pb/template-strings.png'
 <a href='https://waylonwalker.com/template-strings'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/template-strings.png"
+    src="https://images.waylonwalker.com/template-strings.png"
     alt="Read more from the Template Strings article"
   />
   </a>

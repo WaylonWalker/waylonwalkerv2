@@ -28,7 +28,7 @@ With this pattern all of the nodes needed to be importable by the module contain
 <a href='https://waylonwalker.com/what-is-kedro'>
   <img
     style='width:400px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/what-is-kedro.png"
+    src="https://images.waylonwalker.com/what-is-kedro.png"
     alt="What is kedro"
     width='400'
   />
@@ -136,7 +136,7 @@ nodes.append(
   <img
     style='width:400px; max-width:80%; border-radius: '35px'; margin: auto;'
     width='400'
-    src="https://waylonwalker.com/find-kedro-examples-iris.png"
+    src="https://images.waylonwalker.com/find-kedro-examples-iris.png"
     alt="Find Kedro Iris example"
   />
   </a>
@@ -153,7 +153,7 @@ If you still have not tried out kedro, it's easier than you think. Check out [cr
   <img
     style='width:400px; max-width:80%; margin: auto;'
     width='400'
-    src="https://waylonwalker.com/create-new-kedro-project.png"
+    src="https://images.waylonwalker.com/create-new-kedro-project.png"
     alt="Create New Kedro Project"
   />
   </a>

@@ -28,7 +28,7 @@ You must give it a commit message and thats it.  Optionally you can configure a 
 <a href='https://waylonwalker.com/github-actions-syntax'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/github-actions-syntax-rm.png"
+    src="https://images.waylonwalker.com/github-actions-syntax-rm.png"
     alt="GitHub Actions Syntax article card"
   />
   </a>
@@ -40,7 +40,7 @@ You must give it a commit message and thats it.  Optionally you can configure a 
 <a href='https://waylonwalker.com/github-actions-syntax'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/github-actions-syntax-rm.png"
+    src="https://images.waylonwalker.com/github-actions-syntax-rm.png"
     alt="GitHub Actions Syntax article card"
   />
   </a>
@@ -120,7 +120,7 @@ If you're new to actions check out these articles on using actions.
       <a href='https://waylonwalker.com/four-github-actions-website'>
       <img
         style='width:250px; max-width:80%; margin: auto; float: left'
-        src="https://waylonwalker.com/four-github-actions-website-rm.png"
+        src="https://images.waylonwalker.com/four-github-actions-website-rm.png"
         alt="GitHub Actions Syntax article card"
         />
       </a>
@@ -129,7 +129,7 @@ If you're new to actions check out these articles on using actions.
       <a href='https://waylonwalker.com/four-github-actions-python'>
       <img
         style='width:250px; max-width:80%; margin: auto; float: right;'
-        src="https://waylonwalker.com/four-github-actions-python-rm.png"
+        src="https://images.waylonwalker.com/four-github-actions-python-rm.png"
         alt="GitHub Actions Syntax article card"
         />
       </a>

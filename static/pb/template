@@ -16,7 +16,7 @@ cover: '/static/pb/${slug}.png'
 <a href='https://waylonwalker.com/${slug}'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/${slug}.png"
+    src="https://images.waylonwalker.com/${slug}.png"
     alt="Read more from the ${title} article"
   />
   </a>

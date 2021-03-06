@@ -16,7 +16,7 @@ cover: '/static/pb/python-basics.png'
 <a href='https://waylonwalker.com/python-basics'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/python-basics.png"
+    src="https://images.waylonwalker.com/python-basics.png"
     alt="Read more from the Python Basics article"
   />
   </a>

@@ -13,7 +13,7 @@ cover: '/static/whats-on-your-github-profile.png'
 
 I ran this post on dev.to and got a great response of great examples, [check it out](https://dev.to/waylonwalker/what-s-on-your-github-profile-40p3).
 
-[![dev.to whats-on-your-github-profile](https://waylonwalker.com/whats-on-your-github-profile.png)](https://dev.to/waylonwalker/what-s-on-your-github-profile-40p3)
+[![dev.to whats-on-your-github-profile](https://images.waylonwalker.com/whats-on-your-github-profile.png)](https://dev.to/waylonwalker/what-s-on-your-github-profile-40p3)
 
 The GitHub profile feature just went live for a subset of users.  Simply creating a repo named after your username, and clicking share to Profile on the sidebar will create a custom profile that shows up just above your pinned projects.
 

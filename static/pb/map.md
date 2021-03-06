@@ -16,7 +16,7 @@ cover: '/static/pb/map.png'
 <a href='https://waylonwalker.com/map'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/map.png"
+    src="https://images.waylonwalker.com/map.png"
     alt="Read more from the Map article"
   />
   </a>

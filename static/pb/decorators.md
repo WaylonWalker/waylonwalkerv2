@@ -16,7 +16,7 @@ cover: '/static/pb/decorators.png'
 <a href='https://waylonwalker.com/decorators'>
   <img
     style='width:500px; max-width:80%; margin: auto;'
-    src="https://waylonwalker.com/decorators.png"
+    src="https://images.waylonwalker.com/decorators.png"
     alt="Read more from the Decorators article"
   />
   </a>
